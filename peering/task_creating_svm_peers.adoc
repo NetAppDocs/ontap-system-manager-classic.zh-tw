@@ -1,0 +1,27 @@
+---
+permalink: peering/task_creating_svm_peers.html 
+sidebar: sidebar 
+keywords: storage, virtual, machine, svm, peer, enable, establish, relationship, data, protection, create, create svm peer relationship 
+summary: 從ONTAP 功能更新至ONTAP 功能更新至功能更新9.7、您可以使用ONTAP 功能更新程式的「傳統」介面來建立SVM對等關係。儲存虛擬機器（SVM）對等關係可讓您在兩個SVM之間建立對等關係、以保護資料。 
+---
+= 建立SVM對等關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從ONTAP 功能更新至ONTAP 功能更新至功能更新9.7、您可以使用ONTAP 功能更新介面來建立SVM對等關係。儲存虛擬機器（SVM）對等關係可讓您在兩個SVM之間建立對等關係、以保護資料。
+
+.步驟
+. 選取啟動器SVM。
+. 從允許的SVM清單中選取目標SVM。
+. 按一下*啟動SVM對等關係*。
+. 按一下 * 繼續 * 。
+
+
+
+
+== 接下來該怎麼做
+
+您可以在「摘要」視窗中檢視叢集間的LIF、叢集對等關係及SVM對等關係。

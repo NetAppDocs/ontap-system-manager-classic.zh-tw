@@ -1,0 +1,81 @@
+---
+permalink: fc-config-rhel/task_record_wwpn_for_each_host_fc_port.html 
+sidebar: sidebar 
+keywords: worldwide, port, name, wwpn, require, zone, fc, switch, create, igroup, host, access, lun, record, record the wwpn for each host fc port 
+summary: 需要使用全球連接埠名稱（WWPN）來對FC交換器進行分區、並建立允許主機存取其LUN的igroup。 
+---
+= 記錄每個主機FC連接埠的WWPN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+需要使用全球連接埠名稱（WWPN）來對FC交換器進行分區、並建立允許主機存取其LUN的igroup。
+
+.開始之前
+您必須在主機中安裝廠商的HBA公用程式、並驗證HBA是否執行您的組態所支援的驅動程式、韌體和BIOS版本。
+
+.關於這項工作
+WWPN用於所有組態。您不需要記錄全球節點名稱（WWNN）。
+
+.步驟
+. 針對FC HBA類型執行HBA公用程式。
+. 選取 HBA 。
+. 記錄每個連接埠的WWPN。
++
+以下範例顯示Emulex HBA Manager、先前稱為OneCommand Manager。
+
++
+image::../media/emulex_hba_fc_fc_rhel.gif[影像顯示OneCommand Manager中顯示的2埠HBA、其中每個連接埠的WWPN值。]
+
++
+其他公用程式（例如QLogic QConvertgeConsole）則提供等效資訊。
+
+. 對主機中的每個FC HBA重複上述步驟。
++
+在 Linux 中、您也可以執行以取得 WWPN `sanlun` 公用程式：
+
++
+下列範例顯示的輸出 `sanlun` 命令。
+
++
+[listing]
+----
+# sanlun fcp show adapter -v
+
+adapter name:      host0
+**WWPN:              10000000c9813a14**
+WWNN:              20000000c9813a14
+driver name:       lpfc
+model:             LPe12002-M8
+model description: Emulex LPe12002-M8 8Gb 2-port PCIe Fibre Channel Adapter
+serial number:     VM84364896
+hardware version:  31004549
+driver version:    8.3.7.34.3p; HBAAPI(I) v2.3.b, 07-12-10
+firmware version:  2.01A12 (U3D2.01A12)
+Number of ports:   1
+port type:         Fabric
+port state:        Operational
+supported speed:   2 GBit/sec, 4 GBit/sec, 8 GBit/sec
+negotiated speed:  8 GBit/sec
+OS device name:    /sys/class/scsi_host/host0
+
+adapter name:      host5
+**WWPN:              10000000c9813a15**
+WWNN:              20000000c9813a15
+driver name:       lpfc
+model:             LPe12002-M8
+model description: Emulex LPe12002-M8 8Gb 2-port PCIe Fibre Channel Adapter
+serial number:     VM84364896
+hardware version:  31004549
+driver version:    8.3.7.34.3p; HBAAPI(I) v2.3.b, 07-12-10
+firmware version:  2.01A12 (U3D2.01A12)
+Number of ports:   1
+port type:         Fabric
+port state:        Operational
+supported speed:   2 GBit/sec, 4 GBit/sec, 8 GBit/sec
+negotiated speed:  8 GBit/sec
+OS device name:    /sys/class/scsi_host/host5
+----
+

@@ -1,0 +1,30 @@
+---
+permalink: online-help-96-97/task_zeroing_disks.html 
+sidebar: sidebar 
+keywords: zero, spare, disks, system, manager, erase, data, online, help 
+summary: 您可以使用System Manager清除所有資料、並將零寫入磁碟以格式化備用磁碟。這些磁碟隨後可用於新的Aggregate。 
+---
+= System Manager零備援磁碟- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來清除所有資料、並將零寫入磁碟以格式化備用磁碟。這些磁碟隨後可用於新的Aggregate。
+
+.關於這項工作
+當您將備用磁碟歸零時、叢集中的所有備援磁碟（包括陣列LUN）都會歸零。您可以將特定節點或整個叢集的備用磁碟歸零。
+
+.步驟
+. 按一下「*儲存設備*>*集合體與磁碟*>*磁碟*」。
+. 在「*磁碟*」視窗中、選取「* Inventory *」索引標籤。
+. 按一下「*零備援*」。
+. 在「*零備用磁碟*」對話方塊中、選取要歸零磁碟的節點或「所有節點」。
+. 選取「將所有非零零備援*歸零」核取方塊、以確認零位作業。
+. 按一下「*零備援*」。
+
+
+*相關資訊*
+
+xref:concept_storage_recommendations_for_creating_aggregates.adoc[建立集合體的儲存建議]

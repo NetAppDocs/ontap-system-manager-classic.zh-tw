@@ -1,0 +1,35 @@
+---
+permalink: online-help-96-97/task_viewing_flexgroup_volume_information.html 
+sidebar: sidebar 
+keywords: flexgroup, volume, graphical, online, help, system, manager 
+summary: 您可以使用System Manager來檢視FlexGroup 有關某個功能區的資訊。您可以檢視配置空間、保護狀態及FlexGroup VMware Volume效能的圖形化呈現。 
+---
+= 使用FlexGroup System Manager查看《系統管理程式》（ONTAP System Manager）的版次資訊-《知識》9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅供參考）功能來檢視FlexGroup 有關本版的資訊。您可以檢視配置空間、保護狀態及FlexGroup VMware Volume效能的圖形化呈現。
+
+.關於這項工作
+您也可以根據FlexGroup 延遲、IOPS和處理量、檢視適用於此問題的Snapshot複本、FlexGroup 適用於此問題的資料保護關係、以及平均效能指標、讀取效能指標、FlexGroup 以及針對此問題寫入效能指標。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 從顯示FlexGroup 的畫面清單中、選取FlexGroup 您要檢視其資訊的相關「流通量」。
++
+畫面會顯示有關下列項目的資訊FlexGroup ：聲音量、分配給FlexGroup 該聲音量的空間、FlexGroup 該聲音量的保護狀態、FlexGroup 以及有關該聲音量的效能資訊。
+
+. 按一下「*顯示更多詳細資料*」連結、即可檢視FlexGroup 更多有關此功能的資訊。
+. 按一下「* Snapshot Copies *（* Snapshot複本*）」索引標籤、即可檢視FlexGroup 此卷的Snapshot複本。
+. 按一下「*資料保護*」索引標籤、即可檢視FlexGroup 有關本版的資料保護關係。
+. 按一下「*儲存效率*」索引標籤以檢視儲存效率設定。
+. 按一下「*效能*」索引標籤、即可根據FlexGroup 延遲、IOPS和處理量、檢視平均效能指標、讀取效能指標、以及寫入有關此問題的效能指標。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

@@ -1,0 +1,17 @@
+---
+permalink: smb-config/concept_adding_protocol_volume_to_protocol_enabled_svm.html 
+sidebar: sidebar 
+keywords: add, cifs, volume, cifs-enabled, svm, involves, creating, create, configure, configuring, share, set, permission, verify, windows, administration, host, add a cifs volume to a cifs-enabled svm 
+summary: 將CIFS磁碟區新增至啟用CIFS的SVM、包括建立及設定磁碟區、建立共用區及設定其權限、以及驗證從Windows管理主機存取的權限。接著您可以設定 CIFS 用戶端存取。 
+---
+= 將CIFS磁碟區新增至啟用CIFS的SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將CIFS磁碟區新增至啟用CIFS的SVM、包括建立及設定磁碟區、建立共用區及設定其權限、以及驗證從Windows管理主機存取的權限。接著您可以設定 CIFS 用戶端存取。
+
+.開始之前
+必須在 SVM 上完整設定 CIFS 。

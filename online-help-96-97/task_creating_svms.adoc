@@ -1,0 +1,115 @@
+---
+permalink: online-help-96-97/task_creating_svms.html 
+sidebar: sidebar 
+keywords: create, svm, system, manager, cluster, online, help 
+summary: 您可以使用System Manager建立完整設定的儲存虛擬機器（SVM）、以便立即提供資料。叢集可以有一或多個SVM。 
+---
+= 使用System Manager建立SVM - ONTAP 支援S9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版（ONTAP 以VMware 9.7及更早版本提供）來建立完整組態的儲存虛擬機器（SVM）、以便立即提供資料。叢集可以有一或多個SVM。
+
+.開始之前
+* 叢集必須在線上狀態中至少有一個非根Aggregate。
+* Aggregate必須有足夠的空間用於SVM根磁碟區。
+* 您必須設定並啟用NTP、以防止CIFS建立和驗證失敗、以同步整個叢集的時間。
+* 您要在SVM上設定的傳輸協定必須獲得授權。
+* 您必須設定CIFS傳輸協定、才能讓安全的DDNS正常運作。
+
+
+.關於這項工作
+* 建立SVM時、您可以執行下列工作：
++
+** 建立並完整設定SVM。
+** 設定SVM上允許的磁碟區類型。
+** 以最低的網路組態建立及設定SVM。
+** 將管理委派給SVM系統管理員。
+
+
+* 若要命名 SVM 、您可以使用英數字元和下列特殊字元：「」.`" (period), "`-`" （連字號）和 "`_" （底線）。
++
+SVM名稱應以字母或「_」（底線）開頭、且不得包含超過47個字元。
+
++
+[NOTE]
+====
+您應該針對SVM名稱使用唯一的完整網域名稱（FQDN）、例如vs0.example.com。
+
+====
+* 您只能在具有相同語言設定的磁碟區之間建立SnapMirror關係。
++
+SVM的語言決定了用於顯示SVM中所有NAS磁碟區檔案名稱和資料的字元集。
+
+* 您無法將SnapLock SVM的根集合體使用到Sfsaggregate。
+
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 按一下「 * 建立 * 」。
+. 在* Storage Virtual Machine（SVM）Setup（*儲存虛擬機器（SVM）設定*）視窗中、指定下列詳細資料：
++
+** SVM名稱
+** IPSpace分配給SVM
+** 允許的Volume類型
+** 允許的傳輸協定
+** SVM語言
+** 根磁碟區的安全樣式
+** 根Aggregate
++
+任何SVM的預設語言設定為C.utf-8。
+
++
+根據預設、會選取具有最大可用空間的Aggregate做為SVM根Volume的容器。根據選取的傳輸協定、會選取預設的安全樣式和根Aggregate。
+
++
+如果您選取CIFS傳輸協定或CIFS傳輸協定與其他傳輸協定的組合、則安全樣式會設為NTFS。如果您選取NFS、iSCSI、NVMe或FC/FCoE、或這些傳輸協定的組合、安全樣式會設為UNIX。
+
++
+[NOTE]
+====
+NVMe不允許將傳輸協定結合使用。
+
+====
+
+
++
+在這個組態中、只會顯示叢集中包含的集合體。MetroCluster
+
+. 指定DNS網域名稱和名稱伺服器IP位址、以設定DNS服務。
++
+預設值會從現有的SVM組態中選取。
+
+. *選用：*當設定資料LIF以使用傳輸協定存取資料時、請指定目標別名、子網路、以及每個節點的生命量。
++
+您可以選取「*檢閱或修改lifs組態（進階設定）*」核取方塊、以修改LIF中的連接埠集數量。
+
++
+您可以從詳細資料區域的節點清單中選取節點、以編輯特定節點中的連接埠集詳細資料。
+
+. *選用：* SnapDrive 提供SVM認證資料、讓SnapManager SVM管理員能夠使用主機端應用程式、例如：
+. *選用：*若為NVMe以外的傳輸協定、請按一下*「Create a new LIF for SVM management *（為SVM管理建立新的LIF）」、然後為新的管理LIF指定連接埠集和IP位址（不論是否有子網路）。
++
+對於CIFS和NFS傳輸協定、資料生命量預設具有管理存取權。只有在必要時、您才必須建立新的管理LIF。對於iSCSI和FC、需要SVM管理LIF、因為資料傳輸協定和管理傳輸協定無法共用相同的LIF。
+
+. *選用：*適用於NVMe傳輸協定、從ONTAP 支援支援支援功能的9.5開始、在SVM設定精靈的第二頁上、為每個節點設定至少一個LIF：*設定NVMe傳輸協定。*
++
+您必須為HA配對中的每個節點至少設定一個LIF。您也可以為每個節點指定兩個生命期。按一下「設定」圖示、在一或兩個LIF組態之間切換。
+
+. 按一下*提交並繼續*。
++
+SVM是以指定的組態建立。
+
+
+
+.結果
+您建立的SVM會自動啟動。根 Volume 名稱會自動產生為 `SVM name_root`。依預設 `vsadmin` 使用者帳戶已建立、且處於鎖定狀態。
+
+
+
+== 接下來該怎麼做
+
+您必須在SVM上設定至少一個傳輸協定、才能存取資料。

@@ -1,0 +1,70 @@
+---
+permalink: volume-disaster-prep/task_creating_snapmirror_relationships_93_later.html 
+sidebar: sidebar 
+keywords: create, snapmirror, relationship, source, volume, cluster, destination, peer, data, recovery, disaster, create the snapmirror relationship, Beginning with ontap 9.3 
+summary: 您必須在一個叢集上的來源磁碟區與連接叢集上的目的地磁碟區之間建立SnapMirror關係、以便複寫資料以進行災難恢復。 
+---
+= 建立SnapMirror關係（從ONTAP 功能9.3開始）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在一個叢集上的來源磁碟區與連接叢集上的目的地磁碟區之間建立SnapMirror關係、以便複寫資料以進行災難恢復。
+
+.開始之前
+* 目的地Aggregate必須有可用空間。
+* 這兩個叢集都必須適當設定和設定、以符合環境的使用者存取、驗證及用戶端存取需求。
+
+
+.關於這項工作
+您必須從*來源*叢集執行此工作。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 選取您要建立鏡射關係的磁碟區、然後按一下「*動作*」>「*保護*」。
+. 在「*關係類型*」區段中、從「*關係類型*」下拉式清單中選取「*鏡射*」。
+. 在「* Volume：Protect Volumes *」（*磁碟區：保護磁碟區*）頁面中、提供下列資訊：
++
+.. 選擇*鏡射*作為關係類型。
+.. 選取目的地叢集、目的地SVM、以及目的地Volume名稱的尾碼。
++
+目的地SVM下方只會列出已執行的SVM和允許的SVM。
+
+.. 按一下 image:../media/advanced_options_icon_disaster.gif["進階選項圖示"]。
+.. 在 * 進階選項 * 對話方塊中、確認 `MirrorAllSnapshots` 設為保護原則。
++
+`DPDefault` 和 `MirrorLatest` 是 SnapMirror 關係可用的其他預設保護原則。
+
+.. 選取保護排程。
++
+依預設 `hourly` 排程已選取。
+
+.. 確認已選取* Yes*來初始化SnapVault 「不實」關係。
++
+所有的資料保護關係預設都會初始化。初始化SnapMirror關係可確保目的地磁碟區具有基礎、可開始保護來源磁碟區。
+
+.. 按一下「*套用*」以儲存變更。
++
+image::../media/snapmirror_advanced_options_93.gif[進階選項視窗]
+
+
+
+. 按一下「*儲存*」建立SnapMirror關係。
+. 驗證 SnapMirror 關係的關係狀態是否在中 `Snapmirrored` 州/省。
++
+.. 瀏覽至* Volumes（磁碟區）*視窗、然後選取您為其建立SnapMirror關係的磁碟區。
+.. 按兩下磁碟區以檢視磁碟區詳細資料、然後按一下* protection *以檢視磁碟區的資料保護狀態。
+
+
++
+image::../media/snapmirror_9_3.gif[SnapMirror 狀態螢幕擷取畫面]
+
+
+
+
+
+== 接下來該怎麼做
+
+您必須記下來源磁碟區的設定、例如精簡配置、重複資料刪除、壓縮及自動擴充。當您中斷SnapMirror關係時、可以使用此資訊來驗證目的地Volume設定。

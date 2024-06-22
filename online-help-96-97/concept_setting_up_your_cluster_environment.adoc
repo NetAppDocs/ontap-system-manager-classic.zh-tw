@@ -1,0 +1,16 @@
+---
+permalink: online-help-96-97/concept_setting_up_your_cluster_environment.html 
+sidebar: sidebar 
+keywords: set, up, cluster, environment, system, manager, cli, command, line, interface, cluster, ip, address 
+summary: 您可以使用System Manager或命令列介面（CLI）來建立叢集。若要使用System Manager建立叢集、您必須在叢集網路中的任何節點上設定節點管理IP位址。如果您已使用CLI建立叢集、可以使用System Manager來設定叢集。 
+---
+= 設定叢集環境
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用System Manager或命令列介面（CLI）來建立叢集。若要使用System Manager建立叢集、您必須在叢集網路中的任何節點上設定節點管理IP位址。如果您已使用CLI建立叢集、可以使用System Manager來設定叢集。
+
+image::../media/guided_cluster_setup.gif[引導式叢集設定]

@@ -1,0 +1,31 @@
+---
+permalink: online-help-96-97/task_configuring_system_manager_options.html 
+sidebar: sidebar 
+keywords: system, manager, configure, system, manager, option, online, help 
+summary: 您可以啟用記錄、並指定System Manager的閒置逾時值。 
+---
+= 設定System Manager選項- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以啟用記錄功能、並指定ONTAP 經典版的不活動逾時值（ONTAP 可在更新版本的更新版本中使用）。
+
+.關於這項工作
+您可以從System Manager登入視窗設定選項。不過、您必須登入應用程式、才能指定閒置逾時值。
+
+.步驟
+. 按一下*image:../media/nas_bridge_202_icon_settings_olh_96_97.gif[""]*。
+. 在*設定*窗格中、按一下*一般*。
+. 指定記錄層級。
+. 指定閒置逾時值（以分鐘為單位）。
++
+[NOTE]
+====
+如果您已啟用安全性聲明標記語言（SAML）驗證、則無法使用此選項。
+
+====
+. 按一下「*確定*」。
+

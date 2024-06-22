@@ -1,0 +1,35 @@
+---
+permalink: nas-multiprotocol-config/task_deciding_where_to_provision_new_volume.html 
+sidebar: sidebar 
+keywords: create, multiprotocol, volume, volume, storage, virtual, machine, svm, configuration, decision, workflow, decide where to provision the new volume 
+summary: 在建立新的多重傳輸協定磁碟區之前、您必須決定是否要將磁碟區放入現有的儲存虛擬機器、如果是、則必須決定SVM需要多少組態。此決定決定決定您的工作流程。 
+---
+= 決定新磁碟區的資源配置位置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在建立新的多重傳輸協定磁碟區之前、您必須決定是否要將磁碟區放入現有的儲存虛擬機器（SVM）、如果是、則必須決定SVM需要多少組態。此決定決定決定您的工作流程。
+
+
+
+== 程序
+
+* 如果您想要在新的SVM上配置磁碟區、請建立基本SVM。
++
+link:task_creating_new_svm.html["建立基本SVM"]
+
++
+如果在現有SVM上尚未啟用CIFS和NFS、則必須選擇此選項。
+
+* 如果您想要在已啟用CIFS和NFS但尚未設定的現有SVM上配置磁碟區、請在現有SVM上新增CIFS和NFS存取。
++
+link:concept_adding_nas_access_to_existing_svm.html["在現有SVM上新增CIFS和NFS存取"]
+
+* 如果您想要在已完全設定為CIFS和NFS多重傳輸協定存取的現有SVM上配置磁碟區、您可以直接建立和設定磁碟區。
++
+link:task_creating_configuring_volume.html["建立及設定Volume"]
+
+

@@ -1,0 +1,121 @@
+---
+permalink: online-help-96-97/reference_storage_tiers_window.html 
+sidebar: sidebar 
+keywords: online, help, storage, tier, window, command, button 
+summary: 您可以使用「儲存層」視窗來檢視整個叢集的空間詳細資料、以及新增和檢視Aggregate詳細資料。 
+---
+= System Manager中的「儲存層」視窗- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《Storage Tiers》（儲存設備層）視窗（ONTAP 僅供參考）、以檢視叢集範圍的空間詳細資料、以及新增和檢視集合體詳細資料。
+
+內部層面板或效能層面板（如果叢集具有所有Flash（所有SSD）集合體）、會顯示整個叢集的空間詳細資料、例如所有集合體的總大小、叢集中集合體所使用的空間、 以及叢集中的可用空間。
+
+「雲端層」面板會顯示叢集中的授權雲端層總數、叢集中使用的授權空間、以及叢集中可用的授權空間。「雲端層」面板也會顯示未獲授權的雲端容量。
+
+Aggregate會依類型分組、Aggregate面板會顯示有關總集合體空間、已用空間及可用空間的詳細資料。如果固態磁碟機（SSD）或All Flash FAS 整合式（Cold）資料可供使用、也會顯示其使用的空間量。您可以選取Aggregate並執行任何與Aggregate相關的動作。
+
+
+
+== 命令按鈕
+
+* *新增Aggregate *
++
+可讓您建立Aggregate。
+
+* *行動*
++
+提供下列選項：
+
++
+** *將狀態變更為*
++
+將所選Aggregate的狀態變更為下列其中一種狀態：
+
++
+*** *線上*
++
+允許對此Aggregate中包含的磁碟區進行讀寫存取。
+
+*** *離線*
++
+不允許讀寫存取。
+
+*** *限制*
++
+允許執行同位元檢查重建等部分作業、但不允許存取資料。
+
+
+
+** *新增容量*
++
+可讓您將容量（HDD或SSD）新增至現有的集合體。
+
+** *新增快取*
++
+可讓您將快取磁碟（SSD）新增至現有的HDD集合體或Flash Pool Aggregate。
+
++
+您無法將快取磁碟新增至啟用FabricPool的Aggregate。
+
++
+此選項不適用於包含具有All Flash Optimized特性設定之節點的叢集。
+
+** *鏡射*
++
+可讓您鏡射集合體。
+
+** * Volume mov移動*
++
+可讓您移動FlexVol 一個聲音量。
+
+
+
+
+
+
+
+== 詳細資料區域
+
+您可以按一下Aggregate名稱來檢視Aggregate的詳細資訊。
+
+* *總覽選項卡*
++
+顯示所選Aggregate的詳細資訊、並顯示Aggregate空間分配、Aggregate空間節約效益及Aggregate效能的圖示。
+
+* *磁碟資訊索引標籤*
++
+顯示所選Aggregate的磁碟配置資訊。
+
+* * Volume索引標籤*
++
+顯示有關集合體上磁碟區總數、總集合體空間和已認可至集合體之空間的詳細資料。
+
+* *效能索引標籤*
++
+顯示圖表、顯示集合體的效能指標、包括處理量和IOPS。系統會針對處理量和IOPS顯示讀取、寫入和總傳輸量的效能指標資料、SSD和HDD的資料則會分別記錄。
+
++
+變更用戶端時區或叢集時區會影響效能度量圖。如果您變更用戶端時區或叢集時區、則應重新整理瀏覽器以檢視更新的圖表。
+
+
+
+*相關資訊*
+
+xref:task_adding_cloud_tier.adoc[新增雲端層]
+
+xref:task_attaching_aggregate_to_cloud_tier.adoc[將Aggregate附加至雲端層]
+
+xref:task_deleting_cloud_tier.adoc[刪除雲端層]
+
+xref:task_editing_cloud_tier.adoc[編輯雲端層]
+
+xref:task_provisioning_storage_through_aggregates.adoc[透過Aggregate配置儲存設備]
+
+xref:task_deleting_aggregates.adoc[刪除Aggregate]
+
+xref:task_editing_aggregates.adoc[編輯Aggregate]

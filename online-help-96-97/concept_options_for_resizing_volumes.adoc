@@ -1,0 +1,44 @@
+---
+permalink: online-help-96-97/concept_options_for_resizing_volumes.html 
+sidebar: sidebar 
+keywords: option, resize, volume, wizard, snapshot, reserve, snapshot, copy, results, view, online, help 
+summary: 您可以使用Volume Resize精靈來變更Volume大小、調整Snapshot保留、刪除Snapshot複本、以及動態檢視變更的結果。 
+---
+= 使用System Manager調整磁碟區大小的選項- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版《經典版》（ONTAP 適用於更新版本的版本）中的Volume Resize（Volume Resize）精靈來變更Volume大小、調整Snapshot保留、刪除Snapshot複本、以及動態檢視變更結果。
+
+Volume Resize精靈會顯示長條圖、顯示磁碟區內目前的空間配置、包括已使用量和可用空間。當您變更磁碟區的大小或Snapshot保留時、此圖表會動態更新以反映變更。
+
+您也可以使用*計算空間*按鈕、藉由刪除所選的Snapshot複本來決定可用空間量。
+
+您可以使用Volume Resize精靈對Volume進行下列變更：
+
+* *變更磁碟區大小*
++
+您可以變更磁碟區總大小、以增加或減少儲存空間。
+
+* *調整Snapshot保留*
++
+您可以調整為Snapshot複本保留的空間量、以增加或減少儲存空間。
+
+* *刪除Snapshot複本*
++
+您可以刪除Snapshot複本以回收磁碟區空間。
+
++
+[NOTE]
+====
+無法刪除使用中的Snapshot複本。
+
+====
+* *自動擴充*
++
+如果需要、您可以指定自動增加磁碟區的限制。
+
+

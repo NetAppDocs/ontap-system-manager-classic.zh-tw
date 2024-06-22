@@ -1,0 +1,25 @@
+---
+permalink: nfs-config-esxi/task_mounting_datastores_on_hosts.html 
+sidebar: sidebar 
+keywords: mount, datastore, host, access, storage, provision, automatic, add, vmware, environment, mount datastores on hosts 
+summary: 裝載資料存放區可讓主機存取儲存設備。當資料存放區是由所配置時、它們會自動掛載到主機或叢集。將主機新增至VMware環境之後、您可能需要在主機上掛載資料存放區。 
+---
+= 在主機上掛載資料存放區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+裝載資料存放區可讓主機存取儲存設備。當資料存放區是由所配置時、它們會自動掛載到主機或叢集。將主機新增至VMware環境之後、您可能需要在主機上掛載資料存放區。
+
+.步驟
+. 在vSphere Web Client *主頁*中、按一下*主機與叢集*：
+. 在導覽窗格中、展開包含主機的資料中心：
+. 在主機上按一下滑鼠右鍵、然後選取「* NetApp VSC*>* Mount Datastors*」。
+. 選取您要掛載的資料存放區、然後按一下「*確定*」。
+
+
+*相關資訊*
+
+https://docs.netapp.com/vapp-96/topic/com.netapp.doc.vsc-iag/home.html["適用於VMware vSphere Administration 9.6版的Virtual Storage Console、VASA Provider及Storage Replication Adapter"]

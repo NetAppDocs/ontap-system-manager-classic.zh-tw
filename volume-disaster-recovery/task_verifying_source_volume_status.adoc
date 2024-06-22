@@ -1,0 +1,34 @@
+---
+permalink: volume-disaster-recovery/task_verifying_source_volume_status.html 
+sidebar: sidebar 
+keywords: source, volume, unavailable, verify, offline, identify, destination, volume, activate, providing, provide, data, access, verify the status of the source volume 
+summary: 當來源Volume無法使用時、您必須確認來源Volume已離線、然後識別必須啟動以提供資料存取的目的地Volume。 
+---
+= 驗證來源Volume的狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當來源Volume無法使用時、您必須確認來源Volume已離線、然後識別必須啟動以提供資料存取的目的地Volume。
+
+.關於這項工作
+您必須從*來源*叢集執行此工作。
+
+.步驟
+. 瀏覽至* Volumes *（*磁碟區*）視窗。
+. 選取來源Volume、然後驗證來源Volume是否離線。
+. 識別SnapMirror關係中的目的地Volume。
++
+** 從ONTAP 《Sfx9.3：雙擊源捲以查看詳細信息》，然後單擊* protection *以識別SnapMirror關係中的目標捲以及包含該捲的SVM的名稱。
++
+image::../media/snapmirror_destination_93.gif[SnapMirror目的地93]
+
+** S29.2或更早版本：按一下「Volumes（磁碟區）」頁面底部的* Data Protection（資料保護）*索引標籤、以識別SnapMirror關係中的目的地磁碟區、以及包含該磁碟區的SVM名稱。ONTAP
++
+image::../media/volume_status_2.gif[影像顯示目的地Volume]
+
+
+
+

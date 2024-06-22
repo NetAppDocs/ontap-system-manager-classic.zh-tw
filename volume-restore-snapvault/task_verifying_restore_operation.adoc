@@ -1,0 +1,34 @@
+---
+permalink: volume-restore-snapvault/task_verifying_restore_operation.html 
+sidebar: sidebar 
+keywords: perform, restore, operation, snapvault, backup, destination, volume, verify, source cluster, verify the restore operation 
+summary: 從SnapVault 還原目的地磁碟區執行還原作業之後、您必須驗證來源叢集上還原作業的狀態。 
+---
+= 驗證還原作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從SnapVault 還原目的地磁碟區執行還原作業之後、您必須驗證來源叢集上還原作業的狀態。
+
+.關於這項工作
+您必須從*來源*叢集執行此工作。
+
+.步驟
+. 瀏覽至* Volumes *（*磁碟區*）視窗。
+. 在Volume清單中選取來源Volume、然後根據ONTAP 您的版本執行下列其中一項動作：
++
+** 從ONTAP 《Sfx9.3：雙擊源捲以查看詳細信息》，然後單擊* protection *以識別SnapMirror關係中的目標捲以及包含該捲的SVM的名稱。
+** S29.2或更早版本：按一下「*資料保護*」底部索引標籤、以識別SnapMirror關係中的目的地Volume、以及包含該磁碟區的SVM名稱。ONTAP
+隨即顯示 Type 欄位 `Restore` 暫時。還原作業完成後、會顯示欄位 `Vault`。
++
+您應該疑難排解SnapVault 任何有關「不穩固」關係的問題。SnapMirror關係的疑難排解程序也適用於SnapVault 不必要的關係。
+
++
+http://www.netapp.com/us/media/tr-4015.pdf["NetApp技術報告4015：SnapMirror組態與最佳實務ONTAP 做法、適用於NetApp 9.1、9.2"^]
+
+
+
+

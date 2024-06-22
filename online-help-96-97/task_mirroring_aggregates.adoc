@@ -1,0 +1,38 @@
+---
+permalink: online-help-96-97/task_mirroring_aggregates.html 
+sidebar: sidebar 
+keywords: mirror, aggregate, system, manager, data, lun, array, online, help 
+summary: 您可以使用System Manager來保護資料、並在單一集合體內即時鏡射資料、以提供更高的恢復能力。鏡射Aggregate可移除連線至磁碟和陣列LUN的單點故障。 
+---
+= 鏡射集合體搭配System Manager - ONTAP 更新版本
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《RealgSystem Manager》（ONTAP 適用於Realgregate 9.7及更早版本）來保護資料、並在單一集合體內即時鏡射資料、以提供更高的恢復能力。鏡射Aggregate可移除連線至磁碟和陣列LUN的單點故障。
+
+.開始之前
+其他集區中必須有足夠的可用磁碟來鏡射集合體。
+
+.關於這項工作
+當快取來源為儲存資源池時、您無法鏡射Flash Pool Aggregate。
+
+.步驟
+. 請選擇下列其中一種方法：
++
+** 按一下*應用程式與層級*>*儲存層級*。
+** 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+
+
+. 選取您要鏡射的Aggregate、然後按一下功能表：更多動作[鏡射]。
++
+[NOTE]
+====
+啟用FabricPool的Aggregate不支援此功能。SyncMirror
+
+====
+. 在「*鏡射此Aggregate *」對話方塊中、按一下「*鏡射*」以啟動鏡射。
+

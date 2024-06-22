@@ -1,0 +1,494 @@
+---
+permalink: online-help-96-97/reference_volumes_window.html 
+sidebar: sidebar 
+keywords: system, manager, volume, window, flexgroup, volume, online, help 
+summary: 您可以使用「Volumes」（磁碟區）視窗來管理FlexVol 您的「R地 區」和FlexGroup 「地區」。從System Manager 9.6開始、您也可以管理FlexCache 功能區。 
+---
+= System Manager中的Volume視窗- ONTAP 更新版本
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《Volumes》（Volume）視窗（ONTAP 適用於更新版本的更新版本）來管理FlexVol 您的《》、《》、《》、FlexGroup 《》、《從System Manager 9.6開始、您也可以管理FlexCache 功能區。
+
+您無法使用System Manager檢視或管理儲存虛擬機器（SVM）中設定為災難恢復的磁碟區。您必須改用CLI。
+
+[NOTE]
+====
+命令按鈕和欄清單會因選取的磁碟區類型而有所不同。您只能檢視適用於所選磁碟區的命令按鈕和欄。
+
+====
+
+
+== 選擇欄位
+
+* * SVM選擇下拉式功能表*
++
+可讓您選取要顯示在清單中的所有SVM或特定SVM。
+
+
+
+
+
+== 命令按鈕
+
+* *建立*
++
+提供下列選項：
+
++
+** *《*》FlexVol
++
+開啟「Create Volume」（建立Volume）對話方塊、可讓您新增FlexVol 功能區。
+
+** *《*》FlexGroup
++
+開啟「Create FlexGroup Rsepar」視窗、讓您建立FlexGroup 功能不只是功能不一。
+
+** *《*》FlexCache
++
+開啟「Create FlexCache Rs功能 區」視窗、您可在此建立FlexCache 功能區。
+
+
+
+* *編輯*
++
+可讓您編輯所選Volume的內容。
+
+* *刪除*
++
+刪除選取的磁碟區。
+
+* *更多行動*
++
+提供下列選項：
+
++
+** *將狀態變更為*
++
+將所選磁碟區的狀態變更為下列其中一種狀態：
+
++
+*** 線上
+*** 離線
+*** 限制
+
+
+** *調整大小*
++
+可讓您變更Volume的大小。
+
++
+若為FlexGroup 「支援」磁碟區、您可以使用現有資源來調整磁碟區大小、或是新增資源來擴充磁碟區。
+
++
+若為FlexCache 「需求量」、您也可以新增或移除集合體。
+
+** *保護*
++
+為選取作為來源的磁碟區開啟「建立保護關係」視窗。
+
+** *管理快照*
++
+提供Snapshot選項清單、包括：
+
++
+*** *建立*
++
+顯示Create Snapshot（建立快照）對話方塊、您可以使用此對話方塊來建立所選磁碟區的Snapshot複本。
+
+*** *組態設定*
++
+設定Snapshot設定。
+
+*** *還原*
++
+還原所選磁碟區的Snapshot複本。
+
+
+
+** *複製*
++
+提供複製選項清單、包括下列項目：
+
++
+*** *建立*
++
+從選取的磁碟區建立所選磁碟區的複本、或從選取的磁碟區建立檔案的複本。
+
+*** *分割*
++
+從父磁碟區分割實體複本。
+
+*** *檢視階層*
++
+顯示有關複製階層架構的資訊。
+
+
+
+** *儲存效率*
++
+開啟「儲存效率」對話方塊、您可以使用此對話方塊手動啟動重複資料刪除、或中止執行中的重複資料刪除作業。只有在儲存系統上啟用重複資料刪除功能時、才會顯示此按鈕。
+
+** *搬移*
++
+開啟「Move Volume」（移動Volume）對話方塊、您可以使用此對話方塊將磁碟區從一個集合體或節點移至同一個SVM內的另一個集合體或節點。
+
+** *儲存QoS *
++
+開啟「服務品質詳細資料」對話方塊、您可以使用此對話方塊將一或多個磁碟區指派給新的或現有的原則群組。
+
+** *變更分層政策*
++
+可讓您變更所選磁碟區的分層原則。
+
+** * Volume Encryption Rekey*
++
+變更磁碟區的資料加密金鑰。
+
++
+磁碟區中的資料會使用自動產生的新金鑰重新加密。重新輸入作業完成後、舊金鑰會自動刪除。
+
++
+從System Manager 9.6開始、FlexGroup 支援將Volume加密重新鎖鑰用於SDP Volume和FlexCache 可靠的資料冊。已從NAE Aggregate繼承加密的磁碟區、會停用重新輸入。
+
++
+[NOTE]
+====
+如果您在相同磁碟區的重新輸入作業進行中、啟動Volume Move作業、則重新輸入作業會中止。在System Manager 9.5及更早版本中、如果您在進行磁碟區的轉換或重新輸入作業時嘗試移動磁碟區、則作業會在無警告的情況下中止。從System Manager 9.6開始、如果您在轉換或重新輸入作業期間嘗試移動磁碟區、將會顯示一則訊息、警告您如果繼續、轉換或重新輸入作業將會中止。
+
+====
+** *配置VMware的儲存設備*
++
+可讓您為NFS資料存放區建立磁碟區、並指定可存取NFS資料存放區的ESX伺服器。
+
+
+
+* *檢視遺失的保護關係*
++
+顯示線上且未受保護的讀取/寫入磁碟區、並顯示具有保護關係但未初始化的磁碟區。
+
+* *重設篩選條件*
++
+可讓您重設篩選條件、以檢視遺失的保護關係。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+* *image:../media/advanced_options.gif[""]*
++
+可讓您選取要在「Volume」（磁碟區）視窗清單中顯示的詳細資料。
+
+
+
+
+
+== Volume清單
+
+* *狀態*
++
+顯示Volume的狀態。
+
+* *名稱*
++
+顯示磁碟區名稱。
+
+* *風格*
++
+在System Manager 9.5中、此欄會顯示Volume的類型、例如FlexVol 、功能表或FlexGroup 功能表。使用CLI建立的資料區會顯示為「功能區」FlexCache FlexGroup 。
+
++
+在System Manager 9.6中、此欄會顯示Volume的類型：FlexVol 菜單、FlexGroup 菜單、FlexCache 或是畫面。
+
+* * SVM*
++
+顯示包含磁碟區的SVM。
+
+* *集合體*
++
+顯示屬於該磁碟區的集合體名稱。
+
+* *精簡配置*
++
+顯示是否為選取的磁碟區設定空間保證。線上磁碟區的有效值為 `Yes` 和 `No`。
+
+* *根磁碟區*
++
+顯示該磁碟區是否為根磁碟區。
+
+* *可用空間*
++
+顯示磁碟區中的可用空間。
+
+* *總空間*
++
+顯示磁碟區中的總空間、包括保留給Snapshot複本的空間。
+
+* 已使用*%*
++
+顯示磁碟區中使用的空間量（以百分比表示）。
+
+* *使用邏輯%*
++
+顯示磁碟區中使用的邏輯空間量（以百分比表示）、包括空間保留量。
+
++
+[NOTE]
+====
+僅當您使用CLI啟用邏輯空間報告功能時、才會顯示此欄位。
+
+====
+* *邏輯空間報告*
++
+顯示磁碟區是否已啟用邏輯空間報告。
+
++
+[NOTE]
+====
+僅當您使用CLI啟用邏輯空間報告功能時、才會顯示此欄位。
+
+====
+* *執行邏輯空間*
++
+顯示是否在磁碟區上執行邏輯空間會計。
+
+* *類型*
++
+顯示磁碟區類型： `rw` 讀寫： `ls` 用於負載共用、或 `dp` 以保護資料。
+
+* *保護關係*
++
+顯示磁碟區是否已啟動保護關係。
+
++
+如果 ONTAP 系統與非 ONTAP 系統之間的關係、則該值會顯示為 `No` 依預設。
+
+* *儲存效率*
++
+顯示所選磁碟區的重複資料刪除功能是啟用還是停用。
+
+* *加密*
++
+顯示磁碟區是否已加密。
+
+* * QoS原則群組*
++
+顯示指派磁碟區的Storage QoS原則群組名稱。依預設、此欄為隱藏欄。
+
+* *《類型*》SnapLock
++
+顯示SnapLock Volume的邊板類型。
+
+* *複製*
++
+顯示該磁碟區是否為FlexClone磁碟區。
+
+* * Volume搬移*
++
+顯示磁碟區是從一個Aggregate移至另一個Aggregate、還是從一個節點移至另一個節點。
+
+* *分層政策*
++
+顯示啟用FabricPool之Aggregate的分層原則。預設的分層原則是「純快照」。
+
+* *應用*
++
+顯示指派給磁碟區的應用程式名稱。
+
+
+
+
+
+== 總覽區
+
+您可以按一下所列磁碟區左側的加號（+）、以檢視該磁碟區的詳細資料總覽。
+
+* *保護*
++
+顯示所選磁碟區「Volume」（磁碟區）視窗的「* Data Protection」（資料保護）標籤。
+
+* *效能*
++
+顯示所選磁碟區之Volume（磁碟區）視窗的* Performance（效能）*索引標籤。
+
+* *顯示更多詳細資料*
++
+顯示所選Volume的Volume（Volume）視窗。
+
+
+
+
+
+== 所選Volume的Volume視窗
+
+您可以使用下列任一方法來顯示此視窗：
+
+* 按一下「Volumes（磁碟區）」視窗上磁碟區清單中的磁碟區名稱。
+* 按一下所選磁碟區*總覽*區域上的*顯示更多詳細資料*。
+
+
+Volume（Volume）視窗會顯示下列標籤：
+
+* *總覽選項卡*
++
+顯示所選磁碟區的一般資訊、並顯示磁碟區空間分配、磁碟區保護狀態及磁碟區效能的圖示。「總覽」索引標籤會顯示磁碟區加密的詳細資料、例如加密狀態和加密類型、轉換狀態或重新金鑰狀態、正在移動的磁碟區相關資訊、例如磁碟區移動的狀態和階段、 要將磁碟區移至的目的地節點和Aggregate、完成的磁碟區移動百分比、完成磁碟區移動作業的預估時間、以及磁碟區移動作業的詳細資料。此索引標籤也會顯示是否封鎖磁碟區以進行輸入/輸出（I/O）作業、以及封鎖作業的應用程式等資訊。
+
++
+若為FlexCache 「需求量」、FlexCache 則會顯示有關「需求量」來源的詳細資料。
+
++
+效能資料的重新整理時間間隔為15秒。
+
++
+此索引標籤包含下列命令按鈕：
+
++
+** *轉換*
++
+開啟「切換」對話方塊、讓您手動觸發切換。
+
++
+只有當Volume Move作業處於「plication」（重新編程）或「hard feded」（硬延後）狀態時、才會顯示* Cutover *命令按鈕。
+
+
+
+* * Snapshot複本索引標籤*
++
+顯示所選磁碟區的Snapshot複本。此索引標籤包含下列命令按鈕：
+
++
+** *建立*
++
+開啟「建立Snapshot複本」對話方塊、可讓您建立所選磁碟區的Snapshot複本。
+
+** *組態設定*
++
+設定Snapshot設定。
+
+** 功能表：更多動作[重新命名]
++
+開啟「重新命名Snapshot複本」對話方塊、可讓您重新命名選取的Snapshot複本。
+
+** 功能表：更多動作[還原]
++
+還原Snapshot複本。
+
+** 功能表：更多動作[延長到期日]
++
+延長Snapshot複本的到期時間。
+
+** *刪除*
++
+刪除選取的Snapshot複本。
+
+** *重新整理*
++
+更新視窗中的資訊。
+
+
+
+* *資料保護索引標籤*
++
+顯示所選磁碟區的資料保護資訊。
+
++
+如果選取來源磁碟區（讀取/寫入磁碟區）、索引標籤會顯示與目的地磁碟區（DP磁碟區）相關的所有鏡射關係、資料庫關係、以及鏡射與資料保險箱關係。如果選取目的地Volume、索引標籤會顯示與來源Volume的關係。
+
++
+如果本機叢集的部分或全部叢集對等關係處於不良狀態、則「資料保護」索引標籤可能需要一些時間來顯示與健全叢集對等關係相關的保護關係。不會顯示與不良叢集對等關係相關的關係。
+
+* *儲存效率索引標籤*
++
+在下列窗格中顯示資訊：
+
++
+** 長條圖
++
+（以圖形格式）顯示資料和Snapshot複本所使用的磁碟區空間。您可以在套用設定以節省儲存效率之前和之後、檢視所使用空間的詳細資料。
+
+** 詳細資料
++
+顯示重複資料刪除內容的相關資訊、包括磁碟區是否啟用重複資料刪除、重複資料刪除模式、重複資料刪除狀態、類型、以及磁碟區是否啟用即時或背景資料壓縮。
+
+** 上次路跑詳細資料
++
+提供上次在磁碟區上執行重複資料刪除作業的詳細資料。此外、也會顯示在磁碟區資料上套用的壓縮與重複資料刪除作業所節省的空間。
+
+
+
+* *效能索引標籤*
++
+顯示所選磁碟區的平均效能指標、讀取效能指標及寫入效能指標的相關資訊、包括處理量、IOPS及延遲。
+
++
+變更用戶端時區或叢集時區會影響效能度量圖。您必須重新整理瀏覽器才能檢視更新的圖表。
+
+* *《*》索引標籤* FlexCache
++
+只有當您選取的Volume是與它相關聯的來源Volume時、才會顯示FlexCache 有關此功能的詳細資料FlexCache 。否則、此索引標籤不會出現。
+
+
+
+*相關資訊*
+
+xref:task_creating_flexvol_volumes.adoc[建立 FlexVol 功能區]
+
+xref:task_creating_flexclone_volumes.adoc[建立FlexClone Volume]
+
+xref:task_creating_flexclone_files.adoc[建立FlexClone檔案]
+
+xref:task_deleting_volumes.adoc[正在刪除磁碟區]
+
+xref:task_setting_snapshot_copy_reserve.adoc[設定Snapshot複本保留]
+
+xref:task_deleting_snapshot_copies.adoc[刪除Snapshot複本]
+
+xref:task_creating_snapshot_copies_outside_defined_schedule.adoc[在定義的排程之外建立Snapshot複本]
+
+xref:task_editing_volume_properties.adoc[編輯Volume內容]
+
+xref:task_changing_status_volume.adoc[變更Volume的狀態]
+
+xref:task_enabling_storage_efficiency_on_volume.adoc[在磁碟區上實現儲存效率]
+
+xref:task_changing_deduplication_schedule.adoc[變更重複資料刪除排程]
+
+xref:task_running_deduplication_operations.adoc[執行重複資料刪除作業]
+
+xref:task_splitting_flexclone_volume_from_its_parent_volume.adoc[將FlexClone磁碟區從其父磁碟區分割]
+
+xref:task_resizing_volumes.adoc[調整磁碟區大小]
+
+xref:task_restoring_volume_from_snapshot_copy.adoc[從Snapshot複本還原磁碟區]
+
+xref:task_scheduling_automatic_creation_snapshot_copies.adoc[排程自動建立Snapshot複本]
+
+xref:task_renaming_snapshot_copies.adoc[重新命名Snapshot複本]
+
+xref:task_hiding_snapshot_copy_directory.adoc[隱藏Snapshot複本目錄]
+
+xref:task_viewing_flexclone_volumes_hierarchy.adoc[檢視FlexClone Volume階層架構]
+
+xref:task_creating_flexgroup_volumes.adoc[建立FlexGroup 功能區]
+
+xref:task_editing_flexgroup_volumes.adoc[編輯FlexGroup 功能]
+
+xref:task_resizing_flexgroup_volumes.adoc[重新調整FlexGroup 功能]
+
+xref:task_changing_status_flexgroup_volume.adoc[變更FlexGroup 一個聲音區的狀態]
+
+xref:task_deleting_flexgroup_volumes.adoc[正在刪除FlexGroup 功能區]
+
+xref:task_viewing_flexgroup_volume_information.adoc[檢視FlexGroup 功能介紹]
+
+xref:task_creating_flexcache_volumes.adoc[建立FlexCache 功能區]
+
+xref:task_editing_flexcache_volumes.adoc[編輯FlexCache 功能]
+
+xref:task_resizing_flexcache_volumes.adoc[重新調整FlexCache 功能]
+
+xref:task_deleting_flexcache_volumes.adoc[正在刪除FlexCache 功能區]

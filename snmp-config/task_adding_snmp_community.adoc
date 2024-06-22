@@ -1,0 +1,32 @@
+---
+permalink: snmp-config/task_adding_snmp_community.html 
+sidebar: sidebar 
+keywords: system, manager, add, community, administrative, storage, virtual, machine, svm, cluster, snmpv1, snmpv2c, protocol, add an anmp community 
+summary: 您可以使用ONTAP 包含ONTAP 更新版本的《經典》介面、將社群新增至執行SNMPv1或SNMPv2c的叢集管理儲存虛擬機器（SVM）。System Manager使用SNMP傳輸協定SNMP v1和SNMP v2c、以及SNMP社群來探索儲存系統。 
+---
+= 新增SNMP社群
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以搭配ONTAP 使用含有ONTAP 更新版本的《Sf2系統管理程式_classic_介面》、將社群新增至執行SNMPv1或SNMPv2c的叢集管理儲存虛擬機器（SVM）。System Manager使用SNMP傳輸協定SNMP v1和SNMP v2c、以及SNMP社群來探索儲存系統。
+
+.關於這項工作
+此程序用於將SNMP社群新增至叢集的管理SVM。將SNMP社群新增至資料SVM的程序如所述 https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理"]。
+
+在全新安裝ONTAP 的功能中、預設會停用SNMPv1和SNMPv2c。建立SNMP社群時、會啟用SNMP v1和SNMP v2c。
+
+.步驟
+. 在SNMP視窗中、按一下*編輯*以開啟*編輯SNMP設定*對話方塊。
+. 在* General *（一般）標籤中、指定ONTAP 適用於該系統的聯絡人和位置。
+. 按一下「*新增*」、輸入社群名稱、然後按一下「*社群名稱*」窗格中的「*確定*」。
++
+您可以新增多個社群名稱。社群名稱最多可包含 32 個字元、不得包含下列特殊字元： `, / : " ' |`
+
++
+image::../media/snmp_cfg_comm_step3.gif[此影像顯示「編輯SNMP設定」對話方塊,General tab,in which the example community name "comty1" is entered.]
+
+. 當您完成新增社群名稱時、請按一下「*編輯SNMP設定*」對話方塊中的「*確定*」。
+

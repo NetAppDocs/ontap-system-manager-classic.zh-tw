@@ -1,0 +1,318 @@
+---
+permalink: online-help-96-97/task_provisioning_storage_through_aggregates.html 
+sidebar: sidebar 
+keywords: provision, storage, aggregates, snaplock, fabricpool, online, help, flash, pool 
+summary: 您可以根據儲存建議建立集合體、也可以根據需求手動建立集合體。您可以使用SnapLock System Manager建立Flash Pool Aggregate、支援FabricPool的Aggregate和FabricPool的Aggregate、為一或多個磁碟區提供儲存空間。 
+---
+= 透過Aggregate與System Manager進行儲存資源配置- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）、根據儲存建議建立集合體、或根據需求手動建立集合體。您可以使用SnapLock System Manager建立Flash Pool Aggregate、支援FabricPool的Aggregate和FabricPool的Aggregate、為一或多個磁碟區提供儲存空間。
+
+.開始之前
+您必須有足夠的備用磁碟來建立Aggregate。
+
+.關於這項工作
+您無法使用System Manager執行下列動作：
+
+* 即使有足夠的不同大小的備用磁碟、也能組合不同大小的磁碟。
++
+您一開始可以使用相同大小的磁碟建立集合體、之後再新增大小不同的磁碟。
+
+* 將磁碟與不同的Checksum類型結合在一起。
++
+您一開始可以使用單一Checksum類型建立Aggregate、之後再新增不同Checksum類型的儲存設備。
+
+
+
+
+
+== 根據儲存建議建立集合體
+
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）、根據儲存建議建立集合體。System Manager會分析儲存系統的組態、並提供儲存建議、例如將要建立的集合體數量、可用節點和可用的備用磁碟。
+
+.關於這項工作
+* 您無法根據Cloud Volumes ONTAP 在功能上的儲存建議建立集合體、包括在功能方面的資訊、ONTAP Select 包括：MetroCluster
+* 錯誤（如果有）會顯示在螢幕上。
++
+您可以修正這些錯誤、然後根據儲存建議建立Aggregate、也可以手動建立Aggregate。
+
+
+
+.步驟
+. 使用下列其中一種方法建立Aggregate：
++
+** 按一下*應用程式與層級*>*儲存層級*>*新增Aggregate *。
+** 按一下「*儲存設備*>* Aggregate & Disks*>* Aggregate *>* Create*。
+
+
+. 檢閱儲存建議、然後按一下*提交*。
++
+「資訊」對話方塊會顯示集合體的狀態。
+
+. 按一下*在背景執行*以瀏覽至*集合體*視窗。
+. 按一下「*重新整理*」以檢視所建立的集合體。
+
+
+
+
+== 手動建立Aggregate
+
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於VMware 9.7及更早版本）、手動建立僅由HDD或僅由SSD組成的集合體。
+
+.開始之前
+所有磁碟的大小必須相同。
+
+.關於這項工作
+* 如果您要在ONTAP Select 包含4個節點的叢集上建立Aggregate、則預設會選取「鏡射Aggregate」選項。
+* 從推出的功能區起、您可以建立磁碟大小等於或大於10 TB的集合體。ONTAP
+* 如果Aggregate磁碟的磁碟類型為SSA或mSATA、且磁碟大小等於或大於10 TB、RAID-TEC 則唯一可用的RAID類型為「
+
+
+.步驟
+. 使用下列其中一種方法建立Aggregate：
++
+** 按一下*應用程式與層級*>*儲存層級*>*新增Aggregate *。
+** 按一下「*儲存設備*>* Aggregate & Disks*>* Aggregate *>* Create*。
+
+
+. 啟用*手動建立Aggregate *選項以建立Aggregate。
+. 若要建立Aggregate：
++
+.. 指定集合體的名稱、磁碟類型、以及要包含在集合體中的磁碟或磁碟分割數目。
++
+最小熱備援規則會套用至磁碟大小最大的磁碟群組。
+
+.. *選用：*修改Aggregate的RAID組態：
++
+... 按一下 * 變更 * 。
+... 在「*變更RAID組態*」對話方塊中、指定RAID類型和RAID群組大小。
++
+共享磁碟可支援RAID DP 兩種RAID類型：功能區和RAID-TEC 功能區。
+
+... 按一下「 * 儲存 * 」。
+
+
+.. 如果要鏡射集合體、請選取*鏡射此集合體*核取方塊。
++
+對於不鏡射的組態、建立無鏡射的集合體受到限制。MetroCluster因此、根據預設MetroCluster 、鏡射選項會啟用以供各種不完整的組態使用。
+
+
+
+. 按一下「 * 建立 * 」。
+
+
+.結果
+此Aggregate會以指定的組態建立、並新增至Aggregate視窗中的Aggregate清單。
+
+
+
+== 手動建立Flash Pool Aggregate
+
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）手動建立Flash Pool Aggregate、或是新增SSD、將現有的HDD Aggregate轉換成Flash Pool Aggregate。建立新的HDD Aggregate時、您可以將SSD快取資源配置給它、並建立Flash Pool Aggregate。
+
+.開始之前
+* 您必須瞭解適用於Flash Pool Aggregate SSD層級大小與組態的平台專屬最佳實務做法和工作負載專屬最佳實務做法。
+* 所有HDD都必須處於零位狀態。
+* 如果您要將SSD新增至Aggregate、則所有現有SSD和專用SSD的大小必須相同。
+
+
+.關於這項工作
+* 您無法在建立Flash Pool Aggregate時使用分割式SSD。
+* 如果快取來源是儲存資源池、則無法鏡射集合體。
+* 從推出的功能區起、您可以建立磁碟大小等於或大於10 TB的集合體。ONTAP
+* 如果Aggregate磁碟的磁碟類型為SSA或mSATA、且磁碟大小等於或大於10 TB、RAID-TEC 則唯一可用的RAID類型選項就是「支援」。
+
+
+.步驟
+. 使用下列其中一種方法建立Aggregate：
++
+** 按一下*應用程式與層級*>*儲存層級*>*新增Aggregate *。
+** 按一下「*儲存設備*>* Aggregate & Disks*>* Aggregate *>* Create*。
+
+
+. 啟用*手動建立Aggregate *選項以建立Aggregate。
+. 在* Create Aggregate（建立集合體）*視窗中、指定集合體的名稱、磁碟類型、以及集合體中HDD要包含的磁碟或分割數目。
+. 如果要鏡射集合體、請選取*鏡射此集合體*核取方塊。
++
+對於不鏡射的組態、建立無鏡射的集合體受到限制。MetroCluster因此、根據預設MetroCluster 、鏡射選項會啟用以供各種不完整的組態使用。
+
+. 按一下*使用Flash Pool Cache搭配此Aggregate *。
+. 指定快取來源：
++
+|===
+| 如果您要選取快取來源為... | 然後... 
+
+
+ a| 
+儲存資源池
+ a| 
+.. 選擇*儲存資源池*作為快取來源。
+.. 選取可從中取得快取的儲存資源池、然後指定快取大小。
+.. 如有必要、請修改RAID類型。
+
+
+
+
+ a| 
+專屬SSD
+ a| 
+.. 選擇*專用SSSSD *作為快取來源。
+.. 選取SSD大小和要納入集合體的SSD數量。
+.. 如有必要、請修改RAID組態：
++
+... 按一下 * 變更 * 。
+... 在變更RAID組態對話方塊中、指定RAID類型和RAID群組大小。
+... 按一下「 * 儲存 * 」。
+
+
+
+
+|===
+. 按一下「 * 建立 * 」。
+
+
+.結果
+Flash Pool Aggregate是以指定的組態建立、並新增至Aggregate視窗中的集合體清單。
+
+
+
+== 手動建立SnapLock 一個不協調的Aggregate
+
+您可以使用System Manager經典版（ONTAP 以更新版本供應）手SnapLock 動建立一套「不符合要求」的Aggregate或SnapLock 「不符合要求」的「企業」Aggregate。您可以在SnapLock 這些集合體上建立供應「一次寫入、多次讀取」（WORM）功能的功能。
+
+.開始之前
+必須已新增此功能的使用許可。SnapLock
+
+.關於這項工作
+* 在「僅供參考的」組態中、您只能建立「僅供參考的企業級集合體」MetroCluster SnapLock
+* 對於陣列LUN、僅SnapLock 支援「支援」功能。
+* 從推出的功能區起、您可以建立磁碟大小等於或大於10 TB的集合體。ONTAP
+* 如果Aggregate磁碟的磁碟類型為SSA或mSATA、且磁碟大小等於或大於10 TB、RAID-TEC 則唯一可用的RAID類型選項就是「支援」。
+* 從ONTAP 功能介紹9.1開始、您可以在SnapLock 一個介紹完整功能的平台上建立一個不完整的集合體AFF 。
+
+
+.步驟
+. 使用SnapLock 下列其中一種方法建立一個不實的Aggregate：
++
+** 按一下*應用程式與層級*>*儲存層級*>*新增Aggregate *。
+** 按一下「*儲存設備*>* Aggregate & Disks*>* Aggregate *>* Create*。
+
+
+. 啟用*手動建立Aggregate *選項以建立Aggregate。
+. 若要建立SnapLock 一個不協調的集合體：
++
+.. 指定集合體的名稱、磁碟類型、以及要包含在集合體中的磁碟或磁碟分割數目。
++
+建立Aggregate之後、您無法變更SnapLock 「部門資訊遵循」Aggregate的名稱。
+
++
+最小熱備援規則會套用至磁碟大小最大的磁碟群組。
+
+.. *選用：*修改Aggregate的RAID組態：
++
+... 按一下 * 變更 * 。
+... 在變更RAID組態對話方塊中、指定RAID類型和RAID群組大小。
++
+共享磁碟可支援兩種RAID類型：RAID-DP和RAID-TEC
+
+... 按一下「 * 儲存 * 」。
+
+
+.. 指定SnapLock 此功能的類型。
+.. 如果您尚未初始化系統完成時鐘、請選取「*初始化完成時鐘*」核取方塊。
++
+如果節點上已初始化「Compliance時鐘」、則不會顯示此選項。
+
++
+[NOTE]
+====
+您必須確保目前的系統時間正確。「完成時鐘」是根據系統時鐘設定。一旦設定「完成時鐘」、您就無法修改或停止「完成時鐘」。
+
+====
+.. *選用：*如果您要鏡射集合體、請選取*鏡射此集合體*核取方塊。
++
+對於不鏡射的組態、建立無鏡射的集合體受到限制。MetroCluster因此、根據預設MetroCluster 、鏡射選項會啟用以供各種不完整的組態使用。
+
++
+根據預設、SnapLock 「鏡射」選項會停用、以供「不符合指令集」的集合體使用。
+
+
+
+. 按一下「 * 建立 * 」。
+
+
+
+
+== 手動建立啟用FabricPool的Aggregate
+
+您可以使用ONTAP 經典版的《支援FabricPool ONTAP 的功能》（適用於支援更新版本的版本）手動建立支援FabricPool的Aggregate、或是將雲端層附加到SSD Aggregate、將現有的SSD Aggregate轉換成啟用FabricPool的Aggregate。
+
+.開始之前
+* 您必須建立雲端層、並將其附加至SSD集合體所在的叢集。
+* 必須已建立內部部署雲端層。
+* 雲端層與Aggregate之間必須存在專屬的網路連線。
+
+
+.關於這項工作
+下列物件存放區可做為雲端階層使用：
+
+* StorageGRID
+* Alibaba Cloud（從System Manager 9.6開始）
+* Amazon Web Services（AWS）Simple Storage Service（S3）
+* Amazon Web Services（AWS）商業雲端服務（C2S）
+* Microsoft Azure Blob儲存設備
+* IBM Cloud
+* Google Cloud
+
+
+[NOTE]
+====
+* Azure Stack是內部部署Azure服務、不受支援。
+* 如果您想要將任何物件存放區當作雲端層、StorageGRID 而非使用版、則必須擁有FabricPool 「功能不限」授權。
+
+
+====
+.步驟
+. 使用下列其中一種方法建立啟用FabricPool的Aggregate：
++
+** 按一下*應用程式與層級*>*儲存層級*>*新增Aggregate *。
+** 按一下「*儲存設備*>* Aggregate & Disks*>* Aggregate *>* Create*。
+
+
+. 啟用*手動建立Aggregate *選項以建立Aggregate。
+. 建立啟用FabricPool的Aggregate：
++
+.. 指定集合體的名稱、磁碟類型、以及要包含在集合體中的磁碟或磁碟分割數目。
++
+[NOTE]
+====
+只有All Flash（All SSD）Aggregate支援FabricPool的Aggregate。
+
+====
++
+最小熱備援規則會套用至磁碟大小最大的磁碟群組。
+
+.. *選用：*修改Aggregate的RAID組態：
++
+... 按一下 * 變更 * 。
+... 在變更RAID組態對話方塊中、指定RAID類型和RAID群組大小。
++
+共享磁碟可支援兩種RAID類型：RAID-DP和RAID-TEC
+
+... 按一下「 * 儲存 * 」。
+
+
+
+
+. 選取* FabricPool 《*》複選框、然後從清單中選取雲端層。
+. 按一下「 * 建立 * 」。
+
+
+*相關資訊*
+
+http://www.netapp.com/us/media/tr-4070.pdf["NetApp技術報告4070：Flash Pool設計與實作"^]

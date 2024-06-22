@@ -1,0 +1,40 @@
+---
+permalink: fc-config-esxi/index.html 
+sidebar: sidebar 
+keywords: fc, service, storage, virtual, machine, svm, provision, lun, fc, hba, esx, host, computer, virtual storage console, vsc 
+summary: 使用ONTAP 經典的支援功能（ONTAP 不含更新版本的支援）、您可以在儲存虛擬機器（SVM）上快速設定FC服務、配置LUN、並使用ESX主機電腦上的FC HBA、將LUN設為資料存放區。 
+---
+= 使用VSC的ESXi FC組態總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用ONTAP 經典的支援功能（ONTAP 不含更新版本的支援）、您可以在儲存虛擬機器（SVM）上快速設定FC服務、配置LUN、並使用ESX主機電腦上的FC HBA、將LUN設為資料存放區。
+
+如果發生下列情況、請使用此程序：
+
+* 您正在使用VMware vSphere（VSC）支援版本的虛擬儲存主控台、來設定ESX主機的儲存設定、以及配置資料存放區。
++
+** 從VSC 7.0開始、VSC就是的一部分 https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html["VMware vSphere適用的VMware工具ONTAP"^] 虛擬應用裝置、包括VSC、適用於儲存感知（VASA）供應商的vStorage API、以及適用於VMware vSphere功能的儲存複寫介面卡（SRA）。
+** 請務必檢查 https://imt.netapp.com/matrix/["NetApp 互通性對照表工具"^] 以確認您目前ONTAP 的更新版本與VSC版本之間的相容性。
+
+
+* 您的網路使用的是IPv4定址。
+* 您在ESXi 5.x和傳統FC交換器上使用傳統FC HBA。
++
+此程序不涵蓋FCoE。
+
+* 叢集中的每個節點上至少有兩個FC目標連接埠可用。
++
+內建FC和UTA2（也稱為「CNA」）連接埠、以及部分介面卡均可設定。這些連接埠的設定是在ONTAP 不含支援的CLI中完成、本程序不涵蓋這些連接埠。
+
+* 您未設定FC SAN開機。
+* 您要在主機上建立資料存放區。
++
+此程序不涵蓋原始裝置對應（RDM）磁碟、或使用N連接埠ID虛擬化（NPIV）直接提供FC給VM。
+
+
+
+如需詳細資訊、請參閱 https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_ontap_ontap_for_vsphere.html["TR-4597：VMware vSphere ONTAP for VMware"^] 以及VSC版本的文件。

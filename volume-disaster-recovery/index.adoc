@@ -1,0 +1,41 @@
+---
+permalink: volume-disaster-recovery/index.html 
+sidebar: sidebar 
+keywords: content, destination, activate, volume, disaster, reactivate, source, ontap, volume disaster recovery overview 
+summary: 災難發生後、您可以快速啟動目的地Volume、然後ONTAP 使用ONTAP 經典的支援介面ONTAP （例如、更新版本的版本）、在支援的過程中重新啟動來源Volume。 
+---
+= Volume災難恢復總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+災難發生後、您可以快速啟動目的地Volume、然後ONTAP 使用ONTAP 經典的支援介面ONTAP （例如、更新版本的版本）、在支援的過程中重新啟動來源Volume。
+
+若要以下列方式執行磁碟區層級的災難恢復、請使用此程序：
+
+* 您正在使用執行ONTAP 過程中的叢集9。
+* 您是叢集管理員。
+* 您已設定下列SnapMirror關係 xref:../volume-disaster-prep/index.html[Volume災難恢復準備]
+* 來源叢集的叢集管理員已宣告來源磁碟區中的資料無法使用、因為病毒感染導致資料毀損或資料意外刪除等事件。
+* 您想要使用System Manager、而非ONTAP 使用無法執行指令行的介面或自動化指令碼工具。
+* 您想要將System Manager經典介面用於ONTAP 更新版本的版本、而非ONTAP 使用適用於ONTAP 更新版本的《更新版本的系統管理程式》UI。
+* 您想要使用最佳實務做法、而非探索每個可用選項。
+* 您不想閱讀許多概念背景。
+
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+[cols="2"]
+|===
+| 若要執行這些工作... | 請參閱此內容... 
+
+
+| 重新設計的System Manager（ONTAP 提供更新版本的更新版本） | link:https://docs.netapp.com/us-en/ontap/task_dp_serve_data_from_destination.html["從SnapMirror目的地提供資料"^] 
+
+
+| 指令行介面ONTAP | link:https://docs.netapp.com/us-en/ontap/data-protection/make-destination-volume-writeable-task.html["啟動目的地Volume"^] 
+|===

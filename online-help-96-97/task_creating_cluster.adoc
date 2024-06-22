@@ -1,0 +1,58 @@
+---
+permalink: online-help-96-97/task_creating_cluster.html 
+sidebar: sidebar 
+keywords: data, center, create, cluster, online, help, system, manager 
+summary: 您可以使用ONTAP NetApp System Manager在資料中心建立及設定叢集。 
+---
+= 使用ONTAP System Manager（更新版本）建立叢集：NetApp®
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來建立及設定資料中心的叢集。
+
+.關於這項工作
+如果叢集支援ONTAP 更新版本的版本、您只能新增執行ONTAP 更新版本的儲存系統。
+
+.步驟
+. 開啟 Web 瀏覽器、然後輸入您已設定的節點管理 IP 位址： `+https://node-management-IP+`
++
+** 如果您已設定叢集的認證、則會顯示「Login」（登入）頁面。
++
+您必須輸入認證資料才能登入。
+
+** 如果您尚未設定叢集的認證、則會顯示引導式設定視窗。
++
+按一下*引導式設定*圖示以設定叢集。
+
+
+
+. 在「*叢集*」頁面中、輸入叢集的名稱。
++
+[NOTE]
+====
+如果未發現所有節點、請按一下*重新整理*。
+
+====
++
+該叢集網路中的節點會顯示在節點欄位中。
+
+. *可選：*如果需要、請在*節點*欄位中更新節點名稱。
+. 輸入叢集的密碼。
+. *選用：*輸入功能授權金鑰。
+. 按一下*提交*。
+
+
+
+
+== 接下來該怎麼做
+
+在「Network（網路）」頁面中輸入網路詳細資料、以繼續進行叢集設定。
+
+*相關資訊*
+
+xref:reference_licenses_window.adoc[授權時間]
+
+xref:reference_configuration_updates_window.adoc[組態更新視窗]

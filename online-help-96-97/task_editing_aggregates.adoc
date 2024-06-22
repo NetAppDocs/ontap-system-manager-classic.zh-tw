@@ -1,0 +1,52 @@
+---
+permalink: online-help-96-97/task_editing_aggregates.html 
+sidebar: sidebar 
+keywords: online, help, edit, aggregates, raid, type, group, size, online, help 
+summary: 必要時、您可以使用System Manager來變更現有Aggregate的Aggregate名稱、RAID類型及RAID群組大小。 
+---
+= 使用System Manager編輯Aggregate - ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如ONTAP 有需要、您可以使用經典版的經典版《支援功能》ONTAP （適用於支援功能更新版本的版本）來變更現有Aggregate的集合體名稱、RAID類型及RAID群組大小。
+
+.開始之前
+若要將Aggregate的RAID類型從RAID4修改為RAID-DP、Aggregate必須包含足夠的相容備援磁碟、但熱備援磁碟除外。
+
+.關於這項工作
+* 您無法變更ONTAP 支援陣列LUN的RAID群組。
++
+RAID0是唯一可用的選項。
+
+* 您無法變更分割磁碟的RAID類型。
++
+RAID-DP是唯一可用於分割磁碟的選項。
+
+* 您無法重新命名SnapLock 「更新不符合法規遵循」Aggregate。
+* 如果集合體是由含儲存資源池的SSD所組成、則您只能修改集合體的名稱。
+* 如果三同位元檢查磁碟大小為10 TB、而其他磁碟大小小於10 TB、則您可以選取RAID-DP或RAID-TEC 支援RAID類型。
+* 如果三同位元檢查磁碟大小為10 TB、而且即使其中一個磁碟大小大於10 TB、RAID-TEC 則唯一可用的RAID類型選項就是「支援」。
+
+
+.步驟
+. 請選擇下列其中一種方法：
++
+** 按一下*應用程式與層級*>*儲存層級*。
+** 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+
+
+. 選取您要編輯的Aggregate、然後按一下*編輯*。
+. 在*編輯Aggregate *對話方塊中、視需要修改Aggregate名稱、RAID類型及RAID群組大小。
+. 按一下「 * 儲存 * 」。
+
+
+*相關資訊*
+
+xref:reference_aggregates_window.adoc[Aggregate視窗]
+
+xref:concept_what_compatible_spare_disks_are.adoc[哪些是相容的備用磁碟]
+
+xref:reference_storage_tiers_window.adoc[儲存層視窗]

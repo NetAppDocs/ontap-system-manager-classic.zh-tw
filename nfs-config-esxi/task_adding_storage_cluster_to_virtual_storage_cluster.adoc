@@ -1,0 +1,27 @@
+---
+permalink: nfs-config-esxi/task_adding_storage_cluster_to_virtual_storage_cluster.html 
+sidebar: sidebar 
+keywords: provision, datastore, esxi, host, datacenter, cluster, add, enable, storage, add, add the storage cluster or to vsc for 
+summary: 您必須先新增叢集或的專屬、才能將第一個資料存放區配置至資料中心的ESXi主機。新增叢集可讓您在叢集中的任何位置上配置儲存設備。 
+---
+= 將儲存叢集新增至VSC
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須先將叢集或特定儲存虛擬機器（SVM）新增至VMware vSphere的虛擬儲存主控台、才能將第一個資料存放區資源配置至Datacenter中的ESXi主機。新增叢集可讓您在叢集中的任何SVM上配置儲存設備。
+
+.開始之前
+您必須擁有儲存叢集或要新增的的管理員認證。
+
+.關於這項工作
+視您的組態而定、叢集可能已自動探索、或可能已新增。
+
+.步驟
+. 登入vSphere Web Client。
+. 選擇*虛擬儲存主控台*。
+. 選取*儲存系統*、然後按一下*新增*圖示。
+. 在「*新增儲存系統*」對話方塊中、輸入儲存叢集的主機名稱和管理員認證、或按一下「*確定*」。
+

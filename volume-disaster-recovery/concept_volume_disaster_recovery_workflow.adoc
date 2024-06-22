@@ -1,0 +1,28 @@
+---
+permalink: volume-disaster-recovery/concept_volume_disaster_recovery_workflow.html 
+sidebar: sidebar 
+keywords: volume, disaster recovery, workflow, activating, activate, destination, configuring, configure, access, reactivate, reactivating, original, source, volume disaster recovery workflow 
+summary: Volume災難恢復工作流程包括啟動目的地Volume、設定目的地Volume以進行資料存取、以及重新啟動原始來源Volume。 
+---
+= Volume災難恢復工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Volume災難恢復工作流程包括啟動目的地Volume、設定目的地Volume以進行資料存取、以及重新啟動原始來源Volume。
+
+image::../media/snapmirror_failover_resync_workflow_eg.gif[此圖為SnapMirror叢集間容錯移轉與重新同步工作流程的流程圖。工作流程中的步驟與主題相符。]
+
+我們提供更多資訊來協助您管理磁碟區層級的災難恢復關係、並提供其他災難恢復方法來保護資料資源的可用度。
+
+* xref:../volume-backup-snapvault/index.html[使用SnapVault 功能進行Volume備份]
++
+說明如何在位於不同ONTAP 的叢集內的磁碟區之間快速設定備份資料庫關係。
+
+* xref:../volume-restore-snapvault/index.html[Volume還原管理功能SnapVault]
++
+說明如何在ONTAP 還原中、從備份資料庫快速還原磁碟區。
+
+

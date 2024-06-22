@@ -1,0 +1,34 @@
+---
+permalink: online-help-96-97/task_cloning_nvme_namespace.html 
+sidebar: sidebar 
+keywords: system, manager, clone, nvme, namespace, nqn, online, help 
+summary: 您可以選擇複製命名空間、使用System Manager快速建立相同組態的另一個命名空間。您可以將新複製的命名空間對應至其他主機NQN。 
+---
+= 使用System Manager複製NVMe命名空間- ONTAP 支援更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的功能（ONTAP 以更新版本的版本供應）、選擇複製命名空間、快速建立相同組態的另一個命名空間。您可以將新複製的命名空間對應至其他主機NQN。
+
+.開始之前
+您必須擁有FlexClone授權才能複製命名空間。
+
+.關於這項工作
+您可以使用選取的主機對應來複製命名空間、並將其與其他子系統建立關聯。
+
+.步驟
+. 按一下「* NVMe *>* NVMe命名空間*」。
+. 在* NVMe命名空間視窗*中、選取您要複製的命名空間。
+. 如果需要特定名稱、但不需要、您可以重新命名複製的命名空間。
++
+此對話方塊提供要複製的命名空間預設名稱。
+
+. 修改複製命名空間的子系統對應。
+. 按一下「*確定*」。
++
+線上對應的命名空間會以不同的名稱複製到同一個SVM內。不會複製主機對應。
+
+

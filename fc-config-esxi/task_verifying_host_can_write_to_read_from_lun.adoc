@@ -1,0 +1,42 @@
+---
+permalink: fc-config-esxi/task_verifying_host_can_write_to_read_from_lun.html 
+sidebar: sidebar 
+keywords: lun, verify, write, data, verify that the host can write to and read from the lun 
+summary: 在使用LUN之前、您應該先確認主機可以將資料寫入LUN並讀取回來。 
+---
+= 驗證主機是否可以寫入及讀取LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用LUN之前、您應該先確認主機可以將資料寫入LUN並讀取回來。
+
+.關於這項工作
+如果在其上建立LUN的叢集節點可以容錯移轉至其合作夥伴節點、您應該在節點容錯移轉期間驗證資料的讀取。如果叢集正在正式作業中使用、則可能無法進行此測試。
+
+.步驟
+. 在vSphere Web Client *主頁*上、按一下*主機與叢集*。
+. 在導覽窗格中、按一下「*儲存設備*」索引標籤。
+. 展開資料中心、然後選取新的資料存放區。
+. 在中央窗格中、按一下*管理*>*檔案*。
++
+此時會顯示資料存放區的內容。
+
+. 在資料存放區中建立新資料夾、然後將檔案上傳至新資料夾。
++
+您可能需要安裝用戶端整合外掛程式。
+
+. 請確認您可以存取剛才寫入的檔案。
+. *選用：*容錯移轉包含LUN的叢集節點、並確認您仍可寫入及讀取檔案。
++
+如果任何測試失敗、請確認儲存叢集上的FC服務正在執行、並檢查通往LUN和FC交換器分區的FC路徑。
+
+. *選用：*如果您在叢集節點上容錯移轉、請務必歸還節點、並將所有生命點傳回其主連接埠。
+. 對於ESXi叢集、請從叢集中的每個ESXi主機檢視資料存放區、並驗證是否顯示您上傳的檔案。
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/high-availability/index.html["供應能力組態ONTAP"]

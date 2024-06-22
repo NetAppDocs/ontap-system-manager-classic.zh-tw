@@ -1,0 +1,38 @@
+---
+permalink: nfs-config-esxi/task_deciding_where_to_provision_new_volume.html 
+sidebar: sidebar 
+keywords: create, nfs, volume, exist, configuration, workflow, decide where to provision the new volume 
+summary: 在建立NFS Volume之前、您必須先決定是否要將其放入現有磁碟區、如果是、則必須決定所需的組態量。此決定決定決定您的工作流程。 
+---
+= 決定新磁碟區的資源配置位置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在建立NFS Volume之前、您必須先決定是否要將其放入現有磁碟區、如果是、則必須決定所需的組態量。此決定決定決定您的工作流程。
+
+
+
+== 程序
+
+* 如果您想要新的、請依照您在現有SVM上建立啟用NFS的步驟進行。
++
+link:task_creating_new_nfs_enabled_svm.html["建立新的NFS型SVM"]
+
++
+如果在現有SVM上未啟用NFS、則必須選擇此選項。
+
+* 如果您想要在已啟用NFS但尚未設定的現有磁碟區上配置磁碟區、請遵循設定NFS存取現有SVM的步驟。
++
+link:concept_adding_nfs_access_to_existing_svm.html["設定現有SVM的NFS存取"]
+
++
+如果您遵循此程序來建立SVM、就是這種情況。
+
+* 如果您想要在已完全設定為NFS存取的現有磁碟區上配置磁碟區、請依照您所執行的步驟來驗證現有SVM上的設定。
++
+link:task_verifying_that_nfs_is_enabled_on_existing_svm.html["驗證現有SVM上的設定"]
+
+

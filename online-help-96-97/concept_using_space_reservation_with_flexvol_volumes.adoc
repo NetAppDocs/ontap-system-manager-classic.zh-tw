@@ -1,0 +1,26 @@
+---
+permalink: online-help-96-97/concept_using_space_reservation_with_flexvol_volumes.html 
+sidebar: sidebar 
+keywords: space, reservation, flexvol, volume, online, help 
+summary: 使用空間保留功能、您可以配置FlexVol 不清的資料量。只要目前並未使用所有的儲存設備、精簡配置似乎比特定集合體實際可用的儲存設備還多。 
+---
+= 使用System Manager -更新版本的更新版本-更新版本FlexVol ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在經典版的《經典版》（僅適用於更新版本的版本）中、您可以使用保留空間來配置各種版本。ONTAP ONTAP FlexVol只要目前並未使用所有的儲存設備、精簡配置似乎比特定集合體實際可用的儲存設備還多。
+
+完整資源配置會從集合區配置足夠的儲存空間、以確保磁碟區中的任何區塊都能隨時寫入。
+
+Aggregate可為多個儲存虛擬機器（SVM）所包含的磁碟區提供儲存設備。如果您使用的是精簡配置、而且需要在SVM之間嚴格隔離（例如、如果您在多租戶環境中提供儲存設備）、則應該使用完整配置的磁碟區（完整配置）、或是確保未在租戶之間共享您的集合體。
+
+當保留空間設定為「預設」時、ONTAP 即可套用「還原空間保留」設定至磁碟區。
+
+*相關資訊*
+
+http://www.netapp.com/us/media/tr-3563.pdf["NetApp技術報告3563：NetApp精簡配置以隨需分配來提高儲存使用率"^]
+
+http://www.netapp.com/us/media/tr-3483.pdf["NetApp技術報告3483：NetApp SAN或IP SAN企業環境中的精簡配置"^]

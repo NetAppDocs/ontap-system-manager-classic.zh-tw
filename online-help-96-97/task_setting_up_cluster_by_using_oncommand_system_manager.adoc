@@ -1,0 +1,34 @@
+---
+permalink: online-help-96-97/task_setting_up_cluster_by_using_oncommand_system_manager.html 
+sidebar: sidebar 
+keywords: set, up, cluster, ontap, system, manager, online, help, management, network 
+summary: 從ONTAP 功能介紹9.1開始、您可以透過ONTAP 建立叢集、設定節點管理網路和叢集管理網路、然後設定事件通知、來使用功能介紹系統管理程式來設定叢集。 
+---
+= 使用ONTAP 《不含更新版本的系統管理程式ONTAP 》（《更新版本》）來設定叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來建立叢集、建立叢集、設定節點管理網路和叢集管理網路、然後設定事件通知。
+
+.開始之前
+* 您必須為至少一個節點設定節點管理IP位址。
+* 節點必須處於HA的預設模式。
+* 節點必須執行ONTAP 的是版本不符合要求的版本。
+* 節點必須為相同版本。
+* 所有節點都必須正常運作、而且必須設定節點的纜線。
+* 您的叢集組態必須具備纜線和連線能力。
+* 您必須擁有足夠的叢集管理、節點管理、服務處理器IP位址、以及閘道和網路遮罩詳細資料。
+* 如果連接埠上有叢集介面、則該連接埠必須存在於叢集IPspace中。
+
+
+.關於這項工作
+若要建立叢集、您必須透過主控台登入、然後在叢集網路的任何節點上設定節點管理IP位址。在節點上設定節點管理IP位址之後、您可以使用ONTAP 「靜態系統管理程式」新增其他節點並建立叢集。
+
+不支援MetroCluster 叢集設定作業的各種功能、不適用於ONTAP 支援的各種功能。
+
+您可以使用範本檔案或在叢集設定精靈中手動輸入值來設定叢集。
+
+image::../media/cluster_setup_workflow.gif[叢集設定工作流程]

@@ -1,0 +1,42 @@
+---
+permalink: smb-config/index.html 
+sidebar: sidebar 
+keywords: content, describe, smb, cifs, access, volume, exist, storage, virtual, machine, svm, system manager classic 
+summary: 使用ONTAP 經典的支援功能（ONTAP 例如更新版本的支援功能）、您可以在新的或現有的儲存虛擬機器（SVM）上、快速設定SMB/CIFS存取新磁碟區。 
+---
+= SMB/CIFS組態總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用經典的支援功能（不含更新版本的版本）、您可以在新的或現有的儲存虛擬機器（SVM）上、快速設定對新磁碟區的SMB/CIFS存取。ONTAP ONTAP
+
+如果您想要以下列方式設定對磁碟區的存取權、請使用此程序：
+
+* 您想要使用最佳實務做法、而非探索每個可用選項。
+* 您的資料網路使用預設IPspace、預設廣播網域及預設容錯移轉群組。
++
+如果您的資料網路是扁平的、使用這些預設物件可確保在發生連結故障時、LIF將會正確容錯移轉。如果您不使用預設物件、請參閱 https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理文件"^] 以取得如何設定LIF路徑容錯移轉的資訊。
+
+* NTFS 檔案權限將用於保護新磁碟區的安全。
+
+
+如果您想要瞭解ONTAP 有關各項功能的詳細資訊、請參閱 link:https://docs.netapp.com/us-en/ontap/smb-admin/index.html["SMB參考總覽"^]。
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+|===
+
+
+| 若要執行這些工作... | 請參閱... 
+
+
+| 重新設計的System Manager（ONTAP 提供更新版本的更新版本） | link:https://docs.netapp.com/us-en/ontap/task_nas_provision_windows_smb.html["使用SMB為Windows伺服器配置NAS儲存設備"^] 
+
+
+| 指令行介面ONTAP | link:https://docs.netapp.com/us-en/ontap/smb-config/index.html["使用 CLI 的 SMB 組態概觀"^] 
+|===

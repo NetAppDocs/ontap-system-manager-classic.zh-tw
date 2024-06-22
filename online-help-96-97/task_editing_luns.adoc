@@ -1,0 +1,28 @@
+---
+permalink: online-help-96-97/task_editing_luns.html 
+sidebar: sidebar 
+keywords: edit, lun, properties, online, help, system, manager 
+summary: 您可以使用System Manager中的LUN內容對話方塊來變更LUN的名稱、說明、大小、空間保留設定、或對應的啟動器主機。 
+---
+= 使用System Manager編輯LUN - ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 英文版）中的LUN內容對話方塊（英文版）來變更LUN的名稱、說明、大小、空間保留設定、或對應的啟動器主機。
+
+.關於這項工作
+調整LUN大小時、您必須在主機端執行建議用於主機類型和使用LUN之應用程式的步驟。
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在「* LUN管理*」索引標籤中、從LUN清單中選取您要編輯的LUN、然後按一下「*編輯*」。
+. 進行必要的變更。
+. 按一下*儲存並關閉*。
+
+
+*相關資訊*
+
+xref:reference_luns_window.adoc[LUN視窗]

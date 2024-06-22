@@ -1,0 +1,53 @@
+---
+permalink: nas-multiprotocol-config/index.html 
+sidebar: sidebar 
+keywords: smb, cifs, nfs, access, volume, exist, storage, virtual, machine, svm 
+summary: 您可以在新的或現有的儲存虛擬機器（SVM）上、快速設定對新磁碟區的SMB/CIFS和NFS存取。 
+---
+= SMB與NFS多重傳輸協定組態總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用經典的支援功能（例如更新版本的支援）、您可以在新的或現有的儲存虛擬機器（SVM）上、快速設定SMB和NFS存取新的磁碟區。ONTAP ONTAP
+
+如果您想要以下列方式設定對磁碟區的存取權、請使用此程序：
+
+* NFS存取將透過NFSv3進行、而非NFSv4或NFSv4.1。
+* 您想要使用最佳實務做法、而非探索每個可用選項。
+* 您的資料網路使用預設IPspace、預設廣播網域及預設容錯移轉群組。
++
+如果您的資料網路是扁平的、使用這些預設物件可確保在發生連結故障時、LIF將會正確容錯移轉。如果您不使用預設物件、請參閱 link:https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理"^] 以取得如何設定LIF路徑容錯移轉的資訊。
+
+* LDAP（如果使用）由Active Directory提供。
+
+
+如果您想要瞭解ONTAP 有關支援各種功能的資訊、請參閱下列文件：
+
+* https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["NFS管理"^]
+* https://docs.netapp.com/us-en/ontap/smb-admin/index.html["中小企業管理"^]
+
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+|===
+
+
+| 若要執行這些工作... | 請參閱... 
+
+
+| 重新設計的System Manager（ONTAP 提供更新版本的更新版本） | link:https://docs.netapp.com/us-en/ontap/task_nas_provision_nfs_and_smb.html["同時使用NFS和SMB為Windows和Linux配置NAS儲存設備"^] 
+
+
+| 指令行介面ONTAP | link:https://docs.netapp.com/us-en/ontap/smb-config/index.html["使用 CLI 的 SMB 組態概觀"^]
+
+link:https://docs.netapp.com/us-en/ontap/nfs-config/index.html["使用CLI進行NFS組態總覽"^]
+
+link:https://docs.netapp.com/us-en/ontap/nfs-admin/security-styles-their-effects-concept.html["安全樣式及其影響為何"^]
+
+link:https://docs.netapp.com/us-en/ontap/nfs-admin/case-sensitivity-file-directory-multiprotocol-concept.html["多重傳輸協定環境中檔案和目錄名稱的區分大小寫"^] 
+|===

@@ -1,0 +1,43 @@
+---
+permalink: online-help-96-97/concept_how_volume_guarantees_work_for_flexvol_volumes.html 
+sidebar: sidebar 
+keywords: volume, guarantee, work, flexvol, volume, space, preallocated, aggregate, online, help 
+summary: Volume保證（有時稱為空間保證）可決定如何從包含的Aggregate中配置磁碟區空間、無論空間是否預先配置給磁碟區。 
+---
+= 關於FlexVol 利用System Manager（ONTAP 系統管理程式）提供的大量資料保證、包括更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用FlexVol System Manager Classic（ONTAP 適用於更新版本的版本）來設定適用於等量資料的Volume保證。Volume保證（有時稱為_space保證_）決定如何從包含Aggregate的磁碟區配置空間、無論磁碟區是否預先配置空間。
+
+保證是磁碟區的屬性。
+
+您可以設定建立新磁碟區的保證、也可以變更現有磁碟區的保證、前提是有足夠的可用空間來履行新的保證。
+
+Volume 保證類型可以是 `volume` （預設類型）或 `none`。
+
+* 保證類型 `volume` 建立 Volume 時、無論資料是否使用該空間、都會為整個 Volume 分配集合體中的空間。
++
+無法為該集合體中的任何其他磁碟區提供或配置已配置的空間。
+
+* 保證 `none` 只有在磁碟區需要時、才會從集合中分配空間。
++
+使用此保證類型的磁碟區所耗用的空間量會隨著資料的新增而增加、而非由初始磁碟區大小所決定、如果磁碟區資料不增加到該大小、可能會留下空間未使用。磁碟區的最大大小、保證 `none` 不受其 Aggregate 中可用空間量的限制。與集合體相關聯的所有磁碟區的總大小可能會超過集合體的可用空間量、不過實際可用空間量會受限於集合體的大小。
+
++
+如果包含的Aggregate沒有足夠的可用空間來容納寫入作業、則寫入該磁碟區所包含的LUN或檔案（包括空間保留的LUN和檔案）可能會失敗。
+
+
+
+當集合體中的空間分配給時 `volume` 即使磁碟區尚未使用該空間、仍保證現有磁碟區的可用空間不再被視為集合體中的可用空間。只有在集合中有足夠可用空間時、才能執行會耗用Aggregate可用空間的作業、例如建立Aggregate Snapshot複本或在包含Aggregate中建立新磁碟區；這些作業無法使用已配置給其他磁碟區的空間。
+
+當Aggregate中的可用空間耗盡時、只有寫入該Aggregate中具有預先配置空間的磁碟區或檔案、才能保證成功。
+
+保證僅適用於線上磁碟區。如果您將磁碟區離線、則該磁碟區的任何已配置但未使用的空間、都可用於該集合體中的其他磁碟區。當您嘗試將該磁碟區重新連線時、如果集合體中沒有足夠的可用空間來履行其保證、它將維持離線狀態。您必須強制磁碟區上線、此時磁碟區的保證將會停用。
+
+*相關資訊*
+
+http://www.netapp.com/us/media/tr-3965.pdf["NetApp技術報告3865：NetApp精簡配置部署與實作Data ONTAP 功能VMware 8.1（7-Mode）"^]

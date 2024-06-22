@@ -1,0 +1,53 @@
+---
+permalink: smb-config/task_creating_configuring_volume.html 
+sidebar: sidebar 
+keywords: create, flexvol, volume, data, optional, default, security, style, inherit, root, namespace, storage, virtual, machine, svm, create and configure a volume 
+summary: 您必須建立FlexVol 一個包含資料的功能區。您可以選擇變更磁碟區的預設安全樣式、此樣式是從根磁碟區的安全樣式繼承而來。您也可以選擇性地變更命名空間中磁碟區的預設位置、該名稱空間位於儲存虛擬機器（SVM）的根磁碟區。 
+---
+= 建立及設定磁碟區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須建立FlexVol 一個包含資料的功能區。您可以選擇性地變更磁碟區的預設安全性樣式、此樣式是從根磁碟區的安全性樣式繼承而來。您也可以選擇性地變更命名空間中磁碟區的預設位置、該名稱空間位於儲存虛擬機器（SVM）的根磁碟區。
+
+.步驟
+. 瀏覽至* Volumes *（*磁碟區*）視窗。
+. 按一下「*建立*」>「*建立FlexVol *」。
++
+此時會顯示Create Volume（建立Volume）對話方塊。
+
+. 如果您要變更以日期和時間戳記結尾的預設名稱、請指定新名稱、例如 `vol1`。
+. 選取磁碟區的Aggregate。
+. 指定磁碟區的大小。
+. 按一下「 * 建立 * 」。
++
+在System Manager中建立的任何新磁碟區、預設會以磁碟區名稱作為交會名稱、安裝在根磁碟區。設定CIFS共用時、請使用交會路徑和交會名稱。
+
+. *選用*：如果您不希望磁碟區位於SVM的根目錄、請修改新磁碟區在現有命名空間中的位置：
++
+.. 瀏覽至「*命名空間*」視窗。
+.. 從下拉式功能表中選取* SVM*。
+.. 按一下*掛載*。
+.. 在「*掛載Volume *」對話方塊中、指定要掛載磁碟區的磁碟區、其交會路徑名稱、以及交會路徑。
+.. 驗證「*命名空間*」視窗中的新交會路徑。
+
+
++
+如果您想要在名為「data'」的主磁碟區下組織特定磁碟區、可以將新的Volume「'vol1'」從根磁碟區移至「data'」磁碟區。
+
+. 檢閱磁碟區的安全樣式、並視需要加以變更：
++
+.. 在* Volume *視窗中、選取您剛建立的磁碟區、然後按一下*編輯*。
++
+隨即顯示Edit Volume（編輯Volume）對話方塊、顯示從SVM根磁碟區的安全樣式繼承而來的Volume目前的安全樣式。
+
+.. 確定安全樣式為NTFS。
++
+image::../media/volume_edit_security_style_unix_to_ntfs_smb.gif[此圖形由其周邊文字說明。]
+
+
+
+

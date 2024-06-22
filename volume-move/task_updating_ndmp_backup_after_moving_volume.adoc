@@ -1,0 +1,30 @@
+---
+permalink: volume-move/task_updating_ndmp_backup_after_moving_volume.html 
+sidebar: sidebar 
+keywords: volume, move, tape, ndmp, configuration, moving, baseline, migrate, backup, lif, contain, update ndmp backup after moving a volume 
+summary: 如果您移動的磁碟區先前是使用NDMP在特定組態中備份到磁帶、則在移動磁碟區之後、您可以執行下列其中一項動作、以確保磁碟區繼續成功備份： 建立基準或將備份LIF移轉至包含移動磁碟區的節點。 
+---
+= 移動磁碟區後、請更新NDMP備份
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您移動的磁碟區先前是使用NDMP在特定組態中備份到磁帶、則在移動磁碟區之後、您可以執行下列其中一項動作、以確保磁碟區繼續成功備份： 建立基準或將備份LIF移轉至包含移動磁碟區的節點。
+
+.關於這項工作
+* 僅當備份應用程式不支援叢集感知備份（CAB）擴充、且備份程序使用節點範圍的NDMP時、才需要執行此程序。
++
+如果備份應用程式支援CAD、且設定為使用SVM範圍的NDMP模式、您可以跳過此程序。
+
+* 您只能執行其中一項動作、而不能同時執行這兩項動作。
+
+
+
+
+== 程序
+
+* 從備份應用程式建立新的基礎。
+* 識別為備份程序所設定的LIF、然後將LIF移轉至磁碟區目前所在的節點。
+

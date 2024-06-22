@@ -1,0 +1,16 @@
+---
+permalink: iscsi-config-esxi/concept_iscsi_configuration_provisioning_workflow.html 
+sidebar: sidebar 
+keywords: storage, esx, iscsi, provision, volume, lun, virtual, machine, svm, vmware, host, configuration, workflow, esxi 
+summary: 使用iSCSI將儲存設備提供給ESXi主機時、您可以使用VMware vSphere的Virtual Storage Console在儲存虛擬機器上配置磁碟區和LUN、然後從主機連線至LUN。 
+---
+= iSCSI組態工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用iSCSI將儲存設備提供給ESXi主機時、您可以使用VMware vSphere的虛擬儲存主控台、在儲存虛擬機器（SVM）上配置磁碟區和LUN、然後從主機連線至LUN。
+
+image::../media/iscsi_esx_workflow.gif[此圖為iSCSI工作流程的流程圖。工作流程中的步驟與主題相符。]

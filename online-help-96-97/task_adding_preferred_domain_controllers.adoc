@@ -1,0 +1,58 @@
+---
+permalink: online-help-96-97/task_adding_preferred_domain_controllers.html 
+sidebar: sidebar 
+keywords: system, manager, add, preferred, domain, controller, online, help, dns, edit, modify, delete 
+summary: System Manager會透過DNS自動探索網域控制器。或者、您可以將一個或多個網域控制器新增至特定網域的慣用網域控制器清單。 
+---
+= 使用System Manager（ONTAP 系統管理程式）管理偏好的網域控制器-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來管理偏好的網域控制器。
+
+
+
+== 新增慣用的網域控制器
+
+System Manager會透過DNS自動探索網域控制器。或者、您可以將一個或多個網域控制器新增至特定網域的慣用網域控制器清單。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在「*網域*」標籤中、按一下「*慣用網域控制器*」區域中的「*新增*」。
+. 輸入您要新增之網域控制站的完整網域名稱（FQDN）和IP位址。
++
+您可以輸入網域控制器的IP位址、並以逗號分隔、以新增多個網域控制器。
+
+. 按一下「 * 儲存 * 」。
+. 確認您新增的網域控制器顯示在慣用網域控制器清單中。
+
+
+
+
+== 編輯偏好的網域控制器
+
+您可以使用System Manager來修改為特定網域所設定之慣用網域控制器的IP位址。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*網域*索引標籤的*慣用網域控制站*區域中、按兩下您要編輯的網域控制器。
+. 修改網域控制器的IP位址、然後按一下「*儲存*」。
+
+
+
+
+== 刪除慣用的網域控制器
+
+您可以使用System Manager刪除與儲存虛擬機器（SVM）電腦帳戶相關聯的慣用網域控制器。您可以在不再想使用特定網域控制器時執行此動作。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*網域*索引標籤中、從*偏好的網域控制器*區域選取您要刪除的網域、然後按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+

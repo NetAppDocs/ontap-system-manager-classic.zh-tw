@@ -1,0 +1,14 @@
+---
+permalink: expansion/task_completing_expansion.html 
+sidebar: sidebar 
+keywords: node, cluster, configuring, configure, autosupport, network, expansion, lun, path, complete, complete the expansion 
+summary: 當兩個節點都加入叢集之後、您必須完成AutoSupport 設定、完成更新節點的設定、並完成SP網路的設定。 
+---
+= 完成擴充
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當兩個節點都加入叢集之後、您必須完成AutoSupport 設定、完成更新節點的設定、並完成SP網路的設定。然後驗證擴充的叢集、並產生AutoSupport 一個資訊以完成擴充作業的資訊。如果叢集使用SAN、您應該更新LUN路徑。

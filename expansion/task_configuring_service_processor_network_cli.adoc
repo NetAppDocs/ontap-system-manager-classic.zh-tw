@@ -1,0 +1,70 @@
+---
+permalink: expansion/task_configuring_service_processor_network_cli.html 
+sidebar: sidebar 
+keywords: expand, cluster, configure, service, processor, sp, network, node, manual, network, configuration, automatic, configure the service processor network 
+summary: 擴充叢集之後、您必須在新節點上設定服務處理器網路。 
+---
+= 設定服務處理器網路
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+擴充叢集之後、您必須在新節點上設定服務處理器（SP）網路。如果SP使用手動網路組態、您必須在新節點上設定SP的IP位址。如果SP使用自動網路組態、您必須識別所選的IP位址。
+
+.步驟
+. 如果叢集 SP 使用手動網路組態、請使用在 SP 網路的兩個節點上設定 IP 位址 `system service-processor network modify` 命令。
++
+下列命令可在叢集1-3和叢集1-4節點中設定SP網路：
+
++
+[listing]
+----
+cluster1::> system service-processor network modify -node cluster1-3 -address-family IPv4 -enable true -ip-address 192.168.123.98-netmask 255.255.255.0 -gateway 192.168.123.1
+cluster1::> system service-processor network modify -node cluster1-4 -address-family IPv4 -enable true -ip-address 192.168.123.99 -netmask 255.255.255.0 -gateway 192.168.123.1
+----
+. 使用確認 SP 網路已在兩個新節點上正確設定 `system service-processor network show` 每個節點的命令。
++
+狀態應為 `succeeded`。在所有情況下都需要驗證。即使SP網路已自動設定、您仍應確認已成功設定、而且必須判斷已指派哪些IP位址。
+
++
+下列輸出指出叢集1-3和叢集1-4節點均已成功設定SP網路：
+
++
+[listing]
+----
+cluster1::> system service-processor network show -node cluster1-3
+                             Address
+Node          Status         Family    Link State  IP Address
+------------- -------------- --------- ----------- ------------------------
+cluster1-3    online         IPv4      up          192.168.123.98
+
+                                 DHCP: none
+                          MAC Address: 00:a0:98:43:a1:1e
+                      Network Gateway: 10.60.172.1
+             Network Mask (IPv4 only): 255.255.255.0
+            Prefix Length (IPv6 only): -
+                      IPv6 RA Enabled: -
+                          Subnet Name: -
+              SP Network Setup Status: succeeded
+                                     ...
+
+cluster1::> system service-processor network show -node cluster1-4
+                             Address
+Node          Status         Family    Link State  IP Address
+------------- -------------- --------- ----------- ------------------------
+cluster1-4    online         IPv4      up          192.168.123.99
+
+                                 DHCP: none
+                          MAC Address: 00:a0:98:43:a1:1e
+                      Network Gateway: 10.60.172.1
+             Network Mask (IPv4 only): 255.255.255.0
+            Prefix Length (IPv6 only): -
+                      IPv6 RA Enabled: -
+                          Subnet Name: -
+              SP Network Setup Status: succeeded
+                                     ...
+----
+. 如果您的站台通常有SP網路的DNS項目、請確認已為新節點建立DNS項目。
+

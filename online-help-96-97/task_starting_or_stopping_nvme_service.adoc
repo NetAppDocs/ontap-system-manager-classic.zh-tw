@@ -1,0 +1,24 @@
+---
+permalink: online-help-96-97/task_starting_or_stopping_nvme_service.html 
+sidebar: sidebar 
+keywords: start, stop, nvme, service, online, help, adaptor, namespace 
+summary: NVMe服務可讓您管理NVMe介面卡以搭配命名空間使用。您可以使用System Manager啟動NVMe服務、讓介面卡上線。您可以停止NVMe服務、使NVMe介面卡離線、並停用對命名空間的存取。 
+---
+= 使用System Manager ONTAP （系統管理程式）-支援更新版本的更新版本、以更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於《支援》9.7及更早版本）來啟動NVMe服務、讓介面卡上線。NVMe服務可讓您管理NVMe介面卡以搭配命名空間使用。您可以停止NVMe服務、使NVMe介面卡離線、並停用對命名空間的存取。
+
+.開始之前
+NVMe功能介面卡必須先存在、才能啟動NVMe服務。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*傳輸協定*功能表中、按一下* NVMe *。
+. 視需要按一下* Start*或* Stop *服務。
+

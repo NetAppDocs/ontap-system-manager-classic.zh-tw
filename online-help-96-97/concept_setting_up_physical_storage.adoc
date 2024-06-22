@@ -1,0 +1,14 @@
+---
+permalink: online-help-96-97/concept_setting_up_physical_storage.html 
+sidebar: sidebar 
+keywords: physical, storage, set, up, online, help, disk, node, spare, aggregates 
+summary: 設定實體儲存設備包括將磁碟指派給節點、將備用磁碟歸零、以及建立集合體。 
+---
+= 設定實體儲存設備
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定實體儲存設備包括將磁碟指派給節點、將備用磁碟歸零、以及建立集合體。

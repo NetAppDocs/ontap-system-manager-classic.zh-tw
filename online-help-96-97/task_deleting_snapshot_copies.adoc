@@ -1,0 +1,50 @@
+---
+permalink: online-help-96-97/task_deleting_snapshot_copies.html 
+sidebar: sidebar 
+keywords: delete, snapshot, copy, online, help, system, manager 
+summary: 您可以刪除Snapshot複本、以節省磁碟空間、或使用System Manager來釋放磁碟空間。如果不再需要Snapshot複本、您也可以刪除Snapshot複本。 
+---
+= 使用System Manager刪除Snapshot複本- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以刪除Snapshot複本、以節省磁碟空間、或使用ONTAP 經典版的經典版《經典版》（ONTAP 適用於更新版本的版本）來釋出磁碟空間。如果不再需要Snapshot複本、您也可以刪除Snapshot複本。
+
+.開始之前
+如果您想要刪除忙碌或鎖定的Snapshot複本、您必須從使用Snapshot複本的應用程式中釋出Snapshot複本。
+
+.關於這項工作
+* 如果FlexClone磁碟區使用的是Snapshot複本、則無法刪除父磁碟區中的基礎Snapshot複本。
++
+基礎Snapshot複本是用於建立FlexClone Volume的Snapshot複本。基礎 Snapshot 複本一律會顯示狀態 `busy` 和應用程式相依性 `busy,vclone` 在父Volume中。
+
+* 您無法刪除SnapMirror關係中使用的鎖定Snapshot複本。
++
+Snapshot複本已鎖定、下次更新時必須使用。
+
+* 您無法在SnapLock Snapshot複本到期之前、從以SnapVault 「版本資訊」關係使用的「版本資訊」磁碟區刪除Snapshot複本。
+* 您無法刪除SnapLock 不過期的Snapshot複本（即已提交至WORM狀態）、該複本屬於SnapVault 不一致關係的SDP Volume。
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 展開所需的Volume。
+. 按一下「*顯示更多詳細資料*」連結、即可檢視更多有關磁碟區的資訊。
+. 按一下「* Snapshot Copies *」標籤。
++
+此時會顯示所選磁碟區的可用Snapshot複本清單。
+
+. 選取您要刪除的Snapshot複本。
+. 按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]
+
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]

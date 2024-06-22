@@ -1,0 +1,29 @@
+---
+permalink: online-help-96-97/task_deleting_luns.html 
+sidebar: sidebar 
+keywords: delete, lun, system, manager, online, help, aggregate 
+summary: 您可以使用System Manager刪除LUN、並將LUN所使用的空間傳回包含的集合體或磁碟區。 
+---
+= 使用System Manager刪除LUN - ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來刪除LUN、並將LUN所使用的空間傳回包含的集合體或磁碟區。
+
+.開始之前
+* LUN必須離線。
+* LUN必須從所有啟動器主機取消對應。
+
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在「* LUN管理*」索引標籤中、選取您要刪除的一或多個LUN、然後按一下「*刪除*」。
+. 選取確認核取方塊、然後按一下*刪除*。
+
+
+*相關資訊*
+
+xref:reference_luns_window.adoc[LUN視窗]

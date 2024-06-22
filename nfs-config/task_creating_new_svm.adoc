@@ -1,0 +1,133 @@
+---
+permalink: nfs-config/task_creating_new_svm.html 
+sidebar: sidebar 
+keywords: wizard, process, creating, create, storage, virtual, machine, svm, configuring, configure, domain, name, system, dns, logical, interface, lif, enabling, enable, nis, export, volume, create a new svm with an nfs volume and export 
+summary: 您可以使用精靈來引導您完成建立儲存虛擬機器（SVM）、設定網域名稱系統（DNS）、建立資料邏輯介面（LIF）、啟用NFS、選擇性設定NIS、然後建立及匯出磁碟區的程序。 
+---
+= 使用NFS磁碟區建立新的SVM並匯出
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用精靈來引導您完成建立儲存虛擬機器（SVM）、設定網域名稱系統（DNS）、建立資料邏輯介面（LIF）、啟用NFS、選擇性設定NIS、然後建立及匯出磁碟區的程序。
+
+.開始之前
+* 您的網路必須設定、而且相關的實體連接埠必須連線至網路。
+* 您必須知道SVM將使用下列哪些網路元件：
++
+** 將在該節點上建立資料邏輯介面（LIF）的節點和特定連接埠
+** 要配置資料LIF IP位址的子網路、或是您要指派給資料LIF的特定IP位址（可選）
+** NIS資訊（如果站台使用NIS進行名稱服務或名稱對應）
+
+
+* 子網路必須可路由傳送至所有外部伺服器、這些伺服器是網路資訊服務（NIS）、輕量型目錄存取傳輸協定（LDAP）、Active Directory（AD）和DNS等服務所需的服務。
+* 任何外部防火牆都必須適當設定、才能存取網路服務。
+* AD網域控制器、用戶端和SVM上的時間必須在彼此之間的五分鐘內同步。
+
+
+.步驟
+. 瀏覽至* SVMS*視窗。
+. 按一下*「Create」（建立）。*
+. 在*儲存虛擬機器（SVM）設定*對話方塊中、建立SVM：
++
+.. 指定SVM的唯一名稱。
++
+名稱必須是完整網域名稱（FQDN）、或遵循另一種慣例、確保整個叢集都有獨特的名稱。
+
+.. 選取您擁有授權的所有傳輸協定、即使您不想立即設定所有傳輸協定、也會最終在SVM上使用這些傳輸協定。
++
+如果最終需要CIFS存取、您現在必須選取* CIFS*、以便CIFS和NFS用戶端可以共用相同的資料LIF。
+
+.. 保留預設語言設定、C。utf-8。
++
+[NOTE]
+====
+如果您同時支援NFS和SMB/CIFS用戶端的國際字元顯示、請考慮使用* UTF8MB4*語言代碼、此程式碼可從ONTAP 英文版的更新版本開始提供。
+
+====
++
+此語言由您稍後建立的磁碟區繼承、而且無法變更磁碟區的語言。
+
+.. *選用*：如果您啟用CIFS傳輸協定、請將安全樣式變更為* UNIUNIX*。
++
+選取CIFS傳輸協定時、預設會將安全樣式設定為NTFS。
+
+.. *選用*：選取要包含SVM根磁碟區的根Aggregate。
++
+您為根磁碟區選取的Aggregate不會決定資料磁碟區的位置。在後續步驟中配置儲存設備時、會自動選取資料磁碟區的Aggregate。
+
++
+image::../media/svm_setup_details_unix_selected_nfs.gif[此圖形由周圍的文字說明。]
+
+.. 在「* DNS組態*」區域中、確定預設DNS搜尋網域和名稱伺服器是您要用於此SVM的伺服器。
++
+image::../media/svm_setup_details_dns_nfs.gif[此圖形由周圍的文字說明。]
+
+.. 按一下*提交並繼續*。
+
+
++
+SVM已建立、但尚未設定傳輸協定。
+
+. 在「*設定CIFS/NFS傳輸協定*」頁面的「*資料LIF組態*」區段中、指定用戶端用來存取資料的LIF詳細資料：
++
+.. 從您指定的子網路自動指派IP位址給LIF、或手動輸入位址。
+.. 按一下*瀏覽*、然後選取與LIF相關聯的節點和連接埠。
++
+image::../media/svm_setup_cifs_nfs_page_lif_multi_nas_nfs.gif[此圖形由其周邊文字說明。]
+
+
+
+. 如果* NIS組態*區域已收合、請將其展開。
+. 如果站台使用NIS進行名稱服務或名稱對應、請指定NIS伺服器的網域和IP位址。
++
+image::../media/svm_setup_cifs_nfs_page_nis_area_nfs.gif[此圖形由周圍的文字說明。]
+
+. 建立及匯出用於NFS存取的磁碟區：
++
+.. 對於*匯出名稱*、請輸入匯出名稱和磁碟區名稱的開頭。
+.. 指定要包含檔案的磁碟區大小。
++
+image::../media/svm_setup_cifs_nfs_page_nfs_export_nfs.gif[設定NFS匯出區域的快照]
+
++
+您不需要為磁碟區指定集合體、因為它會自動位於具有最大可用空間的集合體上。
+
+.. 在*權限*欄位中、按一下*變更*、然後指定允許NFSv3存取UNIX管理主機的匯出規則、包括進階使用者存取權。
++
+image::../media/export_rule_for_admin_manual_nfs_nfs.gif[此影像由周邊文字說明。]
+
+
+
++
+您可以建立名為Eng的10 GB磁碟區、將其匯出為Eng、並新增規則、讓「admin_host'」用戶端能夠完整存取匯出內容、包括超級使用者存取權。
+
+. 按一下*提交並繼續*。
++
+將會建立下列物件：
+
++
+** 以SVM命名的資料LIF、其後置為「`_NFs_lif1'」
+** NFS伺服器
+** 位於集合體上的磁碟區具有最大可用空間、名稱與匯出名稱相符、結尾為「`_nfs_volume」
+** Volume的匯出
+** 與匯出名稱相同的匯出原則
+
+
+. 對於顯示的所有其他傳輸協定組態頁面、請按一下*跳過*、稍後再設定傳輸協定。
+. 顯示「* SVM管理*」頁面時、請設定或延後設定此SVM的個別管理員：
++
+** 按一下「*跳過*」、然後視需要稍後設定系統管理員。
+** 輸入要求的資訊、然後按一下*提交並繼續*。
+
+
+. 查看* Summary（摘要）*頁面、記下您稍後可能需要的任何資訊、然後按一下* OK（確定）*。
++
+NFS用戶端需要知道資料LIF的IP位址。
+
+
+
+.結果
+使用NFS伺服器建立新的SVM、其中包含匯出給系統管理員的新Volume。

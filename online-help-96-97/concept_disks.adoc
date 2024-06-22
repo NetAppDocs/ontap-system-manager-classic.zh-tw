@@ -1,0 +1,22 @@
+---
+permalink: online-help-96-97/concept_disks.html 
+sidebar: sidebar 
+keywords: system, manager, disk, manage, online, help 
+summary: 您可以使用System Manager來管理磁碟。 
+---
+= 使用System Manager管理磁碟- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來管理磁碟。
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["磁碟與Aggregate管理"^]
+
+https://docs.netapp.com/ontap-9/topic/com.netapp.doc.vs-irrg/home.html["介紹虛擬化安裝需求與參考資料FlexArray"^]
+
+https://docs.netapp.com/us-en/ontap/concepts/index.html["概念ONTAP"^]

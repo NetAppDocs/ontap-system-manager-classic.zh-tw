@@ -1,0 +1,138 @@
+---
+permalink: online-help-96-97/task_provisioning_cache_by_adding_disks.html 
+sidebar: sidebar 
+keywords: ssd, system, manager, storage, pool, root, aggregate, provision, cache, online, help, ssd, disks, flash, pool 
+summary: 您可以使用System Manager將SSD新增為儲存資源池或專用SSD來配置快取。藉由新增SSD、您可以將不含分割磁碟的非根Aggregate或根Aggregate轉換成Flash Pool Aggregate、或是增加現有Flash Pool Aggregate的快取大小。 
+---
+= 使用System Manager新增SSD來配置快取- ONTAP 不含更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版《支援功能》ONTAP （適用於支援功能更新版本的版本）、將SSD新增為儲存資源池或專用SSD來配置快取。藉由新增SSD、您可以將不含分割磁碟的非根Aggregate或根Aggregate轉換成Flash Pool Aggregate、或是增加現有Flash Pool Aggregate的快取大小。
+
+.關於這項工作
+* 新增的SSD快取不會增加Aggregate的大小、您也可以將SSD RAID群組新增至Aggregate、即使該群組的大小為最大值。
+* 使用System Manager新增快取時、您無法使用已分割的SSD。
+
+
+
+
+== 透過新增SSD來配置快取以集合體
+
+您可以使用System Manager將現有的非根HDD Aggregate或不含分割磁碟的根Aggregate轉換成Flash Pool Aggregate、藉此新增儲存資源池或專用SSD來配置快取。
+
+.開始之前
+* Aggregate必須在線上。
+* 儲存資源池中必須有足夠的備用SSD或配置單元、才能指派為快取磁碟。
+* 叢集中的所有節點都必須執行ONTAP 不含更新版本的功能。
++
+如果叢集處於混合版本狀態、您可以使用命令列介面建立Flash Pool Aggregate、然後配置SSD快取。
+
+* 您必須識別由HDD組成的有效64位元非根Aggregate、這些HDD可轉換為Flash Pool Aggregate。
+* Aggregate不得包含任何陣列LUN。
+
+
+.關於這項工作
+您必須瞭解Flash Pool Aggregate SSD層級大小與組態的平台專屬與工作負載專屬最佳實務做法。
+
+.步驟
+. 請選擇下列其中一種方法：
++
+** 按一下*應用程式與層級*>*儲存層級*。
+** 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+
+
+. 在* Storage Tiers*視窗中、選取Aggregate、然後按一下*更多動作*>*新增快取*。
++
+[NOTE]
+====
+啟用FabricPool的Aggregate不支援新增快取。
+
+====
+. 在「*新增快取*」對話方塊中、執行適當的動作：
++
+|===
+| 如果您選取快取來源為... | 執行此動作... 
+
+
+ a| 
+儲存資源池
+ a| 
+.. 選取可從中取得快取的儲存資源池。
+.. 指定快取大小。
+.. 如有必要、請修改RAID類型。
+
+
+
+
+ a| 
+專屬SSD
+ a| 
+選取SSD大小和要納入的SSD數量、並選擇性修改RAID組態：
+
+.. 按一下 * 變更 * 。
+.. 在「變更RAID組態」對話方塊中、指定RAID類型和RAID群組大小、然後按一下「*儲存*」。
+
+
+|===
+. 按一下「 * 新增 * 」。
++
+對於鏡射Aggregate、會顯示* Add Cache（新增快取）*對話方塊、其中會顯示所選磁碟數目的兩倍資訊。
+
+. 在「*新增快取*」對話方塊中、按一下「*是*」。
+
+
+.結果
+快取磁碟會新增至選取的Aggregate。
+
+
+
+== 新增SSD來增加Flash Pool Aggregate的快取
+
+您可以使用System Manager將SSD新增為儲存資源池或專用SSD、以增加Flash資源池集合體的大小。
+
+.開始之前
+* Flash Pool Aggregate必須在線上。
+* 儲存資源池中必須有足夠的備用SSD或配置單元、才能指派為快取磁碟。
+
+
+.步驟
+. 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+. 在* Aggregate *視窗中、選取Flash Pool Aggregate、然後按一下*「Add Cache」（新增快取）*。
+. 在「*新增快取*」對話方塊中、執行適當的動作：
++
+|===
+| 如果您選取快取來源為... | 執行此動作... 
+
+
+ a| 
+儲存資源池
+ a| 
+選取可從中取得快取的儲存資源池、然後指定快取大小。
+
+
+
+ a| 
+專屬SSD
+ a| 
+選取SSD大小和要納入的SSD數量。
+
+|===
+. 按一下「 * 新增 * 」。
++
+對於鏡射Aggregate、會顯示「新增快取」對話方塊、其中所選磁碟數目將增加兩倍。
+
+. 在「*新增快取*」對話方塊中、按一下「*是*」。
+
+
+.結果
+快取磁碟會新增至所選的Flash Pool Aggregate。
+
+*相關資訊*
+
+http://www.netapp.com/us/media/tr-4070.pdf["NetApp技術報告4070：Flash Pool設計與實作"^]
+
+xref:concept_how_storage_pool_works.adoc[儲存資源池的運作方式]

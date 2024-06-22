@@ -1,0 +1,39 @@
+---
+permalink: online-help-96-97/task_restoring_volume_from_snapshot_copy.html 
+sidebar: sidebar 
+keywords: restore, volume, snapshot, copy, system, manager, online, help 
+summary: 您可以使用System Manager將磁碟區還原至先前建立的Snapshot複本中記錄的狀態、以擷取遺失的資訊。從Snapshot複本還原磁碟區時、還原作業會覆寫現有的磁碟區組態。建立Snapshot複本之後、對磁碟區中資料所做的任何變更都會遺失。 
+---
+= 使用System Manager ONTAP 還原Snapshot複本的磁碟區-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版功能》（ONTAP 適用於更新版本的版本）、將磁碟區還原至先前建立的Snapshot複本中記錄的狀態、以擷取遺失的資訊。從Snapshot複本還原磁碟區時、還原作業會覆寫現有的磁碟區組態。建立Snapshot複本之後、對磁碟區中資料所做的任何變更都會遺失。
+
+.開始之前
+* 必須在您的系統上安裝此功能的認證。SnapRestore
+* 如果FlexVol 您要還原的實體磁碟區包含LUN、則必須卸載或取消對應LUN。
+* 還原的磁碟區必須有足夠的可用空間。
+* 存取磁碟區的使用者必須收到通知、告知您要回復磁碟區、所選Snapshot複本中的資料會取代磁碟區中的目前資料。
+
+
+.關於這項工作
+* 如果您還原的磁碟區包含其他磁碟區的交會點、則這些交會點上掛載的磁碟區將不會還原。
+* 您無法還原SnapLock 適用於不符合需求磁碟區的Snapshot複本。
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要從Snapshot複本還原的磁碟區。
+. 單擊*更多操作*>*管理快照*>*還原*。
+. 選取適當的Snapshot複本、然後按一下*還原*。
+. 選取確認核取方塊、然後按一下*還原*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

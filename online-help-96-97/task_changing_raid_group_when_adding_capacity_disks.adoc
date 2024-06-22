@@ -1,0 +1,46 @@
+---
+permalink: online-help-96-97/task_changing_raid_group_when_adding_capacity_disks.html 
+sidebar: sidebar 
+keywords: change, raid, group, add, capacity, disk, online, help, hdd 
+summary: 將容量磁碟（HDD）新增至Aggregate時、您可以使用System Manager變更要新增磁碟的RAID群組。 
+---
+= 使用System Manager（系統管理程式）更新容量磁碟時、請變更RAID群組- ONTAP zx9.7及更早版本
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在將容量磁碟（HDD）新增至Aggregate時、您可以使用ONTAP 經典版的經典版（ONTAP 可在更新版本的版本上使用）來變更您要新增磁碟的RAID群組。
+
+.關於這項工作
+* 如果 RAID 類型是 RAID-DP 、而且您要新增大小等於或大於 10 TB 的 FSA 或 mSATA 類型磁碟、則只能將它們新增至 `Specific RAID group`、而非 `New RAID group` 或 `All RAID groups`。
++
+磁碟會在將磁碟大小縮減為現有集合體大小之後新增。
+
+* 如果 RAID 群組是 RAID-TEC 、而且您要新增大小等於或大於 10 TB 的 FSA 或 mSATA 類型磁碟、則可以將它們新增至 `All RAID groups`、 `New RAID group`和 `Specific RAID group`。
++
+磁碟會在將磁碟大小縮減為現有集合體大小之後新增。
+
+
+
+.步驟
+. 請選擇下列其中一種方法：
++
+** 按一下*應用程式與層級*>*儲存層級*。
+** 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+
+
+. 在* Storage Tiers*視窗中、選取您要新增容量磁碟的集合體、然後按一下功能表：More Actions（更多動作）[ Add Capacity（新增容量）]。
+. 在「*新增容量*」對話方塊中、執行下列步驟：
++
+.. 按一下 * 變更 * 。
+.. 在「*變更RAID組態*」對話方塊中、指定您要新增容量磁碟的RAID群組。
++
+您可以變更預設值 `All RAID groups` 至任一種 `Specific RAID group` 或 `New RAID group`。
+
+.. 按一下「 * 儲存 * 」。
+
+
+

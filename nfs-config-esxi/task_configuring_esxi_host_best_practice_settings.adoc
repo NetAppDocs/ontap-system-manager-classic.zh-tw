@@ -1,0 +1,26 @@
+---
+permalink: nfs-config-esxi/task_configuring_esxi_host_best_practice_settings.html 
+sidebar: sidebar 
+keywords: ensure, esxi, practice, setting, correct, host, loss, nfs, connection, storage, configure, configure the esxi host best practice settings 
+summary: 您必須確保ESXi主機的最佳實務做法設定正確、以便ESXi主機能夠正確管理NFS連線或儲存設備的遺失。 
+---
+= 設定ESXi主機最佳實務做法設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須確保ESXi主機的最佳實務做法設定正確、以便ESXi主機能夠正確管理NFS連線或儲存設備的遺失。
+
+.步驟
+. 在VMware vSphere Web Client *主頁*中、按一下* vCenter*>* hostes*。
+. 在主機上按一下滑鼠右鍵、然後選取「*動作*>* NetApp VSC*>*設定建議值*」。
+. 在「* NetApp建議設定*」對話方塊中、確定已選取所有選項、然後按一下「*確定*」。
++
+MPIO設定不適用於NFS。不過、如果您使用其他通訊協定、則應確保已選取所有選項。
+
++
+vCenter Web Client會顯示工作進度。
+
+

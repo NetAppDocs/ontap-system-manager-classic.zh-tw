@@ -1,0 +1,34 @@
+---
+permalink: online-help-96-97/task_creating_snapshot_copies_outside_defined_schedule.html 
+sidebar: sidebar 
+keywords: create, snapshot, copy, outside, defined, schedule, online, help, system, manager 
+summary: 您可以使用System Manager在定義的排程之外建立磁碟區的Snapshot複本、以在特定時間點擷取檔案系統的狀態。 
+---
+= 使用System Manager ONTAP - NetApp 9.7及更早版本、在定義的排程之外建立Snapshot複本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於不含更新版本的版本）來建立磁碟區的Snapshot複本、使其超出定義的排程、以便在特定時間點擷取檔案系統的狀態。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 從磁碟區清單中選取磁碟區。
+. 單擊*更多操作*>*管理快照*>*創建*。
+. 在「*建立Snapshot Copy*」對話方塊中、如果您要變更預設名稱、請為Snapshot複本指定新名稱。
++
+有效字元包括：Ascii字元、數字、連字號（-）、底線（_）、句點（.）和加號（+）。
+
++
+Snapshot複本的預設名稱是由磁碟區名稱和時間戳記所組成。
+
+. 按一下「 * 建立 * 」。
+. 驗證您所建立的Snapshot複本是否包含在「* Snapshot Copies *（* Snapshot複本*）」標籤的Snapshot複本清單中。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

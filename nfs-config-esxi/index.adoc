@@ -1,0 +1,38 @@
+---
+permalink: nfs-config-esxi/index.html 
+sidebar: sidebar 
+keywords: nfs, access, esxi, host, datastores, ontap, volume, configuration, overview, vsc 
+summary: 使用ONTAP 經典的《SESSSystem Manager》介面ONTAP （更新版本為esx9.7）、您可以使用ONTAP VMware Volume快速設定ESXi主機對資料存放區的NFS存取。 
+---
+= 使用 VSC 概述的 ESXi NFS 組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用ONTAP 經典的《SESSSystem Manager》介面ONTAP （更新版本為esx9.7）、您可以使用ONTAP VMware Volume快速設定ESXi主機對資料存放區的NFS存取。
+
+如果發生下列情況、請使用此程序：
+
+* 您正在使用VMware vSphere（VSC）支援的虛擬儲存主控台版本來配置資料存放區並建立磁碟區。
++
+** 從VSC 7.0開始、VSC就是的一部分 https://docs.netapp.com/us-en/ontap-tools-vmware-vsphere/index.html["VMware vSphere適用的VMware工具ONTAP"^] 虛擬應用裝置、包括VSC、適用於儲存感知（VASA）供應商的vStorage API、以及適用於VMware vSphere功能的儲存複寫介面卡（SRA）。
+** 請務必檢查 https://imt.netapp.com/matrix/["NetApp 互通性對照表工具"^] 以確認您目前ONTAP 的更新版本與VSC版本之間的相容性。
+
+
+* 您的資料網路使用預設IPspace、預設廣播網域及預設容錯移轉群組。
++
+如果您的資料網路是扁平的、這些預設物件會規定當連結失敗時、LIF將會正確容錯移轉。如果您不使用預設物件、請參閱 https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理"^] 以取得如何設定LIF路徑容錯移轉的相關資訊。
+
+* 您想要使用適用於VMware VAAI的外掛程式。
++
+** 適用於陣列整合的VMware vStorage API（VAAI）可讓您執行複本卸載和空間保留。VMware VAAI的外掛程式使用此功能來改善主機效能、因為作業不需要經過ESXi主機、因此可利用ONTAP 在VMware中進行節省空間與時間的複製。
+** 使用VMware VAAI進行資料存放區資源配置是最佳實務做法。
+** 您可以從取得適用於VMware VAAI的NFS外掛程式 https://mysupport.netapp.com/site/global/dashboard["NetApp支援"^] 網站。
+
+
+* NFS存取將透過NFSv3和NFSv4與VMware VAAI搭配使用。
+
+
+如需詳細資訊、請參閱 https://docs.netapp.com/us-en/netapp-solutions/virtualization/vsphere_ontap_ontap_for_vsphere.html["TR-4597：VMware vSphere ONTAP for VMware"^] 以及VSC版本的文件。

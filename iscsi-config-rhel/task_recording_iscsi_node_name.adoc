@@ -1,0 +1,27 @@
+---
+permalink: iscsi-config-rhel/task_recording_iscsi_node_name.html 
+sidebar: sidebar 
+keywords: record, iscsi, initiator, node, linux, host, configure, storage, system, record the iscsi node name 
+summary: 您必須在Linux主機上記錄iSCSI啟動器節點名稱、以便在設定儲存系統時取得。 
+---
+= 記錄iSCSI節點名稱
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須在Linux主機上記錄iSCSI啟動器節點名稱、以便在設定儲存系統時取得。
+
+.步驟
+. 使用文字編輯器開啟 `/etc/iscsi/initiatorname.iscsi` 包含節點名稱的檔案。
+. 記下節點名稱、或將其複製到文字檔。
++
+iSCSI啟動器節點名稱如下所示：
+
++
+[listing]
+----
+iqn.1994-05.com.redhat:127
+----
+

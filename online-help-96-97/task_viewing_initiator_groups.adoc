@@ -1,0 +1,21 @@
+---
+permalink: online-help-96-97/task_viewing_initiator_groups.html 
+sidebar: sidebar 
+keywords: view, initiator, group, lun, system, manager, online, help 
+summary: 您可以使用System Manager中的「啟動器群組」索引標籤來檢視所有啟動器群組和對應至這些啟動器群組的啟動器、以及對應至啟動器群組的LUN和LUN ID。 
+---
+= 使用System Manager檢視啟動器群組ONTAP -更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 《經典版*系統管理程式》（ONTAP 適用於更新版本的版本）中的「*啟動器群組*」索引標籤、來檢視所有對應至這些啟動器群組的啟動器群組和啟動器、以及對應至啟動器群組的LUN和LUN ID。
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 按一下*啟動器群組*、然後檢閱上方窗格中列出的啟動器群組。
+. 選取啟動器群組以檢視屬於該群組的啟動器、這些啟動器會列在下方窗格的*啟動器*索引標籤中。
+. 選取啟動器群組以檢視對應至該群組的LUN、這些LUN會列在下方窗格的*對應LUN*中。
+

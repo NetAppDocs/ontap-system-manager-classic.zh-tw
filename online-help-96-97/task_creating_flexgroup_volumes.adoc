@@ -1,0 +1,111 @@
+---
+permalink: online-help-96-97/task_creating_flexgroup_volumes.html 
+sidebar: sidebar 
+keywords: create, flexgroup, volume, online, help, system, manager 
+summary: 一個包含多個Volume的資料、可以以群組的形式進行管理、而非個別管理。FlexGroup您可以FlexGroup 使用System Manager選取特定的Aggregate或選取系統建議的Aggregate、來建立一個流通量。 
+---
+= 利用FlexGroup System Manager建立包含ONTAP 更新版本的功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅供參考）功能、FlexGroup 透過選取特定的集合體或選取系統建議的集合體、來建立一個《經典版》（僅供參考）。一個包含多個Volume的資料、可以以群組的形式進行管理、而非個別管理。FlexGroup
+
+.關於這項工作
+* 您只能建立讀寫（RW）FlexGroup 的不完整資料。
+* 從System Manager 9.6開始、您可以用FlexGroup 一套功能組態來建立不全的功能。MetroCluster
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 按一下「*建立*」>「*建立FlexGroup *」。
+. 在* Create FlexGroup S還原*視窗中、指定FlexGroup 一個名稱作為該功能的名稱。
++
+根據預設、會根據最佳實務做法來選取集合體。
+
+. 按一下「** Volume Encryption**（* Volume加密）」按鈕以啟用磁碟區的加密功能。
++
+此選項僅在您已啟用Volume Encryption授權、且對應的平台支援加密時可用。
+
++
+開啟磁碟區加密可能會影響所選集合體加密後的跨磁碟區儲存效率。
+
+. 指定FlexGroup 一個大小以供使用。
++
+[NOTE]
+====
+您也必須指定測量單位。
+
+====
+. 啟用* FabricPool 《*》（*）切換按鈕、在FabricPool 《*》（《*》）中使用「*」功能。FlexGroup
++
+** 啟用* FabricPool 支援*時、您可以從下拉式功能表的下列選項中選取分層原則：
++
+*** *僅Snapshot *
++
+僅移動目前未被作用中檔案系統參照的磁碟區之Snapshot複本。純快照原則是預設的分層原則。
+
+*** *自動*
++
+將非作用中（冷）資料和Snapshot複本從作用中檔案系統移至雲端層。
+
+*** *備份（適用於System Manager 9.5）*
++
+將新傳輸的資料保護（DP）磁碟區資料移至雲端層。
+
+*** *全部（從System Manager 9.6開始）*
++
+將所有資料移至雲端層。
+
+*** *無*
++
+防止磁碟區上的資料移至雲端層。
+
+
+
+** 如果您將* FabricPool 支援*保留在「Not enabled」（未啟用）位置、則建立FlexGroup 的支援區僅會包含非FabricPool Aggregate、而且分層原則設定為「無」。
+** 如果FabricPool SVM中不存在任何SVM集合體、則* FabricPool SSI*會顯示在「Not enabled」（未啟用）位置、無法變更。
+** 如果FabricPool SVM中只有支援區、則「FabricPool 已啟用」位置會顯示* SSIgregate按鈕、無法變更。
+
+
+. 如果您要指定特定的Aggregate、請按一下 image:../media/advanced_options.gif[""] （進階選項）。
++
+根據最佳實務做法、預設會選取與FlexGroup 您所建立之「聲音區」相關的集合體。它們顯示在* Aggregate *標籤旁。
+
+. 在* Protection（保護）*區段中、執行下列動作：
++
+.. 啟用* Volume Protection *選項。
+.. 選擇* Replication *類型。
++
+[NOTE]
+====
+不支援FlexGroup *同步*複寫類型的功能。
+
+====
+.. 如果您不知道複寫類型和關聯類型、請按一下*「Help Me Choose *（協助我選擇*）」。
++
+*** 指定值、然後按一下「*套用*」。
++
+複寫類型和關係類型會根據指定的值自動選取。
+
+
+
+.. 選取關係類型。
++
+關係類型可以是鏡射、資料保險箱或鏡射及資料保險箱。
+
+.. 為目的地Volume選取叢集和SVM。
++
+如果所選叢集執行ONTAP 的是版本早於ONTAP 版本的更新版本、則只會列出已執行的SVM。如果選取的叢集執行ONTAP 的是Sfe9.3或更新版本、則會列出已執行的SVM和允許的SVM。
+
+.. 視需要修改Volume名稱後置字元。
+
+
+. 按一下*「Create」（建立）*以建立FlexGroup 此功能。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

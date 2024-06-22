@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/task_provisioning_basic_template.html 
+sidebar: sidebar 
+keywords: sap, hana, provisioning, basic, template, online, help, system, manager 
+summary: 您可以使用System Manager快速配置SAP HANA的基本範本。 
+---
+= 使用System Manager配置基本範本- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來快速配置SAP HANA的基本範本。
+
+.關於這項工作
+身為叢集管理員、您可以設定基本範本來配置應用程式。此範例說明如何設定* SAP HANA Server*。
+
+.步驟
+. 按一下*應用程式與層級*>*應用程式*
+. 在「*基礎*」索引標籤中、選取「* SAP HANA Server*」範本。
+. 在「**資料庫詳細資料**」區段中、指定下列項目：
++
+** 資料庫名稱
+** 資料庫大小
+** 記錄檔大小
+** Tempdb大小
+** 伺服器核心數
+** 跨HA控制器附註
+
+
+. 按一下*資源配置儲存設備*
+
+
+.結果
+SAP HANA伺服器應用程式已配置完成。
+
+*相關資訊*
+
+link:reference_application_provisioning_settings.html["如需欄位說明、請參閱應用程式資源配置設定"]

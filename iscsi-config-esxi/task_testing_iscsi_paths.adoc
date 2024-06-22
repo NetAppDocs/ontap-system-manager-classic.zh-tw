@@ -1,0 +1,40 @@
+---
+permalink: iscsi-config-esxi/task_testing_iscsi_paths.html 
+sidebar: sidebar 
+keywords: storage, failover, data, mobility, path, host, node, cluster, advertise, iscsi, ping, host, test, test iscsi paths from the host to the storage cluster 
+summary: 為了確保成功的儲存容錯移轉和資料移動性、您必須確保從主機到儲存叢集中每個節點的路徑都有兩條。由於iSCSI目標通告的路徑數量有限、因此您需要從主機ping儲存叢集連接埠。 
+---
+= 測試從主機到儲存叢集的iSCSI路徑
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+為了確保成功的儲存容錯移轉和資料移動性、您必須確保從主機到儲存叢集中每個節點的路徑都有兩條。由於iSCSI目標通告的路徑數量有限、因此您需要從主機ping儲存叢集連接埠。
+
+.開始之前
+您必須知道要用於iSCSI路徑的所有邏輯介面（LIF）的IP位址或主機名稱。
+
+.關於這項工作
+LUN會對應到igroup中啟動器的子集、以限制從主機到LUN的路徑數量。
+
+* 根據預設、主機只能看到從主機到包含建立LUN之儲存虛擬機器（SVM）的節點的路徑、以及通往該節點HA合作夥伴的路徑。
+* 您仍必須建立並測試從主機到叢集中每個節點的路徑、但主機只能存取所屬節點及其HA合作夥伴上的路徑。
+* 您應該使用預設的LUN對應行為。
++
+只能將其他HA配對中的節點新增至LUN對應、以便將LUN移至其他節點。
+
+
+
+.步驟
+. 在 ESXi 主機上、使用 `ping` 用於驗證第一個 LIF 路徑的命令。
++
+。 `ping` 命令可從 ESXi 服務主控台取得。
+
+. 重複執行 `ping` 用於驗證與叢集中每個節點上每個 iSCSI LIF 的連線能力的命令。
+
+
+*相關資訊*
+
+http://kb.vmware.com/kb/1003486["VMware知識庫文章1003486：使用ping命令測試網路連線能力"]

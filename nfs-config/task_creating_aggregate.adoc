@@ -1,0 +1,30 @@
+---
+permalink: nfs-config/task_creating_aggregate.html 
+sidebar: sidebar 
+keywords: exist, aggregate, physical, storage, volume, provision, create, create an aggregate 
+summary: 如果您不想使用現有的Aggregate、可以建立新的Aggregate、為您要配置的磁碟區提供實體儲存設備。 
+---
+= 建立Aggregate
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不想使用現有的Aggregate、可以建立新的Aggregate、為您要配置的磁碟區提供實體儲存設備。
+
+.關於這項工作
+如果現有的Aggregate想要用於新磁碟區、您可以跳過此程序。
+
+.步驟
+. 輸入 URL `+https://IP-address-of-cluster-management-LIF+` 在網頁瀏覽器中、使用叢集管理員認證登入 System Manager 。
+. 瀏覽至* Aggregate *視窗。
+. 按一下*「Create」（建立）。*
+. 依照畫面上的指示、使用預設RAID-DP組態建立Aggregate、然後按一下*「Create」（建立）*。
++
+image::../media/aggregate_creation_nfs.gif[在System Manager中建立Aggregate畫面]
+
+
+
+.結果
+此Aggregate會以指定的組態建立、並新增至Aggregate視窗中的Aggregate清單。

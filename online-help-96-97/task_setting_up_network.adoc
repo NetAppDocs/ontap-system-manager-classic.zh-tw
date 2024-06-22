@@ -1,0 +1,146 @@
+---
+permalink: online-help-96-97/task_setting_up_network.html 
+sidebar: sidebar 
+keywords: set, up, network, cluster, node, service, processor, dns, ntp, online, help 
+summary: 透過設定網路、您可以管理叢集、節點和服務處理器。您也可以使用網路視窗來設定DNS和NTP詳細資料。 
+---
+= 使用System Manager（ONTAP 系統管理程式）設定網路-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以透過ONTAP 設定網路、使用經典版的經典版《支援功能》ONTAP （適用於支援功能的更新版本）來管理叢集、節點和服務處理器。您也可以使用網路視窗來設定DNS和NTP詳細資料。
+
+.開始之前
+您必須已設定叢集。
+
+.關於這項工作
+* 只有已啟動並執行的節點才會列出來建立叢集。
++
+您可以為這些節點建立lifs。
+
+* 您可以停用IP位址範圍、並輸入個別的IP位址、以供叢集管理、節點管理及服務處理器管理網路使用。
+
+
+
+
+== 啟用IP位址範圍時、請設定網路
+
+您可以啟用IP位址範圍來設定網路。IP位址範圍可讓您輸入相同網路遮罩範圍或不同網路遮罩範圍內的IP位址。
+
+.步驟
+. 在「* IP位址範圍*」欄位中輸入IP位址範圍、然後按一下「*套用*」。
++
+|===
+| 選項 | 說明 
+
+
+ a| 
+您在同一個網路遮罩中有一系列的IP位址
+ a| 
+輸入IP位址範圍、然後按一下「*套用*」。
+
+IP位址會依序套用至叢集管理、節點管理和服務處理器管理網路。
+
+
+
+ a| 
+您在不同的網路遮罩中有一系列IP位址
+ a| 
+在單獨一行輸入每個IP位址範圍、然後按一下*「Apply」（套用）*。
+
+套用至叢集管理和其他IP位址的第一個IP位址會依序套用至節點管理和服務處理器管理網路。
+
+|===
++
+[NOTE]
+====
+在輸入用於叢集管理、節點管理和服務處理器管理的IP位址範圍之後、您不得手動修改這些欄位中的IP位址值。您必須確保所有IP位址都是IPV4位址。
+
+====
+. 輸入網路遮罩和閘道詳細資料。
+. 在「*連接埠*」欄位中選取叢集管理的連接埠。
+. 如果節點管理中的「*連接埠*」欄位未填入* e0M*、請輸入連接埠詳細資料。
++
+[NOTE]
+====
+依預設、「連接埠」欄位會顯示e0M。
+
+====
+. 對於服務處理器管理、如果您要覆寫預設值、請確定您已輸入必要的閘道詳細資料。
+. 如果您已啟用「* DNS詳細資料*」欄位、請輸入DNS伺服器詳細資料。
+. 如果您已啟用「 *NTP 詳細資料 * 」欄位、請輸入 NTP 伺服器詳細資料。
++
+[NOTE]
+====
+提供替代的NTP伺服器詳細資料是選擇性的。
+
+====
+. 按一下*提交*。
+
+
+
+
+=== 接下來該怎麼做
+
+在「Support（支援）」頁面中輸入事件通知、以繼續進行叢集設定。
+
+
+
+== 在停用IP位址範圍時設定網路
+
+您可以停用IP位址範圍、並輸入個別IP位址來設定網路、以進行叢集管理、節點管理及服務供應商網路。
+
+.關於這項工作
+在「網路」頁面中、如果* IP位址範圍*已停用、請輸入叢集管理、節點管理和服務處理器網路的個別IP位址。
+
+.步驟
+. 在*叢集管理IP位址*欄位中輸入叢集管理IP位址。
+. 輸入叢集管理的網路遮罩詳細資料。
+. *選用：*輸入叢集管理的閘道詳細資料。
+. 在「*連接埠*」欄位中選取叢集管理的連接埠。
+. 如果要提供網路遮罩和閘道詳細資料來管理節點、請清除「叢集管理*的*保留網路遮罩和閘道組態」核取方塊、然後輸入網路遮罩和閘道詳細資料。
+. 在「*節點管理*」欄位中輸入節點管理IP位址。
+. 如果節點管理中的「*連接埠*」欄位未填入* e0M*、請輸入連接埠詳細資料。
++
+[NOTE]
+====
+依預設、「連接埠」欄位會顯示e0M。
+
+====
+. 輸入服務處理器管理網路遮罩和閘道詳細資料。
+. 在*服務處理器管理*欄位中輸入服務處理器IP管理位址。
+. 如果您已啟用「* DNS詳細資料*」欄位、請輸入DNS伺服器詳細資料。
+. 如果您已啟用「 *NTP 詳細資料 * 」欄位、請輸入 NTP 伺服器詳細資料。
++
+[NOTE]
+====
+提供替代的NTP伺服器詳細資料是選擇性的。
+
+====
+. 按一下*提交*。
+
+
+
+
+=== 接下來該怎麼做
+
+在「Support（支援）」頁面中輸入事件通知、以繼續進行叢集設定。
+
+*相關資訊*
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/FAS_Systems/What_is_a_Service_Processor_and_how_do_I_use_it%3F["什麼是服務處理器？我該如何使用？"]
+
+https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Software/ONTAP_OS/How_to_configure_and_troubleshoot_NTP_on_clustered_Data_ONTAP_8.2_and_later_using_CLI["如何使用Data ONTAP CLI在叢集式的更新版本上設定及疑難排解NTP"]
+
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]
+
+xref:reference_network_window.adoc[網路視窗]
+
+xref:reference_configuration_updates_window.adoc[組態更新視窗]
+
+xref:reference_date_time_window.adoc[日期與時間範圍]
+
+xref:reference_service_processors_window.adoc[服務處理器視窗]

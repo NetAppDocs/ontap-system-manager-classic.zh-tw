@@ -1,0 +1,53 @@
+---
+permalink: online-help-96-97/task_updating_cifs_group_policy_configuration.html 
+sidebar: sidebar 
+keywords: update, cifs, group, policy, configuration, online, help, enable, disable, modify, reload, set, up 
+summary: 透過命令列介面（CLI）變更原則組態之後、您必須更新群組原則。您可以使用System Manager中的CIFS視窗來更新群組原則。 
+---
+= 使用System Manager（ONTAP 系統管理程式）管理CIFS群組原則組態-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《CIFS》（ONTAP CIFS）視窗（適用於更新版本的更新版本）來更新及管理群組原則。
+
+
+
+== 更新CIFS群組原則組態
+
+透過命令列介面（CLI）變更原則組態之後、您必須更新群組原則。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 按一下*網域*索引標籤。
+. 在*群組原則*區域中、選取您要更新的群組原則組態、然後按一下*更新*。
+
+
+
+
+== 啟用或停用CIFS群組原則組態
+
+您可以從System Manager的CIFS視窗啟用或停用CIFS群組原則組態。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 按一下*網域*索引標籤。
+. 在「*群組原則*」區域中、選取您要啟用或停用的群組原則組態、然後視需要按一下「*啟用*」或「*停用*」。
+
+
+
+
+== 重新載入CIFS群組原則
+
+如果原則狀態變更、您必須重新載入CIFS群組原則。您可以使用System Manager中的CIFS視窗來重新載入群組原則。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 按一下*網域*索引標籤。
+. 在「*群組原則*」區域中、選取您要重新載入的群組原則組態、然後按一下「*重新載入*」。
+

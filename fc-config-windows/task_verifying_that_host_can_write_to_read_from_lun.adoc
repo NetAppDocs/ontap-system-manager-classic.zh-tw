@@ -1,0 +1,36 @@
+---
+permalink: fc-config-windows/task_verifying_that_host_can_write_to_read_from_lun.html 
+sidebar: sidebar 
+keywords: lun, verify, host, write, data, verify that the host can write to and read from the lun 
+summary: 在使用LUN之前、您應該先確認主機可以將資料寫入LUN並讀取回來。 
+---
+= 驗證主機是否可以寫入及讀取LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用LUN之前、您應該先確認主機可以將資料寫入LUN並讀取回來。
+
+.開始之前
+LUN必須以檔案系統初始化及格式化。
+
+.關於這項工作
+如果在其上建立LUN的儲存叢集節點可以容錯移轉至其合作夥伴節點、您應該在節點容錯移轉期間驗證資料的讀取。如果儲存叢集正在正式作業中使用、則可能無法進行此測試。
+
+如果任何測試失敗、您應該確認FC服務正在執行、並檢查通往LUN的FC路徑。
+
+.步驟
+. 在主機上、將一或多個檔案複製到LUN。
+. 將檔案複製回原始磁碟上的其他資料夾。
+. 比較複製的檔案與原始檔案。
++
+您可以使用 `comp` Windows 命令提示字元下的命令、可比較兩個檔案。
+
+. *選用：*容錯移轉包含LUN的儲存叢集節點、並確認您仍可存取LUN上的檔案。
+. 使用原生DSM檢視通往LUN的路徑、並驗證路徑數量是否符合預期。
++
+您應該會看到兩條通往建立LUN的儲存叢集節點路徑、以及兩條通往合作夥伴節點的路徑。
+
+

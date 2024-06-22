@@ -1,0 +1,234 @@
+---
+permalink: online-help-96-97/concept_qtrees.html 
+sidebar: sidebar 
+keywords: system, manager, create, edit, delete, qtree, partition, data, policies, svm 
+summary: 您可以使用System Manager建立、編輯及刪除qtree。 
+---
+= 使用System Manager（ONTAP 系統管理程式）管理qtree -更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來建立、編輯及刪除qtree。
+
+
+
+== 建立qtree
+
+qtree可讓您管理及分割磁碟區內的資料。您可以使用System Manager中的Create Qtree（建立Qtree）對話方塊、將新的qtree新增至儲存系統上的磁碟區。
+
+.步驟
+. 按一下「*儲存設備*>* qtree *」。
+. 從* SVM*欄位的下拉式功能表中、選取您要在其中建立qtree的儲存虛擬機器（SVM）。
+. 按一下「 * 建立 * 」。
+. 在「*建立Qtree *」對話方塊的「*詳細資料*」索引標籤中、輸入qtree的名稱。
+. 選取要新增qtree的磁碟區。
++
+Volume瀏覽清單僅包含線上的磁碟區。
+
+. 如果您想要停用qtree的投機性鎖定（oplocks）、請清除「為此Qtree *中的檔案和目錄啟用oplocks」核取方塊。
++
+依預設、每個qtree都會啟用oplocks。
+
+. 如果您想要變更預設的繼承安全性樣式、請選取新的安全性樣式。
++
+qtree的預設安全樣式是包含qtree的磁碟區的安全樣式。
+
+. 若要變更預設的繼承匯出原則、請選取現有的匯出原則或建立匯出原則。
++
+qtree的預設匯出原則是指派給包含qtree之磁碟區的匯出原則。
+
+. 如果要限制磁碟空間使用量、請按一下*配額*索引標籤。
++
+.. 如果要在qtree上套用配額、請按一下「* Qtree配額*」、然後指定磁碟空間限制。
+.. 如果您要為qtree上的所有使用者套用配額、請按一下*使用者配額*、然後指定磁碟空間限制。
+
+
+. 按一下「 * 建立 * 」。
+. 驗證您所建立的qtree是否包含在* qtree *視窗的qtree清單中。
+
+
+
+
+== 刪除qtree
+
+您可以使用System Manager刪除qtree並回收qtree在磁碟區內使用的磁碟空間。當您刪除qtree時、ONTAP 適用於該qtree的所有配額將不再由停止套用。
+
+.開始之前
+* qtree狀態必須為正常。
+* qtree不得包含任何LUN。
+
+
+.步驟
+. 按一下「*儲存設備*>* qtree *」。
+. 在* qtree *視窗中、選取您要刪除的一或多個qtree、然後按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+. 驗證您刪除的qtree不再包含在* qtree *視窗的qtree清單中。
+
+
+
+
+== 編輯qtree
+
+您可以使用System Manager修改qtree的內容、例如安全樣式、啟用或停用機會鎖定（oplocks）、以及指派新的或現有的匯出原則。
+
+.步驟
+. 按一下「*儲存設備*>* qtree *」。
+. 選取您要編輯的qtree、然後按一下*編輯*。
+. 在*編輯Qtree *對話方塊中、視需要編輯下列內容：
++
+** oplocks
+** 安全風格
+** 匯出原則
+
+
+. 按一下「 * 儲存 * 」。
+. 驗證您在* qtree *視窗中對所選qtree所做的變更。
+
+
+
+
+== 將匯出原則指派給qtree
+
+您可以匯出磁碟區上的特定qtree、讓用戶端直接存取、而非匯出整個磁碟區。您可以將匯出原則指派給qtree、以使用System Manager匯出qtree。您可以從qtree視窗將匯出原則指派給一或多個qtree。
+
+.步驟
+. 按一下「*儲存設備*>* qtree *」。
+. 從SVM欄位的下拉式功能表中、選取要匯出的qtree所在的儲存虛擬機器（SVM）。
+. 選取您要指派匯出原則的一或多個qtree、然後按一下*變更匯出原則*。
+. 在*匯出原則*對話方塊中、建立匯出原則或選取現有的匯出原則。
++
+link:task_creating_export_policy.html["建立匯出原則"]
+
+. 按一下「 * 儲存 * 」。
+. 驗證指派給qtree的匯出原則及其相關匯出規則、是否顯示在適當qtree的*詳細資料*索引標籤中。
+
+
+
+
+== 檢視qtree資訊
+
+您可以使用System Manager中的qtree視窗來檢視包含qtree的磁碟區、qtree的名稱、安全性樣式和狀態、以及oplocks狀態。
+
+.步驟
+. 按一下「*儲存設備*>* qtree *」。
+. 從* SVM*欄位的下拉式功能表中、選取要檢視其資訊的qtree所在儲存虛擬機器（SVM）。
+. 從顯示的qtree清單中選取qtree。
+. 在* qtree *視窗中檢閱qtree詳細資料。
+
+
+
+
+== qtree選項
+
+qtree是邏輯定義的檔案系統、可作為FlexVol 一個特定子目錄存在於一個資料夾內的根目錄中。qtree用於管理及分割磁碟區內的資料。
+
+如果您在FlexVol 包含Volume的邊上建立qtree、qtree會顯示為目錄。因此、刪除磁碟區時、請務必小心、不要意外刪除qtree。
+
+您可以在建立qtree時指定下列選項：
+
+* qtree的名稱
+* 要在其中放置qtree的Volume
+* oplocks
++
+依預設、qtree會啟用oplocks。如果您停用整個儲存系統的oplocks、即使您為每個qtree啟用oplocks、也不會設定oplocks。
+
+* 安全風格
++
+安全樣式可以是UNIX、NTFS或混合（UNIX和NTFS）。依預設、qtree的安全性樣式與所選Volume相同。
+
+* 匯出原則
++
+您可以建立新的匯出原則或選取現有原則。依預設、qtree的匯出原則與所選Volume的匯出原則相同。
+
+* qtree和使用者配額的空間使用量限制
+
+
+
+
+== qtree視窗
+
+您可以使用qtree視窗來建立、顯示及管理qtree的相關資訊。
+
+
+
+=== 命令按鈕
+
+* *建立*
++
+開啟「建立Qtree」對話方塊、可讓您建立新的qtree。
+
+* *編輯*
++
+開啟「編輯Qtree」對話方塊、可讓您變更安全性樣式、以及啟用或停用qtree上的oplocks（機會鎖定）。
+
+* *變更匯出原則*
++
+開啟「匯出原則」對話方塊、可讓您將一或多個qtree指派給新的或現有的匯出原則。
+
+* *刪除*
++
+刪除選取的qtree。
+
++
+除非所選qtree的狀態正常、否則此按鈕會停用。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+=== qtree清單
+
+qtree清單會顯示qtree所在的磁碟區和qtree名稱。
+
+* *名稱*
++
+顯示qtree的名稱。
+
+* * Volume *
++
+顯示qtree所在的磁碟區名稱。
+
+* *安全風格*
++
+指定qtree的安全樣式。
+
+* *狀態*
++
+指定qtree的目前狀態。
+
+* * oplocks *
++
+指定是否為qtree啟用或停用oplocks設定。
+
+* *匯出政策*
++
+顯示指派qtree的匯出原則名稱。
+
+
+
+
+
+=== 詳細資料區域
+
+* *詳細資料索引標籤*
++
+顯示所選qtree的詳細資訊、例如包含qtree的磁碟區掛載路徑、匯出原則的詳細資料、以及匯出原則規則。
+
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/concepts/index.html["概念ONTAP"^]
+
+https://docs.netapp.com/us-en/ontap/volumes/index.html["邏輯儲存管理"^]
+
+https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["NFS管理"^]
+
+https://docs.netapp.com/us-en/ontap/smb-admin/index.html["SMB/CIFS管理"^]

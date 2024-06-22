@@ -1,0 +1,52 @@
+---
+permalink: online-help-96-97/task_deleting_svms.html 
+sidebar: sidebar 
+keywords: system, manager, delete, svm, online, help, storage, virtual, machine 
+summary: 您可以使用System Manager從儲存系統組態中刪除不再需要的儲存虛擬機器（SVM）。 
+---
+= 使用System Manager刪除SVM - ONTAP 支援更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版（ONTAP 以VMware 9.7及更早版本提供）來刪除儲存系統組態中不再需要的儲存虛擬機器（SVM）。
+
+.開始之前
+您必須完成下列工作：
+
+. 已停用所有磁碟區的Snapshot複本、資料保護（DP）鏡像和負載共享（LS）鏡像
++
+[NOTE]
+====
+您必須使用命令列介面（CLI）來停用LS鏡像。
+
+====
+. 如果您要刪除SVM、請手動刪除所有屬於SVM的igroup
+. 已刪除所有連接埠集
+. 刪除SVM中的所有磁碟區、包括根磁碟區
+. 取消對應LUN、使其離線並刪除
+. 刪除CIFS伺服器（如果您要刪除SVM）
+. 刪除任何與SVM相關的自訂使用者帳戶和角色
+. 已使用CLI刪除任何與SVM相關的NVMe子系統。
+. 已停止SVM
+
+
+.關於這項工作
+刪除SVM時、也會刪除下列與SVM相關的物件：
+
+* LIF容錯移轉群組和LIF路由群組
+* 匯出原則
+* 效率原則
+
+
+如果您刪除設定為使用Kerberos的SVM、或修改SVM以使用不同的服務主要名稱（SPM）、則SVM的原始服務主要內容不會自動從Kerberos領域中刪除或停用。您必須手動刪除或停用主體。您必須擁有Kerberos領域管理員的使用者名稱和密碼、才能刪除或停用主體。
+
+如果您想在刪除第一個SVM之前、將資料從SVM移至另一個SVM、您可以使用SnapMirror技術來執行此作業。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取您要刪除的 SVM 、然後按一下 * 刪除 * 。
+. 選取確認核取方塊、然後按一下*刪除*。
+

@@ -1,0 +1,38 @@
+---
+section: iscsi-config-windows
+title: 適用於Windows的iSCSI組態
+entries:
+- title: 總覽
+  url: "/iscsi-config-windows/index.html"
+- title: iSCSI組態與資源配置工作流程
+  url: "/iscsi-config-windows/concept_iscsi_configuration_workflow.html"
+  entries:
+  - title: 驗證是否支援iSCSI組態
+    url: "/iscsi-config-windows/task_verifying_that_iscsi_fc_configuration_is_supported.html"
+  - title: 完成iSCSI組態工作表
+    url: "/iscsi-config-windows/reference_completing_iscsi_configuration_worksheet.html"
+  - title: 記錄iSCSI啟動器節點名稱
+    url: "/iscsi-config-windows/task_recording_iscsi_node_name.html"
+  - title: 安裝Windows Unified Host Utilities
+    url: "/iscsi-config-windows/task_installing_windows_unified_host_utilities.html"
+  - title: 建立Aggregate
+    url: "/iscsi-config-windows/task_creating_aggregate.html"
+  - title: 決定要將磁碟區資源配置到何處
+    url: "/iscsi-config-windows/task_deciding_where_to_provision_volume.html"
+    entries:
+    - title: 確認iSCSI服務正在現有的SVM上執行
+      url: "/iscsi-config-windows/task_verifying_iscsi_is_running_on_existing_vserver.html"
+    - title: 建立 LUN
+      url: "/iscsi-config-windows/task_creating_lun_its_containing_volume.html"
+    - title: 在現有SVM上設定iSCSI
+      url: "/iscsi-config-windows/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html"
+    - title: 建立新的 SVM
+      url: "/iscsi-config-windows/task_creating_svm.html"
+  - title: 使用目標啟動iSCSI工作階段
+    url: "/iscsi-config-windows/task_starting_iscsi_sessions_with_target.html"
+  - title: 探索新磁碟
+    url: "/iscsi-config-windows/task_discovering_new_disks.html"
+  - title: 初始化及格式化LUN
+    url: "/iscsi-config-windows/task_initializing_formatting_lun.html"
+  - title: 驗證主機是否可以寫入及讀取LUN
+    url: "/iscsi-config-windows/task_verifying_that_host_can_write_to_read_from_lun.html"

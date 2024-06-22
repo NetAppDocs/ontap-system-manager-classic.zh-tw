@@ -1,0 +1,45 @@
+---
+permalink: online-help-96-97/reference_managing_svms.html 
+sidebar: sidebar 
+keywords: storage, virtual, machine, svm, administrator, system, manager, online, help 
+summary: 儲存虛擬機器（SVM）管理員可根據叢集管理員指派的功能、來管理SVM及其資源、例如磁碟區、傳輸協定及服務。SVM管理員無法建立、修改或刪除SVM。 
+---
+= 使用System Manager管理SVM - ONTAP 支援更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在經典版的《Sfor System Manger》（ONTAP 僅適用於更新版本的版本）中ONTAP 、儲存虛擬機器（SVM）管理員可根據叢集管理員所指派的功能、管理SVM及其資源、例如磁碟區、傳輸協定和服務。SVM管理員無法建立、修改或刪除SVM。
+
+[NOTE]
+====
+SVM系統管理員無法登入System Manager。
+
+====
+SVM系統管理員可能具備下列全部或部分管理功能：
+
+* 資料存取傳輸協定組態
++
+SVM管理員可以設定資料存取傳輸協定、例如NFS、CIFS、iSCSI和光纖通道（FC）傳輸協定（包括乙太網路光纖通道或FCoE）。
+
+* 服務組態
++
+SVM系統管理員可以設定LDAP、NIS和DNS等服務。
+
+* 儲存管理
++
+SVM管理員可以管理磁碟區、配額、qtree和檔案。
+
+* SAN環境中的LUN管理
+* 管理磁碟區的Snapshot複本
+* 監控SVM
++
+SVM系統管理員可以監控工作、網路連線、網路介面及SVM健全狀況。
+
+
+
+*相關資訊*
+
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]

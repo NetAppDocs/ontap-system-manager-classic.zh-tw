@@ -1,0 +1,44 @@
+---
+permalink: nas-multiprotocol-config/task_creating_share_setting_its_permissions.html 
+sidebar: sidebar 
+keywords: windows, user, access, volume, create, cifs, restrict, access, modify, control, list, acl, share, create a share and set its permission 
+summary: Windows使用者必須先在磁碟區上建立CIFS共用區、然後修改共用區的存取控制清單（ACL）、以限制共用區的存取。 
+---
+= 建立共用區並設定其權限
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows使用者必須先在磁碟區上建立CIFS共用區、然後修改共用區的存取控制清單（ACL）、以限制共用區的存取。
+
+.關於這項工作
+為了進行測試、您應該只允許系統管理員存取。稍後、在您確認磁碟區可存取之後、即可允許存取更多用戶端。
+
+.步驟
+. 瀏覽至*共享*視窗。
+. 建立共用區、讓SMB用戶端能夠存取磁碟區：
++
+.. 按一下「 * 建立共用 * 」。
+.. 在「*建立共用*」對話方塊中、按一下「*瀏覽*」、展開命名空間階層、然後選取您先前建立的磁碟區。
+.. 如果您希望共用名稱與磁碟區名稱不同、請變更共用名稱。
+.. 按一下「 * 建立 * 」。
+
+
++
+共用區是以預設ACL設定為「所有人」群組的「完全控制」來建立。
+
+. 修改共用ACL以限制共用區的存取：
++
+.. 選取共用區、然後按一下*編輯*。
+.. 在「*權限*」標籤中、選取「*所有人*」群組、然後按一下「*移除*」。
+.. 按一下「*新增*」、然後輸入在Windows Active Directory網域中定義的管理員群組名稱、其中包含SVM。
+.. 選取新的系統管理員群組後、選取該群組的所有權限。
+.. 按一下*儲存並關閉*。
+
+
++
+更新的共用存取權限會列在「共用存取控制」窗格中。
+
+

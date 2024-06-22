@@ -1,0 +1,44 @@
+---
+section: fc-config-rhel
+title: Red Hat Enterprise Linux的FC組態
+entries:
+- title: 總覽
+  url: "/fc-config-rhel/index.html"
+- title: FC組態與資源配置工作流程
+  url: "/fc-config-rhel/concept_fc_configuration_workflow.html"
+  entries:
+  - title: 驗證是否支援FC組態
+    url: "/fc-config-rhel/task_verifying_that_iscsi_fc_configuration_is_supported.html"
+  - title: 完成FC組態工作表
+    url: "/fc-config-rhel/reference_completing_iscsi_configuration_worksheet.html"
+  - title: 從HBA廠商安裝HBA公用程式
+    url: "/fc-config-rhel/task_installing_hba_utility_from_hba_vendor.html"
+  - title: 更新HBA驅動程式、韌體和BIOS
+    url: "/fc-config-rhel/task_updating_hba_driver_firmware_bios.html"
+  - title: 安裝Linux Unified Host Utilities並最佳化I/O效能
+    url: "/fc-config-rhel/task_installing_linux_unified_host_utilities_optimizing_i_o_performance.html"
+  - title: 記錄每個主機FC連接埠的WWPN
+    url: "/fc-config-rhel/task_record_wwpn_for_each_host_fc_port.html"
+  - title: 設定DM-Multipath
+    url: "/fc-config-rhel/task_configuring_dm_multipath.html"
+  - title: 建立Aggregate
+    url: "/fc-config-rhel/task_creating_aggregate.html"
+  - title: 決定要將磁碟區資源配置到何處
+    url: "/fc-config-rhel/task_deciding_where_to_provision_volume.html"
+    entries:
+    - title: 確認FC服務正在現有的SVM上執行
+      url: "/fc-config-rhel/task_verifying_that_fc_service_is_running_on_existing_svm.html"
+    - title: 建立 LUN
+      url: "/fc-config-rhel/task_creating_lun_its_containing_volume.html"
+    - title: 在現有SVM上設定FC
+      url: "/fc-config-rhel/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html"
+    - title: 建立新的 SVM
+      url: "/fc-config-rhel/task_creating_svm.html"
+  - title: 由主機和LIF WWPN對FC交換器進行分區
+    url: "/fc-config-rhel/task_zoning_fc_switches_by_host_lif_wwpns.html"
+  - title: 探索新的SCSI裝置（LUN）和多重路徑裝置
+    url: "/fc-config-rhel/task_discovering_new_scsi_devices_dm_multipath_devices.html"
+  - title: 在多重路徑裝置上設定邏輯磁碟區、然後建立檔案系統
+    url: "/fc-config-rhel/task_configuring_logical_volumes_on_multipath_devices_creating_file_system.html"
+  - title: 確認主機可以寫入多重路徑裝置、也可以從多重路徑裝置讀取
+    url: "/fc-config-rhel/task_verifying_that_host_can_write_to_read_fom_lun.html"

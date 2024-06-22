@@ -1,0 +1,34 @@
+---
+permalink: online-help-96-97/task_splitting_flexclone_volume_from_its_parent_volume.html 
+sidebar: sidebar 
+keywords: split, flexclone, volume, parent, online, help, disk, space 
+summary: 您可以使用System Manager Classic（ONTAP 以更新版本的版本供應）、從其父Volume分割FlexClone Volume。分割完成後、FlexClone Volume便成為正常FlexVol 的現象。它會繼續使用父磁碟區的磁碟空間、並保留儲存效率。 
+---
+= 使用System Manager ONTAP 從其父Volume分割FlexClone Volume -更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用System Manager Classic（ONTAP 以更新版本的版本供應）、從其父Volume分割FlexClone Volume。分割完成後、FlexClone Volume便成為正常FlexVol 的現象。它會繼續使用父磁碟區的磁碟空間、並保留儲存效率。
+
+.開始之前
+FlexClone Volume必須處於線上狀態。
+
+.關於這項工作
+對於非AFF 實體系統的系統、複製分割作業會刪除複本的所有現有Snapshot複本。SnapMirror更新所需的Snapshot複本也會刪除。因此、任何後續的SnapMirror更新都可能失敗。
+
+如果您必須在磁碟區上執行任何其他作業、可以暫停複製分割作業。您可以在完成其他作業之後、繼續複製分割程序。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要從其父Volume分割的FlexClone Volume。
+. 按一下*更多動作*>*完整複製*>*分割*。
+. 確認Clone分割作業的FlexClone Volume詳細資料、然後按一下確認對話方塊中的* Start分割*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

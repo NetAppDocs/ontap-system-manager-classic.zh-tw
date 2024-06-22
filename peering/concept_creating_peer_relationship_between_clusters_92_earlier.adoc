@@ -1,0 +1,16 @@
+---
+permalink: peering/concept_creating_peer_relationship_between_clusters_92_earlier.html 
+sidebar: sidebar 
+keywords: relationship, define, network, connection, enable, cluster, svm, exchange, data, secure, peer, relationship, peer, configure peer relationship, ontap 9.2 and earlier 
+summary: 使用ONTAP 包含ONTAP Sf2 9.2或更早ONTAP 版本的《經典》版的《經典》版的《SVM》介面、您可以建立SVM對等關係。 
+---
+= 設定對等關係ONTAP （不含版本號的版本）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用ONTAP 包含ONTAP ESI9.2的《SVM系統管理程式_classic_》介面或較早ONTAP 版本的《SVM對等關係》、即可建立SVM對等關係。
+
+對等關係可定義網路連線、讓叢集和SVM能夠安全地交換資料。您必須先建立叢集對等關係、才能建立SVM對等關係。

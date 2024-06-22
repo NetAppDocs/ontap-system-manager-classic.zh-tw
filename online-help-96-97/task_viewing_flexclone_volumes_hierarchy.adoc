@@ -1,0 +1,28 @@
+---
+permalink: online-help-96-97/task_viewing_flexclone_volumes_hierarchy.html 
+sidebar: sidebar 
+keywords: flexclone, volume, system, manager, parent, volume, online, help 
+summary: 您可以使用System Manager來檢視FlexClone Volume及其父Volume的階層架構。 
+---
+= 檢視FlexClone Volume階層架構- ONTAP flex9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來檢視FlexClone Volume及其父Volume的階層架構。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 從磁碟區清單中選取所需的磁碟區。
+. 按一下*更多動作*>*完整複製*>*檢視階層*。
+
+
+.結果
+顯示至少有一個子FlexClone Volume的Volume。FlexClone磁碟區會顯示為其各自父磁碟區的子磁碟區。
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

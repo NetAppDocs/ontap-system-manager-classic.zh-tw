@@ -1,0 +1,50 @@
+---
+permalink: volume-backup-snapvault/index.html 
+sidebar: sidebar 
+keywords: content, configure, snapvault, backup, relationship, volume, cluster, read-only, copies, copy, locate, destination, volume, restoring, restore, data, corrupt, lost, volume backup using snapvault overview 
+summary: 您可以快速設定SnapVault 位於不同叢集的磁碟區之間的靜態備份關係。此支援區包含一組唯讀備份複本、SnapVault 這些複本位於目的地磁碟區、可在資料毀損或遺失時用於還原資料。 
+---
+= Volume備份：SnapVault 使用功能概述
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以快速設定SnapVault 位於不同叢集的磁碟區之間的靜態備份關係。此支援區包含一組唯讀備份複本、SnapVault 這些複本位於目的地磁碟區、可在資料毀損或遺失時用於還原資料。
+
+如果您想要以SnapVault 下列方式建立磁碟區的功能性備份關係、請使用此程序：
+
+* 您正在使用執行ONTAP 過程中的叢集9。
+* 您是叢集管理員。
+* 您已設定叢集對等關係和SVM對等關係。
++
+link:../peering/index.html["叢集與SVM對等組態"]
+
+* 在叢集中的所有節點都升級至相同版本的S9之後、您必須啟用SnapMirror或SnapVault S17授權ONTAP 。
+* 您想要使用預設的保護原則和排程、而非建立自訂原則。
+* 您不想備份資料以進行單一檔案或LUN還原。
+* 您想要使用最佳實務做法、而非探索每個可用選項。
+* 您不想閱讀許多概念背景。
+* 您想要使用System Manager、而非ONTAP 使用無法執行指令行的介面或自動化指令碼工具。
+* 您想要將System Manager經典介面用於ONTAP 更新版本的版本、而非ONTAP 使用適用於ONTAP 更新版本的《更新版本的系統管理程式》UI。
+
+
+如果這些假設不符合您的情況、或您想要更多概念背景資訊、您應該看到下列資源：
+
+link:http://www.netapp.com/us/media/tr-4183.pdf["NetApp技術報告4183：SnapVault NetApp最佳實務做法"^]
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+[cols="2"]
+|===
+| 若要執行這些工作... | 請參閱此內容... 
+
+
+| 重新設計的System Manager（ONTAP 提供更新版本的更新版本） | link:https://docs.netapp.com/us-en/ontap/task_dp_configure_mirror.html["設定鏡射與資料保險箱"^] 
+
+
+| 指令行介面ONTAP | link:https://docs.netapp.com/us-en/ontap/data-protection/create-replication-relationship-task.html["建立複寫關係"^] 
+|===

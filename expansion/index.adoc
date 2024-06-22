@@ -1,0 +1,48 @@
+---
+permalink: expansion/index.html 
+sidebar: sidebar 
+keywords: nondisruptive, expand, exist, cluster, ha, pair, expansion, overview 
+summary: 您可以新增HA配對、快速且不中斷營運地擴充現有的叢集。較大的叢集可提升叢集的效能與儲存容量。 
+---
+= 叢集擴充總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以新增HA配對、快速且不中斷營運地擴充現有的叢集。較大的叢集可提升叢集的效能與儲存容量。
+
+只有在下列情況下、才應使用此程序：
+
+* 現有叢集符合下列需求：
++
+** 它執行ONTAP 的是功能不正常的9。
+** 它至少包含兩個節點。
++
+雖然此程序中的範例使用雙節點叢集、但也適用於具有兩個以上節點的叢集。
+
++
+如果您要將節點新增至單節點叢集、則必須遵循不同的程序。
+
++
+https://docs.netapp.com/platstor/topic/com.netapp.doc.hw-controller-add/home.html["新增第二個控制器以建立HA配對"]
+
+** 它不使用IPv6定址或儲存加密。
+** 這不是MetroCluster 一個非結構的組態。
+
+
+* 您打算新增的控制器模組符合下列需求：
++
+** 如果它們不是新的、就會清除它們、不再是叢集的一部分、並準備好新增至新叢集。
+** 它們支援ONTAP 支援支援功能9。
+** 他們執行ONTAP 的是版本的更新版本。
+
+
+* 使用ONTAP System Manager完成不含更新版本的組態工作時、您想要使用適用於ONTAP 更新版本的_Classic _ System Manager UI、而非ONTAP 適用於更新版本的《不適用於ONTAP 更新版本的不適用系統管理程式UI》。
++
+https://docs.netapp.com/us-en/ontap/["系統管理程式文件ONTAP"]
+
+* 您想要使用最佳實務做法、而非探索每個可用選項。
+* 您不想閱讀許多概念背景。
+

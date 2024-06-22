@@ -1,0 +1,90 @@
+---
+permalink: online-help-96-97/concept_hardware_cache.html 
+sidebar: sidebar 
+keywords: hardware, cache, system, manager, manage, online, help, flash, 
+summary: 您可以使用System Manager來管理硬體快取模組。 
+---
+= 使用System Manager管理硬體快取- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來管理硬體快取模組。
+
+[NOTE]
+====
+Flash Cache在System Manager中稱為Hardware Cache（硬體快取）。
+
+====
+
+
+== 啟用或停用Flash Cache模組
+
+您可以使用System Manager啟用或停用已安裝Flash Cache模組之儲存系統的外部快取功能。您可以根據儲存系統的工作負載需求來啟用Flash Cache模組。
+
+.步驟
+. 按一下「*組態*>*硬體快取*」
+. 如果您想要修改模組、請視需要移動滑桿按鈕以啟用或停用每個模組。
+
+
+
+
+== Flash Cache模組的運作方式
+
+使用Flash Cache模組可改善儲存系統的效能。使用Flash Cache模組的影響會顯示在Hardware Cache（硬體快取）視窗中。
+
+您可以根據儲存系統的工作負載需求來設定Flash Cache模組和磁碟。藉由判斷Flash Cache模組和磁碟所提供的讀取工作負載（讀取作業數）、您可以分析儲存系統的效能。
+
+快閃快取模組在儲存系統開機期間、或在接管事件後將控制權歸還給儲存系統時、均不包含任何資料。因此、磁碟可處理儲存系統的所有資料讀取要求。
+
+當收到資料讀取要求時、Flash Cache模組會緩慢填入資料。由於Flash Cache模組所提供的資料讀取要求比磁碟所提供的資料快、因此儲存系統的效能有所提升。
+
+Flash Cache模組所處理的資料讀取要求會取代磁碟所提供的資料讀取要求、因此儲存系統的效能提升與所取代的磁碟讀取直接相關。若要瞭解Flash Cache模組對儲存系統效能的影響、您必須在Flash Cache模組包含資料時、在Hardware Cache（硬體快取）視窗中檢視讀取工作負載圖表。
+
+
+
+== 硬體快取視窗
+
+您可以使用「硬體快取」視窗、為已安裝Flash Cache模組的儲存系統啟用或停用Flash Cache模組。您也可以檢視讀取工作負載統計資料。
+
+
+
+=== 模組資訊
+
+* *儲存系統名稱*
++
+圖形下方會顯示已安裝Flash Cache模組的儲存系統名稱。
+
+* *啟用/停用切換按鈕*
++
+移動切換按鈕以啟用或停用模組。
+
+* *大小*
++
+模組大小（以GB為單位）。如果有多個Flash Cache模組卡、則會顯示所有卡的總快取大小。
+
++
+[NOTE]
+====
+顯示的 Flash Cache 模組大小與實際大小不同、原因如下：
+    - 系統管理員只會報告 ONTAP 提供的可用容量。
+    - 總容量的一部分保留用於儲存中繼資料。
+
+====
+* *模型名稱*
++
+模組的模型名稱。
+
+* *系統讀取延遲*
++
+以毫秒為單位顯示平均讀取延遲。
+
+
+
+
+
+=== 快取讀取工作負載
+
+顯示圖表、指定磁碟和Flash Cache模組所服務的讀取工作負載速率、以指出儲存系統效能。

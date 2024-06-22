@@ -1,0 +1,31 @@
+---
+permalink: iscsi-config-esxi/task_configuring_host_iscsi_ports_vswitches.html 
+sidebar: sidebar 
+keywords: esxi, host, network, port, iscsi, connection, storage, cluster, configure, vswitch, configure host iscsi ports and vswitches 
+summary: ESXi主機需要網路連接埠、才能將iSCSI連線至儲存叢集。 
+---
+= 設定主機iSCSI連接埠和VSwitches
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ESXi主機需要網路連接埠、才能將iSCSI連線至儲存叢集。
+
+.關於這項工作
+建議您使用IP雜湊做為NIC群組原則、這需要在單一vSwitch上使用單一VMkernel連接埠。
+
+用於iSCSI的主機連接埠和儲存叢集連接埠必須在同一個子網路中具有IP位址。
+
+此工作會列出設定ESXi主機的高層級步驟。如果您需要更詳細的指示、請參閱VMware出版品_VMware vSphere Storage_以瞭解您的ESXi版本。
+
+http://www.vmware.com["VMware"]
+
+.步驟
+. 登入vSphere Client、然後從詳細目錄窗格中選取ESXi主機。
+. 在*管理*索引標籤上、按一下*網路*。
+. 按一下*「Add Networking（新增網路）」*、然後選取* VMkernel *和*「Create a vSphere Standard switch*（建立vSphere標準交換器*）」以建立VMkernel連接埠和vSwitch。
+. 設定vSwitch的巨型框架（如果使用MTU大小9000）。
+. 重複上一步以建立第二個VMkernel連接埠和vSwitch。
+

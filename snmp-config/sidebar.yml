@@ -1,0 +1,21 @@
+---
+section: snmp-config
+title: SNMP 組態
+entries:
+- title: 總覽
+  url: "/snmp-config/index.html"
+- title: SNMP 組態工作流程
+  url: "/snmp-config/concept_snmp_configuration_workflow.html"
+  entries:
+  - title: 驗證是否已啟用SNMP
+    url: "/snmp-config/task_verifying_snmp_is_enabled.html"
+  - title: 新增SNMP社群
+    url: "/snmp-config/task_adding_snmp_community.html"
+  - title: 新增v3安全性使用者
+    url: "/snmp-config/task_adding_snmpv3_security_user.html"
+  - title: 新增SNMP traphost
+    url: "/snmp-config/task_adding_snmp_traphost.html"
+  - title: 測試SNMP設陷
+    url: "/snmp-config/task_testing_snmp_traps.html"
+  - title: 測試SNMP輪詢
+    url: "/snmp-config/task_testing_snmp_polling.html"

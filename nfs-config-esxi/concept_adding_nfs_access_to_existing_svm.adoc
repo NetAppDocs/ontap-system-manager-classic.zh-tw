@@ -1,0 +1,53 @@
+---
+permalink: nfs-config-esxi/concept_adding_nfs_access_to_existing_svm.html 
+sidebar: sidebar 
+keywords: nfs, access, exist, create, data, logical, interface, lif, configure, esxi, host, verify, add, add nfs access to an existing SVM 
+summary: 若要新增NFS存取至現有SVM、您必須先建立資料邏輯介面（LIF）。然後、您可以在ESXi主機上設定NFS存取、並使用虛擬儲存主控台驗證ESXi是否已啟用NFS。 
+---
+= 新增NFS存取至現有SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要新增NFS存取至現有SVM、您必須先建立資料邏輯介面（LIF）。然後、您可以在ESXi主機上設定NFS存取、並使用虛擬儲存主控台驗證ESXi是否已啟用NFS。
+
+.開始之前
+* 您必須知道下列哪些網路元件將會使用：
++
+** 將在該節點上建立資料LIF的節點和特定連接埠
+** 要配置資料LIF IP位址的子網路、或是您要指派給資料LIF的特定IP位址（可選）
+
+
+* 任何外部防火牆都必須適當設定、才能存取網路服務。
+* SVM上必須允許NFS傳輸協定。
++
+如果您在設定不同的傳輸協定時、未遵循此程序來建立SVM、則會發生這種情況。
+
+
+
+.步驟
+. 瀏覽至「*詳細資料*」窗格、您可在其中設定SVM的傳輸協定：
++
+.. 選取您要設定的SVM。
+.. 在* Details（詳細資料）*窗格中、於*傳輸協定*旁按一下* NFS*。
++
+image::../media/svm_add_protocol_nfs_nfs_esxi.gif[此影像由周邊文字說明。]
+
+
+
+. 在「*設定NFS傳輸協定*」對話方塊中、建立資料LIF：
++
+.. 從您指定的子網路自動指派IP位址給LIF、或手動輸入位址。
+.. 按一下*瀏覽*、然後選取與LIF相關聯的節點和連接埠。
++
+image::../media/svm_setup_cifs_nfs_page_lif_multi_nas_nfs_esxi.gif[此圖形由其周邊文字說明。]
+
+
+
++
+請勿輸入任何資訊來配置Volume。您可以稍後使用虛擬儲存主控台來配置資料存放區。
+
+. 按一下*提交並關閉*、然後按一下*確定*。
+

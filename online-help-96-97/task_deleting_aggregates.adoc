@@ -1,0 +1,36 @@
+---
+permalink: online-help-96-97/task_deleting_aggregates.html 
+sidebar: sidebar 
+keywords: delete, aggregates, system, manager, online, help, root 
+summary: 當您不再需要集合體中的資料時、可以使用System Manager來刪除集合體。不過、您無法刪除根Aggregate、因為它包含根Volume、其中包含系統組態資訊。 
+---
+= 使用System Manager刪除Aggregate - ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您不再需要集合體中的資料時、可以使用ONTAP 經典版的功能（ONTAP 可在更新版本的版本中使用）來刪除集合體。不過、您無法刪除根Aggregate、因為它包含根Volume、其中包含系統組態資訊。
+
+.開始之前
+* 必須刪除集合所包含的所有FlexVol 支援區和相關儲存虛擬機器（SVM）。
+* Aggregate必須離線。
+
+
+.步驟
+. 請選擇下列其中一種方法：
++
+** 按一下*應用程式與層級*>*儲存層級*。
+** 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+
+
+. 選取您要刪除的一或多個集合體、然後按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+
+
+*相關資訊*
+
+xref:reference_aggregates_window.adoc[Aggregate視窗]
+
+xref:reference_storage_tiers_window.adoc[儲存層視窗]

@@ -1,0 +1,85 @@
+---
+permalink: iscsi-config-rhel/task_configuring_dm_multipath.html 
+sidebar: sidebar 
+keywords: dm-multipath, manage, path, linux, host, storage, cluster, configuring, configure, lun, scsi, device, component, fail, cluster, configure, configure dm-multipath 
+summary: DM-Multipath可管理Linux主機與儲存叢集之間的多個路徑。在LUN上設定DM-Multikpath（在Linux主機上顯示為SCSI裝置）、可讓Linux主機在路徑或元件故障時、存取儲存叢集上的LUN。 
+---
+= 設定DM-Multipath
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+DM-Multipath可管理Linux主機與儲存叢集之間的多個路徑。在LUN上設定DM-Multikpath（在Linux主機上顯示為SCSI裝置）、可讓Linux主機在路徑或元件故障時、存取儲存叢集上的LUN。
+
+.開始之前
+您必須從互通性對照表工具中找出所需的DM-Multikpath版本。
+
+https://mysupport.netapp.com/matrix["NetApp 互通性對照表工具"]
+
+[NOTE]
+====
+建議的方法是在每個光纖或乙太網路中、為每個節點設定兩條路徑。如此一來、即使節點切換至其合作夥伴、路徑也會失敗。不建議在Windows作業系統中使用實體連接埠的連結集合（LAG）。
+
+====
+.步驟
+. 編輯 `/etc/multipath.conf` 檔案如下：
++
+.. 確定是否有非NetApp SCSI設備要排除（黑名單）。
++
+這些是您輸入時不會顯示的裝置 `sanlun lun show` 命令。
+
++
+*** 如果有非 NetApp SCSI 裝置需要排除、請在的黑名單區段中輸入裝置的全球識別碼（ WWID ） `multipath.conf` 檔案：
++
+若要顯示非 NetApp SCSI 裝置的 WWID 、請在您要排除的裝置上輸入下列命令、其中包括 `SCSI_device_name` 是您指定的裝置： `/lib/udev/scsi_id -gud /dev/SCSI_device_name`
+
++
+例如、如果 `/dev/sda` 如果您要排除非 NetApp SCSI 裝置、請輸入下列內容：
+
++
+`/lib/udev/scsi_id -gud /dev/sda`
+
++
+這會顯示裝置的 WWID 、您可以在中複製和貼上 `multipath.conf` 檔案：
+
++
+以下範例顯示的黑名單區段 `multipath.conf` 檔案、具有 WWID 的非 NetApp SCSI 裝置 `3600508e000000000753250f933cc4606` 排除：
+
++
+[listing]
+----
+blacklist {
+            **wwid       3600508e000000000753250f933cc4606**
+            devnode    "^(ram|raw|loop|fd|md|dm-|sr|scd|st)[0-9]*"
+            devnode    "^hd[a-z]"
+            devnode     "^cciss.*"
+}
+----
+*** 如果沒有要排除的裝置、請從移除 _WWID_ 行 `multipath.conf` 檔案：
+
+
+.. 在開機載入程式的核心行尾端附加下列字串、以啟用NetApp建議的DM-Multipath設定： `rdloaddriver=scsi_dh_alua`
+
+
+. 啟動DM-Multipath精靈：
++
+`/etc/init.d/multipathd start`
+
+. 將多重路徑服務新增至開機順序、以便多重路徑精靈在系統開機期間一律啟動：
++
+`chkconfig multipathd on`
+
+. 重新啟動Linux主機。
+. 確認 `rdloaddriver` 執行時、設定會出現在輸出中 `cat /proc/cmdline`。
++
+。 `rdloaddriver` 設定會顯示為傳送至核心的數個開機選項之一：
+
++
+[listing]
+----
+# cat /proc/cmdline
+ro root=/dev/mapper/vg_ibmx3650210104-lv_root rd_NO_LUKS LANG=en_US.UTF-8 rd_NO_MD rd_LVM_LV=vg_ibmx3650210104/lv_root SYSFONT=latarcyrheb-sun16 rd_LVM_LV=vg_ibmx3650210104/lv_swap crashkernel=129M@0M  KEYBOARDTYPE=pc KEYTABLE=us rd_NO_DM rhgb quiet **rdloaddriver=scsi_dh_alua**
+----
+

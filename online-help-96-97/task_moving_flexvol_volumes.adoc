@@ -1,0 +1,39 @@
+---
+permalink: online-help-96-97/task_moving_flexvol_volumes.html 
+sidebar: sidebar 
+keywords: move, flexvol, volume, aggregate, system, manager, online, help 
+summary: 您可以使用FlexVol System Manager、在不中斷營運的情況下、將某個VMware Volume移至不同的集合體或不同節點、以提高容量使用率及效能。 
+---
+= 利用FlexVol System Manager（ONTAP 系統管理程式）搬移不含更新版本的資料
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版（ONTAP 可在VMware 9.7及更早版本中使用）、在不中斷營運的情況下、將FlexVol 一個故障磁碟區移到不同的集合體或不同的節點、以提高容量使用率和效能。
+
+.開始之前
+如果您要移動資料保護磁碟區、則必須先初始化資料保護鏡射關係、才能移動磁碟區。
+
+.關於這項工作
+* 當您移動位於Flash Pool Aggregate上的磁碟區時、只有儲存在HDD層級的資料會移至目的地Aggregate。
++
+與磁碟區相關聯的快取資料不會移至目的地Aggregate。因此、磁碟區移動之後、可能會發生效能降低的情況。
+
+* 您無法從SnapLock 一個不完全的集合體中移動Volume。
+* 您無法將磁碟區從設定為災難恢復的SVM移至啟用FabricPool的Aggregate。
+
+
+.步驟
+. 請選擇下列其中一種方法：
++
+** 按一下*應用程式與層級*>*儲存層級*。
+** 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+
+
+. 選取包含磁碟區的Aggregate、然後按一下功能表：更多動作[磁碟區移動]。
+. 依照精靈的提示輸入或選取資訊。
+. 確認詳細資料、然後按一下「*完成*」完成精靈。
+

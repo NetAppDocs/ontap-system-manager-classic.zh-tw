@@ -1,0 +1,16 @@
+---
+permalink: expansion/concept_cluster_expansion_workflow.html 
+sidebar: sidebar 
+keywords: cluster, expansion, workflow 
+summary: 叢集擴充工作流程 
+---
+= 叢集擴充工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將兩個節點新增至現有叢集、包括驗證叢集是否已準備好進行擴充、準備叢集、安裝新節點、以及完成擴充。
+
+image::../media/cluster_expansion_workflow.gif[此影像由周邊文字說明。]

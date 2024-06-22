@@ -1,0 +1,73 @@
+---
+permalink: expansion/task_validating_configuration_expanded_cluster.html 
+sidebar: sidebar 
+keywords: expand, cluster, validate, configuration, config, advisor, command, health, replication, ring, validate the configuration of the expanded cluster 
+summary: 擴充叢集之後、您必須執行Config Advisor 下列命令來驗證組態：執行某些命令以驗證叢集健全狀況和叢集複寫環。 
+---
+= 驗證擴充叢集的組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+擴充叢集之後、您必須執行Config Advisor 下列命令來驗證組態：執行某些命令以驗證叢集健全狀況和叢集複寫環。
+
+.步驟
+. 執行Config Advisor 下列功能來檢查組態的健全狀況：
++
+.. 啟動Config Advisor 「支援」、然後按一下「*收集資料*」。
++
+顯示任何發現的問題。Config Advisor
+
+.. 如果發現問題、請加以修正、然後再次執行工具。
+
+
+. 使用、確保叢集中的所有節點都處於正常狀態 `cluster show` 命令。
++
+[listing]
+----
+cluster-1::> cluster show
+Node                  Health  Eligibility
+--------------------- ------- ------------
+cluster1-1            true    true
+cluster1-2            true    true
+cluster1-3            true    true
+cluster1-4            true    true
+4 entries were displayed.
+----
+. 確保叢集複寫環在叢集中的所有節點上具有相同的時期、資料庫時期和資料庫交易編號：
++
+比較交易編號最簡單的方法、是一次檢視一個單位名稱。
+
++
+.. 使用將權限等級設為進階 `set -privilege advanced` 命令。
+.. 使用檢視有關第一個單位名稱的叢集環號資訊 `cluster ring show` 命令 `-unitname mgmt` 並驗證所有節點在「 Epoch 」、「 DB Epoch 」和「 DB Trnxs 」欄中的編號是否相同。
++
+[listing]
+----
+cluster-1::*> cluster ring show -unitname mgmt
+Node      UnitName Epoch    DB Epoch DB Trnxs Master    Online
+--------- -------- -------- -------- -------- --------- ---------
+cluster1-1
+          mgmt     2        2        959      cluster1-1
+                                                        master
+cluster1-2
+          mgmt     2        2        959      cluster1-2
+                                                        secondary
+cluster1-3
+          mgmt     2        2        959      cluster1-3
+                                                        master
+cluster1-4
+          mgmt     2        2        959      cluster1-3
+                                                        secondary
+4 entries were displayed.
+----
+.. 使用重複執行命令 `-unitname vldb` 參數。
+.. 使用重複執行命令 `-unitname vifmgr` 參數。
+.. 使用重複執行命令 `-unitname bcomd` 參數。
+.. 使用重複執行命令 `-unitname crs` 參數。
+.. 使用將權限層級傳回管理員 `set -privilege admin` 命令。
+
+
+

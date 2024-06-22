@@ -1,0 +1,14 @@
+---
+permalink: online-help-96-97/concept_updating_clusters.html 
+sidebar: sidebar 
+keywords: update, clusters, online, help, system, manager 
+summary: 您可以使用System Manager來更新高可用度（HA）配對中的叢集或個別節點。您也可以更新MetroCluster 採用BIOS組態的叢集。 
+---
+= 使用System Manager更新叢集- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來更新叢集或高可用度（HA）配對中的個別節點。您也可以更新MetroCluster 採用BIOS組態的叢集。

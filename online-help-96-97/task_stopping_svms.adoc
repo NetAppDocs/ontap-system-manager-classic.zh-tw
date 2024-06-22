@@ -1,0 +1,35 @@
+---
+permalink: online-help-96-97/task_stopping_svms.html 
+sidebar: sidebar 
+keywords: stop, svm, online, help, system, manager, storage, virtual, machine 
+summary: 如果您想要疑難排解SVM的任何問題、刪除SVM或停止SVM的資料存取、可以使用System Manager來停止儲存虛擬機器（SVM）。 
+---
+= 使用System Manager停止SVM - ONTAP 支援更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想要疑難排解SVM的任何問題、刪除SVM或停止從SVM存取資料、可以使用ONTAP 經典版的經典版（ONTAP 適用於VMware 9.7及更早版本）來停止儲存虛擬機器（SVM）。
+
+.開始之前
+所有連線至SVM的用戶端都必須中斷連線。
+
+[NOTE]
+====
+如果停止SVM時有任何用戶端連線到SVM、則可能會發生資料遺失。
+
+====
+.關於這項工作
+* 您無法在儲存容錯移轉（SFO）期間停止SVM。
+* 當您停止SVM時、SVM管理員無法登入SVM。
+
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取您要停止的SVM、然後按一下*停止*。
+
+
+.結果
+SVM會停止向用戶端提供資料。

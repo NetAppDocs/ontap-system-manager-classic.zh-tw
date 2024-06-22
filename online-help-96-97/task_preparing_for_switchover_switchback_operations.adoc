@@ -1,0 +1,49 @@
+---
+permalink: online-help-96-97/task_preparing_for_switchover_switchback_operations.html 
+sidebar: sidebar 
+keywords: prepare, switchover, switchback, operation, system, manager, online, help 
+summary: 在使用System Manager 9.6執行切換作業之前、您應先確認受影響的站台已執行必要步驟。 
+---
+= 準備切換和切換作業
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用ONTAP 經典版的《經典版》9.6執行切換作業之前、您應確認受影響的站台已執行必要步驟。
+
+.步驟
+. 如果您要從站台B的災難中恢復、則必須執行下列步驟：
++
+.. 修復或更換任何損壞的磁碟或硬體。
+.. 恢復電力：
+.. 修正發生的錯誤問題。
+.. 開啟災難站台。
+
+
+. 確保叢集內存在下列情況：
++
+** 如果您正在執行計畫性切換、則兩個站台都會處於「作用中」狀態。
+** 該系統使用組態類型「'ip_Fabric」MetroCluster 。
+** 這兩個站台都使用雙節點組態（每個叢集中有兩個節點）運作。使用System Manager進行切換和切換作業時、不支援具有單節點或四節點組態的站台。
+
+
+. 如果您從本機站台（站台A）啟動遠端站台（站台B）、請確定站台B執行System Manager 9.6或更新版本。
+
+
+
+
+== 使用MetroCluster System Manger（系統管理員）重新命名本地版的站台（站台A）- ONTAP 亦即更新版本的站台
+
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來重新命名MetroCluster 叢集中的《本地版》（站台A）。
+
+.步驟
+. 按一下「*組態*>*組態更新*」。
+. 按一下*更新叢集名稱*。
+. 更新文字方塊中的名稱、然後按一下*提交*。
++
+當顯示「更新名稱MetroCluster 」時、您可以檢視更新的名稱。
+
+. 若要在從遠端站台（站台 B ）檢視 MetroCluster 站台 A 時顯示其更新名稱、請在遠端站台（站台 B ）的 CLI 中執行下列命令： `cluster peer modify-local-name`
+

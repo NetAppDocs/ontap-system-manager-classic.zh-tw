@@ -1,0 +1,17 @@
+---
+section: volume-backup-snapvault
+title: 使用SnapVault 功能進行Volume備份
+entries:
+- title: 總覽
+  url: "/volume-backup-snapvault/index.html"
+- title: 支援備份組態工作流程SnapVault
+  url: "/volume-backup-snapvault/concept_snapvault_configuration_workflow.html"
+  entries:
+  - title: 驗證叢集對等關係和SVM對等關係
+    url: "/volume-backup-snapvault/task_verify_cluster_peer_relationship.html"
+  - title: 建立SnapVault 不合作關係（從ONTAP 功能9.3開始）
+    url: "/volume-backup-snapvault/task_creating_snapvault_relationship_93_later.html"
+  - title: 建立SnapVault 不二關係ONTAP （例如、0、9.2或更早版本）
+    url: "/volume-backup-snapvault/task_creating_snapvault_relationship_92_earlier.html"
+  - title: 監控SnapVault 彼此之間的關係
+    url: "/volume-backup-snapvault/task_monitoring_snapvault_relationship.html"

@@ -1,0 +1,168 @@
+---
+permalink: online-help-96-97/concept_kerberos_realm_services.html 
+sidebar: sidebar 
+keywords: online, help, kerberos, realm, service, system, manager, svm, edit, security, strong, nfs, authentication, microsoft, ntlm, ntlm v2, client 
+summary: 您可以使用System Manager來建立及管理Kerberos領域服務。 
+---
+= 使用System Manager管理Kerberos領域服務- ONTAP 支援更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《支援RealSystem Manager》ONTAP （適用於Realm9.7及更早版本）來建立及管理Kerberos領域服務。
+
+
+
+== 建立Kerberos領域組態
+
+如果您想要使用Kerberos驗證來存取用戶端、則必須將儲存虛擬機器（SVM）設定為使用現有的Kerberos領域。您可以使用System Manager建立Kerberos領域組態、讓SVM能夠使用適用於NFS的Kerberos安全服務。
+
+.開始之前
+* 如果使用CIFS共用、則必須安裝CIFS授權；如果使用LDAP伺服器、則必須安裝NFS授權。
+* 必須提供具備Des MD5加密功能的Active Directory（Windows 2003或Windows 2008）。
+* 您必須設定時區、並透過設定NTP來同步整個叢集的時間。
++
+如此可避免驗證錯誤、並確保記錄檔中的時間戳記在整個叢集內保持一致。
+
+
+
+.關於這項工作
+建立Kerberos領域時、您必須在「建立Kerberos領域」精靈中設定下列屬性：
+
+* Kerberos領域
+* Kdc IP位址和連接埠號碼
++
+預設連接埠號碼為 88 。
+
+* Kerberos金鑰發佈中心（Kdc）廠商
+* 如果Kdc廠商不是Microsoft、則為管理伺服器IP位址
+* 密碼伺服器IP位址
+* Active Directory伺服器名稱和IP位址（如果Kdc廠商是Microsoft）
+
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*服務*窗格中、按一下* Kerberos Realom*。
+. 在「* Kerberos Realom*」視窗中、按一下「*建立*」。
+. 依照精靈的提示輸入或選取資訊。
+. 確認詳細資料、然後按一下「*完成*」完成精靈。
+
+
+
+
+== 編輯Kerberos領域組態
+
+您可以使用System Manager在儲存虛擬機器（SVM）層級編輯Kerberos領域組態。
+
+.關於這項工作
+您可以使用Kerberos領域編輯精靈來修改下列屬性：
+
+* Kdc IP位址和連接埠號碼
+* 如果Kdc廠商不是Microsoft、則為系統管理伺服器的IP位址
+* 密碼伺服器的IP位址
+* Active Directory伺服器名稱和IP位址（如果Kdc廠商是Microsoft）
+
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*服務*窗格中、按一下* Kerberos Realom*。
+. 在「* Kerberos Realom*」視窗中、選取您要修改的Kerberos領域組態、然後按一下「*編輯*」。
+. 依照精靈的提示輸入或選取資訊。
+. 確認詳細資料、然後按一下「*完成*」完成精靈。
+
+
+
+
+== 刪除Kerberos領域組態
+
+您可以使用System Manager刪除Kerberos領域組態。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*服務*窗格中、按一下* Kerberos Realom*。
+. 在「* Kerberos Realom*」視窗中、選取您要刪除的一或多個Kerberos領域組態、然後按一下「*刪除*」。
+. 選取確認核取方塊、然後按一下*刪除*。
+
+
+
+
+== 使用Kerberos搭配NFS以獲得強大的安全性
+
+您可以使用Kerberos在SVM和NFS用戶端之間提供強式驗證、以提供安全的NFS通訊。使用Kerberos設定NFS可提高NFS用戶端與儲存系統通訊的完整性與安全性。
+
+
+
+== CIFS的Kerberos驗證
+
+透過Kerberos驗證、當連線至CIFS伺服器時、用戶端會協商最高的安全層級。但是、如果用戶端無法使用Kerberos驗證、則會使用Microsoft NTLM/NTLV2來驗證CIFS伺服器。
+
+
+
+== Kerberos領域視窗
+
+您可以使用「Kerberos領域」視窗、在儲存虛擬機器（SVM）和NFS用戶端之間提供驗證、以確保NFS通訊安全無虞。
+
+
+
+=== 命令按鈕
+
+* *建立*
++
+開啟「Kerberos領域建立」精靈、可讓您設定Kerberos領域來擷取使用者資訊。
+
+* *編輯*
++
+開啟「Kerberos領域編輯」精靈、可讓您根據SVM驗證和授權的需求來編輯Kerberos領域組態。
+
+* *刪除*
++
+開啟「刪除Kerberos領域」對話方塊、可讓您刪除Kerberos領域組態。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+=== Kerberos領域清單
+
+以表格格式提供Kerberos領域的詳細資訊。
+
+* *領域*
++
+指定Kerberos領域的名稱。
+
+* * Kdc廠商*
++
+指定Kerberos發佈中心（Kdc）廠商的名稱。
+
+* * Kdc IP位址*
++
+指定組態所使用的Kdc IP位址。
+
+
+
+
+
+=== 詳細資料區域
+
+詳細資料區域會顯示所選Kerberos領域組態的資訊、例如、kdc IP位址和連接埠號碼、kdc廠商、管理伺服器IP位址和連接埠號碼、Active Directory伺服器和伺服器IP位址。
+
+*相關資訊*
+
+xref:task_setting_time_zone_for_cluster.adoc[設定叢集的時區]
+
+link:https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf["NetApp技術報告4067：NetApp ONTAP 的NFS功能"^]
+
+link:https://www.netapp.com/pdf.html?item=/media/19384-tr-4616.pdf["NetApp技術報告4616：ONTAP NFS Kerberos in Some with Microsoft Active Directory"^]
+
+link:https://www.netapp.com/pdf.html?item=/media/19423-tr-4835.pdf["NetApp技術報告4835：如何在ONTAP 功能方面設定LDAP"^]
+
+https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["NFS管理"^]

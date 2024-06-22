@@ -1,0 +1,62 @@
+---
+permalink: online-help-96-97/task_moving_luns.html 
+sidebar: sidebar 
+keywords: move, lun, qtree, storage, virtual, machine, svm, online, help 
+summary: 您可以使用System Manager將LUN從包含的磁碟區移至儲存虛擬機器（SVM）內的其他磁碟區或qtree。您可以將LUN移至裝載於包含高效能磁碟之集合體上的磁碟區、藉此提升存取LUN時的效能。 
+---
+= 使用System Manager（ONTAP 系統管理程式）來搬移LUN -更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）、將LUN從包含的Volume移至儲存虛擬機器（SVM）內的其他Volume或qtree。您可以將LUN移至裝載於包含高效能磁碟之集合體上的磁碟區、藉此提升存取LUN時的效能。
+
+.關於這項工作
+* 您無法將LUN移至同一個磁碟區內的qtree。
+* 如果您已使用命令列介面（CLI）從檔案建立LUN、則無法使用System Manager來移動LUN。
+* LUN移動作業不中斷營運、可在LUN上線並提供資料時執行。
+* 如果目的地磁碟區中分配的空間不足以容納LUN、而且即使已在磁碟區上啟用自動擴充、您也無法使用System Manager來移動LUN。
++
+您應該改用CLI。
+
+* 您無法將LUN移到SnapLock 無法在等量資料區上。
+
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在「* LUN管理*」索引標籤中、從LUN清單中選取您要移動的LUN、然後按一下「*移動*」。
+. *可選：*在*移動LUN*對話框的*移動選項*區域中、如果您想變更預設名稱、請為LUN指定新名稱。
+. 選取您要將LUN移至的儲存物件、然後執行下列其中一項動作：
++
+|===
+| 如果您要將LUN移至... | 然後... 
+
+
+ a| 
+新的Volume
+ a| 
+.. 選取您要在其中建立新磁碟區的集合體。
+.. 指定磁碟區的名稱。
+
+
+
+
+ a| 
+現有的Volume或qtree
+ a| 
+.. 選取您要將LUN移至的磁碟區。
+.. 如果選取的磁碟區包含任何qtree、請選取您要將LUN移至的qtree。
+
+
+|===
+. 按一下*移動*。
+. 確認LUN移動作業、然後按一下*繼續*。
++
+在一段短時間內、LUN會同時顯示在來源與目的地磁碟區上。移動作業完成後、LUN會顯示在目的地Volume上。
+
++
+目的地Volume或qtree會顯示為LUN的新容器路徑。
+
+

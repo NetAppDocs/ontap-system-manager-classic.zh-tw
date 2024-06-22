@@ -1,0 +1,54 @@
+---
+permalink: expansion/task_installing_controllers.html 
+sidebar: sidebar 
+keywords: install, controller, exist, cluster, installation, setup, instruction, install the controllers 
+summary: 當您安裝要新增至現有叢集的控制器時、必須遵循適當的安裝與設定指示的前三個步驟。 
+---
+= 安裝控制器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您安裝要新增至現有叢集的控制器時、必須遵循適當的_Installation and Setup Instructions（安裝與設定指示）_的前三個步驟。
+
+[NOTE]
+.關於這項工作
+====
+從更新硬體的版本起、HA模式預設為啟用。ONTAP
+
+====
+.步驟
+. 取得_安裝與設定說明_、瞭解FAS 您計畫新增至叢集之控制器模組的版次編號。
++
+** 對於新的控制器模組、文件可在包裝盒中找到。
+** 對於重新調整用途的控制器模組、您可以下載文件。
+https://mysupport.netapp.com/site/docs-and-kb["NetApp文件"]
+
+
+. 請遵循_準備安裝_一節、但有下列例外：
++
+** 您可以跳過下載軟體或工作表的任何指示。
+** 您必須提供序列主控台連線、即使_安裝與設定說明_未提及也一樣。
++
+您需要序列主控台、因為您必須使用nodesl解除 的CLI來設定節點管理lifs。
+
++
+如果ONTAP 不提及序列主控台、您可以參閱7-mode一節。
+
+
+
+. 請遵循_安裝硬體_一節。
+. 請遵循_纜線儲存設備_部分。
+. 跳過「完成系統設定」部分的大部分內容、但有下列例外：
++
+** 如有指示、您必須開啟所有磁碟櫃的電源並檢查ID。
+** 您必須連接序列主控台纜線、才能存取節點。
++
+如果ONTAP 不提及序列主控台、您可以參閱7-mode一節。
+
+
+
+. 跳過「完成組態」區段。
+

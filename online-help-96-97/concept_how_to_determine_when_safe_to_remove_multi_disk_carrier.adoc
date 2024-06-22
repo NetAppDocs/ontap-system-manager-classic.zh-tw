@@ -1,0 +1,33 @@
+---
+permalink: online-help-96-97/concept_how_to_determine_when_safe_to_remove_multi_disk_carrier.html 
+sidebar: sidebar 
+keywords: remove, multidisk, carrier, system, manager, storage, disruption, raid 
+summary: 在安全之前移除多個磁碟機、可能會導致一個或多個RAID群組降級、甚至導致儲存設備中斷。System Manager可讓您判斷移除多磁碟機的安全時機。 
+---
+= 使用System Manager ONTAP - NetApp 9.7及更早版本、判斷移除多磁碟機載體的安全時機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在安全之前移除多個磁碟機、可能會導致一個或多個RAID群組降級、甚至導致儲存設備中斷。經典版的支援功能（適用於支援更新版本的更新版本）可讓您判斷移除多磁碟機的安全時機。ONTAP ONTAP
+
+當必須更換多磁碟機載體時、您必須先發生下列事件、才能安全地移除載體：
+
+* 必須記錄一個資訊、指出載體已準備好移除。AutoSupport
+* 必須記錄一則EMS訊息、指出載體已準備好移除。
+* 機層中兩個磁碟的狀態必須顯示為 `broken` 在 Disks （磁碟）視窗中。
++
+只有在清空故障磁碟的載體結合之後、才能移除磁碟。您可以按一下「詳細資料」、在「磁碟」視窗的「內容」索引標籤中檢視磁碟清空狀態。
+
+* 載體上的故障LED（黃色）必須持續亮起、表示已準備好移除。
+* 活動LED（綠色）必須關閉、表示沒有磁碟活動。
+* 機櫃數位顯示器只會顯示機櫃ID編號。
+
+
+[NOTE]
+====
+您無法重複使用故障磁碟的載體結合。當您移除包含故障磁碟的多磁碟機載體時、必須以新的載體來更換。
+
+====

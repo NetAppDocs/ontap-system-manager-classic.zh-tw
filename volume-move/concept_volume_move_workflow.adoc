@@ -1,0 +1,42 @@
+---
+permalink: volume-move/concept_volume_move_workflow.html 
+sidebar: sidebar 
+keywords: move, moving, volume, method, operation, plan, timing, system, manager, ndmp, backup, configuration, volume move workflow 
+summary: 在移動Volume之前、您應該先選擇一種Volume移動操作方法、並規劃作業的時間。您可以使用System Manager來移動磁碟區。移動之後、您可能必須更新NDMP備份組態。 
+---
+= Volume Move工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 含有EstrsSystem Manager _classic_介面的ONTAP Estraps9.7或更早版本來移動Volume。
+
+在移動Volume之前、您應該先選擇一種Volume移動操作方法、並規劃作業的時間。移動之後、您可能必須更新NDMP備份組態。
+
+image::../media/volume_move_workflow.jpg[Volume Move工作流程]
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+|===
+
+
+| 若要使用以下方式完成此工作流程： | 請參閱... 
+
+
+ a| 
+重新設計的System Manager（ONTAP 提供更新版本的更新版本）
+ a| 
+https://docs.netapp.com/us-en/ontap/volumes/manage-volumes-task.html["管理磁碟區"^]
+
+
+
+ a| 
+這個指令行介面ONTAP
+ a| 
+https://docs.netapp.com/us-en/ontap/volumes/index.html["邏輯儲存管理"^]
+
+|===

@@ -1,0 +1,32 @@
+---
+permalink: fc-config-esxi/task_updating_hba_firmware.html 
+sidebar: sidebar 
+keywords: fc, host, bus, adapter, hba, esx, support, driver, firmware, bio, update, update the hba driver firmware and bios 
+summary: 如果ESX主機中的FC主機匯流排介面卡未執行支援的驅動程式、韌體和BIOS版本、則必須更新這些介面卡。 
+---
+= 更新HBA驅動程式、韌體和BIOS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果ESX主機中的FC主機匯流排介面卡（HBA）未執行支援的驅動程式、韌體和BIOS版本、則必須更新這些介面卡。
+
+.開始之前
+您必須從識別出支援的驅動程式、韌體和BIOS版本、才能進行組態設定 https://mysupport.netapp.com/matrix["NetApp 互通性對照表工具"]。
+
+.關於這項工作
+HBA廠商提供驅動程式、韌體、BIOS及HBA公用程式。
+
+.步驟
+. 針對您的ESXi版本、使用ESXi主機主控台命令列出已安裝的HBA驅動程式、韌體和BIOS版本。
+. 視需要從HBA廠商的支援網站下載並安裝新的驅動程式、韌體和BIOS。
++
+下載時會提供安裝說明和任何必要的安裝公用程式。
+
+
+
+*相關資訊*
+
+http://kb.vmware.com/kb/1002413["VMware知識庫文章1002413：識別QLogic或Emulex FC HBA的韌體"]

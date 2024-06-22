@@ -1,0 +1,29 @@
+---
+section: peering
+title: 叢集與SVM對等組態
+entries:
+- title: 總覽
+  url: "/peering/index.html"
+- title: 叢集對等關係的先決條件
+  url: "/peering/reference_prerequisites_for_cluster_peering.html"
+- title: 叢集與SVM對等工作流程
+  url: "/peering/concept_cluster_peering_workflow.html"
+  entries:
+  - title: 準備叢集對等
+    url: "/peering/task_preparing_for_cluster_peering.html"
+  - title: 設定對等關係（從ONTAP 功能9.3開始）
+    url: "/peering/concept_creating_peer_relationships_93_later.html"
+    entries:
+    - title: 建立叢集間的生命體（從ONTAP S19.3開始）
+      url: "/peering/task_creating_intercluster_lifs.html"
+    - title: 建立叢集對等關係（從ONTAP 功能9.3開始）
+      url: "/peering/task_creating_cluster_peer_relationship_starting_with_ontap_9_3.html"
+    - title: 建立SVM對等關係
+      url: "/peering/task_creating_svm_peers.html"
+  - title: 設定對等關係ONTAP （不含版本號的版本）
+    url: "/peering/concept_creating_peer_relationship_between_clusters_92_earlier.html"
+    entries:
+    - title: 在所有節點上建立叢集間介面ONTAP （例如、0、2或更早版本）
+      url: "/peering/task_creating_intercluster_interfaces_on_all_nodes.html"
+    - title: 建立叢集對等關係ONTAP （不含版本號的9.2）
+      url: "/peering/task_creating_cluster_peer_relationships_92_earlier.html"

@@ -1,0 +1,31 @@
+---
+permalink: online-help-96-97/task_viewing_list_saved_snapshot_copies.html 
+sidebar: sidebar 
+keywords: view, list, saved, snapshot, copy, system, manager, online, help 
+summary: 您可以使用System Manager、從「Volumes（磁碟區）」視窗下方窗格的「Snapshot Copies（快照複本）」索引標籤、檢視所選磁碟區的所有已儲存Snapshot複本清單。您可以使用已儲存的Snapshot複本清單來重新命名、還原或刪除Snapshot複本。 
+---
+= 使用System Manager（ONTAP 系統管理程式）-更新版本、查看已儲存的Snapshot複本清單
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）、從「Volumes」（Volume）視窗下方窗格的「Snapshot Copies」（Snapshot複本）標籤中、檢視所選Volume的所有已儲存Snapshot複本清單。您可以使用已儲存的Snapshot複本清單來重新命名、還原或刪除Snapshot複本。
+
+.開始之前
+Volume必須處於線上狀態。
+
+.關於這項工作
+您一次只能檢視一個Volume的Snapshot複本。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 按一下要檢視已儲存Snapshot複本之Volume旁的加號（+）。
+. 按一下「*顯示更多詳細資料*」連結、即可檢視更多有關磁碟區的資訊。
+. 按一下「* Snapshot Copies *」標籤。
++
+此時會顯示所選磁碟區的可用Snapshot複本清單。
+
+

@@ -1,0 +1,44 @@
+---
+permalink: fc-config-esxi/task_zoning_fc_switches_by_host_lif_wwpns.html 
+sidebar: sidebar 
+keywords: zone, zoning, fc, switch, enable, host, connect, storage, path, management, interface, zone the fc switches by the host and lif wwpns 
+summary: 分區FC交換器可讓主機連線至儲存設備、並限制路徑數量。您可以使用交換器的管理介面來分區交換器。 
+---
+= 由主機和LIF WWPN對FC交換器進行分區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+分區FC交換器可讓主機連線至儲存設備、並限制路徑數量。您可以使用交換器的管理介面來分區交換器。
+
+.開始之前
+* 您必須擁有交換器的系統管理員認證。
+* 您必須知道每個主機啟動器連接埠的WWPN、以及您在其中建立LUN的儲存虛擬機器（SVM）的每個FC LIF。
+
+
+.關於這項工作
+如需交換器分區的詳細資訊、請參閱交換器廠商的文件。
+
+您必須依WWPN進行區域、而非依實體連接埠。每個啟動器連接埠都必須位於具有所有對應目標連接埠的個別區域中。
+
+LUN會對應到igroup中啟動器的子集、以限制從主機到LUN的路徑數量。
+
+* 根據預設、ONTAP 由於使用選擇性LUN對應、所以LUN只能透過擁有LUN及其HA合作夥伴的節點路徑存取。
+* 如果LUN移至叢集的另一個節點、您仍必須在每個節點上對所有FC生命體進行分區、才能實現LUN的移動性。
+* 移動磁碟區或LUN時、您必須先修改「選擇性LUN對應」報告節點清單、才能移動。
+
+
+下圖顯示連接至四節點叢集的主機。有兩個區域、一個區域由實線表示、一個區域由虛線表示。每個區域都包含來自主機的一個啟動器、以及來自每個儲存節點的LIF。
+
+image::../media/scm_en_drw_dual_fabric_zoning_fc_esxi.gif[映像顯示主機,two FC switches,and four storage nodes. Lines represent the two zones.]
+
+您必須使用目標LIF的WWPN、而非儲存節點上實體FC連接埠的WWPN。LIF WWPN 全都在範圍內 `2x:xx:00:a0:98:xx:xx:xx`、其中 `x` 為任何十六進位數字。實體連接埠 WWPN 全都在範圍內 `50:0a:09:8x:xx:xx:xx:xx`。
+
+.步驟
+. 登入FC交換器管理程式、然後選取分區組態選項。
+. 建立新的區域、其中包含第一個啟動器、以及連接到啟動器所在FC交換器的所有FC LIF。
+. 為主機中的每個FC啟動器建立其他區域。
+. 儲存區域、然後啟動新的分區組態。
+

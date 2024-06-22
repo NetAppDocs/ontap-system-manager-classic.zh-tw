@@ -1,0 +1,57 @@
+---
+permalink: peering/index.html 
+sidebar: sidebar 
+keywords: cluster, administrator, create, authenticated, peer, relationship, svm, enable, communicate, replicate, data 
+summary: 叢集管理員可以在叢集與SVM之間建立驗證的對等關係、讓叢集能夠彼此通訊、以便在不同叢集的磁碟區之間複寫資料。 
+---
+= 叢集與SVM對等概觀
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+叢集管理員可以在叢集與SVM之間建立驗證的對等關係、讓叢集能夠彼此通訊、以便在不同叢集的磁碟區之間複寫資料。  您可以使用ONTAP 《SURESystem Manager _classic_》介面來執行程序、ONTAP 此介面可搭配使用《Estrs9.7》和更早ONTAP 版本的《SUR9》。
+
+如果ONTAP 適用下列情況、請使用「系統管理員_classic_」介面來建立叢集對等關係和SVM對等關係：
+
+* 您正在使用執行ONTAP NetApp 9.7或更新版本ONTAP 的叢集。
+* 您需要已驗證的叢集對等關係。
+* 您想要使用最佳實務做法、而非探索每個可用選項。
+* 您想要使用System Manager、而非ONTAP 使用功能不全的指令行介面（CLI）或自動化指令碼工具。
+
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+支援S仰賴 支援功能的支援功能、可簡化叢集與SVM之間的對等關係設定。ONTAP ONTAP叢集對等程序和SVM對等程序可用於ONTAP 所有的版本。您應該使用ONTAP 適用於您的版本的更新程序。
+
+|===
+
+
+| 若要執行這些工作... | 請參閱... 
+
+
+ a| 
+重新設計的System Manager（ONTAP 提供更新版本的更新版本）
+ a| 
+* https://docs.netapp.com/us-en/ontap/concept_administration_overview.html["使用System Manager進行叢集管理"^]
+
+
+
+
+ a| 
+指令行介面（CLI）ONTAP
+ a| 
+* https://docs.netapp.com/us-en/ontap/peering/index.html["使用CLI進行叢集與SVM對等概觀"^]
++
+使用命令列介面來設定叢集對等關係和SVM對等關係。
+
+* https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理"^]
++
+使用命令列介面來設定子網路、叢集間生命、路由、防火牆原則及其他網路元件
+
+
+
+|===

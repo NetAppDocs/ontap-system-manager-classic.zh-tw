@@ -1,0 +1,35 @@
+---
+permalink: nfs-config-esxi/task_provisioning_datastore_creating_its_containing_lun_volume.html 
+sidebar: sidebar 
+keywords: datastore, virtual, machine, vmdk, esxi, host, provision, storage, cluster, provision a datastore and create its containing volume 
+summary: 資料存放區包含ESXi主機上的虛擬機器及其VMDK。ESXi主機上的資料存放區會配置在儲存叢集上的磁碟區上。 
+---
+= 配置資料存放區並建立內含Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+資料存放區包含ESXi主機上的虛擬機器及其VMDK。ESXi主機上的資料存放區會配置在儲存叢集上的磁碟區上。
+
+.開始之前
+VMware vSphere for（VSC）的虛擬儲存主控台必須安裝並註冊至管理ESXi主機的vCenter Server。
+
+VSC必須有足夠的叢集或認證、才能在指定的SVM上建立磁碟區。
+
+.關於這項工作
+VSC會自動執行資料存放區資源配置、包括在指定的SVM上建立磁碟區。
+
+.步驟
+. 在vSphere Web Client * Home*頁面中、按一下*主機與叢集*。
+. 在導覽窗格中、展開您要配置資料存放區的資料中心。
+. 在ESXi主機上按一下滑鼠右鍵、然後選取「* NetApp VSC*>*資源配置資料庫*」。
++
+或者、您也可以在資源配置時以滑鼠右鍵按一下叢集、讓叢集中的所有主機都能使用資料存放區。
+
+. 在精靈中提供必要資訊：
++
+image::../media/vsc_datastore_provisioning_wizard_nfs.gif[圖顯示VSC資料存放區資源配置精靈的第一頁。]
+
+

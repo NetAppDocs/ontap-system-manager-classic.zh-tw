@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/concept_storage_virtual_machines.html 
+sidebar: sidebar 
+keywords: system, manager, svm, clister, online, help 
+summary: 您可以使用System Manager來管理叢集中的SVM。 
+---
+= 使用System Manager管理儲存虛擬機器- ONTAP VMware®更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版功能（ONTAP 僅供參考資料9.7及更早版本）來管理叢集中的SVM。
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/san-admin/index.html["SAN管理"^]
+
+https://docs.netapp.com/us-en/ontap/concepts/index.html["概念ONTAP"^]

@@ -1,0 +1,45 @@
+---
+permalink: iscsi-config-windows/task_recording_iscsi_node_name.html 
+sidebar: sidebar 
+keywords: record, iscsi, initiator, node, program, windows, host, record the iscsi intiator node name, name 
+summary: 您必須從Windows主機上的iSCSI啟動器程式記錄iSCSI啟動器節點名稱。 
+---
+= 記錄iSCSI啟動器節點名稱
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須從Windows主機上的iSCSI啟動器程式記錄iSCSI啟動器節點名稱。
+
+.步驟
+. 開啟「* iSCSI啟動器內容*」對話方塊：
++
+|===
+| 如果您使用... | 瀏覽至... 
+
+
+ a| 
+Windows Server 2012或Windows Server 2012 R2或Windows Server 2016
+ a| 
+*伺服器管理員*>*儀表板*>*工具*>* iSCSI啟動器*>*組態*
+
+
+
+ a| 
+Windows Server 2008、Windows Server 2008 R2
+ a| 
+*開始*>*管理工具*>* iSCSI啟動器*
+
+|===
+. 將*啟動器名稱*或*啟動器節點名稱*值複製到文字檔或寫下。
++
+對話方塊中的確切標籤會因Windows版本而異。iSCSI啟動器節點名稱應如下例所示：
+
++
+[listing]
+----
+iqn.1991-05.com.microsoft:server3
+----
+

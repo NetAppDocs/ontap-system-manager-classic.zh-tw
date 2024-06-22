@@ -1,0 +1,34 @@
+---
+permalink: online-help-96-97/task_changing_status_volume.html 
+sidebar: sidebar 
+keywords: flexvol, change, status, volume, online, help, system, manager 
+summary: 當您想要離線磁碟區、將磁碟區重新連線、或限制存取磁碟區時、可以使用System Manager來變更FlexVol 該磁碟區的狀態。 
+---
+= 使用System Manager（ONTAP 系統管理程式）變更Volume的狀態-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）、在FlexVol 您想要離線Volume、將Volume重新連線或限制存取Volume時、變更此版本的狀態。
+
+.開始之前
+* 如果您希望磁碟區成為磁碟區複製作業或SnapMirror複寫作業的目標、則磁碟區必須處於受限狀態。
+* 如果您想要將NAS Volume離線、則必須卸載NAS Volume。
+
+
+.關於這項工作
+您可以將磁碟區離線、以便在磁碟區上執行維護、移動磁碟區或銷毀磁碟區。當磁碟區離線時、該磁碟區無法供用戶端進行讀取或寫入存取。您無法將根Volume離線。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要修改其狀態的Volume。
+. 從*更多動作*>*變更狀態為*功能表、選取所需的Volume狀態。
+. 按一下確認對話方塊中的*確定*以變更Volume狀態。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

@@ -1,0 +1,15 @@
+---
+section: volume-restore-snapvault
+title: Volume還原管理功能SnapVault
+entries:
+- title: 總覽
+  url: "/volume-restore-snapvault/index.html"
+- title: Volume還原工作流程
+  url: "/volume-restore-snapvault/concept_volume_restore_workflow.html"
+  entries:
+  - title: 識別SnapVault 不支援的目的地Volume
+    url: "/volume-restore-snapvault/task_identifying_snapvault_backup_destination_volume.html"
+  - title: 從SnapVault 無法還原的備份還原資料
+    url: "/volume-restore-snapvault/task_restoring_data_from_snapvault_backup.html"
+  - title: 驗證還原作業
+    url: "/volume-restore-snapvault/task_verifying_restore_operation.html"

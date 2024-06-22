@@ -1,0 +1,73 @@
+---
+permalink: volume-restore-snapvault/task_restoring_data_from_snapvault_backup.html 
+sidebar: sidebar 
+keywords: snapvault, backup, destination, volume, perform, restore, operation, backed-up, data, corrupt, lost, restore data from a snapvault backup 
+summary: 選取SnapVault 「還原目的地Volume」之後、您必須對新磁碟區執行還原作業、以測試備份資料、或是執行至現有磁碟區、以還原遺失或毀損的資料。 
+---
+= 從SnapVault 無法還原的備份還原資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+選取SnapVault 「還原目的地Volume」之後、您必須對新磁碟區執行還原作業、以測試備份資料、或是執行至現有磁碟區、以還原遺失或毀損的資料。
+
+.關於這項工作
+您必須從*目的地*叢集執行此工作。
+
+.步驟
+. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+** 《》（或更早版本）：按一下「*保護*」>「*關係*」ONTAP 。
+** 從ONTAP 《S19.5》開始：按一下「* Protection *」>「* Volume Relationationationation*」。
+
+
+. 選取包含SnapVault 還原目的地磁碟區的SVM、然後按一下* Operations *>* Restore *。
+. 在*還原*對話方塊中、將資料還原至原始來源磁碟區或新磁碟區：
++
+|===
+| 如果您要還原至... | 然後... 
+
+
+ a| 
+原始來源Volume
+ a| 
+選擇*來源Volume *。
+
+
+
+ a| 
+新的Volume
+ a| 
+.. 選擇*其他Volume *。
+.. 選取該磁碟區的已處理叢集和已處理的SVM。
+.. 從清單中選取一個已啟用的SVM。
+.. 如果SVM未連接、請建立SVM對等關係：
++
+... 選取SVM。
+... 按一下*驗證*。
+... 輸入所連接叢集的叢集管理員認證、然後按一下*「Create」（建立）*。
+
+
+.. 選擇*新Volume *。
+.. 如果您想要變更預設名稱、請以格式顯示 `destination_SVM_name_destination_volume_name_restore`，請指定新名稱，然後選擇包含該 Volume 的 Aggregate 。
+.. 選取「*啟用重複資料刪除*」核取方塊。
+
+
+|===
++
+image:../media/restore_to.gif["選取要還原的磁碟區"]
+
+. 選取最新的Snapshot複本、或選取您要還原的特定Snapshot複本。
+. 選取「*確定以從Snapshot Copy*還原磁碟區」核取方塊。
+. 選取「*啟用網路壓縮*」核取方塊、以壓縮還原作業期間傳輸的資料。
+. 按一下 * 還原 * 。
++
+還原程序期間、正在還原的磁碟區會變更為唯讀。還原作業完成後、會移除暫用關係、並將還原的磁碟區變更為讀取/寫入。
+
++
+image::../media/restore_configuration.gif[Volume還原作業的結果]
+
+. 按一下訊息方塊中的*確定*。
+

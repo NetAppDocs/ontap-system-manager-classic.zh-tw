@@ -1,0 +1,143 @@
+---
+permalink: online-help-96-97/concept_configuration_update.html 
+sidebar: sidebar 
+keywords: configuration, update, system, manager, administration, detail, storage, virtual, machine, svm, online, help, window, tab, node, command, button 
+summary: 您可以使用System Manager來設定儲存虛擬機器（SVM）的管理詳細資料。 
+---
+= 系統管理程式組態更新- ONTAP 更新版本：BIOS 9.7及更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版（ONTAP 僅適用於VMware 9.7及更早版本）來設定儲存虛擬機器（SVM）的管理詳細資料。
+
+
+
+== 設定SVM的管理詳細資料
+
+您可以使用System Manager快速設定astorage虛擬機器（SVM）的管理詳細資料。您可以選擇性地將SVM的管理委派給SVM系統管理員。
+
+.關於這項工作
+身為SVM管理員、您無法使用System Manager來管理委派的SVM。您只能使用命令列介面（CLI）來管理SVMsOnly。
+
+.步驟
+. 按一下*組態*>*叢集*>*組態更新*。
+. 在「* SVMS*」標籤中、選取節點、然後按一下「*組態管理詳細資料*」。
+. 在 * 管理員詳細資料 * 區段中、設定的密碼 `vsadmin` 使用者帳戶。
+. 如果您想要專屬的LIF用於SVM管理、請選取*「Create a LIF for SVM management *（為SVM管理*建立LIF）」、然後指定網路詳細資料。
++
+SAN傳輸協定需要專用的SVM管理LIF、因為其中的資料與管理傳輸協定無法共用相同的LIF。SVM管理生命區只能在資料連接埠上建立。
+
+. 指定網路詳細資料：
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+使用子網路指定IP位址
+ a| 
+.. 選擇*使用子網路*。
+.. 在「新增詳細資料」對話方塊中、選取必須指派IP位址的子網路。
++
+對於叢集間的LIF、只會顯示與所選IPspace相關聯的子網路。
+
+.. 如果您要指派特定IP位址給介面、請選取*使用特定IP位址*、然後輸入IP位址。
++
+如果子網路範圍中沒有您指定的IP位址、則會將該IP位址新增至子網路。
+
+.. 按一下「*確定*」。
+
+
+
+
+ a| 
+無需使用子網路、即可手動指定IP位址
+ a| 
+.. 選擇*不含子網路*。
+.. 在「新增詳細資料」對話方塊中、執行下列步驟：
++
+... 指定IP位址和網路遮罩或字首。
+... 選用：指定閘道。
++
+目的地欄位會根據IP位址的系列、填入預設值。
+
+... 如果您不想要預設值、請指定新的目的地值。
+如果路由不存在、系統會根據閘道和目的地自動建立新路由。
+
+
+.. 按一下「*確定*」。
+
+
+|===
+. 指定要建立資料LIF的連接埠：
++
+.. 按一下*瀏覽*。
+.. 在「*選取網路連接埠或介面卡*」對話方塊中、選取連接埠、然後按一下「*確定*」。
+
+
+
+
+
+
+== 組態更新視窗
+
+您可以使用「組態更新」視窗來更新叢集、儲存虛擬機器（SVM）和節點的組態詳細資料。
+
+
+
+=== 索引標籤
+
+* *節點*
++
+可讓您設定節點的詳細資料。
+
+* * SVMS*
++
+可讓您設定SVM的詳細資料。
+
+
+
+
+
+=== 節點索引標籤
+
+
+
+=== 命令按鈕
+
+* *編輯節點名稱*
++
+開啟「編輯節點名稱」對話方塊、可讓您修改節點名稱。
+
+* *建立節點管理LIF*
++
+開啟「建立節點管理LIF」對話方塊、可讓您建立節點管理LIF來管理特定節點。
+
+* *編輯AutoSupport
++
+開啟「編輯AutoSupport 功能」對話方塊、可讓您指定電子郵件通知的寄件地址、以及新增多個主機名稱的電子郵件地址。
+
+
+
+
+
+=== SVM索引標籤
+
+
+
+=== 命令按鈕
+
+* *設定系統管理詳細資料*
++
+開啟「設定管理詳細資料」對話方塊、可讓您設定SVM的管理詳細資料。
+
+
+
+*相關資訊*
+
+xref:task_creating_cluster.adoc[建立叢集]
+
+xref:task_setting_up_network_when_ip_address_range_is_disabled.adoc[停用IP位址範圍時設定網路]

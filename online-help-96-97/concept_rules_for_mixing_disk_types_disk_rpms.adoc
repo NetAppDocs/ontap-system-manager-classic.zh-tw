@@ -1,0 +1,18 @@
+---
+permalink: online-help-96-97/concept_rules_for_mixing_disk_types_disk_rpms.html 
+sidebar: sidebar 
+keywords: rule, online, help, create, aggregate, add, capacity, disk, rpm 
+summary: 建立集合體並將容量磁碟新增至集合體時、您應該瞭解顯示磁碟類型和磁碟RPM時適用的規則。 
+---
+= 在System Manager中顯示磁碟類型和磁碟RPM的規則- ONTAP 例如、更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您建立集合體並將容量磁碟新增至集合體時、您應該瞭解ONTAP 當磁碟類型和磁碟RPM顯示在經典版的《經典版》（ONTAP 適用於更新版本的版本）中時、適用的規則。
+
+如果未啟用磁碟類型混合和磁碟RPM混合選項、則會顯示實際的磁碟類型和實際的磁碟RPM。
+
+啟用這些混合選項時、會顯示有效的磁碟類型和有效的磁碟RPM、而非實際的磁碟類型和實際的磁碟RPM。例如、啟用磁碟混合選項時、System Manager會將SSA磁碟顯示為SSA。同樣地、啟用磁碟RPM混合選項時、如果磁碟的RPM是10K和15K、System Manager會將有效RPM顯示為10K。

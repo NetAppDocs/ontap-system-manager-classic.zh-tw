@@ -1,0 +1,36 @@
+---
+permalink: iscsi-config-esxi/task_verifying_iscsi_is_running_on_existing_vserver.html 
+sidebar: sidebar 
+keywords: exist, storage, virtual, machine, svm, verify, iscsi, service, verify that the iscsi service is running on an existing svm 
+summary: 如果您選擇使用現有的儲存虛擬機器（SVM）、則必須確認iSCSI服務是否在SVM上執行。 
+---
+= 確認iSCSI服務正在現有的SVM上執行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您選擇使用現有的儲存虛擬機器（SVM）、則必須確認iSCSI服務是否在SVM上執行。
+
+.開始之前
+您必須選擇要在其中建立新LUN的現有SVM。
+
+.步驟
+. 瀏覽至* SVMS*視窗。
+. 按一下「* SVM設定*」索引標籤。
+. 在「*傳輸協定*」窗格中、按一下「* iSCSI *」。
+. 確認iSCSI服務正在執行。
++
+image::../media/vserver_service_iscsi_running_iscsi_esxi.gif[圖示顯示iSCSI傳輸協定頁面上有綠色圖示、而且iSCSI服務正在執行文字。]
+
+. 記錄SVM列出的iSCSI介面。
+
+
+
+
+== 接下來該怎麼做
+
+如果iSCSI服務未執行、請啟動iSCSI服務或建立新的SVM。
+
+如果每個節點的iSCSI介面少於兩個、請更新SVM上的iSCSI組態、或為iSCSI建立新的SVM。

@@ -1,0 +1,23 @@
+---
+permalink: snmp-config/task_testing_snmp_traps.html 
+sidebar: sidebar 
+keywords: communication, traphost, automatic, validate, add, snmp, traphost, correct, trap, test, test snmp traps 
+summary: 您可以將ONTAP 「經典」介面搭配ONTAP 使用以測試SNMP設陷。由於新增traphost時並未自動驗證與它的通訊、因此您應該確認SNMP traphost可以正確接收陷阱。 
+---
+= 測試SNMP設陷
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以搭配ONTAP 使用含有ONTAP 更新版本的《SURE系 系統管理程式_classic_介面》來測試SNMP設陷。由於新增traphost時並未自動驗證與它的通訊、因此您應該確認SNMP traphost可以正確接收陷阱。
+
+.步驟
+. 瀏覽至「* SNMP *」畫面。
+. 按一下*測試設陷主機*、從您新增traphost的叢集產生設陷。
+. 從traphost位置、確認已接收到設陷。
++
+使用您通常用來管理SNMP traphost的任何軟體。
+
+

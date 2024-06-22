@@ -1,0 +1,48 @@
+---
+permalink: iscsi-config-windows/index.html 
+sidebar: sidebar 
+keywords: iscsi, service, storage, virtual, machine, svm, provision, lun, isvsi, initiator, windows, host, computer 
+summary: 使用ONTAP 經典的支援功能（ONTAP 例如：支援支援支援的版本9.7和更早版本）、您可以在儲存虛擬機器（SVM）上快速設定iSCSI服務、配置LUN、並使用Windows主機電腦上的iSCSI啟動器來提供LUN。 
+---
+= 適用於Windows的iSCSI組態總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用ONTAP 經典的支援功能（ONTAP 例如：支援支援支援的版本9.7和更早版本）、您可以在儲存虛擬機器（SVM）上快速設定iSCSI服務、配置LUN、並使用Windows主機電腦上的iSCSI啟動器來提供LUN。
+
+這些程序以下列假設為基礎：
+
+* 您使用的是Windows Server 2008或Windows Server 2012上的Microsoft iSCSI軟體啟動器。
+* 您的網路使用的是IPv4定址。
+* 您想要使用下列任一方法、將位址指派給邏輯介面：
++
+** 自動從您所定義的子網路
+** 手動使用從現有子網路選取的位址
+** 手動使用將新增至現有子網路的位址
+
+
+* 您未設定iSCSI SAN開機。
+
+
+如需更多關於如何使用ONTAP 支援功能來設定特定主機的資訊、請參閱 https://docs.netapp.com/us-en/ontap-sanhost/index.html["SAN主機組態ONTAP"]。
+
+如需SAN管理的其他詳細資料、請參閱 https://docs.netapp.com/us-en/ontap/san-admin/index.html["支援SAN管理的概述ONTAP"]
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+|===
+
+
+| 若要完成此工作、請使用... | 請參閱... 
+
+
+| 重新設計的System Manager（9.7及更新版本隨附） | https://docs.netapp.com/us-en/ontap/task_san_provision_windows.html["為Windows伺服器配置SAN儲存設備"] 
+
+
+| 指令行介面（CLI）ONTAP | https://docs.netapp.com/us-en/ontap/san-admin/lun-setup-workflow-concept.html["使用CLI進行LUN設定工作流程"] 
+|===

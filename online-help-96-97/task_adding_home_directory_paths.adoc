@@ -1,0 +1,38 @@
+---
+permalink: online-help-96-97/task_adding_home_directory_paths.html 
+sidebar: sidebar 
+keywords: cifs, system, manager, online, help, storage, add , delete, home, directory 
+summary: 您可以使用System Manager指定一或多個路徑、供儲存系統用來解析使用者CIFS主目錄的位置。 
+---
+= 管理主目錄路徑- ONTAP 不包括更新版本的版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來指定一或多個路徑、供儲存系統用來解析使用者CIFS主目錄的位置。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*組態*索引標籤的*主目錄*區域中、按一下*管理*。
+. 在*管理主目錄*對話方塊中、指定儲存系統用來搜尋使用者CIFS主目錄的路徑。
+. 按一下「*新增*」、然後按一下「*儲存並關閉*」。
+
+
+
+
+== 刪除主目錄路徑
+
+當您不想讓儲存系統使用路徑來解析使用者CIFS主目錄的位置時、可以使用System Manager刪除主目錄路徑。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*組態*索引標籤的*主目錄*區域中、按一下*管理*。
+. 在*管理主目錄*對話方塊中、選取您要刪除的主目錄路徑、然後按一下*刪除*。
+. 按一下*儲存並關閉*。
+
+
+*相關資訊*

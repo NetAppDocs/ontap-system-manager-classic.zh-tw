@@ -1,0 +1,52 @@
+---
+permalink: volume-disaster-recovery/task_verifying_destination_volume_status.html 
+sidebar: sidebar 
+keywords: break, snapmirror, relationship, verify, destination, volume, access, source, verify the destination volume status 
+summary: 中斷SnapMirror關係之後、您必須確認目的地Volume具有讀寫存取權、而且目的地Volume設定符合來源Volume的設定。 
+---
+= 驗證目的地Volume狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+中斷SnapMirror關係之後、您必須確認目的地Volume具有讀寫存取權、而且目的地Volume設定符合來源Volume的設定。
+
+.關於這項工作
+您必須從*目的地*叢集執行此工作。
+
+.步驟
+. 瀏覽至* Volumes *（*磁碟區*）視窗。
+. 從 * Volumes （卷） * 列表中選擇目標卷，然後驗證目標卷類型是否爲 `rw`，表示讀寫存取權。
+. 確認目的地Volume上的精簡配置、重複資料刪除、壓縮及自動擴充等Volume設定符合來源Volume的設定。
++
+您可以使用建立SnapMirror關係後記下的Volume設定資訊來驗證目的地Volume設定。
+
+. 如果Volume設定不相符、請視需要修改目的地Volume上的設定：
++
+.. 按一下 * 編輯 * 。
+.. 視需要修改環境的一般設定、儲存效率設定和進階設定。
+.. 按一下*儲存並關閉*。
++
+image::../media/volume_edit_dest_vol_unix.gif[「編輯Volume」對話方塊的快照。]
+
+.. 驗證* Volumes（卷）*列表中的列是否已用適當的值更新。
+
+
+. 啟用目的地Volume的Snapshot複本建立。
++
+.. 視ONTAP 您的版本而定、請使用下列其中一種方式瀏覽至* Configure Volume Snapshot Copies *（設定Volume Snapshot複本*）頁面：
++
+從ONTAP 功能表9.3開始：選取目的地磁碟區、然後按一下「*動作*」>「*管理快照*」>「*組態*」。
+
++
+Section9.2或更早版本：選擇目的地Volume、然後按一下* Snapshot Copies *>* Configure *。ONTAP
+
+.. 選取「*啟用排程的Snapshot Copies（快照複本）」核取方塊、然後按一下「* OK（確定）*」。
+
+
++
+image::../media/configure_snapshot_policy.gif[設定Volume Snapshot複本]
+
+

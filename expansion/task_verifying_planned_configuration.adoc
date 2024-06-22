@@ -1,0 +1,92 @@
+---
+permalink: expansion/task_verifying_planned_configuration.html 
+sidebar: sidebar 
+keywords: expand, cluster, ensure, follow, plan, configuration, support, require, license, exist, ontap, verify, verify the planned configuration 
+summary: 在您擴充叢集之前、您必須確定下列事項：支援規劃的組態、已有必要的授權、站台已就緒、叢集交換器支援擴充、以及現有節點使用ONTAP 相同版本的S16。 
+---
+= 驗證規劃的組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在您擴充叢集之前、您必須確定下列事項：支援規劃的組態、已有必要的授權、站台已就緒、叢集交換器支援擴充、以及現有節點使用ONTAP 相同版本的S16。
+
+.開始之前
+您必須擁有兩組認證資料：以系統管理員身分登入叢集所需的使用者名稱和密碼，以及登入 NetApp 支援網站所需的使用者名稱和密碼。
+
+.步驟
+. 驗證規劃的組態：
++
+.. 確認新控制器的平台可以與叢集現有的控制器混合使用。
+.. 確認擴充叢集未超過平台的系統限制。
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+.. 如果您的叢集已設定SAN、請確認擴充叢集未超過FC、FCoE和iSCSI的組態限制。
++
+https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN 組態"^]
+
+
+
++
+如果不符合這些要求、您就無法繼續擴充。
+
+. 確保授權涵蓋新節點：
++
+.. 在現有叢集上、使用檢視授權 `system license show` 命令。
++
+[listing]
+----
+cluster1::> system license show
+
+Serial Number: 9-99-999999
+Owner: cluster1
+Package           Type    Description           Expiration
+----------------- ------- --------------------- --------------------
+Base              site    Cluster Base License  -
+NFS               license NFS License           -
+CIFS              license CIFS License          -
+...
+----
+.. 檢閱輸出以識別節點鎖定的授權（以類型識別） `license`）。
+.. 確保附加節點隨附的授權與叢集現有的節點鎖定授權一致。
++
+http://mysupport.netapp.com/licenses["NetApp軟體授權搜尋"^]
+
+
+
++
+如果您沒有額外節點所需的授權、則必須先購買額外的授權、才能繼續進行。
+
+. 確認站台已準備好迎接所有新設備。
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
++
+如果站台尚未就緒、您必須先準備好站台、然後再繼續擴充。
+
+. 驗證現有的交換器是否支援其他控制器。
++
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
++
+如果叢集是無交換器的、或現有的交換器不支援其他節點、您必須取得叢集交換器、以便稍後在擴充程序中安裝。
+
+. 使用、確認現有叢集中的所有節點都執行相同版本的 ONTAP 9 、包括相同的次要版本和修補程式（如果適用） `cluster image show` 命令。
++
+[listing]
+----
+cluster1::> cluster image show
+                 Current                 Installation
+Node             Version                 Date
+---------------- ----------------------- ------------
+cluster1-1       8.3RC1                  12/15/2014 17:37:26
+cluster1-2       8.3RC1                  12/15/2014 17:37:42
+2 entries were displayed.
+----
++
+您應該記下ONTAP 此工作流程稍後會參考的版本的資訊。
+
+

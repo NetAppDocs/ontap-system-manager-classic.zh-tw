@@ -1,0 +1,69 @@
+---
+permalink: online-help-96-97/task_editing_application.html 
+sidebar: sidebar 
+keywords: edit, application, online, help, provisioned, snapshot, copy 
+summary: 您可以編輯已配置的應用程式、以增加儲存容量或管理應用程式的Snapshot複本。 
+---
+= 使用System Manager（ONTAP 系統管理程式）編輯應用程式- NetApp 9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來編輯已配置的應用程式、以增加儲存容量或管理應用程式的Snapshot複本。
+
+.關於這項工作
+身為叢集管理員、您可以在佈建應用程式之後編輯應用程式、以修改儲存大小。您也可以建立、還原或刪除應用程式的Snapshot複本。以下程序範例說明如何編輯* NAS Container-*應用程式。
+
+.步驟
+. 按一下*應用程式與層級*>*應用程式*
+. 按一下NAS Container應用程式的名稱。
++
+[NOTE]
+====
+如果有人在您檢視應用程式清單時使用CLI或REST API新增應用程式、則當您捲動清單時、將無法檢視這些新應用程式。
+
+====
++
+「應用程式詳細資料：NAS」視窗的「*總覽*」標籤會顯示應用程式設定。
+
+. 按一下 * 編輯 * 。
++
+編輯NAS Container：NAS會顯示目前的儲存容量設定和* NFS Access -授予對主機*位址的存取權。
+
+. 修改*儲存設備總大小*值。
+. 在「大小單位」欄位中、從下拉式功能表中選取、以指定正確的大小單位（位元組、MB、GB或TB）。
+. 在* ONTAP 《服務層級*》欄位中、從下拉式功能表中選取以指定值。
+. 按一下「 * 儲存 * 」。
+. 瀏覽至*應用程式詳細資料：NAS*視窗、然後選取「** Snapshot copies（*快照複本）」索引標籤。
++
+此時會顯示此已配置應用程式的Snapshot複本清單。您可以使用*搜尋*欄位依名稱搜尋Snapshot複本。
+
+. 視需要執行下列工作來管理Snapshot複本：
++
+|===
+| 工作 | 行動 
+
+
+ a| 
+建立
+ a| 
+按一下「*建立*」以建立新的Snapshot複本。
+
+
+
+ a| 
+還原
+ a| 
+按一下您要還原的Snapshot複本旁邊的核取方塊、然後按一下*還原*。
+
+
+
+ a| 
+刪除
+ a| 
+按一下您要刪除之Snapshot複本旁的核取方塊、然後按一下*刪除*。
+
+|===
+

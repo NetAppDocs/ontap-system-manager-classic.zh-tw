@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/task_viewing_lun_information.html 
+sidebar: sidebar 
+keywords: view, lun, information, manangement, online, help 
+summary: 您可以使用System Manager中的LUN Management（LUN管理）索引標籤來檢視LUN的詳細資料、例如其名稱、狀態、大小和類型。 
+---
+= 使用System Manager（ONTAP 系統管理程式）檢視LUN資訊- NetApp 9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 《經典版》（ONTAP 英文版）中的「* LUN管理*」索引標籤（英文版）來檢視LUN的詳細資料、例如名稱、狀態、大小和類型。
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在「* LUN管理*」索引標籤中、從顯示的LUN清單中選取您要檢視其相關資訊的LUN。
+. 在* LUN*視窗中檢閱LUN詳細資料。
+

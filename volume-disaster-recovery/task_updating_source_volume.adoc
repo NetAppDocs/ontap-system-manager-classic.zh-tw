@@ -1,0 +1,39 @@
+---
+permalink: volume-disaster-recovery/task_updating_source_volume.html 
+sidebar: sidebar 
+keywords: resynchronize, resynchronizing, source, volume, update, activate, update the source volume 
+summary: 重新同步來源Volume之後、您可能需要先確認來源Volume上的所有最新變更都已更新、然後再啟動來源Volume。 
+---
+= 更新來源Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+重新同步來源Volume之後、您可能需要先確認來源Volume上的所有最新變更都已更新、然後再啟動來源Volume。
+
+.關於這項工作
+您必須從*來源*叢集執行此工作。
+
+.步驟
+. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+** 《》（或更早版本）：按一下「*保護*」>「*關係*」ONTAP 。
+** 從ONTAP 《S19.5》開始：按一下「* Protection *」>「* Volume Relationationationation*」。
+
+
+. 選取來源與目的地磁碟區之間的SnapMirror關係、然後按一下*作業*>*更新*。
+. 在來源與目的地磁碟區之間、從最近的通用Snapshot複本執行遞增傳輸。
++
+** 從ONTAP S等效9.3開始：選擇*根據原則*選項。
+** S9.2或更早版本：選擇*隨需*選項。ONTAP
+
+
+. *選用：*選取*限制傳輸頻寬至*、以限制傳輸所用的網路頻寬、然後指定最大傳輸速度。
+. 按一下 * 更新 * 。
+. 確認傳輸狀態為 `Idle` 最後一種傳輸類型是 `Update` 在 * 詳細資料 * 標籤中。
++
+image::../media/snapmirror_update_verify.gif[SnapMirror關係詳細資料]
+
+

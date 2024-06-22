@@ -1,0 +1,51 @@
+---
+permalink: online-help-96-97/concept_guidelines_working_with_volumes_that_contain_luns.html 
+sidebar: sidebar 
+keywords: guidelines, flexvol, volume, lun, change, default, settings, snapshot, copy, simplify, administration 
+summary: 當您使用FlexVol 包含LUN的實體磁碟區時、必須變更Snapshot複本的預設設定。您也可以最佳化LUN配置、以簡化管理作業。 
+---
+= 使用FlexVol 含有System Manager的LUN的不含更新ONTAP 版本的不含更新版本的不含更新版本的不含更新版本的不含更新版本的不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在經典版的《經典版》（僅適用於更新版本的版本）中、當您使用包含LUN的各種版本時、必須變更Snapshot複本的預設設定。ONTAP ONTAP FlexVol您也可以最佳化LUN配置、以簡化管理作業。
+
+Snapshot複本是許多選用功能的必備項目SyncMirror 、例如SnapMirror、還原、傾印與還原、以及ndmpcopy。
+
+當您建立Volume時ONTAP 、流通系統會自動執行下列作業：
+
+* 保留快照複本的5%空間
+* 排程Snapshot複本
+
+
+由於ONTAP 內部排程機制無法確保LUN內的資料處於一致狀態、因此您應該執行下列工作來變更這些Snapshot複本設定：
+
+* 關閉自動Snapshot複製排程。
+* 刪除所有現有的Snapshot複本。
+* 將保留給Snapshot複本的空間百分比設為零。
+
+
+您應該使用下列準則來建立包含LUN的磁碟區：
+
+* 請勿在系統的根磁碟區中建立任何LUN。
++
+使用此磁碟區來管理儲存系統。ONTAP預設的根磁碟區是/vol/vol0。
+
+* 您應該使用SAN磁碟區來包含LUN。
+* 您應確保包含LUN的磁碟區中不存在其他檔案或目錄。
++
+如果無法做到這一點、而且您要將LUN和檔案儲存在相同的磁碟區中、則應使用個別的qtree來包含LUN。
+
+* 如果多個主機共用同一個磁碟區、您應該在磁碟區上建立qtree、以儲存同一主機的所有LUN。
++
+這是簡化LUN管理與追蹤的最佳實務做法。
+
+* 為了簡化管理、您應該使用LUN和磁碟區的命名慣例來反映其擁有權或使用方式。
+
+
+*相關資訊*
+
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]

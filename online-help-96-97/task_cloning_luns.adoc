@@ -1,0 +1,39 @@
+---
+permalink: online-help-96-97/task_cloning_luns.html 
+sidebar: sidebar 
+keywords: clone, lun, create, multiple, copy, system, manager, online, help 
+summary: LUN複製可讓您建立LUN的多個可讀寫複本。您可以使用System Manager建立LUN的暫用複本以進行測試、或是讓其他使用者能夠使用您的資料複本、而不需讓他們存取正式作業資料。 
+---
+= 使用System Manager複製LUN - ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來建立LUN的暫用複本、以供測試之用、或是讓其他使用者能夠使用您的資料複本、而無需讓他們存取正式作業資料。LUN複製可讓您建立LUN的多個可讀寫複本。
+
+.開始之前
+* 您必須在儲存系統上安裝FlexClone授權。
+* 在LUN上停用空間保留時、包含LUN的磁碟區必須有足夠的空間來容納對實體複本所做的變更。
+
+
+.關於這項工作
+* 建立LUN複製時、系統管理員預設會啟用LUN複製的自動刪除功能。
++
+當執行自動刪除以節省空間的動作時、LUN實體複製即會刪除ONTAP 。
+
+* 您無法複製SnapLock 位於實體磁碟區上的LUN。
+
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在「* LUN管理*」索引標籤中、選取您要複製的LUN、然後按一下「* Clone（*複製*）」。
+. 如果要變更預設名稱、請為LUN實體複製指定新名稱。
+. 按一下* Clone（複製）*。
+. 驗證您所建立的LUN實體複本是否列在「* LUN*」視窗中。
+
+
+*相關資訊*
+
+xref:reference_luns_window.adoc[LUN視窗]

@@ -1,0 +1,14 @@
+---
+permalink: nfs-config-esxi/task_configuring_esxi_host.html 
+sidebar: sidebar 
+keywords: configure, configuring, esxi, host, port, vswitches, practice, setting, correct, aggregate, provision, volume, configure the esxi host 
+summary: 設定ESXi主機需要設定連接埠和VSwitches、以及使用ESXi主機最佳實務做法設定。驗證這些設定是否正確之後、您就可以建立Aggregate、然後決定新Volume的資源配置位置。 
+---
+= 設定ESXi主機
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定ESXi主機需要設定連接埠和VSwitches、以及使用ESXi主機最佳實務做法設定。驗證這些設定是否正確之後、您就可以建立Aggregate、然後決定新Volume的資源配置位置。

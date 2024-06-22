@@ -1,0 +1,24 @@
+---
+permalink: online-help-96-97/task_deleting_protection_policies.html 
+sidebar: sidebar 
+keywords: delete, protection, policies, online, help, system, manager 
+summary: 如果您不想再使用原則、可以使用System Manager刪除保護原則。 
+---
+= 刪除保護原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您不想再使用原則、可以使用System Manager刪除保護原則。
+
+.關於這項工作
+不會顯示叢集層級的鏡射原則或資料保險箱原則。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取儲存虛擬機器（SVM）、然後按一下「* SVM設定*」。
+. 在* Protection Policies（保護策略）*窗口中，選擇要刪除的策略，然後單擊* Delete（刪除）*。
+. 在*刪除原則*對話方塊中、按一下*刪除*。
+

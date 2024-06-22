@@ -1,0 +1,42 @@
+---
+permalink: peering/reference_where_to_find_additional_information.html 
+sidebar: sidebar 
+keywords: successful, create, cluster, peer, relationship, protect, availability, data, configure, protection, configuration, where to find additional information 
+summary: 成功建立叢集對等關係之後、您就準備好保護資料的可用度了。 
+---
+= 何處可找到其他資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+成功建立叢集對等關係之後、您就準備好保護資料的可用度了。
+
+您可以使用下列資訊來保護資料：
+
+* link:../volume-disaster-prep/index.html["Volume災難恢復準備"]
++
+說明如何快速設定及監控不同叢集中磁碟區之間的SnapMirror關係。
+
+* link:../volume-backup-snapvault/index.html["使用SnapVault 功能進行Volume備份"]
++
+說明如何快速設定叢集間SnapVault 的互通性關係。
+
+
+
+如需詳細資訊、請參閱：
+
+* https://docs.netapp.com/us-en/ontap/data-protection/index.html["資料保護"^]
++
+說明如何使用Snapshot複本和SnapMirror複寫到遠端系統、防止資料遺失
+
+* http://www.netapp.com/us/media/tr-4015.pdf["NetApp技術報告4015：SnapMirror組態與最佳實務ONTAP 做法、適用於NetApp 9.1、9.2"^]
++
+說明設定複寫的相關資訊與最佳實務做法、包括叢集對等。
+
+* https://docs.netapp.com/us-en/ontap/concepts/index.html["概念ONTAP"^]
++
+提供有關叢集對等的概念性資訊。
+
+

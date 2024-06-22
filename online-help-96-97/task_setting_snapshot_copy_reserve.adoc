@@ -1,0 +1,29 @@
+---
+permalink: online-help-96-97/task_setting_snapshot_copy_reserve.html 
+sidebar: sidebar 
+keywords: set, up, snapshot, copy, reserve, system, manager, online, help 
+summary: 您可以使用System Manager來保留磁碟區中Snapshot複本的空間（以百分比表示）。藉由設定Snapshot複本保留、您可以為Snapshot複本配置足夠的磁碟空間、使其不會佔用作用中的檔案系統空間。 
+---
+= 使用System Manager（ONTAP 系統管理程式）- NetApp 9.7及更早版本設定Snapshot複本保留
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 可在更新版本中使用）來保留磁碟區中Snapshot複本的空間（以百分比表示）。藉由設定Snapshot複本保留、您可以為Snapshot複本配置足夠的磁碟空間、使其不會佔用作用中的檔案系統空間。
+
+.關於這項工作
+保留給Snapshot複本的預設空間為SAN和VMware磁碟區的5%。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要設定Snapshot複本保留的磁碟區。
+. 單擊*更多操作*>*管理快照*>*組態設定*。
+. 輸入或選取要保留給Snapshot複本的磁碟區空間百分比、然後按一下*確定*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

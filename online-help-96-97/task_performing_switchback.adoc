@@ -1,0 +1,45 @@
+---
+permalink: online-help-96-97/task_performing_switchback.html 
+sidebar: sidebar 
+keywords: metrocluster, perform, switchback, system, manager, online, help 
+summary: 從System Manager 9.6開始、您可以執行切換作業、在MetroCluster 系統成功完成切換作業後、恢復對原始站台（站台B）的控制權。 
+---
+= 執行切換
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、您可以執行切換作業、在MetroCluster 系統成功完成切換作業後、恢復對原始站台（站台B）的控制權。
+
+.開始之前
+在執行切換回復作業之前、您必須先完成下列工作：
+
+* 您必須準備MetroCluster 好這些景點 xref:task_performing_negotiated_planned_switchover.adoc[執行議定（計畫性）切換] 或 xref:task_performing_unplanned_switchover.adoc[執行非計畫性切換]。
+* 如果在修復作業期間發生錯誤、您必須依照顯示的指示加以修正。
+* 如果遠端站台的狀態顯示為「準備好進行切換」、則集合體仍會重新同步。您應該等到遠端站台的狀態顯示該站台已準備好進行切換。
+
+
+.關於這項工作
+如果切換作業成功、MetroCluster 就會顯示「還原切換和切換作業」視窗。此視窗會顯示這兩個站台的狀態、並提供訊息告訴您作業成功。
+
+.步驟
+. 按一下*從站台A切換回站台B*以啟動切換回復作業。
++
+警告訊息會告訴您、切換回復作業正在將MetroCluster 還原控制權歸還給站台B、而且此程序可能需要一些時間。
+
+. 如果您要繼續、請按一下*是*。
+. 切換程序完成時、請執行下列其中一項子步驟：
++
+** 如果切換作業成功、請按一下*完成*以確認MetroCluster 完成了還原作業。
++
+[NOTE]
+====
+在您確認已完成切換作業之前、System Manager會繼續顯示訊息、指出作業已完成。在您確認完成切換作業之前、您無法啟動其他作業或監控後續的切換或切換作業。
+
+====
+** 如果切換操作不成功、狀態區域頂端會顯示錯誤訊息。視需要進行修正、然後按一下*從站台A切換回站台B*、重試此程序。
+
+
+

@@ -1,0 +1,94 @@
+---
+permalink: peering/task_preparing_for_cluster_peering.html 
+sidebar: sidebar 
+keywords: create, creating, cluster, peer, relationship, verify, time, synchronized, external, network, procotol, ntp, server, subnet, port, passphrase, prepare, prepare for cluster peering 
+summary: 在使用ONTAP 包含Etrasic ONTAP 9.7或更早版本的「經典」介面建立叢集對等關係之前、您必須先確認每個叢集上的時間與外部網路時間傳輸協定（NTP）伺服器同步、並判斷您要使用的子網路、連接埠和複雜密碼。 
+---
+= 準備叢集對等
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用ONTAP 含有EstrasSystemManager _classic_介面與ONTAP Etras9.7或更早版本建立叢集對等關係之前、您必須先確認每個叢集上的時間與外部網路時間傳輸協定（NTP）伺服器同步、並判斷您要使用的子網路、連接埠和密碼。
+
+.步驟
+. 如果您執行ONTAP 的是版本9.2或更低版本、請判斷您要用於每個叢集對等關係的通關密碼。
++
+通關密碼必須包含至少八個字元。
+
++
+|===
+
+
+| 關於...之間的關係 | 密碼是... 
+
+
+ a| 
+叢集A和叢集B
+ a| 
+
+|===
++
+從ONTAP 功能不再只9.3開始、您可以在建立叢集對等關係的同時、從遠端叢集產生通關密碼。
+
++
+link:task_creating_cluster_peer_relationship_starting_with_ontap_9_3.html["建立叢集對等關係（從ONTAP 功能9.3開始）"]
+
+. 識別要用於叢集間生命體的子網路、IP位址和連接埠。
++
+根據預設、IP位址會自動從子網路選取。如果您想要手動指定IP位址、您必須確定IP位址已在子網路中可用、或稍後可新增至子網路。有關子網路的資訊、請參閱「網路」索引標籤。
+
++
+建立類似下表的表格、以記錄叢集的相關資訊。  下表假設每個叢集都有四個節點。如果叢集有四個以上的節點、請新增列以取得其他資訊。
+
++
+|===
+
+
+|  | 叢集A | 叢集B 
+
+
+ a| 
+子網路（ONTAP 部分9.2或更早版本）
+ a| 
+ a| 
+
+
+
+ a| 
+IP位址（從ONTAP 0、9.3開始、ONTAP 適用於2、9.2或更早版本）
+ a| 
+ a| 
+
+
+
+ a| 
+節點1連接埠
+ a| 
+ a| 
+
+
+
+ a| 
+節點 2 連接埠
+ a| 
+ a| 
+
+
+
+ a| 
+節點 3 連接埠
+ a| 
+ a| 
+
+
+
+ a| 
+節點 4 連接埠
+ a| 
+ a| 
+
+|===
+

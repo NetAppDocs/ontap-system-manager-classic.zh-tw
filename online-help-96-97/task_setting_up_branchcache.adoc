@@ -1,0 +1,97 @@
+---
+permalink: online-help-96-97/task_setting_up_branchcache.html 
+sidebar: sidebar 
+keywords: cifs, svm, system, manager, online, help, branchcache, set, up, modify, settings, delete 
+summary: 您可以使用System Manager在啟用CIFS的儲存虛擬機器（SVM）上設定BranchCache、以便在要求用戶端所在的電腦上快取內容。 
+---
+= 使用System Manager設定BranchCache - ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《支援CIFS ONTAP 的儲存虛擬機器（SVM）》（以更新版本供應）來設定BranchCache、以便在要求用戶端所在的電腦上快取內容。
+
+.開始之前
+* CIFS必須獲得授權、而且必須設定CIFS伺服器。
+* 在BranchCache第1版中、必須啟用SMB 2.1或更新版本。
+* 在BranchCache第2版中、必須啟用SMB 3.0、而且遠端Windows用戶端必須支援BranchCache 2。
+
+
+.關於這項工作
+* 您可以在SVM上設定BranchCache。
+* 如果您想要針對CIFS伺服器上所有SMB共用區內的所有內容提供快取服務、可以建立All共享區的BranchCache組態。
+* 如果您想要針對CIFS伺服器上所選SMB共用中所含的內容提供快取服務、可以建立每個共用區的BranchCache組態。
+
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在「* BranchCache *」標籤中、按一下「*設定*」。
+. 在「* BranchCache設定*」對話方塊中、輸入下列資訊：
++
+.. 指定雜湊存放區的路徑。
++
+路徑可以是儲存雜湊資料的現有目錄。目的地路徑必須可讀寫。不允許使用Snapshot目錄等唯讀路徑。
+
+.. 指定雜湊資料存放區的最大大小（以KB、MB、GB、TB或PB為單位）。
++
+如果雜湊資料超過此值、則會刪除較舊的雜湊、以便為較新的雜湊提供空間。雜湊存放區的預設大小為1 GB。
+
+.. 指定BranchCache組態的作業模式。
++
+預設的操作模式會設為所有共用。
+
+.. 指定伺服器金鑰以防止用戶端模擬BranchCache伺服器。
++
+您可以將伺服器金鑰設定為特定值、以便在多個伺服器為相同檔案提供BranchCache資料時、用戶端可以使用相同伺服器金鑰來自任何伺服器的雜湊。如果伺服器金鑰包含任何空格、則必須以引號括住伺服器金鑰。
+
+.. 選取所需的BranchCache版本。
++
+根據預設、會選取用戶端支援的所有版本。
+
+
+
+. 按一下*設定*。
+
+
+
+
+== 修改BranchCache設定
+
+您可以使用System Manager中的CIFS視窗來修改為CIFS型儲存虛擬機器（SVM）所設定的BranchCache設定。您可以變更雜湊存放區路徑、雜湊存放區大小、作業模式及支援的BranchCache版本。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在「*」「BranchCache」標籤中、按一下「*編輯*」。
+. 在「*修改BranchCache設定*」對話方塊中、修改必要資訊：
++
+** 雜湊存放區路徑
++
+如果您修改雜湊存放區路徑、系統會提供一個選項、讓您保留先前雜湊存放區的快取雜湊資料。
+
+** 雜湊儲存區大小
+** 操作模式
+** BranchCache版本
+
+
+. 按一下*修改*。
+
+
+
+
+== 刪除BranchCache組態
+
+如果您不再想在設定為使用BranchCache的儲存虛擬機器（SVM）上提供快取服務、可以使用System Manager刪除BranchCache組態。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在「* BranchCache *」標籤中、按一下「*刪除*」。
+. 選取確認核取方塊、然後按一下*刪除*。
++
+您也可以從雜湊存放區移除現有的雜湊。
+
+

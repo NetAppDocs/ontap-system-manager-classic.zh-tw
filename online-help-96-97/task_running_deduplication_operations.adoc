@@ -1,0 +1,36 @@
+---
+permalink: online-help-96-97/task_running_deduplication_operations.html 
+sidebar: sidebar 
+keywords: run, deduplication, operation, system, manager, online, help, flexvol, volume 
+summary: 您可以使用System Manager在建立FlexVol 完一個NetApp磁碟區之後立即執行重複資料刪除、或是排程在指定時間執行重複資料刪除。 
+---
+= 使用ONTAP System Manager執行重複資料刪除作業-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 以更新版本的版本供應）、在建立FlexVol 完這個版本之後立即執行重複資料刪除、或是排程在指定時間執行重複資料刪除。
+
+.開始之前
+* 必須在磁碟區上啟用重複資料刪除功能。
+* 磁碟區必須在線上且已掛載。
+
+
+.關於這項工作
+重複資料刪除是在作業期間消耗系統資源的背景程序、因此可能會影響其他進行中的作業。您必須先取消重複資料刪除、才能執行任何其他作業。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要執行重複資料刪除的磁碟區。
+. 按一下*更多動作*>*儲存效率*。
+. 如果您是第一次在磁碟區上執行重複資料刪除、請在「*儲存效率*」對話方塊中選取「*掃描整個Volume *」、在整個磁碟區資料上執行重複資料刪除。
+. 按一下* Start*。
+. 在「* Volumes *」視窗的「* Storage Effiation*」標籤中、檢視重複資料刪除作業的上次執行詳細資料。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

@@ -1,0 +1,48 @@
+---
+permalink: online-help-96-97/concept_date_time.html 
+sidebar: sidebar 
+keywords: date, time, settings, cluster, system, manager, online, help 
+summary: 您可以使用System Manager來管理叢集的日期和時間設定。 
+---
+= 使用System Manager ONTAP - NetApp 9.7及更早版本來管理叢集的日期和時間設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來管理叢集的日期和時間設定。
+
+
+
+== 日期與時間範圍
+
+「日期與時間」視窗可讓您檢視儲存系統的目前日期與時間設定、並在必要時修改設定。
+
+
+
+=== 命令按鈕
+
+* *編輯*
++
+開啟「編輯日期與時間」對話方塊、可讓您編輯時間伺服器。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+=== 詳細資料區域
+
+詳細資料區域會顯示儲存系統的日期、時間、時區、NTP服務和時間伺服器等相關資訊。
+
+*相關資訊*
+
+xref:task_setting_time_zone_for_cluster.adoc[設定叢集的時區]
+
+xref:task_setting_up_network_when_ip_address_range_is_disabled.adoc[停用IP位址範圍時設定網路]
+
+https://docs.netapp.com/us-en/ontap/system-admin/index.html["系統管理"]

@@ -1,0 +1,51 @@
+---
+permalink: volume-backup-snapvault/task_monitoring_snapvault_relationship.html 
+sidebar: sidebar 
+keywords: periodically, monitor, status, snapvault, relationship, ensure, data, back, up, volume, schedule, monitor the snapvault relationship 
+summary: 您應該定期監控SnapVault 彼此之間的關聯狀態、以確保根據指定的排程、在目的地磁碟區上備份資料。 
+---
+= 監控SnapVault 彼此之間的關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您應該定期監控SnapVault 彼此之間的關聯狀態、以確保根據指定的排程、在目的地磁碟區上備份資料。
+
+.關於這項工作
+您必須從*目的地*叢集執行此工作。
+
+.步驟
+. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+** 《》（或更早版本）：按一下「*保護*」>「*關係*」ONTAP 。
+** 從ONTAP 《S19.5》開始：按一下「* Protection *」>「* Volume Relationationationation*」。
+
+
+. 選取SnapVault 來源磁碟區與目的地磁碟區之間的「還原」關係、然後在「*詳細資料*」底部索引標籤中驗證狀態。
++
+畫面會顯示「不健全狀況」關係、SnapVault 任何傳輸錯誤及延遲時間：
+
++
+** 必須顯示「正常」欄位 `Yes`。
++
+對於大多數資料傳輸失敗、欄位會顯示 `No`。不過、在某些失敗情況下、欄位仍會繼續顯示 `Yes`。您必須檢查「詳細資料」區段中的傳輸錯誤、以確保不會發生資料傳輸失敗。
+
+** 必須顯示「關係狀態」欄位 `Snapmirrored`。
+** 延遲時間不得超過傳輸排程時間間隔。
++
+例如、如果傳輸排程為每日、則延遲時間不得超過一天。
+
++
+您應該疑難排解SnapVault 任何有關「不穩固」關係的問題。SnapMirror關係的疑難排解程序也適用於SnapVault 不必要的關係。
+
++
+http://www.netapp.com/us/media/tr-4015.pdf["NetApp技術報告4015：SnapMirror組態與最佳實務ONTAP 做法、適用於NetApp 9.1、9.2"^]
+
++
+image::../media/monitor_sv.gif[監控服務]
+
+
+
+

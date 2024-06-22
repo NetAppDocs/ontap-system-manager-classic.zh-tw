@@ -1,0 +1,49 @@
+---
+permalink: fc-config-rhel/task_creating_lun_its_containing_volume.html 
+sidebar: sidebar 
+keywords: create, lun, wizard, igroup, map, create a lun 
+summary: 您可以使用Create LUN（建立LUN）精靈來建立LUN。精靈也會建立igroup並將LUN對應至igroup、讓指定的主機存取LUN。 
+---
+= 建立 LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Create LUN（建立LUN）精靈來建立LUN。精靈也會建立igroup並將LUN對應至igroup、讓指定的主機存取LUN。
+
+.開始之前
+* 必須有一個具有足夠可用空間的Aggregate、以容納LUN。
+* 必須有已啟用FC傳輸協定的儲存虛擬機器（SVM）、並建立適當的邏輯介面（LIF）。
+* 您必須記錄主機FC連接埠的全球連接埠名稱（WWPN）。
+
+
+.關於這項工作
+如果您的組織有命名慣例、您應該使用LUN、Volume等名稱、以符合您的慣例。否則、您應該接受預設名稱。
+
+.步驟
+. 瀏覽至「* LUN*」視窗。
+. 選取*「Create」（建立）。*
+. 瀏覽並選取您要在其中建立LUN的SVM。
++
+隨即顯示Create LUN Wizard（建立LUN精靈）。
+
+. 在「*一般內容*」頁面上、針對Linux主機直接使用的LUN、選取LUN類型* Linux *。
++
+取消選取*精簡配置*核取方塊。
+
++
+image::../media/lun_creation_thin_provisioned_linux_fc_rhel.gif[圖例顯示對話方塊、並取消選取精簡配置核取方塊。]
+
+. 在「* LUN Container *」頁面上、選取現有FlexVol 的SLUN Volume。
++
+您必須確保磁碟區有足夠的空間。如果現有磁碟區中沒有足夠的可用空間、您可以建立新的磁碟區。
+
+. 在「*啟動器對應*」頁面上、選取「*新增啟動器群組*」、在「*一般*」索引標籤上輸入所需資訊、然後在「*啟動器*」索引標籤上、輸入您所記錄之主機FC連接埠的所有WWPN。
+. 確認詳細資料、然後選取*完成*以完成精靈。
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/system-admin/index.html["系統管理"]

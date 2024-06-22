@@ -1,0 +1,17 @@
+---
+permalink: nfs-config/concept_adding_protocol_volume_to_protocol_enabled_svm.html 
+sidebar: sidebar 
+keywords: add, nfs, volume, svm, configure, configuring, export, policy, verify, access, unix, administration, host, client, access, add an nfs volume to an nfs-enabled svm 
+summary: 將NFS磁碟區新增至啟用NFS的SVM、包括建立及設定磁碟區、建立匯出原則、以及驗證UNIX管理主機的存取。然後您可以設定NFS用戶端存取。 
+---
+= 將NFS磁碟區新增至啟用NFS的SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將NFS磁碟區新增至啟用NFS的SVM、包括建立及設定磁碟區、建立匯出原則、以及驗證UNIX管理主機的存取。然後您可以設定NFS用戶端存取。
+
+.開始之前
+NFS必須在SVM上完全設定。

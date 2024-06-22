@@ -1,0 +1,16 @@
+---
+permalink: iscsi-config-windows/concept_iscsi_configuration_workflow.html 
+sidebar: sidebar 
+keywords: storage, available, host, iscsi, provision, volume, lun, storage, virtual, machine, svm, connect, iscsi configuration and provisioning workflow 
+summary: 當您使用iSCSI將儲存設備提供給主機時、請在儲存虛擬機器上配置一個Volume和LUN、然後從主機連線至LUN。 
+---
+= iSCSI組態與資源配置工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您使用iSCSI將儲存設備提供給主機時、請在儲存虛擬機器（SVM）上配置一個Volume和LUN、然後從主機連線至LUN。
+
+image::../media/iscsi_windows_workflow.png[此圖為iSCSI工作流程的流程圖。工作流程中的步驟與主題相符。]

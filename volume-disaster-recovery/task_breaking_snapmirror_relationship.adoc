@@ -1,0 +1,46 @@
+---
+permalink: volume-disaster-recovery/task_breaking_snapmirror_relationship.html 
+sidebar: sidebar 
+keywords: quiesce, break, snapmirror, relationship, activate, destination, volume, snapmirror, quiescing, transfer, disable, break the snapmirror relationship 
+summary: 您必須靜止並中斷SnapMirror關係、才能啟動目的地Volume。靜止之後、將停用未來的SnapMirror資料傳輸。 
+---
+= 打破SnapMirror關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須靜止並中斷SnapMirror關係、才能啟動目的地Volume。靜止之後、將停用未來的SnapMirror資料傳輸。
+
+.開始之前
+目的地Volume必須掛載到目的地SVM命名空間。
+
+.關於這項工作
+您必須從*目的地*叢集執行此工作。
+
+.步驟
+. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+** 《》（或更早版本）：按一下「*保護*」>「*關係*」ONTAP 。
+** 從ONTAP 《S19.5》開始：按一下「* Protection *」>「* Volume Relationationationation*」。
+
+
+. 選取來源與目的地磁碟區之間的SnapMirror關係。
+. 按一下「*作業*」>「*靜止*」以停用未來的資料傳輸。
+. 選取確認核取方塊、然後按一下*靜止*。
++
+停止作業可能需要一段時間；在傳輸狀態顯示為之前、您不得對 SnapMirror 關係執行任何其他作業 `Quiesced`。
+
+. 按一下*作業*>*中斷*。
+. 選取確認核取方塊、然後按一下*中斷*。
++
+image::../media/break.gif[SnapMirror中斷畫面]
+
++
+SnapMirror 關係已存在 `Broken Off` 州/省。
+
++
+image::../media/break_verify.gif[處於中斷狀態的SnapMirror關係]
+
+

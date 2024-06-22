@@ -1,0 +1,38 @@
+---
+permalink: online-help-96-97/task_renaming_snapshot_copies.html 
+sidebar: sidebar 
+keywords: rename, snapshot, copy, system, manager, online, help 
+summary: 您可以使用System Manager重新命名Snapshot複本、以協助組織及管理Snapshot複本。 
+---
+= 使用System Manager重新命名Snapshot複本- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《支援功能》（ONTAP 適用於支援功能更新版本）來重新命名Snapshot複本、以協助您組織及管理Snapshot複本。
+
+.關於這項工作
+您無法重新命名SnapLock 處於SnapVault 「不一致」關係的「不一致」（Snapshot）磁碟區複本（已提交至「WORM」狀態）。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 按一下所需的Volume。
+. 按一下「*顯示更多詳細資料*」連結、即可檢視更多有關磁碟區的資訊。
+. 按一下「* Snapshot Copies *」標籤。
++
+此時會顯示所選磁碟區的可用Snapshot複本清單。
+
+. 選取您要重新命名的Snapshot複本、然後按一下*更多動作*>*重新命名*。
+. 指定新名稱、然後按一下*重新命名*。
++
+有效字元包括：Ascii字元、數字、連字號（-）、底線（_）、句點（.）和加號（+）。
+
+. 在「* Volumes *」視窗的「* Snapshot Copies *」標籤中、確認Snapshot複本名稱。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

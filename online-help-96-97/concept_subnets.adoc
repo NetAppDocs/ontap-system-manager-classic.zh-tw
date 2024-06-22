@@ -1,0 +1,64 @@
+---
+permalink: online-help-96-97/concept_subnets.html 
+sidebar: sidebar 
+keywords: system, manager, manage, subnet, online, help, edit, settings, modify, delete, ip, address 
+summary: 您可以使用System Manager來管理子網路。 
+---
+= 使用System Manager管理子網路- ONTAP 不含更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於供應於更新版本的版本）來管理子網路。
+
+
+
+== 編輯子網路設定
+
+[role="lead"]
+您可以使用System Manager修改子網路屬性、例如子網路名稱、子網路位址、IP位址範圍及子網路閘道位址。
+
+.關於這項工作
+* 您無法使用System Manager編輯叢集IPspace中的子網路。
++
+您必須改用命令列介面（CLI）。
+
+* 修改閘道位址不會更新路由。
++
+您必須使用CLI來更新路由。
+
+
+
+.步驟
+. 按一下「*網路*>*子網路*」。
+. 選取您要修改的子網路、然後按一下*編輯*。
++
+即使該子網路中的LIF仍在使用中、您仍可修改子網路。
+
+. 在*編輯子網路*對話方塊中、視需要修改子網路屬性。
+. 按一下*儲存並關閉*。
+
+
+
+
+== 刪除子網路
+
+當您不再需要子網路、而且想要重新分配指派給子網路的IP位址時、可以使用System Manager來刪除子網路。
+
+.開始之前
+您要刪除的子網路不得有任何使用子網路IP位址的生命期。
+
+.關於這項工作
+您無法使用System Manager刪除叢集IPspace中的子網路。您必須改用命令列介面（CLI）。
+
+.步驟
+. 按一下「*網路*>*子網路*」。
+. 選取您要刪除的子網路、然後按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+
+
+*相關資訊*
+
+xref:reference_network_window.adoc[網路視窗]

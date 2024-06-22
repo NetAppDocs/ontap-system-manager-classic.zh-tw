@@ -1,0 +1,44 @@
+---
+section: iscsi-config-esxi
+title: 使用VSC的ESXi iSCSI組態
+entries:
+- title: 總覽
+  url: "/iscsi-config-esxi/index.html"
+- title: iSCSI組態工作流程
+  url: "/iscsi-config-esxi/concept_iscsi_configuration_provisioning_workflow.html"
+  entries:
+  - title: 驗證是否支援iSCSI組態
+    url: "/iscsi-config-esxi/task_verifying_that_iscsi_fc_configuration_is_supported.html"
+  - title: 完成iSCSI組態工作表
+    url: "/iscsi-config-esxi/reference_completing_iscsi_configuration_worksheet.html"
+  - title: 安裝虛擬儲存主控台
+    url: "/iscsi-config-esxi/task_installing_virtual_storage_console_for_vmware_vsphere.html"
+  - title: 將儲存叢集或SVM新增至適用於VMware vSphere的VSC
+    url: "/iscsi-config-esxi/task_adding_storage_cluster_to_virtual_storage_cluster.html"
+  - title: 設定您的網路以獲得最佳效能
+    url: "/iscsi-config-esxi/task_configuring_your_network_for_best_performance.html"
+  - title: 設定主機iSCSI連接埠和VSwitches
+    url: "/iscsi-config-esxi/task_configuring_host_iscsi_ports_vswitches.html"
+  - title: 啟用iSCSI軟體介面卡
+    url: "/iscsi-config-esxi/task_enabling_iscsi_software_adapter.html"
+  - title: 將iSCSI連接埠連結至iSCSI軟體介面卡
+    url: "/iscsi-config-esxi/task_binding_iscsi_ports_to_iscsi_software_adapter.html"
+  - title: 設定ESXi主機最佳實務做法設定
+    url: "/iscsi-config-esxi/task_configuring_esxi_host_best_practice_settings.html"
+  - title: 建立Aggregate
+    url: "/iscsi-config-esxi/task_creating_aggregate.html"
+  - title: 決定要將磁碟區資源配置到何處
+    url: "/iscsi-config-esxi/task_deciding_where_to_provision_volume.html"
+    entries:
+    - title: 確認iSCSI服務正在現有的SVM上執行
+      url: "/iscsi-config-esxi/task_verifying_iscsi_is_running_on_existing_vserver.html"
+    - title: 在現有SVM上設定iSCSI
+      url: "/iscsi-config-esxi/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html"
+    - title: 建立新的 SVM
+      url: "/iscsi-config-esxi/task_creating_svm.html"
+  - title: 測試從主機到儲存叢集的iSCSI路徑
+    url: "/iscsi-config-esxi/task_testing_iscsi_paths.html"
+  - title: 配置資料存放區並建立內含LUN和Volume的資料存放區
+    url: "/iscsi-config-esxi/task_provisioning_datastore_creating_its_containing_lun_volume.html"
+  - title: 驗證主機是否可以寫入及讀取LUN
+    url: "/iscsi-config-esxi/task_verifying_host_can_write_to_read_from_lun.html"

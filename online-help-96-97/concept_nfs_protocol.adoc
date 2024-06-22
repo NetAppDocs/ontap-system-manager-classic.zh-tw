@@ -1,0 +1,73 @@
+---
+permalink: online-help-96-97/concept_nfs_protocol.html 
+sidebar: sidebar 
+keywords: nfs, protocol, system, manager, authenticate, client, asses, data, svm, online, help 
+summary: 您可以使用System Manager驗證NFS用戶端、以存取SVM上的資料。 
+---
+= 使用System Manager（ONTAP 系統管理程式）設定NFS傳輸協定-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來驗證NFS用戶端、以存取SVM上的資料。
+
+
+
+== 編輯 NFS 設定
+
+您可以使用System Manager編輯NFS設定、例如啟用或停用NFSv3、NFSv4和NFSv4.1、啟用或停用NFSv4用戶端的讀取和寫入委派、以及啟用NFSv4 ACL。您也可以編輯預設的Windows使用者。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*傳輸協定*窗格中、按一下* NFS*。
+. 在* NFS*視窗中、按一下*編輯*。
+. 在「*編輯NFS設定*」對話方塊中、進行必要的變更。
+. 按一下*儲存並關閉*。
+
+
+
+
+== NFS 視窗
+
+您可以使用NFS視窗來顯示及設定NFS設定。
+
+* *伺服器狀態*
++
+顯示NFS服務的狀態。如果在儲存虛擬機器（SVM）上設定NFS傳輸協定、則會啟用此服務。
+
++
+[NOTE]
+====
+如果您ONTAP 已從執行Data ONTAP 支援NFS的儲存系統升級至支援Se.8.1.x的版本、則NFS服務會在ONTAP 更新版本的版本中啟用。不過、您必須啟用NFSv3或NFSv4支援、因為不再支援NFSv2。
+
+====
+
+
+
+
+=== 命令按鈕
+
+* *啟用*
++
+啟用NFS服務。
+
+* *停用*
++
+停用NFS服務。
+
+* *編輯*
++
+開啟「編輯NFS設定」對話方塊、可讓您編輯NFS設定。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["NFS管理"^]

@@ -1,0 +1,23 @@
+---
+permalink: fc-config-esxi/task_configuring_esxi_host_best_practice_settings.html 
+sidebar: sidebar 
+keywords: ensure, host, multipath, practice, setting, correct, esxi, host, manage, fc, path, storage, failover, event, configure, configure the esxi host best practice settings 
+summary: 您必須確保主機的多重路徑和最佳實務設定正確無誤、以便ESXi主機能夠正確管理FC路徑遺失或儲存容錯移轉事件。 
+---
+= 設定ESXi主機最佳實務做法設定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您必須確保主機的多重路徑和最佳實務設定正確無誤、以便ESXi主機能夠正確管理FC路徑遺失或儲存容錯移轉事件。
+
+.步驟
+. 在VMware vSphere Web Client *主頁*中、按一下* vCenter*>* hostes*。
+. 在主機上按一下滑鼠右鍵、然後選取「*動作*>* NetApp VSC*>*設定建議值*」。
+. 在「* NetApp建議設定*」對話方塊中、確定已選取所有選項、然後按一下「*確定*」。
++
+vCenter Web Client會顯示工作進度。
+
+

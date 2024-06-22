@@ -1,0 +1,58 @@
+---
+permalink: iscsi-config-rhel/task_starting_iscsi_service.html 
+sidebar: sidebar 
+keywords: iscsi, configuration, file, service, host, discover, target, access, lun, run, start the iscsi service 
+summary: 編輯iSCSI組態檔之後、您必須啟動iSCSI服務、讓主機能夠探索目標並存取LUN。如果iSCSI服務正在執行、您必須重新啟動。 
+---
+= 啟動iSCSI服務
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+編輯iSCSI組態檔之後、您必須啟動iSCSI服務、讓主機能夠探索目標並存取LUN。如果iSCSI服務正在執行、您必須重新啟動。
+
+.步驟
+. 在Linux主機命令提示字元中啟動iSCSI服務：
++
+|===
+| 如果您使用... | 輸入... 
+
+
+ a| 
+Red Hat Enterprise Linux 7系列和SUSE Linux Enterprise 12系列
+ a| 
+`systemctl start iscsid`
+
+
+
+ a| 
+Red Hat Enterprise Linux 6系列
+
+[NOTE]
+====
+首次在執行Red Hat Enterprise Linux 6系列和Oracle Linux 6系列的主機上啟動iSCSI服務時、您必須執行此命令。如果您執行 `/etc/init.d/iscsi start` 之前不執行 `service iscsid force-start`，您會收到錯誤訊息。
+
+==== a| 
+`service iscsid force-start`
+
+
+
+ a| 
+Red Hat Enterprise Linux 5或4系列及Oracle Linux 5系列、Red Hat Enterprise Virtualization、Oracle Linux及Oracle VM
+ a| 
+`/etc/init.d/iscsi start`
+
+
+
+ a| 
+SUSE Linux Enterprise Server 10或11系列
+ a| 
+`/etc/init.d/open-iscsi start`
+
+|===
++
+Citrix不鼓勵使用iscsiadm工具。原生XAPI堆疊可完成以下工作：啟動和停止iSCSI服務、開機時自動登入、以及其他iSCSI作業。
+
+

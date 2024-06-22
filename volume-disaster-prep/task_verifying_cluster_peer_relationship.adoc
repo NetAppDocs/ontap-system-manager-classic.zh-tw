@@ -1,0 +1,49 @@
+---
+permalink: volume-disaster-prep/task_verifying_cluster_peer_relationship.html 
+sidebar: sidebar 
+keywords: set, up, volume, disaster, recovery, verify, source, destination, cluster, communicate, peer, relationship, verify the cluster peer relationship and svm peer relationship 
+summary: 在設定用於災難恢復的磁碟區之前、您必須先確認來源與目的地叢集已經過處理、並透過對等關係彼此通訊。 
+---
+= 驗證叢集對等關係和SVM對等關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在設定用於災難恢復的磁碟區之前、您必須先確認來源與目的地叢集已經過處理、並透過對等關係彼此通訊。
+
+
+
+== 程序
+
+* 如果您執行ONTAP 的是版本不含更新版本的版本、請執行下列步驟來驗證叢集對等關係和SVM對等關係：
++
+.. 按一下*組態*>*叢集對等端點*。
+.. 驗證連接的叢集是否已通過驗證且可供使用。
++
+image::../media/cluster_pper_930_disaster.gif[叢集式pper 930災難]
+
+.. 按一下「*組態*>* SVM對等端點*」。
+.. 確認目的地SVM已與來源SVM連接。
+
+
+* 如果您執行ONTAP 的是Sf2 9.2或更早版本、請執行下列步驟來驗證叢集對等關係和SVM對等關係：
++
+.. 按一下「*組態*」索引標籤。
+.. 在*叢集詳細資料*窗格中、按一下*叢集對等端點*。
+.. 驗證連接的叢集是否已通過驗證且可供使用。
++
+image::../media/cluster_peer_health_disaster.gif[叢集對等健全狀況災難]
+
+.. 按一下「* SVMS*」索引標籤、然後選取來源SVM。
+.. 在*對等儲存虛擬機器*區域中、確認目的地SVM已與來源SVM連接。
++
+如果在此區域中沒有看到任何已處理的SVM、您可以在建立SnapMirror關係時建立SVM對等關係。
+
+
+
++
+xref:task_creating_snapmirror_relationships_92_earlier.adoc[建立SnapMirror關係ONTAP （不含版本號的9.2）]
+
+

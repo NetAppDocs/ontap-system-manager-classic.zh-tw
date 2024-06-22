@@ -1,0 +1,14 @@
+---
+permalink: peering/concept_creating_peer_relationships_93_later.html 
+sidebar: sidebar 
+keywords: peer, relationship, define, network, connection, enable, cluster, svm, exchange, data, secure, ontap, configure, configure peer relationships, Beginning with ontap 9.3 
+summary: 對等關係可定義網路連線、讓叢集和SVM能夠安全地交換資料。從ONTAP 使用支援支援功能的支援功能到ONTAP 支援功能的支援、直到使用支援功能的支援功能為止、您都可以使用ONTAP 支援功能的支援功能「傳統」介面來簡化叢集之間和SVM之間的對等關係。 
+---
+= 設定對等關係（從ONTAP 功能9.3開始）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+對等關係可定義網路連線、讓叢集和SVM能夠安全地交換資料。從ONTAP 使用支援支援支援功能的《支援功能》（直到ONTAP 支援功能）9.7開始、您可以使用ONTAP 支援功能的《支援功能》介面來執行簡化的方法、以設定叢集之間和SVM之間的對等關係。

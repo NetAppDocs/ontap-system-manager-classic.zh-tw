@@ -1,0 +1,66 @@
+---
+permalink: nas-multiprotocol-config/task_configuring_verifying_client_access_new_svm.html 
+sidebar: sidebar 
+keywords: configure, client, access, unix, ntfs, file, modify, share, acl, add, export, rule, volume, configure and verify cifs and nfs client access 
+summary: 準備好之後、您可以設定UNIX或NTFS檔案權限、修改共用ACL、以及新增匯出規則、來設定用戶端存取。然後您應該測試受影響的使用者或群組是否可以存取該磁碟區。 
+---
+= 設定及驗證CIFS與NFS用戶端存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+準備好之後、您可以設定UNIX或NTFS檔案權限、修改共用ACL、以及新增匯出規則、來設定用戶端存取。然後您應該測試受影響的使用者或群組是否可以存取該磁碟區。
+
+.步驟
+. 決定要授予哪些用戶端和使用者或群組存取該共用區的權限。
+. 使用與磁碟區安全性樣式相對應的方法來設定檔案權限：
++
+|===
+| 如果磁碟區的安全樣式是... | 執行此動作... 
+
+
+ a| 
+NTFS
+ a| 
+.. 以具有足夠管理權限來管理NTFS權限的系統管理員身分登入Windows用戶端。
+.. 在Windows檔案總管中，以滑鼠右鍵按一下磁碟機，然後選取*內容*。
+.. 選取「安全性」索引標籤、然後視需要調整群組和使用者的安全性設定。
+
+
+
+
+ a| 
+UNIX
+ a| 
+在UNIX管理主機上、使用root使用者設定該磁碟區的UNIX擁有權和權限。
+
+|===
+. 在System Manager中、修改共用ACL、以授予Windows使用者或群組存取該共用區的權限。
++
+.. 瀏覽至*共享*視窗。
+.. 選取共用區、然後按一下*編輯*。
+.. 選取*權限*索引標籤、並授予使用者或群組存取該共用區的權限。
+
+
+. 在System Manager中、將規則新增至匯出原則、以允許NFS用戶端存取共用區。
++
+.. 選取儲存虛擬機器（SVM）、然後按一下「* SVM設定*」。
+.. 在「*原則*」窗格中、按一下「*匯出原則*」。
+.. 選取套用至磁碟區的匯出原則。
+.. 在*匯出規則*索引標籤中、按一下*新增*、然後指定一組用戶端。
+.. 選擇*規則索引*** 2*、以便此規則在允許存取管理主機的規則之後執行。
+.. 選擇* CIFS/*和* NFSv3*。
+.. 指定所需的存取詳細資料、然後按一下*確定。*
++
+您可以輸入子網路、將完整的讀取 / 寫入存取權授予用戶端 `10.1.1.0/24` 作爲 * 客戶端規範 * ，並選中除 * 允許超級用戶訪問 * 之外的所有訪問複選框。
+
++
+image::../media/export_rule_for_clients_nfs_nas_mp.gif[上述文字說明此螢幕快照。]
+
+
+
+. 在Windows用戶端上、以目前擁有共用區和檔案存取權的其中一位使用者身分登入、並確認您可以存取共用區並建立檔案。
+. 在UNIX用戶端上、以目前擁有磁碟區存取權的其中一位使用者身分登入、然後確認您可以掛載磁碟區並建立檔案。
+

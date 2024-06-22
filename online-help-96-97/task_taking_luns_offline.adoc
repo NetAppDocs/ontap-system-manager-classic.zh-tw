@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_taking_luns_offline.html 
+sidebar: sidebar 
+keywords: take, lun, offline, online, help, management, system, manager 
+summary: 您可以使用System Manager中的LUN Management（LUN管理）索引標籤、將選定的LUN離線、並使其無法存取區塊傳輸協定。 
+---
+= System Manager ONTAP 讓LUN離線-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版《經典版》（ONTAP 更新版本）中的「* LUN管理*」索引標籤、將選定的LUN離線、並使其無法存取區塊傳輸協定。
+
+.開始之前
+任何存取LUN的主機應用程式都必須靜止或同步。
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在「* LUN管理*」索引標籤中、選取您要離線的一或多個LUN。
+. 按一下*狀態*>*離線*。
+
+
+*相關資訊*
+
+xref:reference_luns_window.adoc[LUN視窗]

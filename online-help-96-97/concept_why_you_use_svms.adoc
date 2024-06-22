@@ -1,0 +1,42 @@
+---
+permalink: online-help-96-97/concept_why_you_use_svms.html 
+sidebar: sidebar 
+keywords: svm, data, access, nondisruptive, operation, scalability, security, online, help 
+summary: 無論實體儲存設備或控制器為何、SVM都能提供對用戶端的資料存取、類似於任何儲存系統。SVM提供不中斷營運、擴充性、安全性及統一化儲存等優點。 
+---
+= 關於搭載System Manager的SVM - ONTAP 支援S9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以搭配使用 SVMS 搭配 ONTAP System Manager classic （在 ONTAP 9.7 及更早版本中提供）、讓用戶端無論實體儲存設備或控制器為何、都能存取資料、就像任何儲存系統一樣。SVM提供不中斷營運、擴充性、安全性及統一化儲存等優點。
+
+SVM提供下列優點：
+
+* 多租戶
++
+SVM是安全的多租戶共享的基礎單元、可分割儲存基礎架構、使其看起來像是多個獨立的儲存系統。這些分割區會隔離資料與管理。
+
+* 不中斷營運
++
+只要有需要、SVM就能持續且不中斷營運。SVM可協助叢集在軟體和硬體升級、新增和移除節點、以及所有管理作業期間持續運作。
+
+* 擴充性
++
+SVM可滿足隨需資料處理量及其他儲存需求。
+
+* 安全性
++
+每個SVM都顯示為單一獨立伺服器、可讓多個SVM在叢集中共存、同時確保叢集之間不會有資料流。
+
+* 統一化儲存設備
++
+SVM可透過多種資料存取傳輸協定同時提供資料。SVM透過NAS傳輸協定（例如CIFS和NFS）提供檔案層級的資料存取、並透過SAN傳輸協定（例如iSCSI、FC/FCoE和NVMe）提供區塊層級的資料存取。SVM可同時為SAN和NAS用戶端獨立提供資料。
+
+* 管理委派
++
+SVM管理員擁有由叢集管理員指派的權限。
+
+

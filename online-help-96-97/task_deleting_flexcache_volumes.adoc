@@ -1,0 +1,30 @@
+---
+permalink: online-help-96-97/task_deleting_flexcache_volumes.html 
+sidebar: sidebar 
+keywords: delete, flexcache, volume, system, manager, online, help 
+summary: 從System Manager 9.6開始、FlexCache 當您不再需要時、可以刪除一個不需要的功能區。 
+---
+= 正在刪除FlexCache 功能區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、FlexCache 當您不再需要時、可以刪除一個不需要的功能區。
+
+.開始之前
+* 必須卸載不安裝的流通通道。FlexCache
+* 此功能必須離線。FlexCache
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取FlexCache 您要刪除的「流通量」、然後按一下「*刪除*」。
+. 選取確認核取方塊、然後按一下*確定*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

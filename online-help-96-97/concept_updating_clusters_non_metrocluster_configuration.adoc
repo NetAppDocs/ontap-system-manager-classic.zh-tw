@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/concept_updating_clusters_non_metrocluster_configuration.html 
+sidebar: sidebar 
+keywords: update, cluster, metrocluster, configuration, online, help 
+summary: 您可以使用System Manager來更新高可用度（HA）配對中的叢集或個別節點。若要執行更新、您應該選取ONTAP 一個支援功能不實的映像、驗證叢集或HA配對中的個別節點已準備好進行更新、然後執行更新。 
+---
+= 使用MetroCluster System Manager更新非不可用組態的叢集- ONTAP 更新版本：BIOS 9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來更新叢集或高可用度（HA）配對中的個別節點。若要執行更新、您應該選取ONTAP 一個支援功能不實的映像、驗證叢集或HA配對中的個別節點已準備好進行更新、然後執行更新。
+
+image::../media/updating_cluster.gif[正在更新叢集]
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["升級ONTAP"]

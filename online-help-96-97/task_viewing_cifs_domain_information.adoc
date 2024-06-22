@@ -1,0 +1,21 @@
+---
+permalink: online-help-96-97/task_viewing_cifs_domain_information.html 
+sidebar: sidebar 
+keywords: system, manager, view, cifs, domain, information, online, help 
+summary: 您可以使用System Manager來檢視連線至儲存系統之網域控制器和伺服器的相關資訊。 
+---
+= 使用System Manager（ONTAP 系統管理程式）檢視CIFS網域資訊-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來檢視與儲存系統相連之網域控制器和伺服器的相關資訊。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 按一下*網域*索引標籤。
+. 檢閱已連線網域控制器和伺服器的相關資訊。
+

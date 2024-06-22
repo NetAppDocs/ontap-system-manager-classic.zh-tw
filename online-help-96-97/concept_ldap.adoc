@@ -1,0 +1,109 @@
+---
+permalink: online-help-96-97/concept_ldap.html 
+sidebar: sidebar 
+keywords: ldap, system, manager, configure, server, online, help, user, information 
+summary: 您可以使用System Manager來設定集中維護使用者資訊的LDAP伺服器。 
+---
+= 使用System Manager（ONTAP 系統管理程式）設定LDAP伺服器-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來設定集中維護使用者資訊的LDAP伺服器。
+
+
+
+== 檢視LDAP用戶端組態
+
+您可以使用System Manager檢視為叢集中的儲存虛擬機器（SVM）設定的LDAP用戶端。
+
+.步驟
+. 按一下*image:../media/nas_bridge_202_icon_settings_olh_96_97.gif[""]*。
+. 在 * 設定 * 窗格中、按一下 * LDAP * 。
++
+LDAP用戶端清單會顯示在LDAP視窗中。
+
+
+
+
+
+== 使用LDAP服務
+
+LDAP伺服器可讓您集中維護使用者資訊。如果您將使用者資料庫儲存在環境中的LDAP伺服器上、您可以設定儲存虛擬機器（SVM）、以便在現有的LDAP資料庫中查詢使用者資訊。
+
+.關於這項工作
+支援LDAP、可在NFS與CIFS之間進行使用者驗證、檔案存取授權、以及使用者查詢與對應服務。ONTAP
+
+
+
+== LDAP視窗
+
+您可以使用LDAP視窗來檢視LDAP用戶端、以進行使用者驗證、檔案存取授權及使用者搜尋、並在叢集層級對應NFS與CIFS之間的服務。
+
+
+
+=== 命令按鈕
+
+* *新增*
++
+開啟「建立LDAP用戶端」對話方塊、可讓您建立及設定LDAP用戶端。
+
+* *編輯*
++
+開啟「編輯LDAP用戶端」對話方塊、可讓您編輯LDAP用戶端組態。您也可以編輯作用中的LDAP用戶端。
+
+* *刪除*
++
+開啟「刪除LDAP用戶端」對話方塊、可讓您刪除LDAP用戶端組態。您也可以刪除作用中的LDAP用戶端。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+=== LDAP用戶端清單
+
+顯示（表格格式）LDAP用戶端的詳細資料。
+
+* * LDAP用戶端組態*
++
+顯示您指定的LDAP用戶端組態名稱。
+
+* *儲存虛擬機器*
++
+顯示每個LDAP用戶端組態的儲存虛擬機器（SVM）名稱。
+
+* *架構*
++
+顯示每個LDAP用戶端的架構。
+
+* *最小綁定層級*
++
+顯示每個LDAP用戶端的最小繫結層級。
+
+* * Active Directory網域*
++
+顯示每個LDAP用戶端組態的Active Directory網域。
+
+* * LDAP 伺服器 *
++
+顯示每個LDAP用戶端組態的LDAP伺服器。
+
+* *偏好的Active Directory伺服器*
++
+顯示每個LDAP用戶端組態的慣用Active Directory伺服器。
+
+
+
+*相關資訊*
+
+xref:task_adding_ldap_client_configuration.adoc[新增LDAP用戶端組態]
+
+xref:task_deleting_ldap_client_configuration.adoc[刪除LDAP用戶端組態]
+
+xref:task_editing_ldap_client_configuration.adoc[編輯LDAP用戶端組態]

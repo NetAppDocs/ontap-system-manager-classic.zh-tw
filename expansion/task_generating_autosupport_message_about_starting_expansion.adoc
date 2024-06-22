@@ -1,0 +1,33 @@
+---
+permalink: expansion/task_generating_autosupport_message_about_starting_expansion.html 
+sidebar: sidebar 
+keywords: generating, generate, autosupport, message, start, expansion, expand, cluster, troubleshoot, generate an autosupport message about starting expansion 
+summary: 在您展開叢集之前、您應該立即傳送AutoSupport 一個不實訊息、指出您即將開始擴充程序。 
+---
+= 產生AutoSupport 關於開始擴充的資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在您展開叢集之前、您應該立即傳送AutoSupport 一個不實訊息、指出您即將開始擴充程序。此訊息會通知內部和外部支援人員有關擴充的資訊、並做為日後可能需要進行的任何疑難排解的時間戳記。
+
+.開始之前
+必須設定好顯示。AutoSupport
+
+.步驟
+. 針對叢集中的每個節點、使用傳送 AutoSupport 訊息 `system node autosupport invoke` 命令。
++
+[listing]
+----
+cluster1::> system node autosupport invoke -node * -message "cluster expansion started" -type all
+The AutoSupport was successfully invoked on node "cluster1-1". To view the status
+of the AutoSupport, use the "system node autosupport history show" command.
+Note: It may take several minutes for the AutoSupport to appear in the history list.
+The AutoSupport was successfully invoked on node "cluster1-2". To view the status
+of the AutoSupport, use the "system node autosupport history show" command.
+Note: It may take several minutes for the AutoSupport to appear in the history list.
+2 entries were acted on.
+----
+

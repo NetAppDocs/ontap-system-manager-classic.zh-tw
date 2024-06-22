@@ -1,0 +1,38 @@
+---
+permalink: online-help-96-97/task_editing_data_protection_volumes.html 
+sidebar: sidebar 
+keywords: edit, data, protection, system, manager, online, help, dp, volume 
+summary: 您可以使用System Manager修改資料保護（DP）磁碟區的磁碟區名稱。如果來源磁碟區未啟用儲存效率、您可能只想在目的地磁碟區上啟用儲存效率。 
+---
+= 使用System Manager（ONTAP 系統管理程式）編輯資料保護磁碟區-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來修改資料保護（DP）Volume的Volume名稱。如果來源磁碟區未啟用儲存效率、您可能只想在目的地磁碟區上啟用儲存效率。
+
+.關於這項工作
+您無法修改鏡射DP Volume上的儲存效率。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從* SVM*欄位的下拉式功能表中、選取您要編輯的DP磁碟區所在的儲存虛擬機器（SVM）。
+. 選取您要修改的磁碟區、然後按一下*編輯*。
+. 在*編輯資料保護磁碟區*對話方塊中、修改磁碟區名稱。
+. 確保選中* Enable Storage Effiusiusi*（*啓用儲存效率）選項。
++
+如果磁碟區上已啟用儲存效率、則預設會選取此核取方塊。
+
+. *選用：*按一下*進階*索引標籤、然後執行下列步驟：
++
+.. 選取您要指派給磁碟區的快取原則。
+.. 選取磁碟區中快取資料的保留優先順序。
+
+
++
+這些選項僅適用於FlexVol Flash Pool Aggregate中的資料保護功能。
+
+. 按一下「 * 儲存 * 」。
+

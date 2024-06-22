@@ -1,0 +1,40 @@
+---
+permalink: expansion/task_configuring_autosupport_on_new_nodes_using_cli.html 
+sidebar: sidebar 
+keywords: add, node, cluster, configure, autosupport, node, configuring, configure autosupport on the new nodes 
+summary: 將節點新增至叢集後、您必須在AutoSupport 節點上設定功能不均。 
+---
+= 在AutoSupport 新節點上設定功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將節點新增至叢集後、您必須在AutoSupport 節點上設定功能不均。
+
+.開始之前
+必須在叢集的現有節點上設定。AutoSupport
+
+.關於這項工作
+您必須在兩個節點上執行此程序。
+
+.步驟
+. 使用檢視 AutoSupport 組態 `system node autosupport show` 命令 `-node` 參數設定為原始叢集中的其中一個節點。
++
+[listing]
+----
+cluster1::> system node autosupport show -node cluster1-1
+                            Node: cluster1-1
+                           State: enable
+                 SMTP Mail Hosts: smtp.example.com
+																																...
+----
+. 在新增的其中一個節點上、使用在現有節點上設定 AutoSupport 的方式、以相同的方式進行設定 `system node autosupport modify` 命令。
++
+[listing]
+----
+cluster1::> system node autosupport modify -node cluster1-3 -state enable -mail-hosts smtp.example.com -from alerts@node3.example.com -to support@example.com -support enable -transport https -noteto pda@example.com -retry-interval 23m
+----
+. 針對其他新增的節點、重複上述步驟。
+

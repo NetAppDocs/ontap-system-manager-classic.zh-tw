@@ -1,0 +1,90 @@
+---
+permalink: online-help-96-97/task_adding_capacity_disks.html 
+sidebar: sidebar 
+keywords: add, capacity, disk, online, help, aggregate 
+summary: 您可以新增容量磁碟、以增加現有非根Aggregate或包含磁碟的根Aggregate的大小。您可以使用System Manager新增所選ONTAP 的HDD或SSD類型、並修改RAID群組選項。 
+---
+= 使用System Manager（ONTAP 系統管理程式）新增容量磁碟-更新版本
+:allow-uri-read: 
+:experimental: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以新增容量磁碟、以增加現有非根Aggregate或包含磁碟的根Aggregate的大小。您可以使用System Manager Classic（ONTAP 以更新版本供應）來新增所選ONTAP 的HDD或SSD、並修改RAID群組選項。
+
+.開始之前
+* Aggregate必須在線上。
+* 必須有足夠的相容備援磁碟。
+
+
+.關於這項工作
+* 最佳做法是新增大小與集合體中其他磁碟相同的磁碟。
++
+如果您新增的磁碟大小小於集合體中的其他磁碟、則集合體在組態中會變得不理想、進而可能導致效能問題。
+
++
+如果您新增的磁碟大小大於集合體內現有RAID群組中可用的磁碟、則磁碟會縮減大小、並將其空間減至該RAID群組中其他磁碟的空間大小。如果在Aggregate中建立新的RAID群組、且新的RAID群組中仍有類似大小的磁碟、則不會縮減磁碟的大小。
+
++
+如果您新增的磁碟大小與集合體中的其他磁碟大小不同、則可能不會新增選取的磁碟、而是自動新增可用大小介於指定大小90%與105%之間的其他磁碟。例如、對於744 GB磁碟、669 GB到781 GB範圍內的所有磁碟均符合選擇資格。對於此範圍內的所有備用磁碟、ONTAP 首先選擇僅分割磁碟、然後只選取未分割磁碟、最後選擇分割磁碟和未分割磁碟。
+
+* 您無法使用System Manager將HDD新增至下列組態：
++
+** 僅包含SSD的集合體
+** 包含分割磁碟的根集合體
+您必須使用命令列介面將 HDD 新增至這些組態。
+
+
+* 共享磁碟可支援RAID DP 兩種RAID類型：功能區和RAID-TEC 功能區。
+* 您無法將SSD搭配儲存資源池使用。
+* 如果 RAID 群組類型是 RAID DP 、而且您要新增大小等於或大於 10 TB 的 FSA 或 mSATA 類型磁碟、則只能將它們新增至 `Specific RAID group`、而非 `New RAID group` 或 `All RAID groups`。
++
+磁碟是在將磁碟大小縮減為現有Aggregate的現有RAID群組中的磁碟大小之後新增。
+
+* 如果 RAID 群組類型是 RAID-TEC 、而且您要新增大小等於或大於 10 TB 的 FSA 或 mSATA 類型磁碟、則可以將它們新增至 `All RAID groups`、 `New RAID group`和 `Specific RAID group`。
++
+磁碟是在將磁碟大小縮減為現有Aggregate的現有RAID群組中的磁碟大小之後新增。
+
+
+
+.步驟
+. 請選擇下列其中一種方法：
++
+** 按一下*應用程式與層級*>*儲存層級*。
+** 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+
+
+. 在* Storage Tiers*視窗中、選取您要新增容量磁碟的集合體、然後按一下功能表：More Actions（更多動作）[ Add Capacity（新增容量）]。
+. 在「*新增容量*」對話方塊中指定下列資訊：
++
+.. 使用*要新增的磁碟類型*選項、指定容量磁碟的磁碟類型。
+.. 使用*磁碟數或磁碟分割*選項來指定容量磁碟的數量。
+
+
+. 使用* Add Disk to *（將磁碟新增至*）選項、指定要新增容量磁碟的RAID群組。
++
+根據預設、 System Manager 會將容量磁碟新增至 `All RAID groups`。
+
++
+.. 按一下 * 變更 * 。
+.. 在 *RAID Group Selection* （ RAID 組選擇 * ）對話框中，將 RAID 組指定爲 `New RAID group` 或 `Specific RAID group` 使用 * 將磁碟新增至 * 選項。
++
+共用磁碟只能新增至 `New RAID group` 選項。
+
+
+
+. 按一下「 * 新增 * 」。
++
+對於鏡射Aggregate、會顯示* Add Capacity *（新增容量*）對話方塊、其中會顯示所選磁碟數目的兩倍資訊。
+
+. 在「*新增容量*」對話方塊中、按一下「*是*」以新增容量磁碟。
+
+
+.結果
+容量磁碟會新增至選取的Aggregate、並增加Aggregate大小。
+
+*相關資訊*
+
+xref:concept_what_compatible_spare_disks_are.adoc[哪些是相容的備用磁碟]

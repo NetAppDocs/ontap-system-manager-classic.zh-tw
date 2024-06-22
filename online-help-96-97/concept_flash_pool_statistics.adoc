@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/concept_flash_pool_statistics.html 
+sidebar: sidebar 
+keywords: flash, pool, statistics, system, manager, ssd, tier, read, write, workload, aggregate, online, help 
+summary: 您可以使用System Manager來檢視所選Flash Pool Aggregate的即時SSD層讀取和寫入工作負載。 
+---
+= 使用System Manger檢視Flash Pool統計資料- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《RealSystem Manager》（ONTAP 適用於RealView 9.7及更早版本）來檢視所選Flash Pool Aggregate的即時SSD層讀取和寫入工作負載。
+
+
+
+== Flash Pool Aggregate統計資料視窗
+
+您可以檢視所選Flash Pool Aggregate的即時SSD層讀取和寫入工作負載。
+
+此頁面不適用於包含具有All Flash Optimized特性設定之節點的叢集。
+
+* *顯示Flash Pool Aggregate的統計資料*
++
+從Flash Pool Aggregate清單中、您可以選取要檢視其統計資料的Flash Pool Aggregate。
+
+
+
+
+
+=== SSD快取讀取工作負載
+
+與SSD層執行的讀取作業相比、顯示傳送至Flash Pool Aggregate之讀取要求總數的圖形化檢視。
+
+
+
+=== SSD快取寫入工作負載
+
+顯示傳送至Flash Pool Aggregate之寫入要求總數的圖形檢視、並與SSD層執行的寫入作業進行比較。

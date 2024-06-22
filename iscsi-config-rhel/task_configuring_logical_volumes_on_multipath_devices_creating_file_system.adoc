@@ -1,0 +1,27 @@
+---
+permalink: iscsi-config-rhel/task_configuring_logical_volumes_on_multipath_devices_creating_file_system.html 
+sidebar: sidebar 
+keywords: linux, host, access, iscsi, device, lun, partition, file, system, multipath, volume, file, system, configure, logical, creating, create, configure logical volumes on multipath devices and creating a file system 
+summary: 當Linux主機第一次存取新的SCSI裝置（LUN）時、就沒有分割區或檔案系統。如果您要使用分割多重路徑裝置、必須先分割基礎SCSI裝置。您也可能想要在多重路徑裝置上建立邏輯磁碟區、並選擇性地建立檔案系統。 
+---
+= 在多重路徑裝置上設定邏輯磁碟區並建立檔案系統
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當Linux主機第一次存取新的SCSI裝置（LUN）時、就沒有分割區或檔案系統。如果您要使用分割多重路徑裝置、必須先分割基礎SCSI裝置。您也可能想要在多重路徑裝置上建立邏輯磁碟區、並選擇性地建立檔案系統。
+
+.開始之前
+Linux主機必須已探索到SCSI裝置和對應的多重路徑裝置。
+
+.關於這項工作
+至少應在SCSI裝置上設定DM-Multipath。DM-Multikpath以外的任何組態都是選用的。如果您想要執行其他組態、例如分割、在多重路徑裝置上設定邏輯磁碟區、以及建立檔案系統、請遵循下列一般準則。如需Linux命令的詳細資訊、請參閱Red Hat Enterprise Linux文件和手冊頁。
+
+.步驟
+. 若要使用分割區的多重路徑裝置、請先使用分割基礎 SCSI 裝置 `fdisk` 或 `parted` 公用程式：
+. 使用建立對應的多重路徑分割區 `kpartx` 公用程式：
+. 使用「邏輯Volume Manager（LVM）」命令、在對應的多重路徑裝置上建立邏輯磁碟區。
+. 使用在邏輯磁碟區或多重路徑裝置上建立檔案系統、例如 ext4 或 XFS `mkfs` 公用程式：
+

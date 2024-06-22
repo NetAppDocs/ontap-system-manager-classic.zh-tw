@@ -1,0 +1,40 @@
+---
+permalink: volume-move/task_updating_lun_reporting_nodes_after_moving_volume.html 
+sidebar: sidebar 
+keywords: volume, move, lun, ha, pair, remote, node, lun, map, slm, reporting-node, partner, lun reporting nodes 
+summary: 如果您移動的磁碟區包含LUN、而且該磁碟區現在位於不同的HA配對上、您應該從選擇性LUN對應（SLA）報告節點清單中移除所有遠端節點。然後LUN對應只包含擁有者節點及其HA合作夥伴、以確保僅使用最佳化的LUN路徑。 
+---
+= 移動磁碟區後、請更新LUN報告節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您移動的磁碟區包含LUN、而且該磁碟區現在位於不同的HA配對上、您應該從選擇性LUN對應（SLA）報告節點清單中移除所有遠端節點。然後LUN對應只包含擁有者節點及其HA合作夥伴、以確保僅使用最佳化的LUN路徑。
+
+.關於這項工作
+只有當您將Volume從HA配對移至不同的HA配對時、才需要執行此程序。如果磁碟區位於同一個HA配對的不同節點上、您可以跳過此程序。
+
+.步驟
+. 使用從報告節點清單中移除所有遠端節點 `lun mapping remove-reporting-nodes` 命令 `-remote-nodes` 參數。
++
+[listing]
+----
+cluster1::> lun mapping remove-reporting-nodes -vserver SVM1 -volume vol1 -igroup ig1 -remote-nodes true
+----
+. 使用驗證 LUN 對應是否僅包含擁有者節點及其合作夥伴 `lun mapping show` 命令 `-fields reporting-nodes` 參數。
++
+[listing]
+----
+cluster1::> lun mapping show -vserver SVM1 -volume vol1 -fields reporting-nodes
+vserver  path        igroup   reporting-nodes
+-------- ----------- -------- ---------------------------------------------
+SVM1     /vol/vol1   ig1      cluster1-3,cluster1-4
+----
+. 移除主機作業系統的過時裝置項目。
+. 從主機重新掃描以重新整理主機的可用路徑。
++
+如需重新掃描主機的特定步驟、請參閱主機文件。
+
+

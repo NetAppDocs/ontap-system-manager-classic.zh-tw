@@ -1,0 +1,26 @@
+---
+permalink: iscsi-config-rhel/task_setting_iscsi_replacement_timeout_value.html 
+sidebar: sidebar 
+keywords: support, multipath, modify, replacement, timeout, value, iscsi, configuration, file, set, set the iscsi replacement timeout value 
+summary: 若要支援多重路徑、您必須修改iSCSI組態檔中的置換逾時值。 
+---
+= 設定iSCSI置換逾時值
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要支援多重路徑、您必須修改iSCSI組態檔中的置換逾時值。
+
+.步驟
+. 變更中的置換逾時值 `/etc/iscsi/iscsid.conf` 檔案的預設值為 120 至 5 。
++
+替換逾時值如下所示 `iscsid.conf`：
+
++
+[listing]
+----
+node.session.timeo.replacement_timeout = 5
+----
+

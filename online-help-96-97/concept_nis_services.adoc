@@ -1,0 +1,75 @@
+---
+permalink: online-help-96-97/concept_nis_services.html 
+sidebar: sidebar 
+keywords: online, help, system, manager, nis, services, add, edit, manage, network, information, service, domain, svm, modify, command 
+summary: 您可以使用System Manager來新增、編輯及管理網路資訊服務（NIS）網域。 
+---
+= 使用System Manager管理NIS服務- ONTAP 支援更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《支援功能》（ONTAP 適用於支援功能更新版本的版本）來新增、編輯及管理網路資訊服務（NIS）網域。
+
+
+
+== 新增NIS網域
+
+您可以使用NIS集中維護主機資訊。您可以使用System Manager新增儲存系統的NIS網域名稱。在任何指定時間、儲存虛擬機器（SVM）上只能有一個NIS網域處於作用中狀態。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在「*服務*」窗格中、按一下「* NIS *」。
+. 按一下「 * 建立 * 」。
+. 輸入NIS網域名稱、然後新增一或多個NIS伺服器。
+. 按一下「 * 建立 * 」。
+
+
+
+
+== 編輯NIS網域
+
+您可以使用System Manager根據儲存虛擬機器（SVM）驗證和授權的需求、修改NIS網域。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在「*服務*」窗格中、按一下「* NIS *」。
+. 選取NIS網域、然後按一下*編輯*。
+. 進行必要的變更、然後按一下*編輯*。
+
+
+
+
+== NIS 視窗
+
+NIS視窗可讓您檢視儲存系統的目前NIS設定。
+
+
+
+=== 命令按鈕
+
+* *建立*
++
+開啟「建立NIS網域」對話方塊、可讓您建立NIS網域。
+
+* *編輯*
++
+開啟「編輯NIS網域」對話方塊、可讓您新增、刪除或修改NIS伺服器。
+
+* *刪除*
++
+刪除選取的NIS網域。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/nfs-config/index.html["NFS 組態"^]

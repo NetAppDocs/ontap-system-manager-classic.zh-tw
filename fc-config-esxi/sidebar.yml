@@ -1,0 +1,38 @@
+---
+section: fc-config-esxi
+title: 使用 VSC 的 ESXi FC 組態
+entries:
+- title: 總覽
+  url: "/fc-config-esxi/index.html"
+- title: FC 組態工作流程
+  url: "/fc-config-esxi/concept_fc_configuration_workflow.html"
+  entries:
+  - title: 驗證是否支援FC組態
+    url: "/fc-config-esxi/task_verifying_that_iscsi_fc_configuration_is_supported.html"
+  - title: 完成FC組態工作表
+    url: "/fc-config-esxi/reference_completing_iscsi_configuration_worksheet.html"
+  - title: 安裝虛擬儲存主控台
+    url: "/fc-config-esxi/task_installing_virtual_storage_console_for_vmware_vsphere.html"
+  - title: 將儲存叢集或SVM新增至適用於VMware vSphere的VSC
+    url: "/fc-config-esxi/task_adding_storage_cluster_to_virtual_storage_cluster.html"
+  - title: 更新HBA驅動程式、韌體和BIOS
+    url: "/fc-config-esxi/task_updating_hba_firmware.html"
+  - title: 設定ESXi主機最佳實務做法設定
+    url: "/fc-config-esxi/task_configuring_esxi_host_best_practice_settings.html"
+  - title: 建立Aggregate
+    url: "/fc-config-esxi/task_creating_aggregate.html"
+  - title: 決定要將磁碟區資源配置到何處
+    url: "/fc-config-esxi/task_deciding_where_to_provision_volume.html"
+    entries:
+    - title: 確認FC服務正在現有的SVM上執行
+      url: "/fc-config-esxi/task_verifying_that_fc_service_is_running_on_existing_svm.html"
+    - title: 在現有SVM上設定FC
+      url: "/fc-config-esxi/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html"
+    - title: 建立新的 SVM
+      url: "/fc-config-esxi/task_creating_svm.html"
+  - title: 由主機和LIF WWPN對FC交換器進行分區
+    url: "/fc-config-esxi/task_zoning_fc_switches_by_host_lif_wwpns.html"
+  - title: 配置資料存放區並建立內含LUN和Volume的資料存放區
+    url: "/fc-config-esxi/task_provisioning_datastore_creating_its_containing_lun_volume.html"
+  - title: 驗證主機是否可以寫入及讀取LUN
+    url: "/fc-config-esxi/task_verifying_host_can_write_to_read_from_lun.html"

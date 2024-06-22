@@ -1,0 +1,39 @@
+---
+permalink: iscsi-config-rhel/task_starting_iscsi_sessions_with_target.html 
+sidebar: sidebar 
+keywords: linux, host, iscsi, connection, node, target, storage, cluster, establish, session, start the iscsi sessions with the target 
+summary: Linux主機必須與儲存叢集中的每個節點（目標）建立iSCSI連線。您可以從主機建立工作階段。 
+---
+= 以目標啟動iSCSI工作階段
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Linux主機必須與儲存叢集中的每個節點（目標）建立iSCSI連線。您可以從主機建立工作階段。
+
+.關於這項工作
+在本功能中、iSCSI主機必須有通往叢集中每個節點的路徑。ONTAPDM-Multikpath會選取要使用的最佳路徑。如果路徑失敗、DM-Multikpath會選取替代路徑。
+
+.步驟
+. 從Linux主機命令提示字元啟動iSCSI服務：
++
+`service iscsid force-start`
+
+. 探索iSCSI目標：
++
+`iscsiadm --mode discovery --op update --type sendtargets --portal targetIP`
+
++
+每個探索到的目標IP位址會顯示在不同的一行。
+
+. 登入每個目標以建立iSCSI工作階段：
++
+`iscsiadm --mode node -l all`
+
+. 您可以檢視使用中iSCSI工作階段的清單：
++
+`iscsiadm --mode session`
+
+

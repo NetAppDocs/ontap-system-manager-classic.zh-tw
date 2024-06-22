@@ -1,0 +1,60 @@
+---
+permalink: online-help-96-97/task_configuring_fc_fcoe_protocol_on_svms.html 
+sidebar: sidebar 
+keywords: online, help, configure, fc, protocol, fcoe, svm, online, help, system, manager 
+summary: 您可以在SAN主機的儲存虛擬機器（SVM）上設定FC傳輸協定和FCoE傳輸協定。LIF是在最適合的介面卡上建立、並指派給連接埠集、以確保資料路徑備援。根據您的需求、您可以使用System Manager來設定FC傳輸協定或FCoE傳輸協定、或同時設定這兩種傳輸協定。 
+---
+= 使用System Manager（ONTAP 系統管理程式）在SVM上設定FC傳輸協定和FCoE傳輸協定（更新版本）-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版（ONTAP 以版本9.7及更早版本提供）、在SAN主機的儲存虛擬機器（SVM）上設定FC傳輸協定和FCoE傳輸協定。LIF是在最適合的介面卡上建立、並指派給連接埠集、以確保資料路徑備援。根據您的需求、您可以使用System Manager來設定FC傳輸協定或FCoE傳輸協定、或同時設定這兩種傳輸協定。
+
+.開始之前
+* 必須在叢集上啟用FCP授權。
+* 叢集中的所有節點都必須正常運作。
+* 每個節點至少必須針對每個傳輸協定（FC和FCoE）設定兩個正確的連接埠。
+
+
+.關於這項工作
+* 您可以在建立SVM時設定FC傳輸協定和FCoE傳輸協定、也可以稍後設定傳輸協定。
++
+如果SVM上不允許這些傳輸協定、您可以使用Edit Storage Virtual Machine視窗來啟用SVM的傳輸協定。
+
+* 不考慮使用資訊區集合體來自動建立磁碟區。SnapLock
+
+
+.步驟
+. 如果您在建立SVM時尚未設定傳輸協定、請按一下「*儲存設備*」>「* SVMS*」索引標籤。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*傳輸協定*窗格中、按一下* FC/FCoF*。
+. 在「*資料介面組態*」區段中、選取對應的選項來設定FC傳輸協定和FCoE傳輸協定的資料生命期。
+. 為每個傳輸協定指定每個節點的資料生命量數目。
++
+每個節點的最小生命量為一。最大數量是中所有連接埠的最小值 `up` 跨節點的狀態。如果最大值為odd數字、則會將前一個偶數視為最大值。您可以選擇最小值和最大值範圍內的任何偶數。
+
++
+四節點叢集具有 node1 、 node2 和 node3 、每個都有六個連接埠 `up` 狀態、以及節點 4 、其中有七個連接埠 `up` 州/省。叢集的有效最大值為6。
+
++
+如果您要指派給節點的生命量超過兩個、則必須為每個LIF指派至少一個連接埠集。
+
+. 如果您要驗證或修改自動產生的lifs組態、請選取*檢閱或編輯介面關聯*。
++
+您只能修改LIF名稱和主連接埠。您必須確保未指定重複的項目。
+
+. *選用：*提供LUN大小、LUN的作業系統類型、以及主機啟動器詳細資料、以便在設定傳輸協定時、為FC儲存設備或FCoE儲存設備配置LUN。
+. 按一下*提交並繼續*。
+
+
+.結果
+資料生命量和連接埠集是以指定的組態建立。這些生命分佈在各連接埠集之間。如果已成功為至少一個傳輸協定建立所有的LIF、則會啟動FCP服務。
+
+如果LIF建立失敗、您可以建立LIF、然後從FC/FCoE視窗啟動FCP服務。
+
+*相關資訊*
+
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]

@@ -1,0 +1,119 @@
+---
+permalink: online-help-96-97/task_editing_volume_properties.html 
+sidebar: sidebar 
+keywords: edit, volume, properties, online, help, deduplication, system, manager 
+summary: 您可以使用System Manager修改Volume內容、例如Volume名稱、安全樣式、分數保留和空間保證。您可以修改儲存效率設定（重複資料刪除排程、重複資料刪除原則及壓縮）和空間回收設定。 
+---
+= 使用System Manager（ONTAP 系統管理程式）編輯Volume內容-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《支援功能》（ONTAP 適用於支援功能更新版本的版本）來修改Volume內容、例如Volume名稱、安全樣式、分數保留和空間保證。您可以修改儲存效率設定（重複資料刪除排程、重複資料刪除原則及壓縮）和空間回收設定。
+
+.開始之前
+若要啟用Volume加密、您必須使用System Manager安裝Volume加密授權、而且必須使用命令列介面（CLI）啟用「金鑰管理程式設定」。啟用「key-manager setup」之後、您必須重新整理網頁瀏覽器。
+
+.關於這項工作
+* 您可以將分餘額設為零百分比或100%。
+* 32位元磁碟區不支援資料壓縮。
+* 對於支援支援內部資料壓縮和背景資料壓縮的支援、可同時Data ONTAP 支援適用於Cloud Volumes ONTAP AWS（AWS）的支援。
++
+不支援Data ONTAP 對EdgeEdge進行壓縮。
+
+* 您無法重新命名SnapLock 「不符合要求」磁碟區。
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從* SVM*欄位的下拉式功能表中、選取您要編輯的磁碟區所在的儲存虛擬機器（SVM）。
+. 選取您要修改的磁碟區、然後按一下*編輯*。
++
+此時會顯示Edit Volume（編輯Volume）對話方塊。
+
+. 在*一般*索引標籤中、視需要修改下列內容：
++
+** 變更磁碟區名稱
+** 啟用Volume加密
++
+此選項僅在您已啟用Volume Encryption授權、且對應的平台支援加密時可用。您可以從CLI執行金鑰管理程式設定。
+
+** 變更磁碟區的安全樣式
+** 啟用或停用精簡配置
+
+
+. 按一下「*儲存效率*」索引標籤、然後設定下列內容以啟用儲存效率：
++
+** 重複資料刪除
+** 資料壓縮
+您無法針對由具有All Flash Optimized特性設定的Aggregate所包含的磁碟區啟用背景壓縮。您只能對這些磁碟區啟用即時壓縮。
+
+
++
+您只能在集合體所包含的磁碟區上啟用即時重複資料刪除功能、該磁碟區具有「All Flash Optimized」（所有Flash最佳化）特性、或是Flash Pool Aggregate中的磁碟區。
+
+. 如需SnapLock 使用本產品的資料、請按一下* SnapLock 《*》索引標籤、然後執行下列步驟：
++
+.. 指定自動提交期間。
++
+自動提交期間會決定磁碟區中的檔案在提交至WORM狀態之前、必須保持不變的時間長度。
+
+.. 指定最短保留期間和最長保留期間。
++
+這些值必須介於1天到70年之間、或是「無限大」。
+
+.. 選取預設保留期間。
++
+預設保留期間必須在指定的最短保留期間和最長保留期間內。
+
+
+
+. 按一下*進階*索引標籤、然後啟用下列內容：
++
+** 如果您希望當磁碟區中的已用空間超過「成長」臨界值時、磁碟區自動成長、請選取*「成長」*。
+** 如果您希望磁碟區大小隨著使用空間的大小而增加或縮小、請選取*成長或縮小*。
++
+... 指定磁碟區可以增加的最大大小。
+
+
+** 選擇下列其中一個選項、即可自動刪除舊的Snapshot複本：
++
+*** 試用
++
+刪除未被任何其他子系統鎖定的Snapshot複本。
+
+*** 摧毀
++
+刪除受資料備份功能鎖定的Snapshot複本。
+
+*** 中斷
++
+刪除可能會中斷資料傳輸的Snapshot複本。
+
+
+
+** 選取您要指派給磁碟區的快取原則。
++
+此選項僅適用於FlexVol Flash Pool Aggregate中的不完整磁碟區。
+
+** 選取磁碟區中快取資料的保留優先順序。
++
+此選項僅適用於FlexVol Flash Pool Aggregate中的不完整磁碟區。
+
+** 指定您要為磁碟區設定的部分保留。
+** 更新讀取檔案的存取時間。
++
+此選項已停用SnapLock 、適用於不完整的資料區。
+
+
+
+. 按一下*儲存並關閉*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]
+
+xref:task_setting_up_cifs.adoc[設定 CIFS]

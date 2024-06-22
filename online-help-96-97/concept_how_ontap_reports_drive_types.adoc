@@ -1,0 +1,131 @@
+---
+permalink: online-help-96-97/concept_how_ontap_reports_drive_types.html 
+sidebar: sidebar 
+keywords: ontap, report, disk, type, industry, standards, sas, fc, storage, array, online, help 
+summary: 將類型與每個磁碟建立關聯。ONTAP本報告的某些磁碟類型與產業標準不同、您應該瞭解哪些類型的磁碟類型符合產業標準、以避免混淆。ONTAP ONTAP 
+---
+= 如何在System Manager中報告磁碟類型-例如更新版本的更新版本ONTAP ONTAP
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+經典版的《系統管理程式》（以更新版本提供）可將每個磁碟的類型關聯起來。ONTAP ONTAP本報告的某些磁碟類型與產業標準不同、您應該瞭解哪些類型的磁碟類型符合產業標準、以避免混淆。ONTAP ONTAP
+
+如果使用的是磁碟類型、除非另有說明、否則就是使用的類型。ONTAP ONTAP_RAID磁碟類型_表示特定磁碟在RAID中扮演的角色。RAID磁碟類型與ONTAP 各種不同的磁碟類型無關。
+
+對於特定組態、支援的磁碟類型取決於儲存系統機型、機櫃類型、以及系統中安裝的I/O模組。
+
+下表顯示ONTAP 了針對SAS和FC儲存連線類型、以及儲存陣列、將哪些類型的Sfor Sfor disk對應至業界標準磁碟類型。
+
+
+
+== SAS連線儲存設備
+
+|===
+| 磁碟類型ONTAP | 磁碟類別 | 業界標準磁碟類型 | 說明 
+
+
+ a| 
+牀位寓所
+ a| 
+容量
+ a| 
+SATA
+ a| 
+橋接式SAS/SATA磁碟搭配新增的硬體、可將其插入SAS連接的儲存櫃
+
+
+
+ a| 
+FSA
+ a| 
+容量
+ a| 
+NL-SAS
+ a| 
+近線SAS
+
+
+
+ a| 
+MSATA
+ a| 
+容量
+ a| 
+SATA
+ a| 
+SATA磁碟位於多磁碟機載體儲存櫃中
+
+
+
+ a| 
+SAS
+ a| 
+效能
+ a| 
+SAS
+ a| 
+序列附加SCSI
+
+
+
+ a| 
+SSD
+ a| 
+超高效能
+ a| 
+SSD
+ a| 
+固態硬碟
+
+|===
+
+
+== 連接FC的儲存設備
+
+|===
+| 磁碟類型ONTAP | 磁碟類別 | 業界標準磁碟類型 
+
+
+ a| 
+ATA
+ a| 
+容量
+ a| 
+SATA
+
+
+
+ a| 
+FCAL
+ a| 
+效能
+ a| 
+FC
+
+|===
+
+
+== 儲存陣列
+
+|===
+| 磁碟類型ONTAP | 磁碟類別 | 業界標準磁碟類型 | 說明 
+
+
+ a| 
+LUN
+ a| 
+不適用
+ a| 
+LUN
+ a| 
+由儲存陣列做為後盾並由ONTAP 支援的邏輯儲存設備、以供作磁碟使用。這些LUN稱為_Array LUN__、用以區分它們與ONTAP 供用戶端使用的LUN。
+
+|===
+*相關資訊*
+
+https://hwu.netapp.com["NetApp Hardware Universe"^]
+
+http://www.netapp.com/us/media/tr-3437.pdf["NetApp技術報告3437：儲存子系統恢復能力"^]

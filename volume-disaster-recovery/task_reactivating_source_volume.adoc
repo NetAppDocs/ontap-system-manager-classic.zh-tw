@@ -1,0 +1,14 @@
+---
+permalink: volume-disaster-recovery/task_reactivating_source_volume.html 
+sidebar: sidebar 
+keywords: source, volume, resynchronize, data, destination, volume, source, update, modification, resynchronization, operation, activate, reactivate the source volume 
+summary: 當來源磁碟區可供使用時、您必須將目的地磁碟區的資料重新同步至來源磁碟區、在重新同步作業之後更新任何修改、然後啟動來源磁碟區。 
+---
+= 重新啟動來源Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當來源磁碟區可供使用時、您必須將目的地磁碟區的資料重新同步至來源磁碟區、在重新同步作業之後更新任何修改、然後啟動來源磁碟區。

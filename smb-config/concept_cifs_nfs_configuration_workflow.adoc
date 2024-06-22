@@ -1,0 +1,16 @@
+---
+permalink: smb-config/concept_cifs_nfs_configuration_workflow.html 
+sidebar: sidebar 
+keywords: configure, configuring, smb, cifs, creating, create, aggregate, workflow, goal-creating, cifs-enabled, svm, smb/cifs configuration workflow 
+summary: 設定SMB/CIFS需要選擇性地建立集合體、然後選擇專屬於您目標的工作流程、例如建立新的CIFS型SVM、設定對現有SVM的CIFS存取、或只是將CIFS Volume新增至已完全設定為CIFS存取的現有SVM。 
+---
+= SMB/CIFS組態工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定SMB/CIFS需要選擇性地建立集合體、然後選擇專屬於您目標的工作流程、例如建立新的CIFS型SVM、設定對現有SVM的CIFS存取、或只是將CIFS Volume新增至已完全設定為可存取CIFS的現有SVM。
+
+image::../media/cifs_config.gif[概述ONTAP 在功能介紹中設定CIFS所需的步驟。]

@@ -1,0 +1,24 @@
+---
+permalink: online-help-96-97/concept_what_compatible_spare_disks_are.html 
+sidebar: sidebar 
+keywords: system, manager, compatible, spare, disk, hdd, compacity, raid, online, help 
+summary: 在System Manager中、相容的備用磁碟是符合集合體中其他磁碟內容的磁碟。若要透過新增HDD（容量磁碟）來增加現有Aggregate的大小、或是將Aggregate的RAID類型從RAID4變更為RAID-DP、則Aggregate必須包含足夠的相容備援磁碟。 
+---
+= System Manager中的相容備用磁碟- ONTAP 適用於更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在經典版的《經典版》（僅適用於更新版本的版本）中、相容的備用磁碟是符合集合體中其他磁碟內容的磁碟。ONTAP ONTAP若要透過新增HDD（容量磁碟）來增加現有Aggregate的大小、或是將Aggregate的RAID類型從RAID4變更為RAID-DP、則Aggregate必須包含足夠的相容備援磁碟。
+
+必須相符的磁碟內容包括磁碟類型、磁碟大小（如果無法使用相同的磁碟大小、可以是較大的磁碟）、磁碟RPM、Checksum、節點擁有者、集區、 和共享磁碟內容。如果您使用較大的磁碟、則必須注意磁碟會縮編、而且所有磁碟的大小都會縮減至最低的磁碟大小。現有的共用磁碟與較大的非共用磁碟相符、非共用磁碟則會轉換成共用磁碟並新增為備援磁碟。
+
+如果RAID群組已啟用RAID混合選項、例如磁碟類型混合和磁碟RPM混合、 Aggregate現有磁碟的磁碟類型和磁碟RPM會與備用磁碟的有效磁碟類型和有效磁碟RPM相符、以取得相容的備援磁碟。
+
+*相關資訊*
+
+xref:task_adding_capacity_disks.adoc[新增容量磁碟]
+
+xref:task_editing_aggregates.adoc[編輯Aggregate]

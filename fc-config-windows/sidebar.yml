@@ -1,0 +1,42 @@
+---
+section: fc-config-windows
+title: Windows的FC組態
+entries:
+- title: 總覽
+  url: "/fc-config-windows/index.html"
+- title: FC 組態工作流程
+  url: "/fc-config-windows/concept_fc_configuration_workflow.html"
+  entries:
+  - title: 驗證是否支援FC組態
+    url: "/fc-config-windows/task_verifying_that_iscsi_fc_configuration_is_supported.html"
+  - title: 完成FC組態工作表
+    url: "/fc-config-windows/reference_completing_iscsi_configuration_worksheet.html"
+  - title: 從HBA廠商安裝HBA公用程式
+    url: "/fc-config-windows/task_installing_hba_utility_from_hba_vendor.html"
+  - title: 更新HBA驅動程式、韌體和BIOS
+    url: "/fc-config-windows/task_updating_hba_driver_firmware_bios.html"
+  - title: 記錄每個主機FC連接埠的WWPN
+    url: "/fc-config-windows/task_record_wwpn_for_each_host_fc_port.html"
+  - title: 安裝Windows Unified Host Utilities
+    url: "/fc-config-windows/task_installing_windows_unified_host_utilities.html"
+  - title: 建立Aggregate
+    url: "/fc-config-windows/task_creating_aggregate.html"
+  - title: 決定要將磁碟區資源配置到何處
+    url: "/fc-config-windows/task_deciding_where_to_provision_volume.html"
+    entries:
+    - title: 確認FC服務正在現有的SVM上執行
+      url: "/fc-config-windows/task_verifying_that_fc_service_is_running_on_existing_svm.html"
+    - title: 建立 LUN
+      url: "/fc-config-windows/task_creating_lun_its_containing_volume.html"
+    - title: 在現有SVM上設定FC
+      url: "/fc-config-windows/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html"
+    - title: 建立新的 SVM
+      url: "/fc-config-windows/task_creating_svm.html"
+  - title: 由主機和LIF WWPN對FC交換器進行分區
+    url: "/fc-config-windows/task_zoning_fc_switches_by_host_lif_wwpns.html"
+  - title: 探索新磁碟
+    url: "/fc-config-windows/task_discovering_new_disks.html"
+  - title: 初始化及格式化LUN
+    url: "/fc-config-windows/task_initializing_formatting_lun.html"
+  - title: 驗證主機是否可以寫入及讀取LUN
+    url: "/fc-config-windows/task_verifying_that_host_can_write_to_read_from_lun.html"

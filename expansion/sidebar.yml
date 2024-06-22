@@ -1,0 +1,61 @@
+---
+section: expansion
+title: 叢集管理
+entries:
+- title: 叢集擴充管理
+  entries:
+  - title: 總覽
+    url: "/expansion/index.html"
+  - title: 叢集擴充工作流程
+    url: "/expansion/concept_cluster_expansion_workflow.html"
+    entries:
+    - title: 確認叢集已準備好進行擴充
+      url: "/expansion/task_verifying_cluster_is_ready_for_expansion.html"
+      entries:
+      - title: 驗證規劃的組態
+        url: "/expansion/task_verifying_planned_configuration.html"
+      - title: 收集所需的網路資訊
+        url: "/expansion/task_gathering_required_information.html"
+      - title: 新增或更換交換器
+        url: "/expansion/task_adding_or_replacing_switches.html"
+    - title: 準備叢集以進行擴充
+      url: "/expansion/task_preparing_cluster_for_expansion.html"
+      entries:
+      - title: 新增節點鎖定的授權
+        url: "/expansion/task_adding_node_locked_licenses.html"
+      - title: 驗證系統的健全狀況
+        url: "/expansion/task_verifying_health_system.html"
+      - title: 備份叢集組態
+        url: "/expansion/task_backing_up_cluster_configuration.html"
+      - title: 產生AutoSupport 關於開始擴充的資訊
+        url: "/expansion/task_generating_autosupport_message_about_starting_expansion.html"
+    - title: 安裝新節點
+      url: "/expansion/task_installing_new_nodes.html"
+      entries:
+      - title: 安裝控制器
+        url: "/expansion/task_installing_controllers.html"
+      - title: 設定節點管理lifs
+        url: "/expansion/concept_configuring_node_management_lifs.html"
+      - title: 升級或降級節點
+        url: "/expansion/task_upgrading_or_downgrading_nodes.html"
+      - title: 確認硬體層級HA已啟用
+        url: "/expansion/task_ensuring_hardware_level_ha_is_enabled.html"
+      - title: 使用System Manager將節點新增至叢集
+        url: "/expansion/task_adding_nodes_to_cluster_using_system_manager.html"
+      - title: 使用CLI將節點加入叢集
+        url: "/expansion/concept_joining_nodes_to_cluster_using_cli.html"
+    - title: 完成擴充
+      url: "/expansion/task_completing_expansion.html"
+      entries:
+      - title: 在System Manager中設定節點詳細資料
+        url: "/expansion/task_configuring_node_details_system_manager.html"
+      - title: 在AutoSupport 新節點上設定功能
+        url: "/expansion/task_configuring_autosupport_on_new_nodes_using_cli.html"
+      - title: 設定服務處理器網路
+        url: "/expansion/task_configuring_service_processor_network_cli.html"
+      - title: 驗證擴充叢集的組態
+        url: "/expansion/task_validating_configuration_expanded_cluster.html"
+      - title: 產生AutoSupport 關於完成擴充的資訊
+        url: "/expansion/task_generating_autosupport_message_about_completing_expansion.html"
+      - title: 更新新節點的LUN路徑
+        url: "/expansion/task_updating_lun_paths_for_new_nodes.html"

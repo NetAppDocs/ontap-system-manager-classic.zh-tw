@@ -1,0 +1,80 @@
+---
+permalink: online-help-96-97/concept_high_availability.html 
+sidebar: sidebar 
+keywords: high, availability, system, manager, hardware, redundancy, nondisruptive, operations, fault, tolerance 
+summary: 您可以使用System Manager建立高可用度（HA）配對、以提供不中斷營運和容錯所需的硬體備援。 
+---
+= 使用ONTAP System Manager建立高可用度配對-例如：NetApp®
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版（ONTAP 以更新版本供應）功能來建立高可用度（HA）配對、提供不中斷營運和容錯所需的硬體備援功能。
+
+
+
+== 高可用度時段
+
+「高可用度」視窗提供高可用度（HA）狀態、互連狀態、ONTAP 以及所有二合一HA配對的接管或恢復狀態的圖示。您也可以使用「高可用度」視窗、手動啟動接管作業或恢復作業。
+
+您可以按一下HA配對映像來檢視詳細資料、例如接管或恢復狀態、以及互連狀態。
+
+此色彩表示HA配對狀態：
+
+* 綠色：表示HA配對和互連已經過最佳設定、可用於接管或恢復。
++
+綠色也表示接管進行中狀態、恢復進行中狀態、以及等待恢復狀態。
+
+* 紅色：表示降級狀態、例如接管失敗。
+* 黃色：表示互連狀態為「關閉」。
+
+
+當叢集中的多個HA配對同時涉及儲存容錯移轉作業時、所顯示的叢集狀態會根據HA配對的狀態和嚴重性而定。顯示叢集狀態時、會考量下列嚴重性順序：接管進行中、恢復進行中、等待恢復。
+
+
+
+=== 行動
+
+您可以根據HA配對中節點的狀態來執行接管或恢復等工作。
+
+* 接管 `node_name`
++
+可讓您在合作夥伴節點需要維護時執行接管作業。
+
+* GiveBack `node_name`
++
+可讓您在已接管的合作夥伴節點等待恢復或處於部分恢復狀態時、執行恢復作業。
+
+* 啟用或停用自動還原
++
+啟用或停用自動恢復作業。
+
++
+[NOTE]
+====
+預設會啟用自動恢復功能。
+
+====
+
+
+
+
+=== 命令按鈕
+
+* *重新整理*
++
+更新視窗中的資訊。
+
++
+[NOTE]
+====
+「高可用度」視窗中顯示的資訊會每60秒自動重新整理一次。
+
+====
+
+
+*相關資訊*
+
+xref:task_monitoring_ha_pairs.adoc[監控HA配對]

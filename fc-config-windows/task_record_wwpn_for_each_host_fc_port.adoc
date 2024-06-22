@@ -1,0 +1,36 @@
+---
+permalink: fc-config-windows/task_record_wwpn_for_each_host_fc_port.html 
+sidebar: sidebar 
+keywords: worldwide, port, name, wwpn, require, zone, fc, switch, create, igroup, host, lun, record, record the wwpn for each host fc port 
+summary: 需要使用全球連接埠名稱（WWPN）來對FC交換器進行分區、並建立允許主機存取其LUN的igroup。 
+---
+= 記錄每個主機FC連接埠的WWPN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+需要使用全球連接埠名稱（WWPN）來對FC交換器進行分區、並建立允許主機存取其LUN的igroup。
+
+.開始之前
+您必須在主機中安裝廠商的HBA公用程式、並驗證HBA是否執行您的組態所支援的驅動程式、韌體和BIOS版本。
+
+.關於這項工作
+WWPN用於所有組態。您不需要記錄全球節點名稱（WWNN）。
+
+.步驟
+. 針對FC HBA類型執行HBA公用程式。
+. 選取 HBA 。
+. 記錄每個連接埠的WWPN。
++
+以下範例顯示Emulex HBA Manager、先前稱為OneCommand Manager。
+
++
+image::../media/emulex_hba_fc_fc_windows.gif[影像顯示OneCommand Manager中顯示的2埠HBA、其中每個連接埠的WWPN值。]
+
++
+其他公用程式（例如QLogic QConvertgeConsole）則提供等效資訊。
+
+. 對主機中的每個FC HBA重複上述步驟。
+

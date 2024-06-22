@@ -1,0 +1,106 @@
+---
+permalink: online-help-96-97/task_setting_up_saml_authentication.html 
+sidebar: sidebar 
+keywords: set, up, saml, authentication, security, assertion, markup, idp, online, help, system, manager,  language, secure, identity, provide, 
+summary: 您可以設定安全聲明標記語言（SAML）驗證、以便遠端使用者在登入System Manager之前、先透過安全的身分識別提供者（IDP）進行驗證。 
+---
+= 使用System Manager設定SAML驗證- ONTAP 支援更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的支援功能（ONTAP 僅適用於支援支援的版本）來設定安全聲明標記語言（SAML）驗證。遠端使用者在登入System Manager之前、會先透過安全的身分識別供應商（IDP）進行驗證。
+
+image::../media/mfa_workflow.gif[MFA工作流程]
+
+
+
+== 啟用SAML驗證
+
+您可以使用System Manager來設定安全聲明標記語言（SAML）驗證、讓遠端使用者可以使用安全的身分識別供應商（IDP）登入。
+
+.開始之前
+* 必須設定您打算用於遠端驗證的IDP。
++
+[NOTE]
+====
+請參閱您已設定之IDP所提供的文件。
+
+====
+* 您必須擁有IDP的URI。
+
+
+.關於這項工作
+下列 IDP 已通過 System Manager 驗證：
+
+* Active Directory Federation Services
+* Cisco Duo （已通過下列 ONTAP 版本驗證：）
++
+** 9.7P21 及更新版本 9.7 版本
+** 9.8P17 及更新版本 9.8 版本
+** 9.9.1P13 及更新版本 9.9 版本
+** 9.10.1 第 9 版及更新版本 9.10 版本
+** 9.11.1P4 及更新版本 9.11 版本
+** 9.12.1 及更新版本
+
+
+* Shibboleth
+
+
+[NOTE]
+====
+啟用SAML驗證後、只有遠端使用者可以存取System Manager GUI。啟用SAML驗證後、本機使用者無法存取System Manager GUI。
+
+====
+.步驟
+. 按一下*組態*>*叢集*>*驗證*。
+. 選取「*啟用SAML驗證*」核取方塊。
+. 設定System Manager使用SAML驗證：
++
+.. 輸入IDP的URI。
+.. 輸入主機系統的IP位址。
+.. *選用：*必要時、請變更主機系統憑證。
+
+
+. 按一下*擷取主機中繼資料*以擷取主機URI和主機中繼資料資訊。
+. 複製主機URI或主機中繼資料詳細資料、存取IDP、然後在IDP視窗中指定主機URI或主機中繼資料詳細資料及信任規則。
++
+[NOTE]
+====
+請參閱您已設定之IDP所提供的文件。
+
+====
+. 按一下「 * 儲存 * 」。
++
+隨即顯示IDP登入視窗。
+
+. 使用IDP登入視窗登入System Manager。
++
+設定IDP之後、如果使用者嘗試使用完整網域名稱（FQDN）、IPv6或叢集管理LIF來登入、則系統會自動將IP位址變更為IDP組態期間指定的主機系統IP位址。
+
+
+
+
+
+== 停用SAML驗證
+
+如果您想停用系統管理員的遠端存取、或是編輯SAML組態、您可以停用安全聲明標記語言（SAML）驗證。
+
+.關於這項工作
+停用SAML驗證不會刪除SAML組態。
+
+.步驟
+. 按一下*組態*>*叢集*>*驗證*。
+. 清除「*啟用SAML驗證*」核取方塊。
+. 按一下「 * 儲存 * 」。
++
+系統管理程式會重新啟動。
+
+. 使用叢集認證登入System Manager。
+
+
+*相關資訊*
+
+xref:task_accessing_cluster_by_using_system_manager_brower_based_gui.adoc[使用ONTAP 以瀏覽器為基礎的圖形介面存取叢集]

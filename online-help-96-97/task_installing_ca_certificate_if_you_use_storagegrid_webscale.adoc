@@ -1,0 +1,35 @@
+---
+permalink: online-help-96-97/task_installing_ca_certificate_if_you_use_storagegrid_webscale.html 
+sidebar: sidebar 
+keywords: install, ca, certificate, storagegrid, fabricpool, aggregate, online, help 
+summary: 若要驗證使用支援FabricPool的Aggregate、以用作物件存放區的物件、您可以在叢集上安裝一個發行版本驗證的物件。ONTAP StorageGRID StorageGRID 
+---
+= 如果您使用StorageGRID 的是System Manager - ONTAP 更新版本的更新版本、請安裝CA認證
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要驗證支援FabricPool的Aggregate、使用支援物件存放區的物件時、您可以使用System Manager Classic（更新版本為版本9.7）、在叢集上安裝一份「更新版CA」認證。ONTAP StorageGRID StorageGRID ONTAP
+
+.步驟
+. 請遵循StorageGRID 《支持資料》系統文件、StorageGRID 使用Grid Management介面複製《支持資料》系統的CA認證。
++
+https://docs.netapp.com/sgws-113/topic/com.netapp.doc.sg-admin/home.html["《英文版》11.3《系統管理員指南》StorageGRID"]
+
++
+在將StorageGRID 功能區新增為雲端層時、如果未安裝CA憑證、則會顯示訊息。
+
+. 新增StorageGRID 功能驗證CA憑證。
++
+[NOTE]
+====
+您所指定的完整網域名稱（FQDN）必須符合StorageGRID 來自訂的通用名稱（位於Eqing CA憑證上）。
+
+====
+
+
+*相關資訊*
+
+xref:task_adding_cloud_tier.adoc[新增雲端層]

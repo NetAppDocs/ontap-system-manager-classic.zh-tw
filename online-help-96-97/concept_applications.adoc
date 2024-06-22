@@ -1,0 +1,46 @@
+---
+permalink: online-help-96-97/concept_applications.html 
+sidebar: sidebar 
+keywords: application, predefined, template, system, manager, configuration, provision 
+summary: 您可以在System Manager中使用預先定義的應用程式範本、根據現有的應用程式範本建立新的組態。然後、您可以將應用程式的執行個體資源配置ONTAP 到整個過程中。 
+---
+= 使用ONTAP System Manager進行應用程式設定-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》中預先定義的應用程式範本ONTAP （可在更新版本的版本中使用）、根據現有的應用程式範本建立新的組態。然後、您可以將應用程式的執行個體資源配置ONTAP 到整個過程中。
+
+您可以按一下*應用程式&Tiers*>*應用程式*來設定應用程式。
+
+[NOTE]
+====
+如果有人在您檢視應用程式清單時使用CLI或REST API新增應用程式、則當您捲動清單時、將無法檢視這些新應用程式。
+
+====
+您可以在System Manager中設定下列應用程式：
+
+*一般應用程式*
+
+* NAS Container（Volume匯出至NFS或CIFS用戶端）
+* 一般SAN應用程式（一組LUN匯出至應用程式伺服器）
+
+
+*資料庫*
+
+* MongoDB（透過SAN）
+* Oracle（透過NFS或SAN）
+* Oracle（透過NFS或SAN的實際應用程式叢集）
+* Microsoft SQL Server（透過SAN或SMB）
+
+
+*虛擬基礎架構*
+
+* 虛擬伺服器（使用VMware、Hyper-V或Xen）
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/concepts/index.html["概念ONTAP"]

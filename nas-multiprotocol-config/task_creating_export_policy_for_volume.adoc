@@ -1,0 +1,50 @@
+---
+permalink: nas-multiprotocol-config/task_creating_export_policy_for_volume.html 
+sidebar: sidebar 
+keywords: nfs, client, access, volume, create, export, policy, permit, administration, host, apply, volume, create an export policy for the volume 
+summary: 在任何NFS用戶端都能存取磁碟區之前、您必須先建立磁碟區的匯出原則、新增允許管理主機存取的規則、然後將新的匯出原則套用至磁碟區。 
+---
+= 為磁碟區建立匯出原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在任何NFS用戶端都能存取磁碟區之前、您必須先建立磁碟區的匯出原則、新增允許管理主機存取的規則、然後將新的匯出原則套用至磁碟區。
+
+.步驟
+. 瀏覽至* SVMS*視窗。
+. 按一下「* SVM設定*」索引標籤。
+. 建立新的匯出原則：
++
+.. 在「*原則*」窗格中、按一下「*匯出原則*」、然後按一下「*建立*」。
+.. 在「*建立匯出原則*」視窗中、指定原則名稱。
+.. 在「*匯出規則*」下、按一下「*新增*」將規則新增至新原則。
+
+
++
+image::../media/export_policy_create_nas_mp.gif[上述文字說明此螢幕快照。]
+
+. 在「*建立匯出規則*」對話方塊中、建立允許系統管理員透過所有傳輸協定完整存取匯出的規則：
++
+.. 指定用於管理匯出Volume的IP位址或用戶端名稱、例如admin_host。
+.. 選擇* CIFS/*和* NFSv3*。
+.. 確保選擇了所有*讀取/寫入*存取詳細資料、以及*允許超級使用者存取*。
++
+image::../media/export_rule_for_admin_manual_multi_nas_mp.gif[上述文字說明此螢幕快照。]
+
+.. 按一下「*確定*」、然後按一下「*建立*」。
+
+
++
+隨即建立新的匯出原則及其新規則。
+
+. 將新的匯出原則套用至新的Volume、以便系統管理員主機存取該Volume：
++
+.. 瀏覽至「*命名空間*」視窗。
+.. 選取磁碟區、然後按一下*變更匯出原則*。
+.. 選取新原則、然後按一下*變更*。
+
+
+

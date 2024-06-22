@@ -1,0 +1,147 @@
+---
+permalink: online-help-96-97/concept_lun_multiprotocol_type_guidelines.html 
+sidebar: sidebar 
+keywords: guidelines, lun, multiprotocol, type, operating, system, host, layout, data, minimum, maximum, size, online, help 
+summary: LUN多重傳輸協定類型（或作業系統類型）會指定存取LUN之主機的作業系統。它也會決定LUN上的資料配置、以及LUN的最小和最大大小。 
+---
+= 系統管理程式ONTAP 中使用LUN多重傳輸協定類型的準則-《系統管理程式》-《更新版本》-《更新版本》
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在經典版的《經典版》（適用於更新版本的版本）中ONTAP 、ONTAP LUN多重傳輸協定類型或作業系統類型會指定存取LUN之主機的作業系統。它也會決定LUN上的資料配置、以及LUN的最小和最大大小。
+
+[NOTE]
+====
+並非所有ONTAP 的版本都支援所有LUN多重傳輸協定類型。如需最新資訊、請參閱互通性對照表工具。
+
+====
+下表說明LUN多重傳輸協定類型值、以及使用每種類型的準則：
+
+|===
+| LUN多重傳輸協定類型 | 使用時機 
+
+
+ a| 
+AIX
+ a| 
+如果您的主機作業系統是AIX。
+
+
+
+ a| 
+HP-UX
+ a| 
+如果您的主機作業系統是HP-UX、
+
+
+
+ a| 
+Hyper-V
+ a| 
+如果您使用的是Windows Server 2008或Windows Server 2012 Hyper-V、而且LUN包含虛擬硬碟（VHD）。如果您的LUN類型使用hyper_v、也應該將hyper_v用於igroup OS類型。
+
+[NOTE]
+====
+對於原始LUN、您可以使用LUN多重傳輸協定類型所使用的子作業系統類型。
+
+====
+
+
+ a| 
+Linux
+ a| 
+如果您的主機作業系統是Linux、
+
+
+
+ a| 
+NetWare
+ a| 
+如果您的主機作業系統是NetWare、
+
+
+
+ a| 
+VMS
+ a| 
+如果您的主機作業系統是OpenVMS、
+
+
+
+ a| 
+Solaris
+ a| 
+如果您的主機作業系統是Solaris、而您並未使用Solaris efi標籤。
+
+
+
+ a| 
+Solaris EFI
+ a| 
+如果您使用的是Solaris efi標籤、
+
+[NOTE]
+====
+使用任何其他LUN多重傳輸協定類型搭配Solaris EFi標籤、可能會導致LUN無法對齊。
+
+====
+
+
+ a| 
+VMware
+ a| 
+如果您使用的是ESX Server、則LUN將設定為使用VMFS。
+
+[NOTE]
+====
+如果使用RDM設定LUN、則可使用客體作業系統做為LUN多重傳輸協定類型。
+
+====
+
+
+ a| 
+Windows 2003 MBR
+ a| 
+如果您的主機作業系統是使用MBR分割 方法的Windows Server 2003。
+
+
+
+ a| 
+Windows 2003 GPT
+ a| 
+如果您想要使用GPT分割方法、而且您的主機可以使用它。Windows Server 2003、Service Pack 1及更新版本可以使用GPT分割方法、而所有64位元版本的Windows都支援此方法。
+
+
+
+ a| 
+Windows 2008或更新版本
+ a| 
+如果您的主機作業系統是Windows Server 2008或更新版本、則同時支援MBRs和GPT分割方法。
+
+
+
+ a| 
+Xen
+ a| 
+如果您使用的是Xen、則LUN將設定為使用含有DOM 0的Linux LVM。
+
+[NOTE]
+====
+對於原始LUN、您可以使用LUN多重傳輸協定類型所使用的客體作業系統類型。
+
+====
+|===
+*相關資訊*
+
+xref:task_creating_luns.adoc[建立LUN]
+
+https://mysupport.netapp.com/NOW/products/interoperability["NetApp互通性"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1148981["Solaris Host Utilities 6.1 安裝與設定指南"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1148983["Solaris Host Utilities 6.1快速命令參考資料"]
+
+https://library.netapp.com/ecm/ecm_download_file/ECMP1148982["Solaris Host Utilities 6.1發行說明"]

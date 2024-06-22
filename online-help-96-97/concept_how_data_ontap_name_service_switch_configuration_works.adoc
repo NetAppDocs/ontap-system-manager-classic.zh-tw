@@ -1,0 +1,127 @@
+---
+permalink: online-help-96-97/concept_how_data_ontap_name_service_switch_configuration_works.html 
+sidebar: sidebar 
+keywords: ontap, name, service, switch, configuration, works, unix, system, online, help 
+summary: 將名稱服務組態資訊儲存在表格中、表格相當於UNIX系統上的/etc/nsswitch.conf檔案。ONTAP您必須瞭解表格的功能及ONTAP 其使用方式、以便根據環境適當設定。 
+---
+= 關於ONTAP System Manager中的名稱服務交換器組態ONTAP -更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+ONTAP System Manager classic （在 ONTAP 9.7 及更早版本中提供）會將名稱服務組態資訊儲存在相當於的表格中 `/etc/nsswitch.conf` UNIX 系統上的檔案。您必須瞭解表格的功能及ONTAP 其使用方式、以便根據環境適當設定。
+
+這個名稱服務交換器表決定哪些名稱服務來源可以查詢、以便擷取特定類型名稱服務資訊的資訊。ONTAP ONTAP針對每個SVM維護個別的名稱服務交換器表。ONTAP
+
+
+
+== 資料庫類型
+
+此表格會針對下列每一種資料庫類型儲存個別的名稱服務清單：
+
+|===
+| 資料庫類型 | 定義名稱服務來源： | 有效來源為... 
+
+
+ a| 
+主機
+ a| 
+將主機名稱轉換為IP位址
+ a| 
+檔案、DNS
+
+
+
+ a| 
+群組
+ a| 
+查詢使用者群組資訊
+ a| 
+檔案、NIS、LDAP
+
+
+
+ a| 
+密碼
+ a| 
+查詢使用者資訊
+ a| 
+檔案、NIS、LDAP
+
+
+
+ a| 
+網路群組
+ a| 
+查詢netgroup資訊
+ a| 
+檔案、NIS、LDAP
+
+
+
+ a| 
+名稱
+ a| 
+對應使用者名稱
+ a| 
+檔案、LDAP
+
+|===
+
+
+== 來源類型
+
+這些來源會指定要用於擷取適當資訊的名稱服務來源。
+
+|===
+| 指定來源類型... | 若要查詢資訊... | 由命令系列管理... 
+
+
+ a| 
+檔案
+ a| 
+本機來源檔案
+ a| 
+`vserver services name-service unix-user`
+
+`vserver services name-service unix-group`
+
+`vserver services name-service netgroup`
+
+`vserver services name-service dns hosts`
+
+
+
+ a| 
+NIS
+ a| 
+在SVM的NIS網域組態中指定的外部NIS伺服器
+ a| 
+`vserver services name-service nis-domain`
+
+
+
+ a| 
+LDAP
+ a| 
+在SVM的LDAP用戶端組態中指定的外部LDAP伺服器
+ a| 
+`vserver services name-service ldap`
+
+
+
+ a| 
+DNS
+ a| 
+在SVM的DNS組態中指定的外部DNS伺服器
+ a| 
+`vserver services name-service dns`
+
+|===
+即使您計畫同時使用 NIS 或 LDAP 來進行資料存取和 SVM 管理驗證、您仍應納入 `files` 並將本機使用者設定為在 NIS 或 LDAP 驗證失敗時的後援。
+
+*相關資訊*
+
+xref:task_editing_svm_settings.adoc[編輯SVM設定]

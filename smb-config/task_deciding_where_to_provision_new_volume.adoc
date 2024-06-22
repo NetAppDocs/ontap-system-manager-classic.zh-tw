@@ -1,0 +1,38 @@
+---
+permalink: smb-config/task_deciding_where_to_provision_new_volume.html 
+sidebar: sidebar 
+keywords: create, cifs, volume, place, exist, storage, virtual, machine, svm, configuration, require, decision, workflow, decide where to provision the new volume 
+summary: 在建立新的CIFS Volume之前、您必須先決定是否要將其放入現有的儲存虛擬機器（SVM）、如果是、則必須決定SVM需要多少組態。此決定決定決定您的工作流程。 
+---
+= 決定新磁碟區的資源配置位置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在建立新的CIFS Volume之前、您必須先決定是否要將其放入現有的儲存虛擬機器（SVM）、如果是、則必須決定SVM需要多少組態。此決定決定決定您的工作流程。
+
+
+
+== 程序
+
+* 如果您想在新的 SVM 上佈建磁碟區、請建立新的啟用 CIFS 的 SVM 。
++
+link:task_creating_protocol_enabled_svm.html["建立啟用CIFS的新SVM"]
+
++
+如果在現有 SVM 上未啟用 CIFS 、則必須選擇此選項。
+
+* 如果您想要在已啟用CIFS但尚未設定的現有SVM上配置磁碟區、請在現有SVM上設定CIFS/SMB存取。
++
+link:task_configuring_access_to_existing_svm.html["在現有SVM上設定CIFS/SMB存取"]
+
++
+如果您使用程序來建立SVM以進行SAN存取、則應選擇此選項。
+
+* 如果您想要在已完全設定為CIFS存取的現有SVM上配置磁碟區、請將CIFS磁碟區新增至啟用CIFS的SVM。
++
+link:concept_adding_protocol_volume_to_protocol_enabled_svm.html["將CIFS磁碟區新增至啟用CIFS的SVM"]
+
+

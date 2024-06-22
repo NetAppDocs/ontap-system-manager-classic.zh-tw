@@ -1,0 +1,14 @@
+---
+permalink: nfs-config/task_configuring_access_to_existing_svm.html 
+sidebar: sidebar 
+keywords: access, nfs, clients, exist, svm, configuration, export, policy, root, volume, ldap, unix, configure, configure nfs access to an existing svm 
+summary: 將NFS用戶端的存取權限新增至現有的SVM、包括將NFS組態新增至SVM、開啟SVM根磁碟區的匯出原則、選擇性地設定LDAP、以及驗證UNIX管理主機的NFS存取。然後您可以設定NFS用戶端存取。 
+---
+= 設定NFS對現有SVM的存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將NFS用戶端的存取權限新增至現有的SVM、包括將NFS組態新增至SVM、開啟SVM根磁碟區的匯出原則、選擇性地設定LDAP、以及驗證UNIX管理主機的NFS存取。然後您可以設定NFS用戶端存取。

@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/task_monitoring_svm_using_dashboard.html 
+sidebar: sidebar 
+keywords: system, manager, health, performance, monitor, svms, online, help 
+summary: System Manager中的儀表板可讓您監控儲存虛擬機器（SVM）的健全狀況和效能。 
+---
+= 使用System Manager監控SVM - ONTAP 支援更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+經典版的儀表板ONTAP （ONTAP 以VMware 9.7及更早版本提供）可讓您監控儲存虛擬機器（SVM）的健全狀況和效能。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取您要監控的SVM名稱。
+. 在儀表板面板中檢視詳細資料。
+

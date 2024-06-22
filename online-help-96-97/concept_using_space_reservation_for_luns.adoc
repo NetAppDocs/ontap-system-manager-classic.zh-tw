@@ -1,0 +1,22 @@
+---
+permalink: online-help-96-97/concept_using_space_reservation_for_luns.html 
+sidebar: sidebar 
+keywords: understand, space, reservation, lun, volume, guarantee, online, help 
+summary: 瞭解空間保留設定（與磁碟區保證結合使用）如何影響為LUN保留空間的方式、有助於瞭解停用空間保留的影響、以及LUN與磁碟區設定的特定組合為何不實用。 
+---
+= 瞭解System Manager ONTAP 中LUN的空間保留-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+瞭解ONTAP 經典版（ONTAP 適用於更新版本的版本）的NetApp System Manager空間保留設定（結合Volume保證）如何影響空間配置給LUN的方式、協助您瞭解停用空間保留的影響。它也能協助您瞭解LUN和Volume設定組合為何不實用。
+
+當LUN已啟用空間保留（空間保留LUN）、且其包含的Volume具有Volume保證時、磁碟區的可用空間會在建立時保留給LUN、而此保留空間的大小則由LUN的大小來決定。磁碟區中的其他儲存物件（其他LUN、檔案、Snapshot複本等）將無法使用此空間。
+
+當LUN停用空間保留（非空間保留LUN）時、在建立LUN時不會保留空間。只要有足夠的可用空間、任何對LUN的寫入作業所需的儲存空間都會在需要時從磁碟區中配置。
+
+如果在無保證的磁碟區中建立空間保留LUN、則LUN的運作方式與非空間保留LUN相同。這是因為無保證的磁碟區沒有空間可分配給LUN；由於無保證、磁碟區本身只能在寫入時分配空間。因此、我們不建議在無保證的磁碟區中建立空間保留LUN；使用此組態組合可能會提供寫入保證、但實際上是不可能的。
+
+當空間保留區設定為「預設」時、ONTAP 即可將「還原空間保留區」設定套用至LUN。如果建立了新的Volume、亦可將空間保留設定套用至Container Volume。ONTAP

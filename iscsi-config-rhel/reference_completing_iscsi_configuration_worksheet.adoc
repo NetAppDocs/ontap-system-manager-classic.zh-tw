@@ -1,0 +1,231 @@
+---
+permalink: iscsi-config-rhel/reference_completing_iscsi_configuration_worksheet.html 
+sidebar: sidebar 
+keywords: iscsi, identifier, network, address, storage, configuration, information, configuration, task, complete, complete the iscsi configuration worksheet 
+summary: 您需要iSCSI識別碼、網路位址和儲存組態資訊、才能執行iSCSI組態工作。 
+---
+= 完成iSCSI組態工作表
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您需要iSCSI識別碼、網路位址和儲存組態資訊、才能執行iSCSI組態工作。
+
+
+
+== iSCSI識別碼
+
+|===
+| 啟動器（主機）iSCSI節點名稱（IQN） 
+
+
+ a| 
+目標別名（選用）
+
+|===
+
+
+== 目標網路位址
+
+儲存虛擬機器（SVM）是iSCSI目標。
+
+您需要一個子網路、其中包含兩個IP位址、以便為叢集中的每個節點提供iSCSI資料生命期。應該有兩個獨立的網路來實現高可用度。當ONTAP 您建立LIF作為建立SVM的一部分時、將會指派特定的IP位址。
+
+如果可能、請將iSCSI流量分隔在不同的實體網路或VLAN上。
+
+image::../media/network_fc_or_iscsi_express_iscsi_rhel.gif[圖中顯示四個節點,two switches,and a host. Each node has two LIFs]
+
+生命之子網路：
+
+|===
+| 節點或LIF搭配連接埠至交換器 | IP 位址 | 網路遮罩 | 閘道 | VLAN ID | 主連接埠 
+
+
+ a| 
+節點1 / LIF至交換器1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點2 / LIF至交換器1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 3 / LIF 至交換器 1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點4/LIF至交換器1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 1 / LIF 至交換器 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 2 / LIF 至交換器 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 3 / LIF 至交換器 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 4 / LIF 至交換器 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===
+
+
+== 儲存組態
+
+如果已建立Aggregate和SVM、請在此處記錄其名稱；否則、您可以視需要建立：
+
+|===
+| 節點至擁有LUN 
+
+
+ a| 
+Aggregate名稱
+
+
+
+ a| 
+SVM名稱
+
+|===
+
+
+== LUN 資訊
+
+|===
+| LUN 大小 
+
+
+ a| 
+LUN名稱（選用）
+
+
+
+ a| 
+LUN說明（選用）
+
+|===
+
+
+== SVM資訊
+
+如果您不使用現有的SVM、則需要下列資訊來建立新的SVM：
+
+[cols="1a,1a"]
+|===
+2+| SVM名稱 
+
+
+ a| 
+SVM IPspace
+
+
+
+ a| 
+SVM根Volume的Aggregate
+
+
+
+ a| 
+SVM使用者名稱（選用）
+
+
+
+ a| 
+SVM密碼（選用）
+
+
+
+ a| 
+SVM管理LIF（選用）
+
+
+
+ a| 
+ a| 
+子網路：
+
+
+
+ a| 
+ a| 
+IP位址：
+
+
+
+ a| 
+ a| 
+網路遮罩：
+
+
+
+ a| 
+ a| 
+閘道：
+
+
+
+ a| 
+ a| 
+主節點：
+
+
+
+ a| 
+ a| 
+主連接埠：
+
+|===

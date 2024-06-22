@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/task_creating_flexclone_volumes.html 
+sidebar: sidebar 
+keywords: create, flexclone, volume, system, manager, online, help 
+summary: 您可以在需要現有FlexVol 的流通量可寫入的時間點複本時、使用System Manager來建立FlexClone Volume。您可能想要建立一個磁碟區複本以供測試、或是讓其他使用者存取該磁碟區、而不讓他們存取正式作業資料。 
+---
+= 使用System Manager建立FlexClone Volume ONTAP -更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您需要現有的某個可寫入的時間點複本時、您可以使用ONTAP 經典版的《經典版》（ONTAP 以英文版9.7及更早版本提供）來建立FlexClone Volume FlexVol 。您可能想要建立一個磁碟區複本以供測試、或是讓其他使用者存取該磁碟區、而不讓他們存取正式作業資料。
+
+.開始之前
+* FlexClone授權必須安裝在儲存系統上。
+* 您要複製的磁碟區必須在線上、而且必須是非根磁碟區。
+
+
+.關於這項工作
+用於建立SnapMirror目的地FlexClone磁碟區的基礎Snapshot複本會標示為「使用中」、無法刪除。如果FlexClone磁碟區是從Snapshot複本建立而非最新的Snapshot複本、且該Snapshot複本不再存在於來源磁碟區、則對目的地磁碟區的所有SnapMirror更新都會失敗。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 從FlexVol 磁碟區清單中選取您要複製的實體磁碟區。
+. 單擊*更多操作*>* Clone *>* Create *>* Volume *。
+. 輸入您要建立的FlexClone Volume名稱。
+. *可選：*如果要對新的FlexClone磁碟區啟用精簡配置、請選取*精簡配置*。
++
+根據預設、此設定與父Volume相同。
+
+. 建立Snapshot複本、或選取您要做為建立FlexClone Volume基礎Snapshot複本的現有Snapshot複本。
+. 按一下* Clone（複製）*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

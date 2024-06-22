@@ -1,0 +1,55 @@
+---
+permalink: online-help-96-97/task_adding_microsoft_sql_server_over_san_to_system_manager.html 
+sidebar: sidebar 
+keywords: add, microsoft, sql, server, san, system, manager, online, help, enhanced, tab 
+summary: 您可以使用「增強」索引標籤、將Microsoft SQL Server over SAN的執行個體新增至System Manager。 
+---
+= 將Microsoft SQL Server over SAN新增至System Manager - ONTAP 支援更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用「Enhanced（增強）」索引標籤、將Microsoft SQL Server over SAN的執行個體新增至ONTAP 《經典版》（ONTAP 可在更新版本的更新版本中使用）。
+
+.關於這項工作
+下列程序說明如何透過SAN將* Microsoft SQL Server*執行個體新增至System Manager。只有當叢集獲得CIFS授權時、才能選擇SMB做為匯出傳輸協定、而CIFS必須在儲存虛擬機器（SVM）上設定。
+
+.步驟
+. 按一下*應用程式與層級*>*應用程式*
+. 在*增強*索引標籤中、按一下*新增*
+. 從功能表中選取* Microsoft SQL Server執行個體*。
++
+[NOTE]
+====
+下拉式清單包含所有可用應用程式類型和範本類型的清單。
+
+====
++
+隨即顯示Add Microsoft SQL Server Instance（新增Microsoft SQL Server執行個體）視窗。
+
+. 請指定下列詳細資料：
++
+** 資料庫名稱
+** 資料庫大小和所需ONTAP 的服務層級
+** 伺服器核心數
+** 記錄大小和所需ONTAP 的服務層級
+** 針對Tempdb的資源配置
++
+指定伺服器是否應配置為使用Tempdb。
+
+** 匯出傳輸協定（SMB或SAN）
++
+指定SAN
+
+** 主機作業系統
+** LUN 格式
+** 主機對應
+
+
+. 按一下*新增應用程式*
+
+
+.結果
+透過SAN的Microsoft SQL Server執行個體會新增至System Manager。

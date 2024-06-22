@@ -1,0 +1,21 @@
+---
+permalink: online-help-96-97/task_changing_tiering_policy_volume_destination_topic_delete.html 
+sidebar: sidebar 
+keywords: change, tiering, policy, system, manager, volume, online, help 
+summary: 您可以使用System Manager變更Volume的預設分層原則、以控制當資料變成非作用中時、是否將Volume的資料移至雲端層。 
+---
+= 使用System Manager（系統管理程式ONTAP ）變更Volume的分層原則-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於歇歇歇內版本）來變更Volume的預設分層原則、以控制當資料停用時、是否將Volume的資料移至雲端層。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要變更分層原則的磁碟區、然後按一下*更多動作*>*變更分層原則*。
+. 從*分層原則*清單中選取所需的分層原則、然後按一下*儲存*。
+

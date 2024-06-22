@@ -1,0 +1,70 @@
+---
+permalink: expansion/task_gathering_required_information.html 
+sidebar: sidebar 
+keywords: expand, cluster, network, information, require, configure, node-management, lif, service, ip, adress, node, gather the required network information 
+summary: 在擴充叢集之前、您必須先取得後續所需的網路資訊、才能為這兩個節點設定節點管理生命期和服務處理器IP位址。 
+---
+= 收集所需的網路資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在擴充叢集之前、您必須先取得後續所需的網路資訊、才能為這兩個節點設定節點管理生命期和服務處理器IP位址。
+
+.步驟
+. 請取得下列詳細資料、以設定兩個節點管理lifs、每個節點各一個、您打算新增至叢集：
++
+** IP 位址
+** 網路遮罩
+** 閘道
+** 連接埠
+
+
+. 如果您的站台通常有用於節點管理lifs的DNS項目、請確定已為新節點建立DNS項目。
+. 使用、判斷叢集是否使用 SP 的自動或手動網路組態 `system service-processor network auto-configuration show` 命令。
++
+如果子網路名稱顯示在中的任一處 `SP IPv4 Subnet Name` 或 `SP IPv6 Subnet Name` 欄位中、叢集使用的是自動 SP 網路。如果兩欄都空白、表示叢集使用手動SP網路。
+
++
+在下列輸出中、子網路1表示叢集1 SP使用自動網路組態：
+
++
+[listing]
+----
+cluster1::> system service-processor network auto-configuration show
+Cluster Name         SP IPv4 Subnet Name          SP IPv6 Subnet Name
+-------------------- ---------------------------- -------------------
+cluster1             sub1                            -
+----
++
+在下列輸出中、空白的子網路欄位表示叢集1 SP使用手動網路組態：
+
++
+[listing]
+----
+cluster1::> system service-processor network auto-configuration show
+Cluster Name         SP IPv4 Subnet Name          SP IPv6 Subnet Name
+-------------------- ---------------------------- -------------------
+cluster1             -                            -
+----
+. 視SP網路組態而定、請執行下列其中一項動作：
++
+** 如果SP使用手動網路組態、請取得兩個IP位址、以便日後在新節點上設定SP時使用。
+** 如果 SP 使用自動網路組態、請使用確認 SP 使用的子網路具有兩個新節點的可用 IP 位址 `network subnet show` 命令。
+在下列輸出中、子網路有2個可用的位址：
+
+
++
+[listing]
+----
+cluster1::>  network subnet show
+IPspace: Default
+Subnet                     Broadcast                   Avail/
+Name      Subnet           Domain    Gateway           Total   Ranges
+--------- ---------------- --------- --------------- --------- ---------------
+sub1      10.53.33.1/18    Default   10.53.0.1          2/4    10.53.33.3-10.53.33.6
+...
+----
+

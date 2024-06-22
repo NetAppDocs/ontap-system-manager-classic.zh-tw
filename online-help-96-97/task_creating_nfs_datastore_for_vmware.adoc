@@ -1,0 +1,25 @@
+---
+permalink: online-help-96-97/task_creating_nfs_datastore_for_vmware.html 
+sidebar: sidebar 
+keywords: create, nfs, datastore, vmware, online, help, system, manager 
+summary: 您可以使用System Manager中的Create NFS Datastore for VMware精靈、為VMware建立NFS資料存放區。您可以為NFS資料存放區建立磁碟區、並指定可存取NFS資料存放區的ESX伺服器。 
+---
+= 使用System Manager建立適用於VMware的NFS資料存放區ONTAP - VMware的更新版本-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 《Create NFS Datastore for VMware》（為VMware建立NFS資料存放區）精靈、以經典版本（ONTAP 適用於VMware）建立NFS資料存放區。您可以為NFS資料存放區建立磁碟區、並指定可存取NFS資料存放區的ESX伺服器。
+
+.開始之前
+NFS服務必須獲得授權。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取磁碟區、然後按一下*「更多動作*」>*「資源配置儲存設備以供VMware*使用」。
+. 在* Create NFS Datastore for VMware*精靈中、視需要輸入或選取資訊。
+. 確認詳細資料、然後按一下「*完成*」完成精靈。
+

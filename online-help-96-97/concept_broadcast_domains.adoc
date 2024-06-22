@@ -1,0 +1,64 @@
+---
+permalink: online-help-96-97/concept_broadcast_domains.html 
+sidebar: sidebar 
+keywords: system, manager, create, manage, broadcast, domain, online, help, edit, settings, port, delete 
+summary: 您可以使用System Manager來建立及管理廣播網域。 
+---
+= 使用System Manager（ONTAP 系統管理程式）管理廣播網域-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來建立及管理廣播網域。
+
+
+
+== 編輯廣播網域設定
+
+您可以使用System Manager來修改廣播網域的屬性、例如名稱、MTU大小、以及與廣播網域相關聯的連接埠。
+
+.關於這項工作
+* 您不得修改指派管理連接埠e0M之廣播網域的MTU大小。
+* 您無法使用System Manager編輯叢集IPspace中的廣播網域。
++
+您必須改用命令列介面（CLI）。
+
+
+
+.步驟
+. 按一下「*網路*>*廣播網域*」。
+. 選取您要修改的廣播網域、然後按一下*編輯*。
+. 在*編輯廣播網域*對話方塊中、視需要修改廣播網域屬性。
+. 按一下*儲存並關閉*。
+
+
+
+
+== 刪除廣播網域
+
+您可以在不再需要廣播網域時、使用System Manager刪除廣播網域。
+
+.開始之前
+任何子網路都不得與您要刪除的廣播網域相關聯。
+
+.關於這項工作
+* 刪除廣播網域時、與廣播網域相關聯的連接埠會指派給預設IPspace、而且不會變更連接埠的MTU設定。
+* 您無法使用System Manager刪除叢集IPspace中的廣播網域。
++
+您必須改用命令列介面（CLI）。
+
+
+
+.步驟
+. 按一下「*網路*>*廣播網域*」。
+. 選取您要刪除的廣播網域、然後按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+
+
+*相關資訊*
+
+xref:reference_network_window.adoc[網路視窗]
+
+https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理"]

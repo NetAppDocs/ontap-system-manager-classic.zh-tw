@@ -1,0 +1,42 @@
+---
+permalink: online-help-96-97/task_deleting_application.html 
+sidebar: sidebar 
+keywords: delete, application, provisioned 
+summary: 您可以在不再需要已配置的應用程式時刪除該應用程式。 
+---
+= 使用System Manager刪除應用程式- ONTAP NetApp 9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的功能（ONTAP 適用於不再需要的更新版本）來刪除已配置的應用程式。
+
+.關於這項工作
+身為叢集管理員、您可以在佈建應用程式之後、在不再需要時將其刪除。以下程序範例說明如何刪除* NAS Container-*應用程式。
+
+.步驟
+. 按一下*應用程式與層級*>*應用程式*
+. 按一下NAS Container應用程式的名稱。
++
+[NOTE]
+====
+如果有人在您檢視應用程式清單時使用CLI或REST API新增應用程式、則當您捲動清單時、將無法檢視這些新應用程式。
+
+====
++
+「應用程式詳細資料：NAS」視窗的「*總覽*」標籤會顯示應用程式設定。
+
+. 按一下*刪除*。
++
+對話方塊會顯示警告訊息、詢問您是否確定要刪除此應用程式。
+
+. 按一下*刪除*。
++
+[NOTE]
+====
+使用應用程式刪除作業刪除的任何Volume都不會置於還原佇列中。磁碟區會立即刪除。
+
+====
+

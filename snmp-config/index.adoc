@@ -1,0 +1,52 @@
+---
+permalink: snmp-config/index.html 
+sidebar: sidebar 
+keywords: content, configure, snmp, cluster, management, level, add, communities, community, security, user, traphost, communication, snmp configuration overview 
+summary: 使用ONTAP 含有ONTAP 更新版本的《經典》介面、您可以在叢集管理層級設定SNMP、新增社群、安全使用者及traphosts、並測試SNMP通訊。 
+---
+= SNMP 組態概觀
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用ONTAP 含有ONTAP 更新版本的《SURF系統 管理程式_classic_》介面、您可以在叢集管理層級設定SNMP、新增社群、安全使用者及traphosts、並測試SNMP通訊。
+
+如果您想要以下列方式設定叢集的SNMP存取、請使用這些程序：
+
+* 您正在使用執行ONTAP 過程中的叢集9。
+* 您想要使用最佳實務做法、而非探索每個可用選項。
++
+[NOTE]
+====
+您必須使用命令列介面來執行這些程序中的幾個步驟。
+
+====
+
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+您可以使用所有ONTAP 的版本來設定SNMP對叢集的存取。您應該使用ONTAP 適用於您的版本的更新程序。
+
+|===
+
+
+| 若要執行這些工作... | 請參閱... 
+
+
+ a| 
+重新設計的System Manager（ONTAP 提供更新版本的更新版本）
+ a| 
+https://docs.netapp.com/us-en/ontap/networking/manage_snmp_on_the_cluster_@cluster_administrators_only@_overview.html["管理叢集上的 SNMP （僅限叢集管理員） > 概述"^]
+
+
+
+ a| 
+指令行介面（CLI）ONTAP
+ a| 
+https://docs.netapp.com/us-en/ontap/networking/commands_for_managing_snmp.html["管理SNMP的命令"^]
+
+|===

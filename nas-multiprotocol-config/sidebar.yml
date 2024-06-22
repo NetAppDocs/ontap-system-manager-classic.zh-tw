@@ -1,0 +1,38 @@
+---
+section: nas-multiprotocol-config
+title: SMB/CIFS與NFS多重傳輸協定組態
+entries:
+- title: 總覽
+  url: "/nas-multiprotocol-config/index.html"
+- title: 多重傳輸協定組態工作流程
+  url: "/nas-multiprotocol-config/concept_cifs_nfs_configuration_workflow.html"
+  entries:
+  - title: 建立Aggregate
+    url: "/nas-multiprotocol-config/task_creating_aggregate.html"
+  - title: 決定新磁碟區的資源配置位置
+    url: "/nas-multiprotocol-config/task_deciding_where_to_provision_new_volume.html"
+    entries:
+    - title: 建立基本SVM
+      url: "/nas-multiprotocol-config/task_creating_new_svm.html"
+    - title: 新增CIFS與NFS存取至現有的SVM
+      url: "/nas-multiprotocol-config/concept_adding_nas_access_to_existing_svm.html"
+    - title: 開啟SVM根磁碟區的匯出原則（建立新的NFS型SVM）
+      url: "/nas-multiprotocol-config/task_opening_export_policy_svm_root_volume.html"
+    - title: 對應DNS伺服器上的SMB伺服器
+      url: "/nas-multiprotocol-config/task_mapping_smb_server_dns_server.html"
+    - title: 設定LDAP（建立新的NFS型SVM）
+      url: "/nas-multiprotocol-config/task_configuring_ldap_new_svm.html"
+    - title: 對應UNIX和Windows使用者名稱
+      url: "/nas-multiprotocol-config/task_mapping_unix_windows_user_names.html"
+  - title: 建立及設定磁碟區
+    url: "/nas-multiprotocol-config/task_creating_configuring_volume.html"
+  - title: 建立共用區並設定其權限
+    url: "/nas-multiprotocol-config/task_creating_share_setting_its_permissions.html"
+  - title: 為磁碟區建立匯出原則
+    url: "/nas-multiprotocol-config/task_creating_export_policy_for_volume.html"
+  - title: 驗證SMB用戶端存取
+    url: "/nas-multiprotocol-config/task_verifying_smb_client_access.html"
+  - title: 從UNIX管理主機驗證NFS存取
+    url: "/nas-multiprotocol-config/task_verifying_nfs_access_from_unix_administration_host.html"
+  - title: 設定及驗證CIFS與NFS用戶端存取
+    url: "/nas-multiprotocol-config/task_configuring_verifying_client_access_new_svm.html"

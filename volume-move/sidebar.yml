@@ -1,0 +1,19 @@
+---
+section: volume-move
+title: Volume Move管理
+entries:
+- title: 總覽
+  url: "/volume-move/index.html"
+- title: Volume Move工作流程
+  url: "/volume-move/concept_volume_move_workflow.html"
+  entries:
+  - title: 規劃Volume移動的方法和時間
+    url: "/volume-move/task_planning_method_timing_volume_move.html"
+  - title: 使用System Manager移動磁碟區
+    url: "/volume-move/task_moving_volume_using_system_manager.html"
+  - title: 移動磁碟區後、請驗證LUN報告節點
+    url: "/volume-move/task_verifying_lun_reporting_nodes_after_moving_volume.html"
+  - title: 移動磁碟區後、請更新LUN報告節點
+    url: "/volume-move/task_updating_lun_reporting_nodes_after_moving_volume.html"
+  - title: 移動磁碟區後、請更新NDMP備份
+    url: "/volume-move/task_updating_ndmp_backup_after_moving_volume.html"

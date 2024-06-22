@@ -1,0 +1,24 @@
+---
+permalink: online-help-96-97/task_viewing_disk_information.html 
+sidebar: sidebar 
+keywords: view, disk, information, system, manager, name, online, help 
+summary: 您可以使用System Manager中的「磁碟」視窗來檢視磁碟的名稱、大小和容器詳細資料、以及容量磁碟和快取磁碟的圖形資訊。 
+---
+= 使用System Manager（ONTAP 系統管理程式）檢視磁碟資訊-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《磁碟》（磁碟）視窗（ONTAP 以更新版本提供）來檢視磁碟的名稱、大小和容器詳細資料、以及容量磁碟和快取磁碟的圖形資訊。
+
+.步驟
+. 按一下「*儲存設備*>*集合體與磁碟*>*磁碟*」。
+. 從顯示的磁碟清單中選取您要檢視其相關資訊的磁碟。
+. 檢閱磁碟詳細資料。
+
+
+*相關資訊*
+
+xref:reference_disks_window.adoc[磁碟視窗]

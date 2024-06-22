@@ -1,0 +1,96 @@
+---
+permalink: online-help-96-97/task_adding_licenses.html 
+sidebar: sidebar 
+keywords: system, manager, add, license, storage, software, online, help 
+summary: 如果您的儲存系統軟體是在原廠安裝、System Manager會自動將軟體新增至其授權清單。如果軟體未在原廠安裝、或您想要新增其他軟體授權、您可以使用System Manager新增軟體授權。 
+---
+= 使用System Manager（ONTAP 系統管理程式）新增授權-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果軟體未在原廠安裝、或您想要新增額外的軟體授權、您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來新增軟體授權。
+
+如果您的儲存系統軟體是在原廠安裝、System Manager會自動將軟體新增至其授權清單。
+
+.開始之前
+必須ONTAP 提供特定的功能介紹服務的軟體授權代碼。
+
+.關於這項工作
+* 從ONTAP 版本號《支援》9.10.1開始、您可以使用System Manager安裝NetApp授權檔案（NLF）、一次啟用多項授權功能。使用NetApp授權檔案可簡化授權安裝、因為您不再需要新增個別的功能授權金鑰。您可從 NetApp 支援網站下載 NetApp 授權檔案。
++
+如需詳細資訊、請參閱 link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["新增授權金鑰以啟用新功能"]
+
++
+如需管理授權的相關資訊、請參閱 link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理授權總覽（僅限叢集管理員）"^]
+
+* 當您在MetroCluster 某個功能完善的組態中新增授權時、最好也將授權新增至運作中的站台叢集。
+* 您無法使用System Manager來新增Cloud Volumes ONTAP 不含功能的授權。
++
+授權頁面中未列出此功能的使用許可。Cloud Volumes ONTAPSystem Manager不會發出任何有關Cloud Volumes ONTAP 該使用許可之應有權利風險狀態的警示。
+
+* 您只能上傳容量型授權。
++
+容量型授權為「json」類型。
+
+
+
+.步驟
+. 按一下*組態*>*叢集*>*授權*。
+. 按一下「 * 新增 * 」。
+. 在「*新增授權*」對話方塊中、執行適當的步驟：
++
+|===
+| 如果您想要... | 執行此動作... 
+
+
+ a| 
+新增特定ONTAP 服務的授權
+ a| 
+.. 輸入軟體授權金鑰。
++
+您可以輸入以逗號分隔的軟體授權金鑰來新增多個授權。
+
+.. 按一下「 * 新增 * 」。
+
+
+
+
+ a| 
+新增容量型授權
+ a| 
+.. 按一下「瀏覽」、然後選取容量型授權檔案。
+.. 按一下「 * 新增 * 」。
+
+
+
+
+ a| 
+新增特定ONTAP 的服務的授權、並新增容量型授權
+ a| 
+.. 輸入軟體授權金鑰。
++
+您可以輸入以逗號分隔的軟體授權金鑰來新增多個授權。
+
+.. 按一下「瀏覽」、然後選取容量型授權檔案。
+.. 按一下「 * 新增 * 」。
+
+
+|===
++
+新授權隨即新增。
+
++
+「新增授權狀態」對話方塊會顯示已成功新增的授權清單。此對話方塊也會顯示未新增之授權的授權金鑰、以及未新增授權的原因。
+
+. 按一下 * 關閉 * 。
+
+
+.結果
+軟體授權會新增至您的儲存系統、並顯示在「授權」視窗的授權清單中。
+
+*相關資訊*
+
+xref:reference_licenses_window.adoc[授權時間]

@@ -1,0 +1,70 @@
+---
+permalink: expansion/task_updating_lun_paths_for_new_nodes.html 
+sidebar: sidebar 
+keywords: cluster, configure, san, lif, add, update, path, lun, node, update lun paths for the new nodes 
+summary: 如果您的叢集已設定為SAN、則必須在新增的節點上建立SAN LIF、然後更新路徑。 
+---
+= 更新新節點的LUN路徑
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您的叢集已設定為SAN、則必須在新增的節點上建立SAN LIF、然後更新路徑。
+
+.關於這項工作
+僅當叢集包含LUN時、才需要執行此程序。如果叢集僅包含檔案、您可以跳過此程序。
+
+.步驟
+. 對於叢集中的每個儲存虛擬機器（SVM）、請在新增的節點上建立新的LIF：
++
+.. 使用識別使用 FC 或 iSCSI 傳輸協定的 SVM `vserver show` 命令 `-fields allowed-protocols` 參數並檢閱輸出。
++
+[listing]
+----
+cluster1::> vserver show -fields allowed-protocols
+vserver allowed-protocols
+------- -----------------
+vs1     cifs,ndmp
+vs2     fcp
+vs3     iscsi
+...
+----
+.. 對於每個使用 FC 或 iSCSI 的 SVM 、請使用在每個新增的節點上建立至少兩個資料生命期 `network interface create` 命令 `-role data` 參數。
++
+[listing]
+----
+cluster1::> network interface create -vserver vs1 -lif lif5 -role data
+-data-protocol iscsi -home-node cluster1-3 -home-port e0b
+-address 192.168.2.72 -netmask 255.255.255.0
+----
+.. 對於每個 SVM 、請使用確認其在叢集中的所有節點上都有生命 `network interface show` 命令 `-vserver` 參數。
+
+
+. 更新連接埠集：
++
+.. 使用判斷連接埠集是否存在 `lun portset show` 命令。
+.. 如果您想讓現有主機可以看到新的生命、請使用將每個新的 LIF 新增至連接埠集 `lun portset add` 命令 -- 每個 LIF 一次。
+
+
+. 如果您使用FC或FCoE、請更新分區：
++
+.. 請確認分區設定正確、以啟用主機上現有的啟動器連接埠、以連線至新節點上的新目標連接埠。
+.. 更新交換器分區、將新節點連線至現有的啟動器。
++
+分區設定會視您使用的交換器而有所不同。
+
+.. 如果您打算將 LUN 移至新節點、請使用將新路徑公開給主機 `lun mapping add-reporting-nodes` 命令。
+
+
+. 在所有主機作業系統上、重新掃描以探索新增的路徑。
+. 視主機作業系統而定、請移除任何過時路徑。
+. 新增或移除MPIO組態的路徑。
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/san-config/index.html["SAN 組態"^]
+
+https://docs.netapp.com/us-en/ontap/san-admin/index.html["SAN管理"^]

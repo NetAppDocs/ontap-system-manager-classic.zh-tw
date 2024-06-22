@@ -1,0 +1,56 @@
+---
+permalink: iscsi-config-rhel/task_creating_lun_its_containing_volume.html 
+sidebar: sidebar 
+keywords: create, lun, wizard, igroup, map, create a lun 
+summary: 您可以使用Create LUN（建立LUN）精靈來建立LUN。精靈也會建立igroup並將LUN對應至igroup、讓指定的主機存取LUN。 
+---
+= 建立 LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用Create LUN（建立LUN）精靈來建立LUN。精靈也會建立igroup並將LUN對應至igroup、讓指定的主機存取LUN。
+
+.開始之前
+* 必須有一個具有足夠可用空間的Aggregate、以容納LUN。
+* 必須有已啟用iSCSI傳輸協定的儲存虛擬機器（SVM）、並建立適當的邏輯介面（LIF）。
+* 您必須記錄主機的iSCSI啟動器節點名稱。
+
+
+LUN會對應到igroup中啟動器的子集、以限制從主機到LUN的路徑數量。
+
+* 根據預設、ONTAP 由於使用選擇性LUN對應（SLM),所以LUN只能透過擁有LUN及其高可用度（HA）合作夥伴的節點路徑存取。
+* 您仍必須在每個節點上設定所有的iSCSI LIF、以便在LUN移至叢集中的另一個節點時移動LUN。
+* 移動磁碟區或LUN時、您必須先修改「SLM-報告節點」清單、才能移動。
+
+
+.關於這項工作
+如果您的組織有命名慣例、您應該使用LUN、Volume等名稱、以符合您的慣例。否則、您應該接受預設名稱。
+
+.步驟
+. 瀏覽至「* LUN*」視窗。
+. 按一下*「Create」（建立）。*
+. 瀏覽並選取您要在其中建立LUN的SVM。
++
+隨即顯示Create LUN Wizard（建立LUN精靈）。
+
+. 在「*一般內容*」頁面上、針對Linux主機直接使用的LUN、選取LUN類型* Linux *。
++
+取消選取*精簡配置*核取方塊。
+
++
+image::../media/lun_creation_thin_provisioned_linux_iscsi_rhel.gif[圖例顯示對話方塊、並取消選取精簡配置核取方塊。]
+
+. 在「* LUN Container *」頁面上、選取現有FlexVol 的SLUN Volume。
++
+您必須確保磁碟區有足夠的空間。如果現有磁碟區中沒有足夠的可用空間、您可以建立新的磁碟區。
+
+. 在「*啟動器對應*」頁面上、按一下「*新增啟動器群組*」、在「*一般*」索引標籤上輸入所需資訊、然後在「*啟動器*」索引標籤上、輸入您所錄製主機的iSCSI啟動器節點名稱。
+. 確認詳細資料、然後按一下「*完成*」完成精靈。
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/system-admin/index.html["系統管理"]

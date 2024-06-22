@@ -1,0 +1,29 @@
+---
+permalink: online-help-96-97/task_aborting_mirror_relationships.html 
+sidebar: sidebar 
+keywords: abort, mirror, transfer, online, help, volume, replication 
+summary: 您可以在資料傳輸完成之前中止磁碟區複寫作業。您可以中止排程的更新、手動更新或初始資料傳輸。 
+---
+= 使用System Manager中止鏡射傳輸- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）、在資料傳輸完成之前中止Volume複寫作業。您可以中止排程的更新、手動更新或初始資料傳輸。
+
+.步驟
+. 按一下「*保護*>*磁碟區關係*」。
+. 選取您要停止資料傳輸的關係、然後按一下「*作業*」>「*中止*」。
+. 按一下「*是、我要中止傳輸*」核取方塊、以確認作業。
+. 按一下*保留任何部分傳輸的資料*核取方塊、以保留已傳輸至目的地Volume的資料。
+. 按一下*中止*。
++
+傳輸狀態會顯示為「Aborting」、直到作業完成後顯示為「Idle」（閒置）。
+
+
+
+*相關資訊*
+
+xref:reference_protection_window.adoc[保護所需時間]

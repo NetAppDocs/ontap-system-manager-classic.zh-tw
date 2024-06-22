@@ -1,0 +1,50 @@
+---
+permalink: expansion/task_ensuring_hardware_level_ha_is_enabled.html 
+sidebar: sidebar 
+keywords: install, controller, module, reuse, maintenance, mode, ha, state, hardware-level, enable, ensure hardware-level ha is enabled 
+summary: 如果重新使用新安裝的控制器模組、則必須進入維護模式、並確保其HA狀態設定為HA。 
+---
+= 確認硬體層級HA已啟用
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果重新使用新安裝的控制器模組（而非新安裝）、您必須進入維護模式、並確保其HA狀態設定為HA。
+
+.關於這項工作
+如果您使用新的控制器模組、可以跳過此程序、因為HA預設為啟用狀態。否則、您必須在兩個節點上執行此程序。
+
+.步驟
+. 在第一個節點上、進入維護模式：
++
+.. 進入退出 nodeshand `halt`。
++
+隨即顯示載入程式提示。
+
+.. 進入維護模式 `boot_ontap maint`。
++
+顯示部分資訊後、會顯示維護模式提示。
+
+
+
+. 在維護模式中、請確定控制器模組和機箱處於HA狀態：
++
+.. 輸入以顯示控制器模組和機箱的 HA 狀態 `ha-config show`。
+.. 如果控制器的顯示狀態不是 `HA`、輸入 `ha-config modify controller ha`。
+.. 如果機箱的顯示狀態不是 `HA`、輸入 `ha-config modify chassis ha`。
+.. 輸入以下命令、確認控制器模組和機箱都已啟用 HA `ha-config show`。
+
+
+. 返回ONTAP 到以下網址：
++
+.. 輸入 `halt` 結束維護模式。
+.. 輸入以下命令引導 ONTAP `boot_ontap`
+.. 請稍候、節點正在開機、而且叢集設定精靈會自動在主控台上啟動。
+.. 按Enter四次以接受節點管理LIF的現有設定。
+.. 以登入節點 `admin` 不需要密碼的使用者。
+
+
+. 在要新增至叢集的其他節點上重複此程序。
+

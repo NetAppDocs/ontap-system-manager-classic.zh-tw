@@ -1,0 +1,17 @@
+---
+permalink: volume-move/reference_where_to_find_additional_information.html 
+sidebar: sidebar 
+keywords: information, administer, ontap, product, library, where to find additional information 
+summary: 如果您想要更多關於管理ONTAP 功能的資訊、請參閱ONTAP 《關於功能性的知識庫： 
+---
+= 何處可找到其他資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您想要更多關於管理ONTAP 功能的資訊、請參閱ONTAP 《關於功能性的知識庫：
+
+.相關資訊
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]

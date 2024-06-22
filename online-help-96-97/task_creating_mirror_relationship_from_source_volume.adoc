@@ -1,0 +1,112 @@
+---
+permalink: online-help-96-97/task_creating_mirror_relationship_from_source_volume.html 
+sidebar: sidebar 
+keywords: create, mirror, relationship, source, lvm, system, manager, online, help 
+summary: 您可以使用System Manager從來源儲存虛擬機器（SVM）建立鏡射關係、並將鏡射原則和排程指派給鏡射關係。鏡射複本可在來源磁碟區上的資料毀損或遺失時、快速提供資料。 
+---
+= 使用System Manager ONTAP - NetApp 9.7及更早版本、從來源SVM建立鏡射關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版（ONTAP 僅適用於S9.7及更早版本）、從來源儲存虛擬機器（SVM）建立鏡射關係、並指派鏡射原則和排程給鏡射關係。鏡射複本可在來源磁碟區上的資料毀損或遺失時、快速提供資料。
+
+.開始之前
+* SnapMirror授權必須在來源叢集和目的地叢集上啟用。
++
+[NOTE]
+====
+** 對於某些平台而言、如果目的地叢集已啟用SnapMirror授權和資料保護最佳化（DPO）授權、則來源叢集並不一定要啟用SnapMirror授權。
+** 在目的地叢集上啟用 DPO 授權後、您必須重新整理來源叢集的瀏覽器、才能啟用 `Protect` 選項。
+
+
+====
+* 鏡射SnapLock 完某個鏡射Volume時、SnapMirror授權必須同時安裝在來源叢集和目的地叢集上、SnapLock 而且必須在目的地叢集上安裝此功能。
+* 來源叢集和目的地叢集、以及來源SVM和目的地SVM必須處於健全的對等關係中。
+* 目的地Aggregate必須有可用空間。
+* 必須在線上提供讀寫類型的資料。FlexVol
+* 這兩個叢集的「支援」Aggregate類型必須相同。SnapLock
+* 一個選項最多可保護25個磁碟區。
+* 如果您要從執行ONTAP 不支援支援的9.2或更早版本的叢集連線到已啟用安全聲明標記語言（SAML）驗證的遠端叢集、則必須在遠端叢集上啟用密碼型驗證。
+
+
+.關於這項工作
+* System Manager不支援串聯關係。
++
+例如、關係中的目的地磁碟區不能是另一個關係中的來源磁碟區。
+
+* 您只能在SnapLock 同一類型的Sfingvolume之間建立鏡射關係。
++
+例如、如果來源Volume是SnapLock 一個《不景的企業級」Volume、則目的地Volume也必須是SnapLock 《不景的企業級」Volume。
+
+* 如果在來源磁碟區上啟用加密功能、且目的地叢集執行ONTAP 的版本比ONTAP 使用者版本更新的版本低於版本版本的支援、則預設會在目的地磁碟區上停用加密功能。
+* 僅針對FlexCache 不具備SnapMirror應用程式對等權限的SVM、不會顯示在此工作的SVM清單中。您可以使用ONTAP 支援功能增強的「支援對等工作流程」來授予這些SVM的權限或對等權限。接著您可以在此工作中選取這些項目、以建立保護關係。
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要建立鏡射關係的磁碟區、然後按一下*更多動作*>*保護*。
++
+*保護*選項僅適用於讀寫磁碟區。
+
+. 選擇* Replication *類型：
++
+|===
+| 如果您選取複寫類型為... | 執行此動作... 
+
+
+ a| 
+非同步
+ a| 
+.. *可選：*如果您不知道複寫類型和關聯類型、請按一下*「Help me choose」*、指定值、然後按一下「*套用*」。
+.. 選取關係類型。
++
+關係類型可以是鏡射、資料保險箱或鏡射及資料保險箱。
+
+.. 選取叢集和SVM。
++
+如果所選叢集執行ONTAP 的是版本早於ONTAP 版本的更新版本、則只會列出已執行的SVM。如果選取的叢集執行ONTAP 的是Sfe9.3或更新版本、則會列出已執行的SVM和允許的SVM。
+
+.. 如有需要、請修改Volume名稱後置字元。
+
+
+
+
+ a| 
+同步
+ a| 
+.. *可選：*如果您不知道複寫類型和關聯類型、請按一下*「Help me choose」*、指定值、然後按一下「*套用*」。
+.. 選取同步原則。
++
+同步原則可以是StrictSync或Sync。
+
+.. 選取叢集和SVM。
++
+如果所選叢集執行ONTAP 的是版本早於ONTAP 版本的更新版本、則只會列出已執行的SVM。如果選取的叢集執行ONTAP 的是Sfe9.3或更新版本、則會列出已執行的SVM和允許的SVM。
+
+.. 如有需要、請修改Volume名稱後置字元。
+
+
+|===
+. 按一下*image:../media/nas_bridge_202_icon_settings_olh_96_97.gif[""]*、更新保護原則與保護排程、選取*啟用FabricPool的Aggregate *、然後初始化保護關係。
+. 按一下「 * 儲存 * 」。
+
+
+.結果
+建立新的目的地Volume、類型為_DP_、預設設定如下：
+
+* 自動擴充已啟用。
+* 壓縮已停用。
+* 語言屬性設定為符合來源Volume的語言屬性。
+
+
+如果目的地FlexVol 的SVM與來源FlexVol 的SVM磁碟區不同、則在兩個SVM之間建立對等關係（如果關係不存在）。
+
+來源Volume與目的地Volume之間會建立鏡射關係。如果您選擇初始化關係、基礎Snapshot複本會傳輸到目的地Volume。
+
+*相關資訊*
+
+xref:reference_protection_window.adoc[保護所需時間]

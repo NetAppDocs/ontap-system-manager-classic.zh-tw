@@ -1,0 +1,41 @@
+---
+permalink: online-help-96-97/task_configuring_nvme_protocol_on_svms.html 
+sidebar: sidebar 
+keywords: configure, nvme, protocol, svm, system, manager, namespaces, online, help 
+summary: 您可以使用System Manager在儲存虛擬機器（SVM）上設定NVMe傳輸協定。然後您可以建立命名空間、並將其指派給NVMe子系統和主機。 
+---
+= 使用System Manager在SVM上設定NVMe傳輸協定- ONTAP 支援更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《支援靜態系統管理程式》ONTAP （僅適用於支援更新版本的版本）、在儲存虛擬機器（SVM）上設定NVMe傳輸協定。然後您可以建立命名空間、並將其指派給NVMe子系統和主機。
+
+.關於這項工作
+採用NVMe的SVM不應有任何其他傳輸協定。如果您選取NVMe、其餘的傳輸協定將會停用。您也可以在建立SVM時設定NVMe。
+
+.步驟
+. 如果您在建立SVM時未設定NVMe傳輸協定、請按一下* Storage *>* SVMS*
+. 選取SVM、然後按一下* SVM設定*。
+. 在「*傳輸協定*」窗格中、按一下「* NVMe *」。
+. 視需要按一下連結以設定傳輸協定。
++
+[NOTE]
+====
+如果有任何其他已啟用的傳輸協定、您必須取消選取這些傳輸協定、才能選取NVMe。NVMe無法與任何其他傳輸協定結合使用。
+
+====
+. 在「*編輯儲存虛擬機器*」窗格中、按一下「*資源配置*」。
+. 在*資源配置*索引標籤中、您可以選擇不委派磁碟區建立、或是選取集合體來自動配置磁碟區。
+. 按一下*服務*索引標籤以設定名稱服務交換器詳細資料。
+. 按一下*儲存並關閉*
++
+NVMe傳輸協定是在SVM上設定。設定傳輸協定之後、您可以使用* SVM設定*來啟動或停止服務
+
+
+
+*相關資訊*
+
+xref:concept_setting_up_nvme.adoc[設定NVMe]

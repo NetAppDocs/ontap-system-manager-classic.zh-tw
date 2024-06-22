@@ -1,0 +1,85 @@
+---
+permalink: nas-multiprotocol-config/task_configuring_ldap_new_svm.html 
+sidebar: sidebar 
+keywords: 'storage, virtual, machine, svm, information, active, directory-based, lightweight, directory, access, protocol, ldap, client, sourve, configure, configure ldap (create a new nfs-enabled svm)' 
+summary: 如果您希望儲存虛擬機器（SVM）從Active Directory型輕量型目錄存取傳輸協定（LDAP）取得使用者資訊、則必須建立LDAP用戶端、為SVM啟用該用戶端、並將LDAP優先於其他使用者資訊來源。 
+---
+= 設定LDAP（建立新的NFS型SVM）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您希望儲存虛擬機器（SVM）從Active Directory型輕量型目錄存取傳輸協定（LDAP）取得使用者資訊、則必須建立LDAP用戶端、為SVM啟用該用戶端、並將LDAP優先於其他使用者資訊來源。
+
+.開始之前
+* LDAP組態必須使用Active Directory（AD）。
++
+如果您使用其他類型的LDAP、則必須使用命令列介面（CLI）和其他文件來設定LDAP。
+
++
+https://www.netapp.com/pdf.html?item=/media/10720-tr-4067.pdf["NetApp技術報告4067：NetApp ONTAP 的NFS功能"^]
+
++
+https://www.netapp.com/pdf.html?item=/media/19384-tr-4616.pdf["NetApp技術報告4616：ONTAP NFS Kerberos in Some with Microsoft Active Directory"^]
+
++
+https://www.netapp.com/pdf.html?item=/media/19423-tr-4835.pdf["NetApp技術報告4835：如何在ONTAP 功能方面設定LDAP"^]
+
+* 您必須知道AD網域和伺服器、以及下列繫結資訊：驗證層級、「連結」使用者和密碼、基礎DN和LDAP連接埠。
+
+
+.步驟
+. 瀏覽至* SVMS*視窗。
+. 選取所需的SVM
+. 按一下「* SVM設定*」索引標籤。
+. 設定用於SVM的LDAP用戶端：
++
+.. 在*服務*窗格中、按一下* LDAP Client*。
+.. 在「* LDAP用戶端組態*」視窗中、按一下「*新增*」。
+.. 在 * 建立 LDAP Client* 視窗的 * 一般 * 索引標籤中、輸入 LDAP 用戶端組態的名稱、例如 `vs0client1`。
+.. 新增AD網域或AD伺服器。
++
+image::../media/ldap_client_creation_general_tab_nas_mp.gif[此影像由周邊文字說明。]
+
+.. 按一下「* Binding*」、然後指定驗證層級、「連結使用者與密碼」、「基礎DN」及連接埠。
++
+image::../media/ldap_client_creation_binding_tab_nas_mp.gif[此影像由周邊文字說明。]
+
+.. 按一下*儲存並關閉*。
+
+
++
+系統會建立新的用戶端、供SVM使用。
+
+. 為SVM啟用新的LDAP用戶端：
++
+.. 在導覽窗格中、按一下「* LDAP組態*」。
+.. 按一下 * 編輯 * 。
+.. 請確定您剛建立的用戶端已在* LDAP用戶端名稱*中選取。
+.. 選擇*啟用LDAP用戶端*、然後按一下*確定*。
++
+image::../media/ldap_svm_configuration_active_ldap_client_nas_mp.gif[此影像由周邊文字說明。]
+
+
+
++
+SVM使用新的LDAP用戶端。
+
+. 將LDAP優先於其他使用者資訊來源、例如網路資訊服務（NIS）和本機使用者和群組：
++
+.. 瀏覽至* SVMS*視窗。
+.. 選取SVM、然後按一下*編輯*。
+.. 按一下*服務*索引標籤。
+.. 在*名稱服務交換器*下、指定* LDAP*作為資料庫類型的慣用名稱服務交換器來源。
+.. 按一下*儲存並關閉*。
++
+image::../media/name_services_ldap_priority_nas_mp.gif[此圖形由其周邊文字說明。]
+
++
+LDAP是此SVM上名稱服務和名稱對應的主要使用者資訊來源。
+
+
+
+

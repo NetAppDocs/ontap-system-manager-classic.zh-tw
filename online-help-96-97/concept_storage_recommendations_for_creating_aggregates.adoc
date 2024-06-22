@@ -1,0 +1,42 @@
+---
+permalink: online-help-96-97/concept_storage_recommendations_for_creating_aggregates.html 
+sidebar: sidebar 
+keywords: storage, recommendations, create, aggregate, system, manager, online, help 
+summary: 從System Manager 9.4開始、您可以根據儲存建議來建立集合體。不過、您必須判斷您的環境是否支援根據儲存建議建立集合體。如果您的環境不支援根據儲存建議建立集合體、則必須決定RAID原則和磁碟組態、然後手動建立集合體。 
+---
+= 使用System Manager建立Aggregate的儲存建議- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.4開始、您可以根據儲存建議來建立集合體。不過、您必須判斷您的環境是否支援根據儲存建議建立集合體。如果您的環境不支援根據儲存建議建立集合體、則必須決定RAID原則和磁碟組態、然後手動建立集合體。
+
+System Manager會分析叢集中可用的備用磁碟、並根據最佳實務做法、產生如何使用備用磁碟來建立集合體的建議。System Manager會顯示建議集合體的摘要、包括其名稱和可用大小。
+
+在許多情況下、儲存建議最適合您的環境。不過、如果叢集執行ONTAP 的是不符合需求的9.3或更早版本、或者您的環境包含下列組態、則必須手動建立集合體：
+
+* 使用協力廠商陣列LUN進行集合體
+* 虛擬磁碟Cloud Volumes ONTAP 搭配不一樣或ONTAP Select 不一樣的功能
+* 內部組態MetroCluster
+* 功能SyncMirror
+* MSATA磁碟
+* Flash Pool Aggregate
+* 多種磁碟類型或大小會連接至節點
+
+
+此外、如果您的環境中存在下列任何磁碟條件、則必須先修正磁碟條件、再使用儲存建議來建立Aggregate：
+
+* 遺失磁碟
+* 備用磁碟編號的波動
+* 未指派的磁碟
+* 非零位備援（ONTAP 適用於9.6之前的版本）
+* 正在進行維護測試的磁碟
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["磁碟與Aggregate管理"]
+
+xref:task_zeroing_disks.adoc[將備用磁碟歸零]

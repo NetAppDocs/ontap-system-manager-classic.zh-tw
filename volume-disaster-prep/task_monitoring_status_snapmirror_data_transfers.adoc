@@ -1,0 +1,51 @@
+---
+permalink: volume-disaster-prep/task_monitoring_status_snapmirror_data_transfers.html 
+sidebar: sidebar 
+keywords: periodical, monitor, status, snapmirror, relationship, ensure, data, schedule, monitor the status of snapmirror data transfers 
+summary: 您應該定期監控SnapMirror關係的狀態、以確保SnapMirror資料傳輸依照指定的排程進行。 
+---
+= 監控SnapMirror資料傳輸的狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您應該定期監控SnapMirror關係的狀態、以確保SnapMirror資料傳輸依照指定的排程進行。
+
+.關於這項工作
+您必須從*目的地*叢集執行此工作。
+
+.步驟
+. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+** 《》（或更早版本）：按一下「*保護*」>「*關係*」ONTAP 。
+** 從ONTAP 《S19.5》開始：按一下「* Protection *」>「* Volume Relationationationation*」。
+
+
+. 選取來源磁碟區與目的地磁碟區之間的SnapMirror關係、然後在* Details（詳細資料）*底部索引標籤中驗證狀態。
++
+「詳細資料」索引標籤會顯示SnapMirror關係的健全狀況狀態、並顯示傳輸錯誤和延遲時間。
+
++
+** 必須顯示「正常」欄位 `Yes`。
++
+對於大多數 SnapMirror 資料傳輸失敗、欄位會顯示 `No`。不過、在某些失敗情況下、欄位仍會繼續顯示 `Yes`。您必須檢查「詳細資料」區段中的傳輸錯誤、以確保不會發生資料傳輸失敗。
+
+** 必須顯示「關係狀態」欄位 `Snapmirrored`。
+** 延遲時間不得超過傳輸排程時間間隔。
++
+例如、如果傳輸排程為每小時、則延遲時間不得超過一小時。
+
++
+您應該疑難排解SnapMirror關係中的任何問題。
+
++
+http://www.netapp.com/us/media/tr-4015.pdf["NetApp技術報告4015：SnapMirror組態與最佳實務ONTAP 做法、適用於NetApp 9.1、9.2"^]
+
++
+image::../media/snapmirror_monitor_3_health_state_lag.gif[SnapMirror監控3種健全狀況延遲]
+
+
+
+

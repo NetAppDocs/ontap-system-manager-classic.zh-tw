@@ -1,0 +1,92 @@
+---
+permalink: online-help-96-97/task_viewing_flexcache_volume_information.html 
+sidebar: sidebar 
+keywords: system, manager, flexcache, volume, information, online, help 
+summary: 從System Manager 9.6開始、您可以檢視FlexCache 有關某個功能區的資訊。您可以以圖形方式檢視已分配空間及FlexCache 其效能的圖表。 
+---
+= 檢視FlexCache 功能介紹
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、您可以檢視FlexCache 有關某個功能區的資訊。您可以以圖形方式檢視已分配空間及FlexCache 其效能的圖表。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 從顯示的Volume清單中、選取FlexCache 您要檢視其資訊的相關「流通量」。
++
+「*樣式*」欄會顯示FlexCache 「Sfor a FlexCache Sfor a S菜 量」。
+
++
+當您進行選擇時FlexCache 、所選的功能區的Volume（Volume）視窗會顯示出來。
+
+. 一開始、「* Volume *」視窗會顯示「* Overview *」（*總覽*）標籤。按一下索引標籤以檢視FlexCache 有關此功能的其他詳細資料：
++
+|===
+| 按一下此索引標籤... | 若要檢視這些詳細資料... 
+
+
+ a| 
+*總覽*
+ a| 
+關於下列項目的一般資訊：FlexCache 聲音量、分配給FlexCache 聲音量的空間、FlexCache 以及關於聲音量的效能資訊。
+
+
+
+ a| 
+*儲存效率*
+ a| 
+關於儲存效率的設定FlexCache 。
+
+
+
+ a| 
+*效能*
+ a| 
+根據延遲、IOPS和處理量、提供平均效能指標、讀取效能指標、以及寫入FlexCache 效能指標。此外、也會顯示快取命中或快取未命中的百分比。
+
+|===
+. *可選：*單擊*更多操作*可查看更多信息，並從下拉菜單中的選項中執行操作：
++
+|===
+| 行動 | 說明 
+
+
+ a| 
+變更狀態
+ a| 
+可讓您變更FlexCache 此功能的狀態。請參閱 link:task_changing_status_flexcache_volume.html["變更FlexCache 一個聲音區的狀態"]。
+
+
+
+ a| 
+調整大小
+ a| 
+可讓您調整FlexCache 支援的大小。請參閱 link:task_resizing_flexcache_volumes.html["重新調整FlexCache 功能"]。
+
+
+
+ a| 
+儲存效率
+ a| 
+可讓您調整參數、以提升FlexCache 整個過程的儲存效率。
+
+
+
+ a| 
+儲存QoS
+ a| 
+可讓您調整FlexCache 關於該功能的最小和最大儲存限制。
+
+
+
+ a| 
+加密重新金鑰
+ a| 
+可讓您重設加密金鑰（僅當您已在包含FlexCache 此磁碟區的對等叢集上啟用加密時）
+
+|===
+

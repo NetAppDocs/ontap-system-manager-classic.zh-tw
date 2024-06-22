@@ -1,0 +1,63 @@
+---
+permalink: online-help-96-97/task_moving_flexvol_volumes_between_aggregates_or_nodes.html 
+sidebar: sidebar 
+keywords: move, flexcol, volume, aggregate, node, online, help, system, manager 
+summary: 您可以使用FlexVol System Manager、在不中斷營運的情況下、將某個VMware Volume移至不同的集合體或不同節點、以提高容量使用率及效能。 
+---
+= 利用System Manager在FlexVol 集合體或節點之間移動不同時的資料量- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版《支援功能》ONTAP （適用於VMware 9.7及更早版本）、在不中斷營運的情況FlexVol 下、將一個版本號移至不同的集合體或不同的節點、以提高容量使用率和效能。
+
+.開始之前
+如果您要移動資料保護（DP）磁碟區、則必須先初始化資料保護鏡射關係、才能移動磁碟區。
+
+.關於這項工作
+您無法在SnapLock Aggregate和節點之間移動等量資料。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要移動的Volume。
+. 按一下*更多動作*>*移動*。
+. 在*移動Volume *對話方塊中、選取磁碟區的目的地Aggregate或節點、然後變更分層原則。
++
+[NOTE]
+====
+** 您無法變更根磁碟區的分層原則。
+** 您無法將根Volume移至FabricPool 無法使用的地方。
+** 對於讀寫磁碟區、您可以在磁碟區移動期間將分層原則設定為「備份」。
++
+分層原則會在移動後變更為「純快照」。
+
+** 在來源Aggregate和目的地Aggregate中、顯示在「Move後使用」中的容量層值為預估值。
++
+如需確切值、您必須瀏覽至Aggregate視窗、並檢視特定Aggregate的詳細資料。
+
+
+
+====
+. 按一下*移動*。
+
+
+
+
+== 手動觸發切換以進行Volume移動
+
+對於Volume移動作業、您可以使用System Manager在Volume進入轉換延後階段時手動觸發轉換。您可以設定轉換的持續時間、以及當操作在該期間內失敗時、系統要執行的轉換動作。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 按一下「* Volumes *（*磁碟區*）
+. 展開已啟動Volume移動作業的Volume。
+. 按一下「*顯示更多詳細資料*」連結、即可檢視更多有關磁碟區的資訊。
+. 在「*總覽*」標籤中、按一下「*轉換*」。
+. 在*轉換*對話方塊中、按一下*進階選項*。
+. *選用：*指定切換動作和切換期間。
+. 按一下「*確定*」。
+

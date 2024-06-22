@@ -1,0 +1,53 @@
+---
+permalink: online-help-96-97/task_creating_flexcache_volumes.html 
+sidebar: sidebar 
+keywords: online, help, create, flexcache, volume, system, manager 
+summary: 從System Manager 9.6開始、您可以建立FlexCache 一個不只是一個的功能區。 
+---
+= 建立FlexCache 功能區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、您可以建立FlexCache 一個不只是一個的功能區。
+
+.關於這項工作
+您必須FlexCache 先取得「不含功能」授權、才能建立FlexCache 一個「不含功能」的Volume。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 在* Volumes（*磁碟區）*視窗中、按一下* Create*>* FlexCache S還原*。
++
+「Create FlexCache Rs功能」視窗即會顯示。
+
+. *選用：*來源Volume *區域中的下列欄位、會顯示您要建立FlexCache 一個來源Volume的來源Volume值。您可以加以修改。
++
+** *叢集*：使用下拉式功能表選取與來源磁碟區相關的叢集。
+** * SVM*：使用下拉式功能表選取包含來源磁碟區的SVM。
++
+如果您選擇的SVM不是對等端點、而是允許對等端點、則System Manager可讓您明確地對其對等端點。
+
+** * Volume *：使用下拉式功能表選取Volume名稱、或在欄位中輸入名稱。
+
+
+. 下列「FlexCache *》「Volume *」區域中的欄位會顯示FlexCache 您正在建立之「恢復功能」的預設值。您可以加以修改。
++
+** * SVM*：使用下拉式功能表、選取您要在其中建立FlexCache 此SVM Volume的SVM。如果該功能已滿或幾乎已滿、您可以選擇*管理整套許可證*來修改您的許可FlexCache 證。FlexCache
+** *新增Volume Name*：輸入FlexCache 一個名稱以供填寫。
+** *大小*：指定FlexCache 包含測量單位在內的等量資料量大小。
++
+「大小」欄位一開始預設為設定。您指定的大小不得超過授權容量大小。
+
+
+
+. 按一下「*儲存*」建立FlexCache 此功能。
++
+您可以返回* Volumes *（磁碟區）視窗、在FlexCache 磁碟區清單中檢視該磁碟區。
+
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

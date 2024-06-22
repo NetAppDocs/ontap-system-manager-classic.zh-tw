@@ -1,0 +1,14 @@
+---
+permalink: volume-disaster-recovery/task_activating_destination_volume.html 
+sidebar: sidebar 
+keywords: source, volume, data, corruption, deletion, offline, state, destination, recover, access, activation, snapmirror, relationship, activate the destination volume 
+summary: 當來源磁碟區因資料毀損、意外刪除或離線狀態等事件而無法提供資料時、您必須啟動目的地磁碟區以提供資料存取、直到您恢復來源磁碟區上的資料為止。啟動作業包括停止未來的SnapMirror資料傳輸、以及打破SnapMirror關係。 
+---
+= 啟動目的地Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當來源磁碟區因資料毀損、意外刪除或離線狀態等事件而無法提供資料時、您必須啟動目的地磁碟區以提供資料存取、直到您恢復來源磁碟區上的資料為止。啟動作業包括停止未來的SnapMirror資料傳輸、以及打破SnapMirror關係。

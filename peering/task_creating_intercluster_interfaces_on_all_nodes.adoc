@@ -1,0 +1,73 @@
+---
+permalink: peering/task_creating_intercluster_interfaces_on_all_nodes.html 
+sidebar: sidebar 
+keywords: cluster, communicate, logical, interface, lif, intercluster, create, ipspace, peer, relationship, create intercluster interfaces on all nodes, ontap 9.2 or earlier 
+summary: 使用ONTAP 包含ONTAP S振 分9.2或更早ONTAP 版本的《經典》版的《經典》版的《系統管理程式》介面、您可以建立叢集間的生命體、以供對等處理。 
+---
+= 在所有節點上建立叢集間介面ONTAP （例如、0、2或更早版本）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用ONTAP 包含ONTAP Estrs9.2或更早ONTAP 版本之更新版本的《系統管理程式_classic_介面》、您可以建立叢集間的LIF、用於對等處理。
+
+叢集透過專屬於叢集間通訊的邏輯介面（l生命）彼此通訊。您必須在每個要用於對等處理的IPspace內建立叢集間LIF。  您必須在每個叢集中的每個節點上建立要建立對等關係的生命期。
+
+.開始之前
+您必須已識別出要用於叢集間生命體的子網路和連接埠、以及IP位址（選用）。
+
+.關於這項工作
+您必須在想要建立對等關係的兩個叢集上執行此程序。例如、如果您有一個四節點叢集、想要透過IPspace A與叢集X對等、以及透過IPspace Y與叢集Y對等、則總共需要八個叢集間生命體； IPspace A上有四個（每個節點一個）、IPspace Y上有四個（每個節點一個）。
+
+.步驟
+. [step1-intere-lif]在來源叢集的一個節點上建立叢集間LIF：
++
+.. 瀏覽至*網路介面*視窗。
+.. 按一下「 * 建立 * 」。
++
+此時會顯示Create Network Interface（建立網路介面）對話方塊。
+
+.. 輸入叢集間LIF的名稱。
++
+您可以在第一個節點上使用「'icl01'」作為叢集間LIF、在第二個節點上使用「'icl02'」作為叢集間LIF。
+
+.. 選擇*叢集間連線*作為介面角色。
+.. 選取IPspace。
+.. 在「*新增詳細資料*」對話方塊中、從「*指派IP位址*」下拉式清單中選取*使用子網路*、然後選取您要用於叢集間通訊的子網路。
++
+依預設、在您按一下「*建立*」之後、會自動從子網路選取IP位址。如果您不想使用自動選取的IP位址、則必須手動指定節點用於叢集間通訊的IP位址。
+
+.. 如果要手動指定節點用於叢集間通訊的IP位址、請選取*使用此IP位址*、然後輸入IP位址。
++
+您必須確定您要使用的IP位址已在子網路中可用、或稍後可新增至子網路。
+
+.. 在「*連接埠*」區域中、按一下您要設定的節點、然後選取您要用於此節點的連接埠。
+.. 如果您決定不共用連接埠、以便與資料通訊進行叢集間通訊、請確認「* Hosted Interface Count*」（*主機介面計數*）欄中所選連接埠顯示「'0'」。
++
+image::../media/lif_creation_intercluster.gif[「建立網路介面」對話方塊]
+
+.. 按一下「 * 建立 * 」。
+
+
+. 重複 <<step1-intercluster-lif,步驟1.>> 針對叢集中的每個節點。
++
+叢集中的每個節點都有叢集間LIF。
+
+. 記下叢集間生命體的IP位址、以便日後與其他叢集建立對等關係時使用：
++
+.. 在「*網路介面*」視窗的「*角色*」欄中、按一下 image:../media/icon_columnfilter_sm_peering.gif["欄篩選圖示"]、清除「*全部*」核取方塊、然後選取「*叢集間*」。
++
+「網路介面」視窗只會顯示叢集間的LIF。
+
+.. 記下「* IP位址/WWPN*」欄中所列的IP位址、或將「*網路介面*」視窗保持開啟狀態、以便稍後擷取IP位址。
++
+您可以按一下欄顯示圖示（image:../media/icon_columnshowhide_sm_onc_peering.gif["顯示或隱藏欄的圖示"]）隱藏您不想檢視的欄。
+
+
+
+
+
+.結果
+每個叢集中的所有節點都有叢集間的生命體、可以彼此通訊。

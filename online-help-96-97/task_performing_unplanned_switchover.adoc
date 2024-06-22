@@ -1,0 +1,59 @@
+---
+permalink: online-help-96-97/task_performing_unplanned_switchover.html 
+sidebar: sidebar 
+keywords: perform, unplanned, switchover, system, manager, metrocluster, site, online, help 
+summary: 從System Manager 9.6開始、您可以啟動MetroCluster 非計畫性的切換功能、切換至某個站台。此作業在發生停電事件或災難事件後非常實用。 
+---
+= 執行非計畫性切換
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、您可以啟動MetroCluster 非計畫性的切換功能、切換至某個站台。此作業在發生停電事件或災難事件後非常實用。
+
+.開始之前
+您的支援正在正常運作的情況下執行、但是本機叢集（站台A）中的節點已啟動、但遠端叢集（站台B）中的節點已關閉。MetroCluster
+
+.步驟
+. [[step1]] 確認站台 B 確實停機。
++
+連線錯誤可能會使站台B看起來當機。
+
++
+[NOTE]
+====
+啟動站台B的切換程序可能會導致災難性後果。
+
+====
+. 在System Manager中、MetroCluster 使用叢集管理員認證登入本機的站台（站台A）。
+. 按一下「*組態*>* MetroCluster S16*」
++
+隨即顯示MetroCluster Switchover / switchback Operations（MetroCluster切換/切換回復作業）視窗。
+
+. 單擊 * 下一步 * 。
++
+「還原切換/切換作業」視窗會顯示作業狀態、系統管理員則會驗證議定的切換是否可行。MetroCluster
+
+. 驗證程序完成後、按一下*切換站台B至站台A*以啟動切換程序。
++
+此時會顯示一則警告訊息、警告您切換操作會將控制權從站台B切換至站台A站台B的狀態應為「無法連線」、且所有站台B節點均以紅色文字顯示。
+
++
+[NOTE]
+====
+如步驟所述 link:#step1["1."]、站台B實際上必須停機、而不只是未連線。此外、您應該注意切換作業可能會導致資料遺失。
+
+====
+. 如果您要繼續、請確認核取方塊已勾選、然後按一下*是*。
++
+切換程序隨即開始。站台A和站台B的狀態會顯示在其組態的圖形表示上方。如果切換作業失敗、會顯示錯誤訊息。按一下 * 關閉 * 。修正任何錯誤、並在步驟中重新開始 link:task_performing_negotiated_planned_switchover.html#step1["1."]
+
+. 執行站台B所有必要的維護活動
+. 確認站台B已啟動。
++
+修復程序隨即開始。當System Manager顯示修復已完成時、站台B會正常運作、系統會準備好進行切換程序。視窗底部會出現*從站台A切換回站台B*按鈕。
+
+. 請前往 xref:task_performing_switchback.adoc[執行切換] 以啟動切換回復作業。
+

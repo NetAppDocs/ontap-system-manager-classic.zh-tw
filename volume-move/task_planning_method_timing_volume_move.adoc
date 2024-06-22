@@ -1,0 +1,67 @@
+---
+permalink: volume-move/task_planning_method_timing_volume_move.html 
+sidebar: sidebar 
+keywords: system, manager, volume, manual, cutover, lun, report, node, advance, procedure, command-line, interface, cli, plan, plan the method and timing of a volume move 
+summary: 您可以搭配ONTAP 使用含有ONTAP 更新版本的《經典》功能的《經典》、來移動Volume、並決定是否要手動轉換。如果您需要更新LUN報告節點、則必須遵循命令列介面（CLI）中的進階程序。或者、您也可以規劃Volume移動的時間。 
+---
+= 規劃Volume移動的方法和時間
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以搭配ONTAP 使用含有ONTAP 更新版本的《SURFACE系統管理程式_classic_介面》來移動Volume、並決定是否要手動轉換。如果您需要更新LUN報告節點、則必須遵循命令列介面（CLI）中的進階程序。或者、您也可以規劃Volume移動的時間。
+
+.關於這項工作
+當SnapVault 磁碟區正在鏡射時、可以移動SnapMirror或SnapMirror關係的來源Volume。SnapMirror服務在Volume Move工作的轉換階段會短暫暫停。
+
+也可以移動目的地Volume。在迭代階段中、SnapMirror或SnapVault SnapMirror更新與Volume Move作業會同時執行。在評估轉換階段是否可能轉換時、轉換與SnapMirror或SnapVault 更新之間的優先順序是先到先得。在第一次作業完成之前、其他作業都會遭到封鎖。
+
+.步驟
+. 決定是否需要手動轉換。
++
+_Cutover_是移動作業完成、ONTAP 且由更新集合體上的磁碟區開始提供資料的時刻。轉換作業可以自動進行、也可以手動觸發轉換。
+
++
+如果貴公司的標準實務做法要求您控制儲存系統何時發生變更、您可以在維護期間手動執行移轉作業的最終轉換。
+
++
+轉換作業不需要中斷、但您可以使用維護時間來控制發生的時間。
+
++
+[NOTE]
+====
+無論您選擇自動或手動轉換、Volume移動作業都不會中斷。
+
+====
+. 如果磁碟區包含LUN、且叢集包含四個以上的節點、則當磁碟區移至不同的HA配對時、請使用CLI來更新LUN報告節點。
++
+如果磁碟區未包含LUN、或叢集僅包含兩個節點、您可以跳過此步驟。
+
+. *選用：*請根據下列考量來規劃時間：
++
+** Volume搬移作業可能需要比預期更多的時間、因為移動的設計是以保留用戶端存取和整體系統效能的方式、在背景中不中斷營運。
++
+例如ONTAP 、將Volume Move作業可用的資源進行節流。
+
+** 如果您想要儘快進行移動、則必須選取較少叢集活動的時間、尤其是下列活動：
++
+*** 磁碟區的I/O作業
+*** 使用背景資源的工作、例如控制器CPU使用率低於50%時
+*** 使用叢集互連的工作
+
+
+** 當磁碟區受到下列作業影響時、便無法開始移動：磁碟區離線、限制或銷毀；SnapMirror重新同步、中斷、 或還原；以及Snapshot還原。
++
+您必須等待這些特定作業完成、才能開始移動。
+
+** 在進行Volume移動作業時、MetroCluster 雖然可能發生切換、但無法進行還原。
+** 當屬於切換站台的磁碟區正在進行Volume搬移作業時、會封鎖此功能。MetroCluster當本機磁碟區的磁碟區移動作業正在進行至存續站台時、不會封鎖切換。
+** 在MetroCluster 進行Volume搬移作業時、可能會發生強制性的交換。
+
+
+
+
+.相關資訊
+link:task_verifying_lun_reporting_nodes_after_moving_volume.html["在移動磁碟區之後驗證LUN報告節點"]

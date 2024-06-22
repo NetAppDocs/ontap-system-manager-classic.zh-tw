@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_changing_status_flexcache_volume.html 
+sidebar: sidebar 
+keywords: flexcache, volume, change, status,online, help 
+summary: 從System Manager 9.6開始、當FlexCache 您想要離線時、可以變更某個版本的狀態、將FlexCache 該版本重新上線、或限制存取FlexCache 某個版本的功能。 
+---
+= 變更FlexCache 一個聲音區的狀態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、當FlexCache 您想要離線時、可以變更某個版本的狀態、將FlexCache 該版本重新上線、或限制存取FlexCache 某個版本的功能。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取FlexCache 您要修改其狀態的功能區。
+. 按一下*更多動作*>*將狀態變更為*、然後FlexCache 選取所需的狀態來更新BIOS Volume狀態。
++
+[NOTE]
+====
+若要FlexCache 使某個流通磁碟區離線、並將狀態變更為「受限」、您必須先卸載該磁碟區。
+
+====
+

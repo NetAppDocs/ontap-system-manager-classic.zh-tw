@@ -1,0 +1,29 @@
+---
+permalink: fc-config-esxi/task_installing_virtual_storage_console_for_vmware_vsphere.html 
+sidebar: sidebar 
+keywords: virutal, storage, console, vsc, vmware, vsphere, automate, configuration, provision, task, require, netapp, fc, storage, esxi, host, plug-in, vcenter, server, install virtual storage console 
+summary: 適用於VMware vSphere的虛擬儲存主控台可自動執行許多必要的組態和資源配置工作、以便將NetApp FC儲存設備與ESXi主機搭配使用。虛擬儲存主控台是vCenter Server的外掛程式。 
+---
+= 安裝虛擬儲存主控台
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+適用於VMware vSphere的虛擬儲存主控台可自動執行許多必要的組態和資源配置工作、以便將NetApp FC儲存設備與ESXi主機搭配使用。虛擬儲存主控台是vCenter Server的外掛程式。
+
+.開始之前
+您必須擁有vCenter Server上用於管理ESXi主機的管理員認證。
+
+.關於這項工作
+* 虛擬儲存主控台是以虛擬應用裝置的形式安裝、其中包括虛擬儲存主控台、適用於儲存感知（VASA）供應商的vStorage API、以及適用於VMware vSphere功能的儲存複寫介面卡（SRA）。
+
+
+.步驟
+. 下載您的組態所支援的虛擬儲存主控台版本、如互通性對照表工具所示。
++
+https://mysupport.netapp.com/site/global/dashboard["NetApp支援"]
+
+. 部署虛擬應用裝置、並依照「部署與設定指南」中的步驟進行設定。
+

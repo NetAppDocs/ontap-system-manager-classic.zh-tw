@@ -1,0 +1,44 @@
+---
+permalink: nfs-config/index.html 
+sidebar: sidebar 
+keywords: nfs, access, volume, exist, storage, virtual, machine, svm, system manager classic 
+summary: 您可以使用ONTAP 經典的《不實系統管理程式》介面ONTAP （更新版本：S9.7）、在新的或現有的儲存虛擬機器（SVM）上、快速設定新磁碟區的NFS存取。 
+---
+= NFS組態總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典的《不實系統管理程式》介面ONTAP （更新版本：S9.7）、在新的或現有的儲存虛擬機器（SVM）上、快速設定新磁碟區的NFS存取。
+
+如果您想要以下列方式設定對磁碟區的存取權、請使用此程序：
+
+* NFS存取將透過NFSv3進行、而非NFSv4或NFSv4.1。
+* 您想要使用最佳實務做法、而非探索每個可用選項。
+* 您的資料網路使用預設IPspace、預設廣播網域及預設容錯移轉群組。
++
+如果您的資料網路是扁平的、使用這些預設物件可確保在發生連結故障時、LIF將會正確容錯移轉。如果您不使用預設物件、請參閱 https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理文件"^] 以取得如何設定LIF路徑容錯移轉的資訊。
+
+* UNIX檔案權限將用於保護新磁碟區。
+* LDAP（如果使用）由Active Directory提供。
+
+
+如果您想要瞭解ONTAP 有關各種功能的詳細資訊、請參閱 link:https://docs.netapp.com/us-en/ontap/nfs-admin/index.html["NFS 參考總覽"^]。
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+|===
+
+
+| 若要執行這些工作... | 請參閱... 
+
+
+| 重新設計的System Manager（ONTAP 提供更新版本的更新版本） | link:https://docs.netapp.com/us-en/ontap/task_nas_provision_linux_nfs.html["使用NFS為Linux伺服器配置NAS儲存設備"^] 
+
+
+| 指令行介面ONTAP | link:https://docs.netapp.com/us-en/ontap/nfs-config/index.html["使用CLI進行NFS組態總覽"^] 
+|===

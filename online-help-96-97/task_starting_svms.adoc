@@ -1,0 +1,22 @@
+---
+permalink: online-help-96-97/task_starting_svms.html 
+sidebar: sidebar 
+keywords: system, manager, data, access, start, svm, online, help, storage, virtual, machine 
+summary: 您可以使用System Manager啟動SVM、從儲存虛擬機器（SVM）提供資料存取。 
+---
+= 使用System Manager（ONTAP 更新版本）啟動SVM -支援更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於SVM 9.7及更早版本）、透過啟動SVM、從儲存虛擬機器（SVM）存取資料。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取您要啟動的SVM、然後按一下* Start*。
+
+
+.結果
+SVM開始為用戶端提供資料。

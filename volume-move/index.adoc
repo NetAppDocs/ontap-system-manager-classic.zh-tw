@@ -1,0 +1,80 @@
+---
+permalink: volume-move/index.html 
+sidebar: sidebar 
+keywords: nondisruptive, data, volume, node, storage, virtual, machine, svm, ontap, cluster, volume move overview, move, overview 
+summary: 使用支援NetApp 9.7或更早版本的經典版支援功能、您可以在不中斷營運的情況下、將資料Volume從一個節點移至位於相同儲存虛擬機器（SVM）內的另一個節點、並在一個叢集上執行。ONTAP ONTAP ONTAP 
+---
+= Volume Move總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+使用支援NetApp 9.7或更早版本的經典版支援功能、您可以在不中斷營運的情況下、將資料Volume從一個節點移至位於相同儲存虛擬機器（SVM）內的另一個節點、並在一個叢集上執行。ONTAP ONTAP ONTAP
+
+
+
+== 使用這些程序的要求
+
+使用前、請先確認符合下列條件：
+
+* 叢集執行ONTAP 的是功能不正常的9。
+* 您擁有叢集管理員權限。
+* 您想要使用最佳實務做法、而非探索每個可用選項。
+* 您想要使用_Classic_ System Manager UI來ONTAP 執行更新版本的更新版本、而非ONTAP 使用適用於ONTAP 更新版本的《系統管理程式UI》。
++
+對於某些工作、您必須使用ONTAP 指令行介面（CLI）。
+
+* 您知道要移動哪個Volume。
++
+如需決定要搬移哪些Volume的協助、您可以使用Active IQ Unified Manager 支援功能（前身OnCommand 為《支援統一化管理程式》）的功能。
+
+* 要移動的Volume是資料Volume。
+* 任何新硬體或重新調整用途的硬體都已完全安裝、而且已經有Aggregate。
+* 如果叢集有LUN、則所有節點每個LUN都有兩個路徑。
+* 叢集網路連接埠未啟用流程控制。
+* 對於包含命名空間的磁碟區、叢集執行ONTAP 的是32個9.6或更新版本。
++
+執行ONTAP Sfor Sfor 9.5的NVMe組態不支援Volume Move。
+
+
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+|===
+
+
+| 若要完成此工作、請使用... | 請參閱... 
+
+
+ a| 
+重新設計的System Manager（ONTAP 提供更新版本的更新版本）
+ a| 
+https://docs.netapp.com/us-en/ontap/volumes/manage-volumes-task.html["管理磁碟區"^]
+
+
+
+ a| 
+這個指令行介面ONTAP
+ a| 
+https://docs.netapp.com/us-en/ontap/volumes/index.html["邏輯儲存管理"^]
+
+|===
+
+
+== Volume Move的替代方案
+
+在搬移Volume之前、您應該先評估下列方法是否更適合您的情況：
+
+* 如果您想在不中斷營運的情況下就地升級控制器、可以考慮使用不需要移動實體資料的集合體重新配置（ARL）。
++
+https://docs.netapp.com/us-en/ontap/high-availability/index.html["高可用度"^]
+
+* 如果您只想移動不含LUN內含磁碟區的LUN、可以使用LUN移動程序。
++
+https://docs.netapp.com/us-en/ontap/san-admin/index.html["SAN管理"^]
+
+

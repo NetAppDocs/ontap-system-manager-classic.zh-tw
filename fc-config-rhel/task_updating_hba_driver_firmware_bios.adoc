@@ -1,0 +1,30 @@
+---
+permalink: fc-config-rhel/task_updating_hba_driver_firmware_bios.html 
+sidebar: sidebar 
+keywords: fc, host, bus, adapter, hba, linux, run, support, driver, firmware, bios, version, update, update the hba driver firmware and bios 
+summary: 如果Linux主機中的FC主機匯流排介面卡（HBA）未執行支援的驅動程式、韌體和BIOS版本、您必須更新它們。 
+---
+= 更新HBA驅動程式、韌體和BIOS
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果Linux主機中的FC主機匯流排介面卡（HBA）未執行支援的驅動程式、韌體和BIOS版本、您必須更新它們。
+
+.開始之前
+您必須已從互通性對照表工具中找出您組態所支援的驅動程式、韌體和BIOS版本。
+
+https://mysupport.netapp.com/matrix["NetApp 互通性對照表工具"]
+
+.關於這項工作
+HBA廠商提供驅動程式、韌體、BIOS及HBA公用程式。
+
+.步驟
+. 使用HBA廠商提供的HBA公用程式、列出已安裝的HBA驅動程式、韌體和BIOS版本。
+. 視需要從HBA廠商的支援網站下載並安裝新的驅動程式、韌體和BIOS。
++
+下載時會提供安裝說明和任何必要的安裝公用程式。
+
+

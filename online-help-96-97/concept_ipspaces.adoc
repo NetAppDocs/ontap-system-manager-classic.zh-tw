@@ -1,0 +1,54 @@
+---
+permalink: online-help-96-97/concept_ipspaces.html 
+sidebar: sidebar 
+keywords: ipspace, edit,rename, system, manager, manage, online, help 
+summary: 您可以使用System Manager來建立及管理IPspaces。 
+---
+= 使用System Manager管理IPspaces - ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來建立及管理IPspaces。
+
+
+
+== 編輯IPspaces
+
+您可以使用System Manager重新命名現有的IPspace。
+
+.關於這項工作
+* 所有IPspace名稱在叢集內必須是唯一的、且不得由系統保留的名稱組成、例如本機或localhost。
+* 無法修改系統定義的「預設」IPspace和「叢集」IPspace。
+
+
+.步驟
+. 按一下「*網路*>* IPspaces *」。
+. 選取您要修改的IPspace、然後按一下*編輯*。
+. 在*編輯IPspace>對話方塊中、指定IPspace的新名稱。
+. 按一下*重新命名*。
+
+
+
+
+== 刪除IPspaces
+
+當您不再需要IPspace時、可以使用System Manager刪除IPspace。
+
+.開始之前
+您要刪除的IPspace不得與任何廣播網域、網路介面、對等關係或儲存虛擬機器（SVM）相關聯。
+
+.關於這項工作
+系統定義的「預設」IPspace和「叢集」IPspace無法刪除。
+
+.步驟
+. 按一下「*網路*>* IPspaces *」。
+. 選取您要刪除的IPspace、然後按一下*刪除*。
+. 選取確認核取方塊、然後按一下*是*。
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理"]

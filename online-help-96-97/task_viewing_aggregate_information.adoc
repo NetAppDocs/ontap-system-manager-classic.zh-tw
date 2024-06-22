@@ -1,0 +1,24 @@
+---
+permalink: online-help-96-97/task_viewing_aggregate_information.html 
+sidebar: sidebar 
+keywords: view, aggregate, information, online, help, system, manager 
+summary: 您可以使用System Manager中的Aggregate視窗來檢視Aggregate的名稱、狀態和空間資訊。 
+---
+= 使用System Manager檢視Aggregate資訊- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的「View System Manager」（更新ONTAP 版本）中的「Aggregate」（集合體）視窗來檢視集合體的名稱、狀態和空間資訊。
+
+.步驟
+. 請選擇下列其中一種方法：
++
+** 按一下*應用程式與層級*>*儲存層級*。
+** 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+
+
+. 按一下Aggregate名稱、即可檢視所選Aggregate的詳細資料。
+

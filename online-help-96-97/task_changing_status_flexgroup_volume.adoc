@@ -1,0 +1,28 @@
+---
+permalink: online-help-96-97/task_changing_status_flexgroup_volume.html 
+sidebar: sidebar 
+keywords: flexgroup, volume, status, change, online, help 
+summary: 當您想要離線使用某個版本時、可以使用System Manager來變更FlexGroup 該版本的狀態、FlexGroup 將FlexGroup 該版本重新上線、或限制存取FlexGroup 某個版本的功能。 
+---
+= 使用FlexGroup System Manager ONTAP -更新版本的更新版本-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您想要離線使用某個版本時、可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來變更FlexGroup 該版本的狀態FlexGroup 、FlexGroup 將某個版本重新上線、或限制存取FlexGroup 某個版本的《更新版》。
+
+.關於這項工作
+System Manager不支援FlexGroup 組成層級的功能管理功能來管理各種功能。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取FlexGroup 您要修改其狀態的功能區。
+. 按一下*更多動作*>*將狀態變更為*、然後FlexGroup 選取所需的狀態來更新BIOS Volume狀態。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

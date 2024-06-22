@@ -1,0 +1,31 @@
+---
+permalink: online-help-96-97/task_scheduling_automatic_creation_snapshot_copies.html 
+sidebar: sidebar 
+keywords: schedule, automatic, creation, snapshot, copy, online, help 
+summary: 您可以使用System Manager設定排程、以自動建立Volume的Snapshot自動複本。您可以指定建立複本的時間和頻率。您也可以指定儲存的Snapshot複本數量。 
+---
+= 使用System Manager排程自動建立Snapshot複本- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來設定自動建立Volume Snapshot複本的排程。您可以指定建立複本的時間和頻率。您也可以指定儲存的Snapshot複本數量。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 從磁碟區清單中選取所需的磁碟區。
+. 單擊*更多操作*>*管理快照*>*組態設定*。
+. 在「*組態Volume Snapshot Copies *」對話方塊中、選取「*啟用排程的Snapshot Copies *」。
+. 選取Snapshot原則。
++
+您可以排程僅建立原則型Snapshot複本。
+
+. 按一下「*確定*」以儲存變更並開始Snapshot複本排程。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

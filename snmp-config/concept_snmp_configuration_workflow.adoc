@@ -1,0 +1,16 @@
+---
+permalink: snmp-config/concept_snmp_configuration_workflow.html 
+sidebar: sidebar 
+keywords: configure, configuring, snmp, enabling, enable, optional, snmpv1, snmpv2c, snmpv3, user, traphost, test, poll, trap, snmp configuration workflow 
+summary: 設定SNMP包括啟用SNMP、選擇性設定SNMP v1或SNMP v2c社群、選擇性新增v3使用者、新增SNMP traphosts、以及測試SNMP輪詢和設陷。 
+---
+= SNMP 組態工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定SNMP包括啟用SNMP、選擇性設定SNMP v1或SNMP v2c社群、選擇性新增v3使用者、新增SNMP traphosts、以及測試SNMP輪詢和設陷。
+
+image::../media/snmp_config_workflow.gif[此圖為SNMP組態工作流程的流程圖。工作流程中的步驟與主題相符。]

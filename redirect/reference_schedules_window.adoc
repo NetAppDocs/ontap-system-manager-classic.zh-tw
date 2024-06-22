@@ -1,0 +1,8 @@
+---
+permalink: online-help-96-97/reference_schedules_window.html 
+redirect: ontap-system-manager-classic/online-help-96-97/concept_schedules.html 
+---
+= 
+:allow-uri-read: 
+
+

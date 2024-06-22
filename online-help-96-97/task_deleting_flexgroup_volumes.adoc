@@ -1,0 +1,33 @@
+---
+permalink: online-help-96-97/task_deleting_flexgroup_volumes.html 
+sidebar: sidebar 
+keywords: delete, flexgroup, volumes, online, help, system, manager 
+summary: 當不再需要使用此功能時、您可以使用System Manager來刪除FlexGroup 一個不再需要FlexGroup 使用此功能的功能。 
+---
+= 使用FlexGroup System Manager刪除不含更新ONTAP 版本的資料-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您不再需要使用此功能時、可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來刪除FlexGroup 一個《經典版》（適用於更新版本的版本）FlexGroup 。
+
+.開始之前
+* 必須卸載不安裝的流通通道。FlexGroup
+* 此功能必須離線。FlexGroup
+
+
+.關於這項工作
+System Manager不支援FlexGroup 組成層級的功能來管理功能。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取FlexGroup 您要刪除的「流通量」、然後按一下「*刪除*」。
+. 選取確認核取方塊、然後按一下*確定*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

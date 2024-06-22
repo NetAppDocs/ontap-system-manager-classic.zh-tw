@@ -1,0 +1,44 @@
+---
+section: iscsi-config-rhel
+title: 適用於Red Hat Enterprise Linux的iSCSI組態
+entries:
+- title: 總覽
+  url: "/iscsi-config-rhel/index.html"
+- title: iSCSI組態與資源配置工作流程
+  url: "/iscsi-config-rhel/concept_iscsi_configuration_provisioning_workflow.html"
+  entries:
+  - title: 驗證是否支援iSCSI組態
+    url: "/iscsi-config-rhel/task_verifying_that_iscsi_fc_configuration_is_supported.html"
+  - title: 完成iSCSI組態工作表
+    url: "/iscsi-config-rhel/reference_completing_iscsi_configuration_worksheet.html"
+  - title: 安裝Linux Unified Host Utilities並最佳化I/O效能
+    url: "/iscsi-config-rhel/task_installing_linux_unified_host_utilities_optimizing_i_o_performance.html"
+  - title: 記錄iSCSI節點名稱
+    url: "/iscsi-config-rhel/task_recording_iscsi_node_name.html"
+  - title: 設定iSCSI置換逾時值
+    url: "/iscsi-config-rhel/task_setting_iscsi_replacement_timeout_value.html"
+  - title: 啟動iSCSI服務
+    url: "/iscsi-config-rhel/task_starting_iscsi_service.html"
+  - title: 設定DM-Multipath
+    url: "/iscsi-config-rhel/task_configuring_dm_multipath.html"
+  - title: 建立Aggregate
+    url: "/iscsi-config-rhel/task_creating_aggregate.html"
+  - title: 決定要將磁碟區資源配置到何處
+    url: "/iscsi-config-rhel/task_deciding_where_to_provision_volume.html"
+    entries:
+    - title: 確認iSCSI服務正在現有的SVM上執行
+      url: "/iscsi-config-rhel/task_verifying_iscsi_is_running_on_existing_vserver.html"
+    - title: 建立 LUN
+      url: "/iscsi-config-rhel/task_creating_lun_its_containing_volume.html"
+    - title: 在現有SVM上設定iSCSI
+      url: "/iscsi-config-rhel/task_configuring_iscsi_fc_creating_lun_on_existing_svm.html"
+    - title: 建立新的 SVM
+      url: "/iscsi-config-rhel/task_creating_svm.html"
+  - title: 以目標啟動iSCSI工作階段
+    url: "/iscsi-config-rhel/task_starting_iscsi_sessions_with_target.html"
+  - title: 探索新的SCSI裝置（LUN）和多重路徑裝置
+    url: "/iscsi-config-rhel/task_discovering_new_scsi_devices_dm_multipath_devices.html"
+  - title: 在多重路徑裝置上設定邏輯磁碟區並建立檔案系統
+    url: "/iscsi-config-rhel/task_configuring_logical_volumes_on_multipath_devices_creating_file_system.html"
+  - title: 確認主機可以寫入多重路徑裝置、也可以從多重路徑裝置讀取
+    url: "/iscsi-config-rhel/task_verifying_that_host_can_write_to_read_fom_lun.html"

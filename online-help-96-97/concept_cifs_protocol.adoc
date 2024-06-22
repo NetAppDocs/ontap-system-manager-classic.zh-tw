@@ -1,0 +1,98 @@
+---
+permalink: online-help-96-97/concept_cifs_protocol.html 
+sidebar: sidebar 
+keywords: cif, protocol, system, manager, enable, configure, server, client, file, cluster, online, help, set up, general, properties, edit 
+summary: 您可以使用System Manager來啟用及設定CIFS伺服器、以允許CIFS用戶端存取叢集上的檔案。 
+---
+= 使用 System Manager （ ONTAP 9.7 及更早版本）設定 CIFS 傳輸協定
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《支援功能》（ONTAP 適用於支援功能更新版本的版本）來啟用和設定CIFS伺服器、讓CIFS用戶端存取叢集上的檔案。
+
+
+
+== 設定CIFS
+
+您可以使用System Manager來啟用及設定CIFS伺服器、以允許CIFS用戶端存取叢集上的檔案。
+
+.開始之前
+* CIFS授權必須安裝在您的儲存系統上。
+* 在Active Directory網域中設定CIFS時、必須符合下列需求：
++
+** 必須正確啟用和設定DNS。
+** 儲存系統必須能夠使用完整網域名稱（FQDN）與網域控制器通訊。
+** 叢集與網域控制器之間的時間差異（時鐘偏移）不得超過五分鐘。
+
+
+* 如果CIFS是儲存虛擬機器（SVM）上唯一設定的傳輸協定、則必須符合下列需求：
++
+** 根磁碟區安全樣式必須為NTFS。
++
+根據預設、System Manager會將安全樣式設為UNIX。
+
+** 進階使用者存取權必須設為 `Any` 適用於 CIFS 通訊協定。
+
+
+
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*組態*索引標籤中、按一下*設定*。
+. 在「* CIFS伺服器設定*」對話方塊的「*一般*」索引標籤中、指定NetBios名稱和Active Directory網域詳細資料。
+. 按一下*選項*索引標籤、然後執行下列動作：
++
+** 在SMB設定區域中、視需要選取或清除SMB簽署核取方塊和SMB加密核取方塊。
+** 指定預設UNIX使用者。
+** 在「WINS伺服器」區域中、新增所需的IP位址。
+
+
+. 按一下*設定*。
+
+
+
+
+== 編輯CIFS的一般內容
+
+您可以使用System Manager修改CIFS的一般內容、例如預設UNIX使用者和預設Windows使用者。您也可以啟用或停用CIFS伺服器的SMB簽署。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*組態*索引標籤中、按一下*選項*。
+. 在「* CIFS選項*」對話方塊中、視需要修改下列CIFS伺服器內容：
++
+** UNIX使用者
+** Windows使用者
+** IP 位址
+** 啟用或停用SMB簽署
++
+啟用SMB簽署可防止資料外洩。不過、雖然網路流量維持不變、但用戶端和伺服器的CPU使用率可能會增加、因此效能可能會降低。您可以在任何不需要保護以防止重播攻擊的Windows用戶端上停用SMB簽署。
+
++
+如需在Windows用戶端上停用SMB簽署的相關資訊、請參閱Microsoft Windows文件。
+
+** 啟用或停用SMB 3.0加密
++
+您應該啟用SMB多通道、在SMB 3.0工作階段與傳輸連線之間建立多個通道。
+
+
+
+. 按一下「*儲存*」或「*儲存並關閉*」。
+
+
+*相關資訊*
+
+xref:task_creating_cifs_share.adoc[建立CIFS共用區]
+
+xref:reference_cifs_window.adoc[CIFS 視窗]
+
+xref:task_editing_volume_properties.adoc[編輯Volume內容]
+
+xref:task_modifying_export_policy_rules.adoc[修改匯出原則規則]
+
+https://docs.netapp.com/us-en/ontap/smb-admin/index.html["SMB/CIFS管理"]

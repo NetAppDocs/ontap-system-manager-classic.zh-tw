@@ -1,0 +1,31 @@
+---
+permalink: fc-config-rhel/task_installing_linux_unified_host_utilities_optimizing_i_o_performance.html 
+sidebar: sidebar 
+keywords: linux, unified, host, utilities, software, sanlun, utility, netapp, lun, report, tool, display, information, storage, cluster, node, bus, adapter, hba, correct, server, profile, linux, optimize, performance, install linux unified host utilities and optimize i/o performance 
+summary: Linux Unified Host Utilities軟體包含sanlun公用程式、這是一種NetApp LUN報告工具、可用來顯示Linux主機上儲存叢集節點和主機匯流排介面卡的相關資訊。 
+---
+= 安裝Linux Unified Host Utilities並最佳化I/O效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Linux Unified Host Utilities 軟體包含 `sanlun` 公用程式、一種 NetApp LUN 報告工具、可用來顯示 Linux 主機上儲存叢集節點和主機匯流排介面卡（ HBA ）的相關資訊。您也必須在Linux主機上啟用正確的伺服器設定檔、以最佳化NetApp儲存效能。
+
+.開始之前
+您必須使用互通性對照表來識別您組態所支援的Linux Unified Host Utilities版本。您也必須擁有 `tuned` 套件、此套件是 Linux 作業系統套裝作業系統的一部分、其中包含 `tuned-adm` 命令、用於在主機上設定伺服器設定檔。
+
+.步驟
+. 從 NetApp 支援網站下載受支援的 Linux Unified Host Utilities 版本。
++
+http://mysupport.netapp.com/NOW/cgi-bin/software["NetApp下載：軟體"]
+
+. 依照安裝文件中的指示安裝Linux Unified Host Utilities軟體。
+. 如果是 `tuned` 未安裝套件、請輸入下列命令：``yum install tuned``
+. 對於實體主機、請確定您已設定 `enterprise-storage` 設定檔： `tuned-adm profile enterprise-storage`
+. 對於虛擬主機、請確定您已設定 `virtual-guest` 設定檔： `tuned-adm profile virtual-guest`
++
+https://library.netapp.com/ecm/ecm_download_file/ECMLP2547936["安裝Linux Unified Host Utilities 7.1"]
+
+

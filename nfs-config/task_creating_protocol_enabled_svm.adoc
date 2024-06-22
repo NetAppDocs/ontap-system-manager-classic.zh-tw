@@ -1,0 +1,14 @@
+---
+permalink: nfs-config/task_creating_protocol_enabled_svm.html 
+sidebar: sidebar 
+keywords: nfs-enabled, svm, create, creating, nfs, volume, export, policy, root, client, access, create a new nfs-enabled svm 
+summary: 設定啟用NFS的SVM時、需要建立新的SVM並匯出NFS磁碟區、開啟SVM根磁碟區的預設匯出原則、然後從UNIX管理主機驗證NFS存取。然後您可以設定NFS用戶端存取。 
+---
+= 建立新的NFS型SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定啟用NFS的SVM時、需要建立新的SVM並匯出NFS磁碟區、開啟SVM根磁碟區的預設匯出原則、然後從UNIX管理主機驗證NFS存取。然後您可以設定NFS用戶端存取。

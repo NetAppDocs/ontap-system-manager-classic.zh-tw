@@ -1,0 +1,49 @@
+---
+permalink: online-help-96-97/task_accessing_cluster_by_using_system_manager_by_using_browser.html 
+sidebar: sidebar 
+keywords: online, help, access, cluster, ontap, system, manager, graphic, interface, cli, command, line, interface 
+summary: 如果您偏好使用圖形介面、而非命令列介面（CLI）來存取及管理叢集、您可以使用ONTAP 預設啟用的、以供使用的、包含ONTAP 在以Web服務形式提供的「以圖形化系統管理程式」來執行此作業、並可透過瀏覽器存取。 
+---
+= 使用ONTAP 以瀏覽器為基礎的圖形介面存取叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您偏好使用圖形介面、而非命令列介面（CLI）來存取及管理叢集、您可以使用ONTAP 預設啟用的、以供使用的、包含ONTAP 在以Web服務形式提供的「以圖形化系統管理程式」來執行此作業、並可透過瀏覽器存取。
+
+.開始之前
+* 您必須擁有使用設定的叢集使用者帳戶 `admin` 角色與 `http`、 `ontapi`和 `console` 應用程式類型：
+* 您必須在瀏覽器中啟用Cookie和網站資料。
+
+
+.關於這項工作
+您可以使用叢集管理LIF或節點管理LIF來存取ONTAP 《系統管理程式》。若要不中斷地存取ONTAP 《Suse System Manager》、您應該使用叢集管理LIF。
+
+.步驟
+. 將網頁瀏覽器指向叢集管理LIF的IP位址：
++
+** 如果您使用的是 IPv4 ： `+https://cluster-mgmt-LIF+`
+** 如果您使用的是 IPv6 ： `https://[cluster-mgmt-LIF]`
+僅支援HTTPS、瀏覽器才能存取ONTAP 《支援的功能》。
+
+
++
+如果叢集使用自我簽署的數位憑證、瀏覽器可能會顯示警告、指出該憑證不受信任。您可以確認繼續存取的風險、或是在叢集上安裝憑證授權單位（CA）簽署的數位憑證、以進行伺服器驗證。
+
+. 如果您使用CLI設定了存取橫幅、請閱讀*警告*對話方塊中顯示的訊息、然後選擇所需的選項以繼續。
++
+啟用安全性聲明標記語言（SAML）驗證的系統不支援此選項。
+
++
+** 如果您不想繼續、請按一下*「取消」*、然後關閉瀏覽器。
+** 如果您要繼續、請按一下*「OK」（確定）*以瀏覽ONTAP 至「System Manager」（系統管理程式）登入頁面。
+
+
+. 使用叢集管理員認證登入ONTAP 《系統管理程式》。
+
+
+*相關資訊*
+
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]

@@ -1,0 +1,31 @@
+---
+permalink: online-help-96-97/task_editing_protection_policies.html 
+sidebar: sidebar 
+keywords: edit, protection, policies, online, help, system, manager 
+summary: 您可以使用System Manager修改保護原則、並將原則套用至資料保護關係。 
+---
+= 編輯保護原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用System Manager修改保護原則、並將原則套用至資料保護關係。
+
+.關於這項工作
+叢集層級不會顯示保護原則。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取儲存虛擬機器（SVM）、然後按一下「* SVM設定*」。
+. 在「*原則*」窗格中、按一下「*保護原則*」。
+. 選取您要編輯的保護原則、然後按一下*編輯*。
+. 修改傳輸優先順序、然後啟用或停用網路壓縮。
+. 對於非同步鏡射原則、請備份所有來源Snapshot複本。
+. 對於資料保存原則或鏡射資料保存原則、請修改SnapMirror標籤和保留計數。
++
+您無法移除鏡射資料保險箱原則的sm_已 建立標籤。
+
+. 按一下「 * 儲存 * 」。
+

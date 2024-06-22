@@ -1,0 +1,39 @@
+---
+permalink: online-help-96-97/task_obtaining_ontap_software_images.html 
+sidebar: sidebar 
+keywords: online, help, obtain, ontap, software, image, netapp, support, site, online, help 
+summary: 若為 ONTAP 9.4 及更新版本，您可以從 NetApp 支援網站將 ONTAP 軟體映像檔複製到本機資料夾。若要從ONTAP 更新版本的版本升級、ONTAP 您必須將此版本的更新軟體映像複製到網路上的HTTP伺服器或FTP伺服器。 
+---
+= 使用ONTAP System Manager取得包含ONTAP 更新版本的軟體映像-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》功能來取得《經典ONTAP 版》的《鏡像》（ONTAP 適用於更新版本的版本）。若為 ONTAP 9.4 及更新版本，您可以從 NetApp 支援網站將 ONTAP 軟體映像檔複製到本機資料夾。若要從ONTAP 更新版本的版本升級、ONTAP 您必須將此版本的更新軟體映像複製到網路上的HTTP伺服器或FTP伺服器。
+
+.關於這項工作
+若要將叢集升級至ONTAP 目標版本的《不一致》、您需要存取軟體映像。NetApp 支援網站上提供適用於您平台機型的軟體映像檔、韌體版本資訊及最新韌體。請注意下列重要資訊：
+
+* 軟體映像是特定於平台機型。
++
+您必須取得適用於叢集的正確映像。
+
+* 軟體映像包含ONTAP 系統韌體的最新版本、在發佈特定版本的資訊時、即可取得此版本。
+* 如果您要將採用NetApp Volume Encryption的系統升級ONTAP 為版本9.5或更新版本、則必須下載ONTAP 非受限國家/地區的版本、包括NetApp Volume Encryption。
++
+如果您使用ONTAP 受限國家/地區的「更新版」軟體映像來升級採用NetApp Volume Encryption的系統、系統就會出現問題、而且您無法存取磁碟區。
+
+* 如果您要從ONTAP Image9.3升級至9.7、則必須複製ONTAP 適用於Image9.5和9.7的軟體映像。
+
+
+.步驟
+. 在 ONTAP NetApp 支援網站的「*Software Downloads（軟體下載）*」區域中找到目標 ONTAP 軟體。
+. 複製軟體映像。
++
+** 若為 ONTAP 9.3 或更早版本、請複製軟體映像（例如 `93_q_image.tgz`）從 NetApp 支援網站 到要從中提供映像的 HTTP 伺服器或 FTP 伺服器上的目錄
+** 若為 ONTAP 9.4 或更新版本、請複製軟體映像（例如 `97_q_image.tgz`）從 NetApp 支援網站 到要從中提供映像的 HTTP 伺服器或 FTP 伺服器上的目錄、或到本機資料夾。
+
+
+

@@ -1,0 +1,14 @@
+---
+permalink: expansion/task_installing_new_nodes.html 
+sidebar: sidebar 
+keywords: cluster, install, controller, configure, node-management, run, ontap, repurpose, hardware-level, ha, address, maintenance, mode, join, install the new node 
+summary: 準備好叢集之後、您必須安裝控制器並設定節點管理生命體。 
+---
+= 安裝新節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+準備好叢集之後、您必須安裝控制器並設定節點管理生命體。如果控制器執行ONTAP 的版本與現有叢集不同、或是重新調整用途且缺乏硬體層級HA、則您必須在維護模式中解決這些問題。最後、您可以將節點加入叢集。

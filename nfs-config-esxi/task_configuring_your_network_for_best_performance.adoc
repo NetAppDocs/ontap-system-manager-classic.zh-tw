@@ -1,0 +1,32 @@
+---
+permalink: nfs-config-esxi/task_configuring_your_network_for_best_performance.html 
+sidebar: sidebar 
+keywords: ethernet, network, performance, configuration, value, configure, configure your network for best performance 
+summary: 乙太網路的效能差異極大。您可以選取特定的組態值、將網路效能最大化。 
+---
+= 設定您的網路以獲得最佳效能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+乙太網路的效能差異極大。您可以選取特定的組態值、將網路效能最大化。
+
+.步驟
+. 將主機和儲存連接埠連接至同一個網路。
++
+最好連線至相同的交換器。
+
+. 選取可用的最高速度連接埠。
++
+10 GbE或更快的連接埠是最佳選擇。1 GbE連接埠為最低值。
+
+. 視需要啟用巨型框架、並由您的網路支援。
++
+Jumbo框架的ESXi主機和儲存系統MTU應為9000、而大多數交換器的MTU應為9216。資料路徑中的所有網路裝置（包括ESXi NIC、儲存NIC和交換器）都必須支援巨型框架、而且應設定其最大MTU值。
+
++
+如需詳細資訊、請參閱 link:https://docs.netapp.com/us-en/ontap/performance-admin/check-network-settings-data-switches-task.html["檢查資料交換器上的網路設定"^] 以及交換器廠商文件。
+
+

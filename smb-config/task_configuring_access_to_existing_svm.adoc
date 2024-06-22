@@ -1,0 +1,14 @@
+---
+permalink: smb-config/task_configuring_access_to_existing_svm.html 
+sidebar: sidebar 
+keywords: add, access, smb, cifs, client, exist, svm, involve, configuration, map, dns, server, verify, windows, administration, host, configure, configure smb/cifs access to an existing svm 
+summary: 若要將SMB/CIFS用戶端的存取權限新增至現有的SVM、需要將CIFS組態新增至SVM、在DNS伺服器上新增對應、以及從Windows管理主機驗證CIFS存取。接著您可以設定 CIFS 用戶端存取。 
+---
+= 設定對現有SVM的SMB/CIFS存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要將SMB/CIFS用戶端的存取權限新增至現有的SVM、需要將CIFS組態新增至SVM、在DNS伺服器上新增對應、以及從Windows管理主機驗證CIFS存取。接著您可以設定 CIFS 用戶端存取。

@@ -1,0 +1,37 @@
+---
+permalink: online-help-96-97/task_extending_expiry_date_snapshot_copies.html 
+sidebar: sidebar 
+keywords: extend, expiry, date, snapshot, copy, system, manager, online, help 
+summary: 您可以使用System Manager延長磁碟區中Snapshot複本的到期日。 
+---
+= 使用System Manager ONTAP -更新版本更新版本、延長Snapshot複本的到期日
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來延長Volume中Snapshot複本的到期日。
+
+.開始之前
+必須在您的系統上安裝此功能的認證。SnapLock
+
+.關於這項工作
+您只能將資料保護（DP）磁碟區中的Snapshot複本延長至到期日、SnapLock 此磁碟區是以供SnapVault 參考的目的。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取一個Volume。
+. 按一下*顯示更多詳細資料*以檢視更多有關磁碟區的資訊。
+. 按一下「* Snapshot Copies *」標籤。
++
+此時會顯示所選磁碟區的可用Snapshot複本清單。
+
+. 選取您要修改的Snapshot複本、然後按一下*延長到期日*。
+. 在*延長到期日*對話方塊中、指定到期日。
++
+這些值必須介於1天到70年之間、或是「無限大」。
+
+. 按一下「*確定*」。
+

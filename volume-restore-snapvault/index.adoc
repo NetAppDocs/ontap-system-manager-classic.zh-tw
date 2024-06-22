@@ -1,0 +1,44 @@
+---
+permalink: volume-restore-snapvault/index.html 
+sidebar: sidebar 
+keywords: content, restore, volume, snapvault, vault, backup, ontap, data, loss, volume restore using snapvault overview 
+summary: 當資料遺失時、您可以從SnapVault 位於支援中心的支援中心快速還原磁碟區ONTAP 。 
+---
+= 使用SnapVault 功能概述進行Volume還原
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當資料遺失時、您可以從SnapVault 位於支援中心的支援中心快速還原磁碟區ONTAP 。
+
+如果您想要以下列方式從資料保險箱備份還原、請使用此程序：
+
+* 您正在使用執行ONTAP 過程中的叢集9。
+* 您是叢集管理員。
+* 您已依照中所述程序設定資料保險箱關係 xref:../volume-backup-snapvault/index.html[使用SnapVault 功能進行Volume備份]
+* 您不想執行單一檔案或LUN還原。
+* 您想要使用最佳實務做法、而非探索每個可用選項。
+* 您不想閱讀許多概念背景。
+* 您想要將System Manager經典介面用於ONTAP 更新版本的版本、而非ONTAP 使用適用於ONTAP 更新版本的《更新版本的系統管理程式》UI。
+
+
+如果這些假設不符合您的情況、或您想要更多概念背景資訊、您應該看到下列資源：
+
+link:http://www.netapp.com/us/media/tr-4183.pdf["NetApp技術報告4183：SnapVault NetApp最佳實務做法"^]
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+[cols="2"]
+|===
+| 若要執行這些工作... | 請參閱此內容... 
+
+
+| 重新設計的System Manager（ONTAP 提供更新版本的更新版本） | link:https://docs.netapp.com/us-en/ontap/task_dp_restore_from_vault.html["從先前的Snapshot複本還原磁碟區"^] 
+
+
+| 指令行介面ONTAP | link:https://docs.netapp.com/us-en/ontap/data-protection/restore-volume-snapvault-backup-task.html["從SnapMirror目的地還原磁碟區內容"^] 
+|===

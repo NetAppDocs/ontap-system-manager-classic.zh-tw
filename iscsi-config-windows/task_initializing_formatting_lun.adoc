@@ -1,0 +1,33 @@
+---
+permalink: iscsi-config-windows/task_initializing_formatting_lun.html 
+sidebar: sidebar 
+keywords: lun, access, windows, host, partition, file, system, initialize, format, file, system, initialize and format the lun 
+summary: 當Windows主機首次存取新LUN時、它沒有分割區或檔案系統。您必須初始化LUN、並選擇性地使用檔案系統進行格式化。 
+---
+= 初始化及格式化LUN
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當Windows主機首次存取新LUN時、它沒有分割區或檔案系統。您必須初始化LUN、並選擇性地使用檔案系統進行格式化。
+
+.開始之前
+Windows主機必須已探索到LUN。
+
+.關於這項工作
+LUN在Windows磁碟管理中顯示為磁碟。
+
+您可以使用GPT或MBR-分割表將磁碟初始化為基本磁碟。
+
+您通常會使用NTFS等檔案系統來格式化LUN、但有些應用程式會改用原始磁碟。
+
+.步驟
+. 啟動Windows磁碟管理。
+. 以滑鼠右鍵按一下LUN、然後選取所需的磁碟或磁碟分割類型。
+. 依照精靈中的指示進行。
++
+如果您選擇將LUN格式化為NTFS、則必須選取「執行快速格式化*」核取方塊。
+
+

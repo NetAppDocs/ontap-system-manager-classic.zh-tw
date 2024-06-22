@@ -1,0 +1,51 @@
+---
+permalink: online-help-96-97/task_creating_nvme_namespace.html 
+sidebar: sidebar 
+keywords: system, manager, create, nvme, namespace, svm, logical, blocks, online, help 
+summary: 您可以使用System Manager建立一或多個NVMe命名空間、並將每個命名空間連接至儲存虛擬機器（SVM）中的主機或一組主機。NVMe命名空間是一組可格式化為邏輯區塊的記憶體。每個命名空間都可對應至NVMe子系統。 
+---
+= 使用ONTAP System Manager建立NVMe命名空間-不含更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《支援不支援的系統管理程式》ONTAP （適用於支援的版本為ESI9.7及更早版本）來建立一或多個NVMe命名空間、並將每個命名空間連接至儲存虛擬機器（SVM）中的主機或一組主機。NVMe命名空間是一組可格式化為邏輯區塊的記憶體。每個命名空間都可對應至NVMe子系統。
+
+.開始之前
+SVM必須已設定NVMe傳輸協定。若要對應命名空間、擁有命名空間的節點中至少必須存在一個採用NVMe資料傳輸協定的LIF。
+
+.步驟
+. 按一下「*儲存設備*>* NVMe *>* NVMe命名空間*」。
+. 選取要包含命名空間的SVM。
+. 請確保HA配對的每個節點至少設定一個NVMe LIF。每個節點最多可建立兩個NVMe LIF。
+. 設定命名空間的大小（介於1MB和16TB之間）。
+. 輸入區塊大小。
++
+對於System Manager 9.5、區塊大小預設為4 KB、不會顯示此欄位。
+
++
+對於System Manager 9.6、您可以指定4 KB或512位元組的區塊大小。
+
+. 選取現有磁碟區、或選擇集合體來建立新磁碟區。
++
+按一下+符號、即可在SVM內設定其他命名空間（最多250個）。
+
+. 選取要與此命名空間相關聯的NVMe子系統。
++
+您可以從下列選項中選擇：
+
++
+** 無：未對應子系統。
+** 使用現有的子系統：列出的子系統是以所選SVM為基礎。
+** 建立新的子系統：您可以選擇建立新的子系統、並對應至所有新命名空間。
+
+
+. 選取主機作業系統。
+. 按一下*提交*。
+
+
+*相關資訊*
+
+xref:reference_nvme_namespaces_window.adoc[NVMe命名空間視窗]

@@ -1,0 +1,25 @@
+---
+permalink: iscsi-config-esxi/task_enabling_iscsi_software_adapter.html 
+sidebar: sidebar 
+keywords: iscsi, software, adapter, create, connection, esx, host, operating, system, enable, enable the iscsi software adapter, esxi 
+summary: iSCSI軟體介面卡會在ESX主機上建立iSCSI連線。它內建於作業系統中、但必須先啟用、才能使用。 
+---
+= 啟用iSCSI軟體介面卡
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+iSCSI軟體介面卡會在ESXi主機上建立iSCSI連線。它內建於作業系統中、但必須先啟用、才能使用。
+
+.開始之前
+您必須在工作站上安裝VMware vSphere Client、否則必須能夠存取vSphere Web Client。
+
+.步驟
+. 登入vSphere Client。
+. 從清單窗格中選取ESX主機。
+. 按一下「*組態*>*儲存介面卡*」。
+. 選擇iSCSI軟體介面卡、然後按一下*「內容」*>「組態」*。
+. 選擇* Enabled*（已啓用*），然後單擊* OK*（確定*）。
+

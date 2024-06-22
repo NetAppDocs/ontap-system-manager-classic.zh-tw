@@ -1,0 +1,49 @@
+---
+permalink: volume-disaster-prep/task_setting_up_destination_svm_for_data_access.html 
+sidebar: sidebar 
+keywords: minimize, data, access, disruption, activating, activate, destination, volume, configuration, cifs, policies, policy, nas, environment, initiator, group, svm, set up the destination svm for data access 
+summary: 在啟動目的地Volume時、您可以設定必要的組態、例如NAS環境的LIF、CIFS共用和匯出原則、以及包含目的地Volume的SVM環境中SAN環境的LIF和啟動器群組、將資料存取中斷降至最低。 
+---
+= 設定目的地SVM以進行資料存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在啟動目的地Volume時、您可以設定必要的組態、例如NAS環境的LIF、CIFS共用和匯出原則、以及包含目的地Volume的SVM環境中SAN環境的LIF和啟動器群組、將資料存取中斷降至最低。
+
+.關於這項工作
+您必須在包含目的地Volume的SVM *目的地*叢集上執行此工作。
+
+
+
+== 程序
+
+* NAS環境：
++
+.. 建立NAS LIF。
+.. 建立CIFS共用區、其共用名稱與來源共用區相同。
+.. 建立適當的NFS匯出原則。
+.. 建立適當的配額規則。
+
+
+* SAN 環境：
++
+.. 建立SAN LIF。
+.. *選用：*設定連接埠集。
+.. 設定啟動器群組。
+.. 對於FC、將FC交換器分區、讓SAN用戶端能夠存取lifs。
+
+
+
+
+
+
+== 接下來該怎麼做
+
+如果在包含來源磁碟區的SVM上進行任何變更、您必須在包含目的地磁碟區的SVM上手動複寫變更。
+
+*相關資訊*
+
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]

@@ -1,0 +1,38 @@
+---
+permalink: nfs-config/task_deciding_where_to_provision_new_volume.html 
+sidebar: sidebar 
+keywords: create, nfs, volume, exist, storage, virtual, machine, svm, configuration, workflow, decide where to provision the new volume 
+summary: 在建立新的NFS磁碟區之前、您必須先決定是否要將其置於現有的儲存虛擬機器（SVM）中、如果是、則必須決定SVM需要多少組態。此決定決定決定您的工作流程。 
+---
+= 決定新磁碟區的資源配置位置
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在建立新的NFS磁碟區之前、您必須先決定是否要將其置於現有的儲存虛擬機器（SVM）中、如果是、則必須決定SVM需要多少組態。此決定決定決定您的工作流程。
+
+
+
+== 程序
+
+* 如果您想要在新的SVM上配置磁碟區、請建立新的NFS型SVM。
++
+link:task_creating_protocol_enabled_svm.html["建立新的NFS型SVM"]
+
++
+如果在現有SVM上未啟用NFS、則必須選擇此選項。
+
+* 如果您想要在已啟用NFS但尚未設定的現有SVM上配置磁碟區、請在現有SVM上設定NFS存取。
++
+link:task_configuring_access_to_existing_svm.html["在現有SVM上設定NFS存取"]
+
++
+如果您在設定不同的傳輸協定時、未遵循此程序來建立SVM、則會發生這種情況。
+
+* 如果您想要在已完全設定為NFS存取的現有SVM上配置磁碟區、請將NFS磁碟區新增至啟用NFS的SVM。
++
+link:concept_adding_protocol_volume_to_protocol_enabled_svm.html["將NFS磁碟區新增至啟用NFS的SVM"]
+
+

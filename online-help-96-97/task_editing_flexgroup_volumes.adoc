@@ -1,0 +1,56 @@
+---
+permalink: online-help-96-97/task_editing_flexgroup_volumes.html 
+sidebar: sidebar 
+keywords: edit, flexgroup, volume, system, volume, online, help 
+summary: 從System Manager 9.6開始、您可以編輯現有FlexGroup 的功能區。 
+---
+= 編輯FlexGroup 功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、您可以編輯現有FlexGroup 的功能區。
+
+.開始之前
+此版本必須在線上。FlexGroup
+
+.關於這項工作
+下列情況下、可擴充各種資料量：FabricPool FlexGroup
+
+* 只有使用「資訊區」才能擴充一個「資訊區」FabricPool FlexGroup FabricPool 。
+* 非FabricPool FlexGroup 的支援僅能透過非FabricPool Aggregate來擴充。
+* 如果FlexGroup 該解決方案包含FabricPool 混合使用的各種不同的功能、那麼FlexGroup 可以使用FabricPool 支援的功能區和非FabricPool集合體來擴充這個功能。
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取FlexGroup 您要修改的「流通量」、然後按一下「*編輯*」。
+. *選用：*如果您想要重新命名FlexGroup 此功能、請在*名稱*欄位中輸入新名稱。
++
+從System Manager 9.6開始、您也可以重新命名FlexGroup RAID-DP Volume。
+
+. *選用：*啟用*加密*選項以啟用磁碟區加密。
++
+此選項僅在您已啟用Volume Encryption授權、且對應的平台支援加密時可用。
+
+. 指定Snapshot複本保留的百分比。
+. *選填：*按一下 image:../media/advanced_options.gif[""] 可修改FlexGroup 聲音恢復功能的設定。請參閱 link:task_specifying_advanced_options_for_flexgroup_volume.html["指定FlexGroup 適用於某個聲音區的進階選項"]。
+. 指定FlexGroup 您想要調整的大小以調整此等大小。
++
+根據預設、現有的Aggregate可用來調整FlexGroup 完這個問題。Volume允許的最小大小會顯示在「大小」欄位旁。
+
++
+[NOTE]
+====
+如果您想要FlexGroup 新增資源來擴充此功能、請按一下 image:../media/advanced_options.gif[""] （進階選項）。請參閱 link:task_specifying_advanced_options_for_flexgroup_volume.html["指定FlexGroup 適用於某個聲音區的進階選項"]。
+
+====
+. 按一下「*儲存*」以儲存變更。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

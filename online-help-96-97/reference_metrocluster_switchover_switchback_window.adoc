@@ -1,0 +1,68 @@
+---
+permalink: online-help-96-97/reference_metrocluster_switchover_switchback_window.html 
+sidebar: sidebar 
+keywords: metrocluster, switchover, switchback, operations, window, command, button, other, action, online, help, status 
+summary: 從System Manager 9.6開始、您可以使用MetroCluster 「還原切換和切換作業」視窗、從一個站台或叢集（站台B）啟動協調（計畫）切換、或從一個站台或叢集（站台A）進行非計畫性切換。在站台B上執行維護或維修之後、您可以從站台A切換回站台B、並在此視窗中檢視作業狀態。 
+---
+= 「切換與切換作業」MetroCluster 視窗
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、您可以使用MetroCluster 「還原切換和切換作業」視窗、從一個站台或叢集（站台B）啟動協調（計畫）切換、或從一個站台或叢集（站台A）進行非計畫性切換。在站台B上執行維護或維修之後、您可以從站台A切換回站台B、並在此視窗中檢視作業狀態。
+
+
+
+== 命令按鈕
+
+* *將站台B切換至站台A *
++
+啟動將站台B切換至站台A的程序
+
+* *將站台A切換回站台B*
++
+啟動將站台A切換回站台B的程序
+
+
+
+
+
+== 其他行動
+
+* *瀏覽至站台B叢集*
++
+輸入站台B的叢集管理IP位址
+
+* *非計畫性切換的核取方塊*
++
+如果您想要啟動非計畫性的切換、請勾選「*繼續進行非計畫性的切換*」方塊。
+
+
+
+
+
+== 狀態區域
+
+系統在切換或切換回時、System Manager會以下列方法顯示狀態：
+
+* *進度線圖形*
++
+顯示作業階段、並指出已完成的階段。這些階段包括切換、站台B作業和切換。
+
+* ***顯示詳細資料
++
+顯示當執行過程中、系統事件的時間戳記清單MetroCluster 。
+
+* *本地：站點A*
++
+顯示站台A叢集組態的圖形、包括該站台在整個作業階段中的狀態。
+
+* *遠端：站台B*
++
+顯示站台B叢集組態的圖形、包括該站台在整個作業階段中的狀態。
+
+
+
+如果您登入站台B並檢視MetroCluster 「還原切換和切換作業」視窗、則站台A的狀態會顯示為「'inactive」、站台B的狀態會顯示為「'WITVERCHO模式」。

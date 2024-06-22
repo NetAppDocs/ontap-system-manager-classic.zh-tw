@@ -1,0 +1,19 @@
+---
+section: volume-disaster-prep
+title: Volume災難恢復準備
+entries:
+- title: 總覽
+  url: "/volume-disaster-prep/index.html"
+- title: Volume災難恢復準備工作流程
+  url: "/volume-disaster-prep/concept_snapmirror_intercluster_configuration_workflow.html"
+  entries:
+  - title: 驗證叢集對等關係和SVM對等關係
+    url: "/volume-disaster-prep/task_verifying_cluster_peer_relationship.html"
+  - title: 建立SnapMirror關係（從ONTAP 功能9.3開始）
+    url: "/volume-disaster-prep/task_creating_snapmirror_relationships_93_later.html"
+  - title: 建立SnapMirror關係ONTAP （不含版本號的9.2）
+    url: "/volume-disaster-prep/task_creating_snapmirror_relationships_92_earlier.html"
+  - title: 設定目的地SVM以進行資料存取
+    url: "/volume-disaster-prep/task_setting_up_destination_svm_for_data_access.html"
+  - title: 監控SnapMirror資料傳輸的狀態
+    url: "/volume-disaster-prep/task_monitoring_status_snapmirror_data_transfers.html"

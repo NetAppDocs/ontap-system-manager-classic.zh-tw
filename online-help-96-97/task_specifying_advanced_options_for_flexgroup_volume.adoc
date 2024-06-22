@@ -1,0 +1,41 @@
+---
+permalink: online-help-96-97/task_specifying_advanced_options_for_flexgroup_volume.html 
+sidebar: sidebar 
+keywords: flexclone, volume, specify, advanced, create, options, online, help 
+summary: 當您建立FlexGroup 一個聲音區時、可以指定您要與FlexGroup 該聲音區建立關聯的選項。 
+---
+= 使用FlexGroup System Manager - ONTAP 更新版本的更新版本、指定適用於此產品的進階選項
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您建立FlexGroup 一個版本時、可以使用ONTAP 經典版的《經典版》（ONTAP 可在更新版本的版本中使用）來指定您想要與FlexGroup 該版本關聯的選項。
+
+.步驟
+. *選用：*在*「Create FlexGroup S還原*」視窗中、按一下 image:../media/advanced_options.gif[""] 以指定進階選項。
++
+此時會顯示「進階選項」視窗。其中包含區段（左欄的標題）、您可以在其中指定各種選項。
+
+. 在「*一般詳細資料*」區段中、選取空間保留和安全樣式、然後設定該磁碟區的UNIX權限。
++
+您應該注意下列限制：
+
++
+** 空間保留選項不適用於FabricPool 資訊區。
+** 啟用精簡配置時、只有在資料寫入磁碟區時、才會從集合體將空間分配給磁碟區。
+** 對於All Flash最佳化的儲存系統、預設會啟用精簡配置功能、而對於其他儲存系統、預設會啟用完整配置功能。
+
+
+. 在* Aggregate *區段中、您可以啟用* Select Aggregate *（選擇Aggregate *）按鈕來覆寫最佳實務做法的預設值、並從FabricPool 一份「支援集合體」清單中選取您的選項。
+. 在「*最佳化空間*」區段中、您可以在磁碟區上啟用重複資料刪除功能。
++
+System Manager使用預設的重複資料刪除排程。如果指定的磁碟區大小超過執行重複資料刪除所需的限制、就會建立磁碟區、而且不會啟用重複資料刪除功能。
+
++
+適用於具備 All Flash 最佳化特性的系統、即時壓縮和 `auto` 重複資料刪除排程預設為啟用。
+
+. 在「* QoS*（服務品質）」區段中、指定原則群組來控制FlexGroup 支援該磁碟區的輸入/輸出（I/O）效能。
+. 按一下「*套用*」以更新變更。
+

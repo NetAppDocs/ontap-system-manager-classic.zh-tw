@@ -1,0 +1,87 @@
+---
+permalink: online-help-96-97/task_editing_svm_settings.html 
+sidebar: sidebar 
+keywords: online, help, system, manager, edit, svm, settings 
+summary: 您可以使用System Manager編輯儲存虛擬機器（SVM）的內容、例如名稱服務交換器、名稱對應交換器和Aggregate清單。 
+---
+= 使用System Manager編輯SVM設定ONTAP -更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的支援功能（ONTAP 僅適用於VMware 9.7及更早版本）來編輯儲存虛擬機器（SVM）的屬性、例如名稱服務交換器、名稱對應交換器和Aggregate清單。
+
+.關於這項工作
+* 您可以編輯下列SVM內容的值：
++
+** 名稱服務交換器
+** 可提供資料的傳輸協定
++
+[NOTE]
+====
+在SVM上設定的CIFS傳輸協定會繼續提供資料、即使您停用該SVM上的傳輸協定也一樣。
+
+====
+** 可用於建立磁碟區的集合體清單
++
+[NOTE]
+====
+對於SVM Volume、您只能在將管理委派給SVM管理員的情況下、才能指派Aggregate。FlexVol
+
+====
+
+
+* System Manager不會顯示透過命令列介面或未設定且ONTAP 未設定成預設值的SVM服務、名稱服務交換器和名稱對應交換器的值。
++
+您可以使用命令列介面來檢視服務、因為「服務」索引標籤已停用。
+
++
+System Manager只有在SVM是使用System Manager建立、或SVM服務是ONTAP 以SVM設定為預設值時、才會顯示SVM的名稱服務交換器和名稱對應交換器。
+
+
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下*編輯*。
+. 在* Details（詳細資料）*標籤中、修改所需的資料傳輸協定。
+. 在*資源分配*索引標籤中、選擇下列其中一種方法來委派磁碟區建立：
++
+|===
+| 如果您想要資源配置磁碟區建立... | 然後... 
+
+
+ a| 
+適用於所有Aggregate
+ a| 
+選擇*不委派磁碟區建立*選項。
+
+
+
+ a| 
+適用於特定Aggregate
+ a| 
+.. 選擇*委派磁碟區建立*選項。
+.. 選取委派磁碟區建立所需的集合體。
+
+
+|===
+. 在「*服務*」索引標籤中、指定所需資料庫類型的名稱服務交換器來源、以及擷取名稱服務資訊時應參考的順序。
++
+每種資料庫類型的預設值如下：
+
++
+** 主機：檔案、DNS
+** namemap：檔案
+** 群組：檔案
+** netgroup：檔案
+** passwd:檔案
+
+
+. 按一下*儲存並關閉*。
+
+
+*相關資訊*
+
+xref:concept_how_data_ontap_name_service_switch_configuration_works.adoc[如何使用名稱服務交換器組態ONTAP]

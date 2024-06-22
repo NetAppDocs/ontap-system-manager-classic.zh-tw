@@ -1,0 +1,130 @@
+---
+permalink: online-help-96-97/concept_snapshot_policies.html 
+sidebar: sidebar 
+keywords: snapshot, manager, system, create, manage, policy, storage, online, help 
+summary: 您可以使用System Manager在儲存系統中建立及管理Snapshot原則。 
+---
+= 使用System Manager管理Snapshot原則- ONTAP 不含更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來建立及管理儲存系統中的Snapshot原則。
+
+
+
+== 關於Snapshot原則
+
+將Snapshot原則套用至磁碟區時、會根據建立Snapshot複本的排程或排程、並指定每個排程可建立的Snapshot複本數量上限。Snapshot原則最多可包含五個排程。
+
+對於資料保險箱關係、SnapMirror Label屬性可用於選取來源磁碟區上的Snapshot複本。在備份資料保存庫作業中、只會複寫具有在資料保存原則規則中設定標籤的Snapshot複本。指派給來源Volume的Snapshot原則必須包含SnapMirror Label屬性。
+
+
+
+== 建立Snapshot原則
+
+您可以在System Manager中建立Snapshot原則、以指定可自動建立的Snapshot複本數量上限、以及建立這些複本的頻率。
+
+.步驟
+. 按一下* Protection（保護）** Snapshot Policies（快照原則）*。
+. 按一下「 * 建立 * 」。
+. 在「*建立Snapshot Policy*」對話方塊中、指定原則名稱。
+. 按一下「*新增*」、然後指定排程名稱、您要保留的Snapshot複本數目上限、以及SnapMirror標籤名稱。
++
+指定排程可保留的Snapshot複本數目上限不得超過254個。
+
+. 按一下「*確定*」、然後按一下「*建立*」。
+
+
+
+
+== 編輯Snapshot原則
+
+您可以使用System Manager中的Edit Snapshot Policy（編輯Snapshot原則）對話方塊、修改現有Snapshot原則的詳細資料、例如排程名稱、SnapMirror標籤或建立的Snapshot複本數量上限。
+
+.步驟
+. 按一下* Protection（保護）** Snapshot Policies（快照原則）*。
+. 在* Snapshot Policies（快照策略）*窗口中，選擇要修改的Snapshot策略，然後單擊* Edit（編輯）*。
+. 在「*編輯Snapshot Policy*」對話方塊中、選取您要修改的排程、然後按一下「*編輯*」。
+. 按一下「*確定*」。
+. 驗證您在「*編輯Snapshot Policy*」對話方塊中對所選Snapshot原則所做的變更、然後按一下「*儲存*」。
+
+
+
+
+== 刪除Snapshot原則
+
+您可以使用System Manager刪除Snapshot原則。如果您刪除一個或多個磁碟區正在使用的Snapshot原則、則不會再根據刪除的原則建立磁碟區或磁碟區的Snapshot複本。
+
+.開始之前
+您必須已將Snapshot原則與使用該原則的每個磁碟區分離。
+
+.步驟
+. 按一下* Protection（保護）** Snapshot Policies（快照原則）*。
+. 選取Snapshot原則、然後按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+
+
+
+
+== Snapshot Policies（快照策略）窗口
+
+您可以使用Snapshot Policies（快照原則）視窗來管理Snapshot原則工作、例如新增、編輯及刪除Snapshot原則。
+
+
+
+=== 命令按鈕
+
+* *建立*
++
+開啟「建立Snapshot原則」對話方塊、可讓您新增備份排程、並指定原則中要保留的Snapshot複本數目上限。
+
+* *編輯*
++
+開啟「編輯Snapshot原則」對話方塊、可讓您修改建立Snapshot複本的頻率、以及保留的Snapshot複本數量上限。
+
+* *刪除*
++
+開啟「刪除」對話方塊、可讓您刪除所選的「Snapshot」原則。
+
+* *檢視為*
++
+可讓您以清單或樹狀結構檢視Snapshot原則。
+
+* *狀態*
++
+開啟功能表、您可以使用此功能表來啟用或停用選取的Snapshot原則。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+=== Snapshot原則清單
+
+* *政策/排程名稱*
++
+指定Snapshot原則的名稱及原則中的排程。
+
+* *儲存虛擬機器*
++
+指定Snapshot複本所屬的儲存虛擬機器（SVM）名稱。
+
+* *狀態*
++
+指定Snapshot原則的狀態、可以是「已啟用」或「已停用」。
+
+* *要保留的最大快照數*
++
+指定要保留的Snapshot複本數目上限。
+
+* * SnapMirror標籤*
++
+指定備份排程所產生之Snapshot複本的SnapMirror標籤屬性名稱。
+
+

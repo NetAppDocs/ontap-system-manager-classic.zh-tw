@@ -1,0 +1,146 @@
+---
+permalink: online-help-96-97/reference_cifs_window.html 
+sidebar: sidebar 
+keywords: cifs, window, configuration, tab, domain, symlink, branchcache, online, help 
+summary: 您可以使用CIFS視窗來設定CIFS伺服器、管理網域控制器、管理符號UNIX對應、以及設定BranchCache。 
+---
+= System Manager中的CIFS視窗- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 「CIFS」視窗來ONTAP 設定CIFS伺服器、管理網域控制器、管理符號UNIX對應、以及設定BranchCache。
+
+
+
+== 組態索引標籤
+
+「組態」索引標籤可讓您建立及管理CIFS伺服器。
+
+* *伺服器*
++
+指定CIFS伺服器的狀態、伺服器名稱、驗證模式、作用中目錄網域的名稱、以及SMB多通道的狀態。
+
+* *主目錄*
++
+指定主目錄路徑及決定PC使用者名稱如何對應至主目錄項目的樣式。
+
+* *命令按鈕*
++
+** 設定
++
+開啟「CIFS設定精靈」、可讓您在儲存虛擬機器（SVM）上設定CIFS。
+
+** 選項
++
+顯示「CIFS選項」對話方塊、可讓您啟用或停用SMB 3.0簽署、啟用或停用SMB 3.0加密、以及新增Windows網際網路名稱服務（WINS）伺服器。
+
++
+SMB簽章可防止CIFS伺服器與用戶端之間的網路流量受到入侵。
+
+** 刪除
++
+可讓您刪除CIFS伺服器。
+
+** 重新整理
++
+更新視窗中的資訊。
+
+
+
+
+
+
+
+== 網域索引標籤
+
+網域索引標籤可讓您檢視及重設CIFS網域控制器、以及新增或刪除慣用的網域控制器。您也可以使用此索引標籤來管理CIFS群組原則組態。
+
+* *伺服器*
++
+顯示在CIFS型SVM上探索到的驗證伺服器和慣用網域控制器的相關資訊。
+
++
+您也可以重設探索到的伺服器相關資訊、新增慣用的網域控制器、刪除網域控制器、或重新整理網域控制器清單。
+
+* *群組原則*
++
+可讓您檢視、啟用或停用CIFS伺服器上的群組原則組態。如果原則的狀態變更、您也可以重新載入群組原則。
+
+
+
+
+
+== symlinks索引標籤
+
+symlinks（symlinks）索引標籤可讓您管理CIFS使用者的UNIX符號連結對應。
+
+* *路徑對應*
++
+顯示CIFS的符號連結對應清單。
+
+* *命令按鈕*
++
+** 建立
++
+開啟「建立新的symlink路徑對應」對話方塊、可讓您建立UNIX符號連結對應。
+
+** 編輯
++
+開啟「編輯symlink路徑對應」對話方塊、可讓您修改CIFS共用區和路徑。
+
+** 刪除
++
+可讓您刪除符號連結對應。
+
+** 重新整理
++
+更新視窗中的資訊。
+
+
+
+
+
+
+
+== BranchCache索引標籤
+
+在「BranchCache」索引標籤中、您可以設定及管理啟用CIFS的SVM上的「BranchCache」設定。
+
+您可以檢視BranchCache服務的狀態、雜湊存放區的路徑、雜湊存放區的大小、以及作業模式、伺服器金鑰和版本的BranchCache。
+
+* *命令按鈕*
++
+** 設定
++
+開啟「BranchCache設定」對話方塊、可讓您設定CIFS伺服器的BranchCache。
+
+** 編輯
++
+開啟「修改BranchCache設定」對話方塊、可讓您修改BranchCache組態的內容。
+
+** 刪除
++
+可讓您刪除BranchCache組態。
+
+** 重新整理
++
+更新視窗中的資訊。
+
+
+
+
+
+*相關資訊*
+
+xref:task_setting_up_cifs.adoc[設定 CIFS]
+
+xref:task_editing_cifs_general_properties.adoc[編輯CIFS的一般內容]
+
+xref:task_adding_home_directory_paths.adoc[新增主目錄路徑]
+
+xref:task_deleting_home_directory_paths.adoc[正在刪除主目錄路徑]
+
+xref:task_resetting_cifs_domain_controllers.adoc[正在重設CIFS網域控制器]

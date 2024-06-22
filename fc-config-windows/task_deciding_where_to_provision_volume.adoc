@@ -1,0 +1,43 @@
+---
+permalink: fc-config-windows/task_deciding_where_to_provision_volume.html 
+sidebar: sidebar 
+keywords: provision, volume, contain, lun, exist, storage, virtual, machine, svm, exist, decide where to provision the volume 
+summary: 在配置含有LUN的磁碟區之前、您必須先決定是否要將磁碟區新增至現有的儲存虛擬機器、或是為磁碟區建立新的SVM。您可能還需要在現有的SVM上設定FC。 
+---
+= 決定要將磁碟區資源配置到何處
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在配置含有LUN的磁碟區之前、您必須先決定是否要將磁碟區新增至現有的儲存虛擬機器（SVM）、或是為磁碟區建立新的SVM。您可能還需要在現有的SVM上設定FC。
+
+.關於這項工作
+如果現有的SVM已設定所需的傳輸協定、而且有可從主機存取的LIF、則更容易使用現有的SVM。
+
+您可以建立新的SVM、將資料或管理工作與儲存叢集的其他使用者區隔開來。使用獨立的SVM來分隔不同的傳輸協定並無好處。
+
+
+
+== 程序
+
+* 如果您想要在已設定為FC的SVM上配置磁碟區、則必須確認FC服務正在執行、然後在SVM上建立LUN。
++
+link:task_verifying_that_fc_service_is_running_on_existing_svm.html["驗證FC服務是否在現有的SVM上執行"]
+
++
+link:task_creating_lun_its_containing_volume.html["建立 LUN"]
+
+* 如果您想要在已啟用FC但尚未設定的現有SVM上配置磁碟區、請在現有SVM上設定iSCSI。
++
+link:task_configuring_iscsi_fc_creating_lun_on_existing_svm.html["在現有SVM上設定FC"]
+
++
+如果您在設定不同的傳輸協定時未遵循建立SVM的程序、則會出現這種情況。
+
+* 如果您想要在新的SVM上配置磁碟區、請建立SVM。
++
+link:task_creating_svm.html["建立新的SVM"]
+
+

@@ -1,0 +1,37 @@
+---
+permalink: nfs-config/task_configuring_verifying_client_access_new_svm.html 
+sidebar: sidebar 
+keywords: client, access, unix, file, permission, administration, host, add, export, rule, system, manager, user, group, volume, configure, configure and verify nfs client access, create a new nfs-enabled svm 
+summary: 準備好之後、您可以在UNIX管理主機上設定UNIX檔案權限、並在System Manager中新增匯出規則、讓特定用戶端存取共用區。然後您應該測試受影響的使用者或群組是否可以存取該磁碟區。 
+---
+= 設定及驗證NFS用戶端存取（建立新的NFS型SVM）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+準備好之後、您可以在UNIX管理主機上設定UNIX檔案權限、並在System Manager中新增匯出規則、讓特定用戶端存取共用區。然後您應該測試受影響的使用者或群組是否可以存取該磁碟區。
+
+.步驟
+. 決定要授予哪些用戶端和使用者或群組存取該共用區的權限。
+. 在UNIX管理主機上、使用root使用者設定該磁碟區的UNIX擁有權和權限。
+. 在System Manager中、將規則新增至匯出原則、以允許NFS用戶端存取共用區。
++
+.. 選取儲存虛擬機器（SVM）、然後按一下「* SVM設定*」。
+.. 在「*原則*」窗格中、按一下「*匯出原則*」。
+.. 選取與磁碟區名稱相同的匯出原則。
+.. 在*匯出規則*索引標籤中、按一下*新增*、然後指定一組用戶端。
+.. 選擇*規則索引*** 2*、以便此規則在允許存取管理主機的規則之後執行。
+.. 選取 * NFSv3* 。
+.. 指定所需的存取詳細資料、然後按一下*確定。*
++
+您可以輸入子網路、將完整的讀取 / 寫入存取權授予用戶端 `10.1.1.0/24` 作爲 * 客戶端規範 * ，並選中除 * 允許超級用戶訪問 * 之外的所有訪問複選框。
+
++
+image::../media/export_rule_for_clients_nfs_nfs.gif[上述文字說明此螢幕快照。]
+
+
+
+. 在UNIX用戶端上、以目前擁有磁碟區存取權的其中一位使用者身分登入、然後確認您可以掛載磁碟區並建立檔案。
+

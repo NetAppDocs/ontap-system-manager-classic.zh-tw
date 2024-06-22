@@ -1,0 +1,18 @@
+---
+permalink: online-help-96-97/concept_windows.html 
+sidebar: sidebar 
+keywords: system, manager, windows, create, manager, user, account, online, help 
+summary: 您可以使用System Manager來建立及管理Windows群組和使用者帳戶。 
+---
+= Windows
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用System Manager來建立及管理Windows群組和使用者帳戶。
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/smb-admin/index.html["SMB/CIFS管理"]

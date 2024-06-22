@@ -1,0 +1,88 @@
+---
+permalink: online-help-96-97/concept_dns_ddns_services.html 
+sidebar: sidebar 
+keywords: dns, ddns, service, system, manager, manage, online, help, edit, settings, command, button 
+summary: 您可以使用System Manager來管理DNS/DDNS服務。 
+---
+= 使用System Manager（ONTAP 系統管理程式）管理DNS/DDNS服務-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於《支援》9.7及更早版本）來管理DNS/DDNS服務。
+
+
+
+== 啟用或停用 DDNS
+
+您可以使用System Manager在儲存系統上啟用或停用DDNS。
+
+.關於這項工作
+* DNS 預設為啟用。
+* 預設會停用DDNS。
+* System Manager不會對DNS和DDNS設定執行任何驗證檢查。
+
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*服務*窗格中、按一下* DNS/DDNS*。
+. 在「* DNS/DDNS服務*」視窗中、按一下「*編輯*」。
+. 在「*編輯DNS/DDNS設定*」對話方塊中、選取「* DDNS服務*」核取方塊來啟用DDNS。
++
+您可以清除「* DDNS服務*」核取方塊來停用DDNS。
+
+. 按一下「*確定*」。
+
+
+
+
+== 編輯DNS和DDNS設定
+
+您可以使用 DNS 集中維護主機資訊。您可以使用System Manager新增或修改儲存系統的DNS網域名稱。您也可以在儲存系統上啟用DDNS、自動更新DNS伺服器中的名稱伺服器。
+
+.開始之前
+您必須為儲存虛擬機器（SVM）設定CIFS伺服器或Active Directory帳戶、才能確保安全的DDNS正常運作。
+
+.關於這項工作
+System Manager不會對DNS和DDNS設定執行任何驗證檢查。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*服務*窗格中、按一下* DNS/DDNS*。
+. 按一下 * 編輯 * 。
+. 在「* DNS網域和名稱伺服器*」區域中、新增或修改DNS網域名稱和IP位址。
+. 選取「* DDNS服務*」核取方塊以啟用DDNS。
++
+.. 選取「*啟用安全DDNS*」核取方塊以啟用安全DDNS。
+.. 指定DDNS服務的完整網域名稱（FQDN）和即時時間值。
++
+依預設、上線時間設為 24 小時、 FQDN 設為 `SVM name. domain name`。
+
+
+
+. 按一下「*確定*」以儲存您所做的變更。
+
+
+
+
+== DNS/DDNS服務視窗
+
+「DNS/DDNS服務」視窗可讓您檢視及編輯系統目前的DNS和DDNS設定。
+
+
+
+=== 命令按鈕
+
+* *編輯*
++
+開啟「編輯DNS/DDNS設定」對話方塊、您可以使用此對話方塊來新增或修改DNS或DDNS詳細資料。您也可以啟用或停用DDNS。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+

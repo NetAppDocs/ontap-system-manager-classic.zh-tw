@@ -1,0 +1,45 @@
+---
+permalink: expansion/task_configuring_node_details_system_manager.html 
+sidebar: sidebar 
+keywords: system, manager, configure, node, management, lif, service, processor, setting, add, configure the node details in system manager 
+summary: 您可以使用System Manager為新增的節點設定節點管理LIF和服務處理器設定。 
+---
+= 在System Manager中設定節點詳細資料
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用System Manager為新增的節點設定節點管理LIF和服務處理器設定。
+
+.開始之前
+* 在建立LIF的預設IPspace中、必須有足夠數量的連接埠。
+* 所有連接埠都必須正常運作。
+
+
+.步驟
+. 設定節點管理：
++
+.. 在「* IP位址*」欄位中輸入IP位址。
+.. 在「*連接埠*」欄位中選取節點管理連接埠。
+.. 輸入網路遮罩和閘道詳細資料。
+
+
+. 設定服務處理器設定：
++
+.. 選取*置換預設值*核取方塊以置換預設值。
+.. 輸入IP位址、網路遮罩和閘道詳細資料。
+
+
+. 按一下*提交並繼續*以完成節點的網路組態。
+. 驗證「*摘要*」頁面中的節點詳細資料。
+
+
+
+
+== 接下來該怎麼做
+
+* 如果叢集受到保護、您應該在新增的節點中建立所需數量的叢集間生命體、以避免部分對等和不良保護。
+* 如果叢集中已啟用SAN資料傳輸協定、您應該建立所需數量的SAN資料生命量來提供資料。
+

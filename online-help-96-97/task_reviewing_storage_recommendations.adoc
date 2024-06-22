@@ -1,0 +1,34 @@
+---
+permalink: online-help-96-97/task_reviewing_storage_recommendations.html 
+sidebar: sidebar 
+keywords: review, storage, recommendation, window, online, help, create, aggregate 
+summary: 您可以使用「儲存」視窗、檢閱建立Aggregate所提供的儲存建議。 
+---
+= 使用System Manager（ONTAP 系統管理程式）檢閱儲存建議- NetApp®9、7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的儲存視窗來檢閱建立Aggregate所提供的儲存建議（ONTAP 可在更新版本的更新版本中找到）。
+
+.開始之前
+您必須設定叢集、網路及支援詳細資料。
+
+.關於這項工作
+您可以根據儲存建議建立資料集合體、也可以跳過此步驟、稍後使用System Manager建立資料集合體。
+
+
+
+== 程序
+
+* 若要根據儲存建議建立資料集合體、請按一下*提交並繼續*。
+* 若要稍後使用System Manager建立資料集合體、請按一下*跳過此步驟*。
+
+
+
+
+== 接下來該怎麼做
+
+如果您選擇根據儲存建議建立集合體、則必須建立儲存虛擬機器（SVM）、才能繼續進行叢集設定。

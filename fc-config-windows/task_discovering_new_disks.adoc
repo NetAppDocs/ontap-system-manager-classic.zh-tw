@@ -1,0 +1,46 @@
+---
+permalink: fc-config-windows/task_discovering_new_disks.html 
+sidebar: sidebar 
+keywords: lun, storage, virtual, machine, svm, appear, disk, windows, host, automatic, discover, manual, rescan, discover new disk 
+summary: 儲存虛擬機器（SVM）上的LUN會在Windows主機上顯示為磁碟。主機不會自動探索您新增至系統之LUN的任何新磁碟。您必須手動重新掃描磁碟、才能發現這些磁碟。 
+---
+= 探索新磁碟
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+儲存虛擬機器（SVM）上的LUN會在Windows主機上顯示為磁碟。主機不會自動探索您新增至系統之LUN的任何新磁碟。您必須手動重新掃描磁碟、才能發現這些磁碟。
+
+.步驟
+. 開啟Windows電腦管理公用程式：
++
+|===
+| 如果您使用... | 瀏覽至... 
+
+
+ a| 
+Windows Server 2012
+ a| 
+*工具*>*電腦管理*
+
+
+
+ a| 
+Windows Server 2008
+ a| 
+*開始*>*系統管理工具*>*電腦管理*
+
+
+
+ a| 
+Windows Server 2016
+ a| 
+*開始***>系統管理工具**>電腦管理*
+
+|===
+. 展開導覽樹狀結構中的* Storage*節點。
+. 按一下*磁碟管理*。
+. 按一下「*行動*」>「*重新掃描磁碟*」。
+

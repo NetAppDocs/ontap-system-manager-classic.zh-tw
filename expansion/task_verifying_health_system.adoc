@@ -1,0 +1,66 @@
+---
+permalink: expansion/task_verifying_health_system.html 
+sidebar: sidebar 
+keywords: expand, cluster, verify, component, healthy, config, advisor, tool, run, ontap, cli, command, verify the health of the system 
+summary: 在您擴充叢集之前、必須先執行Config Advisor 幾ONTAP 個指令、並執行多方面的指令、以驗證叢集的所有元件是否正常運作。 
+---
+= 驗證系統的健全狀況
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在您擴充叢集之前、必須先執行Config Advisor 幾ONTAP 個指令、並執行多方面的指令、以驗證叢集的所有元件是否正常運作。
+
+.步驟
+. 確認您擁有Config Advisor 最新版的更新版本的資訊：
++
+** 如果Config Advisor 您的筆記型電腦上沒有任何更新、請下載。
++
+https://mysupport.netapp.com/site/tools/tool-eula/activeiq-configadvisor["NetApp下載Config Advisor"]
+
+** 如果您有Config Advisor 這個功能、請啟動它、按一下「*說明*>*檢查更新*」、然後視需要依照提示進行升級。
++
+[NOTE]
+====
+請勿在升級期間解除安裝舊版工具或刪除資料夾。此工具會解除安裝舊版、並以最新版本取代舊版。它會將資料資料夾重新命名為最新的資料夾、並保留資料夾中的所有內容。
+
+====
+
+
+. 執行Config Advisor 下列項目來驗證纜線和組態：
++
+.. 將筆記型電腦連線至叢集的管理網路。
+.. 按一下「*收集資料*」。
++
+顯示任何發現的問題。Config Advisor
+
+.. 如果發現問題、請加以修正、然後再次執行工具。
+
+
+. 使用下列命令檢查系統的健全狀況：
++
+.. 使用驗證叢集是否處於正常狀態 `system health status show` 命令並驗證狀態 `ok`。
++
+[listing]
+----
+cluster1::> system health status show
+Status
+---------------
+ok
+----
+.. 使用確認叢集中的所有節點都處於正常狀態 `cluster show` 命令並驗證每個節點的健全狀況 `true`。
++
+[listing]
+----
+cluster1::> cluster show
+Node                  Health  Eligibility
+--------------------- ------- ------------
+cluster1-1            true    true
+cluster1-2            true    true
+2 entries were displayed.
+----
+
+
+

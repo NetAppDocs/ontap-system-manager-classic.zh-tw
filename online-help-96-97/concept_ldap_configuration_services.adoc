@@ -1,0 +1,94 @@
+---
+permalink: online-help-96-97/concept_ldap_configuration_services.html 
+sidebar: sidebar 
+keywords: ldap, configuration, service, system, manager, online, help, storage, virtual, machine, ldap, client, window 
+summary: 您可以使用System Manager來管理LDAP組態。 
+---
+= 使用System Manager（ONTAP 系統管理程式）管理LDAP組態-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來管理LDAP組態。
+
+
+
+== 編輯作用中的LDAP用戶端
+
+您可以使用System Manager將作用中的LDAP用戶端與儲存虛擬機器（SVM）建立關聯、以便使用LDAP做為名稱服務或名稱對應。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在「*服務*」窗格中、按一下「* LDAP組態*」。
+. 在「* LDAP組態*」視窗中、按一下「*編輯*」。
+. 在「*作用中LDAP用戶端*」對話方塊中、選取您要編輯的LDAP用戶端、然後執行下列動作：
++
+** 修改Active Directory網域伺服器。
+** 修改偏好的Active Directory伺服器。
+
+
+. 按一下「*確定*」。
+. 驗證您所做的變更是否已在「* LDAP組態*」視窗中更新。
+
+
+
+
+== 刪除作用中的LDAP用戶端
+
+當您不想讓儲存虛擬機器（SVM）與其相關聯時、可以使用System Manager刪除作用中的LDAP用戶端。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 按一下「* SVM設定*」索引標籤。
+. 在「*服務*」窗格中、按一下「* LDAP組態*」。
+. 按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+
+
+
+
+== LDAP組態視窗
+
+您可以使用「LDAP組態」視窗來編輯或刪除儲存虛擬機器（SVM）層級的作用中LDAP用戶端。
+
+
+
+=== 命令按鈕
+
+* *編輯*
++
+開啟Active LDAP用戶端對話方塊、可讓您編輯Active LDAP用戶端的內容、例如Active Directory網域伺服器和慣用的Active Directory伺服器。
+
+* *刪除*
++
+開啟「刪除作用中LDAP用戶端」對話方塊、可讓您刪除作用中的LDAP用戶端。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+=== LDAP組態區域
+
+顯示使用中LDAP用戶端的詳細資料。
+
+* * LDAP用戶端名稱*
++
+顯示作用中LDAP用戶端的名稱。
+
+* * Active Directory網域伺服器*
++
+顯示作用中LDAP用戶端的Active Directory網域。
+
+* *偏好的Active Directory伺服器*
++
+顯示作用中LDAP用戶端的慣用Active Directory伺服器。
+
+

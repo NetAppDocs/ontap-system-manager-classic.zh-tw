@@ -1,0 +1,50 @@
+---
+section: nfs-config
+title: NFS 組態
+entries:
+- title: 總覽
+  url: "/nfs-config/index.html"
+- title: NFS組態工作流程
+  url: "/nfs-config/concept_cifs_nfs_configuration_workflow.html"
+  entries:
+  - title: 建立Aggregate
+    url: "/nfs-config/task_creating_aggregate.html"
+  - title: 決定新磁碟區的資源配置位置
+    url: "/nfs-config/task_deciding_where_to_provision_new_volume.html"
+- title: 建立新的NFS型SVM
+  url: "/nfs-config/task_creating_protocol_enabled_svm.html"
+  entries:
+  - title: 使用NFS磁碟區建立新的SVM並匯出
+    url: "/nfs-config/task_creating_new_svm.html"
+  - title: 開啟SVM根磁碟區的匯出原則（建立新的NFS型SVM）
+    url: "/nfs-config/task_opening_export_policy_svm_root_volume.html"
+  - title: 設定LDAP（建立新的NFS型SVM）
+    url: "/nfs-config/task_configuring_ldap_new_svm.html"
+  - title: 從UNIX管理主機驗證NFS存取
+    url: "/nfs-config/task_verifying_nfs_access_from_unix_administration_host.html"
+  - title: 設定及驗證NFS用戶端存取（建立新的NFS型SVM）
+    url: "/nfs-config/task_configuring_verifying_client_access_new_svm.html"
+- title: 設定NFS對現有SVM的存取
+  url: "/nfs-config/task_configuring_access_to_existing_svm.html"
+  entries:
+  - title: 新增NFS存取至現有SVM
+    url: "/nfs-config/concept_adding_nas_access_to_existing_svm.html"
+  - title: 開啟SVM根磁碟區的匯出原則（設定現有SVM的NFS存取）
+    url: "/nfs-config/task_opening_export_policy_svm_root_volume_existing_svm.html"
+  - title: 設定LDAP（設定現有SVM的NFS存取）
+    url: "/nfs-config/task_configuring_ldap_existing_svm.html"
+  - title: 從UNIX管理主機驗證NFS存取
+    url: "/nfs-config/task_verifying_nfs_access_from_unix_administration_host.html"
+  - title: 設定及驗證NFS用戶端存取（設定現有SVM的NFS存取）
+    url: "/nfs-config/task_configuring_verifying_client_access_add_nfs_existing_svm.html"
+- title: 將NFS磁碟區新增至啟用NFS的SVM
+  url: "/nfs-config/concept_adding_protocol_volume_to_protocol_enabled_svm.html"
+  entries:
+  - title: 建立及設定磁碟區
+    url: "/nfs-config/task_creating_configuring_volume.html"
+  - title: 為磁碟區建立匯出原則
+    url: "/nfs-config/task_creating_export_policy_for_volume.html"
+  - title: 從UNIX管理主機驗證NFS存取
+    url: "/nfs-config/task_verifying_nfs_access_from_unix_administration_host.html"
+  - title: 設定及驗證NFS用戶端存取（將NFS磁碟區新增至啟用NFS的SVM）
+    url: "/nfs-config/task_configuring_verifying_client_access_add_vol_existing_nfs_svm.html"

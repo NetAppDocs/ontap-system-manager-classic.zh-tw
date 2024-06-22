@@ -1,0 +1,155 @@
+---
+permalink: online-help-96-97/concept_snmp.html 
+sidebar: sidebar 
+keywords: system, manager, configure, snmp, svm, cluster, online, help, test, trap, host, configuration, window, command, protocol, 
+summary: 您可以使用System Manager來設定SNMP、以監控叢集中的SVM。 
+---
+= 使用System Manager（ONTAP 系統管理程式）設定SNMP -更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版功能（ONTAP 僅適用於更新版本的版本）來設定SNMP、以監控叢集中的SVM。
+
+
+
+== 啟用或停用 SNMP
+
+您可以使用System Manager在叢集上啟用或停用SNMP。SNMP可讓您監控叢集中的儲存虛擬機器（SVM）、避免問題發生、並防止問題發生。
+
+.步驟
+. 按一下*image:../media/nas_bridge_202_icon_settings_olh_96_97.gif[""]*。
+. 在*設定*窗格中、按一下* SNMP *。
+. 在「* SNMP *」視窗中、按一下「*啟用*」或「*停用*」。
+
+
+
+
+== 編輯SNMP資訊
+
+您可以使用System Manager中的Edit SNMP Settings（編輯SNMP設定）對話方塊來更新儲存系統位置和聯絡人的相關資訊、以及指定系統的SNMP社群。
+
+.關於這項工作
+System Manager使用SNMP傳輸協定SNMP v1和SNMP v2c以及SNMP社群來探索儲存系統。
+
+.步驟
+. 按一下*image:../media/nas_bridge_202_icon_settings_olh_96_97.gif[""]*。
+. 在*設定*窗格中、按一下* SNMP *。
+. 按一下 * 編輯 * 。
+. 在「*一般*」索引標籤中、指定儲存系統和SNMP社群的聯絡人資訊和位置資訊。
++
+社群名稱可包含32個字元、且不得包含下列特殊字元：、/："|。
+
+. 在「**v3」索引標籤中、執行下列動作：
++
+.. 按一下「*新增*」以新增v3使用者。
+.. 如有需要、請指定使用者名稱並修改引擎ID。
+.. 選取*驗證傳輸協定*並輸入您的認證資料。
+.. 選取*隱私權傳輸協定*並輸入您的認證資料。
+.. 按一下「*確定*」以儲存變更。
+
+
+. 按一下「*確定*」。
+. 驗證您在「* SNMP *」視窗中對SNMP設定所做的變更。
+
+
+
+
+== 啟用或停用SNMP設陷
+
+SNMP設陷可讓您監控儲存系統各元件的健全狀況和狀態。您可以使用System Manager中的Edit SNMP Settings（編輯SNMP設定）對話方塊、在儲存系統上啟用或停用SNMP設陷。
+
+.關於這項工作
+雖然SNMP預設為啟用、但SNMP設陷預設為停用。
+
+.步驟
+. 按一下*image:../media/nas_bridge_202_icon_settings_olh_96_97.gif[""]*。
+. 在*設定*窗格中、按一下* SNMP *。
+. 在「* SNMP *」視窗中、按一下「*編輯*」。
+. 在「*編輯SNMP設定*」對話方塊中、選取「*設陷主機*」索引標籤、然後選取或清除「*啟用設陷*」核取方塊、分別啟用或停用SNMP設陷。
+. 如果啟用SNMP設陷、請新增設陷傳送到的主機名稱或IP位址。
+. 按一下「*確定*」。
+
+
+
+
+== 測試設陷主機組態
+
+您可以使用System Manager來測試是否已正確設定設陷主機設定。
+
+.步驟
+. 按一下*image:../media/nas_bridge_202_icon_settings_olh_96_97.gif[""]*。
+. 在*設定*窗格中、按一下* SNMP *。
+. 在「* SNMP *」視窗中、按一下「*測試設陷主機*」。
+. 按一下「*確定*」。
+
+
+
+
+== SNMP 視窗
+
+SNMP視窗可讓您檢視系統目前的SNMP設定。您也可以變更系統的SNMP設定、啟用SNMP傳輸協定、以及新增設陷主機。
+
+
+
+=== 命令按鈕
+
+* *啟用/停用*
++
+啟用或停用SNMP。
+
+* *編輯*
++
+開啟「編輯SNMP設定」對話方塊、可讓您指定儲存系統的SNMP社群、以及啟用或停用設陷。
+
+* *測試設陷主機*
++
+傳送測試設陷到所有已設定的主機、檢查測試設陷是否到達所有主機、以及SNMP的組態設定是否正確。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+=== 詳細資料
+
+詳細資料區域會顯示下列有關儲存系統SNMP伺服器和主機設陷的資訊：
+
+* * SNMP *
++
+顯示是否已啟用SNMP。
+
+* *陷阱*
++
+顯示是否已啟用SNMP設陷。
+
+* *位置*
++
+顯示SNMP伺服器的位址。
+
+* *聯絡人*
++
+顯示SNMP伺服器的聯絡詳細資料。
+
+* *設陷主機IP位址*
++
+顯示陷阱主機的IP位址。
+
+* *社群名稱*
++
+顯示SNMP伺服器的社群名稱。
+
+* *安全名稱*
++
+顯示SNMP伺服器的安全樣式。
+
+
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理"]

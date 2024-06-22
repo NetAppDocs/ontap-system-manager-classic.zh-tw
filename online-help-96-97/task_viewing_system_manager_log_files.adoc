@@ -1,0 +1,56 @@
+---
+permalink: online-help-96-97/task_viewing_system_manager_log_files.html 
+sidebar: sidebar 
+keywords: view, ontap, system, manager, log, file, online, help 
+summary: 如果您在使用System Manager時遇到任何問題、可以將記錄檔傳送給技術支援部門、以協助疑難排解問題。System Manager記錄檔與ONTAP 還原記錄檔位於mlog目錄中。 
+---
+= 檢視System Manager記錄檔- ONTAP 不包括更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您在使用ONTAP 經典版的《支援》時遇到任何問題（ONTAP 適用於VMware 9.7及更早版本）、您可以傳送記錄檔來協助疑難排解問題（如NetApp Support所指示）。System Manager 記錄檔位於 `mlog` 目錄和 ONTAP 記錄檔。
+
+.步驟
+. 識別裝載叢集管理LIF的節點。
+. 在網頁瀏覽器中輸入下列 URL ： `+https://cluster-mgmt-LIF/spi+`
++
+`cluster-mgmt-LIF` 是叢集管理 LIF 的 IP 位址。
+
+. 輸入叢集管理員認證資料、然後按一下「*確定*」。
+. 在「* Data ONTAP Sfor - Root Volume File Access *」（*更新-根磁碟區檔案存取*）視窗中、按一下裝載叢集管理LIF之節點的* logs*連結。
+. 瀏覽至 `mlog` 存取 System Manager 記錄檔的目錄。
++
+您可能需要下列記錄檔、視遇到的問題類型而定：
+
++
+** `sysmgr.log`
++
+此檔案包含System Manager的最新記錄。
+
+** `mgwd.log`
+** `php.log`
+** `apache_access.log`
+** `messages.log`
+
+
+
+
+
+
+== 系統記錄的運作方式
+
+系統記錄是應用程式疑難排解的重要工具。您應該啟用系統記錄、以便在應用程式發生問題時、找出問題所在。您可以在執行階段啟用System Manager記錄、而不需修改應用程式二進位檔。
+
+記錄輸出可能會大量、因此可能難以管理。System Manager可讓您選取要輸出的記錄陳述式類型、以精簡記錄輸出。根據預設、系統記錄會設為資訊。您可以選擇下列其中一個記錄層級：
+
+* 關
+* 錯誤
+* 警告
+* 資訊
+* 偵錯
+
+
+這些層級會階層式運作。記錄層級設為「Off（關閉）」表示未記錄訊息。

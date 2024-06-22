@@ -1,0 +1,52 @@
+---
+permalink: volume-backup-snapvault/task_verify_cluster_peer_relationship.html 
+sidebar: sidebar 
+keywords: set, up, volume, data, protection, snapvault, technology, verify, source, cluster, communicate, communicating, peer, relationship, svm, verify cluster peer relationship and svm peer relationship 
+summary: 在使用SnapVault 支援技術設定磁碟區以進行資料保護之前、您必須先確認來源叢集和目的地叢集已連接、並透過對等關係彼此通訊。您也必須驗證來源SVM和目的地SVM是否已連接、並透過對等關係彼此通訊。 
+---
+= 驗證叢集對等關係和SVM對等關係
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在使用SnapVault 支援技術設定磁碟區以進行資料保護之前、您必須先確認來源叢集和目的地叢集已連接、並透過對等關係彼此通訊。您也必須驗證來源SVM和目的地SVM是否已連接、並透過對等關係彼此通訊。
+
+.關於這項工作
+您必須從*來源*叢集執行此工作。
+
+
+
+== 程序
+
+* 如果您執行ONTAP 的是版本不含更新版本的版本、請執行下列步驟來驗證叢集對等關係和SVM對等關係：
++
+.. 按一下*組態*>*叢集對等端點*。
+.. 驗證連接的叢集是否已通過驗證且可供使用。
++
+image::../media/cluster_pper_930_backup.gif[叢集式pper 930備份]
+
+.. 按一下「*組態*>* SVM對等端點*」。
+.. 確認目的地SVM已與來源SVM連接。
+
+
+* 如果您執行ONTAP 的是Sf2 9.2或更早版本、請執行下列步驟來驗證叢集對等關係和SVM對等關係：
++
+.. 按一下「*組態*」索引標籤。
+.. 在*叢集詳細資料*窗格中、按一下*叢集對等端點*。
+.. 驗證連接的叢集是否已通過驗證且可供使用。
++
+image::../media/cluster_peer_health_backup.gif[叢集對等健全狀況備份]
+
+.. 按一下「* SVMS*」索引標籤、然後選取來源SVM。
+.. 在*對等儲存虛擬機器*區域中、確認目的地SVM已與來源SVM連接。
++
+如果您在這個區域沒有看到任何已處理的SVM、您可以在建立SnapVault 該SVM關係時建立SVM對等關係。
+
+
+
++
+xref:task_creating_snapvault_relationship_92_earlier.adoc[建立SnapVault 不二關係ONTAP （例如、0、2、2或更早版本）]
+
+

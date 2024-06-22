@@ -1,0 +1,19 @@
+---
+permalink: peering/concept_cluster_peering_workflow.html 
+sidebar: sidebar 
+keywords: set, relationship, cluster, peer, creating, create, intercluster, logical, interface, lif, relationship, svm, cluster and svm peering workflow 
+summary: 建立對等關係包括準備每個叢集進行對等作業、在每個叢集的每個節點上建立叢集間邏輯介面（lifs）、設定叢集對等關係、然後設定SVM對等關係。 
+---
+= 叢集與SVM對等工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 搭載ONTAP 更新版本的《不實系統管理程式》（NetApp）來建立對等關係。
+建立對等關係包括準備每個叢集進行對等作業、在每個叢集的每個節點上建立叢集間邏輯介面（lifs）、設定叢集對等關係、然後設定SVM對等關係。
+
+image::../media/cluster_peering_workflow.gif[相關文字會說明影像]
+
+如果您執行ONTAP 的是版本號為2、2或更早的版本、則會建立SVM對等關係、同時在來源Volume與目的地Volume之間建立資料保護關係。

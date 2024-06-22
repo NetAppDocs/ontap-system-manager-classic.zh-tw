@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_resetting_cifs_domain_controllers.html 
+sidebar: sidebar 
+keywords: reset, cifs, domain, controller, system, manager, online, help 
+summary: 您可以使用System Manager重設指定網域之網域控制器的CIFS連線。如果無法重設網域控制器資訊、可能會導致連線失敗。 
+---
+= 使用System Manager重設CIFS網域控制器- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來重設指定網域的網域控制器CIFS連線。如果無法重設網域控制器資訊、可能會導致連線失敗。
+
+.關於這項工作
+您必須在新增或刪除慣用網域控制器清單中的網域之後、更新儲存系統可用網域控制器的探索資訊。您可以ONTAP 透過命令列介面（CLI）更新位於BIOS中的儲存系統可用網域控制器探索資訊。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*網域*索引標籤中、按一下*重設*。
+
+
+*相關資訊*
+
+xref:reference_cifs_window.adoc[CIFS 視窗]

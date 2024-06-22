@@ -1,0 +1,151 @@
+---
+permalink: online-help-96-97/concept_ldap_client_services.html 
+sidebar: sidebar 
+keywords: ldap, client, service, system, manager, add, edit, delete, client, configuration, online, help, cluster, level, storage, virtual, machine, 
+summary: 您可以使用System Manager新增、編輯及刪除LDAP用戶端組態。 
+---
+= 使用System Manager設定LDAP用戶端服務ONTAP -支援更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來新增、編輯及刪除LDAP用戶端組態。
+
+
+
+== 新增LDAP用戶端組態
+
+若要使用LDAP服務、您可以使用System Manager在叢集層級或儲存虛擬機器（SVM）層級新增LDAP用戶端組態。您必須先設定LDAP用戶端、才能使用LDAP服務。
+
+.關於這項工作
+在SVM層級、您只能為選取的SVM新增LDAP用戶端。
+
+.步驟
+. 使用下列其中一種方法新增LDAP用戶端組態：
++
+** 叢集層級：按一下*image:../media/advanced_options.gif[""]*>* LDAP*。
+** SVM層級：按一下* SVM*>* SVM設定*>* LDAP Client*。
+
+
+. 按一下「 * 新增 * 」。
+. 輸入LDAP用戶端的名稱。
+. 新增Active Directory網域或LDAP伺服器。
+. 按一下 image:../media/advanced_options.gif[""] （進階選項）、選取*架構*、然後按一下*套用*。
+. 指定*基礎DN*和* TCP連接埠*。
+. 按一下* Binding *、然後指定驗證詳細資料。
+. 按一下*儲存並關閉*。
+. 確認已顯示您新增的LDAP用戶端。
+
+
+
+
+== 刪除LDAP用戶端組態
+
+您可以使用System Manager刪除叢集層級或儲存虛擬機器（SVM）層級的LDAP用戶端組態。
+
+.關於這項工作
+在SVM層級、您只能刪除所選SVM的LDAP用戶端。
+
+.步驟
+. 若要刪除LDAP用戶端組態：
++
+** 叢集層級：按一下*image:../media/advanced_options.gif[""]*>* LDAP*。
+** SVM層級：按一下* SVM*>* SVM設定*>* LDAP Client*。
+
+
+. 選取您要刪除的LDAP用戶端、然後按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+. 確認您刪除的LDAP用戶端不再顯示。
+
+
+
+
+== 編輯LDAP用戶端組態
+
+您可以使用System Manager編輯叢集層級或儲存虛擬機器（SVM）層級的LDAP用戶端組態。
+
+.關於這項工作
+在SVM層級、您只能編輯所選SVM的LDAP用戶端。
+
+.步驟
+. 若要編輯LDAP用戶端組態：
++
+** 叢集層級：按一下*image:../media/advanced_options.gif[""]*>* LDAP*。
+** SVM層級：按一下* SVM*>* SVM設定*>* LDAP Client*。
+
+
+. 選取您要修改的LDAP用戶端、然後按一下*編輯*。
+. 在*編輯LDAP Client*對話方塊中、視需要編輯LDAP用戶端組態。
+. 按一下*儲存並關閉*。
+. 確認已顯示您對LDAP用戶端組態所做的變更。
+
+
+
+
+== LDAP用戶端視窗
+
+您可以使用LDAP用戶端視窗建立LDAP用戶端、以便在儲存虛擬機器（SVM）層級的NFS與CIFS之間進行使用者驗證、檔案存取授權、使用者搜尋及對應服務。
+
+
+
+=== 命令按鈕
+
+* *新增*
++
+開啟「建立LDAP用戶端」對話方塊、可讓您建立及設定LDAP用戶端。
+
+* *編輯*
++
+開啟「編輯LDAP用戶端」對話方塊、可讓您編輯LDAP用戶端組態。您也可以編輯作用中的LDAP用戶端。
+
+* *刪除*
++
+開啟「刪除LDAP用戶端」對話方塊、可讓您刪除LDAP用戶端組態。您也可以刪除作用中的LDAP用戶端。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+=== LDAP用戶端清單
+
+顯示（表格格式）LDAP用戶端的詳細資料。
+
+* * LDAP用戶端組態*
++
+顯示您指定的LDAP用戶端組態名稱。
+
+* *儲存虛擬機器*
++
+顯示每個LDAP用戶端組態的SVM名稱。
+
+* *架構*
++
+顯示每個LDAP用戶端的架構。
+
+* *最小綁定層級*
++
+顯示每個LDAP用戶端的最小繫結層級。
+
+* * Active Directory網域*
++
+顯示每個LDAP用戶端組態的Active Directory網域。
+
+* * LDAP 伺服器 *
++
+顯示每個LDAP用戶端組態的LDAP伺服器。
+
+* *偏好的Active Directory伺服器*
++
+顯示每個LDAP用戶端組態的慣用Active Directory伺服器。
+
+
+
+*相關資訊*
+
+xref:concept_ldap.adoc[LDAP]

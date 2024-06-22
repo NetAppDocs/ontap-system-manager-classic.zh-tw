@@ -1,0 +1,46 @@
+---
+section: smb-config
+title: SMB/CIFS組態
+entries:
+- title: 總覽
+  url: "/smb-config/index.html"
+- title: SMB/CIFS組態工作流程
+  url: "/smb-config/concept_cifs_nfs_configuration_workflow.html"
+  entries:
+  - title: 建立Aggregate
+    url: "/smb-config/task_creating_aggregate.html"
+  - title: 決定新磁碟區的資源配置位置
+    url: "/smb-config/task_deciding_where_to_provision_new_volume.html"
+- title: 建立新的啟用 CIFS 的 SVM
+  url: "/smb-config/task_creating_protocol_enabled_svm.html"
+  entries:
+  - title: 使用CIFS磁碟區和共用區建立新的SVM
+    url: "/smb-config/task_creating_new_svm.html"
+  - title: 對應DNS伺服器上的SMB伺服器
+    url: "/smb-config/task_mapping_smb_server_dns_server.html"
+  - title: 驗證SMB用戶端存取
+    url: "/smb-config/task_verifying_smb_client_access.html"
+  - title: 設定及驗證CIFS用戶端存取
+    url: "/smb-config/task_configuring_verifying_client_access.html"
+- title: 設定對現有SVM的SMB/CIFS存取
+  url: "/smb-config/task_configuring_access_to_existing_svm.html"
+  entries:
+  - title: 將 CIFS 存取權新增至現有的 SVM
+    url: "/smb-config/concept_adding_nas_access_to_existing_svm.html"
+  - title: 對應DNS伺服器上的SMB伺服器
+    url: "/smb-config/task_mapping_smb_server_dns_server.html"
+  - title: 驗證SMB用戶端存取
+    url: "/smb-config/task_verifying_smb_client_access.html"
+  - title: 設定及驗證CIFS用戶端存取
+    url: "/smb-config/task_configuring_verifying_client_access.html"
+- title: 將CIFS磁碟區新增至啟用CIFS的SVM
+  url: "/smb-config/concept_adding_protocol_volume_to_protocol_enabled_svm.html"
+  entries:
+  - title: 建立及設定磁碟區
+    url: "/smb-config/task_creating_configuring_volume.html"
+  - title: 建立共用區並設定其權限
+    url: "/smb-config/task_creating_share_setting_its_permissions.html"
+  - title: 驗證SMB用戶端存取
+    url: "/smb-config/task_verifying_smb_client_access.html"
+  - title: 設定及驗證CIFS用戶端存取
+    url: "/smb-config/task_configuring_verifying_client_access.html"

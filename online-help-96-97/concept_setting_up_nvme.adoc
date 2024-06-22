@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/concept_setting_up_nvme.html 
+sidebar: sidebar 
+keywords: NVMe, protocol, online, help, svm, system, manager, namespace, host, subsystem 
+summary: 您可以使用System Manager設定SVM的NVMe傳輸協定。在SVM上啟用NVMe傳輸協定時、您可以配置命名空間或命名空間、然後將它們指派給主機和子系統。 
+---
+= 使用System Manager設定NVMe - ONTAP 支援升級至更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於《支援》9.7及更早版本）來設定SVM的NVMe傳輸協定。在SVM上啟用NVMe傳輸協定時、您可以配置命名空間或命名空間、然後將它們指派給主機和子系統。
+
+從ONTAP 使用支援NVMe 9.5開始、您必須針對使用NVMe傳輸協定的HA配對中的每個節點、至少設定一個NVMe LIF。您也可以定義每個節點最多兩個NVMe LIF。您可以在使用System Manager建立或編輯SVM設定時、設定NVMe LIF。
+
+下圖顯示設定NVMe的工作流程：
+
+image::../media/nvme_setup_workflow.gif[NVMe設定工作流程]

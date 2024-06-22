@@ -1,0 +1,96 @@
+---
+permalink: online-help-96-97/concept_fc_fcoe_protocol.html 
+sidebar: sidebar 
+keywords: system, manager, configure, fc, fcoe, protocol, online, help, change, node, name, fibre, channel, san, start, stop 
+summary: 您可以使用System Manager來設定FC/FCoE傳輸協定。 
+---
+= 使用System Manager（ONTAP 系統管理程式）設定FC/FCoE傳輸協定-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《支援靜態系統管理程式》ONTAP （僅適用於更新版本的版本）來設定FC/FCoE傳輸協定。
+
+
+
+== 啟動或停止FC或FCoE服務
+
+FC服務可讓您管理FC目標介面卡、以便與LUN搭配使用。您可以使用System Manager啟動FC服務、使介面卡上線、並啟用對儲存系統LUN的存取。您可以停止FC服務、使FC介面卡離線、並停用LUN存取。
+
+.開始之前
+* 必須安裝FC授權。
+* 目標儲存系統中必須有FC介面卡。
+
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*傳輸協定*窗格中、按一下* FC/FCoF*。
+. 視需要按一下* Start*或* Stop *。
+
+
+
+
+== 變更FC或FCoE節點名稱
+
+如果您更換儲存系統機箱並在同一個光纖通道SAN中重複使用、在某些情況下、所更換儲存系統的節點名稱可能會重複。您可以使用System Manager變更儲存系統的節點名稱。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取SVM、然後按一下* SVM設定*。
+. 在*傳輸協定*窗格中、按一下* FC/FCoF*。
+. 按一下 * 編輯 * 。
+. 輸入新名稱、然後按一下「*確定*」。
+
+
+
+
+== FCoE傳輸協定
+
+乙太網路光纖通道（FCoE）是將主機連線至儲存系統的新模式。如同傳統的FC傳輸協定、FCoE可維持現有的FC管理與控制、但會使用10-Gigabit乙太網路做為硬體傳輸。
+
+設定FCoE連線時、主機中需要一個或多個支援的整合式網路介面卡（CNA）、並連接到支援的資料中心橋接（DCB）乙太網路交換器。CNA是一個整合點、有效地同時做為HBA和乙太網路介面卡。
+
+一般而言、您可以使用傳統FC連線的相同方式來設定及使用FCoE連線。
+
+
+
+== FC/FCoE所需時間
+
+您可以使用FC/FCoE視窗來啟動或停止FC服務。
+
+
+
+=== 命令按鈕
+
+* *編輯*
++
+開啟「編輯節點名稱」對話方塊、可讓您變更FC或FCoE節點名稱。
+
+* *開始*
++
+啟動FC/FCoE服務。
+
+* *停止*
++
+停止FC/FCoE服務。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+=== FC/FCoE詳細資料
+
+詳細資料區域會顯示FC/FCoE服務狀態、節點名稱及FC/FCoE介面卡的相關資訊。
+
+*相關資訊*
+
+xref:task_configuring_fc_fcoe_protocol_on_svms.adoc[在SVM上設定FC傳輸協定和FCoE傳輸協定]
+
+https://docs.netapp.com/us-en/ontap/san-admin/index.html["SAN管理"^]

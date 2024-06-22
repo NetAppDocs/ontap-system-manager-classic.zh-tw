@@ -1,0 +1,69 @@
+---
+permalink: online-help-96-97/concept_setting_up_network.html 
+sidebar: sidebar 
+keywords: online, help, set, up, network, ipspace, broadcast, domain, subnet, system, manager, cluster, range 
+summary: 設定網路包括建立IPspaces、廣播網域和子網路。 
+---
+= 使用System Manager（ONTAP 系統管理程式）設定網路-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來設定網路。設定網路包括建立IPspaces、廣播網域和子網路。
+
+
+
+== 建立IPspaces
+
+您可以使用System Manager來建立IPspace、設定單ONTAP 一的一套叢集、以便從多個管理性獨立的網路網域存取用戶端、即使用戶端使用相同的IP位址子網路範圍也沒問題。這可讓您分隔用戶端流量、以確保隱私與安全。
+
+.關於這項工作
+所有IPspace名稱在叢集內必須是唯一的、且不得由系統保留的名稱組成、例如「'local'」或「'localhost'」。
+
+.步驟
+. 按一下*網路*索引標籤。
+. 在「* IPspaces *」索引標籤中、按一下「* Create *」（*建立*）。
+. 在「*建立IPspaces *」對話方塊中、指定您要建立的IPspace名稱。
+. 按一下「 * 建立 * 」。
+
+
+
+
+== 建立廣播網域
+
+您可以使用System Manager建立廣播網域、以提供電腦網路的邏輯區隔。在廣播網域中、所有相關節點都可透過資料鏈結層的廣播來到達
+
+.步驟
+. 按一下*網路*索引標籤。
+. 在*廣播網域*索引標籤中、按一下*建立*。
+. 在「*建立廣播網域*」對話方塊中、為您要建立的廣播網域指定名稱、MTU大小、IPspace和連接埠。
+. 按一下「 * 建立 * 」。
+
+
+
+
+== 建立子網路
+
+您可以使用System Manager建立子網路、以提供IP網路的邏輯子區、以便預先配置IP位址。子網路可讓您更輕鬆地建立介面、方法是為每個新介面指定子網路、而非IP位址和網路遮罩值。
+
+.開始之前
+您必須已建立使用子網路的廣播網域。
+
+.關於這項工作
+如果您在建立子網路時指定閘道、當使用該子網路建立LIF時、會自動將通往閘道的預設路由新增至SVM。
+
+.步驟
+. 按一下*網路*索引標籤。
+. 在「*子網路*」索引標籤中、按一下「*建立*」。
+. 在「*建立子網路*」對話方塊中、指定子網路詳細資料、例如名稱、子網路IP位址或子網路遮罩、IP位址範圍、閘道位址和廣播網域。
++
+您可以將IP位址指定為一個範圍、以逗號分隔的多個位址、或兩者混合使用。
+
+. 按一下「 * 建立 * 」。
+
+
+*相關資訊*
+
+xref:reference_network_window.adoc[網路視窗]

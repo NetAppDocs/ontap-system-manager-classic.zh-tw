@@ -1,0 +1,36 @@
+---
+permalink: fc-config-rhel/task_installing_hba_utility_from_hba_vendor.html 
+sidebar: sidebar 
+keywords: hba, utility, enable, view, worldwide, port, name, wwpn, fc, port, troubleshoot, issue, install the hba utility from the hba vendor 
+summary: HBA公用程式可讓您檢視每個FC連接埠的全球連接埠名稱（WWPN）。此公用程式也有助於疑難排解FC問題。 
+---
+= 從HBA廠商安裝HBA公用程式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+HBA公用程式可讓您檢視每個FC連接埠的全球連接埠名稱（WWPN）。此公用程式也有助於疑難排解FC問題。
+
+.關於這項工作
+每家HBA廠商都會為其FC HBA提供HBA公用程式。您必須為主機作業系統和CPU下載正確版本。
+
+以下是HBA公用程式的部分清單：
+
+* Emulex HBA Manager（前身為OneCommand Manager）、適用於Emulex HBA
+* 適用於QLogic HBA的QLogic QConvertgeConsole
+
+
+.步驟
+. 請從HBA廠商的網站下載適當的公用程式。
+. 執行安裝程式、並依照提示完成安裝。
+
+
+*相關資訊*
+
+https://www.broadcom.com/support/download-search?tab=search["Broadcom（Emulex）支援文件與下載"]
+
+https://www.broadcom.com/products/storage/fibre-channel-host-bus-adapters/emulex-hba-manager["Emulex HBA管理程式"]
+
+http://driverdownloads.qlogic.com/QLogicDriverDownloads_UI/OEM_Product_List.aspx?oemid=372["QLogic：NetApp下載"]

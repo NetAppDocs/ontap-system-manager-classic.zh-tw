@@ -1,0 +1,18 @@
+---
+permalink: online-help-96-97/concept_storage_tiers.html 
+sidebar: sidebar 
+keywords: system, manager, storage, tiers, aggregates, security, requirements, backup, performance, data, sharing, online, help 
+summary: 您可以使用System Manager建立Aggregate、以支援使用者的不同安全需求、備份需求、效能需求及資料共用需求。 
+---
+= 儲存層
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用System Manager建立Aggregate、以支援使用者的不同安全需求、備份需求、效能需求及資料共用需求。
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["磁碟與Aggregate管理"]

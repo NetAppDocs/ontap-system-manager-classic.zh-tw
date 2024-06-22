@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_editing_initiators.html 
+sidebar: sidebar 
+keywords: edit, initiator, online, help, group, dialog, system, manager 
+summary: 您可以使用System Manager中的Edit Initiator Group（編輯啟動器群組）對話方塊、變更啟動器群組中現有啟動器的名稱。 
+---
+= 使用System Manager（ONTAP 系統管理程式）編輯啟動器-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的*編輯啟動器群組*對話方塊ONTAP （適用於更新版本的更新版本）、變更啟動器群組中現有啟動器的名稱。
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在*啟動器群組*索引標籤中、選取啟動器所屬的啟動器群組、然後按一下*編輯*。
+. 在*編輯啟動器群組*對話方塊中、按一下*啟動器*。
+. 選取您要編輯的啟動器、然後按一下*編輯*。
+. 變更名稱、然後按一下「*確定*」。
+. 按一下*儲存並關閉*。
+
+
+*相關資訊*
+
+xref:reference_luns_window.adoc[LUN視窗]

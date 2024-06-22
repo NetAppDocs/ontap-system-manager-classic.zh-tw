@@ -1,0 +1,108 @@
+---
+permalink: nas-multiprotocol-config/concept_adding_nas_access_to_existing_svm.html 
+sidebar: sidebar 
+keywords: cifs, smb, nfs, access, exist, svm, lif, server, enabling, enable, configuring, configure, nis, add cifs and nfs access to an existing svm 
+summary: 將CIFS/SMB和NFS存取新增至現有SVM、包括建立資料LIF、設定CIFS伺服器、啟用NFS、以及選擇性設定NIS。 
+---
+= 新增CIFS與NFS存取至現有的SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將CIFS/SMB和NFS存取新增至現有SVM、包括建立資料LIF、設定CIFS伺服器、啟用NFS、以及選擇性設定NIS。
+
+.開始之前
+* 您必須知道SVM將使用下列哪些網路元件：
++
+** 將在該節點上建立資料邏輯介面（LIF）的節點和特定連接埠
+** 要配置資料LIF IP位址的子網路、或是您要指派給資料LIF的特定IP位址（可選）
+** 此SVM將加入的Active Directory（AD）網域、以及新增SVM所需的認證資料
+** 如果站台使用NIS進行名稱服務或名稱對應、則為NIS資訊
+
+
+* 任何外部防火牆都必須適當設定、才能存取網路服務。
+* AD網域控制器、用戶端和SVM上的時間必須在彼此之間的五分鐘內同步。
+* SVM上必須允許CIFS和NFS傳輸協定。
++
+如果您在設定不同的傳輸協定時、未遵循此程序來建立SVM、則會發生這種情況。
+
+
+
+.關於這項工作
+設定CIFS和NFS的順序會影響顯示的對話方塊。在此程序中、您必須先設定CIFS、然後設定NFS秒。
+
+.步驟
+. 瀏覽至可設定SVM傳輸協定的區域：
++
+.. 選取您要設定的SVM。
+.. 在* Details（詳細資料）*窗格中* Protocols（*傳輸協定）*旁、按一下* CIFS*。
++
+image::../media/svm_add_protocol_multi_1st_cifs.gif[此影像由周邊文字說明。]
+
+
+
+. 在「*設定CIFS傳輸協定*」對話方塊的「*資料LIF組態*」區段中、為SVM建立資料LIF：
++
+.. 從您指定的子網路自動指派IP位址給LIF、或手動輸入位址。
+.. 按一下*瀏覽*、然後選取與LIF相關聯的節點和連接埠。
++
+image::../media/svm_setup_cifs_nfs_page_lif_multi_nas_nas_mp.gif[此圖形由其周邊文字說明。]
+
+
+
+. 在「* CIFS伺服器組態*」區段中、定義CIFS伺服器並將其設定為存取AD網域：
++
+.. 指定AD網域中唯一的CIFS伺服器名稱。
+.. 指定CIFS伺服器可以加入的AD網域FQDN。
+.. 如果您想要在AD網域中建立組織單位（OU）的關聯、而不是CN=電腦、請輸入OU。
+.. 指定具有足夠權限將CIFS伺服器新增至OU的系統管理帳戶名稱和密碼。
+.. 如果您想要避免未獲授權存取此SVM上的所有共用、請選取使用SMB 3.0加密資料的選項。
+
+
++
+image::../media/svm_setup_cifs_nfs_page_cifs_ad_nas_mp.gif[此圖形由其周邊文字說明。]
+
+. 建立用於CIFS/SMB存取的磁碟區、並在其中配置共用區：
++
+.. 命名CIFS/SMB用戶端用來存取磁碟區的共用區。
++
+您為共用區輸入的名稱也會用作磁碟區名稱。
+
+.. 指定磁碟區的大小。
++
+image::../media/svm_setup_cifs_nfs_page_cifs_share_nas_mp.gif[設定CIFS共用區的快照]
+
+
+
++
+您不需要為磁碟區指定集合體、因為它會自動位於具有最大可用空間的集合體上。
+
+. 跳過*配置CIFS Storage*區域的磁碟區、因為它只會配置一個僅供CIFS存取的磁碟區、而非用於多重傳輸協定存取。
+. 按一下*提交並關閉*、然後按一下*確定*。
+. 啟用 NFS ：
++
+.. 從SVM索引標籤中、選取您要啟用NFS的SVM、然後按一下*管理*。
+.. 在「*傳輸協定*」窗格中、按一下「* NFS*」、然後按一下「*啟用*」。
+
+
+. 如果站台使用NIS進行名稱服務或名稱對應、請設定NIS：
++
+.. 在「*服務*」視窗中、按一下「* NIS *」。
+.. 在「* NIS *」視窗中、按一下「*建立*」。
+.. 指定NIS伺服器的網域。
+.. 新增NIS伺服器的IP位址。
+.. 選取*啟動儲存虛擬機器的網域*、然後按一下*「Create」（建立）*。
+
+
++
+image::../media/nis_creation.gif[此影像由周邊文字說明。]
+
+
+
+
+
+== 接下來該怎麼做
+
+開啟SVM根磁碟區的匯出原則。

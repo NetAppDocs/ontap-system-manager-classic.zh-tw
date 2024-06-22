@@ -1,0 +1,65 @@
+---
+permalink: online-help-96-97/concept_rules_for_assigning_storage_objects_to_policy_groups.html 
+sidebar: sidebar 
+keywords: rulw, assign, storage, object, policy, group, svm, nested, online, help 
+summary: 您應該瞭解規定如何將儲存物件指派給儲存QoS原則群組的規則。 
+---
+= 指派儲存物件給原則群組的規則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您應該瞭解規定如何將儲存物件指派給儲存QoS原則群組的規則。
+
+
+
+== 儲存物件和原則群組必須屬於同一個SVM
+
+儲存物件必須由原則群組所屬的SVM所包含。您可以在建立原則群組時、指定原則群組所屬的SVM。多個原則群組可以屬於同一個SVM。
+
+在下圖中、原則群組pg1屬於SVM VS1。您無法將Volume vol2或vol3指派給原則群組pg1、因為這些磁碟區是由不同的SVM所包含。
+
+image::../media/qos_rule_same_vserver.gif[此圖形由其周邊文字說明。]
+
+
+
+== 巢狀儲存物件不能屬於原則群組
+
+如果儲存物件包含物件或其子物件屬於原則群組、則無法將其指派給原則群組。下表列出限制。
+
+|===
+| 如果您指派... | 然後您就無法指派... 
+
+
+ a| 
+SVM到原則群組
+ a| 
+SVM所包含的任何儲存物件至原則群組
+
+
+
+ a| 
+磁碟區至原則群組
+ a| 
+磁碟區包含SVM或任何子LUN至原則群組
+
+
+
+ a| 
+LUN至原則群組
+ a| 
+LUN包含磁碟區或SVM至原則群組
+
+
+
+ a| 
+檔案至原則群組
+ a| 
+檔案包含磁碟區或SVM至原則群組
+
+|===
+在下圖中、SVM VS3會指派給原則群組PG2。您無法將Volume vol4或vol5指派給原則群組、因為儲存階層（SVM VS3）中的物件已指派給原則群組。
+
+image::../media/qos_rule_one_object.gif[此圖形由其周邊文字說明。]

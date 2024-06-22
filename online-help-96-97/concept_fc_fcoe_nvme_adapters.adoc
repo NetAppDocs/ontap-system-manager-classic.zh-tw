@@ -1,0 +1,32 @@
+---
+permalink: online-help-96-97/concept_fc_fcoe_nvme_adapters.html 
+sidebar: sidebar 
+keywords: system, manager, manage, fc, fcoe, nvme, adapter, online, help, edit, adapter, speed, settings 
+summary: 您可以使用System Manager來管理FC/FCoE和NVMe介面卡。 
+---
+= 使用System Manager（系統管理程式ONTAP ）來管理FC/FCoE和NVMe介面卡-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 以《支援》9.7及更早版本提供）來管理FC/FCoE和NVMe介面卡。
+
+
+
+== 編輯FC/FCoE和NVMe介面卡速度設定
+
+您可以使用System Manager中的Edit FC/FCoE and NVMe Adapter Settings（編輯FC/FCoE和NVMe介面卡設定）對話方塊來修改FC/FCoE和NVMe介面卡速度設定。
+
+.步驟
+. 按一下「*網路*>* FC/FCoE與NVMe介面卡*」。
+. 選取您要編輯的介面卡、然後按一下*編輯*。
+. 在「*編輯FC/FCoE和NVMe介面卡設定*」對話方塊中、將介面卡速度設定為*手動*或*自動*、然後按一下*儲存*。
+
+
+*相關資訊*
+
+xref:reference_network_window.adoc[網路視窗]
+
+https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理"]

@@ -1,0 +1,31 @@
+---
+permalink: online-help-96-97/task_creating_protection_policies.html 
+sidebar: sidebar 
+keywords: create, protection, policies, online, help, system, manager 
+summary: 您可以使用System Manager來建立非同步鏡射原則、資料保存原則、鏡射及資料保存原則、並將這些原則套用至資料保護關係。 
+---
+= 建立保護原則
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用System Manager來建立非同步鏡射原則、資料保存原則、鏡射及資料保存原則、並將這些原則套用至資料保護關係。
+
+.步驟
+. 按一下「*儲存設備*>* SVMS*」。
+. 選取您要建立保護原則的儲存虛擬機器（SVM）、然後按一下「* SVM設定*」。
+. 在「*原則*」窗格中、按一下「*保護原則*」。
+. 按一下「 * 建立 * 」。
+. 在「*建立原則*」對話方塊中、選取您要建立的原則類型。
+. 指定原則名稱和傳輸優先順序。
++
+「低」表示傳輸的優先順序最低、傳輸通常是在正常優先順序傳輸之後排程。依預設、優先順序設為「正常」。
+
+. 若為非同步鏡射類型原則、請選取「*傳輸所有來源Snapshot複本*」核取方塊、將「all來源快照」規則納入鏡射原則、此原則會從來源Volume備份所有Snapshot複本。
+. 選取「*啟用網路壓縮*」核取方塊、以壓縮資料傳輸期間傳輸的資料。
+. 按一下*「Add Comments」（新增註解）*以新增原則的其他註解。
+. 針對資料保險箱或鏡射資料保險箱類型的原則、請指定SnapMirror標籤和目的地保留計數。
+. 按一下「 * 建立 * 」。
+

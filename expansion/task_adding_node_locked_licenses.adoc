@@ -1,0 +1,43 @@
+---
+permalink: expansion/task_adding_node_locked_licenses.html 
+sidebar: sidebar 
+keywords: cluster, feature, node-locked, license, entitle, functionality, add, add node-locked licenses 
+summary: 如果叢集具有使用節點鎖定授權的功能、您必須確保新節點已安裝節點鎖定授權。 
+---
+= 新增節點鎖定的授權
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果叢集具備使用節點鎖定授權的功能（僅授權特定節點使用授權功能）、您必須確保新節點已安裝節點鎖定授權。您應該先新增授權、再將節點加入叢集。
+
+如果您使用 _Classic_ System Manager UI 搭配 ONTAP 9.7 及更早版本、請完成此工作。如果您使用的是 ONTAP 9.7 以上版本的系統管理員 UI 、請參閱 link:https://docs.netapp.com/us-en/ontap/task_admin_enable_new_features.html["新增授權金鑰以啟用新功能"]。
+
+如需管理授權的詳細資訊、請參閱 link:https://docs.netapp.com/us-en/ontap/system-admin/manage-licenses-concept.html["管理授權總覽"]。
+
+.步驟
+. 使用新增每個授權金鑰 `system license add` 命令。
++
+[listing]
+----
+cluster1::> system license add -license-code AAAAAAAAAAAAAA
+----
+. 使用檢視現有授權 `system license show` 命令。
++
+[listing]
+----
+cluster1::> system license show
+
+Serial Number: 9-99-999999
+Owner: cluster1
+Package           Type    Description           Expiration
+----------------- ------- --------------------- --------------------
+Base              site    Cluster Base License  -
+NFS               license NFS License           -
+CIFS              license CIFS License          -
+...
+----
+. 檢閱輸出以確保顯示所有序號的節點鎖定授權、包括現有和新節點的序號。
+

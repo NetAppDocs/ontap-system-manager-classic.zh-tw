@@ -1,0 +1,20 @@
+---
+permalink: online-help-96-97/concept_updating_clusters_metrocluster_configuration.html 
+sidebar: sidebar 
+keywords: update, cluster, metrocluster, configuration, online, help 
+summary: 您可以使用System Manager更新MetroCluster 以各種形式組態的叢集。除了更新叢集之外、您必須在兩個叢集上執行每項作業。 
+---
+= 使用MetroCluster System Manager更新以不含更新版本的叢集- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來更新MetroCluster 採用各種組態的叢集。除了更新叢集之外、您必須在兩個叢集上執行每項作業。
+
+image::../media/updating_cluster_mcc_configuration.gif[正在更新叢集MCC組態]
+
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/upgrade/task_upgrade_andu_sm.html["升級ONTAP"]

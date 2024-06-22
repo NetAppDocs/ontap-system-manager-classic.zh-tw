@@ -1,0 +1,206 @@
+---
+permalink: nfs-config-esxi/reference_completing_nfs_configuration_worksheet.html 
+sidebar: sidebar 
+keywords: network, address, storage, configuration, information, perform, nfs, client, task, complete, complete the nfs client configuration worksheet 
+summary: 您需要網路位址和儲存組態資訊、才能執行NFS用戶端組態工作。 
+---
+= 完成NFS用戶端組態工作表
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您需要網路位址和儲存組態資訊、才能執行NFS用戶端組態工作。
+
+
+
+== 目標網路位址
+
+叢集中每個節點的NFS資料生命期都需要一個子網路具有兩個IP位址。應該有兩個獨立的網路來實現高可用度。當ONTAP 您建立LIF作為建立SVM的一部分時、將會指派特定的IP位址。
+
+如果可能、請將網路流量分隔在不同的實體網路或VLAN上。
+
+image::../media/network_for_nfs_eg.gif[用戶端組態的網路拓撲]
+
+生命之子網路：
+
+|===
+| 節點或LIF搭配連接埠至交換器 | IP 位址 | 網路遮罩 | 閘道 | VLAN ID | 主連接埠 
+
+
+ a| 
+節點1 / LIF至交換器1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點2 / LIF至交換器1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 3 / LIF 至交換器 1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點4/LIF至交換器1
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 1 / LIF 至交換器 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 2 / LIF 至交換器 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 3 / LIF 至交換器 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+
+
+ a| 
+節點 4 / LIF 至交換器 2
+ a| 
+ a| 
+ a| 
+ a| 
+ a| 
+
+|===
+
+
+== 儲存組態
+
+如果已建立Aggregate、請在此處記錄其名稱；否則、您可以視需要建立：
+
+|===
+| 節點至自己的NFS匯出 
+
+
+ a| 
+Aggregate名稱
+
+
+
+ a| 
+名稱
+
+|===
+
+
+== NFS匯出資訊
+
+|===
+| 匯出大小 
+
+
+ a| 
+匯出名稱（選用）
+
+
+
+ a| 
+匯出說明（選用）
+
+|===
+
+
+== SVM資訊
+
+如果您不使用現有的，則需要下列資訊來建立新的資訊：
+
+[cols="1a,1a"]
+|===
+2+| SVM名稱 
+
+
+ a| 
+SVM根Volume的Aggregate
+
+
+
+ a| 
+SVM使用者名稱（選用）
+
+
+
+ a| 
+SVM密碼（選用）
+
+
+
+ a| 
+SVM管理LIF（選用）
+
+
+
+ a| 
+ a| 
+子網路：
+
+
+
+ a| 
+ a| 
+IP位址：
+
+
+
+ a| 
+ a| 
+網路遮罩：
+
+
+
+ a| 
+ a| 
+閘道：
+
+
+
+ a| 
+ a| 
+主節點：
+
+|===

@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/task_changing_raid_configuration_when_creating_aggregate.html 
+sidebar: sidebar 
+keywords: system, manager, raid, configuration, aggregate, online, help 
+summary: 建立Aggregate時、您可以使用System Manager修改Aggregate的RAID類型和RAID群組大小選項的預設值。 
+---
+= 使用System Manager建立Aggregate時、請變更RAID組態- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+建立Aggregate時、您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於支援的版本號為9、7及更早版本）來修改Aggregate的RAID類型和RAID群組大小選項的預設值。
+
+.關於這項工作
+如果Aggregate磁碟的磁碟類型為SSA或mSATA、且磁碟大小等於或大於10 TB、RAID-TEC 則唯一可用的RAID類型為「
+
+.步驟
+. 請選擇下列其中一種方法：
++
+** 按一下*應用程式與層級*>*儲存層級*。
+** 按一下「*儲存設備*>*集合體與磁碟*>*集合體*」。
+
+
+. 在* Storage Tiers*視窗中、按一下* Add Aggregate *。
+. 在「*建立Aggregate *」對話方塊中、執行下列步驟：
++
+.. 按一下 * 變更 * 。
+.. 在「*變更RAID組態*」對話方塊中、指定RAID類型和RAID群組大小。
++
+共享磁碟可支援RAID DP 兩種RAID類型：功能區和RAID-TEC 功能區。
+
++
+建議的RAID群組大小為12個磁碟至20個磁碟用於HDD、20個磁碟至28個磁碟用於SSD。
+
+.. 按一下「 * 儲存 * 」。
+
+
+

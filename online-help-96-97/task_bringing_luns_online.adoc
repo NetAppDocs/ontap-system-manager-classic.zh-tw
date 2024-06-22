@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_bringing_luns_online.html 
+sidebar: sidebar 
+keywords: bring, lun, online, management, tab, online, help, system, manager 
+summary: 您可以使用System Manager中的LUN Management（LUN管理）索引標籤、將選定的LUN上線、並提供給主機使用。 
+---
+= 利用System Manager（ONTAP 更新版本）讓LUN上線- NetApp 9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 《經典版》（ONTAP 英文版）中的「* LUN管理*」索引標籤（英文版）、將選定的LUN上線、並提供給主機使用。
+
+.開始之前
+任何存取LUN的主機應用程式都必須靜止或同步。
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在「* LUN管理*」索引標籤中、選取您要上線的一或多個LUN。
+. 按一下*狀態*>*線上*。
+
+
+*相關資訊*
+
+xref:reference_luns_window.adoc[LUN視窗]

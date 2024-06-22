@@ -1,0 +1,25 @@
+---
+permalink: online-help-96-97/concept_luns.html 
+sidebar: sidebar 
+keywords: system, manager, manager, lun, access, cluster, tab, online, help 
+summary: 您可以使用System Manager來管理LUN。 
+---
+= 使用System Manager管理LUN - ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 ONTAP System Manager classic （在 ONTAP 9.7 及更早版本中提供）來管理 LUN 。
+
+您可以使用LUN索引標籤存取叢集中的所有LUN、或使用* SVMS*>* LUN*存取SVM專屬的LUN。
+
+[NOTE]
+====
+僅當您已啟用FC/FCoE和iSCSI授權時、才會顯示LUN索引標籤。
+
+====
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/san-admin/index.html["SAN管理"^]

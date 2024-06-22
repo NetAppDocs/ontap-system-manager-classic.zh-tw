@@ -1,0 +1,50 @@
+---
+permalink: volume-disaster-recovery/task_configuring_destination_volume_for_data_access.html 
+sidebar: sidebar 
+keywords: activating, activate, destination, volume, configure, data, access, nas, client, san, host, access, data, source, reactivate, configure the destination volume for data access 
+summary: 啟動目的地Volume之後、您必須設定磁碟區以進行資料存取。NAS用戶端和SAN主機可從目的地Volume存取資料、直到重新啟動來源Volume為止。 
+---
+= 設定目的地Volume以進行資料存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+啟動目的地Volume之後、您必須設定磁碟區以進行資料存取。NAS用戶端和SAN主機可從目的地Volume存取資料、直到重新啟動來源Volume為止。
+
+.關於這項工作
+您必須從*目的地*叢集執行此工作。
+
+
+
+== 程序
+
+* NAS環境：
++
+.. 將NAS磁碟區掛載至命名空間、其路徑與來源SVM中的來源磁碟區掛載路徑相同。
+.. 將適當的ACL套用至目的地Volume上的CIFS共用區。
+.. 將NFS匯出原則指派給目的地Volume。
+.. 將配額規則套用至目的地Volume。
+.. 執行必要步驟、例如變更DNS名稱解析、將用戶端重新導向至目的地Volume。
+.. 在用戶端上重新掛載NFS和CIFS共用。
+
+
+* SAN 環境：
++
+.. 將LUN對應至適當的啟動器群組、使磁碟區中的LUN可供SAN用戶端使用。
+.. 對於iSCSI、請從SAN主機啟動器建立iSCSI工作階段至SAN LIF。
+.. 在SAN用戶端上、執行儲存設備重新掃描、以偵測連接的LUN。
+
+
+
+
+
+
+== 接下來該怎麼做
+
+您應該解決導致來源Volume無法使用的問題。您必須盡可能使來源磁碟區重新上線、然後重新同步並重新啟動來源磁碟區。
+
+*相關資訊*
+
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]

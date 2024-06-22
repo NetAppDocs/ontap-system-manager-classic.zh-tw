@@ -1,0 +1,103 @@
+---
+permalink: nfs-config-esxi/task_creating_new_nfs_enabled_svm.html 
+sidebar: sidebar 
+keywords: set, up, creating, create, enable, enabling, nfs, esxi, create a new nfs-enabled SVM 
+summary: 設定新的SVM需要建立新的NFS並啟用NFS。然後、您可以在ESXi主機上設定NFS存取、並使用虛擬儲存主控台驗證是否已啟用ESXi的NFS。 
+---
+= 建立新的NFS型SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定新的SVM需要建立新的NFS並啟用NFS。然後、您可以在ESXi主機上設定NFS存取、並使用虛擬儲存主控台驗證是否已啟用ESXi的NFS。
+
+.開始之前
+* 您的網路必須設定、而且相關的實體連接埠必須連線至網路。
+* 您必須知道下列哪些網路元件將會使用：
++
+** 將在該節點上建立資料邏輯介面（LIF）的節點和特定連接埠
+** 要配置資料LIF IP位址的子網路、或是您要指派給資料LIF的特定IP位址（可選）
+
+
+* 任何外部防火牆都必須適當設定、才能存取網路服務。
+
+
+.關於這項工作
+您可以使用精靈來引導您完成建立SVM、設定DNS、建立資料LIF及啟用NFS的程序。
+
+.步驟
+. 瀏覽至* SVMS*視窗。
+. 按一下「 * 建立 * 」。
+. 在* Storage Virtual Machine（SVM）Setup（*儲存虛擬機器（SVM）設定*）視窗中、建立SVM：
++
+.. 指定SVM的唯一名稱。
++
+名稱必須是完整網域名稱（FQDN）、或遵循另一種慣例、確保整個叢集都有獨特的名稱。
+
+.. 選取* NFS*作為資料傳輸協定。
++
+如果您打算在同一個SVM上使用其他傳輸協定、即使您不想立即設定、也應該選取這些傳輸協定。
+
+.. 保留預設語言設定、C。utf-8。
++
+此語言由您稍後建立的磁碟區繼承、而且無法變更磁碟區的語言。
+
+.. *選用*：如果您啟用CIFS傳輸協定、請將安全樣式變更為* UNIUNIX*。
++
+選取CIFS傳輸協定時、預設會將安全樣式設定為NTFS。
+
+.. *選用*：選取要包含根磁碟區的根Aggregate。
++
+您為根磁碟區選取的Aggregate不會決定資料磁碟區的位置。
+
++
+image::../media/svm_setup_details_unix_selected_nfs_esxi.gif[SVM 設定]
+
+.. *選用*：在「* DNS組態*」區域中、確定預設DNS搜尋網域和名稱伺服器是您要用於此SVM的伺服器。
++
+image::../media/svm_setup_details_dns_nfs_esxi.gif[此圖形由周圍的文字說明。]
+
+.. 按一下*提交並繼續*。
+
+
++
+已建立、但尚未設定傳輸協定。
+
+. 在「*設定CIFS/NFS傳輸協定*」頁面的「*資料LIF組態*」區段中、指定第一個資料存放區的第一個資料LIF詳細資料。
++
+.. 從您指定的子網路自動指派IP位址給LIF、或手動輸入位址。
+.. 按一下*瀏覽*、然後選取與LIF相關聯的節點和連接埠。
++
+image::../media/svm_setup_cifs_nfs_page_lif_multi_nas_nfs_esxi.gif[此圖形由其周邊文字說明。]
+
+
+
++
+請勿輸入任何資訊來配置Volume。您可以稍後使用來配置資料存放區
+
+. 按一下*提交並繼續*。
++
+將會建立下列物件：
+
++
+** 以「`_nfs_lif1'」為字尾命名的資料LIF
+** NFS伺服器
+
+
+. 對於顯示的所有其他傳輸協定組態頁面、請按一下「*跳過*」、然後稍後再設定傳輸協定。
+. 顯示「* SVM管理*」頁面時、請設定或延後設定此SVM的個別管理員：
++
+** 按一下「*跳過*」、然後視需要稍後設定管理員。
+** 輸入要求的資訊、然後按一下*提交並繼續*。
+
+
+. 請檢閱*摘要*頁面、記錄您稍後可能需要的任何資訊、然後按一下*確定*。
++
+NFS用戶端需要知道資料LIF的IP位址。
+
+
+
+.結果
+在啟用NFS的情況下建立新的SVM。

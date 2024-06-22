@@ -1,0 +1,45 @@
+---
+permalink: volume-disaster-prep/index.html 
+sidebar: sidebar 
+keywords: content, protect, source, volume, peer, ontap, cluster, preparation, disaster, recovery, configure, monitor, snapmirror, relationship, background, task, volume disaster recovery preparation overview 
+summary: 您可以在支援PEDR ONTAP 叢集上快速保護來源磁碟區、以做好災難恢復的準備。如果您想要設定及監控各叢集之間的SnapMirror關係、以進行Volume災難恢復、而且不需要大量概念背景來執行工作、請使用此內容。 
+---
+= Volume災難恢復準備總覽
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以在支援PEDR ONTAP 叢集上快速保護來源磁碟區、以做好災難恢復的準備。如果您想要設定及監控連接叢集之間的SnapMirror關係、以進行Volume災難恢復、而且不需要大量概念背景來執行工作、請使用此程序。
+
+SnapMirror提供排程的非同步區塊層級資料保護。SnapMirror會複寫Snapshot複本、並可複寫執行重複資料刪除、資料壓縮或兩者的NAS或SAN磁碟區、包括包含qtree和LUN的磁碟區。SnapMirror組態資訊儲存在資料庫中ONTAP 、可將其還原複寫至叢集中的所有節點。
+
+如果您想要以下列方式建立SnapMirror關係以進行磁碟區層級的災難恢復、請使用此程序：
+
+* 您正在使用執行ONTAP 過程中的叢集9。
+* 您是叢集管理員。
+* 您已設定叢集對等關係和SVM對等關係。
++
+link:../peering/index.html["叢集與SVM對等組態"]
+
+* 您已在來源叢集和目的地叢集上啟用SnapMirror授權。
+* 您想要使用預設原則和排程、而非建立自訂原則。
+* 您想要使用最佳實務做法、而非探索所有可用的選項ONTAP （例如、更新版本的版本）。
+
+
+
+
+== 其他方法可在ONTAP 不一樣的情況下執行
+
+|===
+
+
+| 若要執行這些工作... | 請參閱... 
+
+
+| 重新設計的System Manager（ONTAP 提供更新版本的更新版本） | link:https://docs.netapp.com/us-en/ontap/task_dp_prepare_mirror.html["準備鏡射和保存"^] 
+
+
+| 指令行介面ONTAP | link:https://docs.netapp.com/us-en/ontap/peering/create-cluster-relationship-93-later-task.html["建立叢集對等關係ONTAP （不含更新版本的版本）"^] 
+|===

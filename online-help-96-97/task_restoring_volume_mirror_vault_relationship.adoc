@@ -1,0 +1,85 @@
+---
+permalink: online-help-96-97/task_restoring_volume_mirror_vault_relationship.html 
+sidebar: sidebar 
+keywords: restore, volume, mirror, vault, relationship, online, help, snapshot, copy, system, manager 
+summary: 如果來源資料毀損且無法再使用、您可以使用System Manager將Snapshot複本還原至來源磁碟區或其他磁碟區。您可以使用目的地Volume中的Snapshot複本來取代原始資料。 
+---
+= 使用System Manager還原鏡射和資料保險箱關係中的磁碟區- ONTAP 版本號為2、9.7或更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果ONTAP 來源資料毀損且無法再使用、您可以使用經典版的《經典版功能》（ONTAP 適用於更新版本的版本）、將Snapshot複本還原至來源Volume或其他Volume。您可以使用目的地Volume中的Snapshot複本來取代原始資料。
+
+.開始之前
+* SnapMirror授權與SnapVault 不可用的授權必須同時在來源叢集和目的地叢集上啟用、或是在包含來源Volume和目的地Volume的節點上啟用。
+* 來源叢集和目的地叢集必須處於健全的對等關係中。
+* 您為還原作業選取的來源Aggregate或任何其他Aggregate必須是64位元Aggregate。
+* 如果您要從執行ONTAP 支援SAML驗證的叢集9.2或更早版本連線至遠端叢集、則也必須在遠端叢集上啟用密碼型驗證。
+
+
+.關於這項工作
+* 您無法還原來源儲存虛擬機器（SVM）與MetroCluster 目的地SVM之間處於鏡射和保存庫關係中的磁碟區（採用物件組態）。
+* 您可以針對下列組態還原鏡射與資料保險箱關係：
++
+** 以支援的方式在MetroCluster 同步來源SVM之間建立一個不同步組態
+** 從同步來源SVM上的磁碟區到預設SVM
+** 從預設SVM上的磁碟區到同步來源SVM上的DP磁碟區
+
+
+
+
+.步驟
+. 按一下「*保護*>*磁碟區關係*」。
+. 選取您要還原的鏡射與資料保險箱關係、然後按一下「*作業*」>「*還原*」。
+. 在*還原*對話方塊中、將資料還原至關係中的來源磁碟區、或選取任何其他磁碟區：
++
+|===
+| 如果您想要將資料還原至... | 執行此動作... 
+
+
+ a| 
+來源Volume
+ a| 
+.. 選擇*來源Volume *。
+.. link:#step6["前往步驟6"]。
+
+
+
+
+ a| 
+任何其他Volume
+ a| 
+選取*其他Volume *、然後選取叢集和SVM。
+
+|===
+. 將資料還原至新磁碟區或現有磁碟區：
++
+|===
+| 如果您想要將資料還原至... | 執行此動作... 
+
+
+ a| 
+新的Volume
+ a| 
+如果您想要變更預設名稱、請以「'destination_svm_name_destination_volume名稱_estRestore」格式顯示、指定新名稱、然後選取磁碟區的包含Aggregate。
+
+
+
+ a| 
+現有的Volume
+ a| 
+選取*選取Volume *選項。
+
+您必須選取來源磁碟區以外的磁碟區、或是內含部分資料的讀寫磁碟區、以及通用的Snapshot複本。
+
+僅列出與來源Volume具有相同語言屬性的磁碟區。
+
+|===
+. 選取您要還原的最新Snapshot複本或特定Snapshot複本。
+. [[step6]] 選取確認核取方塊、即可從 Snapshot 複本還原磁碟區。
+. *選用：*選取「*啟用網路壓縮*」核取方塊、以壓縮還原作業期間傳輸的資料。
+. 按一下 * 還原 * 。
+

@@ -1,0 +1,42 @@
+---
+permalink: expansion/task_upgrading_or_downgrading_nodes.html 
+sidebar: sidebar 
+keywords: join, install, node, cluster, run, ontap, upgrade, downgrade 
+summary: 在將新安裝的節點加入叢集之前、您必須確保它們執行的ONTAP 版本與叢集執行的版本相同。如果節點執行的是不同版本、則必須升級或降級節點以符合叢集。 
+---
+= 升級或降級節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在將新安裝的節點加入叢集之前、您必須確保它們執行的ONTAP 版本與叢集執行的版本相同。如果節點執行的是不同版本、則必須升級或降級節點以符合叢集。
+
+.步驟
+. 判斷叢集上安裝的 ONTAP 版本： `cluster image show`
+. 在ONTAP 節點上檢視目前版本的資訊：
++
+.. 在第一個節點上、檢視軟體版本： `system node image show`
++
+[listing]
+----
+::*> system node image show
+                 Is      Is                                Install
+Node     Image   Default Current Version                   Date
+-------- ------- ------- ------- ------------------------- -------------------
+localhost
+         image1  false   false   9.3                    MM/DD/YYYY TIMESTAMP
+         image1  true    true    9.3                    MM/DD/YYYY TIMESTAMP
+2 entries were displayed.
+----
+.. 對第二個節點重複上一步。
+
+
+. 比較ONTAP 叢集和節點上的版本、並執行下列任一動作：
++
+** 如果ONTAP 叢集和節點上的版本相同、則不需要升級或降級。
+** 如果ONTAP 叢集和節點上的版本不同、您可以 link:https://docs.netapp.com/us-en/ontap/upgrade/index.html["升級ONTAP"] 在具有舊版的節點上、您也可以 link:https://docs.netapp.com/us-en/ontap/revert/index.html["還原ONTAP"] 適用於具有較新版本的節點。
+
+
+

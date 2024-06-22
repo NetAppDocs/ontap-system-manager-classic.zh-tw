@@ -1,0 +1,46 @@
+---
+permalink: nfs-config-esxi/task_verifying_configuration_is_supported.html 
+sidebar: sidebar 
+keywords: reliable, operation, verify, configuration, support, nfs, verify that the configuration is supported 
+summary: 若要可靠地運作、您必須確認整個組態是否受到支援。列出NFS和虛擬儲存主控台支援的組態。 
+---
+= 驗證是否支援該組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要可靠地運作、您必須確認整個組態是否受到支援。列出NFS和虛擬儲存主控台支援的組態。
+
+.步驟
+. 請前往確認您擁有下列元件的支援組合：
++
+https://mysupport.netapp.com/matrix["NetApp 互通性對照表工具"]
+
++
+** 軟件ONTAP
+** NFS儲存傳輸協定
+** ESXi作業系統版本
+** 客體作業系統類型與版本
+** （VSC）軟體
+** 適用於VAAI的NFS外掛程式
+
+
+. 按一下所選組態的組態名稱。
++
+該組態的詳細資料會顯示在「組態詳細資料」視窗中。
+
+. 檢閱下列索引標籤中的資訊：
++
+** 附註
++
+列出組態專屬的重要警示和資訊。
+
+** 原則與準則
++
+提供所有 NAS 組態的一般準則。
+
+
+
+

@@ -1,0 +1,16 @@
+---
+permalink: nfs-config-esxi/task_nfs_client_configuration_for_esxi_workflow.html 
+sidebar: sidebar 
+keywords: nfs, client, configuration, esxi, workflow, nfs client configuration for esxi workflow 
+summary: 當您使用NFS將儲存設備提供給ESXi主機時、您可以在上使用配置磁碟區、然後從ESXi主機連線至NFS匯出。 
+---
+= 適用於ESXi工作流程的NFS用戶端組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您使用NFS將儲存設備提供給ESXi主機時、您可以在上使用配置磁碟區、然後從ESXi主機連線至NFS匯出。
+
+image::../media/nfs_client_configuration_with_vaai_workflow.gif[NFS用戶端組態搭配VAAI for ESX]

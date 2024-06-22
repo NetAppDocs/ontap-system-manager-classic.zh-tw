@@ -1,0 +1,140 @@
+---
+permalink: smb-config/task_creating_new_svm.html 
+sidebar: sidebar 
+keywords: wizard, process, creating, create, storage, virtual, machine, svm, domain, name, system, dns, logical, interface, lif, configuring, configure, cifs, server, creating, create, sharing, share, volume, create a new svm with a cifs volume and share 
+summary: 您可以使用精靈來引導您完成建立新儲存虛擬機器（SVM）、設定網域名稱系統（DNS）、建立資料邏輯介面（LIF）、設定CIFS伺服器、以及建立及共用磁碟區的程序。 
+---
+= 使用CIFS磁碟區和共用區建立新的SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用精靈來引導您完成建立新儲存虛擬機器（SVM）、設定網域名稱系統（DNS）、建立資料邏輯介面（LIF）、設定CIFS伺服器、以及建立及共用磁碟區的程序。
+
+.開始之前
+* 您的網路必須設定、而且相關的實體連接埠必須連線至網路。
+* 您必須知道SVM將使用下列哪些網路元件：
++
+** 將在該節點上建立資料邏輯介面（LIF）的節點和特定連接埠
+** 要配置資料LIF IP位址的子網路、或是您要指派給資料LIF的特定IP位址（可選）
+** 此SVM將加入的Active Directory（AD）網域、以及新增SVM所需的認證資料
+
+
+* 子網路必須可路由傳送至所有外部伺服器、這些伺服器是網路資訊服務（NIS）、輕量型目錄存取傳輸協定（LDAP）、Active Directory（AD）和DNS等服務所需的服務。
+* 任何外部防火牆都必須適當設定、才能存取網路服務。
+* AD網域控制器、用戶端和SVM上的時間必須在彼此之間的五分鐘內同步。
+
+
+.步驟
+. 瀏覽至* SVMS*視窗。
+. 按一下*「Create」（建立）。*
+. 在*儲存虛擬機器（SVM）設定*對話方塊中、建立SVM：
++
+.. 指定SVM的唯一名稱。
++
+名稱必須是完整網域名稱（FQDN）、或遵循另一種慣例、確保整個叢集都有獨特的名稱。
+
+.. 選取您擁有授權的所有傳輸協定、即使您不想立即設定所有傳輸協定、也會最終在SVM上使用這些傳輸協定。
++
+如果最終需要NFS存取、您現在必須選取* NFS*、以便CIFS和NFS用戶端可以共用相同的資料LIF。
+
+.. 保留預設語言設定、C。utf-8。
++
+[NOTE]
+====
+如果您同時支援NFS和SMB/CIFS用戶端的國際字元顯示、請考慮使用* UTF8MB4*語言代碼、此程式碼可從ONTAP 英文版的更新版本開始提供。
+
+====
++
+此語言由您稍後建立的磁碟區繼承、而且無法變更磁碟區的語言。
+
+.. *選用*：選取要包含SVM根磁碟區的根Aggregate。
++
+您為根磁碟區選取的Aggregate不會決定資料磁碟區的位置。在後續步驟中配置儲存設備時、會自動選取資料磁碟區的Aggregate。
+
++
+image::../media/svm_setup_details_page_ntfs_selected_smb.gif[此圖形由周圍的文字說明。]
+
+.. *選用*：在「* DNS組態*」區域中、確定預設DNS搜尋網域和名稱伺服器是您要用於此SVM的伺服器。
++
+image::../media/svm_setup_details_dns_smb.gif[此圖形由周圍的文字說明。]
+
+.. 按一下*提交並繼續*。
+
+
++
+SVM已建立、但尚未設定傳輸協定。
+
+. 在「*設定CIFS/NFS傳輸協定*」頁面的「*資料LIF組態*」區段中、指定用戶端用來存取資料的LIF詳細資料：
++
+.. 從您指定的子網路自動指派IP位址給LIF、或手動輸入位址。
+.. 按一下*瀏覽*、然後選取與LIF相關聯的節點和連接埠。
++
+image::../media/svm_setup_cifs_nfs_page_lif_multi_nas_smb.gif[此圖形由其周邊文字說明。]
+
+
+
+. 在「* CIFS伺服器組態*」區段中、定義CIFS伺服器並將其設定為存取AD網域：
++
+.. 指定AD網域中唯一的CIFS伺服器名稱。
+.. 指定CIFS伺服器可以加入的AD網域FQDN。
+.. 如果您想要在AD網域中建立組織單位（OU）的關聯、而不是CN=電腦、請輸入OU。
+.. 指定具有足夠權限將CIFS伺服器新增至OU的系統管理帳戶名稱和密碼。
+.. 如果您想要避免未獲授權存取此SVM上的所有共用、請選取使用SMB 3.0加密資料的選項。
+
+
++
+image::../media/svm_setup_cifs_nfs_page_cifs_ad_smb.gif[此圖形由其周邊文字說明。]
+
+. 建立用於CIFS/SMB存取的磁碟區、並在其中配置共用區：
++
+.. 命名CIFS/SMB用戶端用來存取磁碟區的共用區。
++
+您為共用區輸入的名稱也會用作磁碟區名稱。
+
+.. 指定磁碟區的大小。
++
+image::../media/svm_setup_cifs_nfs_page_cifs_share_smb.gif[設定CIFS共用區的快照]
+
+
+
++
+您不需要為磁碟區指定集合體、因為它會自動位於具有最大可用空間的集合體上。
+
+. *選用*：修改共用ACL以限制共用區的存取：
++
+.. 在*權限*欄位中、按一下*變更*。
+.. 選取「所有人」群組、然後按一下「*移除*」。
+.. *選用*：按一下*新增*、然後輸入在Windows Active Directory網域中定義的系統管理員群組名稱、其中包含SVM。
+.. 選取新的系統管理員群組、然後選取*完整控制*。
+.. 按一下*儲存並關閉*。
+
+
+. 按一下*提交並繼續*。
++
+將會建立下列物件：
+
++
+** 以SVM命名的資料LIF、其後置詞為「`_CIFs_lif1'」
+** 屬於AD網域的CIFS伺服器
+** 位於集合體上的磁碟區、其可用空間最大、名稱與共用區名稱相符、結尾為「`_CIFs_Volume」
+** 磁碟區上的共用區
+
+
+. 對於顯示的所有其他傳輸協定組態頁面、請按一下*跳過*、稍後再設定傳輸協定。
+. 顯示「* SVM管理*」頁面時、請設定或延後設定此SVM的個別管理員：
++
+** 按一下「*跳過*」、然後視需要稍後設定系統管理員。
+** 輸入要求的資訊、然後按一下*提交並繼續*。
+
+
+. 查看* Summary（摘要）*頁面、記下您稍後可能需要的任何資訊、然後按一下* OK（確定）*。
++
+DNS管理員需要知道CIFS伺服器名稱和資料LIF的IP位址。Windows用戶端需要知道CIFS伺服器和共用區的名稱。
+
+
+
+.結果
+新的SVM是以CIFS伺服器建立、其中包含共享的新Volume。

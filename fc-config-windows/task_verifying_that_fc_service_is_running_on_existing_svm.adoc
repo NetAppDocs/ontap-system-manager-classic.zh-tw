@@ -1,0 +1,35 @@
+---
+permalink: fc-config-windows/task_verifying_that_fc_service_is_running_on_existing_svm.html 
+sidebar: sidebar 
+keywords: exist, storage, virtual, machine, svm, verify, fc, service, ontap, manager, fc, logical, interface, lif, create, verify that the fc service is running on an existing svm 
+summary: 如果您選擇使用現有的儲存虛擬機器（SVM）、則必須使用ONTAP 「系統管理程式」來驗證SVM上的FC服務是否正在執行。您也必須確認已建立FC邏輯介面（LIF）。 
+---
+= 確認FC服務正在現有的SVM上執行
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果您選擇使用現有的儲存虛擬機器（SVM）、則必須使用ONTAP 「系統管理程式」來驗證SVM上的FC服務是否正在執行。您也必須確認已建立FC邏輯介面（LIF）。
+
+.開始之前
+您必須選擇要在其中建立新LUN的現有SVM。
+
+.步驟
+. 瀏覽至* SVMS*視窗。
+. 選取所需的SVM。
+. 按一下「* SVM設定*」索引標籤。
+. 在*傳輸協定*窗格中、按一下* FC/FCoF*。
+. 驗證FC服務是否正在執行。
++
+image::../media/vserver_service_fc_fcoe_running_fc_windows.gif[影像顯示System Manager中的FC/FCoE窗格、其中FC服務執行中、四個FC LIF。]
+
++
+如果FC服務未執行、請啟動FC服務或建立新的SVM。
+
+. 驗證每個節點至少列出兩個FC生命期。
++
+如果每個節點的FC生命期少於兩個、請更新SVM上的FC組態、或為FC建立新的SVM。
+
+

@@ -1,0 +1,28 @@
+---
+permalink: volume-restore-snapvault/task_identifying_snapvault_backup_destination_volume.html 
+sidebar: sidebar 
+keywords: identify, snapvault, backup, destination, volume, restore, data, source, corrupt, identify the snapvault backup destination volume 
+summary: 當來源Volume中的資料毀損或遺失時、您必須識別SnapVault 要從中還原資料的還原目標Volume。 
+---
+= 識別SnapVault 不支援的目的地Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當來源Volume中的資料毀損或遺失時、您必須識別SnapVault 要從中還原資料的還原目標Volume。
+
+.關於這項工作
+您必須從*來源*叢集執行此工作。
+
+.步驟
+. 輸入 URL `+https://IP-address-of-cluster-management-LIF+` 在網頁瀏覽器中、使用叢集管理員認證登入 System Manager 。
+. 瀏覽至* Volumes *（*磁碟區*）視窗。
+. 識別SnapVault 出與SVM相關的目的地Volume、以及包含該Volume的SVM名稱：
++
+** 解答9.3或更新版本：按兩下磁碟區以檢視詳細資料、然後按一下* protection *。ONTAP
+** Section9.2或更早版本：按一下「Volumes」（磁碟區）視窗底部的「* Data Protection *」（*資料保護*）索引標籤。ONTAP
+
+
+

@@ -1,0 +1,14 @@
+---
+permalink: expansion/task_preparing_cluster_for_expansion.html 
+sidebar: sidebar 
+keywords: prepare, cluster, expansion, node-locked, license, verify, system, health, configuration, generate autosupport, message, prepare the cluster for expansion 
+summary: 若要為叢集做好擴充準備、您必須新增節點鎖定的授權、驗證系統健全狀況、備份叢集的組態、並產生AutoSupport 一則消息。 
+---
+= 準備叢集以進行擴充
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要為叢集做好擴充準備、您必須新增節點鎖定的授權、驗證系統健全狀況、備份叢集的組態、並產生AutoSupport 一則消息。

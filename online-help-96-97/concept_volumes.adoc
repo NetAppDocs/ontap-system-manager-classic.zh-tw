@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/concept_volumes.html 
+sidebar: sidebar 
+keywords: system, manager, create, edit, delete, volume, tab, cif, nfs, online, help 
+summary: 您可以使用System Manager來建立、編輯及刪除磁碟區。 
+---
+= 使用System Manager管理Volume - ONTAP NetApp 9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（9.7版及更早版本）來建立、編輯及刪除Volume。
+
+您可以使用Volumes（磁碟區）索引標籤來存取叢集中的所有磁碟區、也可以使用* SVMS*>* Volumes（磁碟區）*來存取SVM專屬的磁碟區。
+
+[NOTE]
+====
+「Volumes（磁碟區）」索引標籤只有在您已啟用CIFS和NFS授權時才會顯示。
+
+====
+*相關資訊*
+
+https://docs.netapp.com/us-en/ontap/concepts/index.html["概念ONTAP"^]
+
+https://docs.netapp.com/us-en/ontap/volumes/index.html["邏輯儲存管理"^]

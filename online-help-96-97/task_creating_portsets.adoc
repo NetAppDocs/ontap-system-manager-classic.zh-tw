@@ -1,0 +1,57 @@
+---
+permalink: online-help-96-97/task_creating_portsets.html 
+sidebar: sidebar 
+keywords: system, manager, port, set, create, online, help, lun, delete, edit, manage 
+summary: 您可以使用ONTAP 經典版的功能來建立、刪除及編輯連接埠集。 
+---
+= 使用System Manager管理連接埠集- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來建立、刪除及編輯連接埠集。
+
+
+
+== 建立連接埠集
+
+您可以使用ONTAP 經典版的功能來建立連接埠集、以限制對LUN的存取。
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在* PortSets*（端口集）選項卡中，單擊* Create*（創建*）。
+. 在「*建立PortSet*」對話方塊中、選取傳輸協定類型。
+. 選擇要與連接埠集建立關聯的網路介面。
+. 按一下「 * 建立 * 」。
+
+
+
+
+== 刪除連接埠集
+
+您可以在不再需要連接埠集時、使用System Manager來刪除連接埠集。
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在* PortSets*標籤中、選取一或多個連接埠集、然後按一下*刪除*。
+. 按一下*刪除*確認刪除。
+
+
+
+
+== 編輯連接埠集
+
+您可以使用System Manager中的PortSets索引標籤來編輯與連接埠集相關的設定。
+
+.步驟
+. 按一下「*儲存設備*>* LUN*」。
+. 在* PortSets*標籤中、選取您要編輯的連接埠集、然後按一下*編輯*。
+. 在*編輯PortSet*對話方塊中、進行必要的變更。
+. 按一下*儲存並關閉*。
+
+
+*相關資訊*
+
+xref:task_configuring_iscsi_protocol_on_svms.adoc[在SVM上設定iSCSI傳輸協定]

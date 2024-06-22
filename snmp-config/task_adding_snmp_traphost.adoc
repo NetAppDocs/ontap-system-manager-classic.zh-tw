@@ -1,0 +1,36 @@
+---
+permalink: snmp-config/task_adding_snmp_traphost.html 
+sidebar: sidebar 
+keywords: system, manager, add, traphost, snmp, notification, trap, protocol, generate, cluster, data, host, add an snmp traphost 
+summary: 您可以將ONTAP 支援ONTAP 支援支援的「經典」介面搭配使用、以配合使用支援支援的版本9.7或更早版本、新增traphost（SNMP管理程式）、以便在叢集中產生陷阱時接收SNMP通知（SNMP設陷傳輸協定資料單元）。 
+---
+= 新增SNMP traphost
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用 ONTAP System Manager _classic_ 介面搭配 ONTAP 9.7 或更早版本、在叢集中產生陷阱時、新增 traphost （ SNMP 管理程式）來接收 SNMP 通知（ SNMP 陷阱傳輸協定資料單元）。
+
+.開始之前
+如果您設定具有IPv6位址的SNMP traphosts、則必須在叢集上啟用IPv6。
+
+.關於這項工作
+SNMP和SNMP設陷預設為啟用。SNMP支援上的NetApp技術報告TR-4220包含SNMP設陷所支援的所有預設事件清單。
+
+http://www.netapp.com/us/media/tr-4220.pdf["NetApp技術報告4220：SNMP支援Data ONTAP 功能"^]
+
+.步驟
+. 在SNMP視窗中、按一下*編輯*以開啟*編輯SNMP設定*對話方塊。
+. [[step2-Verify啟用陷阱]在「*設陷主機*」索引標籤中、確認已選取「*啟用設陷*」核取方塊、然後按一下「*新增*」。
+. [step3-enter-traphost-ip]輸入traphost IP位址、然後按一下「* Trap hosts*」窗格中的「*確定*」。
++
+SNMP traphost的IP位址可以是IPV4或IPV6。
+
++
+image::../media/snmp_add_traphost.gif[此影像顯示「編輯SNMP設定」對話方塊,Traphosts tab,in which the traphost status "enabled" is checked and the example traphost IP address "192.0.2.0" is entered.]
+
+. 若要新增其他traphost、請重複執行 <<step2-verify-enable-traps,步驟 2>> 和 <<step3-enter-traphost-ip,步驟 3>>。
+. 當您完成新增traphosts時、請按一下「*編輯SNMP設定*」對話方塊中的「*確定*」。
+

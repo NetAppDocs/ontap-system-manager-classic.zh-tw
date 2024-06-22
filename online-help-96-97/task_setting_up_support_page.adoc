@@ -1,0 +1,41 @@
+---
+permalink: online-help-96-97/task_setting_up_support_page.html 
+sidebar: sidebar 
+keywords: set, up, support, page, cluster, setup, online, help 
+summary: 設定支援頁面可完成叢集設定、並包括設定事件通知、以及設定單節點叢集、以及設定系統備份。 
+---
+= 使用System Manager（ONTAP 系統管理程式）設定支援頁面-《支援頁面-》（英文）-《支援頁面》（
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於支援頁面）來設定支援頁面。設定支援頁面可完成叢集設定、並包括設定事件通知、以及設定單節點叢集、以及設定系統備份。
+
+.開始之前
+您必須設定叢集和網路。
+
+.步驟
+. 使用郵件主機、SNMP設陷主機或Syslog伺服器來設定事件通知。
++
+[NOTE]
+====
+您必須設定至少一個事件通知系統。
+
+====
+. 如果您有單節點叢集、請在FTP伺服器或HTTP伺服器上設定系統備份。
++
+[NOTE]
+====
+系統備份僅適用於單節點叢集。
+
+====
+. 按一下*提交並繼續*。
+
+
+
+
+== 接下來該怎麼做
+
+檢視儲存建議並建立SVM、以繼續進行叢集設定。

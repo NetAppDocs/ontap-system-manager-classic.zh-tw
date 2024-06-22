@@ -1,0 +1,69 @@
+---
+permalink: expansion/task_adding_nodes_to_cluster_using_system_manager.html 
+sidebar: sidebar 
+keywords: system, manager, increase, size, capabilities, capability, storage, node, automatic, ontap, add nodes to a cluster using system manager 
+summary: 您可以使用System Manager將節點新增至現有叢集、以增加儲存系統的大小和功能。當有效的叢集版本ONTAP 為發揮作用時、系統管理員會自動啟用此功能。 
+---
+= 使用System Manager將節點新增至叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用System Manager將節點新增至現有叢集、以增加儲存系統的大小和功能。當有效的叢集版本ONTAP 為發揮作用時、系統管理員會自動啟用此功能。
+
+.開始之前
+* 新的相容節點必須連接至叢集。
++
+「網路」視窗中只會列出預設廣播網域中的連接埠。
+
+* 叢集中的所有節點都必須啟動並執行。
+* 所有節點都必須為相同版本。
+
+
+.步驟
+. 將新的相容節點新增至叢集：
++
+[cols="1,3"]
+|===
+
+
+| 如果您... | 執行此動作... 
+
+
+ a| 
+未登入System Manager
+ a| 
+.. 登入System Manager。
++
+[NOTE]
+====
+系統管理員會在登入時自動偵測到新的相容節點。System Manager會提示您將新的相容節點新增至叢集。
+
+====
+.. 單擊* Add Node to Cluster-*。
+.. 修改節點名稱。
+.. 指定節點授權。
+.. 按一下*提交並繼續*。
+
+
+
+
+ a| 
+已登入System Manager
+ a| 
+.. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+*** 《》（或更早版本）：按一下*「組態*」>「*叢集擴充*」ONTAP 。
+*** 從 ONTAP 9.5 開始：按一下 * 組態 * > * 叢集 * > * 擴充 *
+System Manager會搜尋新增的節點。如果顯示任何警告、您必須先修正這些警告、然後再繼續。如果發現新的相容節點、請繼續下一步。
+
+
+.. 修改節點名稱。
+.. 指定節點授權。
+.. 按一下*提交並繼續*。
+
+
+|===
+

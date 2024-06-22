@@ -1,0 +1,125 @@
+---
+permalink: expansion/concept_joining_nodes_to_cluster_using_cli.html 
+sidebar: sidebar 
+keywords: install, controller, module, cluster, setup, command, join nodes to the cluster using the cli 
+summary: 當新安裝的控制器模組準備就緒時、您可以使用叢集設定命令將每個模組新增至叢集。 
+---
+= 使用CLI將節點加入叢集
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當新安裝的控制器模組準備就緒時、您可以使用將每個模組新增至叢集 `cluster setup` 命令。
+
+.關於這項工作
+* 您必須在兩個節點上執行此程序。
+* 您必須一次加入一個節點、而非同時加入。
+
+
+.步驟
+. [[step1]] 使用啟動叢集設定精靈 `cluster setup` 命令。
++
+[listing]
+----
+::> cluster setup
+
+Welcome to the cluster setup wizard....
+
+Use your web browser to complete cluster setup by accessing
+https://10.63.11.29
+
+Otherwise, press Enter to complete cluster setup using the
+command line interface:
+----
++
+[NOTE]
+====
+如需使用GUI型叢集設定精靈的指示、請參閱 xref:task_adding_nodes_to_cluster_using_system_manager.html[使用System Manager將節點新增至叢集]。
+
+====
+. 按Enter鍵以使用CLI完成此工作。當系統提示您建立新叢集或加入現有叢集時、請輸入 `join`。
++
+[listing]
+----
+Do you want to create a new cluster or join an existing cluster? {create, join}:
+join
+----
+. 系統提示您配置現有的叢集介面時、請按 `Enter` 以接受。
++
+[listing]
+----
+Existing cluster interface configuration found:
+
+Port    MTU     IP              Netmask
+e1a     9000    169.254.87.75   255.255.0.0
+
+Do you want to use this configuration? {yes, no} [yes]:
+----
+. 依照提示加入現有的叢集。
++
+[listing]
+----
+Step 1 of 3: Join an Existing Cluster
+You can type "back", "exit", or "help" at any question.
+
+Enter the name of the cluster you would like to join [cluster1]: cluster1
+
+Joining cluster cluster1
+
+Starting cluster support services ..
+
+This node has joined the cluster cluster1.
+
+Step 2 of 3: Configure Storage Failover (SFO)
+You can type "back", "exit", or "help" at any question.
+
+SFO will be enabled when the partner joins the cluster.
+
+Step 3 of 3: Set Up the Node
+
+Cluster setup is now complete.
+----
++
+節點會自動重新命名、以符合叢集名稱。
+
+. [[step5]] 在叢集上、使用驗證節點是否為叢集的一部分 `cluster show` 命令。
++
+[listing]
+----
+cluster1::> cluster show
+Node                  Health  Eligibility
+--------------------- ------- ------------
+cluster1-1            true    true
+cluster1-2            true    true
+cluster1-3            true    true
+3 entries were displayed.
+----
+. 重複 link:#step1["步驟 1"] 透過 link:#step5["步驟 5"] 用於第二個新安裝的控制器模組。
++
+叢集設定精靈在第二個節點上的差異如下：
+
++
+** 它預設加入現有的叢集、因為其合作夥伴已經是叢集的一部分。
+** 它會自動在兩個節點上啟用儲存容錯移轉。
+
+
+. 使用確認儲存容錯移轉已啟用且可能 `storage failover show` 命令。
++
+下列輸出顯示已在叢集的所有節點上啟用儲存容錯移轉、而且可以執行、包括新增的節點：
+
++
+[listing]
+----
+cluster1::> storage failover show
+                              Takeover
+Node           Partner        Possible State
+-------------- -------------- -------- -------------------------------------
+cluster1-1     cluster1-2     true     Connected to cluster1-2
+cluster1-2     cluster1-1     true     Connected to cluster1-1
+cluster1-3     cluster1-4     true     Connected to cluster1-3
+cluster1-4     cluster1-3     true     Connected to cluster1-4
+4 entries were displayed.
+----
+

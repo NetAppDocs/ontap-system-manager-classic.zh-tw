@@ -1,0 +1,16 @@
+---
+permalink: nas-multiprotocol-config/concept_cifs_nfs_configuration_workflow.html 
+sidebar: sidebar 
+keywords: configure, smb, cif, nfs, creating, create, aggregate, volume, share, export, verify, unix, windows, administration, host, nfs, client, multiprotocol, configuration, workflow, multiprotocol configuration workflow 
+summary: 設定SMB/CIFS和NFS都需要選擇性地建立集合體、選擇性地建立新的SVM或設定現有的SVM、建立磁碟區、共用區和匯出、以及驗證UNIX和Windows管理主機的存取。然後您可以開啟對SMB/CIFS和NFS用戶端的存取。 
+---
+= 多重傳輸協定組態工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定SMB/CIFS和NFS都需要選擇性地建立集合體、選擇性地建立新的SVM或設定現有的SVM、建立磁碟區、共用區和匯出、以及驗證UNIX和Windows管理主機的存取。然後您可以開啟對SMB/CIFS和NFS用戶端的存取。
+
+image::../media/cifs_nfs_multiprotocol.gif[概述ONTAP 在功能介紹中設定NFS和CIFS所需的步驟。]

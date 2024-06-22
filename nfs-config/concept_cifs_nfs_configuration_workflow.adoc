@@ -1,0 +1,16 @@
+---
+permalink: nfs-config/concept_cifs_nfs_configuration_workflow.html 
+sidebar: sidebar 
+keywords: configuring, configure, creating, create, aggregate, workflow, goal-creating, nfs-enabled, svm, access, exist, volume, access, nfs configuration workflow 
+summary: 設定NFS需要選擇性地建立Aggregate、然後選擇專屬於您目標的工作流程、例如建立新的NFS型SVM、設定現有SVM的NFS存取、或只是將NFS Volume新增至已完全設定NFS存取的現有SVM。 
+---
+= NFS組態工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定NFS需要選擇性地建立Aggregate、然後選擇專屬於您目標的工作流程、例如建立新的NFS型SVM、設定現有SVM的NFS存取、或只是將NFS Volume新增至已完全設定NFS存取的現有SVM。
+
+image::../media/nfs_config.gif[概述NFS設定程序,including the steps that occur before NFS setup begins,and the steps that can be optionally performed afterwards.]

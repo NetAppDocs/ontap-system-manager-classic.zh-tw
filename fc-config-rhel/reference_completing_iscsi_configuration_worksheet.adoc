@@ -1,0 +1,200 @@
+---
+permalink: fc-config-rhel/reference_completing_iscsi_configuration_worksheet.html 
+sidebar: sidebar 
+keywords: require, fc, initiator, target, wwpn, storage, configuration, information, perform, fc, task, complete, complete the fc configuration worksheet 
+summary: 您需要FC啟動器和目標WWPN及儲存組態資訊、才能執行FC組態工作。 
+---
+= 完成FC組態工作表
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您需要FC啟動器和目標WWPN及儲存組態資訊、才能執行FC組態工作。
+
+
+
+== FC主機WWPN
+
+|===
+| 連接埠 | WWPN 
+
+
+ a| 
+連接至FC交換器1的啟動器（主機）連接埠
+ a| 
+
+
+
+ a| 
+連接至 FC 交換器 2 的啟動器（主機）連接埠
+ a| 
+
+|===
+
+
+== FC目標WWPN
+
+叢集中的每個節點都需要兩個FC資料生命期。當ONTAP 您在建立儲存虛擬機器（SVM）的過程中建立LIF時、WWPN會由功能性資源分配。
+
+image::../media/network_fc_or_iscsi_express_fc_rhel.gif[圖中顯示四個節點,two switches,and a host. Each node has two LIFs]
+
+|===
+| LIF | WWPN 
+
+
+ a| 
+節點1 LIF、連接埠連接至FC交換器1
+ a| 
+
+
+
+ a| 
+節點2 LIF、連接埠連接至FC交換器1
+ a| 
+
+
+
+ a| 
+節點 3 LIF 、連接埠連接至 FC 交換器 1
+ a| 
+
+
+
+ a| 
+節點 4 LIF 、連接埠連接至 FC 交換器 1
+ a| 
+
+
+
+ a| 
+節點 1 LIF 、連接埠連接至 FC 交換器 2
+ a| 
+
+
+
+ a| 
+節點 2 LIF 、連接埠連接至 FC 交換器 2
+ a| 
+
+
+
+ a| 
+節點 3 LIF 、連接埠連接至 FC 交換器 2
+ a| 
+
+
+
+ a| 
+節點 4 LIF 、連接埠連接至 FC 交換器 2
+ a| 
+
+|===
+
+
+== 儲存組態
+
+如果已建立Aggregate和SVM、請在此處記錄其名稱；否則、您可以視需要建立：
+
+|===
+| 節點至擁有LUN 
+
+
+ a| 
+Aggregate名稱
+
+
+
+ a| 
+SVM名稱
+
+|===
+
+
+== LUN 資訊
+
+|===
+| LUN 大小 
+
+
+ a| 
+LUN名稱（選用）
+
+
+
+ a| 
+LUN說明（選用）
+
+|===
+
+
+== SVM資訊
+
+如果您不使用現有的SVM、則需要下列資訊來建立新的SVM：
+
+[cols="1a,1a"]
+|===
+2+| SVM名稱 
+
+
+ a| 
+SVM IPspace
+
+
+
+ a| 
+SVM根Volume的Aggregate
+
+
+
+ a| 
+SVM使用者名稱（選用）
+
+
+
+ a| 
+SVM密碼（選用）
+
+
+
+ a| 
+SVM管理LIF（選用）
+
+
+
+ a| 
+ a| 
+子網路：
+
+
+
+ a| 
+ a| 
+IP位址：
+
+
+
+ a| 
+ a| 
+網路遮罩：
+
+
+
+ a| 
+ a| 
+閘道：
+
+
+
+ a| 
+ a| 
+主節點：
+
+
+
+ a| 
+ a| 
+主連接埠：
+
+|===

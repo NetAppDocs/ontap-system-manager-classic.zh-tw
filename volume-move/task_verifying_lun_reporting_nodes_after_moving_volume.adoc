@@ -1,0 +1,39 @@
+---
+permalink: volume-move/task_verifying_lun_reporting_nodes_after_moving_volume.html 
+sidebar: sidebar 
+keywords: volume, lun, destination, aggregate, high-availability, ha, pair, ontap, selective, reporting-nodes, list, path, verify, verify lun reporting nodes after moving a volume 
+summary: 您可以新增LUN報告節點、以協助維護最佳化的LUN路徑。 
+---
+= 移動磁碟區後、請驗證LUN報告節點
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以新增LUN報告節點、以協助維護最佳化的LUN路徑。
+
+如果您移動的磁碟區包含LUN、而目的地Aggregate位於另一個高可用度（HA）配對上、ONTAP 則會自動將HA配對新增至選擇性LUN對應報告節點清單
+
+.開始之前
+必須設定兩個LIF：一個LIF位於目的地節點、另一個LIF位於目的地節點的HA合作夥伴。
+
+.關於這項工作
+只有當您將磁碟區從一個HA配對移至另一個HA配對時、才需要執行此程序。如果您將磁碟區移至同一HA配對的不同節點（例如、如果您有雙節點叢集或MetroCluster 是一個架構組態）、您可以跳過此程序。
+
+.步驟
+. 確認目的地節點及其合作夥伴節點位於磁碟區的報告節點清單中。如果節點不在報告節點清單中、請將目的地節點及其合作夥伴節點新增至磁碟區的報告節點清單：
++
+`lun mapping add-reporting-nodes`
+
+. 從主機重新掃描以探索新增的路徑。
+. 新增MPIO組態的新路徑。
+. 從報告節點清單中移除先前的LUN擁有者及其合作夥伴節點：
++
+`lun mapping remove-reporting-nodes -remote-nodes -vserver vserver_name -path lun_path -igroup igroup_name`
+
+. 重新掃描主機以驗證是否移除舊路徑。
++
+如需重新掃描主機的特定步驟、請參閱主機文件。
+
+

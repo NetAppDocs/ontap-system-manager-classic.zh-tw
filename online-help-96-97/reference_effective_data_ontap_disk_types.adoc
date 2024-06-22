@@ -1,0 +1,73 @@
+---
+permalink: online-help-96-97/reference_effective_data_ontap_disk_types.html 
+sidebar: sidebar 
+keywords: ontap, disk, type, online, help 
+summary: 從Data ONTAP 功能性的8.1開始、特定ONTAP 的功能性磁碟類型被視為等同的、用於建立和新增集合體、以及管理備援磁碟。針對每種磁碟類型指派有效的磁碟類型。ONTAP您可以混合使用相同有效磁碟類型的HDD。 
+---
+= 使用有效ONTAP 的邊式磁碟類型、將HDD與System Manger（系統管理器）混用- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從Data ONTAP 功能性的8.1開始、特定ONTAP 的功能性磁碟類型被視為等同的、用於建立和新增集合體、以及管理備援磁碟。針對每種磁碟類型指派有效的磁碟類型。ONTAP您可以使用ONTAP 經典版的經典版（9.7版及更早版本）、混合使用相同有效磁碟類型的HDD。
+
+當 `raid.disktype.enable` 選項設定為 `off`，您可以在同一集合中混合使用某些類型的 HDD 。當 `raid.disktype.enable` 選項設定為 `on`，有效磁碟類型與 ONTAP 磁碟類型相同。只能使用一種磁碟類型來建立Aggregate。的預設值 `raid.disktype.enable` 選項是 `off`。
+
+從 Data ONTAP 8.2 開始、即為選項 `raid.mix.hdd.disktype.capacity` 必須設定為 `on` 混合使用 BSA 、 FSA 和 ATA 類型的磁碟。選項 `raid.mix.hdd.disktype.performance` 必須設定為 `on` 混合使用 FCAL 和 SAS 類型的磁碟。
+
+下表顯示磁碟類型如何對應至有效磁碟類型：
+
+|===
+| 磁碟類型ONTAP | 有效磁碟類型 
+
+
+ a| 
+FCAL
+ a| 
+SAS
+
+
+
+ a| 
+SAS
+ a| 
+SAS
+
+
+
+ a| 
+ATA
+ a| 
+FSA
+
+
+
+ a| 
+牀位寓所
+ a| 
+FSA
+
+
+
+ a| 
+FCAL和SAS
+ a| 
+SAS
+
+
+
+ a| 
+MSATA
+ a| 
+MSATA
+
+
+
+ a| 
+FSA
+ a| 
+FSA
+
+|===

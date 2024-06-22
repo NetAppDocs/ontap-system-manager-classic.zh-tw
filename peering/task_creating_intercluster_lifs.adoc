@@ -1,0 +1,36 @@
+---
+permalink: peering/task_creating_intercluster_lifs.html 
+sidebar: sidebar 
+keywords: creating, create, intercluster, logical, interface, lif, enable, network, communicate, ipspace, peer, relationship, create intercluster lif, Beginning with ontap 9.3 
+summary: 從ONTAP 功能更新至ONTAP 功能更新至功能更新9.7、您可以使用ONTAP 『經典』介面建立叢集間邏輯介面（LIF）、讓叢集網路與節點通訊。您必須在每個IP空間內建立叢集間LIF、用於對等關係、並在每個叢集中的每個節點上建立對等關係。 
+---
+= 建立叢集間的生命體（從ONTAP 功能9.3開始）
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從ONTAP 功能更新至ONTAP 功能更新9.7開始、您可以使用ONTAP 支援叢集間邏輯介面（lifs）建立叢集間邏輯介面（lifs）、讓叢集網路能夠與節點通訊。您必須在每個IP空間內建立叢集間LIF、用於對等關係、並在每個叢集中的每個節點上建立對等關係。
+
+.關於這項工作
+例如、如果您有一個四節點叢集、想要透過IPspace A與叢集X對等、以及透過IPspace Y與叢集Y對等、則總共需要八個叢集間生命體； IPspace A上有四個（每個節點一個）、IPspace Y上有四個（每個節點一個）。
+
+您必須在想要建立對等關係的兩個叢集上執行此程序。
+
+.步驟
+. 按一下*組態*>*進階叢集設定*。
+. 在「*設定進階叢集功能*」視窗中、按一下「*叢集對等*」選項旁的* Proce*。
+. 從* IPspace*清單中選取IPspace。
+. 輸入每個節點的IP位址、連接埠、網路遮罩和閘道詳細資料。
++
+image::../media/intercluster_lif_creation_93.gif[此影像由周邊文字說明。]
+
+. 按一下*提交並繼續*。
+
+
+
+
+== 接下來該怎麼做
+
+您應該在叢集對等關係視窗中輸入叢集詳細資料、以繼續進行叢集對等關係。

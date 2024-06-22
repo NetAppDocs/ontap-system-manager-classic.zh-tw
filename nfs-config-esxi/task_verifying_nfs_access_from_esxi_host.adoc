@@ -1,0 +1,27 @@
+---
+permalink: nfs-config-esxi/task_verifying_nfs_access_from_esxi_host.html 
+sidebar: sidebar 
+keywords: provision, datastore, esxi, verify, nfs, access, creating, create, virtual, machine, power, verify nfs access from an esxi host 
+summary: 佈建資料存放區之後、您可以在資料存放區上建立虛擬機器並開啟電源、以驗證ESXi主機是否具有NFS存取權。 
+---
+= 驗證ESXi主機的NFS存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+佈建資料存放區之後、您可以在資料存放區上建立虛擬機器並開啟電源、以驗證ESXi主機是否具有NFS存取權。
+
+.步驟
+. 在vSphere Web Client * Home*頁面中、按一下*主機與叢集*。
+. 在導覽窗格中、展開資料中心以找出您先前建立的資料存放區。
+. 按一下*「Create a new virtual machine*（建立新的虛擬機器*）」、然後在精靈中提供必要的資訊。
++
+若要驗證NFS存取、您應該選取先前建立的資料中心、ESXi主機和資料存放區。
+
++
+虛擬機器會顯示在vSphere Web Client詳細目錄中。
+
+. 開啟虛擬機器電源。
+

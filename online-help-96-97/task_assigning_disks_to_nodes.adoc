@@ -1,0 +1,36 @@
+---
+permalink: online-help-96-97/task_assigning_disks_to_nodes.html 
+sidebar: sidebar 
+keywords: system, manager, assign, disk, node, online, help 
+summary: 您可以使用System Manager將未指派磁碟的擁有權指派給特定節點、以增加集合體或儲存資源池的容量。 
+---
+= 使用System Manager將磁碟指派給節點- ONTAP 不含更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）、將未指派磁碟的擁有權指派給特定節點、以增加集合體或儲存資源池的容量。
+
+.關於這項工作
+* 如果符合下列條件、您可以指派磁碟：
++
+** 所選磁碟的容器類型必須為「'未 指派'」。
+** 磁碟必須連接至HA配對中的節點。
+** 節點必須能夠看到磁碟。
+
+
+* 針對部分組態、您無法使用System Manager來指派磁碟。MetroCluster
++
+您必須改用命令列介面。
+
+
+
+.步驟
+. 按一下「*儲存設備*>*集合體與磁碟*>*磁碟*」。
+. 在「*磁碟*」視窗中、選取「* Inventory *」索引標籤。
+. 選取您要指派的磁碟、然後按一下*指派*。
+. 在「*指派磁碟*」對話方塊中、選取您要指派磁碟的節點。
+. 按一下*指派*。
+

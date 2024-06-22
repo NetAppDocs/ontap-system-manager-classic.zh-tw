@@ -1,0 +1,270 @@
+---
+permalink: online-help-96-97/reference_luns_window.html 
+sidebar: sidebar 
+keywords: online, help, lun, management, window, command, button, initiator, portset, group, online, help 
+summary: 您可以使用LUN視窗來建立及管理LUN、並顯示LUN的相關資訊。您也可以新增、編輯或刪除啟動器群組和啟動器ID。 
+---
+= System Manager中的LUN視窗- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《LUN》（LUN）視窗ONTAP （適用於更新版本的版本）來建立和管理LUN、以及顯示LUN的相關資訊。您也可以新增、編輯或刪除啟動器群組和啟動器ID。
+
+
+
+== LUN管理索引標籤
+
+此索引標籤可讓您建立、複製、刪除、移動或編輯LUN的設定。您也可以將LUN指派給儲存品質服務（QoS）原則群組。
+
+
+
+== 命令按鈕
+
+* *建立*
++
+開啟「Create LUN（建立LUN）」精靈、可讓您建立LUN。
+
++
+在不含任何現有LUN的支援平台叢集AFF 上、會開啟Create FC SAN最佳化LUN（建立FC SAN最佳化LUN）對話方塊、讓您設定一或多個FC SAN最佳化LUN。
+
+* *複製*
++
+開啟Clone LUN（複製LUN）對話方塊、可讓您複製所選LUN。
+
+* *編輯*
++
+開啟「編輯LUN」對話方塊、可讓您編輯所選LUN的設定。
+
+* *刪除*
++
+刪除選取的LUN。
+
+* *狀態*
++
+可讓您將所選LUN的狀態變更為「線上」或「離線」。
+
+* *搬移*
++
+開啟「Move LUN（移動LUN）」對話方塊、可讓您將所選LUN移至同一儲存虛擬機器（SVM）內的新磁碟區、現有磁碟區或qtree。
+
+* *儲存QoS *
++
+開啟「服務品質詳細資料」對話方塊、可讓您將一個或多個LUN指派給新的或現有的原則群組。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+== LUN清單
+
+* *名稱*
++
+顯示LUN的名稱。
+
+* * SVM*
++
+顯示建立LUN的儲存虛擬機器（SVM）名稱。
+
+* * Container路徑*
++
+顯示包含LUN的檔案系統名稱（Volume或qtree）。
+
+* *保留空間*
++
+指定是啟用還是停用空間保留。
+
+* *可用大小*
++
+顯示LUN中的可用空間。
+
+* *總大小*
++
+顯示LUN中的總空間。
+
+* *已使用*
++
+顯示使用的總空間（百分比）。
+
+* *類型*
++
+指定LUN類型。
+
+* *狀態*
++
+指定LUN的狀態。
+
+* *政策小組*
++
+顯示指派LUN的Storage QoS原則群組名稱。依預設、此欄為隱藏欄。
+
+* *應用*
++
+顯示指派給LUN的應用程式名稱。
+
+* *說明*
++
+顯示LUN的說明。
+
+
+
+
+
+== 詳細資料區域
+
+LUN清單下方的區域會顯示與所選LUN相關的詳細資料。
+
+* *詳細資料索引標籤*
++
+顯示與LUN相關的詳細資料、例如LUN序號、LUN是否為複製、LUN說明、指派LUN的原則群組、原則群組的最低處理量、原則群組的最大處理量、LUN移動作業的詳細資料、 以及指派給LUN的應用程式。您也可以檢視與所選LUN相關聯的啟動器群組和啟動器的詳細資料。
+
+* *效能索引標籤*
++
+顯示LUN的效能指標圖表、包括資料速率、IOPS和回應時間。
+
++
+變更用戶端時區或叢集時區會影響效能度量圖。重新整理瀏覽器以查看更新的圖表。
+
+
+
+
+
+== 啟動器群組索引標籤
+
+此索引標籤可讓您建立、刪除或編輯啟動器群組和啟動器ID的設定。
+
+
+
+== 命令按鈕
+
+* *建立*
++
+開啟「建立啟動器群組」對話方塊、可讓您建立啟動器群組、以控制主機對特定LUN的存取。
+
+* *編輯*
++
+開啟「編輯啟動器群組」對話方塊、可讓您編輯所選啟動器群組的設定。
+
+* *刪除*
++
+刪除選取的啟動器群組。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+== 啟動器群組清單
+
+* *名稱*
++
+顯示啟動器群組的名稱。
+
+* *類型*
++
+指定啟動器群組支援的傳輸協定類型。支援的傳輸協定為iSCSI、FC/FCoE或混合（iSCSI和FC/FCoE）。
+
+* *作業系統*
++
+指定啟動器群組的作業系統。
+
+* * PortSet*
++
+顯示與啟動器群組相關聯的連接埠集。
+
+* *啟動器計數*
++
+顯示新增至啟動器群組的啟動器數目。
+
+
+
+
+
+== 詳細資料區域
+
+啟動器群組清單下方的區域會顯示新增至所選啟動器群組的啟動器、以及對應至啟動器群組的LUN的詳細資料。
+
+
+
+== PortSets索引標籤
+
+此索引標籤可讓您建立、刪除或編輯連接埠集的設定。
+
+
+
+== 命令按鈕
+
+* *建立*
++
+開啟「建立Portset」對話方塊、可讓您建立連接埠集、以限制對LUN的存取。
+
+* *編輯*
++
+開啟「編輯Portset」對話方塊、可讓您選取要與連接埠集相關聯的網路介面。
+
+* *刪除*
++
+刪除選取的連接埠集。
+
+* *重新整理*
++
+更新視窗中的資訊。
+
+
+
+
+
+== PortSets清單
+
+* * Portset Name*
++
+顯示連接埠集的名稱。
+
+* *類型*
++
+指定portset支援的傳輸協定類型。支援的傳輸協定為iSCSI、FC/FCoE或混合（iSCSI和FC/FCoE）。
+
+* *介面計數*
++
+顯示與連接埠集相關聯的網路介面數目。
+
+* *啟動器群組計數*
++
+顯示與連接埠集相關聯的啟動器群組數。
+
+
+
+
+
+== 詳細資料區域
+
+Portset清單下方的區域會顯示與所選連接埠集相關聯之網路介面和啟動器群組的詳細資料。
+
+*相關資訊*
+
+xref:task_creating_luns.adoc[建立LUN]
+
+xref:task_deleting_luns.adoc[刪除LUN]
+
+xref:task_creating_initiator_groups.adoc[正在建立啟動器群組]
+
+xref:task_editing_luns.adoc[編輯LUN]
+
+xref:task_editing_initiator_groups.adoc[編輯啟動器群組]
+
+xref:task_editing_initiators.adoc[編輯啟動器]
+
+xref:task_bringing_luns_online.adoc[使LUN上線]
+
+xref:task_taking_luns_offline.adoc[使LUN離線]
+
+xref:task_cloning_luns.adoc[複製LUN]

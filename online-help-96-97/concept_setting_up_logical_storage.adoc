@@ -1,0 +1,14 @@
+---
+permalink: online-help-96-97/concept_setting_up_logical_storage.html 
+sidebar: sidebar 
+keywords: online, help, set, up, logical, storage, svm, volume 
+summary: 設定邏輯儲存設備包括建立儲存虛擬機器（SVM）和磁碟區。 
+---
+= 使用System Manager經典ONTAP 版-更新版本、設定邏輯儲存設備
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》功能來設定邏輯儲存設備（ONTAP 適用於更新版本的《》）。設定邏輯儲存設備包括建立儲存虛擬機器（SVM）和磁碟區。

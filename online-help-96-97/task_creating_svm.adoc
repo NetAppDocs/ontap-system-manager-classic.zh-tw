@@ -1,0 +1,112 @@
+---
+permalink: online-help-96-97/task_creating_svm.html 
+sidebar: sidebar 
+keywords: svm, create, storage, virtual, machine, online, help 
+summary: 您可以使用儲存虛擬機器（SVM）視窗來建立完整設定的SVM。在這些SVM上建立儲存物件之後、SVM會提供資料。 
+---
+= 使用System Manager建立SVM - ONTAP 不含更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在經典版的《經典版》（適用於VMware 9.7及更早版本）中、您可以使用儲存虛擬機器（SVM）視窗來建立完整組態的SVM。ONTAP ONTAP在這些SVM上建立儲存物件之後、SVM會提供資料。
+
+.開始之前
+* 您必須已建立Aggregate、而且Aggregate必須在線上。
+* 您必須確保集合體有足夠的空間來容納SVM根磁碟區。
+
+
+.步驟
+. 輸入SVM的名稱。
+. 選取SVM的資料傳輸協定：
++
+|===
+| 如果您想要... | 然後... 
+
+
+ a| 
+使用Active Directory設定CIFS伺服器來啟用CIFS傳輸協定
+ a| 
+.. 選取「* Active Directory *」方塊。
+.. 輸入Active Directory管理員名稱。
+.. 輸入Active Directory管理員密碼。
+.. 輸入CIFS伺服器的名稱。
+.. 輸入Active Directory網域的名稱。
+.. 視您的需求而定、請在此SVM*上選取*單一資料LIF、或在此SVM*方塊中選取*單一資料LIF。
+.. 提供IP位址、網路遮罩、閘道和連接埠等資料LIF詳細資料。
+.. 提供DNS詳細資料。
+
+
+
+
+ a| 
+使用工作群組設定CIFS伺服器、以啟用CIFS傳輸協定
+ a| 
+.. 選取「*工作群組*」方塊。
+.. 輸入工作群組的名稱。
+.. 輸入CIFS伺服器的名稱。
+.. 視您的需求而定、選取「*在此SVM*上有一個資料LIF」或「*在此SVM*上每個節點有一個資料LIF」核取方塊。
+.. 提供IP位址、網路遮罩、閘道和連接埠等資料LIF詳細資料。
+
+
+
+
+ a| 
+啟用NFS傳輸協定
+ a| 
+.. 選取「* NFS*」方塊。
+.. 視您的需求而定、選取「*在此SVM*上有一個資料LIF」或「*在此SVM*上每個節點有一個資料LIF」核取方塊。
+.. 提供IP位址、網路遮罩、閘道和連接埠等資料LIF詳細資料。
+
+
+
+
+ a| 
+啟用iSCSI傳輸協定
+ a| 
+.. 選取「* iSCSI *」方塊。
+.. 提供IP位址、網路遮罩、閘道和連接埠等資料LIF詳細資料。
+
+
+
+
+ a| 
+啟用FC/FCoE傳輸協定
+ a| 
+.. 選取「* FC/FCoS*」方塊。
+.. 選取FC或FCoE傳輸協定的FC/FCoE連接埠。
++
+[NOTE]
+====
+每個節點至少必須為每個傳輸協定（FC和FCoE）設定一個正確的連接埠。
+
+====
+
+
+
+
+ a| 
+啟用NVMe傳輸協定
+ a| 
+.. 選取「* NVMe *」方塊。
+.. 選取NVMe傳輸協定的NVMe連接埠。
++
+[NOTE]
+====
+其中一個節點必須至少有一個支援NVMe的介面卡可供使用、才能設定NVMe。        此外、從ONTAP 版本號為2、9.5開始、必須針對與SVM相關的HA配對中的每個節點、至少設定一個NVMe LIF。您最多可以為配對中的每個節點建立兩個NVMe LIF。
+
+====
+
+
+|===
+. *選用：*按一下*進階選項*圖示、並提供詳細資料、以設定進階選項、例如預設語言、安全樣式、CIFS伺服器詳細資料及NFS詳細資料。
+. 按一下*提交並繼續*以建立SVM。
+
+
+
+
+== 接下來該怎麼做
+
+如果您已按一下*提交並繼續*、則必須驗證您在「摘要」視窗中提供的詳細資料、然後按一下*管理叢集*以啟動系統管理員、或按一下*資源配置應用程式*以配置儲存應用程式、或按一下*匯出組態*下載組態檔。

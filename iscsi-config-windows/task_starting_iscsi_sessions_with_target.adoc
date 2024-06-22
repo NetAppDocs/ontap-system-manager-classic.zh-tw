@@ -1,0 +1,62 @@
+---
+permalink: iscsi-config-windows/task_starting_iscsi_sessions_with_target.html 
+sidebar: sidebar 
+keywords: windows, host, iscsi, connection, cluster, establish, sessions, initiator, properties, dialog, box, start iscsi sessions with the target 
+summary: Windows主機必須與叢集中的每個節點建立iSCSI連線。您可以使用主機上的iSCSI啟動器內容對話方塊、從主機建立工作階段。 
+---
+= 使用目標啟動iSCSI工作階段
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows主機必須與叢集中的每個節點建立iSCSI連線。您可以使用主機上的iSCSI啟動器內容對話方塊、從主機建立工作階段。
+
+.開始之前
+您必須知道儲存虛擬機器（SVM）上iSCSI資料LIF的IP位址、其中包含您正在存取的LUN。
+
+.關於這項工作
+在本功能中、iSCSI主機必須有通往叢集中每個節點的路徑。ONTAP原生DSM會選取最佳路徑。如果路徑失敗、原生DSM會選取替代路徑。
+
+iSCSI啟動器內容對話方塊中的按鈕和標籤會因Windows版本而異。工作中的某些步驟包含多個按鈕或標籤名稱；您應該挑選符合所使用Windows版本的名稱。
+
+.步驟
+. 開啟「* iSCSI啟動器內容*」對話方塊：
++
+|===
+| 適用於... | 按一下... 
+
+
+ a| 
+Windows Server 2012
+ a| 
+*伺服器管理員*>*儀表板*>*工具*>* iSCSI啟動器*
+
+
+
+ a| 
+Windows Server 2008
+ a| 
+*開始*>*管理工具*>* iSCSI啟動器*
+
+|===
+. 在「*探索*」索引標籤上、按一下「*探索入口網站*」或「*新增入口網站*」、然後輸入iSCSI目標連接埠的IP位址。
+. 在「*目標*」索引標籤上、選取您探索的目標、然後按一下「*登入*」或「*連線*」。
+. 選取*啟用多重路徑*、選取*在電腦啟動時自動還原此連線*或*將此連線新增至最愛目標清單*、然後按一下*進階*。
+. 對於*本機介面卡*、請選取* Microsoft iSCSI啟動器*。
++
+下列範例來自Windows Server 2008：
+
++
+image::../media/iscsi_login_for_windows.gif[圖例顯示Windows iSCSI啟動器登入的「進階設定」對話方塊、其設定與周邊步驟相符。]
+
+. 對於*來源IP*或*啟動器IP*、請選取與iSCSI目標LIF之一位於相同子網路或VLAN上的連接埠IP位址。
+. 保留其餘核取方塊的預設值、然後按一下「*確定*」。
+. 在「*目標*」索引標籤上、再次選取相同的目標、然後按一下「*登入*」或「*連線*」。
+. 選取*啟用多重路徑*、選取*在電腦啟動時自動還原此連線*或*將此連線新增至最愛目標清單*、然後按一下*進階*。
+. 對於*來源IP*或*啟動器IP*、請選取不同iSCSI目標LIF子網路或VLAN上不同連接埠的IP位址。
+. 對於*目標入口網站*、請選取iSCSI目標LIF的IP位址、此IP位址對應您剛選取的*來源IP*連接埠。
+. 保留其餘核取方塊的預設值、然後按一下「*確定*」。
+. 重複步驟8到12、連線至每個可用的目標LIF。
+

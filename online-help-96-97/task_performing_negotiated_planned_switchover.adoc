@@ -1,0 +1,54 @@
+---
+permalink: online-help-96-97/task_performing_negotiated_planned_switchover.html 
+sidebar: sidebar 
+keywords: online, help, perform, negotiated, switchover, system, help 
+summary: 從System Manager 9.6開始、您可以開始透過協商（計畫性）方式切換MetroCluster 到一個站台。當您想要在站台上執行災難恢復測試或計畫性維護時、此作業非常實用。 
+---
+= 執行協商切換
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、您可以開始透過協商（計畫性）方式切換MetroCluster 到一個站台。當您想要在站台上執行災難恢復測試或計畫性維護時、此作業非常實用。
+
+.步驟
+. [[step1]] 在系統管理員中、使用叢集管理員認證登入本機 MetroCluster 站台（站台 A ）。
+. 按一下「*組態*>* MetroCluster S16*」
++
+隨即顯示MetroCluster Switchover / switchback Operations（MetroCluster切換/切換回復作業）視窗。
+
+. 單擊 * 下一步 * 。
++
+「還原切換和切換作業」視窗會顯示作業狀態、而系統管理員則會驗證是否有可能進行協調的切換。MetroCluster
+
+. 驗證程序完成時、請執行下列其中一項子步驟：
++
+** 如果驗證成功、請繼續執行步驟 link:#step5["5."]。
+** 如果驗證失敗、但站台B已啟動、則會發生錯誤、例如子系統或NVRAM鏡射的問題未同步。您可以執行下列任一程序：
++
+*** 修正導致錯誤的問題、按一下*關閉*、然後在步驟中重新啟動 link:#step1["1."]。
+*** 停止站台B節點、按一下*關閉*、然後執行中的步驟 xref:task_performing_unplanned_switchover.adoc[執行非計畫性切換]。
+
+
+** 如果驗證失敗、且站台B當機、則很可能是連線問題。確認站台B確實停機、然後執行中的步驟 xref:task_performing_unplanned_switchover.adoc[執行非計畫性切換]。
+
+
+. [[step5] 按一下 * 從站台 B 切換至站台 A* 、以啟動切換程序。
++
+此時會顯示一則警告訊息、警告您切換作業會停止站台B上的所有資料SVM、並在站台A上重新啟動
+
+. 如果您要繼續、請按一下*是*。
++
+切換程序隨即開始。站台A和站台B的狀態會顯示在其組態的圖形表示上方。如果切換作業失敗、會顯示錯誤訊息。按一下 * 關閉 * 。修正任何錯誤、並在步驟中重新開始 link:#step1["1."]
+
+. 等到System Manager顯示修復已完成。
++
+修復完成後、站台B即可運作、系統也會準備好進行切換程序。
+
++
+完成切換程序的準備工作後、視窗底部的*切換從站台A切換至站台B*按鈕會作用中。
+
+. 若要繼續切換回復作業、請執行中的步驟 xref:task_performing_switchback.adoc[執行切換]。
+

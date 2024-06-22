@@ -1,0 +1,65 @@
+---
+permalink: volume-disaster-recovery/task_returning_recovered_volume_to_source_role.html 
+sidebar: sidebar 
+keywords: resynchronize, resynchronizing, data, destination, volume, source, activate, snapmirror, relationship, reactivate, reactivate the source volume 
+summary: 將目的地Volume的資料重新同步至來源Volume之後、您必須中斷SnapMirror關係來啟動來源Volume。接著您應該重新同步目的地Volume、以保護重新啟動的來源Volume。 
+---
+= 重新啟動來源Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+將目的地Volume的資料重新同步至來源Volume之後、您必須中斷SnapMirror關係來啟動來源Volume。接著您應該重新同步目的地Volume、以保護重新啟動的來源Volume。
+
+.關於這項工作
+中斷和反轉重新同步作業都是從*來源*叢集執行。
+
+下列影像顯示當您中斷SnapMirror關係時、來源和目的地磁碟區會讀取/寫入。反轉重新同步作業之後、資料會從作用中來源磁碟區複寫到唯讀目的地磁碟區。
+
+image::../media/reactivatng_source.gif[影像顯示SnapMirror中斷和重新同步作業]
+
+.步驟
+. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+** 《》（或更早版本）：按一下「*保護*」>「*關係*」ONTAP 。
+** 從ONTAP 《S19.5》開始：按一下「* Protection *」>「* Volume Relationationationation*」。
+
+
+. 選取來源與目的地磁碟區之間的SnapMirror關係。
+. 按一下「*作業*」>「*靜止*」。
+. 選取確認核取方塊、然後按一下*靜止*。
+. 按一下*作業*>*中斷*。
+. 選取確認核取方塊、然後按一下*中斷*。
++
+image::../media/snapmirror_return_break.gif[顯示中斷對話方塊的快照。]
+
+. 按一下*作業*>*反轉重新同步*。
+. 選取確認核取方塊、然後按一下*反轉重新同步*。
++
+image::../media/snapmirror_return_reverse_resync.gif[顯示「反轉重新同步」對話方塊的快照。]
+
++
+從 ONTAP 9.3 開始、關係的 SnapMirror 原則設為 `MirrorAllSnapshots` SnapMirror 排程設為 `None`。
+
++
+如果您執行的是 ONTAP 9.2 或更早版本、則關係的 SnapMirror 原則會設為 `DPDefault` SnapMirror 排程設為 `None`。
+
+. 瀏覽至「 Volume 」頁面中的來源 Volume 、並確認已列出您建立的 SnapMirror 關係、且關係狀態為 `Snapmirrored`。
+. 在目的地叢集上、針對新的SnapMirror關係、指定符合原始SnapMirror關係保護組態的SnapMirror原則和排程：
++
+.. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+*** 《》（或更早版本）：按一下「*保護*」>「*關係*」ONTAP 。
+*** 從ONTAP 《S19.5》開始：按一下「* Protection *」>「* Volume Relationationationation*」。
+
+
+.. 選取重新啟動的來源與目的地磁碟區之間的SnapMirror關係、然後按一下*編輯*。
+.. 選取SnapMirror原則和排程、然後按一下*確定*。
+
+
+
+
+.結果
+來源Volume具有讀取/寫入存取權、並受到目的地Volume的保護。

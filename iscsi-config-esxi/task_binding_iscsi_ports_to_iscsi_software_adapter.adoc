@@ -1,0 +1,31 @@
+---
+permalink: iscsi-config-esxi/task_binding_iscsi_ports_to_iscsi_software_adapter.html 
+sidebar: sidebar 
+keywords: port, create, iscsi, associate, software, adapter, support, multipath, bind, bind iscsi ports to the iscsi software adapter 
+summary: 您為iSCSI建立的連接埠必須與iSCSI軟體介面卡相關聯、才能支援多重路徑。 
+---
+= 將iSCSI連接埠連結至iSCSI軟體介面卡
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您為iSCSI建立的連接埠必須與iSCSI軟體介面卡相關聯、才能支援多重路徑。
+
+.開始之前
+* 必須建立iSCSI VMkernel連接埠。
+* 必須在ESXi主機上啟用iSCSI軟體介面卡。
+
+
+.關於這項工作
+您可以使用vSphere Client來連結iSCSI連接埠。
+
+如需詳細指示、請參閱VMware vSphere Storage_以瞭解VMware的ESXi 5版本。
+
+http://www.vmware.com["VMware"]
+
+.步驟
+. 使用vSphere Client中iSCSI軟體介面卡*介面卡詳細資料*對話方塊的*網路連接埠繫結*索引標籤、將第一個iSCSI連接埠繫結至iSCSI軟體介面卡。
+. 將第二個iSCSI連接埠連結至iSCSI軟體介面卡。
+

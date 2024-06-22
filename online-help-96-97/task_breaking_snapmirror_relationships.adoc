@@ -1,0 +1,39 @@
+---
+permalink: online-help-96-97/task_breaking_snapmirror_relationships.html 
+sidebar: sidebar 
+keywords: snapmirror, break, relationship, dp, rw, online, help 
+summary: 如果SnapMirror來源無法使用、而您希望用戶端應用程式能夠從鏡射目的地存取資料、則必須中斷SnapMirror關係。 
+---
+= 使用ONTAP System Manager（更新版本）：NetApp®解決方案：NetApp®
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於歇歇歇歇內的版本）來打破SnapMirror關係。如果SnapMirror來源無法使用、而您希望用戶端應用程式能夠從鏡射目的地存取資料、則必須中斷SnapMirror關係。SnapMirror關係中斷後、目的地Volume類型會從「資料保護」（DP）變更為「讀取/寫入」（RW）。
+
+.開始之前
+* SnapMirror目的地必須處於靜止狀態或閒置狀態。
+* 目的地Volume必須掛載到目的地儲存虛擬機器（SVM）命名空間。
+
+
+.關於這項工作
+* 您可以在修復或更換來源、更新來源、以及重新建立系統的原始組態時、使用目的地磁碟區來提供資料。
+* 您可以打破ONTAP SnapMirror與SnapMirror系統之間的關係SolidFire 、
+* 如果您打破FlexGroup 了「不景區」關係、則必須重新整理頁面、才能檢視關係的更新狀態。
+
+
+.步驟
+. 按一下「*保護*>*磁碟區關係*」。
+. 選取您要中斷的鏡射關係。
+. 按一下*作業*>*中斷*。
+. 選取確認核取方塊、然後按一下*中斷*。
+
+
+.結果
+資料保護SnapMirror關係中斷。目的地Volume類型從資料保護（DP）、唯讀、變更為讀寫（RW）。系統會儲存基礎Snapshot複本、以供日後使用、以利資料保護鏡射關係。
+
+*相關資訊*
+
+xref:reference_protection_window.adoc[保護所需時間]

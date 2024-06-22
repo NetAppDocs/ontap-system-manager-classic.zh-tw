@@ -1,0 +1,40 @@
+---
+permalink: online-help-96-97/task_resizing_flexcache_volumes.html 
+sidebar: sidebar 
+keywords: system, manager, flexcache, resize, volume, online, help 
+summary: 從System Manager 9.6開始、您可以FlexCache 調整現有資源的大小或新增資源、來調整支援範本的大小。 
+---
+= 重新調整FlexCache 功能
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+從System Manager 9.6開始、您可以FlexCache 調整現有資源的大小或新增資源、來調整支援範本的大小。
+
+.開始之前
+* 若要調整FlexCache 一個大小的流通量、現有的集合體上必須有足夠的可用空間。
+* 若要擴充FlexCache 某個流通量、您要用於擴充的集合體上必須有足夠的可用空間。
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取FlexCache 您要調整大小的「物件」Volume、然後按一下「*更多動作*」>「*調整大小*」。
+. 在「*重新調整FlexCache 大小」的「S還原Volume *」視窗中、指定FlexCache 您要調整其大小的「還原Volume」。
++
+根據預設、現有的Aggregate可用來調整FlexCache 完這個問題。從System Manager 9.6開始、Volume允許的最大大小會顯示在「大小」欄位旁。
+
++
+[NOTE]
+====
+如果您想要FlexCache 新增資源來擴充此功能、請按一下 image:../media/advanced_options.gif[""] （進階選項）。請參閱 link:https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_specifying_advanced_options_for_flexcache_volume.html["指定FlexCache 適用於靜態Volume的進階選項"]。
+
+====
+. 按一下*「Save」（儲存）*以調整FlexCache 此等功能的大小。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

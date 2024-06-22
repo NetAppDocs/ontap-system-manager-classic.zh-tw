@@ -1,0 +1,30 @@
+---
+permalink: online-help-96-97/concept_how_system_manager_calculates_hot_spares.html 
+sidebar: sidebar 
+keywords: system, manager, hot, spares, disk, storage, raid, online, help 
+summary: 熱備援磁碟是指派給儲存系統、但未供任何RAID群組使用的磁碟。熱備援磁碟不包含任何資料、會在RAID群組發生磁碟故障時指派給RAID群組。System Manager使用最大的磁碟作為熱備援磁碟。 
+---
+= System Manager如何搭配熱備援磁碟使用- ONTAP 不含更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+熱備援磁碟是指派給儲存系統、但未供任何RAID群組使用的磁碟。熱備援磁碟不包含任何資料、會在RAID群組發生磁碟故障時指派給RAID群組。經典版的《系統管理程式》（以更新版本供應）使用最大的磁碟做為熱備援。ONTAP ONTAP
+
+當RAID群組中有不同的磁碟類型時、每種磁碟類型的最大磁碟會保留為熱備援磁碟。例如、如果RAID群組中有10個SATA磁碟和10個SAS磁碟、則最大的SATA磁碟和最大大小的SAS磁碟會做為熱備援。
+
+如果最大的磁碟已分割、則熱備援磁碟會分別提供給分割區和非分割區的RAID群組。如果最大的磁碟未分割、則會提供單一備援磁碟。
+
+如果磁碟群組中有根分割區、則最大的非分割磁碟會保留為熱備援磁碟。如果無法使用大小相同的非分割磁碟、則備用根分割區會保留為根分割群組的熱備援磁碟。
+
+單一備援磁碟可做為多個RAID群組的熱備援磁碟。System Manager 會根據選項中設定的值來計算熱備援磁碟機 `raid.min_spare_count` 在節點層級。例如、如果 SSD RAID 群組中有 10 個 SSD 和選項 `raid.min_spare_count` 設為 `1` 在節點層級、 System Manager 將 1 個 SSD 保留為熱備援磁碟、並使用其他 9 個 SSD 進行 SSD 相關作業。同樣地、如果 HDD RAID 群組和選項中有 10 個 HDD `raid.min_spare_count` 設為 `2` 在節點層級、 System Manager 會將 2 個 HDD 保留為熱備援磁碟、並使用其他 8 個 HDD 進行 HDD 相關作業。
+
+當您建立Aggregate、編輯Aggregate、以及將HDD或SSD新增至Aggregate時、System Manager會強制執行RAID群組的熱備援規則。當您建立儲存資源池或將磁碟新增至現有儲存資源池時、也會使用熱備援規則。
+
+System Manager中的熱備援規則有例外：
+
+* 對於mSATA或多磁碟機載體中的磁碟、熱備援磁碟的數量是節點層級設定值的兩倍、而且隨時的數量不得少於2。
+* 如果磁碟是陣列LUN或虛擬儲存設備的一部分、則不會使用熱備援磁碟。
+

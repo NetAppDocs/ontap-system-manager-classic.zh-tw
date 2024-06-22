@@ -1,0 +1,14 @@
+---
+permalink: smb-config/task_creating_protocol_enabled_svm.html 
+sidebar: sidebar 
+keywords: cifs-enabled, svm, involve, cifs, volume, share, add, map, dns, server, verify, windows, administration, host, configure, cifs, client, access, create a new cifs-enabled svm 
+summary: 設定啟用CIFS的新SVM、包括建立具有CIFS Volume和共用的新SVM、在DNS伺服器上新增對應、以及驗證從Windows管理主機存取CIFS。接著您可以設定 CIFS 用戶端存取。 
+---
+= 建立新的啟用 CIFS 的 SVM
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+設定啟用CIFS的新SVM、包括建立具有CIFS Volume和共用的新SVM、在DNS伺服器上新增對應、以及驗證從Windows管理主機存取CIFS。接著您可以設定 CIFS 用戶端存取。

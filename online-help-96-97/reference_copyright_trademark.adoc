@@ -1,0 +1,12 @@
+---
+permalink: online-help-96-97/reference_copyright_trademark.html 
+sidebar: sidebar 
+keywords:  
+summary:  
+---
+= 版權、商標及機器翻譯
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+

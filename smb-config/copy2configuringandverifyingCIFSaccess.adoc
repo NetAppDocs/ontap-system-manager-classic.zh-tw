@@ -1,0 +1,33 @@
+---
+permalink: smb-config/copy2configuringandverifyingCIFSaccess.html 
+sidebar: sidebar 
+keywords: clients, share, ntfs, file, permission, windows, explorer, modify, acl, system, manager, addect, user, group, access, volume, configure and verify cifs client access 
+summary: 準備好之後、您可以在Windows檔案總管中設定NTFS檔案權限、並在System Manager中修改共用ACL、讓特定用戶端存取共用區。然後您應該測試受影響的使用者或群組是否可以存取該磁碟區。 
+---
+= 設定及驗證CIFS用戶端存取
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+準備好之後、您可以在Windows檔案總管中設定NTFS檔案權限、並在System Manager中修改共用ACL、讓特定用戶端存取共用區。然後您應該測試受影響的使用者或群組是否可以存取該磁碟區。
+
+.步驟
+. 決定要授予哪些用戶端和使用者或群組存取該共用區的權限。
+. 在Windows用戶端上、使用系統管理員角色來授予使用者或群組檔案和資料夾的權限。
++
+.. 以具有足夠管理權限來管理NTFS權限的系統管理員身分登入Windows用戶端。
+.. 在Windows檔案總管中，以滑鼠右鍵按一下磁碟機，然後選取*內容*。
+.. 選取*安全性*索引標籤、然後視需要調整群組和使用者的安全性設定。
+
+
+. 在System Manager中、修改共用ACL、以授予Windows使用者或群組存取該共用區的權限。
++
+.. 瀏覽至*共享*視窗。
+.. 選取共用區、然後按一下*編輯*。
+.. 選取*權限*索引標籤、並授予使用者或群組存取該共用區的權限。
+
+
+. 在Windows用戶端上、以目前擁有共用區和檔案存取權的其中一位使用者身分登入、並確認您可以存取共用區並建立檔案。
+

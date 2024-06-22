@@ -1,0 +1,48 @@
+---
+permalink: fc-config-rhel/task_verifying_that_iscsi_fc_configuration_is_supported.html 
+sidebar: sidebar 
+keywords: reliable, operation, verify, entire, fc, configuration, support, verify that the fc configuration is supported 
+summary: 若要可靠地運作、您必須確認整個FC組態是否受到支援。 
+---
+= 驗證是否支援FC組態
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+若要可靠地運作、您必須確認整個FC組態是否受到支援。
+
+.步驟
+. 請參閱互通性對照表、確認您擁有下列元件的支援組合：
++
+** 軟件ONTAP
+** 主機電腦CPU架構（適用於標準機架伺服器）
+** 特定的處理器刀鋒型（適用於刀鋒伺服器）
+** FC主機匯流排介面卡（HBA）機型和驅動程式、韌體和BIOS版本
+** 儲存傳輸協定（FC）
+** Linux作業系統版本
+** DM-Multipath套件
+** Linux統一化主機公用程式
+
+
+. 選取所選組態的組態名稱。
++
+該組態的詳細資料會顯示在「組態詳細資料」視窗中。
+
+. 檢閱下列索引標籤中的資訊：
++
+** 附註
++
+列出組態專屬的重要警示和資訊。
+
++
+檢閱警示以識別作業系統所需的套件。
+
+** 原則與準則
++
+提供所有SAN組態的一般準則。
+
+
+
+

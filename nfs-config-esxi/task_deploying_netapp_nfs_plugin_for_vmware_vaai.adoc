@@ -1,0 +1,46 @@
+---
+permalink: nfs-config-esxi/task_deploying_netapp_nfs_plugin_for_vmware_vaai.html 
+sidebar: sidebar 
+keywords: plug-in, software, library, integrate, vmware, virtual, disk, libraries, install, esxi, host, nfs, improve, copy, offload, space, reservation, option, deploy, deploy the nfs plug-in for vmware vaai 
+summary: 外掛程式是一個軟體程式庫、可整合ESXi主機上安裝的VMware虛擬磁碟庫。下載及安裝適用於VMware VAAI的NFS外掛程式、可讓您使用複本卸載和空間保留選項來改善複製作業的效能。 
+---
+= 部署適用於VMware VAAI的NFS外掛程式
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+外掛程式是一個軟體程式庫、可整合ESXi主機上安裝的VMware虛擬磁碟庫。下載及安裝適用於VMware VAAI的NFS外掛程式、可讓您使用複本卸載和空間保留選項來改善複製作業的效能。
+
+.關於這項工作
+若要提供一致的虛擬機器存取權、使其位於安裝NFS外掛程式的ESXi主機上、您可以在規劃的維護期間移轉虛擬機器或安裝NFS外掛程式。
+
+.步驟
+. 下載適用於VMware VAAI的NFS外掛程式。
++
+https://mysupport.netapp.com/site/global/dashboard["NetApp支援"]
+
++
+您應該下載線上套裝組合 (`NetAppNasPlugIn.vib`）
+
+. 確認每部ESXi主機上都已啟用VAAI。
++
+在VMware vSphere 5.0及更新版本中、VAAI預設為啟用。
+
+. 在虛擬儲存主控台中、前往*工具*>* NFS VAAI工具*。
+. 按一下 * 選取檔案 * 上傳 `NetAppNasPlugIn.vib` 檔案：
+. 按一下*上傳*。
++
+您會看到 `uploaded successfully` 訊息。
+
+. 按一下「*安裝於主機*」。
+. 選取您要安裝外掛程式的ESXi主機、按一下「*安裝*」、然後按一下「*確定*」。
+. 重新開機ESXi主機以啟用外掛程式。
++
+安裝外掛程式之後、您必須在安裝完成之前重新啟動ESXi主機。
+
++
+您不需要重新開機儲存系統。
+
+

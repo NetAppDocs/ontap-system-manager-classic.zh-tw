@@ -1,0 +1,27 @@
+---
+permalink: online-help-96-97/task_changing_deduplication_schedule.html 
+sidebar: sidebar 
+keywords: change, deduplication, schedule, online, help, system, manager 
+summary: 您可以使用System Manager來變更重複資料刪除排程、方法是選擇手動、自動或依照您指定的排程執行重複資料刪除。 
+---
+= 使用System Manager（ONTAP 更新版本）變更重複資料刪除排程-更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來變更重複資料刪除排程、方法是選擇手動、自動或依照您指定的排程執行重複資料刪除。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要修改重複資料刪除排程的讀取/寫入磁碟區。
+. 按一下「*編輯*」、然後按一下「*儲存效率*」索引標籤。
+. 視需要變更重複資料刪除排程。
+. 按一下*儲存並關閉*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

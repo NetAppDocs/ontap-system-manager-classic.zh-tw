@@ -1,0 +1,49 @@
+---
+permalink: online-help-96-97/task_deleting_volumes.html 
+sidebar: sidebar 
+keywords: online, help, delete, volumes, system, manager, flexvol, volume 
+summary: 當您不再需要磁碟區所包含的資料、或是已將磁碟區所包含的資料複製到其他位置時、可以使用System Manager來刪除FlexVol 此等資料。刪除磁碟區時、磁碟區中的所有資料都會遭到銷毀、而且您無法恢復該資料。 
+---
+= 使用System Manager刪除Volume - ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當您不再需要磁碟區所包含的資料、或是已將磁碟區所包含的資料複製到其他位置時、可以使用ONTAP 經典版的《經典版功能》（ONTAP 適用於更新版本的版本）來刪除FlexVol 此功能。刪除磁碟區時、磁碟區中的所有資料都會遭到銷毀、而且您無法恢復該資料。
+
+.開始之前
+刪除FlexVol 完一份不全的功能表之前、必須符合下列條件：
+
+* 磁碟區必須卸載、且必須處於離線狀態。
+* FlexClone磁碟區必須從父磁碟區分割、或是FlexVol 在複製了此實體磁碟區時銷毀。
+* 如果磁碟區處於一或多個SnapMirror關係、則必須刪除SnapMirror關係。
+
+
+.關於這項工作
+刪除FlexVol 一份《》時、您應該注意下列限制：
+
+* 您可以刪除SnapLock 完整的「企業版」Volume或SnapLock 「企業版」Volume中的檔案、但SnapLock 無法只刪除「企業版」Volume中檔案內的資料。
+* 如果資料已提交至磁碟區、您將無法刪除SnapLock 「不符合要求」磁碟區。
+* 如果FlexVol 該功能同時包含qtree和Volume、則qtree會顯示為目錄。刪除磁碟區時、請小心不要意外刪除qtree。
+* 如果您有相關聯FlexCache 的來源Volume、則必須先刪除FlexCache 該等資料、然後才能刪除來源Volume。
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從* SVM*欄位的下拉式功能表中、選取您要刪除的磁碟區所在的儲存虛擬機器（SVM）。
+. 選取您要刪除的磁碟區。
++
+[NOTE]
+====
+確認您已選取要刪除的正確磁碟區。刪除磁碟區時、磁碟區中的所有資料都會遭到銷毀、而且您無法恢復該資料。
+
+====
+. 按一下*刪除*。
+. 選取確認核取方塊、然後按一下*刪除*。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

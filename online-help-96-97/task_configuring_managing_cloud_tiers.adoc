@@ -1,0 +1,293 @@
+---
+permalink: online-help-96-97/task_configuring_managing_cloud_tiers.html 
+sidebar: sidebar 
+keywords: configure, manage, cloud, tier, online, help, fabricpool, aggregate, storage, system, add, ssd, provision, storage, fabricpool, aggregate, manually, tiering, policy 
+summary: 將資料儲存在階層中、可提升儲存系統的效率。您可以使用啟用FabricPool的Aggregate來管理儲存層。雲端階層會根據資料是否經常存取、將資料儲存在階層中。 
+---
+= 使用System Manager（ONTAP 系統管理程式）來設定及管理雲端層-例如：NetApp®
+:allow-uri-read: 
+
+
+您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來設定及管理雲端層。將資料儲存在階層中、可提升儲存系統的效率。您可以使用啟用FabricPool的Aggregate來管理儲存層。雲端階層會根據資料是否經常存取、將資料儲存在階層中。
+
+.開始之前
+* 您必須執行ONTAP 的是版本不含更新版本的版本。
+* 您必須擁有All Flash（All SSD）Aggregate
+
+
+image::../media/fabricpool_workflow.gif[流程FabricPool]
+
+
+
+= 新增雲端層
+
+[role="lead"]
+您可以使用System Manager將雲端層新增至SSD Aggregate或虛擬機器磁碟（VMDK）Aggregate。雲端層提供儲存空間、可儲存不常使用的資料。
+
+.開始之前
+* 您必須擁有存取金鑰ID和秘密金鑰、才能連線至物件存放區。
+* 您必須在物件存放區內建立一個儲存區。
+* 叢集與雲端層之間必須有網路連線能力。
+* 如果使用SSL或TLS加密雲端層與叢集之間的通訊、則必須安裝必要的憑證。
+
+
+.關於這項工作
+下列物件存放區可做為雲端階層使用：
+
+* StorageGRID
+* Alibaba Cloud（從System Manager 9.6開始）
+* Amazon Web Services（AWS）Simple Storage Service（S3）
+* Amazon Web Services（AWS）商業雲端服務（C2S）
+* Microsoft Azure Blob儲存設備
+* IBM Cloud
+* Google Cloud
+
+
+[NOTE]
+====
+* Azure Stack是內部部署Azure服務、不受支援。
+* 如果您想要將任何物件存放區當作雲端層、StorageGRID 而非使用版、則必須擁有FabricPool 「功能不限」授權。您可以按一下「*新增授權*」來新增授權。
+* 如果您想要搭配FabricPool 使用IBM Cloud Object Storage環境（例如Cleverafe）、請指定認證授權單位（CA）認證。您可以移動「*物件存放區憑證*」切換按鈕並指定憑證認證、以指定CA憑證。
+
+
+====
+.步驟
+. 按一下「*儲存設備*>*集合體與磁碟*>*雲端層*」。
+. 按一下「 * 新增 * 」。
++
+此時會出現一個對話方塊、列出所有支援的物件存放區供應商。
+
+. 從清單中選取您要指定為雲端層的物件存放區供應商。
++
+隨即顯示Add Cloud Tier（新增雲端層）視窗。
+
+. 從「*區域*」欄位的下拉式清單中選取區域。
++
+根據您的選擇、*服務名稱（FQDN）*欄位會自動填入伺服器端點。
+
+. 指定雲端層的存取金鑰ID、雲端層的秘密金鑰、以及容器名稱。
++
+如果您已選取AWS商業雲端服務（C2S）作為類型、則必須指定CAP URL、伺服器CA憑證和用戶端憑證。
+
+. 如果您要修改下列任何設定、請按一下「進階選項」圖示 image:../media/advanced_options.gif[""] 若要顯示*進階選項*對話方塊視窗、您可以在其中進行變更：
++
+** 用於存取雲端層的連接埠號碼
+** 啟用或停用* SSL*選項、可讓您安全地將資料傳輸至雲端層
+
+
+. *選用：*如果您想要新增雲端層以供StorageGRID 使用、或是想搭配FabricPool 使用IBM Cloud Object Storage環境（例如Cleverafe）搭配使用、則應指定CA憑證。移動「*物件存放區憑證*」切換按鈕並複製憑證內容、以指定CA憑證。然後將憑證內容貼到已簽署的認證中。
+. 從* IPspace*清單中、選取用於連線至雲端層的IPspace。
+. 按一下「*儲存*」以儲存雲端層。
+. 按一下*儲存並附加Aggregate *以儲存雲端層、並將Aggregate附加至雲端層。
+
+
+
+
+== 將Aggregate附加至雲端層
+
+您可以使用System Manager將All Flash Aggregate附加至雲端層。您可以將不常使用的資料儲存在雲端層。
+
+.開始之前
+您必須已將雲端層新增至叢集。
+
+.步驟
+. 按一下「*儲存設備*>*集合體與磁碟*>*雲端層*」。
+. 在「*用於Aggregate *」欄中、按一下「*附加Aggregate *」。
++
+此時會顯示「附加集合體」視窗。
+
+. 選取您要附加至雲端層的集合體。
+. 按一下「 * 儲存 * 」。
+
+
+
+
+== 手動建立啟用FabricPool的Aggregate來配置儲存設備
+
+您可以使用System Manager建立啟用FabricPool的Aggregate、將雲端層附加至SSD Aggregate。
+
+.開始之前
+* 您必須建立雲端層、並將其附加至SSD集合體所在的叢集。
+* 必須已建立內部部署雲端層。
+* 雲端層與Aggregate之間必須存在專屬的網路連線。
+
+
+.關於這項工作
+下列物件存放區可做為雲端階層使用：
+
+* StorageGRID
+* Alibaba Cloud（從System Manager 9.6開始）
+* Amazon Web Services（AWS）Simple Storage Service（S3）
+* Amazon Web Services（AWS）商業雲端服務（C2S）
+* Microsoft Azure Blob儲存設備
+* IBM Cloud
+* Google Cloud
+
+
+[NOTE]
+====
+* Azure Stack是內部部署Azure服務、不受支援。
+* 如果您想要將任何物件存放區當作雲端層、StorageGRID 而非使用版、則必須擁有FabricPool 「功能不限」授權。
+
+
+====
+.步驟
+. 使用下列其中一種方法建立啟用FabricPool的Aggregate：
++
+** 按一下*應用程式與層級*>*儲存層級*>*新增Aggregate *。
+** 按一下「*儲存設備*>* Aggregate & Disks*>* Aggregate *>* Create*。
+
+
+. 啟用*手動建立Aggregate *選項以建立Aggregate。
+. 建立啟用FabricPool的Aggregate：
++
+.. 指定集合體的名稱、磁碟類型、以及要包含在集合體中的磁碟或磁碟分割數目。
++
+[NOTE]
+====
+只有All Flash（All SSD）Aggregate支援FabricPool的Aggregate。
+
+====
++
+最小熱備援規則會套用至磁碟大小最大的磁碟群組。
+
+.. *選用：*修改Aggregate的RAID組態：
++
+... 按一下 * 變更 * 。
+... 在變更RAID組態對話方塊中、指定RAID類型和RAID群組大小。
++
+共享磁碟可支援兩種RAID類型：RAID-DP和RAID-TEC
+
+... 按一下「 * 儲存 * 」。
+
+
+
+
+. 選取* FabricPool 《*》複選框、然後從清單中選取雲端層。
+. 按一下「 * 建立 * 」。
+
+
+
+
+== 變更磁碟區的分層原則
+
+您可以使用System Manager變更Volume的預設分層原則、以控制當資料變成非作用中時、是否將Volume的資料移至雲端層。
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取您要變更分層原則的磁碟區、然後按一下*更多動作*>*變更分層原則*。
+. 從*分層原則*清單中選取所需的分層原則、然後按一下*儲存*。
+
+
+
+
+== 編輯雲端層
+
+您可以使用System Manager修改雲端層的組態資訊。您可以編輯的組態詳細資料包括名稱、完整網域名稱（FQDN）、連接埠、存取金鑰ID、秘密金鑰及物件存放區憑證。
+
+.步驟
+. 按一下「*儲存設備*>*集合體與磁碟*>*雲端層*」。
+. 選取您要編輯的雲端層、然後按一下*編輯*。
+. 在*編輯雲端層*視窗中、修改雲端層名稱、FQDN、連接埠、存取金鑰ID、秘密金鑰、 和物件存放區憑證（視需要）。
++
+如果您已選取AWS商業雲端服務（C2S）雲端層、則可以修改伺服器CA憑證和用戶端憑證。
+
+. 按一下「 * 儲存 * 」。
+
+
+
+
+== 刪除雲端層
+
+您可以使用System Manager刪除不再需要的雲端層。
+
+.開始之前
+您必須刪除與雲端層相關聯的啟用FabricPool的Aggregate。
+
+.步驟
+. 按一下「*儲存設備*>*集合體與磁碟*>*雲端層*」。
+. 選取您要刪除的雲端層、然後按一下*刪除*。
+
+
+
+
+== 什麼是雲端階層和分層原則
+
+雲端層提供儲存空間、可儲存不常存取的資料。您可以將All Flash（All SSD）集合體附加至雲端層、以儲存不常使用的資料。您可以使用分層原則來決定是否要將資料移至雲端層。
+
+您可以在磁碟區上設定下列分層原則之一：
+
+* *僅Snapshot *
++
+僅移動目前未被作用中檔案系統參照的磁碟區之Snapshot複本。純快照原則是預設的分層原則。
+
+* *自動*
++
+將非作用中（冷）資料和Snapshot複本從作用中檔案系統移至雲端層。
+
+* *備份（適用於System Manager 9.5）*
++
+將新傳輸的資料保護（DP）磁碟區資料移至雲端層。
+
+* *全部（從System Manager 9.6開始）*
++
+將所有資料移至雲端層。
+
+* *無*
++
+防止磁碟區上的資料移至雲端層。
+
+
+
+
+
+== 什麼是非使用中（冷）資料
+
+效能層中不常存取的資料稱為非作用中（冷）資料。根據預設、31天內無法存取的資料將會變成非作用中資料。
+
+非作用中資料會顯示在Aggregate層級、叢集層級和Volume層級。只有在該集合體或叢集上完成非作用中掃描時、才會顯示該集合體或叢集的非作用中資料。依預設、啟用FabricPool的Aggregate和SSD Aggregate會顯示非作用中資料。FlexGroups不會顯示非作用中資料。
+
+
+
+== 雲端層窗口
+
+您可以使用System Manager來新增、編輯及刪除雲端層、以及檢視雲端層的詳細資料。
+
+Cloud Tier視窗會顯示叢集中授權的雲端層總數、叢集中使用的授權空間、以及叢集中可用的授權空間。Cloud Tier視窗也會顯示所使用的未獲授權雲端容量。
+
+
+
+=== 命令按鈕
+
+* *新增*
++
+可讓您新增雲端層。
+
+* *附加Aggregate *
++
+可讓您將Aggregate附加至雲端層。
+
+* *刪除*
++
+可讓您刪除所選的雲端層。
+
+* *編輯*
++
+可讓您修改所選雲端層的內容。
+
+
+
+
+
+=== 詳細資料區域
+
+您可以檢視雲端層的詳細資訊、例如雲端層清單、物件存放區的詳細資料、使用的集合體、以及使用的容量。
+
+如果您使用StorageGRID 命令列介面（CLI）建立的雲端層不是Alibaba Cloud、Amazon AWS S3、AWS Commercial Cloud Service（C2S）、Google Cloud、IBM Cloud、Microsoft Azure Blob儲存設備或是Sfor、則此雲端層會在System Manager中顯示為其他層。然後您可以將Aggregate附加至此雲端層。
+
+*相關資訊*
+
+xref:task_installing_ca_certificate_if_you_use_storagegrid_webscale.adoc[如果您使用StorageGRID 的是功能區、請安裝CA憑證]
+
+xref:reference_storage_tiers_window.adoc[儲存層視窗]

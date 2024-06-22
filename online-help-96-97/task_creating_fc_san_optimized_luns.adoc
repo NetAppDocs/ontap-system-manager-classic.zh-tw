@@ -1,0 +1,101 @@
+---
+permalink: online-help-96-97/task_creating_fc_san_optimized_luns.html 
+sidebar: sidebar 
+keywords: create, fc, san, optimized, lun, system, manager, online, help 
+summary: 您可以在AFF 初始設定叢集時、使用System Manager在一個或多個FC SAN最佳化LUN於一個平台上建立。 
+---
+= 使用System Manager（ONTAP 系統管理程式）建立FC SAN最佳化LUN - EFlash 9.7及更早版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版功能（ONTAP 適用於支援的版本為EFC9.7及更早版本）、在AFF 更新叢集時於一個或多個FC SAN最佳化LUN、以供在一個更新平台上進行初始設定。
+
+.開始之前
+* 您必須確定僅建立一個名稱為AFF_SAN_Default_SVM的儲存虛擬機器（SVM）、且此SVM不包含任何LUN。
+* 您必須已確認硬體設定已成功完成。
++
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]
+
+
+
+.關於這項工作
+* 此方法僅在具有兩個或多個節點的叢集初始設定期間可用。
++
+System Manager僅使用前兩個節點來建立LUN。
+
+* 每個LUN都是在個別的磁碟區上建立。
+* 磁碟區是精簡配置的。
+* 已建立LUN上的空間保留已停用。
+* 大部分的叢集組態都已在原廠完成、並已針對最佳化的儲存效率與效能進行最佳化。
++
+您不得修改這些組態。
+
+
+
+.步驟
+. 使用叢集管理員認證登入System Manager。
++
+使用此方法建立LUN之後、您將無法再次使用此方法。
+
++
+如果您關閉對話方塊而不建立LUN、則必須瀏覽至LUN索引標籤、然後按一下「* Create *（建立*）」以再次存取對話方塊。
+
+. 在「*建立LUN*」對話方塊的「* LUN詳細資料*」區域中、指定應用程式類型：
++
+|===
+| 如果應用程式類型為... | 然後... 
+
+
+ a| 
+Oracle
+ a| 
+.. 指定資料庫名稱和大小。
+.. 如果已部署Oracle Real Application Clusters(RAC)、請選取* Oracle RAC*核取方塊。
++
+僅支援兩個RAC節點。您必須確保Oracle RAC在啟動器群組中至少新增兩個啟動器。
+
+
+
+
+
+ a| 
+SQL
+ a| 
+指定資料庫數目及每個資料庫的大小。
+
+
+
+ a| 
+其他
+ a| 
+.. 指定每個LUN的名稱和大小。
+.. 如果您想要建立更多LUN、請按一下*「Add More LUN*（新增更多LUN*）」、然後指定每個LUN的名稱和大小。
+
+
+|===
++
+資料、記錄、二進位和暫用LUN會根據所選的應用程式類型建立。
+
+. 在「*對應至這些啟動器*」區域中、執行下列步驟：
++
+.. 指定啟動器群組名稱和作業系統類型。
+.. 從下拉式清單中選取主機啟動器WWPN、或在文字方塊中輸入啟動器、即可新增主機啟動器WWPN。
+.. 新增啟動器的別名。
+
+
++
+只會建立一個啟動器群組。
+
+. 按一下「 * 建立 * 」。
++
+系統會顯示摘要表、其中包含所建立的LUN。
+
+. 按一下 * 關閉 * 。
+
+
+*相關資訊*
+
+https://docs.netapp.com/ontap-9/index.jsp["供應說明文件中心 ONTAP"]

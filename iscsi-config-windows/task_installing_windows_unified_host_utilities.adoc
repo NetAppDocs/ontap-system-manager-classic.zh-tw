@@ -1,0 +1,53 @@
+---
+permalink: iscsi-config-windows/task_installing_windows_unified_host_utilities.html 
+sidebar: sidebar 
+keywords: windows, unified, host, utilities, installation, program, registry, hba, paramater, netapp, ontapp, e-series, platform, install windows unified host utilities 
+summary: Windows Unified Host Utilities包含一個安裝程式、可設定所需的Windows登錄和HBA參數、讓Windows主機正確處理適用於NetApp ONTAP ®及E系列平台的儲存系統行為。 
+---
+= 安裝Windows Unified Host Utilities
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Windows Unified Host Utilities包含一個安裝程式、可設定所需的Windows登錄和HBA參數、讓Windows主機正確處理適用於NetApp ONTAP ®及E系列平台的儲存系統行為。
+
+.開始之前
+您必須完成下列工作：
+
+* 請查看互通性對照表中支援的組態
++
+https://mysupport.netapp.com/matrix["NetApp 互通性對照表工具"]
+
+* 從互通性對照表中找出所有必要的Windows修補程式
++
+https://mysupport.netapp.com/matrix["NetApp 互通性對照表工具"]
+
+* 新增FCP授權並啟動目標服務
+* 驗證纜線
++
+請參閱 _SAN 組態 _ 、瞭解您的 ONTAP 版本、或參閱 NetApp 支援網站 上 E 系列儲存系統的 _ 硬體佈線 _ 、以取得詳細的佈線和組態資訊。
+
+
+
+.關於這項工作
+您必須指定在安裝Windows Unified Host Utilities軟體套件時、是否要納入多重路徑支援。如果從Windows主機或虛擬機器到儲存系統有多個路徑、請選擇MPIO。如果您使用單一路徑來通往儲存系統、請選擇「不」MPIO。
+
+[NOTE]
+====
+MPIO選項不適用於Windows XP和Windows Vista系統；這些來賓作業系統不支援多重路徑I/O。
+
+====
+對於Hyper-V來賓作業系統、如果您選擇多重路徑支援、則原始（傳遞）磁碟不會出現在來賓作業系統中。您可以使用原始磁碟、也可以使用MPIO、但不能在客體作業系統中同時使用這兩種磁碟。
+
+請參閱 link:https://docs.netapp.com/us-en/ontap-sanhost/hu_wuhu_71.html["Windows統一化主機安裝"] 以取得詳細資訊。
+
+.步驟
+. 從 NetApp 支援網站下載適當版本的 Windows Unified Host Utilities。
++
+https://mysupport.netapp.com/site/global/dashboard["NetApp支援"]
+
+. 執行執行檔、並依照畫面上的指示進行。
+. 出現提示時、重新啟動Windows主機。
+

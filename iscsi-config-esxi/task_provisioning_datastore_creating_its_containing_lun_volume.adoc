@@ -1,0 +1,43 @@
+---
+permalink: iscsi-config-esxi/task_provisioning_datastore_creating_its_containing_lun_volume.html 
+sidebar: sidebar 
+keywords: datastore, contain, virtual, machine, vmdk, esxi, host, provision, lun, storage, cluster, provision a datastore and creating its containing lun and volume 
+summary: 資料存放區包含ESXi主機上的虛擬機器及其VMDK。ESXi主機上的資料存放區會配置在儲存叢集上的LUN上。 
+---
+= 配置資料存放區並建立內含LUN和Volume的資料存放區
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+資料存放區包含ESXi主機上的虛擬機器及其VMDK。ESXi主機上的資料存放區會配置在儲存叢集上的LUN上。
+
+.開始之前
+VMware vSphere的虛擬儲存主控台（VSC）必須安裝並註冊管理ESXi主機的vCenter Server。
+
+VSC必須具有足夠的叢集或儲存虛擬機器（SVM）認證、才能建立LUN和Volume。
+
+.關於這項工作
+VSC會自動執行資料存放區資源配置、包括在指定的SVM上建立LUN和Volume。
+
+.步驟
+. 在vSphere Web Client * Home*頁面中、按一下*主機與叢集*。
+. 在導覽窗格中、展開您要配置資料存放區的資料中心。
+. 在ESXi主機上按一下滑鼠右鍵、然後選取「* NetApp VSC*>*資源配置資料庫*」。
++
+或者、您也可以在資源配置時以滑鼠右鍵按一下叢集、讓叢集中的所有主機都能使用資料存放區。
+
+. 在精靈中提供必要資訊：
++
+image::../media/datastore_provisioning_wizard_vsc5_iscsi.gif[圖顯示VSC資料存放區資源配置精靈的第一頁。]
+
++
+** 選擇* VMFS *作為資料存放區類型。
+** 選擇「* iSCSI *」作為VMFS傳輸協定。
+** 選擇*無*作為儲存功能設定檔。
+** 選取*精簡配置*方塊。
+** 選取「*建立新磁碟區*」核取方塊。
+
+
+

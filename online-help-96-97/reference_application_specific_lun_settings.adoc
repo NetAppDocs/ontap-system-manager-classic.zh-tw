@@ -1,0 +1,715 @@
+---
+permalink: online-help-96-97/reference_application_specific_lun_settings.html 
+sidebar: sidebar 
+keywords: system, manager, oracle, sql, lun, application, specific, online, help 
+summary: System Manager支援Oracle、SQL及其他應用程式類型、同時在AFF 一個叢集上建立FC SAN最佳化LUN。LUN大小等LUN設定是由應用程式類型的特定規則所決定。對於SQL和Oracle、系統會自動建立LUN設定。 
+---
+= System Manager提供應用程式專屬的LUN設定ONTAP -僅限更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+支援Oracle、SQL及其他應用程式類型的經典版支援、同時在一個叢集上建立FC SAN最佳化LUN。ONTAP ONTAP AFFLUN大小等LUN設定是由應用程式類型的特定規則所決定。對於SQL和Oracle、系統會自動建立LUN設定。
+
+如果叢集包含兩個以上的節點、System Manager只會使用API選取的前兩個節點來建立LUN。兩個節點中的每個節點都已建立資料集合體。所建立的每個磁碟區大小、都等於該集合體的可用容量。磁碟區是精簡配置的、且LUN上的空間保留已停用。
+
+儲存效率原則預設為啟用、排程設定為「每日」、服務品質（QoS）設定為「最佳努力」。根據預設、叢集上會啟用存取時間（atime）更新。不過、系統管理員在建立磁碟區時會停用存取時間更新、因此每次讀取或寫入檔案時、目錄中的存取時間欄位都不會更新。
+
+[NOTE]
+====
+啟用存取時間更新會導致叢集的資料服務功能效能降低。
+
+====
+
+
+== SQL的LUN設定
+
+根據預設、LUN和磁碟區是針對SQL Server的單一執行個體進行配置、每個執行個體有2個資料庫、每個資料庫1 TB、以及24個實體核心。根據SQL Server的特定規則、為LUN和磁碟區配置空間。在HA配對中、會針對LUN執行負載平衡。您可以修改資料庫數量。每個資料庫都會建立八個資料LUN和一個記錄LUN。每個SQL執行個體都會建立一個暫用LUN。
+
+下表提供如何為SQL預設值配置空間的相關資訊：
+
+|===
+| 節點 | Aggregate | LUN 類型 | Volume名稱 | LUN 名稱 | LUN大小的公式 | LUN大小（GB） 
+
+
+ a| 
+節點1
+ a| 
+節點1_aggr1
+ a| 
+資料
+ a| 
+db01_data01
+ a| 
+db01_data01
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db01_data02
+ a| 
+db01_data02
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db01_data03
+ a| 
+db01_data03
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db01_data04
+ a| 
+db01_data04
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db02_ddata01
+ a| 
+db02_ddata01
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db02_data02
+ a| 
+db02_data02
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db02_data03
+ a| 
+db02_data03
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db02_ddata04
+ a| 
+db02_ddata04
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+記錄
+ a| 
+db01_log
+ a| 
+db01_log
+ a| 
+資料庫大小 ÷ 20
+ a| 
+50
+
+
+
+ a| 
+ a| 
+ a| 
+溫度
+ a| 
+SQL_TEMP
+ a| 
+SQL_TEMP
+ a| 
+資料庫大小 ÷ 3.
+ a| 
+330
+
+
+
+ a| 
+節點2
+ a| 
+節點2_aggr1
+ a| 
+資料
+ a| 
+db01_data05
+ a| 
+db01_data05
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db01_data06
+ a| 
+db01_data06
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db01_data07
+ a| 
+db01_data07
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db01_data08
+ a| 
+db01_data08
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db02_data05
+ a| 
+db02_data05
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db02_data06
+ a| 
+db02_data06
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db02_data07
+ a| 
+db02_data07
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+db02_data08
+ a| 
+db02_data08
+ a| 
+資料庫大小：8
+ a| 
+125.
+
+
+
+ a| 
+ a| 
+ a| 
+記錄
+ a| 
+db02_log
+ a| 
+db02_log
+ a| 
+資料庫大小 ÷ 20
+ a| 
+50
+
+|===
+
+
+== Oracle的LUN設定
+
+根據預設、LUN和磁碟區會配置為一個2 TB的資料庫。根據Oracle的特定規則、為LUN和磁碟區配置空間。根據預設、不會選取Oracle Real Application Clusters（RAC）。
+
+下表提供如何為Oracle預設值配置空間的相關資訊：
+
+|===
+| 節點 | Aggregate | LUN 類型 | Volume名稱 | LUN 名稱 | LUN大小的公式 | LUN大小（GB） 
+
+
+ a| 
+節點1
+ a| 
+節點1_aggr1
+ a| 
+資料
+ a| 
+ora_vol01
+ a| 
+ora_lundata01
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol02
+ a| 
+ora_lundata02
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol03
+ a| 
+ora_lundata03
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol04
+ a| 
+ora_lundata04
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+記錄
+ a| 
+ora_vol05
+ a| 
+ora_lunlog1
+ a| 
+資料庫大小 ÷ 40
+ a| 
+50
+
+
+
+ a| 
+ a| 
+ a| 
+二進位檔
+ a| 
+ora_vol06
+ a| 
+ora_orabin1.
+ a| 
+資料庫大小 ÷ 40
+ a| 
+50
+
+
+
+ a| 
+節點2
+ a| 
+節點2_aggr1
+ a| 
+資料
+ a| 
+ora_vol07
+ a| 
+ora_lundata05
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol08
+ a| 
+ora_lundata06
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol09
+ a| 
+ora_lundata07
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol10.
+ a| 
+ora_lundata08
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+記錄
+ a| 
+ora_vol11.
+ a| 
+ora_lunlog2
+ a| 
+資料庫大小 ÷ 40
+ a| 
+50
+
+|===
+對於Oracle RAC、LUN會配置為用於網格檔案。Oracle RAC僅支援兩個RAC節點。
+
+下表提供如何為Oracle RAC的預設值配置空間的相關資訊：
+
+|===
+| 節點 | Aggregate | LUN 類型 | Volume名稱 | LUN 名稱 | LUN大小的公式 | LUN大小（GB） 
+
+
+ a| 
+節點1
+ a| 
+節點1_aggr1
+ a| 
+資料
+ a| 
+ora_vol01
+ a| 
+ora_lundata01
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol02
+ a| 
+ora_lundata02
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol03
+ a| 
+ora_lundata03
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol04
+ a| 
+ora_lundata04
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+記錄
+ a| 
+ora_vol05
+ a| 
+ora_lunlog1
+ a| 
+資料庫大小 ÷ 40
+ a| 
+50
+
+
+
+ a| 
+ a| 
+ a| 
+二進位檔
+ a| 
+ora_vol06
+ a| 
+ora_orabin1.
+ a| 
+資料庫大小 ÷ 40
+ a| 
+50
+
+
+
+ a| 
+ a| 
+ a| 
+網格
+ a| 
+ora_vol07
+ a| 
+ora_lungrid1.
+ a| 
+10 GB
+ a| 
+10.
+
+
+
+ a| 
+節點2
+ a| 
+節點2_aggr1
+ a| 
+資料
+ a| 
+ora_vol08
+ a| 
+ora_lundata05
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol09
+ a| 
+ora_lundata06
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol10.
+ a| 
+ora_lundata07
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+資料
+ a| 
+ora_vol11.
+ a| 
+ora_lundata08
+ a| 
+資料庫大小：8
+ a| 
+250
+
+
+
+ a| 
+ a| 
+ a| 
+記錄
+ a| 
+ora_vol12
+ a| 
+ora_lunlog2
+ a| 
+資料庫大小 ÷ 40
+ a| 
+50
+
+
+
+ a| 
+ a| 
+ a| 
+二進位檔
+ a| 
+ora_vol13.
+ a| 
+ora_orabin2.
+ a| 
+資料庫大小 ÷ 40
+ a| 
+50
+
+|===
+
+
+== 其他應用程式類型的LUN設定
+
+每個LUN都配置在一個Volume中。空間會根據指定的大小配置在LUN中。負載平衡會在所有LUN的節點之間執行。

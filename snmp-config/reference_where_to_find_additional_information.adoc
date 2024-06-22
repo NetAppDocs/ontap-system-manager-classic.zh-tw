@@ -1,0 +1,26 @@
+---
+permalink: snmp-config/reference_where_to_find_additional_information.html 
+sidebar: sidebar 
+keywords: reference, manual, configure, snmp, where to find additional information 
+summary: 還有其他參考手冊可協助您設定SNMP。 
+---
+= 何處可找到其他資訊
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+還有其他參考手冊可協助您設定SNMP。
+
+下列文件提供更詳細的資訊：
+
+* https://docs.netapp.com/us-en/ontap/networking/index.html["網路管理"^]
++
+說明如何設定子網路、叢集間生命、路由、防火牆原則及其他網路元件。同時也說明如何在資料儲存虛擬機器（SVM）中建立SNMP社群或安全性使用者、以及如何管理SNMP traphosts。
+
+* http://www.netapp.com/us/media/tr-4220.pdf["NetApp技術報告4220：SNMP支援Data ONTAP 功能"^]
++
+說明ONTAP 支援功能的SNMP、包括詳細比較7-Mode和叢集環境中的SNMP支援、以及SNMP設陷所支援的所有預設事件清單。
+
+

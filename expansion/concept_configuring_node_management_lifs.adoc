@@ -1,0 +1,58 @@
+---
+permalink: expansion/concept_configuring_node_management_lifs.html 
+sidebar: sidebar 
+keywords: controller, module, physical, install, power, configure, node-mangement, lif, configure node-management lifs 
+summary: 在實際安裝控制器模組之後、您可以開啟每個模組的電源、並設定其節點管理LIF。 
+---
+= 設定節點管理lifs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在實際安裝控制器模組之後、您可以開啟每個模組的電源、並設定其節點管理LIF。
+
+.關於這項工作
+您必須在兩個節點上執行此程序。
+
+.步驟
+. 透過序列主控台存取控制器模組。
+. 開啟控制器模組的電源、並等待節點開機和叢集設定精靈自動在主控台上啟動。
++
+[listing]
+----
+Welcome to the cluster setup wizard.
+
+You can enter the following commands at any time:
+  "help" or "?" - if you want to have a question clarified,
+  "back" - if you want to change previously answered questions, and
+  "exit" or "quit" - if you want to quit the cluster setup wizard.
+   Any changes you made before quitting will be saved.
+
+You can return to cluster setup at any time by typing "cluster setup".
+To accept a default or omit a question, do not enter a value.
+----
+. 依照網路型叢集設定精靈中的提示、使用您先前收集的網路資訊來設定節點管理LIF。
+. 類型 `exit` 節點管理 LIF 組態完成後、結束設定精靈並完成管理工作。
++
+[listing]
+----
+Use your web browser to complete cluster setup by accessing
+https://10.63.11.29
+
+Otherwise, press Enter to complete cluster setup using the command line interface:
+exit
+----
+. 以登入節點 `admin` 不需要密碼的使用者。
++
+[listing]
+----
+Tue Mar 4 23:13:33 UTC 2015
+login: admin
+******************************************************
+* This is a serial console session. Output from this *
+* session is mirrored on the SP console session.     *
+----
+. 對第二個新安裝的控制器模組重複整個程序。
+

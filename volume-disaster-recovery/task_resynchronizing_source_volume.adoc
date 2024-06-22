@@ -1,0 +1,58 @@
+---
+permalink: volume-disaster-recovery/task_resynchronizing_source_volume.html 
+sidebar: sidebar 
+keywords: source, volume, online, resynchronize, data, destination, replicate, resynchronize the source volume 
+summary: 當來源磁碟區上線時、您必須重新同步目的地磁碟區與來源磁碟區之間的資料、才能從目的地磁碟區複寫最新的資料。 
+---
+= 重新同步來源Volume
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+當來源磁碟區上線時、您必須重新同步目的地磁碟區與來源磁碟區之間的資料、才能從目的地磁碟區複寫最新的資料。
+
+.開始之前
+來源Volume必須在線上。
+
+.關於這項工作
+您必須從*目的地*叢集執行工作。
+
+下圖顯示資料會從作用中目的地磁碟區複寫到唯讀來源磁碟區：
+
+image::../media/reverse_resync_2555.gif[下圖顯示資料會從作用中目的地磁碟區複寫到唯讀來源磁碟區]
+
+.步驟
+. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+** 《》（或更早版本）：按一下「*保護*」>「*關係*」ONTAP 。
+** 從ONTAP 《S19.5》開始：按一下「* Protection *」>「* Volume Relationationationation*」。
+
+
+. 選取來源與目的地磁碟區之間的SnapMirror關係。
+. 記下傳輸排程和針對SnapMirror關係所設定的原則。
+. 按一下*作業*>*反轉重新同步*。
+. 選取確認核取方塊、然後按一下*反轉重新同步*。
++
+image::../media/reverse_resync_4eea.gif[反轉重新同步畫面]
+
++
+從 ONTAP 9.3 開始、關係的 SnapMirror 原則設為 `MirrorAllSnapshots` 鏡射排程設為 `None`。
+
++
+如果您執行的是 ONTAP 9.2 或更早版本、則關係的 SnapMirror 原則會設為 `DPDefault` 鏡射排程設為 `None`。
+
+. 在來源叢集上、指定符合原始SnapMirror關係保護組態的SnapMirror原則和排程：
++
+.. 視您執行的System Manager版本而定、請執行下列其中一個步驟：
++
+*** 《》（或更早版本）：按一下「*保護*」>「*關係*」ONTAP 。
+*** 從ONTAP 《S19.5》開始：按一下「* Protection *」>「* Volume Relationationationation*」。
+
+
+.. 選取重新同步的來源磁碟區與目的地磁碟區之間的SnapMirror關係、然後按一下*編輯*。
+.. 選取SnapMirror原則和排程、然後按一下*確定*。
+
+
+

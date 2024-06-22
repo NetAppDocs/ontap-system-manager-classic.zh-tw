@@ -1,0 +1,31 @@
+---
+permalink: expansion/task_adding_or_replacing_switches.html 
+sidebar: sidebar 
+keywords: expand, cluster, ensure, configuration, switch, exist, port, add, replace, add or replace switches 
+summary: 在擴充叢集之前、您必須確保叢集交換器支援擴充組態。如果叢集是無交換器的、您必須新增交換器。 
+---
+= 新增或更換交換器
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+在擴充叢集之前、您必須確保叢集交換器支援擴充組態。如果叢集是無交換器的、您必須新增交換器。如果現有的交換器沒有足夠的連接埠來支援新的組態、您就必須更換交換器。
+
+
+
+== 程序
+
+* 如果叢集目前是雙節點無交換器叢集、請使用您偏好的交換器類型、將叢集移轉至雙節點交換叢集。
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140536["使用Cisco叢集交換器移轉至雙節點交換叢集"]
+
++
+https://library.netapp.com/ecm/ecm_download_file/ECMP1140535["使用NetApp CN1610叢集交換器移轉至雙節點交換叢集"]
+
+* 如果現有的交換器沒有足夠的連接埠來支援未來的組態、請使用適當的更換程序來更換交換器。
++
+https://mysupport.netapp.com/documentation/productlibrary/index.html?productID=62371["NetApp文件：叢集、管理與儲存交換器"]
+
+

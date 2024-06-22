@@ -1,0 +1,41 @@
+---
+permalink: online-help-96-97/task_resizing_flexgroup_volumes.html 
+sidebar: sidebar 
+keywords: system, manager, online, help, resize, flexgroup, volume, resources 
+summary: 您可以FlexGroup 使用System Manager調整現有資源大小或新增資源、來調整支援範本的大小。 
+---
+= 使用System Manager調整FlexGroup 物件區的大小- ONTAP 更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的經典版《支援功能》ONTAP （適用於支援功能更新版本的版本）來調整FlexGroup 現有資源的大小、或是新增資源來調整功能。
+
+.開始之前
+* 若要調整FlexGroup 一個大小的流通量、現有的集合體上必須有足夠的可用空間。
+* 若要擴充FlexGroup 某個流通量、您要用於擴充的集合體上必須有足夠的可用空間。
+
+
+.步驟
+. 按一下「*儲存設備*>*磁碟區*」。
+. 從「* SVM*」欄位的下拉式功能表中、選取「*所有SVM*」。
+. 選取FlexGroup 您要調整大小的「物件」Volume、然後按一下「*更多動作*」>「*調整大小*」。
+. 在「*重新調整FlexGroup 大小」的「S還原Volume *」視窗中、指定FlexGroup 您要調整其大小的「還原Volume」。
++
+根據預設、現有的Aggregate可用來調整FlexGroup 完這個問題。從System Manager 9.6開始、磁碟區允許的最小大小會顯示在「大小」欄位旁。
+
++
+[NOTE]
+====
+如果您想要FlexGroup 新增資源來擴充此功能、請按一下 image:../media/advanced_options.gif[""] （進階選項）。
+
+====
+. 指定Snapshot複本保留的百分比。
+. 按一下* Resize（調整大小）*以調整FlexGroup S161Volume的大小。
+
+
+*相關資訊*
+
+xref:reference_volumes_window.adoc[Volume視窗]

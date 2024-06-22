@@ -1,0 +1,26 @@
+---
+permalink: online-help-96-97/task_monitoring_ha_pairs.html 
+sidebar: sidebar 
+keywords: system, manager, ha, availability, monitor, ha, pair 
+summary: 您可以使用System Manager來監控叢集中所有高可用度（HA）配對的節點狀態和互連狀態。您也可以驗證是否已啟用接管或恢復、並檢視目前無法進行接管或恢復的原因。 
+---
+= 利用ONTAP System Manager監控HA配對-例如更新版本的更新版本
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來監控叢集中所有高可用度（HA）配對的節點狀態和互連狀態。您也可以驗證是否已啟用接管或恢復、並檢視目前無法進行接管或恢復的原因。
+
+.步驟
+. 按一下*組態*>*叢集*>*高可用度*。
+. 在「*高可用度*」視窗中、按一下HA配對映像、即可檢視每個節點的叢集HA狀態、節點狀態、互連狀態和硬體模型等詳細資料。
++
+如果叢集管理LIF或節點的資料lifs不在其主節點中、則會顯示警告訊息、指出該節點有一些不在主節點中的l生命 區。
+
+
+
+*相關資訊*
+
+xref:reference_high_availability.adoc[高可用度時段]

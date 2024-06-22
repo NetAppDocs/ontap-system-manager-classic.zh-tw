@@ -1,0 +1,23 @@
+---
+permalink: volume-disaster-prep/concept_snapmirror_intercluster_configuration_workflow.html 
+sidebar: sidebar 
+keywords: preparing, prepare, volume, disaster, recovery, verify, cluster, peer, relationship, snapmirror, residing, reside, peer, destination, periodical, volume disaster recovery preparation workflow 
+summary: 準備磁碟區以進行災難恢復、包括驗證叢集對等關係、在掛接叢集上的磁碟區之間建立SnapMirror關係、設定目的地SVM以進行資料存取、以及定期監控SnapMirror關係。 
+---
+= Volume災難恢復準備工作流程
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+準備磁碟區以進行災難恢復、包括驗證叢集對等關係、在掛接叢集上的磁碟區之間建立SnapMirror關係、設定目的地SVM以進行資料存取、以及定期監控SnapMirror關係。
+
+image::../media/snapmirror_intercluster_cfg_workflow.gif[此圖為Volume災難恢復準備工作流程的流程圖。工作流程中的步驟與主題相符。]
+
+您可以取得其他文件來協助您啟動目的地Volume、以測試災難恢復設定或發生災難時。您也可以深入瞭解如何在災難發生後重新啟動來源Volume。
+
+xref:../volume-disaster-recovery/index.html[Volume災難恢復]
+
++
+說明如何在災難發生後快速啟動目的地Volume、然後重新啟動ONTAP 來源Volume。

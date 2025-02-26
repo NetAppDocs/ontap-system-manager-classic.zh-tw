@@ -32,8 +32,6 @@ https://mysupport.netapp.com/matrix["NetApp 互通性對照表工具"]
 
 +
 *** 如果有非 NetApp SCSI 裝置需要排除、請在的黑名單區段中輸入裝置的全球識別碼（ WWID ） `multipath.conf` 檔案：
-
-
 +
 若要顯示非 NetApp SCSI 裝置的 WWID 、請在您要排除的裝置上輸入下列命令、其中包括 `SCSI_device_name` 是您指定的裝置：
 
@@ -62,7 +60,6 @@ blacklist {
             devnode     "^cciss.*"
 }
 ----
-+
 *** 如果沒有要排除的裝置、請從移除 _WWID_ 行 `multipath.conf` 檔案：
 
 

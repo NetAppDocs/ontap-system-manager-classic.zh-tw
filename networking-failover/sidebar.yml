@@ -1,0 +1,10 @@
+---
+section: networking-failover
+title: NAS 路徑容錯移轉工作流程（ ONTAP 9.7 及更早版本）
+entries:
+- title: 關於 NAS 路徑容錯移轉（ ONTAP 9.7 以上版本）
+  url: "/networking-failover/set_up_nas_path_failover_9_to_97_cli.html"
+- title: NAS 路徑容錯移轉工作流程（ ONTAP 9.7 及更早版本）
+  url: "/networking-failover/workflow__nas_path_failover_overview_manual.html"
+- title: NAS 路徑容錯移轉組態工作表（ ONTAP 9.7 及更早版本）
+  url: "/networking-failover/worksheet_for_nas_path_failover_configuration_manual.html"

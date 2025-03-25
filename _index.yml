@@ -4,8 +4,10 @@ indexpage:
   summary: 支援簡單易用的產品《系統管理程式》、可讓您輕鬆設定及管理各種叢集。ONTAP ONTAPSystem Manager可簡化常見的儲存工作、例如建立磁碟區、LUN、qtree、共用區和匯出、
     可節省時間並協助預防錯誤。
   keywords: ontap, netapp, documentation, system, manager
-  lead: ONTAP 9.7 和更早版本的 ONTAP 9 中提供了 System Manager Classic 介面。本網站提供使用 System Manager
-    Classic 的組態工作流程文件、以及 ONTAP 9.6 和 9.7 的 System Manager Classic 線上說明文件。
+  lead: ONTAP 9.7 和舊版中提供的系統管理員介面稱為「系統管理員傳統」，與 ONTAP 9.8 和更新版本的系統管理員介面提供不同的使用者導覽。對於
+    ONTAP 9.7 和更早版本中的系統管理程式使用者，此文件網站提供使用 System Manager Classic 的組態工作流程，以及 ONTAP 9.6
+    和 9.7 的 System Manager Classic 線上說明。從 ONTAP 9.8 開始， ONTAP 網路基礎知識也大幅改變，此文件網站提供的網路資訊僅適用於
+    ONTAP 9.7 及更早版本。
   tiles:
   - title: 開始使用
     links:
@@ -27,7 +29,7 @@ indexpage:
       url: "/smb-config/index.html"
   - title: 配置SAN儲存設備
     links:
-    - title: 使用VSC的ESXi FC組態
+    - title: 使用 VSC 的 ESXi FC 組態
       url: "/fc-config-esxi/index.html"
     - title: Red Hat Enterprise Linux的FC組態
       url: "/fc-config-rhel/index.html"
@@ -61,6 +63,18 @@ indexpage:
       url: "/snmp-config/index.html"
     - title: 使用System Manger 9.6和9.7進行叢集管理
       url: "/online-help-96-97/index.html"
+  - title: 網路管理
+    links:
+    - title: NAS 路徑容錯移轉工作流程（ ONTAP 9.7 及更早版本）
+      url: "/networking-failover/set_up_nas_path_failover_9_to_97_cli.html"
+    - title: 廣播網域管理（ ONTAP 9.7 或更早版本）
+      url: "/networking-bd/configure_broadcast_domains_97_overview.html"
+    - title: 從節點移除 NIC （ ONTAP 9.7 或更早版本）
+      url: "/networking/remove_a_nic_from_the_node_97.html"
+    - title: LIF 角色（ ONTAP 9.5 及更早版本）
+      url: "/networking/lif_roles95.html"
+    - title: 設定 DNS 服務（ ONTAP 9.7 及更早版本）
+      url: "/networking/configure_dns_services_manual.html"
   - title: 更多資源
     links:
     - title: 部分9文件ONTAP

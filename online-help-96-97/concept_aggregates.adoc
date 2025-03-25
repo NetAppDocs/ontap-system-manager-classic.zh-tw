@@ -5,7 +5,12 @@ keywords: aggregates, system, manager, security, backup, performance, data, shar
 summary: 您可以使用System Manager建立Aggregate、以支援使用者不同的安全性、備份、效能和資料共用需求。 
 ---
 = 使用System Manager管理集合體- ONTAP 更新版本
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 您可以使用ONTAP 經典版的《支援功能》（ONTAP 適用於支援功能更新版本的版本）來建立Aggregate、以支援使用者不同的安全性、備份、效能和資料共享需求。

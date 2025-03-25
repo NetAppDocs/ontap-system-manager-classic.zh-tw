@@ -5,7 +5,12 @@ keywords: autosupport, notification, message, monitor, system, health, storage, 
 summary: 您可以使用System Manager來設定AutoSupport 可協助您監控儲存系統健全狀況的功能。 
 ---
 = 使用AutoSupport System Manager管理功能的更新通知- ONTAP 更新版本
+:hardbreaks:
 :allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
 
 
 您可以使用ONTAP 經典版的經典版功能（ONTAP 僅適用於更新版本的版本）來設定AutoSupport 可協助您監控儲存系統健全狀況的功能。

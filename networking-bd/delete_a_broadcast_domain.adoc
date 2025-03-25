@@ -1,0 +1,57 @@
+---
+sidebar: sidebar 
+permalink: networking-bd/delete_a_broadcast_domain.html 
+keywords: 'delete, deleting, remove, removing, broadcast, domain, delete a broadcast domain, delete unnecessary broadcast domains; this moves associated ports to the "default" IPspace' 
+summary: 刪除不必要的廣播網域；這會將相關連接埠移至「預設」IPspace 
+---
+= 刪除廣播網域
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ../media/
+
+
+[role="lead"]
+如果不再需要廣播網域、您可以將其刪除。這會將與該廣播網域相關的連接埠移至「預設」IPspace。
+
+.開始之前
+不得有任何子網路、網路介面或SVM與您要刪除的廣播網域相關聯。
+
+.關於這項工作
+* 無法刪除系統建立的「叢集」廣播網域。
+* 刪除廣播網域時、會移除與廣播網域相關的所有容錯移轉群組。
+
+
+您遵循的程序取決於您使用的介面- System Manager或CLI：
+
+[role="tabbed-block"]
+====
+.系統管理員
+--
+*從ONTAP 版本S59.12.0開始、您可以使用System Manager刪除廣播網域*
+
+當廣播網域包含連接埠或與子網路相關聯時、不會顯示刪除選項。
+
+.步驟
+. 選擇*網路>總覽>廣播網域*。
+. 在您要移除的廣播網域旁邊選取 image:icon_kabob.gif["功能表選項圖示"] * > 刪除 * 。
+
+
+--
+.CLI
+--
+*使用CLI刪除廣播網域*
+
+.步驟
+刪除廣播網域：
+
+`network port broadcast-domain delete -broadcast-domain _broadcast_domain_name_ [-ipspace _ipspace_name_]`
+
+下列命令會刪除IPspace ipspace1中的廣播網域預設值1：
+
+`network port broadcast-domain delete -broadcast-domain _Default-1_ -ipspace _ipspace1_`
+
+--
+====

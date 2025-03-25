@@ -1,0 +1,20 @@
+---
+section: networking-bd
+title: 廣播網域（ ONTAP 9.7 或更早版本）
+entries:
+- title: 廣播網域總覽（ ONTAP 9.7 及更早版本）
+  url: "/networking-bd/configure_broadcast_domains_97_overview.html"
+- title: 判斷哪些連接埠可用於廣播網域（ ONTAP 9.7 及更早版本）
+  url: "/networking-bd/determine_which_ports_can_be_used_for_a_broadcast_domains.html"
+- title: 建立廣播網域（ ONTAP 9.7 及更早版本）
+  url: "/networking-bd/create_a_broadcast_domain97.html"
+- title: 從廣播網域新增或移除連接埠（ ONTAP 9.7 及更早版本）
+  url: "/networking-bd/add_or_remove_ports_from_a_broadcast_domain97.html"
+- title: 分割廣播網域（ ONTAP 9.7 或更早版本）
+  url: "/networking-bd/split_broadcast_domains97.html"
+- title: 合併廣播網域（ ONTAP 9.7 及更早版本）
+  url: "/networking-bd/merge_broadcast_domains97.html"
+- title: 變更廣播網域中連接埠的 MTU 值（ ONTAP 9.7 及更早版本）
+  url: "/networking-bd/change_the_mtu_value_for_ports_in_a_broadcast_domain97.html"
+- title: 顯示廣播網域（ ONTAP 9.7 及更早版本）
+  url: "/networking-bd/display_broadcast_domains97.html"

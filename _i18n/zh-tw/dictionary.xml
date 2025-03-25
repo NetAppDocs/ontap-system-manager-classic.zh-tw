@@ -9069,7 +9069,6 @@ LDAP是此SVM上名稱服務和名稱對應的主要使用者資訊來源。</bl
   <block id="33d698c5405b59cf282a091b0fab54f4" category="image-alt">此圖為SnapVault 一份流程圖、說明各項功能的流程圖。工作流程中的步驟與主題相符。</block>
   <block id="6a34cf18fb7026d09fc129111db8a169" category="paragraph">您可以取得其他文件、協助您從目的地磁碟區還原資料、以測試備份資料、或在來源磁碟區遺失時進行還原。</block>
   <block id="580df0707800400af79839e20238fb6e" category="paragraph">說明如何在SnapVault 還原中快速從還原的功能區中還原磁碟區ONTAP</block>
-  <block id="5069c081842d21ed175ea7a6154fbacb" category="sidebar">ONTAP 9.7 和更早版本的 ONTAP 9 中提供了 System Manager Classic 介面。本網站提供使用 System Manager Classic 的組態工作流程文件、以及 ONTAP 9.6 和 9.7 的 System Manager Classic 線上說明文件。</block>
   <block id="b82cad5226b405ad72908490db99b36c" category="sidebar">《系統管理程式經典》文件ONTAP</block>
   <block id="b7ab6e81313c8d18114a457f193b6312" category="sidebar">支援簡單易用的產品《系統管理程式》、可讓您輕鬆設定及管理各種叢集。ONTAP ONTAPSystem Manager可簡化常見的儲存工作、例如建立磁碟區、LUN、qtree、共用區和匯出、 可節省時間並協助預防錯誤。</block>
   <block id="be11c74c1dd7f307bb80183a90dc2067" category="sidebar">開始使用</block>
@@ -9080,7 +9079,6 @@ LDAP是此SVM上名稱服務和名稱對應的主要使用者資訊來源。</bl
   <block id="27dc49cb854bf08b0bbc4e74cdbe5316" category="sidebar">使用VSC的ESXi NFS組態</block>
   <block id="b5224505b319d9c81346246e1f3de1a7" category="sidebar">SMB和NFS多傳輸協定組態</block>
   <block id="d05c8dd88231b9c3216259d1e6814a77" category="sidebar">SMB 組態</block>
-  <block id="8e719802bed185197f99105e67d3034e" category="sidebar">使用VSC的ESXi FC組態</block>
   <block id="7d30b55c54296bcdedf5a84c9b75594f" category="sidebar">Red Hat Enterprise Linux的FC組態</block>
   <block id="23617d02d88796301c4d82f522e259ea" category="sidebar">Windows的FC組態</block>
   <block id="50575298e52caf9a33c4f761e7f5b730" category="sidebar">使用VSC的ESXi iSCSI組態</block>
@@ -9311,4 +9309,641 @@ LDAP是此SVM上名稱服務和名稱對應的主要使用者資訊來源。</bl
   <block id="34b038e21199a9f0fc12b3f94eb4fdb0" category="sidebar">設定及驗證NFS用戶端存取（建立新的NFS型SVM）</block>
   <block id="c9400d1db93e0471869b3c666490fa71" category="sidebar">開啟SVM根磁碟區的匯出原則（設定現有SVM的NFS存取）</block>
   <block id="17e1c570ca599dbf87546393bebca4a8" category="sidebar">設定及驗證NFS用戶端存取（將NFS磁碟區新增至啟用NFS的SVM）</block>
+  <block id="f068de0dc9fa18c23071832f9eb3a53b" category="summary">在建立NFS或SMB伺服器之前、請先設定SVM的DNS服務</block>
+  <block id="827c1f58eabad1c045a0db679a4497d8" category="doc">設定 DNS 服務（ ONTAP 9.7 及更早版本）</block>
+  <block id="25b12118e384a60668346d5b1770c323" category="paragraph">在建立NFS或SMB伺服器之前、您必須先為SVM設定DNS服務。一般而言、DNS名稱伺服器是NFS或SMB伺服器要加入之網域的Active Directory整合式DNS伺服器。</block>
+  <block id="232fd7f26d973fe38def49233cd075bf" category="paragraph">Active Directory整合式DNS伺服器包含網域LDAP和網域控制器伺服器的服務位置記錄（SRV),如果SVM找不到Active Directory LDAP伺服器和網域控制器、NFS或SMB伺服器設定就會失敗。</block>
+  <block id="fcea48ac44daed4236b24206a9380f46" category="paragraph">SVM使用主機名稱服務ns-交換器資料庫來判斷要使用哪些名稱服務、以及在查詢主機資訊時的順序。hosts 資料庫支援的兩個名稱服務分別是<block ref="45b963397aa40d4a0063e0d85e4fe7a1" prefix=" " category="inline-code"></block>和<block ref="b3bf60b851ebaeb2768b01a32e2ef32f" prefix=" " category="inline-code"></block>。</block>
+  <block id="4527704dc585750d6e7fe7d7aeabcf31" category="paragraph">在建立 SMB 伺服器之前，您必須確定這<block ref="b3bf60b851ebaeb2768b01a32e2ef32f" prefix=" " category="inline-code"></block>是其中一個來源。</block>
+  <block id="9102f8ca573a7ea6314fe39fd73e71bb" category="admonition">若要檢視mgwd程序和SecD程序的DNS名稱服務統計資料、請使用統計資料UI。</block>
+  <block id="fa7cdcfa8b2a7478bb2a54d0f83a859a" category="list-text">判斷名稱服務資料庫目前的組態為何<block ref="85cf4e6d42a71e693fd780c8b29accdd" prefix=" " category="inline-code"></block>。</block>
+  <block id="fa3ae76601a12e272a53977eeb41b643" category="paragraph">在此範例中、主機名稱服務資料庫會使用預設設定。</block>
+  <block id="847f8ec204eec763b02e0337ced420b1" category="paragraph"><block ref="bea8635ea997a67656a3063cc78f75e2" prefix="" category="inline-code"></block></block>
+  <block id="99232d5c50dac0086529798f398fe73a" category="list-text">如有必要、請執行下列動作。</block>
+  <block id="bd268bded8420baee3fe731f1f2e049e" category="list-text">依所需順序將DNS名稱服務新增至主機名稱服務資料庫、或重新排序來源。</block>
+  <block id="bd24bb1d831cb3160d1f19b14408492b" category="paragraph">在此範例中、主機資料庫會設定為依該順序使用DNS和本機檔案。</block>
+  <block id="3b305d126359f61f441d1c9b1407ee6e" category="paragraph"><block ref="840029861af4609db07d22153cf2d94e" prefix="" category="inline-code"></block></block>
+  <block id="2f31ce3b5802e173a34c2bb12e8d8985" category="list-text">驗證名稱服務組態是否正確。</block>
+  <block id="9a020166160829712d09ad9ea961a02e" category="list-text">設定DNS服務。</block>
+  <block id="053db3db6fc056eaea6e3b9cbb16fa54" category="paragraph"><block ref="e063fe914a8a273f79b0eaced2dec13a" prefix="" category="inline-code"></block></block>
+  <block id="31f0622ffb837190fe4ecd6525e69c35" category="admonition">如果 ONTAP 無法連絡名稱伺服器，則 vserver services<block ref="5ff1d8ac91e1ec1e522d748d28734965" prefix=" " category="inline-code"></block> 命令會執行自動組態驗證，並回報錯誤訊息。</block>
+  <block id="7f5bc8f87538b8ea3a414dc8665d481e" category="list-text">確認DNS組態正確、且服務已啟用。</block>
+  <block id="3eb40b0aa4a335c40fe7ae415cdcb189" category="list-text">驗證名稱伺服器的狀態。</block>
+  <block id="0d0155381104939285af36f0f53fb627" category="paragraph"><block ref="c67cbbd7d42014f53a19904f42dfa281" prefix="" category="inline-code"></block></block>
+  <block id="7656300265b9c717a9f7447293499125" category="section-title">在SVM上設定動態DNS</block>
+  <block id="fc273ec6012710999f8354d98772025c" category="paragraph">如果您想要Active Directory整合式DNS伺服器在DNS中動態登錄NFS或SMB伺服器的DNS記錄、則必須在SVM上設定動態DNS（DDNS）。</block>
+  <block id="b6adff03d32e0b0dd896460087633e22" category="paragraph">必須在SVM上設定DNS名稱服務。如果您使用的是安全的DDNS、則必須使用Active Directory整合的DNS名稱伺服器、而且必須為SVM建立NFS或SMB伺服器或Active Directory帳戶。</block>
+  <block id="cd5fdd9d20e27e06e636100f9e3665ec" category="paragraph">指定的完整網域名稱（FQDN）必須是唯一的：</block>
+  <block id="a274cd8c658f823b928de4538a273063" category="list-text">對於 NFS ，作為命令一部分的<block ref="e5b541ecb67048e7daec7514922b92f9" prefix=" " category="inline-code"></block>指定值<block ref="80b9de329099e45ebd72f10946f105d1" prefix=" " category="inline-code"></block>會成為已註冊的 FQDN 。</block>
+  <block id="02e516484836bf2255956aa5c23c38b3" category="list-text">對於SMB、指定為CIFS伺服器的NetBios名稱和CIFS伺服器完整網域名稱的值、會成為該LIF的註冊FQDN。這在ONTAP 不進行設定的情況下無法進行。在下列案例中、LIF FQDN為「CIFS_VS1.EXAMPLE.COM":」</block>
+  <block id="99e65bd556174dde23c5ca7b0afe1915" category="inline-link-macro">RFC 1123</block>
+  <block id="bc26173d39e2884f0f2c5df080b10ebc" category="admonition">若要避免SVM FQDN組態失敗、但不符合DDNS更新的RFC規則、請使用符合RFC規範的FQDN名稱。如需更多資訊、請參閱 <block ref="ad2a4c28e616a75898ace6fcc3f3ebc5" category="inline-link-macro-rx"></block>。</block>
+  <block id="ad862497985cd77ff1f660a2b1a5dbfa" category="list-text">在SVM上設定DDNS：</block>
+  <block id="dca9fa837ebb92308343005952b33e9f" category="paragraph"><block ref="99460e91312bd6a1252486de90b153b5" prefix="" category="inline-code"></block></block>
+  <block id="833ba41443ed9cf556f588d733a823de" category="paragraph"><block ref="235c647d12065bc5bfe5d54f2a31cb2a" prefix="" category="inline-code"></block></block>
+  <block id="17b0437c60f40b8bd47c198c724ddaad" category="paragraph">星號無法作為自訂FQDN的一部分使用。例如，<block ref="7f3e634da883bc7ad9648453c1e6820a" prefix=" " category="inline-code"></block>無效。</block>
+  <block id="05504f3d150848e08b56dd51f228d1da" category="list-text">確認DDNS組態正確：</block>
+  <block id="c2b6f9545320175e44bd88861fdcdfad" category="paragraph"><block ref="312f6ab356480452dcfd99b7fc44c477" prefix="" category="inline-code"></block></block>
+  <block id="de73a1e9954790ff0901101e659f1bf5" category="summary">建立LIF、此為與實體或邏輯連接埠相關聯的IP位址。</block>
+  <block id="85590a77bfd01e233e534a520c5724c6" category="doc">在 ONTAP 中建立 LIF （網路介面）</block>
+  <block id="ec7d87855b2f41d3b6c36ff49c461e98" category="paragraph">SVM透過一或多個網路邏輯介面（LIF）、為用戶端提供資料服務。您必須在您要用來存取資料的連接埠上建立LIF。LIF （網路介面）是與實體或邏輯連接埠相關聯的 IP 位址。如果元件發生故障、LIF可能會容錯移轉至不同的實體連接埠、或移轉至不同的實體連接埠、進而繼續與網路通訊。</block>
+  <block id="50802d3e5a25b93d471686a10da03dd8" category="paragraph-title">最佳實務做法</block>
+  <block id="5bcb18cd3811711d3c8e7a250c84fbb6" category="paragraph">連接至 ONTAP 的交換器連接埠應設定為跨距樹狀目錄邊緣連接埠、以減少 LIF 移轉期間的延遲。</block>
+  <block id="ddaa39224424042ba35394afbe714a70" category="list-text">您必須是叢集管理員才能執行此工作。</block>
+  <block id="6789dcbf206f0a4f22a16b71e5acd842" category="list-text">基礎實體或邏輯網路連接埠必須設定為管理UP狀態。</block>
+  <block id="0b7a56152c376f386379636394d6eee1" category="list-text">如果您打算使用子網路名稱來配置LIF的IP位址和網路遮罩值、則該子網路必須已經存在。</block>
+  <block id="8d7c6d693d91720dcea00ddb63dae543" category="paragraph">子網路包含屬於同一第3層子網路的IP位址集區。它們是使用 System Manager 或命令建立<block ref="0eec35ff52aa111a144d89156bcaed96" prefix=" " category="inline-code"></block>的。</block>
+  <block id="dc9e8d63cbbdb8d5ea7b651eb84b063e" category="list-text">指定LIF處理之流量類型的機制已變更。對於僅適用於更新版本的版本、LIF會使用角色來指定其處理的流量類型。ONTAP從ONTAP Sf6開始、l生命 就會使用服務原則來指定處理的流量類型。</block>
+  <block id="0e2f314790eb6267c4448c40e54aaea9" category="list-text">您無法將NAS和SAN傳輸協定指派給相同的LIF。</block>
+  <block id="d63abfced299c6ffbd6200e985c6d340" category="paragraph">支援的傳輸協定包括SMB、NFS、FlexCache 支援功能、iSCSI和FC； iSCSI和FC無法與其他傳輸協定結合使用。不過、NAS和乙太網路型SAN傳輸協定可以存在於同一個實體連接埠上。</block>
+  <block id="917d93a73123e18a54b6430b74261e40" category="list-text">您不應設定承載SMB流量的生命期、以自動還原至其主節點。如果SMB伺服器要裝載解決方案、以便透過Hyper-V或SQL Server透過SMB進行不中斷營運、則此建議為必填。</block>
+  <block id="9d233c1f0b092bc81ad068414cb64e53" category="list-text">您可以在同一個網路連接埠上同時建立IPV4和IPv6 LIF。</block>
+  <block id="092185cac2efeb6454b5f317056077d4" category="list-text">SVM使用的所有名稱對應和主機名稱解析服務、例如DNS、NIS、LDAP和Active Directory、 必須至少有一個LIF處理SVM的資料流量。</block>
+  <block id="9ad4be6eef992b371fa173aecc5c7bd0" category="list-text">處理節點之間叢集內流量的LIF、不應與處理管理流量的LIF或處理資料流量的LIF位於相同的子網路上。</block>
+  <block id="b4fdad0f41f5d63611cc1226e8b16ef6" category="list-text">建立沒有有效容錯移轉目標的LIF會產生警告訊息。</block>
+  <block id="53c7c393b93df8cb5a9fbfa1f669b976" category="list-text">如果叢集中有大量的生命量、您可以驗證叢集上支援的LIF容量：</block>
+  <block id="cd942e7c6676928ecc4c39ce02efa758" category="list-text">System Manager：從ONTAP 功能完善的9.12.0,開始檢視網路介面網格的處理量。</block>
+  <block id="2d783dafcb9a806c61739c4783f65a68" category="list-text">CLI ：使用命令（進階權限層級），使用<block ref="be57ee83c24450e6f6cbf92cb6031c11" prefix=" " category="inline-code"></block>每個節點上支援的命令和 LIF 容量<block ref="6d38f68efafeeda72933275474c52475" prefix=" " category="inline-code"></block>。</block>
+  <block id="df6fd02001382d75cfbaa48f225d87e0" category="list-text">從ONTAP NetApp 9.7開始、如果相同子網路中的SVM已存在其他LIF、您就不需要指定LIF的主連接埠。在相同的廣播網域中、系統會自動在指定的主節點上選擇隨機連接埠、如同在同一個子網路中設定的其他LIF。ONTAP</block>
+  <block id="4832088a6467cdd27ab5e94be99fde92" category="paragraph">從ONTAP 支援FFC-NVMe的支援功能到支援的功能表9.4開始。如果您要建立FC-NVMe LIF、應該注意下列事項：</block>
+  <block id="cb246c73e23f19b4642bb424d4402935" category="list-text">NVMe傳輸協定必須受到建立LIF的FC介面卡支援。</block>
+  <block id="183bb9f40117c65cde5613d5e0729ba9" category="list-text">FC-NVMe是資料生命中唯一的資料傳輸協定。</block>
+  <block id="f766fb2dec615453dd7fdf037100b8c5" category="list-text">必須為每個支援SAN的儲存虛擬機器（SVM）設定一個LIF處理管理流量。</block>
+  <block id="1975cc10ca1448345ac212d8f5aaa0e5" category="list-text">NVMe LIF和命名空間必須裝載在同一個節點上。</block>
+  <block id="4834e2c9cccfb6e34f5abd7223de2356" category="list-text">每個SVM只能設定一個處理資料流量的NVMe LIF。</block>
+  <block id="ae0df50a6255a9c9261d6b580219771e" category="list-text">當您建立具有子網路的網路介面時ONTAP 、ENetApp會自動從所選子網路選取可用的IP位址、並將其指派給網路介面。如果有多個子網路、您可以變更子網路、但無法變更IP位址。</block>
+  <block id="f0a3b3545950846c431aae854b982efd" category="list-text">建立（新增）SVM時、您無法為網路介面指定位於現有子網路範圍內的IP位址。您會收到子網路衝突錯誤。此問題發生在網路介面的其他工作流程中、例如在SVM設定或叢集設定中建立或修改叢集間網路介面。</block>
+  <block id="17522c98bb6f67a1fc472441ee278f61" category="inline-xref-macro">透過 RDMA 設定 NFS 的生命</block>
+  <block id="7c883993585be7ef062c0168cab6ae16" category="list-text">從 ONTAP 9.10.1 開始，<block ref="168d50085a3c4e712aaa28cf90e2f228" prefix=" " category="inline-code"></block> CLI 命令包含<block ref="e7f31f518110f3c17739edd51d047922" prefix=" " category="inline-code"></block>透過 RDMA 組態的 NFS 參數。從 ONTAP 9.12.1 開始，系統管理員支援透過 RDMA 組態建立 NFS 的網路介面。如需更多資訊、請參閱 <block ref="9a76f9bf68e533534ddb17107f75c19e" category="inline-xref-macro-rx"></block>。</block>
+  <block id="cd13dd69b76cb5a8d8836c52e28ee458" category="list-text">從 ONTAP 9.11.1 開始、全快閃 SAN 陣列（ ASA ）平台可自動進行 iSCSI LIF 容錯移轉。</block>
+  <block id="eb3e6c35d448456277ecc4873989ccd5" category="paragraph">如果指定 SVM 中不存在 iSCSI 生命體，或指定 SVM 中所有現有的 iSCSI 生命體均已啟用 iSCSI LIF 容錯移轉，則會在新建立的 iSCSI 生命體上自動啟用 iSCSI LIF 容錯移轉（容錯移轉原則設為，且自動還原值<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>設<block ref="9817175b2d67fda65aaaec8b8fcf2111" prefix=" " category="inline-code"></block>為）。</block>
+  <block id="2e9d79bdadc3c1a3ea80a6d99ea9c771" category="paragraph">如果在升級至 ONTAP 9.11.1 或更新版本之後， SVM 中現有的 iSCSI 生命體尚未啟用 iSCSI LIF 容錯移轉功能，且您在同一個 SVM 中建立新的 iSCSI 生命體，則新的 iSCSI 生命<block ref="075ae3d2fc31640504f814f60e5ef713" prefix="(" category="inline-code"></block>體將採用相同的容錯移轉原則），以在 SVM 中現有的 iSCSI 生命體為準。</block>
+  <block id="ef934d4d8f2b4314965fe0a91d2aac87" category="inline-link-macro">適用於ASA 各種平台的iSCSI LIF容錯移轉</block>
+  <block id="76eda67d6bf3f3490d9e9fbdd8ebdde8" category="paragraph"><block ref="76eda67d6bf3f3490d9e9fbdd8ebdde8" category="inline-link-macro-rx"></block></block>
+  <block id="ff75491cef38298812f55b5192a63322" category="paragraph">從ONTAP 支援支援的版本9.7開始、ONTAP 只要IPspace的同一子網路中至少已存在一個LIF、則該產品就會自動選擇LIF的主連接埠。在同一個廣播網域中選擇一個主連接埠、以作為該子網路中的其他LIF。ONTAP您仍可指定主連接埠、但不再需要主連接埠（除非該子網路在指定的IPspace中尚不存在任何生命區）。</block>
+  <block id="cc81ac9d702ccf6d3fb5a87328ac320e" category="paragraph">從ONTAP 功能性的9.12.0開始、您所遵循的程序取決於您所使用的介面-系統管理員或CLI：</block>
+  <block id="26ed02718973e705cd69ee6e109400e0" category="open-title">系統管理員</block>
+  <block id="37d203a4d30c92c7e0433e138e21db41" category="paragraph">*使用System Manager新增網路介面*</block>
+  <block id="deb6ad488690373fea929150f631f83c" category="list-text">選擇*網路&gt;總覽&gt;網路介面*。</block>
+  <block id="c742c2b2ed01c0f1e79d77c9eeebbfd3" category="inline-image-macro">新增圖示</block>
+  <block id="09f52291822d07847dc176bf99933cf8" category="list-text">選擇。 <block ref="43f48618b8b157dea4d31396a9d4b622" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="80b672eadb959ee067f798c949769797" category="list-text">選取下列其中一個介面角色：</block>
+  <block id="f6068daa29dbb05a7ead1e3b5a48bbee" category="list-text">資料</block>
+  <block id="a5e7f0e3e9c9116082e3187550f2112f" category="list-text">叢集間</block>
+  <block id="f8fdb9cc1d709f265daea2bcde48e114" category="list-text">SVM管理</block>
+  <block id="11fc8c77734f91f1358121dc5f9f6343" category="list-text">選取傳輸協定：</block>
+  <block id="cb781df6c6dcd5341f2c38def8e0721e" category="list-text">SMB/CIFS與NFS</block>
+  <block id="e4e1c13bb0b14f6cb7608cbecea948ef" category="list-text">iSCSI</block>
+  <block id="26bcb9f1cb6f391f4b2c18e676bb458d" category="list-text">NVMe / FC</block>
+  <block id="8b7c42123642e2e4ea7dd426aeb2de58" category="list-text">NVMe / TCP</block>
+  <block id="ca087c6b212e188bcd347b7df2d151a9" category="list-text">命名LIF或接受先前選擇所產生的名稱。</block>
+  <block id="60fdbb38c75f5c6482244473f87d1a1c" category="list-text">接受主節點、或使用下拉式選單選取一個節點。</block>
+  <block id="9f5d454d522b09f8cb2c421adee76a83" category="list-text">如果在所選SVM的IPspace中至少設定一個子網路、則會顯示子網路下拉式清單。</block>
+  <block id="1636f97e6bf0d009e6d54f431dd78331" category="list-text">如果您選取子網路、請從下拉式清單中選擇該子網路。</block>
+  <block id="4f251f06f399aea726037b03ba55a92e" category="list-text">如果您在沒有子網路的情況下繼續、則會顯示「廣播網域」下拉式清單：</block>
+  <block id="c77fd2236a05934d1482c13bc9c2cd4d" category="list-text">指定IP位址。如果IP位址正在使用中、則會顯示警告訊息。</block>
+  <block id="f2ccfb6eb1082f7276bb8c59544ba16d" category="list-text">指定子網路遮罩。</block>
+  <block id="dd8594a8467817eb4f593564094d8619" category="list-text">從廣播網域中選取主連接埠、可以是自動（建議）或從下拉式功能表中選取一個。主連接埠控制項會根據廣播網域或子網路選擇來顯示。</block>
+  <block id="877dcf4e4c0dcca42bb2ac810a06d5e7" category="list-text">儲存網路介面。</block>
+  <block id="91af5705f16502125e8b2187e64202c0" category="open-title">CLI</block>
+  <block id="9264736930746a402294c277d922cca5" category="paragraph">* 使用 CLI 建立 LIF*</block>
+  <block id="1ebcfad534ca6b48a25ad52ffad224cc" category="list-text">確定要用於LIF的廣播網域連接埠。</block>
+  <block id="f71d8c4bffdcfe0255989a522519e921" category="paragraph"><block ref="f8ae370acaa7702ed5f8a0f329fbbc89" prefix="" category="inline-code"></block></block>
+  <block id="f32118da3d70a4f320a9e03ff567af21" category="list-text">驗證要用於lifs的子網路是否包含足夠的未使用IP位址。</block>
+  <block id="ec9f06f6ad41803059b084ab6467f053" category="paragraph"><block ref="df45c041fbec4b88d2620f8f27969ca2" prefix="" category="inline-code"></block></block>
+  <block id="2307fb5b78b821211a9b011ea25ba45a" category="list-text">在您要用來存取資料的連接埠上建立一個或多個生命體。</block>
+  <block id="ffae5d6089597acdf7c65a5a7c0c7005" category="inline-link-macro">建立子網路</block>
+  <block id="c54dbe39234f8280d6f1651be5a1c1a1" category="admonition">NetApp 建議為資料 SVM 上的所有生命建立子網路物件。這對 MetroCluster 組態尤其重要，因為每個子網路物件都有相關的廣播網域，因此子網路物件可讓 ONTAP 判斷目的地叢集上的容錯移轉目標。有關說明，請參閱<block ref="ad8e74354bc7fdb3d5c3a1c355adf86b" category="inline-link-macro-rx"></block>。</block>
+  <block id="8d6c97487ddd2038e41c9e6af2e2c2b1" category="list-text"><block ref="42819bf7ae4bf9a7d2a14b2805ca0e83" prefix="" category="inline-code"></block>是在 LIF 上執行命令時 LIF 傳回的節點<block ref="d1e4afa40f7e9718bdad64b4f5db9abb" prefix=" " category="inline-code"></block>。</block>
+  <block id="c55a4f044dfec68d4e9f5b17072e3330" category="paragraph">您也可以使用-autom-revert選項、指定LIF是否應自動還原為主節點和主連接埠。</block>
+  <block id="a216b55b3c0bf385e4630d18a1048d5b" category="list-text"><block ref="321ff01f394ce440009a9f460f09d191" prefix="" category="inline-code"></block>是 LIF 上執行命令時， LIF 傳回的實體或邏輯連接埠<block ref="d1e4afa40f7e9718bdad64b4f5db9abb" prefix=" " category="inline-code"></block>。</block>
+  <block id="66538afe2f70d10ce8f5fa836c504d8e" category="list-text">您可以使用和<block ref="bba17324bbe2e8cea0c60e47268d4b36" prefix=" " category="inline-code"></block>選項指定 IP 位址<block ref="38df54fe961fa2bf2a7f82a5854fabad" prefix=" " category="inline-code"></block>，或使用選項從子網路啟用分配<block ref="8db950a15da003c155c149cbe4e043a2" prefix=" " category="inline-code"></block>。</block>
+  <block id="74d2e4c4ae33f4210672309e2da7aa67" category="list-text">使用子網路提供IP位址和網路遮罩時、如果子網路是使用閘道定義、則使用該子網路建立LIF時、會自動將通往該閘道的預設路由新增至SVM。</block>
+  <block id="f3497351aae46692e603fedb2f2cd146" category="inline-link-macro">ONTAP 命令參照</block>
+  <block id="6e3363145085bfe2357613c9c430aae9" category="list-text">如果您手動指派IP位址（不使用子網路）、則在不同IP子網路上有用戶端或網域控制器時、可能需要設定通往閘道的預設路由。如<block ref="272a3f7563defec9b271835dc324d95b" category="inline-link-macro-rx"></block>需詳細<block ref="21a17cd54b10a034d5fb8366f2a71517" prefix=" " category="inline-code"></block>資訊，請參閱。</block>
+  <block id="8c61a3dc9fe23290c557a2511c9b35e1" category="list-text"><block ref="28c988ac956ff7a16325cde07547fef0" prefix="" category="inline-code"></block>可讓您指定資料 LIF 是否在啟動，管理資料庫狀態變更或建立網路連線等情況下自動還原至其主節點。預設設定為<block ref="68934a3e9455fa72420237eb05902327" prefix=" " category="inline-code"></block>，但您可以根據環境中的網路管理原則將其設定為<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>。</block>
+  <block id="307b6a8428f6f758ace66db2ccc5d91b" category="list-text"><block ref="950af4194b424bf604f7ce86c7eff452" prefix="" category="inline-code"></block>從 ONTAP 9.5 開始，您可以使用選項指派 LIF 的服務原則<block ref="950af4194b424bf604f7ce86c7eff452" prefix=" " category="inline-code"></block>。當為LIF指定服務原則時、該原則會用來建構LIF的預設角色、容錯移轉原則和資料傳輸協定清單。在支援的過程中、服務原則僅適用於叢集間和BGP對等服務。ONTAP在NetApp 9.6中ONTAP 、您可以建立多種資料與管理服務的服務原則。</block>
+  <block id="efe97ec1aaddc6abcc95f07658ec7a4c" category="list-text"><block ref="5d2f1b504fd65080a58edd34b33a0b73" prefix="" category="inline-code"></block>可讓您建立支援 FCP 或 NVMe / FC 傳輸協定的 LIF 。建立IP LIF時不需要此選項。</block>
+  <block id="0e8be86fb1fd96c9321d5e4107e3475b" category="list-text">*選用*：在-address選項中指派IPv6位址：</block>
+  <block id="30d51071f881a325c624c8b0d9543ceb" category="list-text">使用network NDP prefix show命令查看在各種介面上學習到的RA前置詞清單。</block>
+  <block id="76ffff692e8f2a4eea8bb8acb769b46a" category="paragraph">此<block ref="621563f27da2174dd6450a0ccd81978f" prefix=" " category="inline-code"></block>命令可在進階權限層級使用。</block>
+  <block id="0d710d73b461c89b1ba215412b9541e2" category="list-text">使用格式<block ref="371fe1c91d7ccdea2021e0fb5b75a7b3" prefix=" " category="inline-code"></block>手動建構 IPv6 位址。</block>
+  <block id="2fede0e329f4e76a33495cab21d88e61" category="paragraph"><block ref="851f5ac9941d720844d143ed9cfcf60a" prefix="" category="inline-code"></block>是在各種介面上學習的首碼。</block>
+  <block id="3848d3a93d8d8ad3c6c94bb4323068cb" category="paragraph">若要衍生<block ref="b80bb7740288fda1f201890375a60c8f" prefix=" " category="inline-code"></block>，請選擇隨機的 64 位元十六進位數字。</block>
+  <block id="668781a383497a3b4080e57467cebbec" category="list-text">驗證LIF介面組態是否正確。</block>
+  <block id="d45f6cefbed50da176ce4d7e5929b922" category="paragraph"><block ref="6233fd2657a97d431cd74b2ae6f4956c" prefix="" category="inline-code"></block></block>
+  <block id="62bd47d83f665c91ba56dcaa0254344c" category="list-text">確認容錯移轉群組組態符合需求。</block>
+  <block id="9ce4adc4e6c330aa6eadbd7a695d2914" category="paragraph"><block ref="7ee8691cd7d47d7e0f05f48be6aa4e75" prefix="" category="inline-code"></block></block>
+  <block id="1eb3a40a1c16648aa07d98bba6880dae" category="list-text">確認已設定的IP位址可連線：</block>
+  <block id="d4f4121e7645988826a9a59b4f88d9cd" category="cell">若要驗證...</block>
+  <block id="b2ab9468407024b9e52fcb8768240b7f" category="cell">使用...</block>
+  <block id="3c40e603ab1c9e14602a6a53d041de45" category="cell">IPV4位址</block>
+  <block id="36ecf3f9704f42836a6f1084017a4efb" category="cell">網路ping</block>
+  <block id="681ecbfa9647e806effd6d73a57c33f5" category="cell">IPv6 位址</block>
+  <block id="ececd851d593a37be8bb1a2009b6afdc" category="cell">網路ping6.</block>
+  <block id="ff7c0fcd6a31e735a61c001f75426961" category="paragraph-title">範例</block>
+  <block id="f8f0bbecb07bf9393c191809861e2a52" category="paragraph">下列命令會建立 LIF 並使用和參數指定 IP 位址和<block ref="bba17324bbe2e8cea0c60e47268d4b36" prefix=" " category="inline-code"></block>網路遮罩值<block ref="38df54fe961fa2bf2a7f82a5854fabad" prefix=" " category="inline-code"></block>：</block>
+  <block id="f13c42e2942028683cdd7cf874120d74" category="paragraph">下列命令會建立LIF、並從指定的子網路（名為client1_sub）指派IP位址和網路遮罩值：</block>
+  <block id="3e1b8b018f7b75c483d6bcca99b92cf5" category="paragraph">下列命令會建立 NVMe / FC LIF 並指定<block ref="13116ea7c2875017f3b13faf27db2530" prefix=" " category="inline-code"></block>資料傳輸協定：</block>
+  <block id="a819f8586b7479e19e6badcf0dbbf9fe" category="summary">建立子網路來配置或保留特定的IP位址區塊、以供ONTAP 進行靜態網路組態</block>
+  <block id="f68dfd250c07b38a2267de86c6853714" category="paragraph">您可以建立子網路、以配置稍後為SVM建立LIF時所使用的特定IPv4或IPv6位址區塊。</block>
+  <block id="d22a3359973fc99d4b1e919cf7b35682" category="paragraph">這可讓您更輕鬆地建立lifs、方法是指定子網路名稱、而非為每個LIF指定IP位址和網路遮罩值。</block>
+  <block id="331a370ed47c46150dee6428cbd327d0" category="paragraph">您要新增子網路的廣播網域和IPspace必須已經存在。</block>
+  <block id="394821118526283bc78aba0efc30c8b3" category="list-text">所有子網路名稱在IPspace內必須是唯一的。</block>
+  <block id="ac218d46ce7b5a920599544a4d27e2ca" category="list-text">將IP位址範圍新增至子網路時、您必須確保網路中沒有重疊的IP位址、以免不同的子網路或主機嘗試使用相同的IP位址。</block>
+  <block id="e055c5d18898815859452fc665e9b3f1" category="list-text">如果您在定義子網路時指定閘道、則當使用該子網路建立LIF時、會自動將通往該閘道的預設路由新增至SVM。如果您不使用子網路，或定義子網路時未指定閘道，則需要使用<block ref="174fd4ec4d6994b777d4327cd4e8f15a" prefix=" " category="inline-code"></block>命令手動將路由新增至 SVM 。</block>
+  <block id="f0a2b989304d28e556b9962a34329b9d" category="list-text">NetApp 建議為資料 SVM 上的所有生命建立子網路物件。這對 MetroCluster 組態尤其重要，因為每個子網路物件都有相關的廣播網域，因此子網路物件可讓 ONTAP 判斷目的地叢集上的容錯移轉目標。</block>
+  <block id="58cbe3a9cb8955d83743c9ef6ceb5afb" category="paragraph">您可以使用 ONTAP 系統管理員或 ONTAP CLI 建立子網路。</block>
+  <block id="905ce8a8994f1eca61380b8b520beff8" category="list-text"><block ref="4ce27d02b48dd13802074a3df84fd406" prefix="" category="inline-code"></block>為您要建立的第 3 層子網路名稱。</block>
+  <block id="28ba03ccf8d5e3f1ddbdfce67b0e1f2e" category="paragraph">名稱可以是像「Mgmt」這樣的文字字串、也可以是特定的子網路IP值、例如192.0/24。</block>
+  <block id="16818f92d72a16ca22d844e68b7d2171" category="list-text"><block ref="e0caec61aebb1b31c3b192c9eb2f9483" prefix="" category="inline-code"></block>是子網路所在的廣播網域名稱。</block>
+  <block id="26766cea770806863e687a34ae8073db" category="list-text"><block ref="4ae3944df3ee772807922dcf9bb86c13" prefix="" category="inline-code"></block>是廣播網域所屬的 IPspace 名稱。</block>
+  <block id="feed2f690371862aef573255017713b9" category="paragraph">除非您指定此選項的值、否則會使用「預設」IPspace。</block>
+  <block id="3f4680257d54111be7543f57db717b74" category="list-text"><block ref="d52f62729781815dc9ef1dcfdfe6349b" prefix="" category="inline-code"></block>是子網路的 IP 位址和遮罩，例如 192.0.2.0/24 。</block>
+  <block id="840ab25561ddd4cd4bc8c96750b96bfb" category="list-text"><block ref="efeadb39d096cbd607bf36aac6cf9b70" prefix="" category="inline-code"></block>是子網路預設路由的閘道，例如 192.0.2.1 。</block>
+  <block id="a4b51119ead306cd9ba30b3a4d28d031" category="list-text"><block ref="131cf1b220ade17f6a3248d54312f858" prefix="" category="inline-code"></block>是將分配給子網路的 IP 位址清單或範圍。</block>
+  <block id="c0b17d69029b4e4fb6a70f84fb936299" category="paragraph">IP位址可以是個別位址、IP位址範圍、或是以逗號分隔的清單組合。</block>
+  <block id="73754d3d89c10930f8797d81ee876f15" category="list-text">您可以設定<block ref="2371ee49460c5795e25eb90f5168d85e" prefix=" " category="inline-code"></block>選項的值<block ref="b326b5062b2f0e69046810717534cb09" prefix=" " category="inline-code"></block>。</block>
+  <block id="89c251ab0c1c8e1a834a2a197934c26e" category="paragraph">如果任何服務處理器或網路介面目前正在使用指定範圍內的IP位址、則此命令會失敗。將此值設為true、可將任何手動定址的介面與目前子網路建立關聯、並允許命令成功執行。</block>
+  <block id="58b8cc02848a2d78050719bfae31651e" category="paragraph">下列命令會在預設IPspace的廣播網域預設-1中建立子網路子網路1。它會新增一個IPV4子網路IP位址和遮罩、閘道和一系列IP位址：</block>
+  <block id="77eedf6887f3d77271dc53c9fd38269a" category="paragraph">下列命令會在「預設」IPspace的廣播網域預設中建立子網路子網路2。它新增多種IPv6位址：</block>
+  <block id="bd965e38a0c9cf27aa1bde099308e23f" category="paragraph-title">完成後</block>
+  <block id="2796ed324450a74d4e573575b14a73a6" category="paragraph">您可以使用子網路中的位址、將SVM和介面指派給IPspace。</block>
+  <block id="f28fce6e01986c8f135346f1efac44a7" category="paragraph">如果您需要變更現有子網路的名稱，請使用<block ref="c1115a716e0f2168a7f66f26d2eefc8b" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="524f2128cdb9047c02d06179ce3c0cef" category="summary">為叢集中的每個SVM建立IPspace</block>
+  <block id="63e9ea12ee077b462ece911ea23131f4" category="paragraph">IPspaces是儲存虛擬機器（SVM）所在的不同IP位址空間。當您需要SVM擁有自己的安全儲存、管理和路由時、可以建立IPspaces。您可以使用IPspace為叢集中的每個SVM建立不同的IP位址空間。這樣做可讓管理性分隔網路網域中的用戶端存取叢集資料、同時使用相同IP位址子網路範圍中重疊的IP位址。</block>
+  <block id="ca95c8635ad5fd68ac940e00a0da212c" category="paragraph">整個叢集的IP空間上限為512個。對於包含具有 6 GB RAM 的節點的叢集、叢集範圍限制會減至 256 個 IPspace 。請參閱Hardware Universe 《參考資訊（英文）：判斷您的平台是否有其他限制。</block>
+  <block id="4c1c93397a0ad82f0b80502a6c7c0799" category="paragraph"><block ref="4c1c93397a0ad82f0b80502a6c7c0799" category="inline-link-rx"></block></block>
+  <block id="11914b786443f21c2c710d44f64c1480" category="admonition">IPspace名稱不能為「ALL」、因為「ALL」是系統保留的名稱。</block>
+  <block id="e7396fa25a3c5f851dc80cdef84456d0" category="list-text">建立IPspace：</block>
+  <block id="061a545e69527401190b860465cf4a79" category="paragraph"><block ref="4ae3944df3ee772807922dcf9bb86c13" prefix="" category="inline-code"></block>為您要建立的 IPspace 名稱。下列命令會在叢集上建立IPspace ipspace1：</block>
+  <block id="bc7a6ad79915b0b669c03cdc4b13c6c5" category="list-text">顯示 IPspaces ：</block>
+  <block id="f4e3ea14a86c053c771cffad27e184f6" category="paragraph"><block ref="a3fa89b248855f9b8841d3f32539f863" prefix="" category="inline-code"></block></block>
+  <block id="1e31c16448255a9e1d55e7b33ac21ee6" category="paragraph">IPspace隨系統SVM一起建立、用於IPspace。系統SVM可傳輸管理流量。</block>
+  <block id="42de8300ccf0587951996358a11fccf6" category="paragraph">如果您在MetroCluster 具有不含任何組態的叢集中建立IPspace、則必須手動將IPspace物件複寫到合作夥伴叢集。在IPspace複寫之前建立並指派給IPspace的任何SVM、將不會複寫到合作夥伴叢集。</block>
+  <block id="f8019cdb211915da8e1a1ae3877a0696" category="paragraph">廣播網域會自動在「預設」IPspace中建立、並可使用下列命令在IPspaces之間移動：</block>
+  <block id="66d79f86985b2f2499dd8add3343d01c" category="paragraph">例如、如果您想要使用下列命令、將廣播網域從「預設」移至「ips1」：</block>
+  <block id="d6d258eaae41d54bb6c9c23c42a49cfb" category="summary">建立SVM以將資料提供給用戶端</block>
+  <block id="508d6390b1c65105c1577182bef9b59b" category="paragraph">您必須建立SVM、才能將資料提供給用戶端。</block>
+  <block id="1704a195a161c4f9823222a8351ee926" category="list-text">您必須知道SVM根磁碟區的安全樣式。</block>
+  <block id="8a3d9f7b85d48c2f56226bde38dea0a1" category="paragraph">如果您計畫在此SVM上實作Hyper-V或SQL Server over SMB解決方案、則根磁碟區應該使用NTFS安全樣式。包含Hyper-V檔案或SQL資料庫檔案的磁碟區在建立時必須設定為NTFS安全性。將根磁碟區安全樣式設定為NTFS、可確保您不會不慎建立UNIX或混合式安全型資料磁碟區。</block>
+  <block id="a1d44fc603a8a7aba7f1314576a139c3" category="paragraph">&lt;stdin&gt; 中未解決的指令 - 包括： ..//_INCLUD/SVM-limits.adoc []</block>
+  <block id="e79dbb0b4d2ca45d8f4713711dd8c47c" category="paragraph">您可以使用System Manager來建立儲存VM。</block>
+  <block id="f232ec1da86ae610f97011f01f800031" category="list-text">選擇*儲存VMS*。</block>
+  <block id="425a1bcbacf8dcc29243de992d955eb3" category="list-text">按一下 <block ref="43f48618b8b157dea4d31396a9d4b622" category="inline-image-macro-rx" type="image"></block> 以建立儲存 VM 。</block>
+  <block id="c6db4789357efa25f46351d850a42f00" category="list-text">命名儲存VM。</block>
+  <block id="a7338288aa4590f3c9d5f7d2485c1c58" category="list-text">選取存取傳輸協定：</block>
+  <block id="3bebcf8a5d3487ce07f92bb891563edc" category="list-text">SMB/CIFS、NFS</block>
+  <block id="70d9e3c68d42d6ec42ab792e06c44357" category="list-text">NVMe</block>
+  <block id="22ae78a2ef9f095fe6373bb7295efa3a" category="list-text">如果您選取*啟用SMB/CIFS*、請完成下列組態：</block>
+  <block id="e68ffd76c817b20de740406064a5984c" category="cell">欄位或核取方塊</block>
+  <block id="34e8ac1104cce23ef5971ddf76627eee" category="paragraph">系統管理員名稱</block>
+  <block id="b471bcc9afb249cff00077aeff376c11" category="paragraph">指定SMB/CIFS儲存VM的系統管理員使用者名稱。</block>
+  <block id="dc647eb65e6711e155375218212b3964" category="paragraph">密碼</block>
+  <block id="703b6c917b59c453905f6777f0563187" category="paragraph">指定SMB/CIFS儲存VM的管理員密碼。</block>
+  <block id="637e29e8db23b0832fae80848e4d4733" category="paragraph">伺服器名稱</block>
+  <block id="cdcfd099349a8285a8e7a1ca74271068" category="paragraph">指定SMB/CIFS儲存VM的伺服器名稱。</block>
+  <block id="f490d3302e7cd81f3dafead6c8311b60" category="paragraph">Active Directory網域</block>
+  <block id="8cf13cd851c58a9306128f0ad0941d79" category="paragraph">指定Active Directory網域、為SMB/CIFS儲存VM提供使用者驗證。</block>
+  <block id="ff309cf3107765153856990e03224d8c" category="paragraph">組織單位</block>
+  <block id="4425eb7547a089cc817e237749a91443" category="paragraph">指定Active Directory網域中與SMB/CIFS伺服器相關聯的組織單位。「cn=computers"是預設值、可以修改。</block>
+  <block id="369873f8ef2eab73e01e08c2e3aedecb" category="paragraph">存取儲存VM中的共享區時、加密資料</block>
+  <block id="0dd0999209a05468327ee3e3281ced03" category="paragraph">選取此核取方塊可使用SMB 3.0加密資料、以防止對SMB/CIFS儲存VM中共用區的未授權檔案存取。</block>
+  <block id="78cd2c7d5422ffdb6d9545211ca49eeb" category="paragraph">網域</block>
+  <block id="44e86c21646cd6565c3fd1ca8c11f0d2" category="paragraph">新增、移除或重新排列SMB / CIFS儲存VM所列的網域。</block>
+  <block id="5983d82c47c0afe291746daa1c40b3ae" category="paragraph">名稱伺服器</block>
+  <block id="c503bd72fd9f98341f61070a2b337ac6" category="paragraph">新增、移除或重新排序SMB/CIFS儲存VM的名稱伺服器。</block>
+  <block id="951cfb94bce19fdd877e24ccfec144b9" category="paragraph">預設語言</block>
+  <block id="cd0ab8bd4d82650fa6882f32120db4f9" category="paragraph">指定儲存VM及其磁碟區的預設語言編碼設定。使用CLI變更儲存VM內個別磁碟區的設定。</block>
+  <block id="fbebc6739678d32573bdcc8e7d9712a2" category="paragraph">網路介面</block>
+  <block id="addc2324c2ccf4577b40cd95c2b0adcd" category="paragraph">對於您為儲存VM設定的每個網路介面、請選取現有的子網路（如果至少有一個子網路）、或指定*不含子網路*、並填寫* IP位址*和*子網路遮罩*欄位。如果有用、請選取「*對下列所有介面使用相同的子網路遮罩和閘道*」核取方塊。您可以讓系統自動選取主連接埠、或從清單中手動選取您要使用的連接埠。</block>
+  <block id="6f3b36f7d8c2187b5159cdb82423b93a" category="paragraph">管理系統管理員帳戶</block>
+  <block id="37fd1df845b96544bc823d9ee0d67cc1" category="paragraph">如果您要管理儲存VM系統管理員帳戶、請選取此核取方塊。選取此選項時、請指定使用者名稱、密碼、確認密碼、並指出您是否要新增網路介面以進行儲存VM管理。</block>
+  <block id="0d284df1be748e15793b8264348b675e" category="list-text">如果您選取 * 啟用 NFS* 、請完成下列組態：</block>
+  <block id="3de8b42b3601db654d1550084d657906" category="paragraph">允許NFS用戶端存取核取方塊</block>
+  <block id="3badd390719f5de7be91359220a017d8" category="paragraph">如果NFS儲存VM上建立的所有磁碟區都應該使用根磁碟區路徑「/」來掛載及周遊、請選取此核取方塊。將規則新增至匯出原則「預設」、以允許不中斷的掛載周遊。</block>
+  <block id="1f4da964f8eab62e96e8cfe406e44364" category="paragraph">規則</block>
+  <block id="c676e0b6d2fa06f7c150e74b7d7878ac" category="paragraph">按一下 <block ref="43f48618b8b157dea4d31396a9d4b622" category="inline-image-macro-rx" type="image"></block> 以建立規則。</block>
+  <block id="e0cc4684693f4e93cf56f3017cfaa481" category="list-text">用戶端規格：指定主機名稱、IP位址、網路群組或網域。</block>
+  <block id="15e1f930200c5ef680eccbc11fd982ca" category="list-text">存取傳輸協定：選取下列選項的組合：</block>
+  <block id="8d3f3d8ac4e0e2e8685821807920a78e" category="list-text">SMB/CIFS</block>
+  <block id="f24ce81f056d5acd59788df7f5ab36a1" category="list-text">FlexCache</block>
+  <block id="1d1a594959ec615f56516f5d0f5e8ddb" category="list-text">NFS</block>
+  <block id="5b12ee0369243579651edca43ff65c85" category="list-text">NFSv3</block>
+  <block id="08e90903fe145a9dcc2fb967259a1755" category="list-text">NFSv4</block>
+  <block id="86e42f76258fecb272d85febc7840cae" category="list-text">存取詳細資料：針對每種類型的使用者、指定存取層級（唯讀、讀取/寫入器或超級使用者）。使用者類型包括：</block>
+  <block id="b1c94ca2fbc3e78fc30069c8d0f01680" category="list-text">全部</block>
+  <block id="3b8189b52f32bb0356f9ae582e04094d" category="list-text">全部（匿名使用者）</block>
+  <block id="c5541b475fdab9fce04884adff3b0359" category="list-text">Kerberos 5.</block>
+  <block id="f22873ba6efee4accc10bd5a3d3ca9eb" category="list-text">Kerberos 5i</block>
+  <block id="a98fd9001be872cb9763c171625ee881" category="list-text">Kerberos 5p</block>
+  <block id="d11322c1a7a2383491c23f13113c59ea" category="list-text">NTLM</block>
+  <block id="7383d6f7ab3b52644d30a4a0e2ae3df1" category="paragraph">儲存規則。</block>
+  <block id="83163eeadc9ddb2ac656cb4f4245b264" category="list-text">如果您選取*啟用iSCSI*、請完成下列組態：</block>
+  <block id="cb87cc4133d76efd12f5de622190e7c4" category="list-text">如果您選取 * 啟用 FC* 、請完成下列組態：</block>
+  <block id="8503a722b3fe068428f739c9dbd4d43f" category="paragraph">設定FC連接埠</block>
+  <block id="8488410a80842f058100899223773ebb" category="paragraph">在要納入儲存VM的節點上選取網路介面。建議每個節點使用兩個網路介面。</block>
+  <block id="7cfc92cd0570022bd7e56b7c286c6bac" category="list-text">如果您選取 * 啟用 NVMe / FC * 、請完成下列組態：</block>
+  <block id="cdf900c4ac940fb389c02e3a3292fae5" category="list-text">如果您選取 * 啟用 NVMe / TCP * 、請完成下列組態：</block>
+  <block id="345e93a96b6e66cb9274dbad975c0db2" category="list-text">儲存您的變更。</block>
+  <block id="61157a0dbd65c93a06825f5c886c2bdc" category="paragraph">使用ONTAP CLI建立子網路。</block>
+  <block id="9e410dfb5a2299a2f9aeae2d14595de2" category="list-text">判斷哪些Aggregate是包含SVM根磁碟區的候選集合體。</block>
+  <block id="d5e80ad93326693bccc06be4536713de" category="paragraph"><block ref="ab0abb3da82fd9575686e8f7abdfdcd5" prefix="" category="inline-code"></block></block>
+  <block id="4dfb9b40ea052c23a3a0f77d337cbdee" category="paragraph">您必須選擇至少有1 GB可用空間的集合體、才能包含根磁碟區。如果您打算在SVM上設定NAS稽核、則必須在根Aggregate上至少有3 GB的額外可用空間、並在啟用稽核功能時、使用額外空間來建立稽核接移磁碟區。</block>
+  <block id="4e756dafef2428c97af05ef326dff6ed" category="admonition">如果已在現有SVM上啟用NAS稽核、則會在成功完成集合建立之後、立即建立Aggregate的接移Volume。</block>
+  <block id="1d4025ba42560b66fc521994c2d4ab8a" category="list-text">記錄您要在其上建立SVM根Volume的集合體名稱。</block>
+  <block id="21c7896623b02b15d2c661cc2e5a5255" category="list-text">如果您打算在建立SVM時指定語言、但不知道要使用的值、請識別並記錄您要指定的語言值：</block>
+  <block id="6f0db2c0e3209546c14d633363b336e8" category="paragraph"><block ref="7e3619f076c911dc84602d00403fd4c8" prefix="" category="inline-code"></block></block>
+  <block id="1d8404eb6271fc502c911b0db577288e" category="list-text">如果您計畫在建立 SVM 時指定快照原則，但不知道原則名稱，請列出可用的原則，並識別並記錄您要使用的快照原則名稱：</block>
+  <block id="3dae10567943cbfb6af5ecfc66d573a5" category="paragraph"><block ref="35445e40043671f182d2acb44ed589a4" prefix="" category="inline-code"></block></block>
+  <block id="8d20ed56563f9cbada635a4c622b9945" category="list-text">如果您打算在建立SVM時指定配額原則、但不知道原則名稱、請列出可用的原則、並識別並記錄您要使用的配額原則名稱：</block>
+  <block id="bc9b110970671d35ec963b22428b4fc6" category="paragraph"><block ref="3bd8dda2d5ae5e5237187c31d2c74164" prefix="" category="inline-code"></block></block>
+  <block id="891942f01dbf46f03681746fb932d692" category="list-text">建立SVM：</block>
+  <block id="cb7bf213cd3b9774ed6dc06d7829f27f" category="paragraph"><block ref="27b483e7b9ee9e6551db297d8745aa90" prefix="" category="inline-code"></block></block>
+  <block id="c4c1eb91697ed5e319e37fb61374dd54" category="paragraph"><block ref="abf8f3d2a8f2bf44483e35c5cf5189ed" prefix="" category="inline-code"></block></block>
+  <block id="c75de7d8081e3cf501427ec47ca0cbf9" category="list-text">驗證SVM組態是否正確。</block>
+  <block id="a08bac7bed1b7eaef93ae8eb19ca62e9" category="paragraph"><block ref="c69629cafced5cf16a105c3fc5369973" prefix="" category="inline-code"></block></block>
+  <block id="5fe6a4ff9e5b4c958267930735a5750b" category="paragraph">在此範例中、命令會在IPspace「ipspace1」中建立名為「VS1」的SVM。根磁碟區的名稱為「VS1_root」、建立於具有NTFS安全樣式的aggr3上。</block>
+  <block id="28e9e84d4ea23f4e930e8628e9dd1d79" category="paragraph">&lt;stdin&gt; 中未解決的指令 - 包括： ..//_include/adaptive-QoS-policy.adoc []</block>
+  <block id="00168315e4762d2b2b9c5462bdf8c7cc" category="summary">角色不同的生命有不同的特性</block>
+  <block id="0c0b240863b39f03b5d2a93471991c0f" category="doc">LIF 角色（ ONTAP 9.5 及更早版本）</block>
+  <block id="971dbc285b73d7c6f7ac90280984bb27" category="paragraph">角色不同的生命有不同的特性。LIF角色會決定介面上支援的流量類型、以及套用的容錯移轉規則、已設定的防火牆限制、安全性、負載平衡、以及每個LIF的路由行為。LIF可以具有下列任一角色：叢集、叢集管理、資料、叢集間、節點管理、 和undef(未定義的)。Undef角色用於BGP LIF。</block>
+  <block id="948b8964eebece7a2ddba6799f736a2c" category="paragraph">從ONTAP 功能性的9.6開始、LIF角色已過時。您應該為l生命 而非角色指定服務原則。使用服務原則建立LIF時、不需要指定LIF角色。</block>
+  <block id="94e6cee7fe1a1375bf9dc65d4f0dd995" category="section-title">LIF安全性</block>
+  <block id="f86f4a50388930909d983126e43601d2" category="cell">Data LIF</block>
+  <block id="aff7b3c6a1a82a339ee68a62e5bf859e" category="cell">叢集 LIF</block>
+  <block id="e2578ec54f85b5b6333c94364b756a1c" category="cell">節點管理 LIF</block>
+  <block id="15a4d902a9e2eeb56724bdb94f9d1977" category="cell">叢集管理LIF</block>
+  <block id="54f7d853bcd07992f133218c21a038be" category="cell">叢集間 LIF</block>
+  <block id="bbcca6fb4cc39c40c272284afd47fb0d" category="cell">需要私有IP子網路？</block>
+  <block id="bafd7322c6e97d25b6299b5d6fe8920b" category="cell">否</block>
+  <block id="94aa616ded63df1ddfd2db3f000298f5" category="cell">需要安全的網路？</block>
+  <block id="b484916e97900df1211612f037613d9a" category="cell">預設防火牆原則</block>
+  <block id="9fed7b9fa5681c8f3085940cc39e70e6" category="cell">非常嚴格</block>
+  <block id="32f4d3b1db1c5f465cb22e4877370085" category="cell">完全開放</block>
+  <block id="87f8a6ab85c9ced3702b4ea641ad4bb5" category="cell">中</block>
+  <block id="bc7b428ef80f13f9db850081a0baf5f8" category="cell">防火牆是否可自訂？</block>
+  <block id="989edd27b2259c0a99bdf49486b0e282" category="section-title">LIF容錯移轉</block>
+  <block id="590f6d9a5885f042982c9a911f76abda" category="cell">預設行為</block>
+  <block id="f22315dd8ccfb0e386d9d87ebc2b1bba" category="cell">只有在LIF主節點和非SFO合作夥伴節點上的相同容錯移轉群組中的連接埠</block>
+  <block id="83f96cdb7303472fdea7614250e0c3fd" category="cell">只有LIF主節點上相同容錯移轉群組中的連接埠</block>
+  <block id="d9ccc0630cdaf0a667836ce00d1db024" category="cell">同一個容錯移轉群組中的任何連接埠</block>
+  <block id="498be304757715bc51f2f7d8b0b16b8a" category="cell">可自訂嗎？</block>
+  <block id="0562bc2d0812b604322ccdfe52b44d18" category="section-title">LIF路由</block>
+  <block id="98f8738f80b3c6ab46e13578531a5d7e" category="cell">何時需要預設路由？</block>
+  <block id="c001ad4efcbb1955baa7f6162cab4143" category="cell">當用戶端或網域控制器位於不同的IP子網路時</block>
+  <block id="6e7b34fa59e1bd229b207892956dc41c" category="cell">永不</block>
+  <block id="9081e9fd698e3464b29b10ce9eee9fd8" category="cell">當任何一種主要流量類型需要存取不同的IP子網路時</block>
+  <block id="ec5334cfc1ff0a04b70f21168eccd32a" category="cell">當系統管理員從其他IP子網路連線時</block>
+  <block id="44446842df9e28ad4397fd58ef039cd6" category="cell">當其他叢集間生命體位於不同的IP子網路時</block>
+  <block id="56b69eb70b78df6fce9dd2059bf416b2" category="cell">何時需要到特定IP子網路的靜態路由？</block>
+  <block id="a2cc588f2ab07ad61b05400f593eeb0a" category="cell">罕見</block>
+  <block id="398406706598a44bad4df839c72c9fe0" category="cell">當另一個叢集的節點在不同的IP子網路中擁有其叢集間生命體時</block>
+  <block id="423aabc92a5f3d53d90d88c84358b59b" category="cell">何時需要將靜態主機路由傳送至特定伺服器？</block>
+  <block id="0ec028ac0f80b4414ca0b7d12cde6fb6" category="cell">若要在節點管理LIF下列出其中一種流量類型、請瀏覽資料LIF、而非節點管理LIF。這需要相應的防火牆變更。</block>
+  <block id="e9d15683f03673a2edf8195d24964eb1" category="section-title">LIF重新平衡</block>
+  <block id="0ec08ba45fa50a6f8cf3c5332d5f7b1a" category="cell">DNS：用作DNS伺服器？</block>
+  <block id="b6ecb378831203b6df90201c84ac0d36" category="cell">DNS：匯出為區域？</block>
+  <block id="05873a13cdcf394cb1781d50396d9033" category="section-title">LIF主要流量類型</block>
+  <block id="91c997ac411302de89a704da8c90a365" category="cell">主要流量類型</block>
+  <block id="863fafa226fdca241847822df0d9cf40" category="cell">NFS伺服器、CIFS伺服器、NIS用戶端、Active Directory、LDAP、 WINS、DNS用戶端和伺服器、iSCSI和FC伺服器</block>
+  <block id="226a6d91c34879bfbe918926cd1f94c4" category="cell">叢集內</block>
+  <block id="1e14e7e2a6e253cfec1589d743aa33f6" category="cell">SSH伺服器、HTTPS伺服器、NTP用戶端、SNMP、AutoSupport 支援 DNS用戶端、正在載入軟體更新</block>
+  <block id="fad014a43df1d0597a1cda7f1426ea6b" category="cell">SSH伺服器、HTTPS伺服器</block>
+  <block id="3b013b6d96eafcc4e55a6beb603d64c4" category="cell">跨叢集複寫</block>
+  <block id="459c7b8e7f7af952393c9b24d0cbd35d" category="summary">如需維護、請從插槽中移除故障的NIC、或將NIC移至其他插槽ONTAP</block>
+  <block id="c34df23c67ce2c224ace362d5c84f2c1" category="doc">從節點移除 NIC （ ONTAP 9.7 或更早版本）</block>
+  <block id="1578a0b8542e51d6976133034d10f88b" category="paragraph">本主題適用於ONTAP 更新版本的版本。您可能必須從插槽中移除故障的NIC、或將NIC移至其他插槽以進行維護。</block>
+  <block id="af573fe3536f49b538a7a5e78478b47e" category="list-text">NIC連接埠上裝載的所有LIF都必須已移轉或刪除。</block>
+  <block id="68f5b35cecb146725fd3787d47d97f60" category="list-text">任何NIC連接埠都不能做為任何LIF的主連接埠。</block>
+  <block id="60ccccf52bc751406dcc4a9aff1bd74e" category="list-text">您必須具有進階權限、才能從NIC刪除連接埠。</block>
+  <block id="38abd375e1250ccb945791ffe0f4fcf2" category="list-text">從NIC刪除連接埠：</block>
+  <block id="1edc30c9cec2665a01f0a9cc7910d9fc" category="paragraph"><block ref="ce40425bd6c0ef0314bdd114d6980b61" prefix="" category="inline-code"></block></block>
+  <block id="d7dd98ce71c2f2739d8dbb0312174af2" category="list-text">確認連接埠已刪除：</block>
+  <block id="47cd03a2fa721b9f4f83dca38829afea" category="paragraph"><block ref="838c4deb1e9c47dcd4c44b6e40276467" prefix="" category="inline-code"></block></block>
+  <block id="daa7b5256a5159e27b3a5a2ec8349d9d" category="list-text">如果網路連接埠show命令的輸出仍顯示刪除的連接埠、請重複步驟1。</block>
+  <block id="19bf87c82445072fe6568b60767d7b78" category="summary">不需要或建議從廣播網域手動新增和移除連接埠</block>
+  <block id="876b163d470ad17f7e57977a1fb3a7a4" category="doc">從廣播網域新增或移除連接埠（ ONTAP 9.7 及更早版本）</block>
+  <block id="d0e4d312be789fa9609491a71720b1a1" category="paragraph">您可以在最初建立廣播網域時新增網路連接埠、或是在現有的廣播網域中新增或移除連接埠。這可讓您有效率地使用叢集中的所有連接埠。</block>
+  <block id="82d5593d0cdfd31166134520e453fb74" category="paragraph">如果您要新增至新廣播網域的連接埠已經在另一個廣播網域中、則必須先從該廣播網域移除連接埠、然後再將它們指派給新的廣播網域。</block>
+  <block id="807951cd4d6fcb2e150d21fbd9f5b807" category="admonition">這項工作與ONTAP 不ONTAP 適用於《產品介紹》9.0 - 9.7、而非《產品介紹》9.8有關。</block>
+  <block id="353cd250aa9a6d62eefe59937d353b0f" category="list-text">您打算新增至廣播網域的連接埠不得屬於其他廣播網域。</block>
+  <block id="59270bd5af684cbd2f53d6057c1fb383" category="list-text">已屬於介面群組的連接埠無法個別新增至廣播網域。</block>
+  <block id="540b443896df21c3dd0b368ca18128af" category="paragraph">新增和移除網路連接埠時、適用下列規則：</block>
+  <block id="8811151dda23edd2a5108a6fa1ff1be8" category="cell">新增連接埠時...</block>
+  <block id="858f1a0e377ca7cbf492f157f80c1789" category="cell">移除連接埠時...</block>
+  <block id="a9ab7ec094ce4b25c1cefebbdcc04d38" category="cell">連接埠可以是網路連接埠、VLAN或介面群組（ifgrps）。</block>
+  <block id="3bc4fb7c2035117d63df4fa973af67bf" category="cell">這些連接埠會新增至廣播網域的系統定義容錯移轉群組。</block>
+  <block id="f71ce9afeee0c9083f8cec5ce12e8d6d" category="cell">這些連接埠會從廣播網域中的所有容錯移轉群組中移除。</block>
+  <block id="5ec058e125df964e3212b92a1344e836" category="cell">連接埠的MTU會更新為廣播網域中設定的MTU值。</block>
+  <block id="7bcbfe8bd9d90deb15678f71f0bed919" category="cell">連接埠的MTU不變。</block>
+  <block id="9afc0ffaa6e1d4e4f5ea6cd92cbe12b9" category="cell">連接埠的IPspace會更新為廣播網域的IPspace值。</block>
+  <block id="b64f65c77c392ed7c104c1ff38a89f7b" category="cell">這些連接埠會移至「預設」IPspace、且不含廣播網域屬性。</block>
+  <block id="bc8bcf06defaa0b66aea0e8f6331139f" category="admonition">如果使用命令移除介面群組的最後一個成員連接埠<block ref="d575b091ef70bd2ac59a248dac4d658e" prefix=" " category="inline-code"></block>，則會導致介面群組連接埠從廣播網域中移除，因為廣播網域中不允許使用空的介面群組連接埠。</block>
+  <block id="40df56690b3f73d28b9c0537efd4c202" category="list-text">使用命令顯示目前已指派或未指派給廣播網域的連接埠<block ref="838c4deb1e9c47dcd4c44b6e40276467" prefix=" " category="inline-code"></block>。</block>
+  <block id="33f8d1377a89c0505bf6bbd687544fe8" category="list-text">從廣播網域新增或移除網路連接埠：</block>
+  <block id="75679f9f9577ec4abce75ef8e0a00e7d" category="paragraph">新增連接埠至廣播網域</block>
+  <block id="8f822f2d07295ece2b3ed7d8bc0255ff" category="paragraph"><block ref="c12e4cf1de1c55f93fa3c87cac484b3b" prefix="" category="inline-code"></block></block>
+  <block id="c0551af818f4a1ac54f3175279a051b3" category="paragraph">從廣播網域移除連接埠</block>
+  <block id="ee210a0730802d9c055ca601e95c499c" category="paragraph"><block ref="0a00983c93a43364f8ece0dd4878a2d5" prefix="" category="inline-code"></block></block>
+  <block id="eb595208b2e206995da2f02804845846" category="list-text">確認已從廣播網域新增或移除連接埠：</block>
+  <block id="b594ae869da49f856ebb1c5ca8dfb9b4" category="section-title">新增和移除連接埠的範例</block>
+  <block id="fb8d5ad141799c307eb1fcfcb716b28a" category="paragraph">下列命令會將節點叢集上的連接埠e0g與節點叢集上的連接埠e0g新增至預設IPspace中的廣播網域bcast1：</block>
+  <block id="f23acb14778bd25381425e8327f3775c" category="paragraph"><block ref="e5d2dc24fe6e32d79713c7fbc4e6f490" prefix="" category="inline-code"></block></block>
+  <block id="30671794ffa73ee4b020d67f720d6f68" category="paragraph">下列命令會在叢集IPspace中新增兩個叢集連接埠以廣播網域叢集：</block>
+  <block id="6a91675c7de00d7744149b3e588cd626" category="paragraph"><block ref="d83e55384a4a0bec023cb45fe68c600d" prefix="" category="inline-code"></block></block>
+  <block id="614c89cdf853f484ebc0b5b55e7a87cd" category="paragraph">下列命令會從預設IPspace的廣播網域bcast1中移除節點叢集1上的連接埠e0e：</block>
+  <block id="05acd91b7cdf216d410b1b3c44593e88" category="paragraph"><block ref="f988032db9ad3aefa801757eb684c9d6" prefix="" category="inline-code"></block></block>
+  <block id="bc2602c5a66493ba7d85e8bd5d0e7f9b" category="list-text"><block ref="bc2602c5a66493ba7d85e8bd5d0e7f9b" category="inline-link-macro-rx"></block></block>
+  <block id="84bdf9349c63fefa4aa4743ee6f7bc1c" category="summary">修改廣播網域的MTU值、以變更廣播網域中所有連接埠的值</block>
+  <block id="b65f35d38e54f653d62f385179f0697a" category="doc">變更廣播網域中連接埠的 MTU 值（ ONTAP 9.7 及更早版本）</block>
+  <block id="2b8eb4f7080b49d3e6d219e7482285c1" category="paragraph">您可以修改廣播網域的MTU值、以變更該廣播網域中所有連接埠的MTU值。這可以用來支援網路中的拓撲變更。</block>
+  <block id="17169cdd38bd8629d45990b5c46f3b8a" category="paragraph">MTU值必須符合連接至該層2網路的所有裝置、但e0M連接埠處理管理流量除外。</block>
+  <block id="387b8c86faaf37988b48544b6aeee058" category="paragraph">變更MTU值會導致受影響連接埠上的流量短暫中斷。系統會顯示提示、您必須回答y才能變更MTU。</block>
+  <block id="c558e6cc70dea26b9ff4a4f10e4fcf81" category="paragraph">變更廣播網域中所有連接埠的MTU值：</block>
+  <block id="eff7b7f6ff578e4ab608a330289c49a5" category="list-text"><block ref="91597b98c407da31245936f26c8a9887" prefix="" category="inline-code"></block>是廣播網域的名稱。</block>
+  <block id="65437b39a930bfdd02459d96ad335c5f" category="list-text"><block ref="661a504c6c4cd163fe4d67836577b926" prefix="" category="inline-code"></block>為 IP 封包的 MTU 大小； 1500 和 9000 為典型值。</block>
+  <block id="3174c9efde96d4881e6291980fe1cb18" category="list-text"><block ref="1e2d1a4a58bdff2d126f8f6ca8608478" prefix="" category="inline-code"></block>是此廣播網域所在的 IPspace 名稱。除非您指定此選項的值、否則會使用「預設」IPspace。下列命令會將廣播網域bcast1中所有連接埠的MTU變更為9000：</block>
+  <block id="c8c91b71c9f2c29b3110bfc3348a9f0a" category="summary">廣播網域會將屬於同一個第2層網路的網路連接埠群組在一起</block>
+  <block id="0eac6cba5e9f8b059013158afd4c62e1" category="doc">廣播網域總覽（ ONTAP 9.7 及更早版本）</block>
+  <block id="d9aacb3b3086394f21ba1ec931f98cfc" category="paragraph">廣播網域的目的是將屬於同一層網路的網路連接埠分組。然後、儲存虛擬機器（SVM）便可使用群組中的連接埠來處理資料或管理流量。</block>
+  <block id="ab7522c6814a39bb50b1835cf25f6259" category="paragraph">廣播網域位於IPspace中。在叢集初始化期間、系統會建立兩個預設廣播網域：</block>
+  <block id="b162e4d019362577aa2f67b09f6f8671" category="list-text">預設廣播網域包含預設IPspace中的連接埠。這些連接埠主要用於提供資料。叢集管理和節點管理連接埠也位於此廣播網域中。</block>
+  <block id="e706cfbf7e7027617769f0a64d1aa44b" category="list-text">叢集廣播網域包含叢集IPspace中的連接埠。這些連接埠用於叢集通訊、並包含叢集中所有節點的所有叢集連接埠。</block>
+  <block id="d58198b796a8425bceb05d28fbd76655" category="paragraph">如果您已建立唯一的IPspaces來分隔用戶端流量、則必須在每個IPspaces中建立廣播網域。</block>
+  <block id="6803a7584a25c4fead41b63c82cd6216" category="admonition">建立廣播網域、將叢集中屬於同一層2網路的網路連接埠分組。然後、SVM便可使用這些連接埠。</block>
+  <block id="c7d645e9536a7b441c9ccf5073a87e53" category="section-title">使用廣播網域的範例</block>
+  <block id="6b1bc3d86b8575e2402bcae1d0dd6788" category="paragraph">廣播網域是同一個IPspace中的一組網路連接埠、也能彼此連接第2層、通常包括叢集中許多節點的連接埠。</block>
+  <block id="d4f97706d831e1453d51bf1fc26afe5b" category="paragraph">下圖顯示指派給四節點叢集中三個廣播網域的連接埠：</block>
+  <block id="3b33bbfb1f410cbbfcbb9edebb1724b5" category="list-text">叢集廣播網域會在叢集初始化期間自動建立、其中包含叢集中每個節點的連接埠a和b。</block>
+  <block id="45bb6bb21322652b107d80754e12b482" category="list-text">預設的廣播網域也會在叢集初始化期間自動建立、其中包含叢集中每個節點的連接埠c和d。</block>
+  <block id="e1c2adb896f3eb2d80b2bb9acd04a2ab" category="list-text">bcast1廣播網域已手動建立、其中包含叢集中每個節點的連接埠e、f和g。此廣播網域是由系統管理員所建立、專門用於新用戶端、以便透過新的SVM存取資料。</block>
+  <block id="bc800d449ed8e2782b98036c5f5a2d7f" category="inline-image-macro">廣播網域映像</block>
+  <block id="8c96bff404841be809ae66a4ad5b6275" category="paragraph"><block ref="8c96bff404841be809ae66a4ad5b6275" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="330c8578ee83c50c4ecc9ee0f494fa09" category="paragraph">系統會自動建立名稱相同且與每個廣播網域具有相同網路連接埠的容錯移轉群組。此容錯移轉群組是由系統自動管理、也就是說、當連接埠從廣播網域新增或移除時、它們會自動從這個容錯移轉群組中新增或移除。</block>
+  <block id="25f1938e8a6466ef3646cb1540f85372" category="summary">廣播網域會將叢集中屬於同一個第2層網路的網路連接埠分組</block>
+  <block id="7084354993a2057e35e719497f454908" category="doc">建立廣播網域（ ONTAP 9.7 及更早版本）</block>
+  <block id="d2af663c9f1ae5451b1a97146f08a126" category="paragraph">在更新的版本中、您可以建立廣播網域、將屬於同一層網路的叢集中網路連接埠分組。ONTAP然後、SVM便可使用這些連接埠。您必須為自訂IPspace建立廣播網域。在IPspace中建立的SVM會使用廣播網域中的連接埠。</block>
+  <block id="2e42f15c7120467b5cdcd910659c690e" category="paragraph">從ONTAP 功能更新到功能更新到功能更新、從功能更新到功能更新到功能更新到功能更新到功能更新到功能更新。如果您執行ONTAP 的是更新版本的版本、則不需要執行這些步驟。</block>
+  <block id="cdfc66112c43ad875d275256bf56a0f7" category="paragraph">在更新版本的版本中、您計畫新增至廣播網域的連接埠不得屬於其他廣播網域。ONTAP</block>
+  <block id="00234cb54c6941e3ce2aa2db5d988975" category="paragraph">LIF容錯移轉的連接埠必須是LIF的容錯移轉群組成員。當您建立廣播網域時ONTAP 、Isover會自動建立名稱相同的容錯移轉群組。容錯移轉群組包含指派給廣播網域的所有連接埠。</block>
+  <block id="2da0403e9693c05aeecf9502d0349c34" category="list-text">所有廣播網域名稱在IPspace內必須是唯一的。</block>
+  <block id="8bf49bcc8e8b90061bbd45e3db073ec4" category="list-text">新增至廣播網域的連接埠可以是實體網路連接埠、VLAN或介面群組（ifgrps）。</block>
+  <block id="608b519dfea74bf54d6726307e2a1766" category="list-text">如果您要使用的連接埠屬於另一個廣播網域，但未使用，您可以使用<block ref="0a00983c93a43364f8ece0dd4878a2d5" prefix=" " category="inline-code"></block>命令從現有的廣播網域中移除連接埠。</block>
+  <block id="f565d0644ece2679545030bed13406b0" category="list-text">新增至廣播網域之連接埠的MTU會更新為廣播網域中設定的MTU值。</block>
+  <block id="cfb2c61655c25e94834a1f09fd005d19" category="list-text">MTU值必須符合連接至該層2網路的所有裝置、但e0M連接埠處理管理流量除外。</block>
+  <block id="e5fe57f952d70ed401e5861edaf9ae0c" category="list-text">如果您未指定IPspace名稱、則會在「預設」IPspace中建立廣播網域。</block>
+  <block id="1312b6cbbbab7880093895c4569e66da" category="paragraph">為了簡化系統組態、系統會自動建立同名的容錯移轉群組、其中包含相同的連接埠。</block>
+  <block id="ceada676563d9ab4ca18178626c9043a" category="list-text">檢視目前未指派給廣播網域的連接埠：</block>
+  <block id="f177c774edac8d2a79f45ccdc8769093" category="paragraph">如果顯示較大，請使用<block ref="2a3461e3a4a6c88dfd6189ed53d7be86" prefix=" " category="inline-code"></block>命令僅檢視未指派的連接埠。</block>
+  <block id="c0530f1c04744d25a88aeb2f159adc32" category="list-text">建立廣播網域：</block>
+  <block id="8c75d5d1dad634d47b8f73b373c64a84" category="paragraph"><block ref="a75f2bb2d65350dc3dc21819fddf6ccb" prefix="" category="inline-code"></block></block>
+  <block id="7dbda91791d8061923d0727a2ffcdc7b" category="list-text"><block ref="289edfc4a087f238917c49bef07c1c04" prefix="" category="inline-code"></block>是您要建立的廣播網域名稱。</block>
+  <block id="14409e67f8d582025246a8374acb16f3" category="list-text"><block ref="7454bc6579d8ca579fcee3b334978157" prefix="" category="inline-code"></block>為 IP 封包的 MTU 大小； 1500 和 9000 為典型值。</block>
+  <block id="2de58babc2706f5001395f1a14ded934" category="paragraph">此值會套用至新增至此廣播網域的所有連接埠。</block>
+  <block id="ce33973ccdcf8db7aecac1107c0732d5" category="list-text"><block ref="c1e9d0002d8674820c304cb9a686131b" prefix="" category="inline-code"></block>是要新增此廣播網域的 IPspace 名稱。</block>
+  <block id="bf18ab96260035dd0a9ffe0a460ad2fb" category="paragraph">除非您指定此參數的值、否則會使用「預設」IPspace。</block>
+  <block id="d5fa6d0e4cbcf07ae0a8f6fc75cfe84f" category="list-text"><block ref="81e7b05ddc23856a323f5d93ae3411e9" prefix="" category="inline-code"></block>是要新增至廣播網域的連接埠清單。</block>
+  <block id="7b5feee15c08e42c701b1e7d2baf4cd4" category="paragraph">這些連接埠會以格式新增<block ref="c9d6108e720ea1dc6b861e3dc3f9a836" prefix=" " category="inline-code"></block><block ref="7118632ca0fca9993b6e431b5a8f18ef" prefix=" " category="inline-code"></block>，例如。</block>
+  <block id="ef21becc740e64be66d95dae6102c96b" category="list-text">確認已視需要建立廣播網域：<block ref="837631748deddf22ad5093eb8e692fc8" prefix=" " category="inline-code"></block></block>
+  <block id="0a52730597fb4ffa01fc117d9e71e3a9" category="paragraph-title">範例</block>
+  <block id="a1135c8ad88ea4ba1a44733d141d127f" category="paragraph">下列命令會在預設IPspace中建立廣播網域bcast1、將MTU設為1500、並新增四個連接埠：</block>
+  <block id="3eb4407be0a68041d1a14be0f55138aa" category="paragraph"><block ref="8e73198de3259084af8bf415b1d828da" prefix="" category="inline-code"></block></block>
+  <block id="8ce92432b3a9f0e70f3f2194fd9e5d63" category="inline-link-macro">叢集與SVM對等關係</block>
+  <block id="3296d9be819d40b3f88d4db2f4765b60" category="paragraph">您可以透過建立子網路來定義廣播網域中可用的IP位址集區、或是現在可以將SVM和介面指派給IPspace。如需更多資訊、請參閱 <block ref="0f49ebc043f34c8eee78a10f20fb2395" category="inline-link-macro-rx"></block>。</block>
+  <block id="b7c51c7c8ce6cfe3ce9622c15ab603c5" category="paragraph">如果您需要變更現有廣播網域的名稱，請使用<block ref="de2e0efb0823c8f70bf0a6956aa9f32d" prefix=" " category="inline-code"></block>命令。</block>
+  <block id="c4eb738b4fb28de5899d6607eabfc15a" category="summary">刪除不必要的廣播網域；這會將相關連接埠移至「預設」IPspace</block>
+  <block id="69d33826982d1d12f324d1a4f62ae3ab" category="doc">刪除廣播網域</block>
+  <block id="dfc877fbb3dd5451e66053dd8808b9b1" category="paragraph">如果不再需要廣播網域、您可以將其刪除。這會將與該廣播網域相關的連接埠移至「預設」IPspace。</block>
+  <block id="7238432d2f6c501bf5a873fb2b1aa2d7" category="paragraph">不得有任何子網路、網路介面或SVM與您要刪除的廣播網域相關聯。</block>
+  <block id="0d6eaca347d77dcdc19b0b5ea1a76a61" category="list-text">無法刪除系統建立的「叢集」廣播網域。</block>
+  <block id="c86cdfa0da2a4d2bbe3d74986b93ee5c" category="list-text">刪除廣播網域時、會移除與廣播網域相關的所有容錯移轉群組。</block>
+  <block id="15536381fe2a2faa89fd9b3d765858dc" category="paragraph">您遵循的程序取決於您使用的介面- System Manager或CLI：</block>
+  <block id="2a73cf4fc00ade50c334946244d87d3f" category="paragraph">*從ONTAP 版本S59.12.0開始、您可以使用System Manager刪除廣播網域*</block>
+  <block id="25b4cd8d82f19eb90a3e456bb673bf8e" category="paragraph">當廣播網域包含連接埠或與子網路相關聯時、不會顯示刪除選項。</block>
+  <block id="c8a1e492c48f762ae54e7ebb4ab541d8" category="list-text">選擇*網路&gt;總覽&gt;廣播網域*。</block>
+  <block id="11325f67c791914c7c2be6dc6d510a40" category="inline-image-macro">功能表選項圖示</block>
+  <block id="18cda7d39c0d23abf04a9c2d34d065a5" category="list-text">在您要移除的廣播網域旁邊選取 <block ref="d47b50c0fc9a1e10d010a1d0b2f31ccd" category="inline-image-macro-rx" type="image"></block> * &gt; 刪除 * 。</block>
+  <block id="d27fbf78daa20f580f2506f06c970c17" category="paragraph">*使用CLI刪除廣播網域*</block>
+  <block id="4144172f3b3d46962522b41714817b2d" category="paragraph">刪除廣播網域：</block>
+  <block id="5f8a1a5751f8c542306289a85e36091e" category="paragraph"><block ref="3e8c642d9d28230b7ee4b2542ab14d65" prefix="" category="inline-code"></block></block>
+  <block id="a0acbfe543c454b3348d2c133f1b6295" category="paragraph">下列命令會刪除IPspace ipspace1中的廣播網域預設值1：</block>
+  <block id="b321c736b07e48b1322969a9c95bf535" category="paragraph"><block ref="327ac268b07d31761507d696a711658c" prefix="" category="inline-code"></block></block>
+  <block id="5c95c84543784e9f6a2fe5bf885e2294" category="summary">您必須先判斷哪些連接埠可用於廣播網域、才能設定廣播網域以新增IPspace</block>
+  <block id="0c5196e82570c15f81530537057e1331" category="doc">判斷哪些連接埠可用於廣播網域（ ONTAP 9.7 及更早版本）</block>
+  <block id="a55490311f238285cbb94de7290101cc" category="paragraph">您必須先判斷哪些連接埠可用於廣播網域、才能設定廣播網域以新增IPspace。</block>
+  <block id="c22f3cda47d5fdbc6e1f4f8e6014b80b" category="list-text">連接埠可以是實體連接埠、VLAN或介面群組（ifGroups）。</block>
+  <block id="3c78652b2fd986979d6a5db98dfdfca4" category="list-text">您要新增至新廣播網域的連接埠無法指派給現有的廣播網域。</block>
+  <block id="f55ecca1951608d9ee58243faa5b107c" category="list-text">如果您要新增至廣播網域的連接埠已經在其他廣播網域中（例如、預設IPspace中的預設廣播網域）、則您必須先從該廣播網域移除連接埠、再將它們指派給新的廣播網域。</block>
+  <block id="6899d13f3ef6ad75270d9a56232747d8" category="list-text">無法從廣播網域中移除已指派生命量的連接埠。</block>
+  <block id="d467d03c8ba5fa104d666b5e698af708" category="list-text">由於叢集管理和節點管理生命期會指派給預設IPspace中的預設廣播網域、因此無法從預設廣播網域移除指派給這些生命期的連接埠。</block>
+  <block id="9fe84254c2b50f9d152b2529ef6d5896" category="list-text">確定目前的連接埠指派。</block>
+  <block id="87f0cb242dad3911382bed9e6b49a3eb" category="paragraph">在此範例中、命令的輸出會提供下列資訊：</block>
+  <block id="060fc6a7d0732c3911402b04e0cd7712" category="list-text">每個節點上的連接埠<block ref="96640993dd2592a16c29226daf83b860" prefix=" " category="inline-code"></block>，<block ref="5191792b1ad05675fea3bbf015036b3b" prefix=" " category="inline-code"></block>，<block ref="295208bc8c52d4a2745d40b6c029c8a2" prefix=" " category="inline-code"></block>，<block ref="40c989cc0bdee457475f49d3f3f8c10a" prefix=" " category="inline-code"></block>和<block ref="cbd803f54be888bcec7290684e827de3" prefix=" " category="inline-code"></block>都會指派給預設的廣播網域。</block>
+  <block id="5a5769097d7ff909d9db4994eb94c598" category="list-text">這些連接埠可能可用於您要建立的IPspace廣播網域。</block>
+  <block id="2d7bd16b2b05b3beba9d306ace93fc16" category="list-text">判斷預設廣播網域中的哪些連接埠已指派給LIF介面、因此無法移至新的廣播網域。</block>
+  <block id="6485b14c0e329aebda0c4dcd7d09dbd0" category="paragraph"><block ref="16fdd92def5a71313d6535c74ef67b81" prefix="" category="inline-code"></block></block>
+  <block id="206fd17bd4ff22578ce7dfd3eeda1bce" category="paragraph">在下列範例中、命令的輸出會提供下列資訊：</block>
+  <block id="aea36eb42bb9dbe26fa3ca2ed50f13ef" category="list-text">節點連接埠會指派給每個節點上的連接埠<block ref="96640993dd2592a16c29226daf83b860" prefix=" " category="inline-code"></block>，而叢集管理 LIF 的主節點會開啟<block ref="96640993dd2592a16c29226daf83b860" prefix=" " category="inline-code"></block><block ref="164546f60261c7e4be0c5f5f9aaeec86" prefix=" " category="inline-code"></block>。</block>
+  <block id="e030789a4812857d3fe43582fb0c26e9" category="list-text">每個節點上的連接埠<block ref="5191792b1ad05675fea3bbf015036b3b" prefix=" " category="inline-code"></block>，，<block ref="40c989cc0bdee457475f49d3f3f8c10a" prefix=" " category="inline-code"></block>和<block ref="cbd803f54be888bcec7290684e827de3" prefix=" " category="inline-code"></block>不會裝載生命空間，可從預設廣播網域中移除，<block ref="295208bc8c52d4a2745d40b6c029c8a2" prefix=" " category="inline-code"></block>然後新增至新 IPspace 的新廣播網域。</block>
+  <block id="0c0ebf5d0c386effe0c4ea3bb6a091d0" category="summary">檢視叢集中每個IPspace內的廣播網域清單</block>
+  <block id="ab1bcf457d346a893b0eafa1a236c09a" category="doc">顯示廣播網域（ ONTAP 9.7 及更早版本）</block>
+  <block id="cbe1dc3777cd20a0d92187abbff67361" category="paragraph">您可以顯示叢集中每個IPspace內的廣播網域清單。輸出也會顯示每個廣播網域的連接埠清單和MTU值。</block>
+  <block id="4dd0a3dcb24b65dc74edf225eea96e9e" category="paragraph">顯示叢集中的廣播網域和相關連接埠：</block>
+  <block id="16bcfd3dd5caef4624a26861f613de4d" category="paragraph">下列命令會顯示叢集中的所有廣播網域和相關連接埠：</block>
+  <block id="02c6f3c7f2a102c8feaf17f1ee49d7d1" category="paragraph">下列命令會顯示bcast1廣播網域中的連接埠、其更新狀態為「錯誤」、表示連接埠無法正確更新：</block>
+  <block id="f676f8146c874e30db84a1b86b98cdd8" category="paragraph">如需詳細資訊，請參閱<block ref="757904457a186124ea090cb36514c336" category="inline-link-rx"></block>。</block>
+  <block id="f125fb7a17694fde8fc62bf1f5403f63" category="summary">將一個廣播網域的連接埠合併到現有的廣播網域</block>
+  <block id="d6e77738134005faad3f13e9d99832e0" category="doc">合併廣播網域（ ONTAP 9.7 及更早版本）</block>
+  <block id="d44312486267d0b67b359622ebec3072" category="paragraph">您可以使用合併命令、將所有連接埠從一個廣播網域移至現有的廣播網域。</block>
+  <block id="c4d2cf7b708e6f4a9be5ebb749367d51" category="paragraph">如果您要從廣播網域移除所有連接埠、然後將連接埠新增至現有的廣播網域、則此作業可減少所需的步驟。</block>
+  <block id="34742edd88e1c1a838801b96a12aa853" category="paragraph">將一個廣播網域的連接埠合併到現有的廣播網域：</block>
+  <block id="231d7a8a938027c3f431dd44a351d590" category="list-text"><block ref="4ae3944df3ee772807922dcf9bb86c13" prefix="" category="inline-code"></block>是廣播網域所在 IPspace 的名稱。</block>
+  <block id="b45cf8a38f8a35883dad2febf2eebd8c" category="list-text"><block ref="d62caed4dd1926010ddc86f190b6ba33" prefix="" category="inline-code"></block>是要合併的廣播網域名稱。</block>
+  <block id="ebbc4cb7d39145643367dba5b44ec3a4" category="list-text"><block ref="8bc45a66ca1d95be402cd8b945966bc0" prefix="" category="inline-code"></block>是將接收其他連接埠的廣播網域名稱。</block>
+  <block id="084a5499a3262408f7407d4b5d94a8cd" category="paragraph">下列範例將廣播網域BD-data1合併至廣播網域BD-data2：</block>
+  <block id="8c0d6cb3daaa4c421de57e8603baba9e" category="paragraph"><block ref="222fb13a2f3f8435ab3341d0a1e6646e" prefix="" category="inline-code"></block></block>
+  <block id="3ba5cac2cdb7a6b105f8f2f54ab809ab" category="summary">分割廣播網域、將ONTAP 實體網路拓撲的版本同步化至更新版本的版本</block>
+  <block id="de68df247c72eac7598794005c3adb05" category="doc">分割廣播網域（ ONTAP 9.7 或更早版本）</block>
+  <block id="1665dbb387021af02fbd41599af8c1ea" category="paragraph">您可以將現有的廣播網域分割成兩個不同的廣播網域、每個廣播網域包含一些指派給原始廣播網域的原始連接埠。</block>
+  <block id="9f09e6fc8b14b00ee0893ebaf95d57f5" category="list-text">如果連接埠位於容錯移轉群組中、則容錯移轉群組中的所有連接埠都必須分割。</block>
+  <block id="0f3b145a3b547dc0be5f0e9aac22376d" category="list-text">如果連接埠有與其相關聯的生命期、則生命期不能是子網路範圍的一部分。</block>
+  <block id="1436ed75c3dbf565a1b99976386fad9c" category="paragraph">將廣播網域分割成兩個廣播網域：</block>
+  <block id="3f555ebbd92becae184f01887af6d1bc" category="list-text"><block ref="4ae3944df3ee772807922dcf9bb86c13" prefix="" category="inline-code"></block>是廣播網域所在的 IPspace 名稱。</block>
+  <block id="fd0bf1d9d932f6e270977c4b7d345378" category="list-text"><block ref="d62caed4dd1926010ddc86f190b6ba33" prefix="" category="inline-code"></block>是要分割的廣播網域名稱。</block>
+  <block id="95bc0aa511018e57fce15a6576a48093" category="list-text"><block ref="0a902740c3a036c7e0d2e7d9629f8b97" prefix="" category="inline-code"></block>是要建立的新廣播網域名稱。</block>
+  <block id="6a6f9b1e774f2ce8e84c95acac76ae96" category="list-text"><block ref="739b964305f4482d70b429f32839ba08" prefix="" category="inline-code"></block>是要新增至新廣播網域的節點名稱和連接埠。</block>
+  <block id="23c0ae72a284fcf3f5b10548f5789ff4" category="summary">歡迎使用ONTAP 「更新版本」功能。9.0 - 9.7 NAS路徑容錯移轉工作流程</block>
+  <block id="34db590c01ede9e82dd63cccecaa913f" category="doc">設定 NAS 路徑容錯移轉（ ONTAP 9.7 及更早版本）</block>
+  <block id="6bd13b949c8f90ab75bda1bca4590734" category="paragraph">此工作流程會引導您完成網路組態步驟、以設定ONTAP 適用於《》的NAS路徑容錯移轉功能（英文）、適用於《》（英文）-《》（英文）-《此工作流程假設如下：</block>
+  <block id="504b17be8679b22ce0ff24309326833c" category="list-text">您想要使用NAS路徑容錯移轉最佳實務做法來簡化網路組態。</block>
+  <block id="084e87a2feb2d2b3178ae0ce559845d4" category="list-text">您想要使用CLI、而非System Manager。</block>
+  <block id="edd065cbe8aace4091a0ae0c74038b57" category="list-text">您正在執行ONTAP 從9.0到9.7版的全新系統上設定網路功能。</block>
+  <block id="f5bf5336fca238353f35af37209df243" category="paragraph">如果您執行ONTAP 的是9.7版以上的版本、則應使用NAS路徑容錯移轉程序ONTAP 來執行更新版本的版本號：</block>
+  <block id="ec2261a75bde24b45faec00c74cb5402" category="inline-link-macro">AS9.8及更新版本NAS路徑容錯移轉工作流程ONTAP</block>
+  <block id="426171489fede6b6c617db26566f2b65" category="list-text"><block ref="426171489fede6b6c617db26566f2b65" category="inline-link-macro-rx"></block></block>
+  <block id="5c701a2881474e7fd80b7c493de7a89b" category="paragraph">如果您需要網路元件和管理的詳細資料、請使用網路管理參考資料：</block>
+  <block id="33343788000c2e11b2ab3d1f5c0a84f4" category="inline-link-macro">網路管理總覽</block>
+  <block id="c018500b1daca5c03a1b256cd2e162b1" category="list-text"><block ref="c018500b1daca5c03a1b256cd2e162b1" category="inline-link-macro-rx"></block></block>
+  <block id="51a7c4cc865e3b2797a7e9bad8a38cd9" category="summary">NAS路徑容錯移轉組態、適用於ONTAP ASH9.0 - 9.7</block>
+  <block id="06d5a559d704cb358a39441a58ad7bdc" category="doc">NAS 路徑容錯移轉工作流程（ ONTAP 9.7 及更早版本）</block>
+  <block id="48a52df7e251ea9f3671d1eddb223a69" category="paragraph">如果您已經熟悉基本的網路概念、可以檢閱NAS路徑容錯移轉組態的「實際操作」工作流程、以節省設定網路的時間。</block>
+  <block id="db56fc3159913493dd62271cf105ae5e" category="paragraph">NAS LIF會在目前連接埠的連結失敗後、自動移轉至正常運作的網路連接埠。如果您的網路是扁平的、您可以仰賴ONTAP 恢復功能預設值來管理路徑容錯移轉。否則、您應該依照此工作流程中的步驟來設定路徑容錯移轉。</block>
+  <block id="e809b033aefc596f34714759e8952cfd" category="inline-image-macro">NAS 路徑容錯移轉組態的工作流程</block>
+  <block id="7afa3e05706fb2c1d22370a50ddd70db" category="paragraph"><block ref="7afa3e05706fb2c1d22370a50ddd70db" category="inline-image-macro-rx" type="image"></block></block>
+  <block id="673dcd987ffee0d36ad8b601d118bee1" category="admonition">SAN LIF不會移轉（除非您在連結失敗後手動移動它）。相反地、主機上的多重路徑技術會將流量轉移到不同的LIF。如需更多資訊、請參閱 <block ref="b35eb150b08c3207edd7d52f8c5b1782" category="inline-link-macro-rx"></block>。</block>
+  <block id="06c2cea18679d64399783748fa367bdd" category="inline-image-macro">一</block>
+  <block id="85e2e027bff940fa88f819e030434f41" category="inline-link-macro">填寫工作表單</block>
+  <block id="dd592f9173f2e3aa39503dc6404b62cc" category="paragraph-title"><block ref="58f667aaf05f87159670e12bd9bc076b" category="inline-image-macro-rx" type="image"></block><block ref="ba82cab04dc8cd96e7d1d4eb4ddaa74c" category="inline-link-macro-rx"></block></block>
+  <block id="7a21d4711ab8743806dfcc48fe98d49f" category="paragraph">請使用工作表規劃 NAS 路徑容錯移轉。</block>
+  <block id="aada29daee1d64ed0fe907043855cb7e" category="inline-image-macro">二</block>
+  <block id="3430a606df1bb4e9856b52bf4630cc68" category="paragraph-title"><block ref="54f425ce8d89f4ed6b8a546561af5d60" category="inline-image-macro-rx" type="image"></block><block ref="855c5f5c266078890e0287e98c817adb" category="inline-link-macro-rx"></block></block>
+  <block id="e5e61e8932467a83b8d90c275a2ef298" category="paragraph">為叢集中的每個 SVM 建立不同的 IP 位址空間。</block>
+  <block id="ca8a2087e5557e317599344687a57391" category="inline-image-macro">三</block>
+  <block id="2dead1d9ad7d823c51e1cff8d5128b65" category="paragraph-title"><block ref="05b2444faffd66d76e88602ea7dd353f" category="inline-image-macro-rx" type="image"></block><block ref="35068c46c015a21209889b285af38788" category="inline-link-macro-rx"></block></block>
+  <block id="1910962f156f61912684490f4242065c" category="paragraph">建立廣播網域。</block>
+  <block id="981b8fcee42e1e726a67a2b9a98ea6e9" category="inline-image-macro">四</block>
+  <block id="19122663da1f92b70a07dcad6d15f038" category="paragraph-title"><block ref="beadfa85a2fdca06b91edc1131c603e6" category="inline-image-macro-rx" type="image"></block><block ref="709fb476c1c74490343cf76fbe3eb527" category="inline-link-macro-rx"></block></block>
+  <block id="3c084c392af3c1ac1cb987e1e9b9361d" category="paragraph">建立子網路。</block>
+  <block id="e5d9de39f7ca1ba2637e5640af3ae8aa" category="inline-image-macro">五</block>
+  <block id="62f0d7e61a87ca7750612015fcd9e49e" category="paragraph-title"><block ref="99e8b2f00e172bfcff96afdce69907bc" category="inline-image-macro-rx" type="image"></block><block ref="f45004704d4c0d172f2819e8cc869fab" category="inline-link-macro-rx"></block></block>
+  <block id="667155d2bf1a682dd7b481d3b104f8f4" category="paragraph">建立 SVM 以將資料提供給用戶端。</block>
+  <block id="e6fbc0b9673f8c86726688d7607fc8f5" category="inline-image-macro">六</block>
+  <block id="5085681ae6e18662ed0f7dbc3acdd8b6" category="inline-link-macro">建立生命</block>
+  <block id="acb8a1e19dae2542880403acd668761e" category="paragraph-title"><block ref="ef78558f80439832e0f51cc22cee8b8c" category="inline-image-macro-rx" type="image"></block><block ref="2b2e92d677c5f9738af6172260042ef9" category="inline-link-macro-rx"></block></block>
+  <block id="9ac3a14a3d6d5935af229768daa1a457" category="paragraph">在您要用來存取資料的連接埠上建立生命。</block>
+  <block id="12e67aac3e7f9227cc35f8f047d7dc74" category="inline-image-macro">七</block>
+  <block id="07944f91170bbdc41891de5118723d5f" category="inline-link-macro">設定 SVM 的 DNS 服務</block>
+  <block id="09ea1912035f7c4012c76855c7edd529" category="paragraph-title"><block ref="36915574c413876eaa75cbd48f69fd00" category="inline-image-macro-rx" type="image"></block><block ref="f3483a1000991c0ad065cd246c2a0d4e" category="inline-link-macro-rx"></block></block>
+  <block id="ba4515c67fa8b30b78068a6068b29366" category="paragraph">建立 NFS 或 SMB 伺服器之前、請先設定 SVM 的 DNS 服務。</block>
+  <block id="3f0f1f86cf650b1a2cf4754fc5fec337" category="summary">在設定ONTAP NAS路徑容錯移轉以供支援《支援支援支援問卷》9.0 - 9.7之前、請先完成工作表的所有部分</block>
+  <block id="97c96f564cb1a6da828d8dfec057cf12" category="doc">NAS 路徑容錯移轉組態工作表（ ONTAP 9.7 及更早版本）</block>
+  <block id="83b133aa529b564cecd3e7d7a8f96314" category="paragraph">在設定NAS路徑容錯移轉之前、您應該先完成工作表的所有區段。</block>
+  <block id="e5bd0aee2452c5f3d5d5cab77d5dff6e" category="section-title">IPSpace組態</block>
+  <block id="b97bd3c8bcc7f81686a9082b10daf43d" category="paragraph">您可以使用IPspace為叢集中的每個SVM建立不同的IP位址空間。這樣做可讓管理性分隔網路網域中的用戶端存取叢集資料、同時使用相同IP位址子網路範圍中重疊的IP位址。</block>
+  <block id="a82be0f551b8708bc08eb33cd9ded0cf" category="cell">資訊</block>
+  <block id="6e18e908568ef24580d93bfd3e0f40d7" category="cell">必要？</block>
+  <block id="f8d0e53dace25d0c35a6408f7cc4b99f" category="cell">您的價值</block>
+  <block id="2810996596467d952c3bc505ef2ce0c4" category="paragraph">IPSpace名稱</block>
+  <block id="3addeb84a4863033cbf00b39f8402b69" category="list-text">IPspace的名稱。</block>
+  <block id="b047342ee7d111aefcccd5670a47b87b" category="list-text">該名稱在叢集中必須是唯一的。</block>
+  <block id="dc92da9eb694675647cf429795361db5" category="section-title">廣播網域組態</block>
+  <block id="a05666131ccfeadc81a46ce8db6fcc93" category="paragraph">廣播網域會將屬於同一個第2層網路的連接埠分組、並設定廣播網域連接埠的MTU。</block>
+  <block id="3d1de194271f0ef6170d5b075b43f5a8" category="paragraph">廣播網域會指派給IPspace。IPspace可包含一或多個廣播網域。</block>
+  <block id="7a666d858ef4d90f82df092808c08225" category="list-text">指派廣播網域的IPspace。</block>
+  <block id="f78fb2ae89f1f25120e1dbc3eefae80c" category="list-text">IPspace必須存在。</block>
+  <block id="4e66c0b0500d3b3ef6cbaebc0e0adf49" category="paragraph">廣播網域名稱</block>
+  <block id="65d3f1b2e060e13d61d3dcc5cb01e345" category="list-text">廣播網域的名稱。</block>
+  <block id="0b4800d671f34459d0f8962d5a0b0d94" category="list-text">此名稱在IPspace中必須是唯一的。</block>
+  <block id="1a03f6720968dfb968df6cc034114444" category="paragraph">MTU</block>
+  <block id="8c9f46597d2aead3fa844651ee562ed6" category="list-text">廣播網域的MTU。</block>
+  <block id="6a79bb70929dcc80f9375a5ada5a2c2f" category="list-text">通常設定為* 1500 *或* 9000 *。</block>
+  <block id="8904a66adde271eedf2d2612ef724d51" category="list-text">MTU值會套用至廣播網域中的所有連接埠、以及稍後新增至廣播網域的任何連接埠。</block>
+  <block id="514e1f6ac6d46bd4dd1aff421440b7c6" category="admonition">MTU值應與連接至該網路的所有裝置相符。請注意、e0M連接埠處理管理和服務處理器流量應將MTU設定為不超過1500位元組。</block>
+  <block id="407c4e9fac86b98147da49acd4fa0d01" category="paragraph">連接埠</block>
+  <block id="a9d545a8be6012214571d812baced1af" category="list-text">要新增至廣播網域的網路連接埠。</block>
+  <block id="e1961453874db902176504734ff74994" category="list-text">指派給廣播網域的連接埠可以是實體連接埠、VLAN或介面群組（ifGroups）。</block>
+  <block id="1305f0748c773db97c49e7146800263a" category="list-text">如果連接埠位於另一個廣播網域中、則必須先將其移除、才能將其新增至廣播網域。</block>
+  <block id="79f36819c05f36d7aa6021153cf1cb0f" category="list-text">連接埠是透過指定節點名稱和連接埠來指派：例如node1:e0d。</block>
+  <block id="d4eb3fd806f1b879ccaf2a16a2c42767" category="section-title">子網路組態</block>
+  <block id="9729f55cd82694df764e283507b8ccf9" category="paragraph">子網路包含IP位址集區和預設閘道、可指派給IP空間中的SVM所使用的生命區。</block>
+  <block id="a1c6c5799039a99aad9c439e2cd5db96" category="list-text">在SVM上建立LIF時、您可以指定子網路的名稱、而非提供IP位址和子網路。</block>
+  <block id="646599ec8773da9a93a68d449302526f" category="list-text">由於子網路可以設定為預設閘道、因此在建立SVM時、您不需要在個別步驟中建立預設閘道。</block>
+  <block id="d9e502816b831781990d1762c16564b2" category="list-text">廣播網域可以包含一或多個子網路。您可以將多個子網路與IPspace的廣播網域建立關聯、以設定位於不同子網路上的SVM LIF。</block>
+  <block id="8c3d27ac961ae71ced271d4febccae0d" category="list-text">每個子網路都必須包含IP位址、而不應與指派給相同IPspace中其他子網路的IP位址重疊。</block>
+  <block id="ddcf4e1c1216e96f385a3739e0a17f2c" category="list-text">您可以將特定的IP位址指派給SVM資料生命期、並為SVM建立預設閘道、而非使用子網路。</block>
+  <block id="727b5595061035010757a5289661b260" category="list-text">子網路指派的IPspace。</block>
+  <block id="1ed3530a3787bea53a54c48ac5c62fc4" category="paragraph">子網路名稱</block>
+  <block id="3bc5640ce9665d89513a468cc547e6e7" category="list-text">子網路名稱。</block>
+  <block id="d76124e4167fe8c750e2d08acfcca2ce" category="list-text">名稱在IPspace中必須是唯一的。</block>
+  <block id="a8288c2a3522ce8098992f847589b9c3" category="list-text">要指派子網路的廣播網域。</block>
+  <block id="bdbf51e493f02bd57cc80cf06d9f7205" category="list-text">廣播網域必須位於指定的IPspace中。</block>
+  <block id="e7c7c564e15052903f54b7e8c8aa486d" category="paragraph">子網路名稱和遮罩</block>
+  <block id="503c8e0f8167825792cf774622f4ddcc" category="list-text">IP位址所在的子網路和遮罩。</block>
+  <block id="261366d41bd76a93bb2437087853a489" category="list-text">您可以指定子網路的預設閘道。</block>
+  <block id="5bae9da685d7dace1251b3ffd3ccd898" category="list-text">如果您在建立子網路時未指派閘道、則可隨時指派一個閘道給子網路。</block>
+  <block id="29c595bcdc7ffa8a27f2583bdf8ca0bd" category="paragraph">IP位址範圍</block>
+  <block id="30c3bb312f3fc3c97ea4e9a9de1cdfde" category="list-text">您可以指定IP位址範圍或特定IP位址。例如，您可以指定範圍，例如：<block ref="7f8386efdf48158c8938319ab0d7ee26" prefix=" " category="inline-code"></block></block>
+  <block id="3b2576d784d591234dd70d07b0a01e51" category="list-text">如果未指定IP位址範圍、則指定子網路中的IP位址範圍將可指派給LIF。</block>
+  <block id="19574a7f9b48b89d6be7f52d664c9f69" category="paragraph">強制更新LIF關聯</block>
+  <block id="e9ab789f936a3a886cc5cce66830eb7c" category="list-text">指定是否強制更新現有LIF關聯。</block>
+  <block id="5676a4c28d818be40848aeef92ec3a40" category="list-text">根據預設、如果任何服務處理器介面或網路介面使用所提供範圍內的IP位址、則建立子網路會失敗。</block>
+  <block id="4c4a2a7343af16e13f3154e9f1c4e1ae" category="list-text">使用此參數可將任何手動定址的介面與子網路建立關聯、並允許命令成功執行。</block>
+  <block id="99897c39b8224cf5a25fe9c6f599b3a7" category="section-title">SVM 組態</block>
+  <block id="7acdd762e80048ce0b202007498ab360" category="paragraph">您可以使用SVM將資料提供給用戶端和主機。</block>
+  <block id="3ab25d5f5087226e9601e9405341d073" category="inline-link-macro">安裝以網路為基礎MetroCluster 的功能</block>
+  <block id="abbd612ee9cbfeb24eeb2620fdbeb3a7" category="inline-link-macro">安裝Stretch MetroCluster</block>
+  <block id="08cf8d8ff0eefec04bc3ee3801724ca5" category="paragraph">您記錄的值是建立預設資料SVM。如果您要建立 MetroCluster 來源 SVM ，請參閱<block ref="5488151483f7e2bfe24758bbbb4d6f40" category="inline-link-macro-rx"></block>或<block ref="0f945cf40056f72194333a50ae2a7c08" category="inline-link-macro-rx"></block>。</block>
+  <block id="909e80dc24d1482269e80eced7d88999" category="list-text">SVM 的名稱。</block>
+  <block id="f9c215fad59eccfd633cc802142428bf" category="list-text">您應該使用完整網域名稱（FQDN）、以確保叢集聯盟中唯一的SVM名稱。</block>
+  <block id="ef353fe31d5db8109b5d533c24bef6ec" category="paragraph">根Volume名稱</block>
+  <block id="71fb303e432869b4fecaa82142df78b0" category="list-text">SVM根Volume的名稱。</block>
+  <block id="89e2bd1a8abca7dc54e226c642335923" category="list-text">擁有SVM根磁碟區的集合體名稱。</block>
+  <block id="524fe24b7614583659b4776b84cf9fc0" category="list-text">此Aggregate必須存在。</block>
+  <block id="06c36c7f86c5fbaf46d802a84b9181ad" category="list-text">SVM根磁碟區的安全樣式。</block>
+  <block id="dd7a83ccba76c6dcb9fb1c70e44b53cf" category="list-text">可能的值包括* ntf*、* UNIX*和*混合*。</block>
+  <block id="5afd2082730bfa6121fd03528cb70ac6" category="list-text">指派SVM的IPspace。</block>
+  <block id="c5920bc5aa330be11d10b27e4a4f267a" category="list-text">此IPspace必須存在。</block>
+  <block id="9909525fa5942e85be246dfa744836e4" category="paragraph">SVM語言設定</block>
+  <block id="534f06bd7d7e91addf533215d348f635" category="list-text">SVM及其磁碟區的預設語言。</block>
+  <block id="6810bd6fb965e510a000caaaf5cede04" category="list-text">如果未指定預設語言、預設SVM語言會設為*。UTF-8*。</block>
+  <block id="c9d672e5232d7dd45cf750528352cfbb" category="list-text">SVM語言設定可決定用於顯示SVM中所有NAS磁碟區的檔案名稱和資料的字元集。您可以在建立SVM之後修改語言。</block>
+  <block id="cb001cd493365720d42ec425b1721062" category="section-title">LIF 組態</block>
+  <block id="e20ec2a162d3ed9a051e35844d6967ac" category="paragraph">SVM透過一或多個網路邏輯介面（LIF）、為用戶端和主機提供資料服務。</block>
+  <block id="b69141d39d5f37e0dc4a7afcba6b5d15" category="list-text">LIF的SVM名稱。</block>
+  <block id="8e429a606dfb2cd8e6e6d6665eeb5067" category="paragraph">LIF 名稱</block>
+  <block id="aca5c43eb5724bd30dab74c6c1b4ca51" category="list-text">LIF 的名稱。</block>
+  <block id="d9875a9b18af94ad593e9cf6f2acd590" category="list-text">您可以為每個節點指派多個資料生命期、而且只要節點有可用的資料連接埠、就可以將生命期指派給叢集中的任何節點。</block>
+  <block id="dc21c1d5e0019fbe2ce57daf9055d365" category="list-text">若要提供備援、您應該為每個子網路建立至少兩個資料生命期、並在不同節點上指派指派指派給特定子網路的生命期為主連接埠。*重要事項：*如果您將SMB伺服器設定為以SMB代管Hyper-V或SQL Server、以提供不中斷營運的解決方案、則叢集中每個節點上的SVM必須至少有一個資料LIF。</block>
+  <block id="77e741be92ecc04ee13fcfd53988b199" category="paragraph">LIF角色</block>
+  <block id="3a2cdcdec40516552430edaef938a929" category="list-text">LIF的角色。</block>
+  <block id="da0fa0d25572794dea4ac4a6be847d1a" category="list-text">資料生命量會被指派資料角色。</block>
+  <block id="6bcd23cd4d0583cbac3240665b21113a" category="cell">是、ONTAP 不受支持、不受版本資訊的版本資訊</block>
+  <block id="53cd0c7fe94923d60ebc43f128ac06b9" category="cell">LIF的服務原則服務原則。服務原則會定義哪些網路服務可以使用LIF。內建的服務和服務原則可用於管理資料和系統SVM上的資料和管理流量。</block>
+  <block id="ca0424782e05c72333cda58235a8e74b" category="cell">是的、從ONTAP 功能不上的問題9.6開始</block>
+  <block id="5c3e82aaab88228809071abe1946de82" category="paragraph">允許的傳輸協定</block>
+  <block id="904e941dc3f7d5ad65283bdba75b4c91" category="list-text">可使用LIF的傳輸協定。</block>
+  <block id="c27a6bb12bf5dc4359cfaafcf80b0083" category="list-text">根據預設FlexCache 、允許SMB、NFS和SFC。在執行以7-Mode運作的系統上、使用此功能可將一個Volume當作執行該功能的來源Volume。FlexCache FlexCache Data ONTAP</block>
+  <block id="4e1730669bff2008b0a4dffee3a59d7a" category="admonition">在建立LIF之後、無法修改使用LIF的傳輸協定。設定LIF時、您應該指定所有的傳輸協定。</block>
+  <block id="3e59131434f3a574162c6a9f46c4bae5" category="paragraph">主節點</block>
+  <block id="febe10a3047b2475b8983f8db76f7bb9" category="list-text">LIF還原至其主連接埠時、LIF傳回的節點。</block>
+  <block id="0fc089cfc9daaf7fd97972795ea8cffb" category="list-text">您應該記錄每個資料LIF的主節點。</block>
+  <block id="a3f83c0fa8815df9be554f2f19e2a6b4" category="paragraph">主連接埠或廣播網域</block>
+  <block id="8248f505d519f103856ec5553ce0a1ca" category="list-text">當LIF還原為其主連接埠時、邏輯介面會傳回的連接埠。</block>
+  <block id="1a3a0e0614b76b32b5b3d2114770bd19" category="list-text">您應該記錄每個資料LIF的主連接埠。</block>
+  <block id="2f6be82345aa8df96d0f1040df7eaf2f" category="list-text">要指派給SVM的子網路。</block>
+  <block id="e2395fd8c89f496becbd6d29cb6bf2bf" category="list-text">用於建立應用程式伺服器的持續可用SMB連線的所有資料生命期、必須位於相同的子網路上。</block>
+  <block id="92726c0f24832710bb5154f1048f934b" category="cell">是（如果使用子網路）</block>
+  <block id="489f99357e51540f388c06988f7d5a29" category="section-title">DNS 組態</block>
+  <block id="c7c142a0d5d4f9c60dcdf7a3bc09a4ff" category="paragraph">在建立NFS或SMB伺服器之前、您必須在SVM上設定DNS。</block>
+  <block id="44685b08b845cc11ae9c9f8140dc0d6b" category="list-text">您要在其中建立NFS或SMB伺服器的SVM名稱。</block>
+  <block id="d04714ee29d29f72537dfb160f6d5ad5" category="paragraph">DNS網域名稱</block>
+  <block id="a379c3b1b459e3dfdfbe21845dc1cf69" category="list-text">執行主機對IP名稱解析時要附加到主機名稱的網域名稱清單。</block>
+  <block id="a4472cd10a741a0f8d78c0359728a2d5" category="list-text">請先列出本機網域、然後列出最常進行DNS查詢的網域名稱。</block>
+  <block id="9da99b068b3f65fefc36626478b66566" category="paragraph">DNS 伺服器的 IP 位址</block>
+  <block id="19c87adcee53338ce2c53bae0c6be7b5" category="list-text">將為 NFS 或 SMB 伺服器提供名稱解析的 DNS 伺服器 IP 位址清單。</block>
+  <block id="7ff51c9d56f426dd2680804fefe19f96" category="list-text">列出的DNS伺服器必須包含所需的服務位置記錄（SRV),才能找到SMB伺服器要加入之網域的Active Directory LDAP伺服器和網域控制器。「服務」記錄用於將服務名稱對應至提供該服務之伺服器的DNS電腦名稱。如果ONTAP 無法透過本機DNS查詢取得服務位置記錄、則無法建立SMB伺服器。確保ONTAP 功能完整的Active Directory SRVs記錄、最簡單的方法就是將Active Directory整合的DNS伺服器設定為SVM DNS伺服器。您可以使用非Active Directory整合的DNS伺服器、前提是DNS管理員已手動將含有Active Directory網域控制器相關資訊的SRV記錄新增至DNS區域。</block>
+  <block id="232df65ca03c67ddb27adbf8e408280c" category="inline-link-macro">Microsoft TechNet上的DNS Active Directory支援運作方式</block>
+  <block id="3cd9abcfa006c1e077bce0c7b96b9c20" category="list-text">如需 Active Directory 整合式 SRV 記錄的相關資訊，請參閱主題<block ref="d1f6662e4871c2f33d4b20711c690ec4" category="inline-link-macro-rx"></block>。</block>
+  <block id="dd47bd62208837b6e1f60041344e1295" category="section-title">動態DNS組態</block>
+  <block id="c45d5ec9671bb526fc03e7539cffa0ed" category="paragraph">您必須先在SVM上設定動態DNS（DDNS）、才能使用動態DNS自動將DNS項目新增至Active Directory整合的DNS伺服器。</block>
+  <block id="09c16992a902cd1818335845718fd9a7" category="paragraph">系統會為SVM上的每個資料LIF建立DNS記錄。透過在SVM上建立多個資料LIF、您可以在用戶端連線與指派的資料IP位址之間取得負載平衡。DNS負載會以循環配置資源的方式、平衡使用主機名稱對指派IP位址所建立的連線。</block>
+  <block id="b2342f7f4b047678a52f44c5a1c7d747" category="list-text">您要在其中建立NFS或SMB伺服器的SVM。</block>
+  <block id="3359de90ad703eb25320fdf6246535c4" category="paragraph">是否使用DDNS</block>
+  <block id="4509c88bd3315acc21448a213e2e65a7" category="list-text">指定是否使用DDNS。</block>
+  <block id="0bbc8715109e7d978d1bd9a97ed54eb5" category="list-text">SVM上設定的DNS伺服器必須支援DDNS。依預設、 DDNS 會停用。</block>
+  <block id="fd2ff08f0ed721e158829abea5b2f554" category="paragraph">是否使用安全的DDNS</block>
+  <block id="bbb664556743685b88e062062c435131" category="list-text">只有Active Directory整合的DNS才支援安全DDNS。</block>
+  <block id="05ed41391caf6661a07768eaa3dab5e8" category="list-text">如果Active Directory整合的DNS只允許安全的DDNS更新、則此參數的值必須為true。</block>
+  <block id="b364c30be937abefba6a4416aeb852c0" category="list-text">根據預設、安全DDNS會停用。</block>
+  <block id="3acd119655ed0a9783317f21b6fdbd87" category="list-text">只有在為SVM建立SMB伺服器或Active Directory帳戶之後、才能啟用安全DDNS。</block>
+  <block id="59bf7732b97416bd383c815b45e84669" category="paragraph">DNS網域的FQDN</block>
+  <block id="664b37c4a141f9cef183a7f4fc968661" category="list-text">DNS網域的FQDN。</block>
+  <block id="6bc11f0c86a787b4d889735982c409da" category="list-text">您必須使用在SVM上為DNS名稱服務設定的相同網域名稱。</block>
+  <block id="3fca185d931e262fa7a276c9bf6f2cee" category="sidebar">ONTAP 9.7 和舊版中提供的系統管理員介面稱為「系統管理員傳統」，與 ONTAP 9.8 和更新版本的系統管理員介面提供不同的使用者導覽。對於 ONTAP 9.7 和更早版本中的系統管理程式使用者，此文件網站提供使用 System Manager Classic 的組態工作流程，以及 ONTAP 9.6 和 9.7 的 System Manager Classic 線上說明。從 ONTAP 9.8 開始， ONTAP 網路基礎知識也大幅改變，此文件網站提供的網路資訊僅適用於 ONTAP 9.7 及更早版本。</block>
+  <block id="6c0c5be5efc057d5f1d970ee6885e6d7" category="sidebar">廣播網域管理（ ONTAP 9.7 或更早版本）</block>
+  <block id="ba13c142bb4736a3dabe15c34364414f" category="sidebar">ONTAP 9.7 及更早版本的網路管理</block>
+  <block id="b1ddb251aa66bea48e797b1ba2490583" category="sidebar">一般網路主題（ ONTAP 9.7 及更早版本）</block>
+  <block id="a29d5547f6b6a3eb59e3d47cdb1c8b3e" category="sidebar">廣播網域（ ONTAP 9.7 或更早版本）</block>
+  <block id="d7f29243972dcd66136a878c3167ee3a" category="sidebar">關於 NAS 路徑容錯移轉（ ONTAP 9.7 以上版本）</block>
 </blocks>

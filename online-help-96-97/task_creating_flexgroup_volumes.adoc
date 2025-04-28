@@ -70,7 +70,7 @@ summary: 一個包含多個Volume的資料、可以以群組的形式進行管�
 ** 如果FabricPool SVM中只有支援區、則「FabricPool 已啟用」位置會顯示* SSIgregate按鈕、無法變更。
 
 
-. 如果您要指定特定的Aggregate、請按一下 image:../media/advanced_options.gif[""] （進階選項）。
+. 如果您要指定特定的集合體，請按一下image:../media/advanced_options.gif["進階選項圖示"]（進階選項）。
 +
 根據最佳實務做法、預設會選取與FlexGroup 您所建立之「聲音區」相關的集合體。它們顯示在* Aggregate *標籤旁。
 

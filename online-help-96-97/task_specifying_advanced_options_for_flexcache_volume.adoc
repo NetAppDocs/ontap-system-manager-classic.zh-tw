@@ -14,7 +14,7 @@ summary: 從System Manager 9.6開始、當您編輯FlexCache 完一份《聲音�
 從System Manager 9.6開始、當您編輯FlexCache 完一份《聲音集》時、可以指定您要與FlexCache 《聲音集》相關聯的進階選項。
 
 .步驟
-. *選用：*在*「Edit FlexCache Sof the *」（編輯*更新版）視窗中、按一下 image:../media/advanced_options.gif[""] 以指定進階選項。
+. * 選用： * 在 * 編輯 FlexCache Volume * 視窗中，按一下image:../media/advanced_options.gif["進階選項圖示"]以指定進階選項。
 +
 此時會顯示「進階選項」視窗。其中包含區段（左欄的標題）、您可以在其中指定各種選項。
 

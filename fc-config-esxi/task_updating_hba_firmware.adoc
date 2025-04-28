@@ -26,7 +26,3 @@ HBA廠商提供驅動程式、韌體、BIOS及HBA公用程式。
 下載時會提供安裝說明和任何必要的安裝公用程式。
 
 
-
-*相關資訊*
-
-http://kb.vmware.com/kb/1002413["VMware知識庫文章1002413：識別QLogic或Emulex FC HBA的韌體"]

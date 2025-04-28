@@ -17,4 +17,4 @@ summary: 您可以使用System Manager設定SVM的NVMe傳輸協定。在SVM上�
 
 下圖顯示設定NVMe的工作流程：
 
-image::../media/nvme_setup_workflow.gif[NVMe設定工作流程]
+image::../media/nvme_setup_workflow.gif[設定 NVMe 的工作流程]

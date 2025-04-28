@@ -13,7 +13,7 @@ summary: 您可以使用System Manager更新MetroCluster 以各種形式組態�
 [role="lead"]
 您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來更新MetroCluster 採用各種組態的叢集。除了更新叢集之外、您必須在兩個叢集上執行每項作業。
 
-image::../media/updating_cluster_mcc_configuration.gif[正在更新叢集MCC組態]
+image::../media/updating_cluster_mcc_configuration.gif[使用系統管理員更新 MetroCluster 組態中的叢集]
 
 *相關資訊*
 

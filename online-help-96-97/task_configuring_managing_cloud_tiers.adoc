@@ -15,7 +15,7 @@ summary: 將資料儲存在階層中、可提升儲存系統的效率。您可�
 * 您必須擁有All Flash（All SSD）Aggregate
 
 
-image::../media/fabricpool_workflow.gif[流程FabricPool]
+image::../media/fabricpool_workflow.gif[使用系統管理員設定及管理雲端層的工作流程]
 
 
 
@@ -69,7 +69,7 @@ image::../media/fabricpool_workflow.gif[流程FabricPool]
 +
 如果您已選取AWS商業雲端服務（C2S）作為類型、則必須指定CAP URL、伺服器CA憑證和用戶端憑證。
 
-. 如果您要修改下列任何設定、請按一下「進階選項」圖示 image:../media/advanced_options.gif[""] 若要顯示*進階選項*對話方塊視窗、您可以在其中進行變更：
+. 如果您想修改下列任何設定，請按一下「進階選項」圖示image:../media/advanced_options.gif["進階選項圖示"]以顯示「 * 進階選項 * 」對話方塊視窗，您可以在其中進行變更：
 +
 ** 用於存取雲端層的連接埠號碼
 ** 啟用或停用* SSL*選項、可讓您安全地將資料傳輸至雲端層

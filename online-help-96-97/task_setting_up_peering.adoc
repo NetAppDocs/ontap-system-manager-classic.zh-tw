@@ -13,7 +13,7 @@ summary: 設定對等關係包括在每個節點上建立叢集間邏輯介面�
 [role="lead"]
 您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來設定對等關係。設定對等關係包括在每個節點上建立叢集間邏輯介面（LIF）、建立叢集對等關係、以及建立SVM對等關係。
 
-image::../media/peering_workflow.gif[對等工作流程]
+image::../media/peering_workflow.gif[設定對等關係的工作流程]
 
 
 

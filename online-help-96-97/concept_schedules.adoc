@@ -100,7 +100,6 @@ summary: 您可以使用System Manager在儲存系統中建立及管理排程。
 
 == 刪除排程
 
-[role="lead"]
 您可以使用System Manager刪除執行特定儲存管理工作的排程。
 
 .步驟

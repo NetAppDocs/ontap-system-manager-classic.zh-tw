@@ -24,11 +24,9 @@
   <block id="0329d06e24e712fa93416a0dd6c5b7fc" category="summary">準備好叢集之後、您必須安裝控制器並設定節點管理生命體。</block>
   <block id="6659a60f476a4bc6bb0fb4f4102757a3" category="doc">安裝新節點</block>
   <block id="82b39557b0069bd98188100e91cfae2e" category="paragraph">準備好叢集之後、您必須安裝控制器並設定節點管理生命體。如果控制器執行ONTAP 的版本與現有叢集不同、或是重新調整用途且缺乏硬體層級HA、則您必須在維護模式中解決這些問題。最後、您可以將節點加入叢集。</block>
-  <block id="e9f56eb126455869bdb213c6b8827217" category="summary">版權、商標及機器翻譯</block>
   <block id="ca4d696c3c3d4566b032bf5cba740486" category="summary">當兩個節點都加入叢集之後、您必須完成AutoSupport 設定、完成更新節點的設定、並完成SP網路的設定。</block>
   <block id="e1fc6c6b1bea9d0f3e8bfcf9946ae71f" category="doc">完成擴充</block>
   <block id="ad683faa511f565152842bf2cc28c270" category="paragraph">當兩個節點都加入叢集之後、您必須完成AutoSupport 設定、完成更新節點的設定、並完成SP網路的設定。然後驗證擴充的叢集、並產生AutoSupport 一個資訊以完成擴充作業的資訊。如果叢集使用SAN、您應該更新LUN路徑。</block>
-  <block id="b1ff5704b48e42d700d43961dd415064" category="summary">商標</block>
   <block id="c4ce4761e466527d26b3e3d5ed1006fd" category="paragraph">NetApp 、 NetApp 標誌及 NetApp 商標頁面上列出的標章均為 NetApp 、 Inc. 的商標。其他公司與產品名稱可能為其各自所有者的商標。</block>
   <block id="d41d8cd98f00b204e9800998ecf8427e" category="inline-link"></block>
   <block id="f99aa604031e5049799e73b5c3748a98" category="paragraph"><block ref="f99aa604031e5049799e73b5c3748a98" category="inline-link-rx"></block></block>
@@ -219,9 +217,6 @@
   <block id="3f710cadb0123c693533da68aaf5b596" category="section-title">接下來該怎麼做</block>
   <block id="6871e5e77d1bbcfaf45a526f739ae1c4" category="list-text">如果叢集受到保護、您應該在新增的節點中建立所需數量的叢集間生命體、以避免部分對等和不良保護。</block>
   <block id="e5e21644bd8ca1cdc7c44d822e6b5d7e" category="list-text">如果叢集中已啟用SAN資料傳輸協定、您應該建立所需數量的SAN資料生命量來提供資料。</block>
-  <block id="b4de17ead867a3cf0b9d11e57e562672" category="summary">機器翻譯</block>
-  <block id="6b6c87870bfc5260f4e7282bb5b52dd6" category="paragraph">如需當地語系化內容的重要資訊、請參閱netapp.com。</block>
-  <block id="db9bfd81e26275c9db26e2db3ac172c3" category="paragraph"><block ref="db9bfd81e26275c9db26e2db3ac172c3" category="inline-link-rx"></block></block>
   <block id="3e1d317678e6347a5fa13b4bd9a4b314" category="summary">擴充叢集之後、您應該傳送AutoSupport 一個不完整的訊息、表示擴充程序已經完成。</block>
   <block id="4c31c3d540d717a12e42d373054f9834" category="doc">產生AutoSupport 關於完成擴充的資訊</block>
   <block id="04bf035c552b790ab05fa106250f7bbd" category="paragraph">擴充叢集之後、您應該傳送AutoSupport 一個不完整的訊息、表示擴充程序已經完成。此訊息傳達給內部和外部支援人員、說明擴充已完成、並做為日後可能需要進行的任何疑難排解的時間戳記。</block>
@@ -262,13 +257,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="47107fc361977e371fe1b26cb1308b1a" category="list-text">使用檢視現有授權<block ref="684590f66f47755afa88d3f70f9f25ad" prefix=" " category="inline-code"></block> 命令。</block>
   <block id="7ace006c80a00947bf34b0fff7fa0b84" category="list-text">檢閱輸出以確保顯示所有序號的節點鎖定授權、包括現有和新節點的序號。</block>
   <block id="6016a2b341113bf496b719905398ecd2" category="summary">版權</block>
-  <block id="e10b5b38785c3a24ec75723ab75b4360" category="paragraph">Copyright©2021 NetApp、Inc.版權所有。美國印製</block>
-  <block id="2275e007ee598cef266c877f9c52ee25" category="paragraph">本文所涵蓋的任何部分不得以任何形式或任何方式（包括影印、錄製、電子或機械）複製、 在未事先取得版權擁有者書面許可的情況下、在電子擷取系統中進行錄音或儲存。</block>
-  <block id="ce4ad2236c56cc11a838f29c8c261bf7" category="paragraph">衍生自受版權保護之NetApp資料的軟體必須遵守下列授權與免責聲明：</block>
-  <block id="b110bc9db113b3149cb9e2ed905d4c6c" category="paragraph">本軟體係由NetApp「依現狀」提供、不含任何明示或暗示的保證、包括但不限於適售性及特定用途適用性的暗示保證、特此聲明。在任何情況下、NetApp均不對任何直接、間接、偶發、特殊、示範、 或衍生性損害（包括但不限於採購替代商品或服務；使用損失、資料或利潤損失； 或業務中斷）、無論是在合約、嚴格責任或侵權行為（包括疏忽或其他）中、無論是因使用本軟體而產生的任何責任理論（包括疏忽或其他）、即使已被告知可能造成此類損害。</block>
-  <block id="4fc9b260d15698bbd988f76ca839c5b6" category="paragraph">NetApp保留隨時變更本文所述之任何產品的權利、恕不另行通知。除非NetApp以書面明確同意、否則NetApp不承擔因使用本文所述產品而產生的任何責任或責任。使用或購買本產品並不代表NetApp擁有任何專利權利、商標權利或任何其他智慧財產權。</block>
-  <block id="87bfcb691f34a9e3fdda83480f0acf78" category="paragraph">本手冊所述產品可能受到一或多個美國國家/地區的保護專利、國外專利或申請中。</block>
-  <block id="464821ce353b86f770de0d09b5f5aabe" category="paragraph">本文所含資料係指商業項目（定義見FAR 2.101）、為NetApp、Inc.（美國）專屬政府擁有非專屬、不可轉讓、不可再授權、全球有限且不可撤銷的授權、只能在與美國相關且支援美國的情況下使用資料交付資料所依據的政府合約。除非本文另有說明、否則不得使用、揭露、重製、修改、執行資料、 或在未事先取得NetApp、Inc.書面核准的情況下展示。美國國防部的政府授權權利僅限於DFARS條款252.227-7015(b)中所述的權利。</block>
   <block id="edf395b0a461287b50491dbaa383b1b6" category="summary">在擴充叢集之前、您應該先使用進階權限建立備份檔案、以儲存叢集組態資訊、並選擇性地儲存節點組態。</block>
   <block id="4e96c94f849071959f33f30f4f95bf2b" category="doc">備份叢集組態</block>
   <block id="486e131c42bd68bf6f1d4c477a83b1dc" category="list-text">使用將權限等級設為進階<block ref="0581d0d071ad835f74bf419081ce5d75" prefix=" " category="inline-code"></block> 命令。</block>
@@ -553,14 +541,12 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="d3d98fa048d258c0324e828c27353505" category="list-text">如果您執行ONTAP 的是版本不含更新版本的版本、請執行下列步驟來驗證叢集對等關係和SVM對等關係：</block>
   <block id="b7ea99ac89364f94c13349479a294349" category="list-text">按一下*組態*&gt;*叢集對等端點*。</block>
   <block id="804ed1169721f9a31d45ac25dea9d3b7" category="list-text">驗證連接的叢集是否已通過驗證且可供使用。</block>
-  <block id="210fc08adc8ff148771c97038e36e4a2" category="image-alt">叢集式pper 930災難</block>
   <block id="b00b5a06a64eaf7c4f42870166a2aad2" category="list-text">按一下「*組態*&gt;* SVM對等端點*」。</block>
   <block id="2cd2d1c721231aba4b1ddb6e9d895651" category="list-text">確認目的地SVM已與來源SVM連接。</block>
   <block id="99836e3678844f90eef5cb688f7465e9" category="list-text">如果您執行ONTAP 的是Sf2 9.2或更早版本、請執行下列步驟來驗證叢集對等關係和SVM對等關係：</block>
   <block id="90db7210ac0f4f1ad1b4dd4cfcfac5da" category="list-text">按一下「*組態*」索引標籤。</block>
   <block id="2a2e870fff30043f3c9dcb4197a26ef5" category="list-text">在*叢集詳細資料*窗格中、按一下*叢集對等端點*。</block>
   <block id="c21fd7a1920921211438047acb8b050d" category="list-text">驗證連接的叢集是否已通過驗證且可供使用。</block>
-  <block id="0b15c5403001871b8dc99e6667f1290a" category="image-alt">叢集對等健全狀況災難</block>
   <block id="2be054e35e4d5560ca990a7e9e6268aa" category="list-text">按一下「* SVMS*」索引標籤、然後選取來源SVM。</block>
   <block id="b6df2d1162d761beba29ffb0a8acc5cd" category="list-text">在*對等儲存虛擬機器*區域中、確認目的地SVM已與來源SVM連接。</block>
   <block id="e0bdda06757b2ddd302f0b23a4dc96c3" category="paragraph">如果在此區域中沒有看到任何已處理的SVM、您可以在建立SnapMirror關係時建立SVM對等關係。</block>
@@ -595,7 +581,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="fb0a81662f28f92400a38a3fc7257c04" category="paragraph">您應該疑難排解SnapMirror關係中的任何問題。</block>
   <block id="73b78c43309e115e0e384388b5b2344a" category="inline-link">NetApp技術報告4015：SnapMirror組態與最佳實務ONTAP 做法、適用於NetApp 9.1、9.2</block>
   <block id="0d3e0428120e2a5f798ccb69e7a1a227" category="paragraph"><block ref="0d3e0428120e2a5f798ccb69e7a1a227" category="inline-link-rx"></block></block>
-  <block id="d5acc2bd87e2b4fbcc92386c8cb98621" category="image-alt">SnapMirror監控3種健全狀況延遲</block>
   <block id="505604a7f60ed1132f33db4c6fc8dc9e" category="summary">若要可靠地運作、您必須確認整個FC組態是否受到支援。</block>
   <block id="b8dca5a9dd8bb2f421089717f16a3b2f" category="doc">驗證是否支援FC組態</block>
   <block id="db7238e539bbe82343523aa524ac5d58" category="list-text">請參閱互通性對照表、確認您擁有下列元件的支援組合：</block>
@@ -883,13 +868,7 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="93b944d05af7d54cba8d7dc1adc744b1" category="list-text">從 NetApp 支援網站下載適當版本的 Windows Unified Host Utilities。</block>
   <block id="1190124555424f6326b153d14c7adeb6" category="list-text">執行執行檔、並依照畫面上的指示進行。</block>
   <block id="257dcf2363da5a069ec4e8bae654f70b" category="list-text">出現提示時、重新啟動Windows主機。</block>
-  <block id="09e95b77ffe81fe465a83ba99efad5c8" category="paragraph"><block ref="09e95b77ffe81fe465a83ba99efad5c8" category="inline-link-rx"></block></block>
-  <block id="7aa531e9acfe2b98e34d2c92fe9846ff" category="paragraph"><block ref="7aa531e9acfe2b98e34d2c92fe9846ff" category="inline-link-rx"></block></block>
-  <block id="d7f1fbcf9ce4e42f705add574d262b2c" category="paragraph"><block ref="d7f1fbcf9ce4e42f705add574d262b2c" category="inline-link-rx"></block></block>
-  <block id="fc248f74f5e36542f7f5627b8610e9a3" category="paragraph"><block ref="fc248f74f5e36542f7f5627b8610e9a3" category="inline-link-rx"></block></block>
   <block id="6de6f1db3c6d9273da9d8e254b666753" category="paragraph">提供本產品所使用之協力廠商版權與授權的相關資訊。</block>
-  <block id="1e6000d4849ef9f3e08d1d9908e9f163" category="inline-link-macro">關於此功能的注意事項ONTAP</block>
-  <block id="6f408b9c999245c7aa32bc9cb1a020f6" category="inline-link-macro">關於本產品的注意事項ONTAP 9.8</block>
   <block id="04b0bd5b1b4d414fdde93f809162d36d" category="inline-link-macro">關於產品的注意ONTAP 事項9.7</block>
   <block id="0c1d7dffcba488555d5eb39b8991e822" category="inline-link-macro">關於此功能的注意事項ONTAP</block>
   <block id="a11ac6880e72412c0f54ae19bea3d191" category="inline-link-macro">關於本產品的注意事項ONTAP</block>
@@ -897,15 +876,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="bf7dcf6467a8a03b05b2d37d31d6eccd" category="inline-link-macro">關於本產品的注意事項ONTAP</block>
   <block id="0328352fdfda84af6968462d1a67d3a6" category="inline-link-macro">關於此功能的注意事項ONTAP 9.2</block>
   <block id="83904100c7d6fe0102e8b2b5bd8ec4bb" category="inline-link-macro">關於此產品的注意事項ONTAP</block>
-  <block id="e34c6bf4588770e60093fd241f4c94cd" category="paragraph"><block ref="5d7354cfb327d65286a65782f8490ba6" category="inline-link-macro-rx"></block>
-<block ref="9c55eb1e0fbbd6c443bf0436871639ef" category="inline-link-macro-rx"></block>
-<block ref="84ee5be262ba420366f62cfd722d0bb9" category="inline-link-macro-rx"></block>
-<block ref="c4fa97eae3fc7b7bfd1757818737f725" category="inline-link-macro-rx"></block>
-<block ref="863fc1cf1c4ef06b9dbeab0269fcbe22" category="inline-link-macro-rx"></block>
-<block ref="bc609cdc163eb15a127f1d8965ceeebf" category="inline-link-macro-rx"></block>
-<block ref="91c2725aac92b0d17a3a041b2764f68c" category="inline-link-macro-rx"></block>
-<block ref="60d4a45fe1b65b8f6ff1a4825a003443" category="inline-link-macro-rx"></block>
-<block ref="0da6a5a2ec0e0b0adc52f0c7d86b1f9c" category="inline-link-macro-rx"></block></block>
   <block id="1efe07eef4e047f77d97d7a9521fe678" category="summary">使用ONTAP 經典的《SESSSystem Manager》介面ONTAP （更新版本為esx9.7）、您可以使用ONTAP VMware Volume快速設定ESXi主機對資料存放區的NFS存取。</block>
   <block id="9fbe728d7eb2adabf531ccdcf064bc53" category="doc">使用 VSC 概述的 ESXi NFS 組態</block>
   <block id="039d2d1f92ed5762bd1672bf32bb614a" category="paragraph">如果發生下列情況、請使用此程序：</block>
@@ -2042,8 +2012,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="291619053227579fae6d00b2bcfab62f" category="paragraph">如果ESX主機中的FC主機匯流排介面卡（HBA）未執行支援的驅動程式、韌體和BIOS版本、則必須更新這些介面卡。</block>
   <block id="710de516c6cbad99668973bb1f4c3c0d" category="paragraph">您必須從識別出支援的驅動程式、韌體和BIOS版本、才能進行組態設定<block ref="ae0acc7a1cf35a69eb7b42685c902841" category="inline-link-rx"></block>。</block>
   <block id="982aef1e07fe09b104ef69dc47d79d37" category="list-text">針對您的ESXi版本、使用ESXi主機主控台命令列出已安裝的HBA驅動程式、韌體和BIOS版本。</block>
-  <block id="49b4e6a2e5626cd5db40b840d6113bed" category="inline-link">VMware知識庫文章1002413：識別QLogic或Emulex FC HBA的韌體</block>
-  <block id="a12ed0f6188622691e50debf584fcdcf" category="paragraph"><block ref="a12ed0f6188622691e50debf584fcdcf" category="inline-link-rx"></block></block>
   <block id="2157ff4fa230c3478676d1a9841d6742" category="summary">如果您選擇使用現有的儲存虛擬機器、則必須使用ONTAP 「系統管理程式」來驗證SVM上的FC服務是否正在執行。您也必須確認FC邏輯介面已建立。</block>
   <block id="27045e1024ed1f1f4ea149b9fcfc4e8f" category="summary">適用於VMware vSphere的虛擬儲存主控台可自動執行許多必要的組態和資源配置工作、以便將NetApp FC儲存設備與ESXi主機搭配使用。虛擬儲存主控台是vCenter Server的外掛程式。</block>
   <block id="4593e2432306bcea64d49dcce3ddc04b" category="paragraph">如果任何測試失敗、請確認儲存叢集上的FC服務正在執行、並檢查通往LUN和FC交換器分區的FC路徑。</block>
@@ -2128,7 +2096,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="462b95590d7acd7152240693f2733651" category="doc">驗證來源Volume的狀態</block>
   <block id="c59a59058714f4c78669e823c620680c" category="list-text">選取來源Volume、然後驗證來源Volume是否離線。</block>
   <block id="fdc1c760c29ca327926071ef4ce12c0d" category="list-text">識別SnapMirror關係中的目的地Volume。</block>
-  <block id="7c99e1c96275e73971c3274eea4bfc6a" category="image-alt">SnapMirror目的地93</block>
   <block id="54b184892f23afa68d9eab493ac216da" category="list-text">S29.2或更早版本：按一下「Volumes（磁碟區）」頁面底部的* Data Protection（資料保護）*索引標籤、以識別SnapMirror關係中的目的地磁碟區、以及包含該磁碟區的SVM名稱。ONTAP</block>
   <block id="7bba42ab30c3eef639318c4cbe6cb31e" category="image-alt">影像顯示目的地Volume</block>
   <block id="4b7d4ac6c63d48c124530d952203e03c" category="summary">您必須靜止並中斷SnapMirror關係、才能啟動目的地Volume。靜止之後、將停用未來的SnapMirror資料傳輸。</block>
@@ -2728,10 +2695,8 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="5afc224ecb9fcc7f50684353cdfccb80" category="paragraph">若要建立叢集、您必須透過主控台登入、然後在叢集網路的任何節點上設定節點管理IP位址。在節點上設定節點管理IP位址之後、您可以使用ONTAP 「靜態系統管理程式」新增其他節點並建立叢集。</block>
   <block id="990bb85c5a67a4d1782a863aa6cc1497" category="paragraph">不支援MetroCluster 叢集設定作業的各種功能、不適用於ONTAP 支援的各種功能。</block>
   <block id="4dfcde39ef2f0b93b09f7b13052dd23f" category="paragraph">您可以使用範本檔案或在叢集設定精靈中手動輸入值來設定叢集。</block>
-  <block id="7d9a08439c0869dea94d925777b7aba3" category="image-alt">叢集設定工作流程</block>
   <block id="f1dc21dc6179a3fdff96b7b031c7ae81" category="summary">您可以使用System Manager或命令列介面（CLI）來建立叢集。若要使用System Manager建立叢集、您必須在叢集網路中的任何節點上設定節點管理IP位址。如果您已使用CLI建立叢集、可以使用System Manager來設定叢集。</block>
   <block id="1c867bc949570263498e870403b0e61a" category="doc">設定叢集環境</block>
-  <block id="58369fe03b8cca246bfd9acff3681041" category="image-alt">引導式叢集設定</block>
   <block id="7c5c5dd8c983200f4658fbc653960629" category="summary">從System Manager 9.6開始、FlexCache 當您不再需要時、可以刪除一個不需要的功能區。</block>
   <block id="2d911a2e75192035a8c705e9139ab46f" category="doc">正在刪除FlexCache 功能區</block>
   <block id="32eb59d1751d73c381a2d8a05a29e10e" category="list-text">必須卸載不安裝的流通通道。FlexCache</block>
@@ -2873,118 +2838,8 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="c43a320001422c6e6555386d6eb7ffa4" category="list-text">按一下*更多動作*&gt;*調整大小*。</block>
   <block id="5e7f2bb84ab8fc2c252782cc441d2850" category="list-text">依照精靈的提示輸入或選取資訊。</block>
   <block id="baf8d3396b691e5b2244efc835a2c55b" category="list-text">在「* Volumes *」（*磁碟區*）視窗中、確認您對可用空間和磁碟區總空間所做的變更。</block>
-  <block id="f210a25eaf89fa55ced5c9c77e0b242b" category="summary">您可以使用System Manager來建立、編輯及管理共用。</block>
-  <block id="258afb30ae69ea72441de6bfa02ded92" category="doc">使用System Manager管理共享資源- ONTAP 更新版本</block>
-  <block id="47e145cac11e2ed21e19d35136895102" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來建立、編輯及管理共享區。</block>
-  <block id="a218828013e03d9b77f9be08cba59cdd" category="section-title">建立CIFS共用區</block>
-  <block id="cdcdccf6b4cea67b1649f64dfc42ff76" category="paragraph">您可以使用System Manager建立CIFS共用區、以便指定CIFS使用者可以存取的資料夾、qtree或Volume。</block>
-  <block id="3e859c820cd401f603bf6eb4bb47e006" category="paragraph">您必須先安裝CIFS授權、才能設定及啟動CIFS。</block>
-  <block id="36e4c7125d339b895d4735d2ebc3c84b" category="list-text">按一下「*儲存設備*&gt;*共享區*」。</block>
-  <block id="3c6b636b52f4ee0b5d619d487135638c" category="list-text">從* SVM*欄位的下拉式功能表中、選取您要在其中建立CIFS共用的SVM。</block>
-  <block id="a5b98ff7955f554a6ab08c3a07b3fb83" category="list-text">在「*建立共用*」視窗中、按一下「*瀏覽*」、然後選取應共用的資料夾、qtree或Volume。</block>
-  <block id="b4f2a0dfcf3a06588721c3cf46426f55" category="list-text">指定新CIFS共用的名稱。</block>
-  <block id="ede7f1ea5f8033a3ddc8b303e6c3fe16" category="list-text">*選用：*選取*「啟用Hyper-V和SQL*的持續可用度」核取方塊、允許支援SMB 3.0及更新版本的用戶端在不中斷營運期間持續開啟檔案。</block>
-  <block id="81c3a43e87c04aa4f2867930228320dd" category="paragraph">使用此選項開啟的檔案、可防止發生中斷事件、例如容錯移轉、還原及LIF移轉。</block>
-  <block id="174695729a46aa0db160108074800cc8" category="paragraph">從System Manager 9.6開始、FlexGroup 支援不中斷供應的功能。</block>
-  <block id="44ec628d221f20d3a532dfdc1a49b9cc" category="list-text">選取「存取此共享區時加密資料*」核取方塊以啟用SMB 3.0加密。</block>
-  <block id="c11f0d9c886f553934dce4b687e69569" category="list-text">提供共用區的說明或註解、然後按一下*「Create」（建立）*。</block>
-  <block id="546e6304bd126985d219dddabcbf5774" category="paragraph">CIFS共用區是以群組中設為「所有人的完整控制權」的存取權限所建立。</block>
-  <block id="4edcc08cf152edc7b42b029db1ecc67b" category="section-title">停止共用存取</block>
-  <block id="a4c1c7b32cb8db1bee81e7e0947286fe" category="paragraph">當您想要移除資料夾、qtree或Volume的共用網路存取時、可以使用System Manager來停止共用。</block>
-  <block id="97ab5031ba61fa20c45fa57196e475eb" category="paragraph">您必須已安裝CIFS授權。</block>
-  <block id="ca31348e1f2b9f2491ba1ae68c0b31f4" category="list-text">從* SVM*欄位的下拉式功能表中、選取您要停止之CIFS共用所在的SVM。</block>
-  <block id="8e97fc4679f75b5eedb5c8820c4301f1" category="list-text">從共用清單中、選取您要停止共用的共用、然後按一下*停止共用*。</block>
-  <block id="cae7974fde4c42dc22986eda0127cd15" category="list-text">選取確認核取方塊、然後按一下*停止*。</block>
-  <block id="6a780d4d415bbd377aa9fdc38651f67f" category="list-text">驗證共享區是否不再列在*共享區*視窗中。</block>
-  <block id="c6d1ab85546f960ef1908682152ddb98" category="section-title">建立主目錄共用</block>
-  <block id="2ded840bb0d149049d94d6cc27cd4eb9" category="paragraph">您可以使用System Manager建立主目錄共用區、以及管理主目錄搜尋路徑。</block>
-  <block id="07b21b3751e97e8be0734694465e1a54" category="paragraph">CIFS必須設定並啟動。</block>
-  <block id="8833b993932917d5dc821b8ddc12292f" category="list-text">按一下「*建立主目錄*」、然後提供決定使用者如何對應至目錄的模式資訊。</block>
-  <block id="05f43ec9f04690f81f77fec126b3f286" category="list-text">驗證您所建立的主目錄是否列在*共用*視窗中。</block>
-  <block id="653ecc56780e9ae45a3425b21f179e73" category="section-title">編輯共用設定</block>
-  <block id="8b8233970ae93cddab3fcb0f038a19cf" category="paragraph">您可以使用System Manager修改共用區的設定、例如符號連結設定、共用使用者或群組的存取權限、以及共用區的存取類型。您也可以啟用或停用透過Hyper-V的共用區持續可用度、以及啟用或停用存取型列舉（ABE）。從System Manager 9.6開始、FlexGroup 支援不中斷供應的功能。</block>
-  <block id="7246a01d2a352fc6450f7f466d58dac5" category="list-text">從共用清單中選取您要修改的共用區、然後按一下*編輯*。</block>
-  <block id="28d42a3f5ce4234a5cb6b5eda7721b12" category="list-text">在*編輯共用設定*對話方塊中、視需要修改共用設定：</block>
-  <block id="b187cf812109744ed2a6197d64b4c287" category="list-text">在「*一般*」索引標籤中、啟用Hyper-V上的共享區持續可用度</block>
-  <block id="24e24350d0c2bbfe6239c8cda68a9fdd" category="paragraph">啟用持續可用度可讓SMB 3.0和支援SMB 3.0的用戶端在不中斷營運的情況下持續開啟檔案。持續開啟的檔案會受到保護、不受容錯移轉、還原及LIF移轉等中斷事件的影響。</block>
-  <block id="c422043bdc2f7971f0ae6747690d03c7" category="list-text">在「*權限*」索引標籤中、新增使用者或群組、然後指派權限以指定存取類型。</block>
-  <block id="5c0287506e18b638d89ba4098983d76a" category="list-text">在*選項*索引標籤中、選取所需的選項。</block>
-  <block id="d5ba1e032c63c476f97b1f0bded5e2ed" category="list-text">驗證您在「*共享區*」視窗中對所選共享區所做的變更。</block>
-  <block id="1f06c32e4284c548639b045d1a680c1f" category="section-title">如何啟用動態主目錄ONTAP</block>
-  <block id="ddb6804ce83c0756809d4eaa0da80de7" category="paragraph">利用支援支援的主目錄、您可以根據連線的使用者及一組變數、設定對應至不同目錄的SMB共用區。ONTAP您可以使用幾個主目錄參數來設定一個共用區、以定義使用者在入口點（共享區）和主目錄（SVM上的目錄）之間的關係、而非為每個使用者建立個別的共用區。</block>
-  <block id="47d8b0af5d2931cb4e847ec858c73ecf" category="paragraph">以訪客使用者身分登入的使用者沒有主目錄、也無法存取其他使用者的主目錄。有四個變數可決定使用者如何對應至目錄：</block>
-  <block id="e61e15ac8c5f8d0b85109886001adfad" category="list-text">*共享名稱*</block>
-  <block id="bc684c6854b9c8f2cb609b73ffac4b9c" category="paragraph">這是您建立的共用名稱、使用者可連線至該共用。您必須設定此共用的主目錄屬性。</block>
-  <block id="9cec6f3479185182d510faeb5c88e095" category="paragraph">共用名稱可以使用下列動態名稱：</block>
-  <block id="cf46804cd7f94ff0f06229165a1e08bc" category="list-text"><block ref="61fdc52186559b1681736cfb53393d7a" prefix="" category="inline-code"></block> （使用者的 Windows 使用者名稱）</block>
-  <block id="c7d7c222f5eb544bb7a6e17489d16fb1" category="list-text"><block ref="a7bd935a88c629dc11c52e0c16c2a8a0" prefix="" category="inline-code"></block> （使用者的 Windows 網域名稱）</block>
-  <block id="c3e0b780eb59c719da0f62c0418963e2" category="list-text"><block ref="b4e514e05859a94a7c7d3404f63dca8d" prefix="" category="inline-code"></block> （使用者對應的 UNIX 使用者名稱）</block>
-  <block id="053021b69a316a9b62283baaca04bdee" category="paragraph">若要讓共用名稱在所有主目錄中都是唯一的、共用名稱必須包含<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block> 或<block ref="b4e514e05859a94a7c7d3404f63dca8d" prefix=" " category="inline-code"></block> 變動。共用名稱可以同時包含<block ref="a7bd935a88c629dc11c52e0c16c2a8a0" prefix=" " category="inline-code"></block> 和<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block> 變數（例如、<block ref="a7bd935a88c629dc11c52e0c16c2a8a0" prefix=" " category="inline-code"></block><block ref="61fdc52186559b1681736cfb53393d7a" prefix="/" category="inline-code"></block>）、或共享區名稱可以包含靜態部分和可變部分（例如 hom_ ）<block ref="61fdc52186559b1681736cfb53393d7a" prefix="" category="inline-code"></block>）。</block>
-  <block id="0521b4a71a02a28d9873367a66e9d83a" category="list-text">*共享路徑*</block>
-  <block id="7f794a8325e108e30caf0916da9858f8" category="paragraph">這是由共用定義的相對路徑、因此會與其中一個共用名稱相關聯、並附加到每個搜尋路徑、以從SVM根目錄產生使用者的完整主目錄路徑。它可以是靜態的（例如、<block ref="106a6c241b8797f52e1e77317b96a201" prefix=" " category="inline-code"></block>）、動態（例如、<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block>）、或兩者的組合（例如、<block ref="a2b6508e05db4948da997e79c88b26c6" prefix=" " category="inline-code"></block>）。</block>
-  <block id="6fcc718fd1fe6c61104b90deb1cf42a2" category="list-text">*搜尋路徑*</block>
-  <block id="2401c90889b207694e0799fda5109a63" category="paragraph">這是從SVM根目錄開始的一組絕對路徑、您可以指定這些路徑來引導ONTAP 針對主目錄進行搜尋。您可以使用指定一或多個搜尋路徑<block ref="5a6a8dfa9830413979e30e9a232a26b9" prefix=" " category="inline-code"></block> 命令。如果您指定多個搜尋路徑、ONTAP 則在找到有效路徑之前、將會依照指定的順序嘗試這些路徑。</block>
-  <block id="b8247bb8487a381712f3b1e7f9afee38" category="list-text">*目錄*</block>
-  <block id="94476d0b91f52a04ef07ba6853a8fe57" category="paragraph">這是您為使用者建立的使用者主目錄。目錄名稱通常是使用者的名稱。您必須在搜尋路徑所定義的其中一個目錄中建立主目錄。</block>
-  <block id="d87a9db633a6535cd29bd2e3ceb1c8dd" category="paragraph">舉例來說、請考慮下列設定：</block>
-  <block id="7180a0452db924e5e8285ae78d6355b2" category="list-text">使用者：John Smith</block>
-  <block id="03fdb6c3f4384c6171e95f71401eb5e0" category="list-text">使用者網域：Acme</block>
-  <block id="1a0691e264e3961203ea0cfedc4e5d2b" category="list-text">使用者名稱：jsmith</block>
-  <block id="33e9d5aa58536f2b75b2e74481b6da5f" category="list-text">SVM名稱：VS1</block>
-  <block id="67542d137c252a447549f5aea3bdae37" category="list-text">主目錄共用名稱 #1 ： hom_<block ref="61fdc52186559b1681736cfb53393d7a" prefix="" category="inline-code"></block> - 共享路徑：<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block></block>
-  <block id="af46ee21386ad593388ff8e626ff1d79" category="list-text">主目錄共用名稱 #2 ：<block ref="61fdc52186559b1681736cfb53393d7a" prefix=" " category="inline-code"></block> - 共享路徑：<block ref="4b4be07fc24b62eb35c983adef6588a7" prefix=" " category="inline-code"></block></block>
-  <block id="8bdaad80963ec7997b9171bbde3ccf58" category="list-text">搜尋路徑 #1 ：<block ref="f1fef4e82588d65ba30cd9aa01821bb8" prefix=" " category="inline-code"></block></block>
-  <block id="d5de8e98475d82f92b73735119bbb86e" category="list-text">搜尋路徑 #2 ：<block ref="516141bba2650fcf50f472110df9bbb3" prefix=" " category="inline-code"></block></block>
-  <block id="17a2b091f4b18b78a643898b857c0b7b" category="list-text">搜尋路徑 #3 ：<block ref="32467dc27b5c1dc6fdb3be6be9e0d4bd" prefix=" " category="inline-code"></block></block>
-  <block id="f79a499c73fbab60e0656b54d92e9a15" category="list-text">主目錄：<block ref="92fb357e2e22d96fcbb3dc91b7ad3c44" prefix=" " category="inline-code"></block></block>
-  <block id="364487be3ccdb0ddb95024d179f03f3e" category="paragraph">案例 1 ：使用者連線至<block ref="4e9da487017687cc0e20849436bbd1ea" prefix=" " category="inline-code"></block>。這會比對第一個主目錄共用名稱、並產生相對路徑<block ref="39ce7e2a8573b41ce73b5ba41617f8f7" prefix=" " category="inline-code"></block>。ONTAP 現在會搜尋名為的目錄<block ref="39ce7e2a8573b41ce73b5ba41617f8f7" prefix=" " category="inline-code"></block> 依序檢查每個搜尋路徑：</block>
-  <block id="da31e9584c464660c8d01fdcce993262" category="list-text"><block ref="99f56e83581477446df1f3c1ced8c2b0" prefix="" category="inline-code"></block> 不存在；請繼續搜尋路徑 #2 。</block>
-  <block id="3ea0fe8fc6a7f1b43185c7059aa5790c" category="list-text"><block ref="92fb357e2e22d96fcbb3dc91b7ad3c44" prefix="" category="inline-code"></block> 存在；因此不會核取搜尋路徑 #3 ；使用者現在已連線至其主目錄。</block>
-  <block id="a5e47d213ee8b7b800451b243c5340e3" category="paragraph">案例 2 ：使用者連線至<block ref="2cb9e3fa2f4a596f846cef78a337560b" prefix=" " category="inline-code"></block>。這會比對第二個主目錄共用名稱、並產生相對路徑<block ref="8e5f8e3dcb23383e32f49e7a055826f4" prefix=" " category="inline-code"></block>。ONTAP 現在會搜尋名為的目錄<block ref="8e5f8e3dcb23383e32f49e7a055826f4" prefix=" " category="inline-code"></block> 依序檢查每個搜尋路徑：</block>
-  <block id="ba77d086e3046fd832fb4fe3435a490d" category="list-text"><block ref="e5eb2f73a2e9980fc90e088246bf2a31" prefix="" category="inline-code"></block> 不存在；請繼續搜尋路徑 #2 。</block>
-  <block id="4a0368d08fff02c4b3d2ceeffbb4d136" category="list-text"><block ref="8211f5e2f4fb295058ab715023554df1" prefix="" category="inline-code"></block> 不存在；請繼續搜尋路徑 #3 。</block>
-  <block id="47cf52fe22b54398467dba6a9a1e4a7b" category="list-text"><block ref="8a86a2c448e1f60496b94e4c1a846e60" prefix="" category="inline-code"></block> 不存在；主目錄不存在；因此連線失敗。</block>
-  <block id="4918741feccad41b42cd99aa33e42f28" category="section-title">共享區</block>
-  <block id="a7c99ceadac4e4924151c84d763c467f" category="paragraph">您可以使用「共享區」視窗來管理您的共享區、以及檢視共享區的相關資訊。</block>
-  <block id="fda574f52a0c012e098901afa3932b69" category="list-text">*建立共用*</block>
-  <block id="d852a51701ee8f10a9ca310896bd4554" category="paragraph">開啟「建立共用」對話方塊、可讓您建立共用。</block>
-  <block id="78051d4bf07107990835bebcaff82f9c" category="list-text">*建立主目錄*</block>
-  <block id="73ebeda6b0e6d0bdc61b3514087f98b2" category="paragraph">開啟「建立主目錄共用」對話方塊、可讓您建立新的主目錄共用。</block>
-  <block id="165ea29705bdce07533240e5baf023d6" category="paragraph">開啟「編輯設定」對話方塊、可讓您修改所選共用的內容。</block>
-  <block id="78970f78ae18db72c079df474a70cac5" category="list-text">*停止共享*</block>
-  <block id="9e4ba745eb5929a46ac85a66bbde51ec" category="paragraph">停止共用選取的物件。</block>
-  <block id="c871110fae62093309dc98c9c0f64df9" category="section-title">共享區清單</block>
-  <block id="729863cbd7aed54d8a3908488c22b0a6" category="paragraph">共用清單會顯示每個共用區的名稱和路徑。</block>
-  <block id="9c29b201d911f46f3d4ec9a15dc66cc6" category="list-text">*共享名稱*</block>
-  <block id="3aba51888e43a206b38531d1ba5da58f" category="paragraph">顯示共用的名稱。</block>
   <block id="973c986d28beec057d1064afec603777" category="list-text">*路徑*</block>
-  <block id="e80af012f9ce34e9ab0beba04371d194" category="paragraph">顯示共享的現有資料夾、qtree或磁碟區的完整路徑名稱。路徑分隔符號可以是反斜槓或正斜槓、雖然ONTAP 它會將所有路徑分隔符號顯示為正斜槓。</block>
-  <block id="7b22a3952681ecb4cdbd6fe703765dae" category="list-text">*主目錄*</block>
-  <block id="cbc95fa902a86727e89b85af3f19d0fb" category="paragraph">顯示主目錄共用的名稱。</block>
   <block id="9bdc480955b350f1fe8089392ad36cbe" category="list-text">*意見*</block>
-  <block id="c9b73398fbc4618f61034f91e3a7daec" category="paragraph">顯示共用區的其他說明（如果有）。</block>
-  <block id="dd8a5de672229fa8ff58411a6a3e41ff" category="list-text">*持續可用的共享*</block>
-  <block id="2d6ca664e165a57792b1b59ede4c3890" category="paragraph">顯示是否已啟用共用以確保持續可用度。從System Manager 9.6開始、FlexGroup 支援不中斷供應的功能。</block>
-  <block id="97469443dfc3695c09f70f7590eeac08" category="paragraph">共用清單下方的區域會顯示每個共用區的共用內容和存取權限。</block>
-  <block id="e6ce8998f0d4cbe5a38c523c958f4162" category="list-text">*內容*</block>
-  <block id="217a0172345c647bc3f6a354cd7b6108" category="list-text">oplocks狀態</block>
-  <block id="cf6115c8d6bbdd2a732e670a8a63edc1" category="paragraph">指定共用區是否使用投機性鎖定（oplocks）。</block>
-  <block id="3a63af1322a4a738092f2dc891ab6afb" category="list-text">可瀏覽的</block>
-  <block id="14fda0af9c46576b371ec3b6e1fb623d" category="paragraph">指定Windows用戶端是否可以瀏覽共用區。</block>
-  <block id="18bfc8152a3e795a4008c07d0c432528" category="list-text">顯示Snapshot</block>
-  <block id="d111a1648cc63acf08b9954ea5d1c5fb" category="paragraph">指定用戶端是否可以檢視Snapshot複本。</block>
-  <block id="b8c91392a068a4dbf0999fb089045c52" category="list-text">持續可用的共用</block>
-  <block id="41aef6f60f95609aa7b5ca4777bfe44c" category="paragraph">指定是否啟用或停用共用區以確保持續可用度。從System Manager 9.6開始、FlexGroup 支援不中斷供應的功能。</block>
-  <block id="ced58c7b6a62adeb9dff9028fa5cf9db" category="list-text">存取型列舉</block>
-  <block id="3af978aaedd422de2f12de5f6b53767e" category="paragraph">指定是否在共用區上啟用或停用存取型列舉（ABE）。</block>
-  <block id="601881e1c15a5899164ae1415fa564f9" category="list-text">BranchCache</block>
-  <block id="c042c62a5b971b02ac210ea6cea9f49b" category="paragraph">指定在共用區上啟用或停用BranchCache。</block>
-  <block id="5ba189119209879ea0338f2967d8829a" category="list-text">SMB加密</block>
-  <block id="a8e8461d71a3b3c9c05c1ca0cab3bf26" category="paragraph">指定是在儲存虛擬機器（SVM）層級或共用層級啟用使用SMB 3.0的資料加密。如果在SVM層級啟用SMB加密、則SMB加密會套用至所有共享區、且此值會顯示為「已啟用」（在SVM層級）。</block>
-  <block id="361ba3dce11fe3e84d163ed8a377ee53" category="list-text">舊版</block>
-  <block id="b9aa6e095ab5ade3b6a47afb5635c76f" category="paragraph">指定是否可從用戶端檢視及還原舊版。</block>
-  <block id="6330d7da9b567d52cb7f38d3b59cad4c" category="list-text">*共享存取控制*</block>
-  <block id="5ecdcfa6df2b43f1cd8b09359c0e9628" category="paragraph">顯示共用的網域使用者、網域群組、本機使用者和本機群組的存取權限。</block>
   <block id="b1f7b0489956884280bdba01a96b051b" category="inline-xref-macro">設定 CIFS</block>
   <block id="e017ec9aae777eea6bb4e0e623c50b13" category="paragraph"><block ref="e017ec9aae777eea6bb4e0e623c50b13" category="inline-xref-macro-rx"></block></block>
   <block id="fc5c41a08a339689427e86a62085d18e" category="summary">在設定具有基本網路組態的功能性儲存虛擬機器（SVM）或SVM之後、您可以選擇性地將SVM的管理委派給SVM管理員。</block>
@@ -3041,7 +2896,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="1bcaa70ba0011203f6ed88fca02c0c7e" category="list-text">如果您將* FabricPool 支援*保留在「Not enabled」（未啟用）位置、則建立FlexGroup 的支援區僅會包含非FabricPool Aggregate、而且分層原則設定為「無」。</block>
   <block id="280912f92ac8838961caf4bcdd792e10" category="list-text">如果FabricPool SVM中不存在任何SVM集合體、則* FabricPool SSI*會顯示在「Not enabled」（未啟用）位置、無法變更。</block>
   <block id="2bdfe1e585cb4707ff4ee5a03fe0d58b" category="list-text">如果FabricPool SVM中只有支援區、則「FabricPool 已啟用」位置會顯示* SSIgregate按鈕、無法變更。</block>
-  <block id="03552d367764e7839a614933f825001e" category="list-text">如果您要指定特定的Aggregate、請按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （進階選項）。</block>
   <block id="54cea90da7b4369891eee22f858ad14b" category="paragraph">根據最佳實務做法、預設會選取與FlexGroup 您所建立之「聲音區」相關的集合體。它們顯示在* Aggregate *標籤旁。</block>
   <block id="b7145e84aa34f2e12721b0af370554c0" category="list-text">在* Protection（保護）*區段中、執行下列動作：</block>
   <block id="8d51cd39a18c87bf1f3c125efbb15875" category="list-text">啟用* Volume Protection *選項。</block>
@@ -3414,14 +3268,11 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="32032cf60e20cb1e13004a35c19895f0" category="list-text">*選用：*在FlexCache * FlexCache 《*》Volume *下的* Size*欄位中、輸入更新的版號、然後從下拉式功能表中選取測量單位。</block>
   <block id="390c84eadfb369c9bba59931c7fc2b02" category="list-text">*選用：*啟用或停用加密。</block>
   <block id="fa8ddae57fb0b13c4eb7a2f3b7deaa99" category="inline-link-macro">指定FlexCache 適用於某個聲音區的進階選項</block>
-  <block id="4db6d5da67865342306912fad857400f" category="list-text">*選填：*按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> 可修改FlexCache 功能的進階設定。請參閱 <block ref="01d1f9ee7eafcb47c4d200eceb73ffd6" category="inline-link-macro-rx"></block>。</block>
   <block id="8491b775711be80e6a608ef1ebb96121" category="list-text">按一下「*儲存*」以儲存變更。</block>
   <block id="a56e31822510cde8f8a20d6f36849aa7" category="summary">您可以使用System Manager來管理磁碟。</block>
   <block id="d7a551057ba910463c17513387122618" category="doc">使用System Manager管理磁碟- ONTAP 不含更新版本</block>
   <block id="4408c783f4f77dad27b39a90a5feb7d2" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來管理磁碟。</block>
   <block id="edda3972d1bc3950c540b7172745645c" category="paragraph"><block ref="edda3972d1bc3950c540b7172745645c" category="inline-link-rx"></block></block>
-  <block id="70894d5c0a41692947485c0d0a19e60a" category="inline-link">介紹虛擬化安裝需求與參考資料FlexArray</block>
-  <block id="b42d776faedad51898dbe5bf906051a2" category="paragraph"><block ref="b42d776faedad51898dbe5bf906051a2" category="inline-link-rx"></block></block>
   <block id="9dd326a487d106b896106eeadb347626" category="summary">從System Manager 9.6開始、您可以檢視FlexCache 有關某個功能區的資訊。您可以以圖形方式檢視已分配空間及FlexCache 其效能的圖表。</block>
   <block id="af94d293d65ac05aba778e00e3ba5510" category="doc">檢視FlexCache 功能介紹</block>
   <block id="d5a19af6bd480993ed2b7a77e9921ee4" category="list-text">從顯示的Volume清單中、選取FlexCache 您要檢視其資訊的相關「流通量」。</block>
@@ -3602,7 +3453,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="11633eb84d1995cfa5bc65cc29e7c23a" category="list-text">按一下*「Add Comments」（新增註解）*以新增原則的其他註解。</block>
   <block id="f51d83be71182a7a9735e02d70d57f6e" category="list-text">針對資料保險箱或鏡射資料保險箱類型的原則、請指定SnapMirror標籤和目的地保留計數。</block>
   <block id="114168a53a6b42c89026b910fc64289f" category="summary">從System Manager 9.6開始、當您編輯FlexCache 完一份《聲音集》時、可以指定您要與FlexCache 《聲音集》相關聯的進階選項。</block>
-  <block id="8f51b4e853f8f8190d9ce869e3f71555" category="list-text">*選用：*在*「Edit FlexCache Sof the *」（編輯*更新版）視窗中、按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> 以指定進階選項。</block>
   <block id="cc6147bf70776e78f1689c5b5ec50cdf" category="paragraph">此時會顯示「進階選項」視窗。其中包含區段（左欄的標題）、您可以在其中指定各種選項。</block>
   <block id="1f272132f306cd712954818240769549" category="list-text">*可選：*在*一般詳細資料*區段中、您可以編輯磁碟區的權限。</block>
   <block id="ffe0fe06e388737190c902ee2d01f847" category="list-text">在* Aggregate *區段中、您可以啟用* Select Aggregate *切換按鈕來覆寫最佳實務做法的預設值、並從集合體清單中選取您的選項。</block>
@@ -3736,14 +3586,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="cafdb1219cee48c72aefb4a06983873c" category="list-text">更新文字方塊中的名稱、然後按一下*提交*。</block>
   <block id="e801d2be7b11bcc8807e4f9a7c173b7f" category="paragraph">當顯示「更新名稱MetroCluster 」時、您可以檢視更新的名稱。</block>
   <block id="e9551f243e2860df3b1dfddc05a6cf7f" category="list-text">若要在從遠端站台（站台 B ）檢視 MetroCluster 站台 A 時顯示其更新名稱、請在遠端站台（站台 B ）的 CLI 中執行下列命令：<block ref="53866ad7e92443056aec27897d674600" prefix=" " category="inline-code"></block></block>
-  <block id="936df13c62816bb541c8c569a83692db" category="summary">您可以使用System Manager建立Aggregate、以支援使用者不同的安全性、備份、效能和資料共用需求。</block>
-  <block id="aab5e3cd425b154cb96d27c6f7249138" category="doc">使用System Manager管理集合體- ONTAP 更新版本</block>
-  <block id="9a37af394d1d31dd77ff0d7043b0269b" category="paragraph">您可以使用ONTAP 經典版的《支援功能》（ONTAP 適用於支援功能更新版本的版本）來建立Aggregate、以支援使用者不同的安全性、備份、效能和資料共享需求。</block>
-  <block id="cd6f186b58ad08a0aa15702a06871670" category="paragraph">您可以使用Aggregate視窗來建立、顯示及管理有關Aggregate的資訊。</block>
-  <block id="35381a31106f6d9e3114d4b4d6d38f12" category="paragraph">開啟「建立Aggregate」對話方塊、可讓您建立Aggregate。</block>
-  <block id="6f63d1aa5fa8cb0919b9d381b827eefb" category="paragraph">開啟「編輯Aggregate」對話方塊、可讓您變更要為Aggregate提供的Aggregate名稱或RAID保護層級。</block>
-  <block id="6ddf98429421db1c79baf89c8d15ebc2" category="paragraph">刪除選取的Aggregate。</block>
-  <block id="f990940885a7262711c74616e1416ff6" category="paragraph">根Aggregate會停用此按鈕。</block>
   <block id="b0f857586a11d1835d63ccfd5a7c94b0" category="list-text">*更多行動*</block>
   <block id="d9fec617ec0f6c9621190b472ac59feb" category="paragraph">提供下列選項：</block>
   <block id="60f070e92e3980a1a93a915ce99841fb" category="list-text">*將狀態變更為*</block>
@@ -3753,58 +3595,25 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="8d9da4bc0e49a50e09ac9f7e56789d39" category="list-text">離線</block>
   <block id="0974133f9628072341df79d62c53b92a" category="paragraph">不允許讀寫存取。</block>
   <block id="034d70b46e41ec9d0306b0001e04cae7" category="list-text">限制</block>
-  <block id="b3144de0ef9237ecb5a3cb8485c2060a" category="paragraph">允許執行某些作業、例如同位元檢查重建、但不允許存取資料。</block>
   <block id="4d20253a0478c684c2de0a0fb803cc03" category="list-text">*新增容量*</block>
   <block id="4edae08fff3ee88387fcd0576d349d16" category="paragraph">可讓您將容量（HDD或SSD）新增至現有的集合體。</block>
   <block id="ac25e29b281c5fe7e5c94b7d0ab40aee" category="list-text">*新增快取*</block>
   <block id="918ca2a2678c961296588bb076c8f0f6" category="paragraph">可讓您將快取磁碟（SSD）新增至現有的HDD集合體或Flash Pool Aggregate。</block>
-  <block id="3c14e506fc727ed3380560dc7037ad5c" category="paragraph">此按鈕不適用於包含具有All Flash Optimized特性設定之節點的叢集。</block>
   <block id="5ccaf135104488a13f1ac23cc6143691" category="list-text">*鏡射*</block>
   <block id="ddc1efb6fc657900eeb3bd6ee540d25c" category="paragraph">可讓您鏡射集合體。</block>
   <block id="07728bee97105d471c3ab19da1966201" category="list-text">* Volume mov移動*</block>
   <block id="69e5c422ce83897e32ce0b9ec4d7c9a8" category="paragraph">可讓您移動FlexVol 一個聲音量。</block>
-  <block id="339a40b6a613ea3ec552b5339bc261a8" category="list-text">*附加雲端層*</block>
-  <block id="87d2c400e633ce33a2a67a308be5bdda" category="paragraph">可讓您將雲端層附加至Aggregate。</block>
-  <block id="c877851beb23e96091e8562c8d1b88a7" category="section-title">Aggregate清單</block>
-  <block id="5e78bc7f662cab6891c8ff38cb07a068" category="paragraph">顯示每個Aggregate的名稱和空間使用資訊。</block>
   <block id="eb2dc6157e951f6bdf5569b2c253a984" category="list-text">*狀態*</block>
-  <block id="986e97d621ddbef8a3235d5c6b7d4096" category="paragraph">顯示Aggregate的狀態。</block>
   <block id="496ee322ba138fdbc777e5ab2e30145e" category="list-text">*名稱*</block>
-  <block id="5ce9fff649cdfda9f94e4cc7011234a9" category="paragraph">顯示Aggregate的名稱。</block>
   <block id="04eaef0c64f7604067332b0b05e598d3" category="list-text">*節點*</block>
-  <block id="99001178cd0cb6fa6787aef67cb2cba7" category="paragraph">顯示指派集合體磁碟的節點名稱。</block>
   <block id="e8a10e1832156c48d05e40d44124a4f9" category="paragraph">此欄位僅適用於叢集層級。</block>
-  <block id="28e42dd5833ce63bcac5edc7f48a152d" category="paragraph">顯示集合體的類型。</block>
-  <block id="b7d06b5b2888bd0cbb9cb0b77d8925c7" category="paragraph">此欄位不會針對包含節點的叢集顯示、且其特性設定為All Flash Optimized（最佳化所有Flash）。</block>
-  <block id="25444e13e1490cfb73e044b4e98cba6b" category="list-text">*已用（%）*</block>
-  <block id="e48543894493fb7fd6d6320e3e3fe0b6" category="paragraph">顯示集合體中使用的空間百分比。</block>
   <block id="17451b8c728d0bc6a4f3dafe44501ab3" category="list-text">*可用空間*</block>
-  <block id="b45bc28e9ea320c35412c90a6da0817f" category="paragraph">顯示集合體中的可用空間。</block>
   <block id="effd2fa0311563a1e224e6c36de775bb" category="list-text">*已用空間*</block>
-  <block id="7750bf7a821da6870eb3fa224f646d87" category="paragraph">顯示用於集合體中資料的空間量。</block>
   <block id="de68ee7ea3dbee1b91084b9a54b3f334" category="list-text">*總空間*</block>
-  <block id="31b39c8fce21f1bdc9a05f612c2d7f92" category="paragraph">顯示集合體的總空間。</block>
-  <block id="ad194123577ad25914a0ad436f83d256" category="list-text">*《*》FabricPool</block>
-  <block id="c26194d8f7d34b5001790e724f7bc44e" category="paragraph">顯示所選的Aggregate是否附加至雲端層。</block>
-  <block id="0cd040a51684da558c6c12a9a3c4ec13" category="list-text">*雲端層*</block>
-  <block id="6d84d0d086fc6ac4cd08fb009eb3afff" category="paragraph">如果選取的Aggregate附加至雲端層、則會顯示雲端層的名稱。</block>
-  <block id="b9d57360a621fd7b1e32b17490f2c32b" category="list-text">* Volume Count*</block>
-  <block id="f06ad6fa54f2513703034b7dfd6cab6d" category="paragraph">顯示與Aggregate相關聯的磁碟區數目。</block>
-  <block id="300f5ad4dc018c74937eef89a804af57" category="list-text">*磁碟數*</block>
-  <block id="887d1cc61a498f51a05d9edde203d8a0" category="paragraph">顯示用於建立集合體的磁碟數目。</block>
-  <block id="2dcf6cf8b63d51754222cbe105d055f9" category="list-text">* Flash Pool *</block>
-  <block id="7cf88a2e216a75f251bc3fb4939e9874" category="paragraph">顯示Flash Pool Aggregate的總快取大小。值NA表示該Aggregate不是Flash Pool Aggregate。</block>
-  <block id="2377b182d295db38042880797b0706eb" category="list-text">*鏡射*</block>
-  <block id="3669b26c14adf1b8df923887205025df" category="paragraph">顯示是否鏡射Aggregate。</block>
   <block id="db0ee96118986edbb435bada8a7b6ae4" category="list-text">*《類型*》SnapLock</block>
-  <block id="03239fde94c3a6403d92ebc7e4d47ae3" category="paragraph">顯示SnapLock Aggregate的邊型。</block>
-  <block id="8e0f7fc5c91a651d41ace5ca9df686d2" category="paragraph">選取Aggregate以檢視所選Aggregate的相關資訊。您可以按一下「顯示更多詳細資料」來檢視所選Aggregate的詳細資訊。</block>
   <block id="9228c96f976b189d00d20754d7057173" category="list-text">*總覽選項卡*</block>
-  <block id="41baae8263adb4ec516ef9c10284e931" category="paragraph">顯示所選Aggregate的詳細資訊、並顯示集合體空間分配、集合體空間節約量、以及集合體IOPS效能和資料傳輸總數的圖示。</block>
   <block id="53da544587b12f299b5208bfa37c41dd" category="list-text">*磁碟資訊索引標籤*</block>
-  <block id="7684669141bc1d61ff12daea729dbbd5" category="paragraph">顯示磁碟配置資訊、例如磁碟名稱、磁碟類型、實體大小、可用大小、磁碟位置、 磁碟狀態、叢集名稱、叢集狀態、RAID群組、RAID類型、 和儲存資源池（如果有）。也會顯示與磁碟主要路徑相關聯的磁碟連接埠、以及具有多重路徑組態之磁碟次要路徑的磁碟名稱。</block>
   <block id="3c62a3dcff986acc24aef37165a45e95" category="list-text">* Volume索引標籤*</block>
-  <block id="68f887cbc24995b778d4f33a8db8a5ef" category="paragraph">顯示有關集合體上磁碟區總數、總集合體空間和已認可至集合體空間的詳細資料。</block>
   <block id="e6a419981c51552ec6ad5c8357bab911" category="list-text">*效能索引標籤*</block>
   <block id="1b485d0caa650bce2a01d08ddaa170f3" category="paragraph">顯示圖表、顯示集合體的效能指標、包括處理量和IOPS。系統會針對處理量和IOPS顯示讀取、寫入和總傳輸量的效能指標資料、SSD和HDD的資料則會分別記錄。</block>
   <block id="e6d518267af76dc4ce9e2fadd8c3f25a" category="paragraph">變更用戶端時區或叢集時區會影響效能度量圖。您應該重新整理瀏覽器以檢視更新的圖表。</block>
@@ -3961,7 +3770,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="1d226977e25ff0748c81b0ef9156e807" category="summary">當您建立FlexGroup 一個聲音區時、可以指定您要與FlexGroup 該聲音區建立關聯的選項。</block>
   <block id="402229f8ce0167d0a78bbd044f5164cf" category="doc">使用FlexGroup System Manager - ONTAP 更新版本的更新版本、指定適用於此產品的進階選項</block>
   <block id="97da1d3682fa19cce007f55dd00e9257" category="paragraph">當您建立FlexGroup 一個版本時、可以使用ONTAP 經典版的《經典版》（ONTAP 可在更新版本的版本中使用）來指定您想要與FlexGroup 該版本關聯的選項。</block>
-  <block id="033b2063dda0545cbfd4fa75d02943a7" category="list-text">*選用：*在*「Create FlexGroup S還原*」視窗中、按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> 以指定進階選項。</block>
   <block id="771c51fdfe14e209bbf3372e85216fc9" category="list-text">在「*一般詳細資料*」區段中、選取空間保留和安全樣式、然後設定該磁碟區的UNIX權限。</block>
   <block id="e722561c54240493896eff618531d51d" category="paragraph">您應該注意下列限制：</block>
   <block id="6a02b35da34c235f387235cad63d8572" category="list-text">空間保留選項不適用於FabricPool 資訊區。</block>
@@ -4431,7 +4239,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="53b4513f2c85f3042617d06afa7e6787" category="list-text">*資源池*</block>
   <block id="a239d33c7781f7db89a7f5b78175b890" category="paragraph">顯示已指派所選陣列LUN的集區名稱。</block>
   <block id="208cfd8d72838668e354af8a85fd9dcf" category="paragraph">Array LUN清單下方的區域會顯示所選陣列LUN的詳細資訊。</block>
-  <block id="cefd59017a4a065f49d52af021a7df7a" category="paragraph"><block ref="cefd59017a4a065f49d52af021a7df7a" category="inline-link-rx"></block></block>
   <block id="ff0f224e8e84ff31060820637ead03d3" category="summary">您可以使用System Manager來管理硬體快取模組。</block>
   <block id="fc127a3a51a884e1e04b66f7100eb154" category="doc">使用System Manager管理硬體快取- ONTAP 更新版本</block>
   <block id="7b9cdbb20d7b7f588086eab7aa5c2913" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來管理硬體快取模組。</block>
@@ -4482,7 +4289,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="1302257e569da026aa67b8e89db540a7" category="summary">您可以使用System Manager更新MetroCluster 以各種形式組態的叢集。除了更新叢集之外、您必須在兩個叢集上執行每項作業。</block>
   <block id="a36ead175efb45759fee5f11ce0d539b" category="doc">使用MetroCluster System Manager更新以不含更新版本的叢集- ONTAP 更新版本</block>
   <block id="5b53589c41b3f02720bf43be353e0006" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來更新MetroCluster 採用各種組態的叢集。除了更新叢集之外、您必須在兩個叢集上執行每項作業。</block>
-  <block id="e21d029f0ed2c65ab82ac9c0fa962f8d" category="image-alt">正在更新叢集MCC組態</block>
   <block id="06ad2274f297ab67ff2225385dc0f3e8" category="paragraph"><block ref="06ad2274f297ab67ff2225385dc0f3e8" category="inline-link-rx"></block></block>
   <block id="dbe63deae24a1ac56f258042500b3305" category="summary">您可以在儲存虛擬機器（SVM）上設定iSCSI傳輸協定、以便使用System Manager提供區塊層級的資料存取。您可以建立iSCSI生命期和連接埠集、然後將生命期新增至連接埠集。LIF是在最適合的介面卡上建立、並指派給連接埠集、以確保資料路徑備援。</block>
   <block id="f5db4f9448aaa78931200f9e088d969e" category="doc">使用System Manager在SVM上設定iSCSI傳輸協定- ONTAP 支援更新版本的更新版本</block>
@@ -5330,7 +5136,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="13c1b8619e5d72fc421632cfdcc39164" category="summary">您可以使用System Manager來更新高可用度（HA）配對中的叢集或個別節點。若要執行更新、您應該選取ONTAP 一個支援功能不實的映像、驗證叢集或HA配對中的個別節點已準備好進行更新、然後執行更新。</block>
   <block id="41900314c94464c2e9abd692d4c2e94a" category="doc">使用MetroCluster System Manager更新非不可用組態的叢集- ONTAP 更新版本：BIOS 9.7及更早版本</block>
   <block id="7c32eebc5c66a11a9625082f47b48aae" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來更新叢集或高可用度（HA）配對中的個別節點。若要執行更新、您應該選取ONTAP 一個支援功能不實的映像、驗證叢集或HA配對中的個別節點已準備好進行更新、然後執行更新。</block>
-  <block id="a641131755584229b6a82aeeabc83cdb" category="image-alt">正在更新叢集</block>
   <block id="d27a348a8a5fed8494cd123b1de658a7" category="summary">您可以使用System Manager新增、編輯及刪除LDAP用戶端組態。</block>
   <block id="6bdc6e23cb590c92f04dbf87942b2526" category="doc">使用System Manager設定LDAP用戶端服務ONTAP -支援更新版本</block>
   <block id="1cc58ec3ba2b0eaeaf517b9ada71d80a" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來新增、編輯及刪除LDAP用戶端組態。</block>
@@ -5342,7 +5147,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="d59c6b980e5f10012e7a6a8f810e2b53" category="list-text">SVM層級：按一下* SVM*&gt;* SVM設定*&gt;* LDAP Client*。</block>
   <block id="8edf4fdc0a99903668ac5dc754e21f43" category="list-text">輸入LDAP用戶端的名稱。</block>
   <block id="0c5163f0f9f5192027f456fddded55c8" category="list-text">新增Active Directory網域或LDAP伺服器。</block>
-  <block id="7c8b08ce095003f9a8b15aef9ca913bf" category="list-text">按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （進階選項）、選取*架構*、然後按一下*套用*。</block>
   <block id="819aa7db437f104cac55b21e1b98c91f" category="list-text">指定*基礎DN*和* TCP連接埠*。</block>
   <block id="fa19e45f0c7971c2a0a4dfe83b8694ac" category="list-text">按一下* Binding *、然後指定驗證詳細資料。</block>
   <block id="c076e7171f87bf601582215d048e77ea" category="list-text">確認已顯示您新增的LDAP用戶端。</block>
@@ -5572,7 +5376,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="503e6a1d24532cf16b90068dcf9d0814" category="list-text">在「*重新調整FlexCache 大小」的「S還原Volume *」視窗中、指定FlexCache 您要調整其大小的「還原Volume」。</block>
   <block id="2c228870bc26117c2bcc38d47fed7cbb" category="paragraph">根據預設、現有的Aggregate可用來調整FlexCache 完這個問題。從System Manager 9.6開始、Volume允許的最大大小會顯示在「大小」欄位旁。</block>
   <block id="ee06c3a75d2f90d528d0bdad6ee8b794" category="inline-link-macro">指定FlexCache 適用於靜態Volume的進階選項</block>
-  <block id="0141b877fcf49f33b47400dd7edb78c1" category="paragraph">如果您想要FlexCache 新增資源來擴充此功能、請按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （進階選項）。請參閱 <block ref="4f3fc931d92f22f55a489e2373f71d6c" category="inline-link-macro-rx"></block>。</block>
   <block id="689dc6ae2f8d54723af8baa6aff39f7d" category="list-text">按一下*「Save」（儲存）*以調整FlexCache 此等功能的大小。</block>
   <block id="921b80fe6e8cca2c6db98a54b19efc65" category="summary">您可以使用System Manager設定排程、以自動建立Volume的Snapshot自動複本。您可以指定建立複本的時間和頻率。您也可以指定儲存的Snapshot複本數量。</block>
   <block id="836f907e1a3a35e35703941bae06b845" category="doc">使用System Manager排程自動建立Snapshot複本- ONTAP 不含更新版本</block>
@@ -5896,7 +5699,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="da167c465aa599598b528deacafa47eb" category="list-text">選取FlexGroup 您要調整大小的「物件」Volume、然後按一下「*更多動作*」&gt;「*調整大小*」。</block>
   <block id="fb7e107fc632fc3b47e98f65a2b1026f" category="list-text">在「*重新調整FlexGroup 大小」的「S還原Volume *」視窗中、指定FlexGroup 您要調整其大小的「還原Volume」。</block>
   <block id="42812d45e8b6d5528bed4f0e674b503f" category="paragraph">根據預設、現有的Aggregate可用來調整FlexGroup 完這個問題。從System Manager 9.6開始、磁碟區允許的最小大小會顯示在「大小」欄位旁。</block>
-  <block id="8fc29799fa5d7d61b9fce4781993418c" category="paragraph">如果您想要FlexGroup 新增資源來擴充此功能、請按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （進階選項）。</block>
   <block id="dae0d20dbc1649cc1e11aab7858b03f2" category="list-text">指定Snapshot複本保留的百分比。</block>
   <block id="30743dc8da0a0156886a97e9699f314a" category="list-text">按一下* Resize（調整大小）*以調整FlexGroup S161Volume的大小。</block>
   <block id="e6ade167bc69389f90ba21383b403cee" category="summary">若為 ONTAP 9.4 及更新版本，您可以從 NetApp 支援網站將 ONTAP 軟體映像檔複製到本機資料夾。若要從ONTAP 更新版本的版本升級、ONTAP 您必須將此版本的更新軟體映像複製到網路上的HTTP伺服器或FTP伺服器。</block>
@@ -5984,7 +5786,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="77cce86a4e36ee7f8b1df43dfe7261f3" category="list-text">執行切換作業之前、必須先完成所有先前的組態變更。如此可避免這些變更與議定的切換或切換作業競爭。</block>
   <block id="e05feb27d4f334232dd375e6020c3b53" category="section-title">流程圖：切換和切換工作流程流程圖MetroCluster</block>
   <block id="8e33bcb19b3ebee0d06e874b21519678" category="paragraph">下列流程圖說明啟動切換和切換作業時所發生的階段和程序。</block>
-  <block id="d2433a156dea88c5bc9b3fe8dbe2183e" category="image-alt">切換切換切換回復工作流程</block>
   <block id="5a80ad07474cac4dee95efc76e8c6388" category="summary">您可以根據儲存建議建立集合體、也可以根據需求手動建立集合體。您可以使用SnapLock System Manager建立Flash Pool Aggregate、支援FabricPool的Aggregate和FabricPool的Aggregate、為一或多個磁碟區提供儲存空間。</block>
   <block id="d08159a440a303f7b3b7c94dc1935c5a" category="doc">透過Aggregate與System Manager進行儲存資源配置- ONTAP 不含更新版本</block>
   <block id="f87363de91a44888ba803f5cb7e20111" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）、根據儲存建議建立集合體、或根據需求手動建立集合體。您可以使用SnapLock System Manager建立Flash Pool Aggregate、支援FabricPool的Aggregate和FabricPool的Aggregate、為一或多個磁碟區提供儲存空間。</block>
@@ -6215,7 +6016,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="9e007cde0294836d49fce82a0770d6fa" category="summary">設定對等關係包括在每個節點上建立叢集間邏輯介面（LIF）、建立叢集對等關係、以及建立SVM對等關係。</block>
   <block id="829111bc2f9e8438581c99c65c273ac5" category="doc">使用System Manager設定對等關係- ONTAP 不含更新版本</block>
   <block id="7e1817ade72aa48bb92d7c2ab07e88a1" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來設定對等關係。設定對等關係包括在每個節點上建立叢集間邏輯介面（LIF）、建立叢集對等關係、以及建立SVM對等關係。</block>
-  <block id="6af8acc69bcdc16b7f8e5adeec4d8b16" category="image-alt">對等工作流程</block>
   <block id="48f1b7cd8c5e771ef4ce929e95a1d530" category="section-title">[叢集對等關係的先決條件]叢集對等關係的先決條件</block>
   <block id="6b6ad8c82295777d87897d52b0fa88f0" category="paragraph">在設定叢集對等之前、您應該確認連線能力、連接埠、IP位址、子網路、防火牆、 並符合叢集命名需求。</block>
   <block id="a8416e889da6102accaf0c0db08552a7" category="list-text">子網路必須屬於廣播網域、其中包含用於叢集間通訊的連接埠。</block>
@@ -6528,7 +6328,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="7d613ace3ff4e6c511496c52961bf228" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於更新版本的版本）來設定及管理雲端層。將資料儲存在階層中、可提升儲存系統的效率。您可以使用啟用FabricPool的Aggregate來管理儲存層。雲端階層會根據資料是否經常存取、將資料儲存在階層中。</block>
   <block id="ef3e2551fede2086c67b6a8bf70db3c4" category="list-text">您必須執行ONTAP 的是版本不含更新版本的版本。</block>
   <block id="d93c7ae1d0a683437e8cdf90782faccd" category="list-text">您必須擁有All Flash（All SSD）Aggregate</block>
-  <block id="1d4f7d5b7c436f0c489b78bb854907f9" category="image-alt">流程FabricPool</block>
   <block id="3ea40fea2e95ba7ab2a868e8a7d9fb54" category="section-title">新增雲端層</block>
   <block id="6b7613736554701bbd26dc07c42dfa16" category="paragraph">您可以使用System Manager將雲端層新增至SSD Aggregate或虛擬機器磁碟（VMDK）Aggregate。雲端層提供儲存空間、可儲存不常使用的資料。</block>
   <block id="98ee5417a1c5fcb1c3bee4ce46f259b8" category="list-text">您必須擁有存取金鑰ID和秘密金鑰、才能連線至物件存放區。</block>
@@ -6547,7 +6346,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="da5a736d7934ea0fda310527ffdb4d23" category="paragraph">根據您的選擇、*服務名稱（FQDN）*欄位會自動填入伺服器端點。</block>
   <block id="a1e9aeb6148784e4a0c8a4f989ead80b" category="list-text">指定雲端層的存取金鑰ID、雲端層的秘密金鑰、以及容器名稱。</block>
   <block id="bd14d3410b286c3b639ecc238d233ca2" category="paragraph">如果您已選取AWS商業雲端服務（C2S）作為類型、則必須指定CAP URL、伺服器CA憑證和用戶端憑證。</block>
-  <block id="71bffb6a33e98f88fab832116ed7dced" category="list-text">如果您要修改下列任何設定、請按一下「進階選項」圖示 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> 若要顯示*進階選項*對話方塊視窗、您可以在其中進行變更：</block>
   <block id="466c4f4287d2b270a412473911428058" category="list-text">用於存取雲端層的連接埠號碼</block>
   <block id="f2a1cbf8ea8f7901f12aa799b104a80d" category="list-text">啟用或停用* SSL*選項、可讓您安全地將資料傳輸至雲端層</block>
   <block id="ff0167481b8bdc3a1e0af03f1a713dfa" category="list-text">*選用：*如果您想要新增雲端層以供StorageGRID 使用、或是想搭配FabricPool 使用IBM Cloud Object Storage環境（例如Cleverafe）搭配使用、則應指定CA憑證。移動「*物件存放區憑證*」切換按鈕並複製憑證內容、以指定CA憑證。然後將憑證內容貼到已簽署的認證中。</block>
@@ -6694,7 +6492,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="e074b06c6bcffc41130111700ce589f4" category="summary">您可以設定安全聲明標記語言（SAML）驗證、以便遠端使用者在登入System Manager之前、先透過安全的身分識別提供者（IDP）進行驗證。</block>
   <block id="a30fa0b5cb2afd6f435aa35fc7ca5745" category="doc">使用System Manager設定SAML驗證- ONTAP 支援更新版本</block>
   <block id="782f1156076101990b814a229110b078" category="paragraph">您可以使用ONTAP 經典版的支援功能（ONTAP 僅適用於支援支援的版本）來設定安全聲明標記語言（SAML）驗證。遠端使用者在登入System Manager之前、會先透過安全的身分識別供應商（IDP）進行驗證。</block>
-  <block id="a1c17e9e89d922e43d5aa0884477d0b3" category="image-alt">MFA工作流程</block>
   <block id="bec16219366d2631eb9ed04aecabc005" category="section-title">啟用SAML驗證</block>
   <block id="a1e6388446604ac005b86b7f11abf1b0" category="paragraph">您可以使用System Manager來設定安全聲明標記語言（SAML）驗證、讓遠端使用者可以使用安全的身分識別供應商（IDP）登入。</block>
   <block id="a1036b59d73505365ef378243a1e483a" category="list-text">必須設定您打算用於遠端驗證的IDP。</block>
@@ -6944,7 +6741,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="2fd31c025fae94406db26f660b0bcce6" category="list-text">按一下*繼續*開始檔案追蹤程序。</block>
   <block id="10e8bbfe3840d1904e9ee75029024bb1" category="list-text">選取用來存取所選SVM上的檔案或共用的傳輸協定。</block>
   <block id="0fddf3ba5354d0302fcdd3f1a444e4ab" category="list-text">在*使用者名稱*欄位中、輸入嘗試存取檔案或共用區的使用者名稱。</block>
-  <block id="243f1fd197bf7fa79315a076feaf79fa" category="list-text">*選填：*按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> 指定更多詳細資料以縮小追蹤範圍。</block>
   <block id="a1d52fca6609f6ceae1e7b0dc368c1a2" category="paragraph">「進階選項」對話方塊視窗可讓您指定下列詳細資料：</block>
   <block id="9430c8c9455d0a71e88758d5f0cb5f9c" category="list-text">*用戶端IP位址*：指定用戶端的IP位址。</block>
   <block id="0a2be69058c2dadb60ef8bd4f7128b12" category="list-text">*檔案*：指定要追蹤的檔案名稱或檔案路徑。</block>
@@ -7779,7 +7575,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="96ef680007b9b6a4ed27f07ba3a181df" category="paragraph">您可以使用ONTAP 經典版的《經典版》（ONTAP 僅適用於《支援》9.7及更早版本）來設定SVM的NVMe傳輸協定。在SVM上啟用NVMe傳輸協定時、您可以配置命名空間或命名空間、然後將它們指派給主機和子系統。</block>
   <block id="e23275ea7297d3239b7dd72d554793b1" category="paragraph">從ONTAP 使用支援NVMe 9.5開始、您必須針對使用NVMe傳輸協定的HA配對中的每個節點、至少設定一個NVMe LIF。您也可以定義每個節點最多兩個NVMe LIF。您可以在使用System Manager建立或編輯SVM設定時、設定NVMe LIF。</block>
   <block id="1a169b0c93fde678e7545eea664d622c" category="paragraph">下圖顯示設定NVMe的工作流程：</block>
-  <block id="f986c0d1608453a3100a148119f1f6d3" category="image-alt">NVMe設定工作流程</block>
   <block id="c8e9033e5faaaadf3419887a2963fcd3" category="summary">您可以使用System Manager來啟用及設定CIFS伺服器、以允許CIFS用戶端存取叢集上的檔案。</block>
   <block id="76a6394ebba69d649eac839a06da71d9" category="doc">使用 System Manager （ ONTAP 9.7 及更早版本）設定 CIFS 傳輸協定</block>
   <block id="8ddabe3ae143d491ee852f8d59f2a3dd" category="paragraph">您可以使用ONTAP 經典版的《支援功能》（ONTAP 適用於支援功能更新版本的版本）來啟用和設定CIFS伺服器、讓CIFS用戶端存取叢集上的檔案。</block>
@@ -7921,10 +7716,8 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="7afec9c2554738ce7a7de58297d6c030" category="paragraph">從System Manager 9.6開始、您也可以重新命名FlexGroup RAID-DP Volume。</block>
   <block id="a3bd68f70522585bc51163fa9590fa4e" category="list-text">*選用：*啟用*加密*選項以啟用磁碟區加密。</block>
   <block id="82420e9f127f5641742dbb7e880fabbe" category="inline-link-macro">指定FlexGroup 適用於某個聲音區的進階選項</block>
-  <block id="9ee319675caed914c3f8a3702fba2502" category="list-text">*選填：*按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> 可修改FlexGroup 聲音恢復功能的設定。請參閱 <block ref="07a83aa5aab69a8b3aaebefbf523161a" category="inline-link-macro-rx"></block>。</block>
   <block id="4e5dab7015140f89b3c6813a37296dca" category="list-text">指定FlexGroup 您想要調整的大小以調整此等大小。</block>
   <block id="dc9d37a202e296240d704411fe802886" category="paragraph">根據預設、現有的Aggregate可用來調整FlexGroup 完這個問題。Volume允許的最小大小會顯示在「大小」欄位旁。</block>
-  <block id="6992875b19c0688c37cf36118301e391" category="paragraph">如果您想要FlexGroup 新增資源來擴充此功能、請按一下 <block ref="03cbf9b997ad0db8d0ffb988950200e2" category="inline-image-macro-rx" type="image"></block> （進階選項）。請參閱 <block ref="07a83aa5aab69a8b3aaebefbf523161a" category="inline-link-macro-rx"></block>。</block>
   <block id="36336ab4893fca29807b6c8d48e5d614" category="summary">您可以使用System Manager來指定名稱對應項目、以對應不同平台的使用者。</block>
   <block id="94b62c27be996324d0173ca83ba2629b" category="doc">使用System Manager進行名稱對應- ONTAP 不含更新版本</block>
   <block id="cee4c228dbc1bd4065b40bb31f18464c" category="paragraph">您可以使用ONTAP 經典版的支援功能（ONTAP 僅適用於支援支援支援的版本）來指定名稱對應項目、以對應不同平台的使用者。</block>
@@ -8367,68 +8160,6 @@ System Manager會搜尋新增的節點。如果顯示任何警告、您必須先
   <block id="6554454b0b446406d68531c90f523542" category="paragraph">如果RAID群組已啟用RAID混合選項、例如磁碟類型混合和磁碟RPM混合、 Aggregate現有磁碟的磁碟類型和磁碟RPM會與備用磁碟的有效磁碟類型和有效磁碟RPM相符、以取得相容的備援磁碟。</block>
   <block id="3c7ac17931d7b7b66cf7c263fc1c828c" category="inline-xref-macro">新增容量磁碟</block>
   <block id="b43496159a45e73d14c7489b1036d050" category="paragraph"><block ref="b43496159a45e73d14c7489b1036d050" category="inline-xref-macro-rx"></block></block>
-  <block id="17b6d0d254f588212107e44b9311cacd" category="summary">您可以使用System Manager來設定AutoSupport 可協助您監控儲存系統健全狀況的功能。</block>
-  <block id="a75e8acf7cda75c2cae76c182cea9cc1" category="doc">使用AutoSupport System Manager管理功能的更新通知- ONTAP 更新版本</block>
-  <block id="65cb7b95d3e9511248e4d454f7a1000b" category="paragraph">您可以使用ONTAP 經典版的經典版功能（ONTAP 僅適用於更新版本的版本）來設定AutoSupport 可協助您監控儲存系統健全狀況的功能。</block>
-  <block id="f53ffe37b23382fbc1ab9e0ff74a9ca1" category="section-title">設定AutoSupport 功能完善的通知</block>
-  <block id="899866a691c80f26e2daef7ca4226aa1" category="paragraph">您可以使用AutoSupport System Manager中的「編輯功能」對話方塊來設定AutoSupport 功能完善的通知、方法是指定電子郵件地址來傳送電子郵件通知、並新增多個電子郵件主機名稱。</block>
-  <block id="5201d100a8e314b3fbeeacae19e521d3" category="list-text">選取節點、然後按一下*編輯*。</block>
-  <block id="687a771b0731f71db5005ea461393c80" category="list-text">在*電子郵件收件者*索引標籤中、輸入電子郵件通知的寄件地址、指定每個電子郵件收件者的電子郵件收件者和訊息內容、然後新增郵件主機。</block>
-  <block id="b3993d767356f296d9ae01951029b2e8" category="paragraph">您最多可以新增五個主機名稱的電子郵件地址。</block>
-  <block id="256162f8692cabf4b90ce635f28d203d" category="list-text">在*其他*索引標籤中、從下拉式清單中選取用於傳送電子郵件訊息的傳輸傳輸傳輸傳輸傳輸傳輸協定、並指定HTTP或HTTPS Proxy伺服器詳細資料。</block>
-  <block id="f8095d0bd0b763a9801c727b7b9c9e2c" category="list-text">確認AutoSupport 您設定的支援資訊通知組態已在* AutoSupport 還原*視窗中正確設定。</block>
-  <block id="7cfccaa9582383c3fb3502dee8cd8fa0" category="section-title">啟用或停用AutoSupport 功能不整合</block>
-  <block id="4a25ae18d6356c3e2e94389495282dca" category="paragraph">您AutoSupport 可以使用System Manager在儲存系統上啟用或停用資訊區設定。利用支援訊息、您可以監控儲存系統的健全狀況、或傳送通知給技術支援部門和內部支援組織。AutoSupport</block>
-  <block id="0403edc618662f219efdb5cec6ce921d" category="paragraph">根據預設、會啟用此功能。AutoSupport</block>
-  <block id="a178fec1a73600346ab5639de318ab04" category="list-text">選取節點、然後按一下「*啟用*」或「*停用*」。</block>
-  <block id="8a9933d1b53dd6f17d6ec97c4891fc28" category="list-text">驗證AutoSupport 「不實狀態」是否正確顯示您所做的變更。</block>
-  <block id="05e7844ebc444b6fad146ea35ed30693" category="section-title">新增AutoSupport 功能電子郵件收件者</block>
-  <block id="d16928f0be7c6d00043db7f8f698713f" category="paragraph">您可以使用AutoSupport System Manager中「編輯還原設定」對話方塊的*電子郵件收件者*索引標籤、新增AutoSupport 接收到該等通知之收件者的電子郵件地址。</block>
-  <block id="2fb66b8ac10e5a7bcdd7a6b1230f7634" category="list-text">在*電子郵件收件者*索引標籤中、輸入電子郵件收件者的地址、指定收件者是否收到完整訊息或簡短訊息、然後按一下*新增*。</block>
-  <block id="12ddeca8b6e6bc6719229aed2ca28f10" category="list-text">驗證您指定的詳細資料是否顯示在* AutoSupport 《*》（*）視窗中。</block>
-  <block id="59141343290d3909b8aaa7db97777945" category="section-title">測試AutoSupport 功能設定</block>
-  <block id="32568cbbe429ec99cc04958091170933" category="paragraph">您可以使用AutoSupport System Manager中的「還原測試」對話方塊來測試AutoSupport 您是否已正確設定了這些功能。</block>
-  <block id="ecdef053776ef467659a2f7843d75970" category="list-text">選取節點、然後按一下* Test*。</block>
-  <block id="e8fd5a221ba9aaf9f296550b6f84c874" category="list-text">在「* AutoSupport 效能測試*」對話方塊中、輸入AutoSupport 「『測試AutoSupport 』」這個主題文字、或是任何文字、通知收件者您正在測試AutoSupport 此「功能」設定。</block>
-  <block id="e5e2f833538b1021bce60cd294a0b820" category="list-text">按一下* Test*。</block>
-  <block id="b4df96ee5421c196535d968ddf8dcdbf" category="paragraph">會AutoSupport 傳送一封電子郵件訊息給AutoSupport 指定的收件者、並附上主旨「Test S處所 示」或您在*《Subject》（*《主題*》）欄位中輸入的文字。</block>
-  <block id="f8ac418fe34a9d032d82e1a5fe1cc538" category="section-title">產生AutoSupport 資料的功能</block>
-  <block id="d7c288e747ce8081bd029cb8110b915a" category="paragraph">您可以使用System Manager為AutoSupport 單一節點或多個節點產生支援資料、以監控其健全狀況、並將通知傳送給技術支援部門。</block>
-  <block id="560b99032ab2ade2fd44293f30542881" category="list-text">選取節點、然後按一下* AutoSupport 《Request *》（*）&gt;*《Generate AutoSupport S1*》（產生*）。</block>
-  <block id="b4c58686dbd257d5a4c2cfc900c2fffe" category="paragraph">根據預設、AutoSupport 所有節點都會產生不完整的資料。</block>
-  <block id="66901fe22b1302d615fd6a33ce3ed2a1" category="list-text">在*產生AutoSupport S還原*對話方塊中、執行下列步驟：</block>
-  <block id="907fe6e970abae806b1c310cc8ebfe5b" category="list-text">如果您想要產生AutoSupport 特定節點的資訊、請清除*產生AutoSupport 所有節點的資訊*核取方塊、然後選取節點。</block>
-  <block id="fe9737666daea356168fe09824dd7c16" category="list-text">輸入案例編號。</block>
-  <block id="cf4ac7ce33a0d726953e3d5617ce159f" category="list-text">在「*確認*」對話方塊中、按一下「*確定*」。</block>
-  <block id="44922bc3fbbb78111c1b1d7f3f6a16d5" category="section-title">檢視AutoSupport 畫面摘要</block>
-  <block id="180585c2bf107777563ef87199b3a128" category="paragraph">System Manager可讓您檢視所有先前AutoSupport 的各項資料狀態和詳細資料、以便檢閱已傳送給技術支援的資料。您也可以檢視資訊、瞭解儲存系統的健全狀況與效能。</block>
-  <block id="40e9b033a605f4b9e70b7533dbe4cc68" category="list-text">選取節點、然後按一下「* AutoSupport 」「Request *」（要求*）&gt;「* View Previous Summary *」（檢視上一個摘要*）。</block>
-  <block id="ec319ea6d5029219f5360564e39bce20" category="paragraph">畫面會顯示所有節點的資料。AutoSupport</block>
-  <block id="7cd2400c36efced648da662ee35c50db" category="section-title">支援的嚴重性類型AutoSupport</block>
-  <block id="481b198660a6150c43056f34d7e2cf2e" category="paragraph">支援訊息的嚴重性類型可協助您瞭解每則訊息的用途、例如提請立即注意緊急問題、或僅提供資訊。AutoSupport</block>
-  <block id="696cbc725f30685e5fa8ce370d6f6954" category="paragraph">訊息具有下列嚴重性之一：</block>
-  <block id="581092a5673e91e014d76b69ceebdf33" category="list-text">*警示*：警示訊息指出、如果您未採取任何行動、可能會發生更高層級的事件。</block>
-  <block id="e2187f9725fb45cce9f73beddfb887f4" category="paragraph">您必須在24小時內針對警示訊息採取行動。</block>
-  <block id="742c1bb29d3105108b3c147111efab2e" category="list-text">*緊急*：發生中斷時會顯示緊急訊息。</block>
-  <block id="deadcded381dc54c5b4315a60e438efb" category="paragraph">您必須立即對緊急訊息採取行動。</block>
-  <block id="0f8ace2d00677452acebed4ac5f08f28" category="list-text">*錯誤*：錯誤情況指出若您忽略、可能會發生什麼情況。</block>
-  <block id="bda1600937310f07d4e989c02fc850f5" category="list-text">*通知*：正常但重大的情況。</block>
-  <block id="915f01d0c8edc0c91010fd08de60d06e" category="list-text">*資訊*：資訊訊息提供問題的詳細資料、您可以忽略。</block>
-  <block id="5c1133334cd09acd3c04f0c1c5901533" category="list-text">*偵錯*：偵錯層級訊息提供您應執行的指示。</block>
-  <block id="da1e3514a2d926808d163915057fbecc" category="paragraph">如果您的內部支援組織透過AutoSupport 電子郵件接收到不確定訊息、嚴重性會顯示在電子郵件訊息的主旨行。</block>
-  <block id="6bcf33de034389db3d5853162953d505" category="section-title">窗口AutoSupport</block>
-  <block id="1a7d77c8e798bc441a5334c9355a45d5" category="paragraph">利用此窗口、您可以檢視系統目前的各項功能。AutoSupport AutoSupport您也可以變更系統AutoSupport 的功能不均設定。</block>
-  <block id="359380a3c78af945b2ae90f815244396" category="paragraph">啟用AutoSupport 資訊功能通知。*啟用*為預設值。</block>
-  <block id="da870272b32f4cbfade1d5a90b8e3f29" category="paragraph">停用AutoSupport 資訊通知。</block>
-  <block id="2e7e65a7e342af7e8e9f4a5bd5546e80" category="list-text">*測試*</block>
-  <block id="e5ff12d5fe310fb00a01d79c857e3012" category="paragraph">開啟AutoSupport 「驗檔測試」對話方塊、讓您產生AutoSupport 測試訊息。</block>
-  <block id="c17beda1e1f2784da4409798c0b828aa" category="list-text">*《要求*》AutoSupport</block>
-  <block id="9efb97efa656bf8b294b9560fa48f2e3" category="paragraph">提供下列AutoSupport 功能要求：</block>
-  <block id="f7b81a92807ea0daac699e3be8d2f1a8" category="list-text">*產生AutoSupport 此功能*</block>
-  <block id="5f6eee0f282fb718d0b02e1081963d06" category="paragraph">為AutoSupport 所選節點或所有節點產生資料。</block>
-  <block id="4db536d8e0d23affd53ff50f18315229" category="list-text">*查看上一摘要*</block>
-  <block id="49edbf7f86eb853da37612c4c1c8c81b" category="paragraph">顯示所有先前AutoSupport 的不完整資料的狀態和詳細資料。</block>
-  <block id="85d7a739c6bad7aa6a52aeb9d15d8dc7" category="paragraph">詳細資料區域會顯示AutoSupport 各種設定資訊、例如節點名稱、AutoSupport 畫面狀態、使用的傳輸傳輸傳輸協定、以及Proxy伺服器的名稱。</block>
   <block id="cf18771d2723aa8f45b649802cca21bb" category="summary">您可以使用System Manager來保護資料、並在單一集合體內即時鏡射資料、以提供更高的恢復能力。鏡射Aggregate可移除連線至磁碟和陣列LUN的單點故障。</block>
   <block id="082fcd43395a78c9af7e1c1aede841c9" category="doc">鏡射集合體搭配System Manager - ONTAP 更新版本</block>
   <block id="7320e70f830697cfb3f68adab3cec989" category="paragraph">您可以使用ONTAP 經典版的《RealgSystem Manager》（ONTAP 適用於Realgregate 9.7及更早版本）來保護資料、並在單一集合體內即時鏡射資料、以提供更高的恢復能力。鏡射Aggregate可移除連線至磁碟和陣列LUN的單點故障。</block>
@@ -9021,7 +8752,6 @@ LDAP是此SVM上名稱服務和名稱對應的主要使用者資訊來源。</bl
   <block id="56f7090374da6c285faf44a2d3d36387" category="paragraph">對於大多數資料傳輸失敗、欄位會顯示<block ref="bafd7322c6e97d25b6299b5d6fe8920b" prefix=" " category="inline-code"></block>。不過、在某些失敗情況下、欄位仍會繼續顯示<block ref="93cba07454f06a4a960172bbd6e2a435" prefix=" " category="inline-code"></block>。您必須檢查「詳細資料」區段中的傳輸錯誤、以確保不會發生資料傳輸失敗。</block>
   <block id="d984d9c45d9cc749d08f539d70415f1c" category="list-text">延遲時間不得超過傳輸排程時間間隔。</block>
   <block id="84ab02685a1be3ebfb0d9fdcdebd3620" category="paragraph">例如、如果傳輸排程為每日、則延遲時間不得超過一天。</block>
-  <block id="1eeba1edb754efde0f9cecd9c594e61f" category="image-alt">監控服務</block>
   <block id="f54fe60c5cda1542fbcb4223ed181b1a" category="summary">您必須在SnapVault 一個叢集上的來源Volume和連接叢集上的目的地Volume之間建立一個不二元關係、才能建立SnapVault 一個不二元的備份。</block>
   <block id="681b555578c6300aa44915faa6e62624" category="doc">建立SnapVault 不合作關係（從ONTAP 功能9.3開始）</block>
   <block id="111d55d127c8b160f91a1ed2a3d66659" category="list-text">選取您要備份的磁碟區、然後按一下「*動作*」&gt;「*保護*」。</block>
@@ -9035,17 +8765,13 @@ LDAP是此SVM上名稱服務和名稱對應的主要使用者資訊來源。</bl
   <block id="0e4bdb912795a75f20bb4cf92e12ede0" category="list-text">選取*保護排程*。</block>
   <block id="8a29542fd88167bed5c273f4dfaf8a32" category="paragraph">依預設<block ref="bea79186fd7af2da67e59b4b15df5a26" prefix=" " category="inline-code"></block> 排程已選取。</block>
   <block id="a2c37d2ba543d4b2fa6945958d1b06a6" category="paragraph">所有資料保護關係依預設都會初始化。</block>
-  <block id="cdce3cfd69d3c04640402322214fbd7b" category="image-alt">進階選項SnapVault</block>
   <block id="ad4cee41b42d5d1487fc368bacee9035" category="list-text">在「* Volume：Protect Volumes*」（*磁碟區：保護磁碟區*）頁面中、按一下「*驗證*」以驗證磁碟區是否具有相符的SnapMirror標籤。</block>
   <block id="15b9d1ba7d09ca92877eccf7c8dc834c" category="list-text">按一下*「Save」（儲存）*建立SnapVault 「S動關聯」。</block>
   <block id="8692227f3e95b2f8bebdf8e94baa86d2" category="list-text">確認 SnapVault 關係的狀態位於<block ref="d34e79870b17da17e894ddc837954dcc" prefix=" " category="inline-code"></block> 州/省。</block>
   <block id="9c53011af7d95ac75de04cec46ecb8d2" category="list-text">瀏覽至* Volumes（磁碟區）*視窗、然後選取要備份的磁碟區。</block>
   <block id="94b31a2df9b136cec0223f40179bf9fa" category="list-text">展開磁碟區、然後按一下* protection *以檢視磁碟區的資料保護狀態。</block>
-  <block id="0acbaa58e2a15a8cfdca743b66a7589f" category="image-alt">部分9 3. SnapVault</block>
   <block id="7b1a6834c9e6f565e0e67a08da561eb0" category="summary">在使用SnapVault 支援技術設定磁碟區以進行資料保護之前、您必須先確認來源叢集和目的地叢集已連接、並透過對等關係彼此通訊。您也必須驗證來源SVM和目的地SVM是否已連接、並透過對等關係彼此通訊。</block>
   <block id="1d2c5f3cf91a6ac4437d06b0d35f22aa" category="doc">驗證叢集對等關係和SVM對等關係</block>
-  <block id="9aaabaf6b02ac9896ad51eeefe73cf8f" category="image-alt">叢集式pper 930備份</block>
-  <block id="c78e5ac9d023c52ba5fef3f2b6285cf3" category="image-alt">叢集對等健全狀況備份</block>
   <block id="d9754d70c58cd9e08660aa07fe333726" category="paragraph">如果您在這個區域沒有看到任何已處理的SVM、您可以在建立SnapVault 該SVM關係時建立SVM對等關係。</block>
   <block id="71d1ddff7dfe7c5d5d498435abd07d64" category="inline-xref-macro">建立SnapVault 不二關係ONTAP （例如、0、2、2或更早版本）</block>
   <block id="7aba3f692e5d868662f8bb21f2d6b326" category="paragraph"><block ref="7aba3f692e5d868662f8bb21f2d6b326" category="inline-xref-macro-rx"></block></block>
@@ -9053,17 +8779,13 @@ LDAP是此SVM上名稱服務和名稱對應的主要使用者資訊來源。</bl
   <block id="7b54a4baecee8025c7a584063b284860" category="list-text">選取您要備份的磁碟區、然後按一下*保護*。</block>
   <block id="46a75c55e1d18259e0d99ca1a2d6e6dc" category="list-text">使用預設磁碟區名稱或輸入新的磁碟區名稱。</block>
   <block id="290b5b3199ef348f9cbd79b99c5bb958" category="list-text">確保選中* Enable Dedupe（啟用重複資料刪除）*核取方塊。</block>
-  <block id="31cb8a9c222dc79d8a607e91c2ec5087" category="image-alt">目的地SnapVault 功能</block>
   <block id="853eaceca4495bec215242975ab75a5c" category="list-text">在 * 組態詳細資料 * 區段中、選取<block ref="a56c1780b810accc7f0bc23193dc16aa" prefix=" " category="inline-code"></block> 保護原則。</block>
   <block id="aff39a5b1ae1c8209559a8d4f0ddc867" category="list-text">確保選中*初始化關係*複選框以傳輸基礎Snapshot複本，然後單擊*創建*</block>
-  <block id="0d1bc641bee3f79300dd2bd71a01cd61" category="image-alt">組態詳細資料SnapVault</block>
   <block id="02a06f3e8dce89d13793f3516c1397b5" category="paragraph">精靈會建立與指定資料保險箱原則和排程的關係。此關係是透過從來源磁碟區開始基準傳輸資料至目的地磁碟區來初始化。</block>
   <block id="9ed2c9c51f61eff07d1309d3b0a092ab" category="paragraph">「狀態」區段會顯示每個工作的狀態。</block>
-  <block id="571a6fbf06fcab2eacce2bf9f22f7d14" category="image-alt">創造SnapVault 不一樣的成功</block>
   <block id="12e1c92f78e02c7c7176879151b9f047" category="list-text">確認 SnapVault 關係的關係狀態位於中<block ref="d34e79870b17da17e894ddc837954dcc" prefix=" " category="inline-code"></block> 州/省。</block>
   <block id="0a1f8ccbf1c3a92e6cf0a2fab027e9d7" category="list-text">從Volumes（磁碟區）清單中選取磁碟區、然後按一下* Data Protection（資料保護）*。</block>
   <block id="ede5499c007334976c473361dd3cae93" category="list-text">在 * 資料保護 * 底部索引標籤中、確認您建立的 SnapMirror 關係已列出、且關係狀態為<block ref="d34e79870b17da17e894ddc837954dcc" prefix=" " category="inline-code"></block> 而且類型是<block ref="5b70a213f150f01f0776fa9481ef2ddf" prefix=" " category="inline-code"></block>。</block>
-  <block id="88a39d6a7af7f65fcb4ad6f3ff576d67" category="image-alt">資料保護所需時間</block>
   <block id="0dda7a83024c1a48482d48cb5cc0197e" category="summary">設定SnapVault 支援功能的關係包括驗證叢集對等關係、建立SnapVault 來源與目的地Volume之間的支援關係、以及監控SnapVault 彼此之間的支援關係。</block>
   <block id="2f17efffc575aac669d2b6d5b6e3ce0c" category="doc">支援備份組態工作流程SnapVault</block>
   <block id="33d698c5405b59cf282a091b0fab54f4" category="image-alt">此圖為SnapVault 一份流程圖、說明各項功能的流程圖。工作流程中的步驟與主題相符。</block>
@@ -9097,7 +8819,6 @@ LDAP是此SVM上名稱服務和名稱對應的主要使用者資訊來源。</bl
   <block id="6a1430dbf84d6dc23f417c150bfc22be" category="sidebar">System Manager經典文件</block>
   <block id="8cd255c7908d433af7a81a9f59fbc06b" category="sidebar">使用System Manager 9.6和9.7進行叢集管理</block>
   <block id="c8db31d0d38042ea4fd10dd6bdfd347e" category="sidebar">文件ONTAP</block>
-  <block id="d648f2a68a54fd1b3329efc3cf24d29c" category="sidebar">法律聲明</block>
   <block id="0fe674cba26a6125717793de11bb3096" category="sidebar">叢集擴充管理</block>
   <block id="3b878279a04dc47d60932cb294d96259" category="sidebar">總覽</block>
   <block id="28ed8622e2b3c95e29e6f443b5b6cd84" category="sidebar">初始化及格式化LUN</block>
@@ -9946,4 +9667,39 @@ LDAP是此SVM上名稱服務和名稱對應的主要使用者資訊來源。</bl
   <block id="b1ddb251aa66bea48e797b1ba2490583" category="sidebar">一般網路主題（ ONTAP 9.7 及更早版本）</block>
   <block id="a29d5547f6b6a3eb59e3d47cdb1c8b3e" category="sidebar">廣播網域（ ONTAP 9.7 或更早版本）</block>
   <block id="d7f29243972dcd66136a878c3167ee3a" category="sidebar">關於 NAS 路徑容錯移轉（ ONTAP 9.7 以上版本）</block>
+  <block id="31a492c1ac21a132d45144f6d5949a5a" category="paragraph"><block ref="2cd65b4a044075cfd9ad4a91f42fdff4" category="inline-link-macro-rx"></block> <block ref="5e764cc3fdcc19ff667796e414159bdc" category="inline-link-macro-rx"></block> <block ref="561451f09c7bca700ea0d7833cd9e92e" category="inline-link-macro-rx"></block> <block ref="d23d341a344216fbf99a91152429d49c" category="inline-link-macro-rx"></block> <block ref="b35e8fbd7b0369b23734510994911ec4" category="inline-link-macro-rx"></block> <block ref="41d4305cf7a6acb595086f123121a781" category="inline-link-macro-rx"></block> <block ref="ea685649fabe77da53e843fec56f72b8" category="inline-link-macro-rx"></block></block>
+  <block id="021e58ded68582927279871a5a249d56" category="inline-image-macro">進階選項圖示</block>
+  <block id="e942e17609bdfacf699e4326db9a5c6c" category="list-text">按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>（進階選項），選取 * 架構 * ，然後按一下 * 套用 * 。</block>
+  <block id="71d3f2fbd3f099e5e4004ce407520fc5" category="image-alt">MetroCluster 切換與切換工作流程流程流程圖</block>
+  <block id="0a8898c3a5c1c7dfcdf9a1ea89ba1371" category="image-alt">設定 NVMe 的工作流程</block>
+  <block id="c92735279096095430f4ba8938a4625a" category="image-alt">設定叢集環境的工作流程</block>
+  <block id="0932f3e300e26042e0464118925831e7" category="image-alt">使用系統管理員更新 MetroCluster 組態中的叢集</block>
+  <block id="2138adc51055649c980ae237aae09678" category="image-alt">使用系統管理員更新非 MetroCluster 組態中的叢集</block>
+  <block id="58eb14d339cce9656dd664894d1bed13" category="image-alt">使用系統管理員設定及管理雲端層的工作流程</block>
+  <block id="0f996dc5a102ad4590e9c4a6a1b2bea6" category="list-text">如果您想修改下列任何設定，請按一下「進階選項」圖示<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>以顯示「 * 進階選項 * 」對話方塊視窗，您可以在其中進行變更：</block>
+  <block id="b9749ab015e0a86ac53cf1e8355b0463" category="list-text">如果您要指定特定的集合體，請按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>（進階選項）。</block>
+  <block id="6b4f7970ed14ffcd2cd01a5bcad00df4" category="list-text">* 選用： * 按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>以修改 FlexCache Volume 進階設定。請參閱 <block ref="01d1f9ee7eafcb47c4d200eceb73ffd6" category="inline-link-macro-rx"></block>。</block>
+  <block id="66a8e1c221410e093d9f8952f96aa718" category="list-text">* 選用： * 按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>以修改 FlexGroup Volume 設定。請參閱 <block ref="07a83aa5aab69a8b3aaebefbf523161a" category="inline-link-macro-rx"></block>。</block>
+  <block id="12f0ba62a35184ad78e46495aed599c3" category="paragraph">如果您想要新增資源來擴充 FlexGroup Volume ，請按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>（進階選項）。請參閱 <block ref="07a83aa5aab69a8b3aaebefbf523161a" category="inline-link-macro-rx"></block>。</block>
+  <block id="bd2994eecdfc948859d61e5e8af39d76" category="paragraph">如果您想要新增資源來擴充 FlexCache Volume ，請按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>（進階選項）。請參閱 <block ref="4f3fc931d92f22f55a489e2373f71d6c" category="inline-link-macro-rx"></block>。</block>
+  <block id="1c2bb56fbb6f256a844ce48503a61592" category="paragraph">如果您想要新增資源來擴充 FlexGroup Volume ，請按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>（進階選項）。</block>
+  <block id="4f0cd92236bc3ee5c59393dcb1cd46c4" category="image-alt">使用 ONTAP 系統管理員設定叢集的工作流程</block>
+  <block id="34db6f0144d3faddcec6503e7b19a934" category="image-alt">設定對等關係的工作流程</block>
+  <block id="10fb5742f027d94f2d9a2be7a521980a" category="image-alt">使用系統管理員設定 SAML 驗證的工作流程</block>
+  <block id="ac406f7b3ac832289490a9928155e573" category="list-text">* 選用： * 在 * 編輯 FlexCache Volume * 視窗中，按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>以指定進階選項。</block>
+  <block id="22c88cbfb69451eb5b1700c79078a2e8" category="list-text">* 選用： * 在 * 建立 FlexGroup * 視窗中，按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>以指定進階選項。</block>
+  <block id="a4f2dcacb59f6247563b33c78abb9af7" category="list-text">* 選用： * 按一下<block ref="6c20450af8e0cd46e0829c03c729b979" category="inline-image-macro-rx" type="image"></block>以指定更多詳細資料，以縮小追蹤範圍。</block>
+  <block id="98ff9d400ff71b78fe9bd8396d181d0c" category="image-alt">組態目的地 Volume 標籤，含啟用重複資料刪除核取方塊</block>
+  <block id="c8c7c1580ea9ee0164932b98ebbba6e9" category="image-alt">組態詳細資料索引標籤與初始化關係核取方塊</block>
+  <block id="a39ef4a00faaede12888a132ba359f72" category="image-alt">建立保護關係索引標籤，其中的狀態區段會顯示每個工作的狀態</block>
+  <block id="0ff83997287948cdae3d09fc1f872456" category="image-alt">資料保護底部索引標籤</block>
+  <block id="39c95ce3156249f19819bd55058330d0" category="image-alt">SnapVault 進階選項索引標籤</block>
+  <block id="7574361a6adbb68646e2913372161dd6" category="image-alt">Volume 視窗顯示磁碟區的資料保護狀態</block>
+  <block id="d0ab8e4cbb595e3b42eea0ebaa196387" category="image-alt">SnapVault 關係狀態</block>
+  <block id="b49af746329694d471b02754b346b2e1" category="image-alt">已連接叢集的驗證</block>
+  <block id="f1708c3087f0b9656f84ffb11ef5f176" category="image-alt">顯示叢集對等區段的叢集詳細資料窗格，可驗證已驗證且可用的對等叢集</block>
+  <block id="f143a26d3aa1a2ec09915e966ba2e79d" category="image-alt">SnapMirror 資料傳輸狀態</block>
+  <block id="2cb784360ea1f63614d3f5bcaa598a3f" category="image-alt">驗證對等叢集已驗證且可用</block>
+  <block id="da91c7a4b0770d58391de5b02e703da7" category="image-alt">叢集對等端點區段顯示已驗證且可用的對等端點叢集</block>
+  <block id="9a1ae1f025bf3468de6eafb8382a5104" category="image-alt">顯示 SnapMirror 關係中目的地 Volume 的保護標籤影像</block>
 </blocks>

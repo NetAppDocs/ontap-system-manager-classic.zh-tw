@@ -17,7 +17,6 @@ summary: 您可以使用System Manager來管理子網路。
 
 == 編輯子網路設定
 
-[role="lead"]
 您可以使用System Manager修改子網路屬性、例如子網路名稱、子網路位址、IP位址範圍及子網路閘道位址。
 
 .關於這項工作

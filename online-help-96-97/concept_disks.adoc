@@ -17,6 +17,4 @@ summary: 您可以使用System Manager來管理磁碟。
 
 https://docs.netapp.com/us-en/ontap/disks-aggregates/index.html["磁碟與Aggregate管理"^]
 
-https://docs.netapp.com/ontap-9/topic/com.netapp.doc.vs-irrg/home.html["介紹虛擬化安裝需求與參考資料FlexArray"^]
-
 https://docs.netapp.com/us-en/ontap/concepts/index.html["概念ONTAP"^]

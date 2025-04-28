@@ -20,7 +20,7 @@ summary: 從System Manager 9.6開始、您可以編輯現有FlexCache 的功能�
 . *選用：*在FlexCache *《Volume》*下的「* Volume *」欄位中輸入更新的名稱。FlexCache
 . *選用：*在FlexCache * FlexCache 《*》Volume *下的* Size*欄位中、輸入更新的版號、然後從下拉式功能表中選取測量單位。
 . *選用：*啟用或停用加密。
-. *選填：*按一下 image:../media/advanced_options.gif[""] 可修改FlexCache 功能的進階設定。請參閱 link:task_specifying_advanced_options_for_flexcache_volume.html["指定FlexCache 適用於某個聲音區的進階選項"]。
+. * 選用： * 按一下image:../media/advanced_options.gif["進階選項圖示"]以修改 FlexCache Volume 進階設定。請參閱 link:task_specifying_advanced_options_for_flexcache_volume.html["指定FlexCache 適用於某個聲音區的進階選項"]。
 . 按一下「*儲存*」以儲存變更。
 
 

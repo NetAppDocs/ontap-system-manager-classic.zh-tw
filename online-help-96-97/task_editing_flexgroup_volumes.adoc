@@ -37,7 +37,7 @@ summary: 從System Manager 9.6開始、您可以編輯現有FlexGroup 的功能�
 此選項僅在您已啟用Volume Encryption授權、且對應的平台支援加密時可用。
 
 . 指定Snapshot複本保留的百分比。
-. *選填：*按一下 image:../media/advanced_options.gif[""] 可修改FlexGroup 聲音恢復功能的設定。請參閱 link:task_specifying_advanced_options_for_flexgroup_volume.html["指定FlexGroup 適用於某個聲音區的進階選項"]。
+. * 選用： * 按一下image:../media/advanced_options.gif["進階選項圖示"]以修改 FlexGroup Volume 設定。請參閱 link:task_specifying_advanced_options_for_flexgroup_volume.html["指定FlexGroup 適用於某個聲音區的進階選項"]。
 . 指定FlexGroup 您想要調整的大小以調整此等大小。
 +
 根據預設、現有的Aggregate可用來調整FlexGroup 完這個問題。Volume允許的最小大小會顯示在「大小」欄位旁。
@@ -45,7 +45,7 @@ summary: 從System Manager 9.6開始、您可以編輯現有FlexGroup 的功能�
 +
 [NOTE]
 ====
-如果您想要FlexGroup 新增資源來擴充此功能、請按一下 image:../media/advanced_options.gif[""] （進階選項）。請參閱 link:task_specifying_advanced_options_for_flexgroup_volume.html["指定FlexGroup 適用於某個聲音區的進階選項"]。
+如果您想要新增資源來擴充 FlexGroup Volume ，請按一下image:../media/advanced_options.gif["進階選項圖示"]（進階選項）。請參閱 link:task_specifying_advanced_options_for_flexgroup_volume.html["指定FlexGroup 適用於某個聲音區的進階選項"]。
 
 ====
 . 按一下「*儲存*」以儲存變更。

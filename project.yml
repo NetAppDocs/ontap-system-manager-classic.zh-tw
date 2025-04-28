@@ -49,7 +49,7 @@ sidebar:
   - title: 文件ONTAP
     url: https://docs.netapp.com/us-en/ontap/
   - title: 法律聲明
-    url: "/reference_legal_notices.html"
+    url: "/legal-notices.html"
 product-family:
   name: ONTAP
   repo: ontap-family

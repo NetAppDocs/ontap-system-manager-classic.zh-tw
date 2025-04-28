@@ -32,7 +32,7 @@ summary: 您可以使用System Manager新增、編輯及刪除LDAP用戶端組�
 . 按一下「 * 新增 * 」。
 . 輸入LDAP用戶端的名稱。
 . 新增Active Directory網域或LDAP伺服器。
-. 按一下 image:../media/advanced_options.gif[""] （進階選項）、選取*架構*、然後按一下*套用*。
+. 按一下image:../media/advanced_options.gif["進階選項圖示"]（進階選項），選取 * 架構 * ，然後按一下 * 套用 * 。
 . 指定*基礎DN*和* TCP連接埠*。
 . 按一下* Binding *、然後指定驗證詳細資料。
 . 按一下*儲存並關閉*。

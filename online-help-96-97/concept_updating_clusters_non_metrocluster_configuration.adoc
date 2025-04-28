@@ -13,7 +13,7 @@ summary: 您可以使用System Manager來更新高可用度（HA）配對中的�
 [role="lead"]
 您可以使用ONTAP 經典版的《經典版》（ONTAP 適用於更新版本的版本）來更新叢集或高可用度（HA）配對中的個別節點。若要執行更新、您應該選取ONTAP 一個支援功能不實的映像、驗證叢集或HA配對中的個別節點已準備好進行更新、然後執行更新。
 
-image::../media/updating_cluster.gif[正在更新叢集]
+image::../media/updating_cluster.gif[使用系統管理員更新非 MetroCluster 組態中的叢集]
 
 *相關資訊*
 

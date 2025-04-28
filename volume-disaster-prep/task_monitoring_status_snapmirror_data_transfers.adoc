@@ -44,7 +44,7 @@ summary: 您應該定期監控SnapMirror關係的狀態、以確保SnapMirror資
 http://www.netapp.com/us/media/tr-4015.pdf["NetApp技術報告4015：SnapMirror組態與最佳實務ONTAP 做法、適用於NetApp 9.1、9.2"^]
 
 +
-image::../media/snapmirror_monitor_3_health_state_lag.gif[SnapMirror監控3種健全狀況延遲]
+image::../media/snapmirror_monitor_3_health_state_lag.gif[SnapMirror 資料傳輸狀態]
 
 
 

@@ -29,7 +29,7 @@ summary: 從System Manager 9.6開始、您可以FlexCache 調整現有資源的�
 +
 [NOTE]
 ====
-如果您想要FlexCache 新增資源來擴充此功能、請按一下 image:../media/advanced_options.gif[""] （進階選項）。請參閱 link:https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_specifying_advanced_options_for_flexcache_volume.html["指定FlexCache 適用於靜態Volume的進階選項"]。
+如果您想要新增資源來擴充 FlexCache Volume ，請按一下image:../media/advanced_options.gif["進階選項圖示"]（進階選項）。請參閱 link:https://docs.netapp.com/us-en/ontap-sm-classic/online-help-96-97/task_specifying_advanced_options_for_flexcache_volume.html["指定FlexCache 適用於靜態Volume的進階選項"]。
 
 ====
 . 按一下*「Save」（儲存）*以調整FlexCache 此等功能的大小。

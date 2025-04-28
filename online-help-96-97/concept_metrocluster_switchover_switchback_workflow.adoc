@@ -56,4 +56,4 @@ System Manager可根據遠端叢集站台的狀態、支援兩種切換作業：
 
 下列流程圖說明啟動切換和切換作業時所發生的階段和程序。
 
-image::../media/switchover_switchback_workflow.jpg[切換切換切換回復工作流程]
+image::../media/switchover_switchback_workflow.jpg[MetroCluster 切換與切換工作流程流程流程圖]

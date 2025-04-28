@@ -31,4 +31,4 @@ summary: 從ONTAP 功能介紹9.1開始、您可以透過ONTAP 建立叢集、�
 
 您可以使用範本檔案或在叢集設定精靈中手動輸入值來設定叢集。
 
-image::../media/cluster_setup_workflow.gif[叢集設定工作流程]
+image::../media/cluster_setup_workflow.gif[使用 ONTAP 系統管理員設定叢集的工作流程]

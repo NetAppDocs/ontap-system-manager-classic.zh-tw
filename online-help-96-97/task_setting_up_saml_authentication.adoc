@@ -13,7 +13,7 @@ summary: 您可以設定安全聲明標記語言（SAML）驗證、以便遠端�
 [role="lead"]
 您可以使用ONTAP 經典版的支援功能（ONTAP 僅適用於支援支援的版本）來設定安全聲明標記語言（SAML）驗證。遠端使用者在登入System Manager之前、會先透過安全的身分識別供應商（IDP）進行驗證。
 
-image::../media/mfa_workflow.gif[MFA工作流程]
+image::../media/mfa_workflow.gif[使用系統管理員設定 SAML 驗證的工作流程]
 
 
 

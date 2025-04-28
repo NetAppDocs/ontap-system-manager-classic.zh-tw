@@ -29,7 +29,7 @@ summary: 您可以FlexGroup 使用System Manager調整現有資源大小或新�
 +
 [NOTE]
 ====
-如果您想要FlexGroup 新增資源來擴充此功能、請按一下 image:../media/advanced_options.gif[""] （進階選項）。
+如果您想要新增資源來擴充 FlexGroup Volume ，請按一下image:../media/advanced_options.gif["進階選項圖示"]（進階選項）。
 
 ====
 . 指定Snapshot複本保留的百分比。

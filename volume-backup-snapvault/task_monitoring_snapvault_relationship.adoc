@@ -44,7 +44,7 @@ summary: 您應該定期監控SnapVault 彼此之間的關聯狀態、以確保�
 http://www.netapp.com/us/media/tr-4015.pdf["NetApp技術報告4015：SnapMirror組態與最佳實務ONTAP 做法、適用於NetApp 9.1、9.2"^]
 
 +
-image::../media/monitor_sv.gif[監控服務]
+image::../media/monitor_sv.gif[SnapVault 關係狀態]
 
 
 

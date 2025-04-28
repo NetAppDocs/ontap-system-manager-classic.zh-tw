@@ -25,7 +25,7 @@ summary: 在使用SnapVault 支援技術設定磁碟區以進行資料保護之�
 .. 按一下*組態*>*叢集對等端點*。
 .. 驗證連接的叢集是否已通過驗證且可供使用。
 +
-image::../media/cluster_pper_930_backup.gif[叢集式pper 930備份]
+image::../media/cluster_pper_930_backup.gif[已連接叢集的驗證]
 
 .. 按一下「*組態*>* SVM對等端點*」。
 .. 確認目的地SVM已與來源SVM連接。
@@ -37,7 +37,7 @@ image::../media/cluster_pper_930_backup.gif[叢集式pper 930備份]
 .. 在*叢集詳細資料*窗格中、按一下*叢集對等端點*。
 .. 驗證連接的叢集是否已通過驗證且可供使用。
 +
-image::../media/cluster_peer_health_backup.gif[叢集對等健全狀況備份]
+image::../media/cluster_peer_health_backup.gif[顯示叢集對等區段的叢集詳細資料窗格，可驗證已驗證且可用的對等叢集]
 
 .. 按一下「* SVMS*」索引標籤、然後選取來源SVM。
 .. 在*對等儲存虛擬機器*區域中、確認目的地SVM已與來源SVM連接。

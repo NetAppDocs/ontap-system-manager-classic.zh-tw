@@ -14,7 +14,7 @@ summary: 當您建立FlexGroup 一個聲音區時、可以指定您要與FlexGro
 當您建立FlexGroup 一個版本時、可以使用ONTAP 經典版的《經典版》（ONTAP 可在更新版本的版本中使用）來指定您想要與FlexGroup 該版本關聯的選項。
 
 .步驟
-. *選用：*在*「Create FlexGroup S還原*」視窗中、按一下 image:../media/advanced_options.gif[""] 以指定進階選項。
+. * 選用： * 在 * 建立 FlexGroup * 視窗中，按一下image:../media/advanced_options.gif["進階選項圖示"]以指定進階選項。
 +
 此時會顯示「進階選項」視窗。其中包含區段（左欄的標題）、您可以在其中指定各種選項。
 

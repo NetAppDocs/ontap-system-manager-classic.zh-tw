@@ -46,3 +46,7 @@ link:https://www.netapp.com/company/legal/privacy-policy/["https://www.netapp.co
 == 開放原始碼
 
 通知檔案提供有關 NetApp 軟體所使用之協力廠商版權與授權的資訊。
+
+提供本產品所使用之協力廠商版權與授權的相關資訊。
+
+link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2860921["關於產品的注意ONTAP 事項9.7"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2855145["關於此功能的注意事項ONTAP"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2850702["關於本產品的注意事項ONTAP"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2844310["關於產品的注意事項ONTAP 9.4"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2839209["關於本產品的注意事項ONTAP"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2702054["關於此功能的注意事項ONTAP 9.2"^] link:https://library.netapp.com/ecm/ecm_download_file/ECMLP2516795["關於此產品的注意事項ONTAP"^]
